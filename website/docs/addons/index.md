@@ -33,6 +33,12 @@ Here is an overview of our main projects:
 - **Effect Pillars**  
   Placeable structures that grant positive or negative effects within a radius, useful for both survival and RPG maps.
 
+- **Compressy**
+  Compressed blocks and items to save storage in chests and inventory.
+
+- **Dorios' Atelier**
+  A collection of decorative blocks, introducing new tools to make building easier.
+
 ---
 
 > All of our addons are **modular**: you can play them independently or combine them for a complete Dorios Studios experience.
