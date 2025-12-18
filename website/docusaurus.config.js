@@ -70,33 +70,43 @@ const config = {
     ({
       image: 'img/dorios-social-card.jpg',
 
-    metadata: [
-       {
-      name: 'description',
-      content:
-        'Dorios Studios — creators of free Minecraft Bedrock addons like UtilityCraft and more. Join our Discord community and explore our collection of high-quality, completely free addons.',
-      },
-      {
-        property: 'og:title',
-        content: 'Dorios Studios - Free Minecraft Bedrock Addons',
-      },
-      {
-        property: 'og:description',
-        content:
-          'Dorios Studios creates completely free Minecraft Bedrock addons, including UtilityCraft and other community projects.',
-      },
-      {
-        property: 'og:image',
-        content: 'https://doriosstudios.com/img/DORIOS.png',
-      },
-      {
-        property: 'og:url',
-        content: 'https://doriosstudios.com',
-      },
-      { property: 'og:type', content: 'website' },
-      { property: 'og:site_name', content: 'Dorios Studios' },
-      { property: 'og:locale', content: 'en_US' },
+   metadata: [
+        {
+          name: 'description',
+          content:
+            'Dorios Studios — creators of free Minecraft Bedrock addons like UtilityCraft and more. High-quality free Minecraft Bedrock addons for the community.',
+        },
+
+        // --- OPEN GRAPH ---
+        { property: 'og:title', content: 'Dorios Studios - Free Minecraft Bedrock Addons' },
+        {
+          property: 'og:description',
+          content:
+            'Dorios Studios creates completely free Minecraft Bedrock addons, including UtilityCraft and other community projects.',
+        },
+
+        // Your REAL logo
+        { property: 'og:image', content: 'https://doriosstudios.com/img/dorios_logo_blackbg.png' },
+        { property: 'og:image:width', content: '512' },
+        { property: 'og:image:height', content: '512' },
+        { property: 'og:image:type', content: 'image/png' },
+
+        { property: 'og:url', content: 'https://doriosstudios.com' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:site_name', content: 'Dorios Studios' },
+        { property: 'og:locale', content: 'en_US' },
+
+        // --- TWITTER CARDS ---
+        { name: 'twitter:card', content: 'summary' },
+        { name: 'twitter:title', content: 'Dorios Studios - Free Minecraft Bedrock Addons' },
+        {
+          name: 'twitter:description',
+          content:
+            'High-quality Minecraft Bedrock addons made for the community — completely free.',
+        },
+        { name: 'twitter:image', content: 'https://doriosstudios.com/img/dorios_logo_blackbg.png' }
       ],
+
 
       colorMode: {
         defaultMode: 'light',
@@ -125,10 +135,9 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Pages',
+            label: 'Wikis',
           },
-          { to: '/about', label: 'About Us', position: 'left' },
-          { to: '/blog', label: 'News', position: 'left' },
+          { to: '/about', label: 'About Us', position: 'left' }
         ],
       },
 
@@ -146,13 +155,13 @@ const config = {
                   <a href="https://www.youtube.com/@doriosstudios" target="_blank" rel="noopener">
                     <img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube" width="24" height="24" style="margin: 0 8px; opacity:0.8; transition:0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'" />
                   </a>
-                  <a href="https://www.curseforge.com/minecraft-bedrock/addons" target="_blank" rel="noopener">
+                  <a href="https://www.curseforge.com/members/doriosstudios/projects" target="_blank" rel="noopener">
                     <img src="https://cdn.simpleicons.org/curseforge/ffffff" alt="CurseForge" width="24" height="24" style="margin: 0 8px; opacity:0.8; transition:0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'" />
                   </a>
                   <a href="https://www.patreon.com/DoriosStudios" target="_blank" rel="noopener">
                     <img src="https://cdn.simpleicons.org/patreon/ffffff" alt="Patreon" width="24" height="24" style="opacity:0.8; transition:0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'" />
                   </a>
-                  <a href="https://github.com/RealMilo504" target="_blank" rel="noopener">
+                  <a href="https://github.com/DoriosStudios" target="_blank" rel="noopener">
                     <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" width="24" height="24" style="margin: 0 8px; opacity:0.8; transition:0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'" />
                   </a>
                 `,
@@ -169,7 +178,7 @@ const config = {
         },
         copyright: `
         © ${new Date().getFullYear()} Dorios Studios — Creating worlds, one addon at a time.<br/>
-        Website built by <strong>Milo504</strong> with ❤️ using Docusaurus.
+        Website built by <strong>Milo504</strong> with ❤️.
         `,
       },
 

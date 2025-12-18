@@ -1,0 +1,501 @@
+/* =============================== */
+/*   HERO BANNER (MEDIUM HEIGHT)  */
+/* =============================== */
+
+.heroBanner {
+  width: 100%;
+  height: 250px; /* MEDIUM */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  border-bottom: 3px solid #ff8800;
+}
+
+/* Dark overlay */
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.75)
+  );
+  z-index: 1;
+}
+
+.heroLogo {
+  width: 95px;
+  z-index: 2;
+  margin-bottom: 4px;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.5));
+}
+
+.heroTitle {
+  font-size: 38px;
+  font-weight: 800;
+  margin: 0;
+  color: white;
+  z-index: 2;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+.heroSubtitle {
+  margin-top: 4px;
+  font-size: 18px;
+  color: #ffbb77;
+  z-index: 2;
+}
+
+
+
+/* =============================== */
+/*   MAIN PAGE WRAPPER             */
+/* =============================== */
+
+.pageWrapper {
+  width: 100%;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.topSection {
+  width: 90%;
+  max-width: 1500px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+
+/* =============================== */
+/*   IMAGE GALLERY LEFT            */
+/* =============================== */
+
+.galleryBox {
+  width: 55%;
+  background: #181818;
+  border-radius: 22px;
+  padding: 18px;
+  position: relative;
+  max-height: 460px;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.previewImage {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+  object-fit: cover;
+  max-height: 340px;
+}
+
+/* Arrows */
+.leftArrow,
+.rightArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(20, 20, 20, 0.6);
+  border: none;
+  font-size: 28px;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.leftArrow:hover,
+.rightArrow:hover {
+  background: #ff8800;
+}
+
+.leftArrow { left: 12px; }
+.rightArrow { right: 12px; }
+
+/* dots */
+.dots {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #555;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.activeDot {
+  background: #ff8800;
+}
+
+
+/* =============================== */
+/*   RIGHT ABOUT SECTION           */
+/* =============================== */
+
+.infoBox {
+  width: 45%;
+}
+
+.sectionTitle {
+  font-size: 34px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+  border-left: 5px solid #ff8800;
+  padding-left: 12px;
+}
+
+.description {
+  color: #e2e2e2;
+  font-size: 17px;
+  line-height: 1.65;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+
+/* STATUS CARDS */
+
+.statsRow {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.statCard {
+  flex: 1;
+  background: #202020;
+  padding: 16px 20px;
+  border-radius: 15px;
+  border: 1px solid #333;
+  position: relative;
+}
+
+.statCard::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #ff8800;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 12px 12px;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: #999;
+}
+
+.statValue {
+  display: block;
+  margin-top: 4px;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+}
+
+
+/* BUTTONS */
+
+.buttonsRow {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.button {
+  background: #2a2a2a;
+  padding: 14px 28px;
+  border-radius: 14px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+  border: 1px solid #444;
+}
+
+.button:hover {
+  background: #ff8800;
+  color: black;
+  border-color: #ff8800;
+}
+
+/* =============================== */
+/*   NEW VIDEO + IMAGE GALLERY     */
+/* =============================== */
+
+.galleryBox {
+  width: 55%;
+  background: #181818;
+  border-radius: 22px;
+  padding: 18px;
+  display: flex;
+  gap: 12px;
+  max-height: 460px;
+}
+
+/* MAIN PREVIEW 16:9 */
+.mainPreview {
+  flex: 1;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.previewMedia {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* SIDE THUMBNAILS */
+.thumbnailColumn {
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.thumbnail {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.thumbnail:hover {
+  opacity: 0.8;
+}
+
+.activeThumbnail {
+  border-color: #ff8800;
+}
+
+/* IMAGE THUMB */
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* VIDEO THUMBNAIL */
+.thumbnailVideoBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.thumbnailPlayIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  color: white;
+  text-shadow: 0px 0px 6px #000;
+}
+
+/* OPTIONAL BLUR MODE */
+.previewWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.previewBlurBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(35px) brightness(0.45);
+  transform: scale(1.15);
+  z-index: 1;
+}
+
+/* Image stays centered and fully visible */
+.previewActual {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Show full image */
+  border-radius: 12px;
+}
+
+/* ========================================= */
+/*   RESPONSIVE FIX FOR MOBILE               */
+/* ========================================= */
+
+@media (max-width: 900px) {
+
+  /* HERO BANNER — bajar tamaño */
+  .heroBanner {
+    height: 180px;
+  }
+
+  .heroLogo {
+    width: 70px;
+  }
+
+  .heroTitle {
+    font-size: 28px;
+  }
+
+  .heroSubtitle {
+    font-size: 14px;
+  }
+
+
+  /* ----- LAYOUT ----- */
+
+  .topSection {
+    flex-direction: column;
+    gap: 25px;
+    width: 95%;
+  }
+
+  .galleryBox {
+    width: 100%;
+    max-height: none;
+    flex-direction: column;
+    height: auto;
+  }
+
+
+  /* MAIN PREVIEW (16:9) */
+  .mainPreview {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Thumbnails column to row */
+  .thumbnailColumn {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 6px;
+  }
+
+  .thumbnail {
+    min-width: 120px;
+    max-width: 150px;
+  }
+
+
+  /* INFO BOX */
+  .infoBox {
+    width: 100%;
+  }
+
+  .sectionTitle {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .statsRow {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .statCard {
+    padding: 14px 16px;
+  }
+
+  .statValue {
+    font-size: 19px;
+  }
+
+
+  /* BUTTONS */
+  .buttonsRow {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    padding: 12px 20px;
+  }
+}
+
+
+
+/* ========================================= */
+/*   EXTRA SMALL DEVICES (<= 500px)          */
+/* ========================================= */
+@media (max-width: 500px) {
+
+  .heroBanner {
+    height: 150px;
+  }
+
+  .heroLogo {
+    width: 60px;
+  }
+
+  .heroTitle {
+    font-size: 24px;
+  }
+
+  .heroSubtitle {
+    font-size: 12px;
+  }
+
+  /* Thumbnails aún más compactas */
+  .thumbnail {
+    min-width: 90px;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Texto más cómodo */
+  .sectionTitle {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}

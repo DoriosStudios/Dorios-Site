@@ -71,6 +71,7 @@ export default function About() {
             { id: 'mainmas', name: 'Mainmas', role: 'Independent Creator', quote: 'Independent contributor supporting Dorios Studios with community and project assistance.' },
             { id: 'mikey', name: 'Mikey', role: 'Builder', quote: 'Builder for Endless Agony and UtilitySky, bringing environments and structures to life.' },
             { id: 'yusou', name: 'Yusou', role: 'Independent Creator', quote: 'Independent creator collaborating with Dorios Studios while developing personal projects.' },
+            { id: 'srgui', name: 'Sr Gui', role: 'Builder & Developer', quote: 'An experienced builder now learning coding, bringing strong creative vision while growing into development.' },
           ].map((member, i) => (
             <div
               key={i}

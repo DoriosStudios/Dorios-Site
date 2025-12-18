@@ -1,0 +1,321 @@
+/* ===== COLORS ===== */
+:root {
+  --blaze1: #ff8c00;
+  --blaze2: #ffb84d;
+  --bg-dark: #0d0d0d;
+  --card-dark: #161616;
+  --card-border: #1f1f1f;
+  --text-light: #e5e5e5;
+}
+
+/* ===== HERO ===== */
+.hero {
+  padding: 5rem 1rem 3rem;
+  text-align: center;
+  background: var(--bg-dark);
+  color: white;
+}
+
+.heroInner {
+  max-width: 900px;
+  margin: auto;
+}
+
+.heroLogo {
+  width: 130px;
+  margin-bottom: 1rem;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.heroSubtitle {
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin: auto;
+  color: #bfbfbf;
+}
+
+/* ===== PROJECTS SECTION ===== */
+.projectsSection {
+  background: var(--bg-dark);
+  padding: 2rem 1.5rem 5rem;
+}
+
+/* 2 per row */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: var(--card-dark);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(255, 140, 0, 0.25);
+}
+
+/* IMAGE FULL, NO CROP */
+.cardImageWrapper {
+  width: 100%;
+  height: auto;
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CONTENT */
+.cardContent {
+  padding: 1.8rem 1.4rem 2.2rem;
+  text-align: left;
+}
+
+.cardTitle {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+/* TAGS */
+.tags {
+  margin-bottom: 0.8rem;
+}
+
+.tag {
+  background: var(--blaze1);
+  color: black;
+  padding: 0.3rem 0.7rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* DESCRIPTION */
+.cardDesc {
+  color: #cfcfcf;
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+}
+
+/* BUTTON */
+.cardButton {
+  display: inline-block;
+  background: var(--blaze1);
+  padding: 0.55rem 1.1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  transition: 0.2s;
+}
+
+.cardButton:hover {
+  background: var(--blaze2);
+  box-shadow: 0 0 10px var(--blaze1);
+}
+
+.hiddenButton {
+  display: none !important;
+}
+
+/* === HERO SPOTLIGHT DARK BLAZE === */
+.heroSpotlight {
+  width: 100%;
+  padding: 6rem 1rem 4.5rem;
+  text-align: center;
+  background: #0d0d0d;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft centered blaze glow */
+.heroGlow {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 650px;
+  height: 650px;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 140, 0, 0.18) 0%,
+    rgba(255, 140, 0, 0.08) 40%,
+    rgba(0, 0, 0, 0) 70%
+  );
+
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Logo */
+.heroLogo {
+  width: 140px;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Title */
+.heroTitle {
+  font-size: 3.1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+/* Subtitle */
+.heroSubtitle {
+  max-width: 750px;
+  margin: 0 auto;
+  margin-top: 0.4rem;
+  font-size: 1.15rem;
+  color: #d0d0d0;
+  opacity: 0.92;
+  line-height: 1.45;
+  position: relative;
+  z-index: 1;
+}
+
+/* subtle fade at bottom */
+.heroSpotlight::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(13, 13, 13, 0), #0d0d0d);
+}
+
+/* Entire card clickable */
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Card container */
+.card {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #000;
+  transition: transform .25s ease, box-shadow .25s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(255, 150, 0, 0.25);
+}
+
+/* Image */
+.cardImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cardButtonOverlay {
+  position: absolute;
+  bottom: 10px;   /* BAJAMOS MÁS */
+  right: 8px;    /* LO CORREMOS A LA DERECHA */
+}
+
+
+/* Blaze button */
+.viewButton {
+  background: linear-gradient(90deg, #ff7300, #ffb144);
+  padding: .55rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .95rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  box-shadow: 0 0 14px rgba(255, 120, 0, 0.45);
+  transition: .2s ease;
+}
+
+.viewButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(255, 150, 0, 0.6);
+}
+
+/* Arrow */
+.arrow {
+  font-size: 1.3rem;
+  line-height: 1;
+  margin-top: -2px;
+}
+
+/* Grid */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+/* ==== RESPONSIVE FIX FOR MOBILE ==== */
+@media (max-width: 600px) {
+
+  /* Grilla: 1 por fila en teléfonos */
+  .gridContainer {
+    grid-template-columns: 1fr !important;
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  /* Card */
+  .card {
+    border-radius: 16px;
+  }
+
+  /* Imagen se ajusta mejor */
+  .cardImage {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Botón flotante más pequeño y pegado */
+  .cardButtonOverlay {
+    bottom: 6px;
+    right: 6px;
+    transform: scale(0.85);
+  }
+
+  /* Texto hero */
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+
+  .heroLogo {
+    width: 100px;
+  }
+}
