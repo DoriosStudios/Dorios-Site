@@ -35,4 +35,5 @@ jobs:
         working-directory: website
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_USER: github-actions[bot]
         run: npm run deploy
