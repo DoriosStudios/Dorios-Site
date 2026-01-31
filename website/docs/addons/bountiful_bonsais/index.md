@@ -2,7 +2,7 @@
 id: intro
 title: Bountiful Bonsais – Introduction
 sidebar_label: Bountiful Bonsais
-sidebar_position: 1
+sidebar_position: 3
 pagination_prev: null
 ---
 
@@ -26,9 +26,9 @@ Each bonsai can be customized with **different soils, trees, and crops**, affect
 
 ## Overview
 
-- 🌳 Grow trees and crops automatically  
-- 🪴 Use different soils to adjust growth time  
-- ⚙️ Integrate with UtilityCraft containers for full automation  
+- 🌳 Grow trees and crops automatically
+- 🪴 Use different soils to adjust growth time
+- ⚙️ Integrate with UtilityCraft containers for full automation
 - 💎 Discover 26 unique bonsai types covering every tree and crop from Minecraft
 
 Each bonsai grows over time and drops its resources directly into the container below (such as a **chest** or **barrel**).  

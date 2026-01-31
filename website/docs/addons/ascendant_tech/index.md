@@ -2,7 +2,7 @@
 id: intro
 title: "UtilityCraft: Ascendant Technology – Introduction"
 sidebar_label: Ascendant Technology
-sidebar_position: 0
+sidebar_position: 2
 pagination_prev: null
 ---
 
