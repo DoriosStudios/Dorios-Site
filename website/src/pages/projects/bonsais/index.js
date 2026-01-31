@@ -140,7 +140,7 @@ export default function BountifulBonsaisPage() {
                 target="_blank">MCPEDL</a>
 
               <a className={styles.button}
-                href="/docs/addons/bountiful-bonsais/"
+                href="/docs/bountiful-bonsais/"
                 target="_blank">Wiki</a>
             </div>
           </div>

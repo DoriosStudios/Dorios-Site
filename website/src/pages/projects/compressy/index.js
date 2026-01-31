@@ -151,7 +151,7 @@ export default function CompressyPage() {
                 target="_blank">MCPEDL</a>
 
               <a className={styles.button}
-                href="/docs/addons/compressy/"
+                href="/docs/compressy/"
                 target="_blank">Wiki</a>
 
             </div>

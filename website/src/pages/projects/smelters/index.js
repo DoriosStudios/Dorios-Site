@@ -145,7 +145,7 @@ export default function BetterSmeltersPage() {
                 target="_blank">MCPEDL</a>
 
               <a className={styles.button}
-                href="/docs/addons/better-smelters/"
+                href="/docs/better-smelters/"
                 target="_blank">Wiki</a>
             </div>
 

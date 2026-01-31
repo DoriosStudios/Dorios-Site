@@ -142,7 +142,7 @@ export default function EffectPillarsPage() {
                 target="_blank">MCPEDL</a>
 
               <a className={styles.button}
-                href="/docs/addons/effect-pillars/"
+                href="/docs/effect-pillars/"
                 target="_blank">Wiki</a>
 
             </div>

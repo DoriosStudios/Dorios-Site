@@ -143,7 +143,7 @@ export default function TrainingDummyPage() {
                 target="_blank">MCPEDL</a>
 
               <a className={styles.button}
-                href="/docs/addons/training-dummy/"
+                href="/docs/training-dummy/"
                 target="_blank">Wiki</a>
 
             </div>

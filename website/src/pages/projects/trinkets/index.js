@@ -143,7 +143,7 @@ export default function DoriosTrinketsPage() {
                 target="_blank">MCPEDL</a>
 
               <a className={styles.button}
-                href="/docs/addons/dorios-trinkets/"
+                href="/docs/dorios-trinkets/"
                 target="_blank">Wiki</a>
             </div>
           </div>

@@ -143,7 +143,7 @@ export default function CobblestoneGeneratorsPage() {
                 target="_blank">MCPEDL</a>
 
               <a className={styles.button}
-                href="/docs/addons/cobblestone-generators/"
+                href="/docs/cobblestone-generators/"
                 target="_blank">Wiki</a>
             </div>
 

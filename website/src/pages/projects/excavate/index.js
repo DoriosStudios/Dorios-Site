@@ -142,7 +142,7 @@ export default function DoriosExcavatePage() {
                 target="_blank">MCPEDL</a>
 
               <a className={styles.button}
-                href="/docs/addons/dorios-excavate/"
+                href="/docs/dorios-excavate/"
                 target="_blank">Wiki</a>
 
             </div>

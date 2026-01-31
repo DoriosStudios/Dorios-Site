@@ -146,7 +146,7 @@ export default function RedstoneLampsPage() {
                 target="_blank">MCPEDL</a>
 
               <a className={styles.button}
-                href="/docs/addons/redstone-lamps/"
+                href="/docs/redstone-lamps/"
                 target="_blank">Wiki</a>
 
             </div>

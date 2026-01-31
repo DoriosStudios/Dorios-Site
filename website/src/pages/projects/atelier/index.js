@@ -141,7 +141,7 @@ export default function DoriosAtelierPage() {
                 target="_blank">MCPEDL</a>
 
               <a className={styles.button}
-                href="/docs/addons/dorios-atelier/"
+                href="/docs/dorios-atelier/"
                 target="_blank">Wiki</a>
             </div>
           </div>

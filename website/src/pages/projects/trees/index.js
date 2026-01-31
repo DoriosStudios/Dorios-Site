@@ -143,7 +143,7 @@ export default function BountifulTreesPage() {
                 target="_blank">MCPEDL</a>
 
               <a className={styles.button}
-                href="/docs/addons/bountiful-trees/"
+                href="/docs/bountiful-trees/"
                 target="_blank">Wiki</a>
 
             </div>

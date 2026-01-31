@@ -140,7 +140,7 @@ export default function BountifulCropsPage() {
                 target="_blank">MCPEDL</a>
 
               <a className={styles.button}
-                href="/docs/addons/bountiful-crops/"
+                href="/docs/bountiful-crops/"
                 target="_blank">Wiki</a>
             </div>
 

@@ -123,7 +123,7 @@ export default function UtilityCraftPage() {
                 target="_blank">MCPEDL</a>
 
               <a className={styles.button}
-                href="/docs/addons/utilitycraft/"
+                href="/docs/utilitycraft/"
                 target="_blank">Wiki</a>
             </div>
           </div>

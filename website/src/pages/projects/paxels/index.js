@@ -145,7 +145,7 @@ export default function PaxelsAIOTsPage() {
                 target="_blank">MCPEDL</a>
 
               <a className={styles.button}
-                href="/docs/addons/paxels-aiots/"
+                href="/docs/paxels-aiots/"
                 target="_blank">Wiki</a>
 
             </div>

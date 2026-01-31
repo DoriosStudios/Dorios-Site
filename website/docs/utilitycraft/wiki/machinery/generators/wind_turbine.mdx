@@ -1,0 +1,101 @@
+---
+id: wind_turbine
+title: Wind Turbine
+sidebar_label: Wind Turbine
+description: The Wind Turbine generates Dorios Energy (DE) passively from wind flow, without consuming fuel.
+position: 1
+---
+
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+# Wind Turbine
+
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+  <img 
+    src="/img/addons/utilitycraft/energy/basic_wind_turbine_render.png" 
+    alt="Basic Wind Turbine Render"
+    width="25%" 
+    style={{ marginRight: "1rem" }}
+  />
+  <div>
+    <p>
+      The <b>Wind Turbine</b> generates <b>Dorios Energy (DE)</b> passively from <b>wind flow</b>.  
+      It does not require fuel or maintenance, making it a reliable renewable energy source.
+    </p>
+    <p>
+      Energy production scales with tier and environmental conditions, allowing higher tiers to provide stable power for long-term setups.
+    </p>
+  </div>
+</div>
+
+---
+
+## Energy & Storage Capacities
+
+| Tier | Rate (DE/t) | Energy Capacity |
+|------|-------------|-----------------|
+| **Basic** | 8 DE/t | 64,000 DE |
+| **Advanced** | 32 DE/t | 256,000 DE |
+| **Expert** | 128 DE/t | 1,024,000 DE |
+| **Ultimate** | 800 DE/t | 6,400,000 DE |
+
+---
+
+## Behavior
+
+The Wind Turbine produces energy continuously based on environmental wind conditions.  
+It does not require sunlight, fuel, or player interaction to operate.
+
+Energy generation may vary depending on placement and surrounding conditions, but stored energy is always retained when the block is broken, allowing safe relocation.
+
+---
+
+## Wind Turbine UI
+
+The Wind Turbine interface displays its **current energy production rate** and **stored Dorios Energy (DE)**.  
+The UI updates automatically based on environmental conditions and tier.
+
+<p align="center">
+  <img 
+    src="/img/addons/utilitycraft/wind_turbine_ui_placeholder.jpg" 
+    alt="Wind Turbine UI" 
+    width="70%" 
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+  />
+</p>
+
+---
+
+## Crafting Recipes
+
+<Carousel showThumbs={false} showStatus={false} infiniteLoop emulateTouch>
+  <div>
+    <img 
+      src="/img/addons/utilitycraft/energy/recipe_basic_wind_turbine.png" 
+      alt="Basic Wind Turbine Recipe" 
+      style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "60%", margin: "auto" }}
+    />
+  </div>
+  <div>
+    <img 
+      src="/img/addons/utilitycraft/energy/recipe_advanced_wind_turbine.png" 
+      alt="Advanced Wind Turbine Recipe" 
+      style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "60%", margin: "auto" }}
+    />
+  </div>
+  <div>
+    <img 
+      src="/img/addons/utilitycraft/energy/recipe_expert_wind_turbine.png" 
+      alt="Expert Wind Turbine Recipe" 
+      style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "60%", margin: "auto" }}
+    />
+  </div>
+  <div>
+    <img 
+      src="/img/addons/utilitycraft/energy/recipe_ultimate_wind_turbine.png" 
+      alt="Ultimate Wind Turbine Recipe" 
+      style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "60%", margin: "auto" }}
+    />
+  </div>
+</Carousel>
