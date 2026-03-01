@@ -64,6 +64,18 @@ const config = {
       }),
     ],
   ],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'documentation',
+        path: 'documentation',
+        routeBasePath: 'documentation',
+        sidebarPath: require.resolve('./sidebars.js'),
+        editUrl: 'https://github.com/RealMilo504/Dorios-Site/tree/main/',
+      },
+    ],
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -136,6 +148,13 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Wikis',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'documentationSidebar',
+            docsPluginId: 'documentation',
+            position: 'left',
+            label: 'Documentation',
           },
           { to: '/about', label: 'About Us', position: 'left' }
         ],
