@@ -28,18 +28,18 @@ html[data-theme='dark'] {
 /* Add-Ons Cards */
 .addon-card {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   align-items: center;
   gap: 1.5rem;
   margin-bottom: 2rem;
   padding: 1.5rem;
   border-radius: 12px;
   background: var(--ifm-card-background-color, #1b1b1d);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .addon-logo {
-  flex: 0 0 200px; 
+  flex: 0 0 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,6 +63,7 @@ html[data-theme='dark'] {
     flex-direction: column;
     text-align: center;
   }
+
   .addon-content {
     padding-left: 0;
   }
@@ -88,7 +89,7 @@ html[data-theme='dark'] {
 }
 
 .footer a {
-  color: #ff822b !important; 
+  color: #ff822b !important;
   transition: 0.2s ease;
 }
 
@@ -110,10 +111,11 @@ html[data-theme='dark'] {
 }
 
 .table-center table {
-  width: auto !important;   
-  margin: 0 auto;          
-  max-width: 100%;          
+  width: auto !important;
+  margin: 0 auto;
+  max-width: 100%;
 }
+
 .navbar .DocSearch-Button {
   background: #181818;
   border: 1px solid #2a2a2a;
@@ -176,8 +178,15 @@ html[data-theme='dark'] {
   }
 }
 
-details.ds-clean { background: transparent; border: 0; box-shadow: none; padding: 0; margin: 0; }
-details.ds-clean > summary {
+details.ds-clean {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+details.ds-clean>summary {
   list-style: none;
   background: transparent;
   padding: 8px 0;
@@ -191,12 +200,24 @@ details.ds-clean > summary {
   color: inherit;
   text-decoration: none;
 }
-details.ds-clean > summary::-webkit-details-marker { display: none; } 
-details.ds-clean > summary::marker { content: ""; }                  
+
+details.ds-clean>summary::-webkit-details-marker {
+  display: none;
+}
+
+details.ds-clean>summary::marker {
+  content: "";
+}
 
 /* Flecha personalizada y rotación al abrir */
-.ds-arrow { display: inline-block; transition: transform .15s ease; }
-details.ds-clean[open] .ds-arrow { transform: rotate(90deg); }
+.ds-arrow {
+  display: inline-block;
+  transition: transform .15s ease;
+}
+
+details.ds-clean[open] .ds-arrow {
+  transform: rotate(90deg);
+}
 
 /* Completely remove default Docusaurus summary arrow */
 summary::-webkit-details-marker,
@@ -215,7 +236,7 @@ details.ds-clean {
   margin: 0;
 }
 
-details.ds-clean > summary {
+details.ds-clean>summary {
   background: transparent !important;
   border: none !important;
   color: inherit;
@@ -252,17 +273,180 @@ details[open] .ds-arrow {
   justify-content: center;
   text-decoration: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   min-width: 200px;
   height: 64px;
   line-height: 1;
 }
 
 .download-button span {
-  transform: translateY(-3px); /* baja el texto */
+  transform: translateY(-3px);
+  /* baja el texto */
 }
 
 .download-button:hover {
   transform: scale(1.025);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Grid for API index lists */
+.api-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  gap: 8px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Method badge */
+.api-method {
+  background: #c084fc;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 7px;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+/* Property badge */
+.api-property {
+  background: #f59e0b;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 7px;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+/* Improve code color */
+code {
+  color: #ffcb6b;
+}
+
+/* Headings spacing */
+h2,
+h3 {
+  margin-top: 28px;
+}
+
+/* API index grid */
+.api-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 10px 20px;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+/* Each clickable API item */
+.api-index-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.api-index-item a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.api-index-item a:hover {
+  text-decoration: underline;
+}
+
+/* Circular badges */
+.api-method,
+.api-property {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  min-width: 1.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+}
+
+.api-method {
+  background: linear-gradient(135deg, #d946ef, #8b5cf6);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+.api-property {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+/* Better code contrast */
+code {
+  color: #ffcb6b;
+}
+
+/* Headings spacing */
+h2,
+h3 {
+  margin-top: 28px;
+}
+
+/* Mobile */
+@media (max-width: 996px) {
+  .api-grid {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .api-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Method signature block */
+
+.api-signature {
+  font-size: 1.15rem;
+  font-family: var(--ifm-font-family-monospace);
+  background: var(--ifm-code-background);
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin: 10px 0 18px 0;
+}
+
+/* Parameter list */
+
+.api-params {
+  list-style: none;
+  padding-left: 0;
+}
+
+.api-params li {
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* parameter name */
+
+.param-name {
+  color: #4ea1ff;
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+/* parameter type */
+
+.param-type {
+  font-family: var(--ifm-font-family-monospace);
+  color: #d4d4d4;
+  margin-left: 4px;
+}
+
+/* spacing */
+
+.api-params li p {
+  margin: 4px 0 0 0;
 }
