@@ -2,6 +2,7 @@
 id: basic-machine
 sidebar_label: BasicMachine
 title: BasicMachine Class
+sidebar_position: 0
 ---
 
 # BasicMachine
