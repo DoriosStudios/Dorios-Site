@@ -79,7 +79,7 @@ It smelts ores, metals, blocks, and food using **Dorios Energy (DE)** instead of
 
 ## Accepted Items & Outputs
 
-### Ingots & Dusts
+### UtilityCraft Core Smelting
 
 | Input | Output |
 |--------|---------|
@@ -87,22 +87,21 @@ It smelts ores, metals, blocks, and food using **Dorios Energy (DE)** instead of
 | Raw Copper | Copper Ingot |
 | Raw Gold | Gold Ingot |
 | Raw Steel | Steel Ingot |
+| Raw Energized Iron | Energized Iron Ingot |
 | Iron Dust | Iron Ingot |
 | Copper Dust | Copper Ingot |
 | Gold Dust | Gold Ingot |
 | Netherite Dust | Netherite Ingot |
+| Netherite Scrap Dust | Netherite Scrap |
 | Steel Dust | Steel Ingot |
+| Energized Iron Dust | Energized Iron Ingot |
 
 ---
 
-### Ores & Blocks
+### Ore and Raw Block Processing
 
 | Input | Output |
 |--------|---------|
-| Cobblestone | Stone |
-| Stone | Smooth Stone |
-| Sand | Glass |
-| Ancient Debris | Netherite Scrap |
 | Iron Ore / Deepslate Iron Ore | Iron Ingot |
 | Copper Ore / Deepslate Copper Ore | Copper Ingot |
 | Gold Ore / Deepslate Gold Ore | Gold Ingot |
@@ -112,14 +111,8 @@ It smelts ores, metals, blocks, and food using **Dorios Energy (DE)** instead of
 | Emerald Ore / Deepslate Emerald Ore | Emerald |
 | Lapis Ore / Deepslate Lapis Ore | Lapis Lazuli |
 | Quartz Ore | Quartz |
+| Ancient Debris | Netherite Scrap |
 | Nether Gold Ore | Gold Ingot |
-
----
-
-### Block Variants
-
-| Input | Output |
-|--------|---------|
 | Raw Iron Block | Iron Block |
 | Raw Copper Block | Copper Block |
 | Raw Gold Block | Gold Block |
@@ -128,21 +121,56 @@ It smelts ores, metals, blocks, and food using **Dorios Energy (DE)** instead of
 
 ---
 
-### Food & Miscellaneous
+### Food and Organic Materials
 
 | Input | Output |
 |--------|---------|
-| Potato | Baked Potato |
 | Raw Porkchop | Cooked Porkchop |
+| Raw Beef | Cooked Beef |
 | Raw Chicken | Cooked Chicken |
 | Raw Mutton | Cooked Mutton |
 | Raw Rabbit | Cooked Rabbit |
 | Raw Cod | Cooked Cod |
 | Raw Salmon | Cooked Salmon |
-| Raw Leather | Leather |
+| Potato | Baked Potato |
 | Kelp | Dried Kelp |
+| Raw Leather | Leather |
+
+---
+
+### Stone and Utility Smelting
+
+| Input | Output |
+|--------|---------|
+| Cobblestone | Stone |
+| Stone | Smooth Stone |
+| Sand | Glass |
+| Sandstone | Smooth Sandstone |
+| Red Sandstone | Smooth Red Sandstone |
+| Basalt | Smooth Basalt |
+| Netherrack | Netherbrick |
+| Nether Brick | Cracked Nether Bricks |
+| Polished Blackstone Bricks | Cracked Polished Blackstone Bricks |
+| Deepslate Bricks | Cracked Deepslate Bricks |
+| Deepslate Tiles | Cracked Deepslate Tiles |
+| Cactus | Green Dye |
+| Chorus Fruit | Popped Chorus Fruit |
+| Sea Pickle | Lime Dye |
 | Clay Ball | Brick |
-| Clay Block | Hardened Clay |
+| Clay | Hardened Clay |
+
+---
+
+### Integration Recipes (Examples)
+
+| Input | Output |
+|--------|---------|
+| Rotten Flesh | Coagulated Blood (`strat:coagulated_blood`) |
+| Everlasting Beef | Eternal Steak (`artifacts:eternal_steak`) |
+| Certus Quartz Dust | Silicon (`ae2be:silicon`) |
+| Draconium Dust | Draconium Ingot (`bg:draconium_ingot`) |
+
+> Additional mod integration entries are also present in `BP/scripts/config/recipes/furnace.js`.
 
 ---
 

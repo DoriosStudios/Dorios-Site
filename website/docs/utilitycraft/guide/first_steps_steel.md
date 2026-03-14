@@ -91,4 +91,4 @@ Before proceeding, make sure you’ve collected:
 You now have everything you need to begin crafting machines and stepping into **UtilityCraft’s automation systems**.  
 Next: learn how to build your first **powered machines** in the next section — **Machinery Basics**.
 
-<!-- **[Continue to Machinery Basics →](./machinery-basics)** -->
+<!-- **[Continue to Machinery Basics →](../wiki/machinery/overview)** -->

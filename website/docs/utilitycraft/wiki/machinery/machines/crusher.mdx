@@ -114,83 +114,119 @@ It automatically updates as materials are processed, allowing for fully automate
 
 ## Recipes
 
-### Compressed Blocks
+### Compression and Crushed Chains
 
 | Input | Output | Amount |
 |--------|---------|--------|
+| Cobblestone | Gravel | 1 |
+| Gravel | Dirt | 1 |
+| Dirt | Sand | 1 |
 | Compressed Cobblestone | Compressed Gravel | 1 |
+| Double Compressed Cobblestone | Double Compressed Gravel | 1 |
+| Triple Compressed Cobblestone | Triple Compressed Gravel | 1 |
+| Quadruple Compressed Cobblestone | Quadruple Compressed Gravel | 1 |
 | Compressed Gravel | Compressed Dirt | 1 |
+| Double Compressed Gravel | Double Compressed Dirt | 1 |
+| Triple Compressed Gravel | Triple Compressed Dirt | 1 |
+| Quadruple Compressed Gravel | Quadruple Compressed Dirt | 1 |
 | Compressed Dirt | Compressed Sand | 1 |
+| Double Compressed Dirt | Double Compressed Sand | 1 |
+| Triple Compressed Dirt | Triple Compressed Sand | 1 |
+| Quadruple Compressed Dirt | Quadruple Compressed Sand | 1 |
 
 ---
 
-### Stone & Natural Materials
+### Stone and World Materials
 
 | Input | Output | Amount |
 |--------|---------|--------|
 | Stone | Cobblestone | 1 |
-| Cobblestone | Gravel | 1 |
-| Gravel | Dirt | 1 |
-| Dirt | Sand | 1 |
-| Netherrack | Crushed Netherrack | 1 |
-| End Stone | Crushed Endstone | 1 |
 | Deepslate | Cobbled Deepslate | 1 |
 | Cobbled Deepslate | Crushed Cobbled Deepslate | 1 |
+| Netherrack | Crushed Netherrack | 1 |
+| End Stone | Crushed Endstone | 1 |
+| Compressed Netherrack | Compressed Crushed Netherrack | 1 |
+| Compressed Endstone | Compressed Crushed Endstone | 1 |
+| Compressed Cobbled Deepslate | Compressed Crushed Cobbled Deepslate | 1 |
 
 ---
 
-### Ingots
+### Chunks and Fragment Refining
+
+| Input | Output | Amount |
+|--------|---------|--------|
+| Iron Chunk | Raw Iron | 1 |
+| Copper Chunk | Raw Copper | 1 |
+| Gold Chunk | Raw Gold | 1 |
+| Coal Chunk | Coal | 1 |
+| Diamond Chunk | Diamond | 1 |
+| Emerald Chunk | Emerald | 1 |
+| Lapis Chunk | Lapis Lazuli | 3 |
+| Redstone Chunk | Redstone | 4 |
+| Nether Quartz Chunk | Quartz | 3 |
+| Nether Gold Chunk | Raw Gold | 1 |
+
+---
+
+### Ingot, Plate, and Raw Conversion
 
 | Input | Output | Amount |
 |--------|---------|--------|
 | Iron Ingot | Iron Dust | 1 |
 | Gold Ingot | Gold Dust | 1 |
 | Copper Ingot | Copper Dust | 1 |
-| Netherite Ingot | Netherite Dust | 1 |
 | Steel Ingot | Steel Dust | 1 |
 | Energized Iron Ingot | Energized Iron Dust | 1 |
+| Netherite Ingot | Netherite Dust | 1 |
 | Netherite Scrap | Netherite Scrap Dust | 1 |
-
----
-
-### Plates
-
-| Input | Output | Amount |
-|--------|---------|--------|
 | Iron Plate | Iron Dust | 1 |
 | Gold Plate | Gold Dust | 1 |
 | Copper Plate | Copper Dust | 1 |
-| Netherite Plate | Netherite Dust | 1 |
 | Steel Plate | Steel Dust | 1 |
 | Energized Iron Plate | Energized Iron Dust | 1 |
+| Netherite Plate | Netherite Dust | 1 |
+| Raw Iron | Iron Dust | 2 |
+| Raw Copper | Copper Dust | 2 |
+| Raw Gold | Gold Dust | 2 |
+| Raw Steel | Steel Dust | 2 |
+| Raw Energized Iron | Energized Iron Dust | 2 |
 
 ---
 
-### Ores
+### Blocks and Advanced Yield
 
 | Input | Output | Amount |
 |--------|---------|--------|
-| Raw Iron | Iron Dust | 2 |
-| Raw Gold | Gold Dust | 2 |
-| Raw Copper | Copper Dust | 2 |
-| Brute Steel | Steel Dust | 2 |
-| Brute Energized Iron | Energized Iron Dust | 2 |
+| Iron Block | Iron Dust | 6 |
+| Gold Block | Gold Dust | 6 |
+| Copper Block | Copper Dust | 6 |
+| Coal Block | Coal Dust | 6 |
+| Diamond Block | Diamond Dust | 6 |
+| Emerald Block | Emerald Dust | 6 |
+| Steel Block | Steel Dust | 6 |
+| Energized Iron Block | Energized Iron Dust | 6 |
+| Netherite Block | Netherite Dust | 6 |
+| Raw Iron Block | Iron Dust | 12 |
+| Raw Copper Block | Copper Dust | 12 |
+| Raw Gold Block | Gold Dust | 12 |
+| Raw Steel Block | Steel Dust | 12 |
+| Raw Energized Iron Block | Energized Iron Dust | 12 |
+
+---
+
+### Gems and Utility
+
+| Input | Output | Amount |
+|--------|---------|--------|
 | Coal | Coal Dust | 2 |
 | Charcoal | Charcoal Dust | 2 |
-| Emerald | Emerald Dust | 2 |
 | Diamond | Diamond Dust | 2 |
+| Emerald | Emerald Dust | 2 |
 | Quartz | Quartz Dust | 2 |
 | Amethyst Shard | Amethyst Dust | 2 |
 | Ender Pearl | Ender Pearl Dust | 2 |
 | Obsidian | Obsidian Dust | 4 |
 | Crying Obsidian | Crying Obsidian Dust | 4 |
-
----
-
-### Extra
-
-| Input | Output | Amount |
-|--------|---------|--------|
 | Blue Ice | Packed Ice | 9 |
 | Packed Ice | Ice | 9 |
 | Nether Wart Block | Nether Wart | 4 |
@@ -198,6 +234,11 @@ It automatically updates as materials are processed, allowing for fully automate
 | Slime Block | Slime Ball | 9 |
 | Bone Block | Bone Meal | 9 |
 | Bone | Bone Meal | 3 |
-| Any Wool Color | String | 4 |
+| Blaze Rod | Blaze Powder | 2 |
+| Wool (Any Color) | String | 4 |
+
+---
+
+> Recipe data is synchronized with `BP/scripts/config/recipes/crusher.js`.
 
 

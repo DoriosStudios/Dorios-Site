@@ -53,7 +53,7 @@ The **Infuser** is a machine that combines base materials with an infusing item
 
 <p align="center">
   <img 
-    src="/img/addons/utilitycraft/energy/infuser_recipe.png" 
+    src="/img/addons/utilitycraft/energy/recipe_infuser.png" 
     alt="Infuser Crafting Recipe" 
     width="60%" 
     style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
@@ -62,102 +62,96 @@ The **Infuser** is a machine that combines base materials with an infusing item
 
 ---
 
-## Accepted Recipes
+## Accepted Recipes (from `infuser.js`)
 
-### Redstone
+### Energy Infusion (Redstone)
 
 | Input | Secondary | Output | Required |
 |--------|------------|---------|-----------|
 | Iron Ingot | Redstone | Energized Iron Ingot | 4 |
 | Iron Dust | Redstone | Energized Iron Dust | 4 |
+| Raw Iron | Redstone | Raw Energized Iron | 4 |
 | Steel Plate | Redstone | Chip | 2 |
+| Iron Block | Redstone Block | Energized Iron Block | 4 |
 
 ---
 
-### Gold Dust
+### Chip Progression
 
 | Input | Secondary | Output | Required |
 |--------|------------|---------|-----------|
 | Chip | Gold Dust | Basic Chip | 2 |
-
----
-
-### Energized Iron Dust
-
-| Input | Secondary | Output | Required |
-|--------|------------|---------|-----------|
 | Basic Chip | Energized Iron Dust | Advanced Chip | 2 |
-
----
-
-### Diamond Dust
-
-| Input | Secondary | Output | Required |
-|--------|------------|---------|-----------|
 | Advanced Chip | Diamond Dust | Expert Chip | 2 |
-
----
-
-### Netherite Dust
-
-| Input | Secondary | Output | Required |
-|--------|------------|---------|-----------|
 | Expert Chip | Netherite Dust | Ultimate Chip | 2 |
 
 ---
 
-### Coal-Type Fuel  
-*(Includes Coal, Coal Dust, Charcoal, Charcoal Dust)*
+### Steel Chain (Coal-Type Catalysts)
+
+*Coal-Type includes:* Coal, Charcoal, Coal Dust, Charcoal Dust.
 
 | Input | Secondary | Output | Required |
 |--------|------------|---------|-----------|
 | Iron Ingot | Coal-Type | Steel Ingot | 1 |
 | Iron Dust | Coal-Type | Steel Dust | 1 |
 | Cobblestone | Coal-Type | Blackstone | 1 |
-
----
-
-### Blaze Powder
-
-| Input | Secondary | Output | Required |
-|--------|------------|---------|-----------|
-| Cobblestone | Blaze Powder | Netherrack | 1 |
-| Sand | Blaze Powder | Soul Sand | 1 |
-| Dirt | Blaze Powder | Soul Soil | 1 |
-
----
-
-### Ender Pearl Dust
-
-| Input | Secondary | Output | Required |
-|--------|------------|---------|-----------|
-| Cobblestone | Ender Pearl Dust | End Stone | 1 |
-
----
-
-### Coal Block
-
-| Input | Secondary | Output | Required |
-|--------|------------|---------|-----------|
 | Iron Block | Coal Block | Steel Block | 1 |
 | Compressed Cobblestone | Coal Block | Compressed Blackstone | 1 |
 
 ---
 
-### Redstone Block
+### Thermal & Nether Reactions
 
 | Input | Secondary | Output | Required |
 |--------|------------|---------|-----------|
-| Iron Block | Redstone Block | Energized Iron Block | 4 |
+| Sand | Blaze Powder | Soul Sand | 1 |
+| Dirt | Blaze Powder | Soul Soil | 1 |
+| Cobblestone | Blaze Powder | Netherrack | 1 |
+| Compressed Cobblestone | Bag of Blaze Powder | Compressed Netherrack | 1 |
 
 ---
 
-### Netherite Scrap Dust
+### Stone Variants & Conversion
+
+| Input | Secondary | Output | Required |
+|--------|------------|---------|-----------|
+| Cobblestone | Quartz | Diorite | 1 |
+| Cobblestone | Flint | Andesite | 1 |
+| Cobblestone | Dirt Handful | Granite | 1 |
+| Cobblestone | Ender Pearl Dust | End Stone | 1 |
+| Cobblestone | Bone Meal | Calcite | 4 |
+
+---
+
+### Obsidian Stabilization
+
+| Input | Secondary | Output | Required |
+|--------|------------|---------|-----------|
+| Obsidian Dust | Amethyst Dust | Stabilized Obsidian Dust | 4 |
+| Crying Obsidian Dust | Amethyst Dust | Stabilized Obsidian Dust | 1 |
+
+---
+
+### Netherite Reconstruction
 
 | Input | Secondary | Output | Required |
 |--------|------------|---------|-----------|
 | Gold Ingot | Netherite Scrap Dust | Netherite Ingot | 4 |
 | Gold Dust | Netherite Scrap Dust | Netherite Dust | 4 |
+
+---
+
+### Integrated Storage (AE2)
+
+| Input | Secondary | Output | Required |
+|--------|------------|---------|-----------|
+| Certus Quartz Crystal | Blaze Powder | Charged Certus Quartz Crystal | 1 |
+| Charged Certus Quartz Crystal | Redstone | Fluix Crystal | 4 |
+| Chip | Silicon | Silicon Press | 4 |
+| Basic Chip | Silicon | Logic Processor Press | 4 |
+| Expert Chip | Silicon | Engineering Processor Press | 4 |
+| Charged Certus Quartz Crystal | Silicon | Calculation Processor Press | 4 |
 
 ---
 
