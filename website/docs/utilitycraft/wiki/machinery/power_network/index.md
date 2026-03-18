@@ -8,4 +8,4 @@ sidebar_label: Power Network
 
 This section covers UtilityCraft blocks that route or relay energy across networks.
 
-- [Transmitters & Receivers](./transmitters_receivers)
+- [Transmitters & Receivers](./utilitycraft-transmitters-receivers)

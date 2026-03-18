@@ -8,9 +8,9 @@ sidebar_label: Transport Systems
 
 UtilityCraft transport is split into specialized networks:
 
-- [Item Conduits](./item_conduits)
-- [Fluid Conduits](./fluid_conduits)
-- [Energy Cables](./energy_cables)
-- [Mechanical Hoppers](./mechanical_hoppers)
+- [Item Conduits](./utilitycraft-item-conduits)
+- [Fluid Conduits](./utilitycraft-fluid-conduits)
+- [Energy Cables](./utilitycraft-energy-cables)
+- [Mechanical Hoppers](./utilitycraft-mechanical-hoppers)
 
 Each system has independent behavior, filtering options, and update rules.
