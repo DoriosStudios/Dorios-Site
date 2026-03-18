@@ -18,6 +18,17 @@ Each one works under specific conditions and can be upgraded through multiple ti
 - [**Magmator**](./magmator): Uses liquid fuels like lava to create continuous energy.  
 - [**Thermo Generator**](./thermo_generator): Produces energy from heat sources such as lava, fire, or magma blocks, requiring water for cooling.  
 - [**Solar Panel**](./solar_panel): Converts sunlight into energy passively during the day.
+- [**Wind Turbine**](./wind_turbine): Produces energy from wind conditions and altitude factors.
+
+## Related Power Blocks
+
+- **Batteries**: energy buffering and staged storage between production and consumption.
+- **Transmitters & Receivers**: channel-based routing between distant nodes.
+
+See:
+
+- [Power Network](../power_network)
+- [Transport Systems](../transport)
 
 ---
 

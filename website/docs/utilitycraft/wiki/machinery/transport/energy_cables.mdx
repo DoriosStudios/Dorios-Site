@@ -1,0 +1,33 @@
+---
+id: utilitycraft-energy-cables
+title: Energy Cables
+sidebar_label: Energy Cables
+---
+
+# Energy Cables
+
+`Energy Cable` (`utilitycraft:energy_cable`) is the backbone of wired DE distribution.
+
+## Role in network
+
+- physically connects generators, machines, batteries, and compatible energy nodes
+- participates in energy network scans/rescans
+- supports color-tag network separation (`dorios:color.*`)
+
+## Technical notes
+
+- cable itself has no user UI
+- throughput is governed by source/receiver blocks and transfer logic, not by a fixed cable-tier limit
+- cable geometry updates by neighbor connection states for visual network feedback
+
+## When to use
+
+- medium and long-distance power lines
+- clean machine rows with centralized generation
+- decoupling producers from consumers while keeping deterministic wiring
+
+## Source references
+
+- `BP/blocks/machinery/pipes/energy_cable.json`
+- `BP/scripts/machinery/transfer_system/system.js`
+- `docs/utilitycraft/wiki/machinery/power_network/transmitters_receivers`

@@ -1,0 +1,56 @@
+---
+id: utilitycraft-sieve
+title: Sieve
+sidebar_label: Sieve
+---
+
+# Sieve
+
+The **Sieve** is a manual processing block that converts siftable materials into drops based on:
+
+- inserted mesh tier
+- current block being processed
+- per-drop chance rules
+
+## How it works
+
+1. Insert a valid mesh item.
+2. Insert a valid input block.
+3. Interact to reduce processing stage (`4 → 0`).
+4. On final stage, loot is rolled and spawned.
+
+> Runtime logic source: `BP/scripts/blocks/sieve.js`
+
+## Mesh system
+
+The block supports these mesh states:
+
+- `string_mesh`
+- `flint_mesh`
+- `copper_mesh`
+- `iron_mesh`
+- `golden_mesh`
+- `emerald_mesh`
+- `diamond_mesh`
+- `netherite_mesh`
+
+Each mesh contributes tier/multiplier values through the mesh item component.
+
+## Inputs and drops
+
+Accepted blocks and drop pools are defined by recipe config and can be expanded via ScriptEvent registration.
+
+- Base recipes: `BP/scripts/config/recipes/sieve.js`
+- Runtime registration event: `utilitycraft:register_sieve_drop`
+
+## Practical notes
+
+- Sneak + empty hand removes mesh (only when idle/empty).
+- Invalid external mesh items are blocked in manual sieve flow.
+- The interaction script can process nearby sieves in a radius, enabling compact manual arrays.
+
+## Source references
+
+- `BP/blocks/addons_included/basics/sieve.json`
+- `BP/scripts/blocks/sieve.js`
+- `BP/scripts/config/recipes/sieve.js`

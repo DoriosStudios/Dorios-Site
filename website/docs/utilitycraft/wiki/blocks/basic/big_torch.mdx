@@ -1,0 +1,33 @@
+---
+id: utilitycraft-big-torch
+title: Big Torch
+sidebar_label: Big Torch
+---
+
+# Big Torch
+
+The **Big Torch** is a utility light block with extended lighting support via scripted refresh.
+
+## What makes it special
+
+Besides normal block light emission, UtilityCraft also tracks placed Big Torches and periodically reapplies light projection functions.
+
+This helps recover lighting in environments where dynamic updates might remove helper light blocks.
+
+## Runtime light behavior
+
+- tracked on place
+- cleaned on break
+- periodically refreshed (interval-based)
+
+> Source: `BP/scripts/blocks/light_blocks.js`
+
+## Notes
+
+- Refresh behavior is script-controlled, not just static block emission.
+- Use this block in large dark builds where stable illumination matters.
+
+## Source references
+
+- `BP/blocks/utility_blocks/big_torch.json`
+- `BP/scripts/blocks/light_blocks.js`

@@ -1,0 +1,53 @@
+---
+id: utilitycraft-fluid-conduits
+title: Fluid Conduits
+sidebar_label: Fluid Conduits
+---
+
+# Fluid Conduits
+
+Fluid transport is built around:
+
+- **Fluid Pipe** (`utilitycraft:fluid_pipe`)
+- **Fluid Extractor** (`utilitycraft:fluid_extractor`)
+
+## Source types supported by extractor
+
+Runtime extraction supports:
+
+- fluid container entities (machines/tanks)
+- vanilla source fluids (water/lava full blocks)
+- `utilitycraft:crucible` lava
+- `utilitycraft:sink` infinite water
+
+> Source: `fluid_extractor` in `BP/scripts/machinery/transfer_system/system.js`
+
+## Extractor modes and filters
+
+- transfer modes: `nearest`, `farthest`, `round`
+- optional fluid-type filter (when filter upgrade is enabled)
+- speed state tick interval:
+  - 0: 10t
+  - 1: 8t
+  - 2: 6t
+  - 3: 4t
+  - 4: 2t
+
+## Throughput behavior
+
+- per execution cycle transfer budget starts at `4000` mB in runtime
+- actual moved amount depends on destination free space and compatibility
+
+### Crucible-specific rule
+
+Crucible extraction is quantized in **250 mB steps** and drains proportionally by transferred amount.
+
+## Color and network behavior
+
+Fluid networks also support color-tag segmentation (`dorios:color.*`) through scanning and connection logic.
+
+## Source references
+
+- `BP/blocks/machinery/pipes/fluid/fluid_pipe.json`
+- `BP/blocks/machinery/pipes/fluid/fluid_extractor.json`
+- `BP/scripts/machinery/transfer_system/system.js`

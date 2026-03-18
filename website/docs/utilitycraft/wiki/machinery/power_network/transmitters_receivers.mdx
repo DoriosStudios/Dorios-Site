@@ -1,0 +1,84 @@
+---
+id: utilitycraft-transmitters-receivers
+title: Transmitters & Receivers
+sidebar_label: Transmitters & Receivers
+---
+
+# Transmitters & Receivers
+
+Energy Transmitters and Receivers provide channel-based energy routing between distant network points.
+
+## Components
+
+- `basic_energy_transmitter`
+- `advanced_energy_transmitter`
+- `expert_energy_transmitter`
+- `ultimate_energy_transmitter`
+
+- `basic_energy_receiver`
+- `advanced_energy_receiver`
+- `expert_energy_receiver`
+- `ultimate_energy_receiver`
+
+## Tier values
+
+### Transmitters
+
+| Tier | Energy Cap | Base Rate | Max Range |
+|---|---:|---:|---:|
+| Basic | 64,000 DE | 1,000 DE/t | 32 |
+| Advanced | 256,000 DE | 4,000 DE/t | 64 |
+| Expert | 1,024,000 DE | 16,000 DE/t | 128 |
+| Ultimate | 6,400,000 DE | 100,000 DE/t | 512 |
+
+### Receivers
+
+| Tier | Energy Cap | Base Rate |
+|---|---:|---:|
+| Basic | 64,000 DE | 1,000 DE/t |
+| Advanced | 256,000 DE | 4,000 DE/t |
+| Expert | 1,024,000 DE | 16,000 DE/t |
+| Ultimate | 6,400,000 DE | 100,000 DE/t |
+
+## Channel system
+
+Wireless linkage is done by shared entity tag:
+
+`bn:<primary>|<secondary>|<tertiary>`
+
+Example:
+
+`bn:white|white|white`
+
+A transmitter will only send to receivers that match its network tag.
+
+## Configuration flow
+
+Using wrench:
+
+- **Normal click on receiver** opens node menu (receiver/transmitter mode + transfer mode).
+- **Sneak click on receiver/transmitter** opens basic network color menu.
+- Network channel selection writes the `bn:` tag.
+
+> Runtime source: `openEnergyNodeMenu` and `openBasicNetworkMenu` in `BP/scripts/machinery/wrench.js`
+
+## Runtime behavior
+
+### Transmitter
+
+- finds matching receivers in range and same `bn:` tag
+- sends up to its per-tick rate budget
+- shows transferring amount in label UI
+
+### Receiver
+
+- receives from transmitters (same channel)
+- outputs energy to adjacent energy network using transfer logic
+
+## Source references
+
+- `BP/blocks/machinery/generators/transmitter/*.json`
+- `BP/blocks/machinery/generators/receiver/*.json`
+- `BP/scripts/machinery/generators/transmitter.js`
+- `BP/scripts/machinery/generators/receiver.js`
+- `BP/scripts/machinery/wrench.js`

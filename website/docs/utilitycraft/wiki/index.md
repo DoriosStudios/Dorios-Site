@@ -30,7 +30,10 @@ The goal is to make sure you can **play, build, and debug confidently**, without
 ## How It’s Organized
 
 - **Guide** – The recommended route for learning and progression.  
-- **Core Systems** – Energy, generators, machines, item transport, and fluids.  
+- **Blocks** – Core utility blocks outside powered-machine flows.  
+- **Core Systems** – Energy, generators, machines, transport, and fluids.  
+- **Transport Systems** – Item conduits, fluid conduits, energy cables, and hoppers.  
+- **Power Network** – Channel-based routing with transmitters and receivers.  
 - **Add-ons** – Dedicated pages for each module with its own guide and technical breakdowns.  
 - **Recipes & Components** – Intermediate items, crafting chains, and progression shortcuts.  
 - **Third-Party Compatibility** – How to extend or integrate UtilityCraft with other add-ons.  

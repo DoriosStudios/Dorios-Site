@@ -1,0 +1,69 @@
+---
+id: utilitycraft-mechanical-hoppers
+title: Mechanical Hoppers
+sidebar_label: Mechanical Hoppers
+---
+
+# Mechanical Hoppers
+
+UtilityCraft has four hopper-style transport blocks:
+
+- `utilitycraft:mechanic_hopper`
+- `utilitycraft:mechanic_upper`
+- `utilitycraft:mechanic_dropper`
+- `utilitycraft:ender_hopper`
+
+## Shared capabilities
+
+- optional filter mode (whitelist/blacklist behavior)
+- speed upgrades via block state
+- interaction with inventories and dropped items
+
+## Tick intervals by speed state
+
+### Mechanic Hopper / Upper / Dropper
+
+- 0: 5t
+- 1: 4t
+- 2: 3t
+- 3: 2t
+- 4: 1t
+
+### Ender Hopper
+
+- 0: 10t
+- 1: 8t
+- 2: 6t
+- 3: 4t
+- 4: 2t
+
+## Behavioral summary
+
+### Mechanic Hopper
+
+- pulls from above
+- pushes to facing side/down logic
+- can pull from nearby hopper/chest minecarts when enabled
+
+### Mechanic Upper
+
+- pulls from below
+- pushes upward/side depending on face
+- can pull from nearby minecarts similarly to hopper logic
+
+### Mechanic Dropper
+
+- outputs by dropping items to world space (direction-dependent vertical spawn)
+
+### Ender Hopper
+
+- vacuum-style item pickup in radius
+- runtime menu allows enabling/disabling and radius selection (`range_selected`)
+
+## Source references
+
+- `BP/blocks/machinery/mechanical_hoppers/mechanic_hopper.json`
+- `BP/blocks/machinery/mechanical_hoppers/mechanic_upper.json`
+- `BP/blocks/machinery/mechanical_hoppers/mechanical_dropper.json`
+- `BP/blocks/machinery/mechanical_hoppers/ender_hopper.json`
+- `BP/scripts/machinery/hoppers/mech_hoppers.js`

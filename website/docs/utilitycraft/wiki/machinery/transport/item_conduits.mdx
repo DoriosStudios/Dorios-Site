@@ -1,0 +1,64 @@
+---
+id: utilitycraft-item-conduits
+title: Item Conduits
+sidebar_label: Item Conduits
+---
+
+# Item Conduits
+
+The item transport layer is built from three blocks:
+
+- **Item Conduit** (`utilitycraft:item_conduit`) — pipe path
+- **Item Exporter** (`utilitycraft:item_exporter`) — extracts from source and pushes to network
+- **Item Importer** (`utilitycraft:item_importer`) — filtered network entry to a target container
+
+## Network model
+
+Item networks are discovered and cached by BFS logic in the transfer system.
+
+- supports colored subnetworks (`dorios:color.*`)
+- exporter target cache is rebuilt when network updates are flagged
+
+> Source: `startRescanItem` in `BP/scripts/machinery/transfer_system/system.js`
+
+## Exporter behavior
+
+`Item Exporter` key points:
+
+- source is the block in its facing direction (`minecraft:block_face`)
+- transfer mode options:
+  - `nearest`
+  - `farthest`
+  - `round`
+- filter upgrade enables whitelist/blacklist item tags
+- speed state changes tick interval:
+  - 0: 10t
+  - 1: 8t
+  - 2: 6t
+  - 3: 4t
+  - 4: 2t
+- per cycle transfer cap in runtime loop: up to `64` moved items
+
+## Importer behavior
+
+`Item Importer` key points:
+
+- has no pipe entity of its own; uses world dynamic config (`imp:x,y,z`)
+- supports normal filter mode (`whitelist`/`blacklist`)
+- supports smart filter mode (slot mapping)
+- resolves real target container in front of importer face
+
+## Practical setup pattern
+
+1. Place source chest/machine.
+2. Face `Item Exporter` into source.
+3. Connect with `Item Conduit`.
+4. Place `Item Importer` facing destination container.
+5. Configure filter/mode only where needed.
+
+## Source references
+
+- `BP/blocks/machinery/pipes/item/item_conduit.json`
+- `BP/blocks/machinery/pipes/item/item_exporter.json`
+- `BP/blocks/machinery/pipes/item/item_importer.json`
+- `BP/scripts/machinery/transfer_system/system.js`
