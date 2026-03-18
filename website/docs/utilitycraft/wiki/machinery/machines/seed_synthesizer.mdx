@@ -4,127 +4,66 @@ title: Seed Synthesizer
 sidebar_label: Seed Synthesizer
 ---
 
-<p align="center">
-  <img 
-    src="/img/addons/utilitycraft/energy/seed_synthesizer_render.png" 
-    alt="Seed Synthesizer Render" 
-    width="70%" 
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-  />
-</p>
+The **Seed Synthesizer** automates crop and sapling growth loot by consuming Dorios Energy.
 
-The **Seed Synthesizer** is a UtilityCraft machine that simulates crop and tree growth from **Bountiful Bonsais** and **Bountiful Crops**,  
-allowing automated farming without the need for space or manual harvesting.
+It uses the plant registry from `BP/scripts/config/recipes/plants.js`, so drops and base costs follow the same data used by the addon runtime.
 
 ---
 
-### Machine Information
+## Machine Information
 
 | Setting | Value |
-|----------|--------|
-| **Energy Cap** | 128,000 DE |
-| **Energy Cost** | Varies by crop type and soil |
+|---|---|
+| Energy Cap | 2,048,000 DE |
+| Base Rate | 160 |
+| Upgrade Slots | 2 (slots 4 and 5) |
+| Seed Input | Slot 3 |
+| Soil Input | Slot 6 |
+| Output Range | Slots 7–15 |
 
-💡 **Tip:** The Seed Synthesizer uses the same loot tables as Bountiful Bonsais and Bountiful Crops,  
-allowing seamless integration between both systems.
-
----
-
-<p align="center">
-  <img 
-    src="/img/addons/utilitycraft/energy/seed_synthesizer_ui.png" 
-    alt="Seed Synthesizer Interface" 
-    width="70%" 
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-  />
-</p>
+> Source: `BP/blocks/machinery/machines/seed_synthetizer.json`
 
 ---
 
-### Usage Examples
+## Energy Cost Rules
 
-| Seed | Soil | Result |
-|--------|------|---------|
-| Oak Sapling | Grass Block | Grows tree loot |
-| Wheat Seeds | Red Soil | Produces wheat faster with less DE |
+Final cycle cost is:
 
----
+`Final Cost = Plant Base Cost × Soil Cost Multiplier`
 
-### Crafting Recipe
+### Common Base Cost Tiers
 
-<p align="center">
-  <img 
-    src="/img/addons/utilitycraft/energy/seed_synthesizer_recipe.png" 
-    alt="Seed Synthesizer Crafting Recipe" 
-    width="60%" 
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-  />
-</p>
+| Tier | Base Cost |
+|---|---|
+| Vanilla crops / trees / common plants | 8,000 DE |
+| BC Tier 1 crops | 64,000 DE |
+| BC Tier 2 crops | 128,000 DE |
+| BC Tier 3 crops | 512,000 DE |
+| BC Tier 4 crops | 1,024,000 DE |
 
 ---
 
-## Growth Costs by Crop Type
+## Soil Multipliers (Current Script Values)
 
-| Crop Type | Energy Cost per Cycle |
-|------------|------------------------|
-| Trees, Vanilla Crops, Bamboo, Cactus, Kelp, Sugar Cane, Mushrooms | 8,000 DE |
-| Bountiful Crops Tier 1 | 64,000 DE |
-| Bountiful Crops Tier 2 | 128,000 DE |
-| Bountiful Crops Tier 3 | 512,000 DE |
-| Bountiful Crops Tier 4 | 1,024,000 DE |
+| Soil | Cost Multiplier | Speed Multiplier |
+|---|---:|---:|
+| Dirt | 2.0x | 1.0x |
+| Grass Block | 1.5x | 1.0x |
+| Yellow Soil | 1.0x | 1.0x |
+| Red Soil | 0.75x | 2.0x |
+| Blue Soil | 0.5x | 3.0x |
+| Black Soil | 0.25x | 4.0x |
 
-📌 Higher-tier crops require significantly more energy to simulate growth.
-
----
-
-## Speed Upgrade Scaling
-
-| Speed Level | Speed Multiplier |
-|--------------|------------------|
-| 0 (No Upgrades) | x1 |
-| 1 | x2 |
-| 2 | x4 |
-| 3 | x8 |
-| 4 | x16 |
-
-**Formula:**  
-`Rate Speed = Base Rate * Soil Speed Multiplier * 2^(Speed Level)`
+> Source: `BP/scripts/machinery/machines/seed_synthesizer.js`
 
 ---
 
-## Soil Effects on Growth & Energy Cost
+## How to Use
 
-| Soil Type | Energy Cost Multiplier | Speed Multiplier |
-|------------|------------------------|------------------|
-| Dirt | 2x | 0.5x |
-| Grass Block | 1.5x | 1x |
-| Yellow Soil | 1x | 1x |
-| Red Soil | 0.75x | 2x |
-| Blue Soil | 0.5x | 4x |
-| Black Soil | 0.25x | 10x |
+1. Insert a valid seed or sapling in slot 3.
+2. Insert a valid soil block in slot 6.
+3. Keep enough Dorios Energy in the machine.
+4. (Optional) Add upgrades to improve throughput.
+5. Collect outputs from slots 7–15.
 
-📌 Better soils reduce energy cost and significantly boost growth speed.
-
----
-
-## Script-Based Crop Tier Examples
-
-| Tier Group | Example Seeds |
-|------------|----------------|
-| **8,000 DE** | Oak Sapling, Wheat Seeds, Cactus, Kelp, Sugar Cane |
-| **64,000 DE** | Coal Seeds, Iron Seeds, Glass Seeds, Water Seeds |
-| **128,000 DE** | Gold Seeds, Lapis Seeds, Lava Seeds, Redstone Seeds |
-| **512,000 DE** | Diamond Seeds, Emerald Seeds, Obsidian Seeds, Blaze Seeds |
-| **1,024,000 DE** | Netherite Seeds, Nether Star Seeds, Totem Seeds, Wither Seeds |
-
-> Crop cost values are synchronized with `BP/scripts/config/recipes/plants.js`.
-
----
-
-### How to Use
-
-1. Place the **Seed Synthesizer** in your world.  
-2. Insert a **seed or sapling** in the upper slot.  
-3. Insert the **soil** in the lower slot.  
-4. Ensure enough stored energy for the crop type.  
-5. *(Optional)* Add **Speed Upgrades** to increase growth rate.
+If the machine is not running, check the in-game warnings (`No Seed`, `No Soil`, `Invalid Soil`, `Invalid Seed`, `Output Full`, `No Energy`).

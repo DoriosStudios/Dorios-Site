@@ -11,5 +11,6 @@ These blocks are core to early and mid progression, but are not classified as po
 - [Sieve](./sieve)
 - [Crucible](./crucible)
 - [Sink](./sink)
+- [Basic Trash Can](./basic_trash_can)
 - [Big Torch](./big_torch)
 - [Lantern](./lantern)

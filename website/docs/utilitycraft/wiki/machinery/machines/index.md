@@ -21,6 +21,9 @@ Automatically crafts complex items from stored components.
 ### [Auto Sieve](./autosieve)
 Automatically processes sievable materials to extract valuable drops.
 
+### [Auto Fisher](./autofisher)
+Automatically fishes loot when supplied with a valid Fishing Net and nearby water.
+
 ### [Block Breaker](./block_breaker)
 Automatically breaks the block in front of it, ideal for automation systems.
 

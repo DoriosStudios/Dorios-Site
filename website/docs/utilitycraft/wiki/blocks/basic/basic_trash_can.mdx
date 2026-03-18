@@ -1,0 +1,37 @@
+---
+id: basic-trash-can
+title: Basic Trash Can
+sidebar_label: Basic Trash Can
+---
+
+The **Basic Trash Can** permanently deletes items placed inside it.
+
+This block is useful for handling overflow from farms and automation lines.
+
+---
+
+## Block Information
+
+| Setting | Value |
+|---|---|
+| Inventory Size | 27 slots |
+| Energy Use | None |
+| Tick Interval | Every 10 ticks |
+
+> Source: `BP/blocks/basic_trash_can.json` and `BP/scripts/machinery/machines/trash_can.js`
+
+---
+
+## Behavior
+
+- Any item inserted into the block inventory is removed automatically.
+- The internal inventory is cleared continuously, so it should be treated as a void destination.
+- Breaking the block does not return deleted contents.
+
+---
+
+## Typical Uses
+
+- Remove junk drops from mob farms
+- Filter unwanted byproducts from machine lines
+- Keep storage systems from filling with low-value items

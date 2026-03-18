@@ -1,0 +1,50 @@
+---
+id: autofisher
+title: Auto Fisher
+sidebar_label: Auto Fisher
+---
+
+The **Auto Fisher** generates fishing loot automatically using Dorios Energy.
+
+It requires:
+- A valid **Fishing Net** in the Net slot
+- Nearby **water** (or a Sink) around the machine
+
+---
+
+## Machine Information
+
+| Setting | Value |
+|---|---|
+| Energy Cap | 512,000 DE |
+| Energy Cost | 6,400 DE per completed process |
+| Base Rate | 40 |
+| Upgrade Slots | 2 (slots 4 and 5) |
+| Net Slot | Slot 6 |
+| Output Range | Slots 7–15 |
+
+> Source: `BP/blocks/machinery/machines/autofisher.json`
+
+---
+
+## How It Works
+
+1. Place a Fishing Net in slot 6.
+2. Ensure there is water close to the machine.
+3. Keep enough energy available.
+4. The machine rolls loot from the internal Auto Fisher loot table.
+
+The selected net controls important stats like:
+- Speed
+- Loot chance multiplier
+- Amount multiplier
+- Rolls per cycle
+- Tier and luck (for higher-tier and better enchanted drops)
+
+---
+
+## Notes
+
+- If the machine cannot run, it shows warnings such as `No Net Item`, `Need Water!`, `No Energy`, or `Output Full`.
+- Loot comes from `BP/scripts/config/recipes/fisher.js`.
+- Some drops require higher net tiers.
