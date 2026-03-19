@@ -4,47 +4,94 @@ title: Auto Fisher
 sidebar_label: Auto Fisher
 ---
 
-The **Auto Fisher** generates fishing loot automatically using Dorios Energy.
+<p align="center">
+  <img 
+    src="/img/addons/utilitycraft/energy/autofisher_render.png" 
+    alt="Auto Fisher Render" 
+    width="70%" 
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+  />
+</p>
 
-It requires:
-- A valid **Fishing Net** in the Net slot
-- Nearby **water** (or a Sink) around the machine
+The **Auto Fisher** is a UtilityCraft machine that automatically generates fishing loot using **Dorios Energy (DE)**.
+It is ideal for passive resource farms and can be improved with better Fishing Nets.
 
 ---
 
-## Machine Information
+### Machine Information
 
 | Setting | Value |
-|---|---|
-| Energy Cap | 512,000 DE |
-| Energy Cost | 6,400 DE per completed process |
-| Base Rate | 40 |
-| Upgrade Slots | 2 (slots 4 and 5) |
-| Net Slot | Slot 6 |
-| Output Range | Slots 7–15 |
+|----------|--------|
+| **Energy Cap** | 512,000 DE |
+| **Energy Cost per Operation** | 6,400 DE |
+| **Base Processing Rate** | 40 DE/t |
+| **Accepts Speed Upgrades** | Yes |
+| **Overclockable** | No |
 
-> Source: `BP/blocks/machinery/machines/autofisher.json`
+💡 **Tip:** Better net tiers improve loot quality and can increase the number of items per cycle.
+
+---
+
+## Auto Fisher UI
+
+<p align="center">
+	<img 
+		src="/img/addons/utilitycraft/energy/ui_autofisher.png" 
+		alt="Auto Fisher Interface" 
+		width="70%" 
+		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+	/>
+</p>
+
+---
+
+## Requirements to Operate
+
+To run correctly, the Auto Fisher needs:
+
+- A valid **Fishing Net** in the net slot
+- Nearby **water** (or a **Sink**) around the machine
+- Enough stored **Dorios Energy**
+- Free space in output slots
 
 ---
 
 ## How It Works
 
-1. Place a Fishing Net in slot 6.
-2. Ensure there is water close to the machine.
-3. Keep enough energy available.
-4. The machine rolls loot from the internal Auto Fisher loot table.
-
-The selected net controls important stats like:
-- Speed
-- Loot chance multiplier
-- Amount multiplier
-- Rolls per cycle
-- Tier and luck (for higher-tier and better enchanted drops)
+1. Insert a **Fishing Net** in Slot 6.
+2. Place water near the machine (or use a Sink setup).
+3. Keep the machine powered.
+4. The Auto Fisher performs cycles and sends generated loot to output slots.
 
 ---
 
-## Notes
+## Net Effects
 
-- If the machine cannot run, it shows warnings such as `No Net Item`, `Need Water!`, `No Energy`, or `Output Full`.
-- Loot comes from `BP/scripts/config/recipes/fisher.js`.
-- Some drops require higher net tiers.
+The equipped Fishing Net controls important machine behavior:
+
+- Processing speed
+- Loot chance multiplier
+- Item amount multiplier
+- Rolls per cycle
+- Tier and luck for higher-quality drops
+
+---
+
+## Common Warnings
+
+If the machine stops, check these messages:
+
+- No Net Item
+- Need Water!
+- No Energy
+- Output Full
+
+---
+
+### How to Use
+
+1. Place the **Auto Fisher** in your world.
+2. Add a valid **Fishing Net**.
+3. Ensure nearby water (or Sink support).
+4. Supply enough energy (**6,400 DE per operation**).
+5. Collect loot from output slots.
