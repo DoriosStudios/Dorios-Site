@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+  <rect width="1400" height="760" fill="#0b1220" rx="24"/>
+  <text x="60" y="80" fill="#e2e8f0" font-size="44" font-family="Segoe UI, Arial" font-weight="700">Item Transport Recipes</text>
+
+  <g transform="translate(70,140)">
+    <text x="85" y="-18" fill="#cbd5e1" font-size="24" font-family="Segoe UI, Arial">Item Conduit (x8)</text>
+    <rect x="0" y="0" width="270" height="270" fill="#111827" stroke="#334155"/>
+    <g stroke="#475569" fill="#1f2937"><rect x="0" y="0" width="90" height="90"/><rect x="90" y="0" width="90" height="90"/><rect x="180" y="0" width="90" height="90"/><rect x="0" y="90" width="90" height="90"/><rect x="90" y="90" width="90" height="90"/><rect x="180" y="90" width="90" height="90"/><rect x="0" y="180" width="90" height="90"/><rect x="90" y="180" width="90" height="90"/><rect x="180" y="180" width="90" height="90"/></g>
+    <g fill="#e5e7eb" font-size="34" font-family="Consolas, monospace" text-anchor="middle" dominant-baseline="middle">
+      <text x="45" y="45">S</text><text x="135" y="45">S</text><text x="225" y="45">S</text>
+      <text x="45" y="135">G</text><text x="135" y="135">C</text><text x="225" y="135">G</text>
+      <text x="45" y="225">S</text><text x="135" y="225">S</text><text x="225" y="225">S</text>
+    </g>
+  </g>
+
+  <g transform="translate(470,140)">
+    <text x="55" y="-18" fill="#cbd5e1" font-size="24" font-family="Segoe UI, Arial">Item Exporter</text>
+    <rect x="0" y="0" width="270" height="270" fill="#111827" stroke="#334155"/>
+    <g stroke="#475569" fill="#1f2937"><rect x="0" y="0" width="90" height="90"/><rect x="90" y="0" width="90" height="90"/><rect x="180" y="0" width="90" height="90"/><rect x="0" y="90" width="90" height="90"/><rect x="90" y="90" width="90" height="90"/><rect x="180" y="90" width="90" height="90"/><rect x="0" y="180" width="90" height="90"/><rect x="90" y="180" width="90" height="90"/><rect x="180" y="180" width="90" height="90"/></g>
+    <g fill="#e5e7eb" font-size="34" font-family="Consolas, monospace" text-anchor="middle" dominant-baseline="middle">
+      <text x="135" y="45">S</text>
+      <text x="45" y="135">S</text><text x="135" y="135">H</text><text x="225" y="135">S</text>
+      <text x="135" y="225">S</text>
+    </g>
+  </g>
+
+  <g transform="translate(870,140)">
+    <text x="58" y="-18" fill="#cbd5e1" font-size="24" font-family="Segoe UI, Arial">Item Importer</text>
+    <rect x="0" y="0" width="270" height="270" fill="#111827" stroke="#334155"/>
+    <g stroke="#475569" fill="#1f2937"><rect x="0" y="0" width="90" height="90"/><rect x="90" y="0" width="90" height="90"/><rect x="180" y="0" width="90" height="90"/><rect x="0" y="90" width="90" height="90"/><rect x="90" y="90" width="90" height="90"/><rect x="180" y="90" width="90" height="90"/><rect x="0" y="180" width="90" height="90"/><rect x="90" y="180" width="90" height="90"/><rect x="180" y="180" width="90" height="90"/></g>
+    <g fill="#e5e7eb" font-size="34" font-family="Consolas, monospace" text-anchor="middle" dominant-baseline="middle">
+      <text x="135" y="45">S</text>
+      <text x="45" y="135">S</text><text x="135" y="135">S</text><text x="225" y="135">S</text>
+      <text x="135" y="225">H</text>
+    </g>
+  </g>
+
+  <g transform="translate(70,520)" font-family="Segoe UI, Arial" fill="#cbd5e1" font-size="26">
+    <text x="0" y="0">Legend: S = item_conduit, H = hopper, G = glass, C = chest, steel nuggets used in base conduit.</text>
+  </g>
+</svg>
