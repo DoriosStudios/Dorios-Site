@@ -42,6 +42,9 @@ Converts solids into advanced fluids with optional byproducts.
 ### [Network Center](./network_center)
 Energy network scanner and real-time diagnostics hub.
 
+### [Overclock Network](./overclock_network)
+Relay + Tower overclock infrastructure for factory-wide machine boosting.
+
 ### [Residue Processor](./residue_processor)
 Reclaims useful materials from residue-type inputs.
 

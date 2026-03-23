@@ -1,0 +1,179 @@
+---
+id: overclock_network
+title: Overclock Network
+sidebar_label: Overclock Network
+---
+
+# Overclock Network
+
+The **Overclock Network** is a dual-machine system where the **Overclock Relay** and **Overclock Tower** depend on each other to operate at full capacity.
+
+---
+
+## Overclock Relay
+
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+  <img 
+    src="/img/addons/ascendant/renders/overclock_relay_render.png" 
+    alt="Overclock Relay Render"
+    width="25%" 
+    style={{ marginRight: "1rem" }}
+  />
+  <div>
+    <p>
+      The <b>Overclock Relay</b> is the distribution node of the network. It receives overclock charge from the Tower and applies boosts to connected machines.
+    </p>
+    <p>
+      It also redistributes energy to nearby machine clusters, making it essential for stable large-factory operation.
+    </p>
+  </div>
+</div>
+
+### Relay Information
+
+| Setting | Value |
+|----------|--------|
+| Energy Capacity | 6,400,000 DE |
+| Energy Cost | 0 DE (distribution-only) |
+| Relay Energy Distribution | 20,000 DE/t |
+| Network Scan Range | 96 nodes |
+| Inventory Size | 5 slots |
+| Upgrade Slots | None |
+
+---
+
+## Overclock Tower
+
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+  <img 
+    src="/img/addons/ascendant/renders/overclock_tower_render.png" 
+    alt="Overclock Tower Render"
+    width="25%" 
+    style={{ marginRight: "1rem" }}
+  />
+  <div>
+    <p>
+      The <b>Overclock Tower</b> is the overclock source. It consumes energy plus fuel materials to generate level and effectiveness for the whole network.
+    </p>
+    <p>
+      Without a Tower, the Relay cannot provide boosts. Without a Relay, the Tower cannot distribute overclock efficiently across machine clusters.
+    </p>
+  </div>
+</div>
+
+### Tower Information
+
+| Setting | Value |
+|----------|--------|
+| Energy Capacity | 102,400,000 DE |
+| Base Energy Cost | 32,000 DE/t |
+| Scaled Energy Cost | 32,000 × max(1, total power ÷ 2) |
+| Fuel Slots | 9 (slots 2–10) |
+| Relay Energy Share | 20,000 DE/t per relay |
+| Inventory Size | 15 slots |
+| Upgrade Slots | None |
+
+---
+
+## UIs (Relay + Tower)
+
+<div style={{ 
+  display: "flex", 
+  justifyContent: "center", 
+  alignItems: "stretch", 
+  gap: "1rem",
+  flexWrap: "nowrap"
+}}>
+
+  <img 
+    src="/img/addons/ascendant/ui/overclock_tower_ui.png" 
+    alt="Overclock Tower UI" 
+    width="48%" 
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+  />
+
+  <div 
+    style={{
+      width: "48%",
+      borderRadius: "12px",
+      border: "2px dashed #808080",
+      background: "rgba(120,120,120,0.2)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "1rem",
+      textAlign: "center",
+      minHeight: "280px"
+    }}
+  >
+    <div>
+      <b>Overclock Relay UI</b>
+      <br />
+      <span>Placeholder (image not available yet)</span>
+    </div>
+  </div>
+
+</div>
+
+---
+
+## Crafting Recipes (Side by Side)
+
+<div style={{ display: "flex", gap: "1rem", alignItems: "stretch", flexWrap: "nowrap" }}>
+  <div style={{ width: "50%", border: "1px solid #555", borderRadius: "10px", padding: "0.8rem" }}>
+    <h4 style={{ marginTop: 0 }}>Overclock Relay</h4>
+    <pre>{`Pattern:
+C S C
+C A C
+  M
+
+Key:
+C = Titanium Plate
+S = Reinforced Cable
+A = Ultimate Chip
+M = Machine Case`}</pre>
+  </div>
+
+  <div style={{ width: "50%", border: "1px solid #555", borderRadius: "10px", padding: "0.8rem" }}>
+    <h4 style={{ marginTop: 0 }}>Overclock Tower</h4>
+    <pre>{`Pattern:
+A S A
+R M R
+T U T
+
+Key:
+A = Aetherium
+S = Reinforced Cable
+R = Redstone Block
+M = Machine Case
+T = Titanium Block
+U = Ultimate Chip`}</pre>
+  </div>
+</div>
+
+---
+
+## Overclock Fuel Materials
+
+| Material | Burn Duration (ticks) | Power Level | Effectiveness | Speed Bonus per Fuel | Efficiency Penalty |
+|----------|------------------------|-------------|---------------|----------------------|--------------------|
+| Titanium | 500 | 1.0 | 1.25× | +0.438 | -23.8% |
+| Copper Ingot | 400 | 0.5 | 2.0× | +0.350 | -20.0% |
+| Energized Iron Ingot | 50 | 3.0 | 1.5× | +1.575 | -52.9% |
+
+---
+
+## How Relay + Tower Work Together
+
+1. The **Tower** burns fuel and generates overclock level/effectiveness.
+2. The **Relay** scans the network and receives the strongest valid overclock source.
+3. The Relay applies boost to eligible machines and distributes up to **20,000 DE/t**.
+4. Machines keep the boost while relay refresh remains active.
+
+---
+
+## Notes
+
+- Generators are excluded from overclock boost.
+- Network coverage is limited by scan radius and cable connectivity.
+- For long sessions, Titanium provides the most stable burn duration.
