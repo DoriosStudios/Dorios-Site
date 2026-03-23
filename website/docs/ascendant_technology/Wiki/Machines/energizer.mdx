@@ -1,0 +1,89 @@
+---
+id: energizer
+title: Energizer
+sidebar_label: Energizer
+---
+
+# Energizer
+
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+  <img 
+    src="/img/addons/ascendant/renders/energizer_render.png" 
+    alt="Energizer Render"
+    width="25%" 
+    style={{ marginRight: "1rem" }}
+  />
+  <div>
+    <p>
+      The <b>Energizer</b> converts common items into energized variants using only <b>Dorios Energy</b>, with no catalyst requirement.
+    </p>
+    <p>
+      It consumes between <b>72,000 and 2,400,000 DE</b> per craft depending on the recipe.
+    </p>
+  </div>
+</div>
+
+---
+
+## Machine Information
+
+| Setting | Value |
+|----------|--------|
+| Energy Capacity | 256,000,000 DE (256 MDE) |
+| Energy Consumption | 72,000–2,400,000 DE per craft |
+| Base Processing Rate | 24,000 DE/t |
+| Input Slots | 2 (Primary + Auxiliary) |
+| Upgrade Slots | 3 |
+| Overclockable | Yes |
+---
+
+## Machine UI
+
+<p align="center">
+  <img 
+    src="/img/addons/ascendant/ui/energizer_ui.png" 
+    alt="Energizer UI" 
+    width="70%" 
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+  />
+</p>
+
+---
+
+## Usage Examples
+
+| Input | Output |
+|--------|---------|
+| Iron Ingot | Energized Iron Ingot |
+| Iron Dust | Energized Iron Dust |
+| Redstone Block | Energy Upgrade |
+
+---
+
+## Crafting Recipe
+
+{/* Crafting recipe image not yet available */}
+
+---
+
+## How It Works
+
+1. Insert items in the **Primary** and/or **Auxiliary** slot.
+2. The machine checks for the first valid recipe.
+3. If enough DE is available, processing starts automatically.
+4. Collect the result from the output slot.
+
+---
+
+## Native Recipes
+
+| Input | Output | Energy (DE) | Time (s) | Preferred Slot |
+|-------|--------|-------------|----------|----------------|
+| Iron Ingot ×1 | Energized Iron Ingot ×1 | 96,000 | 4 | Primary |
+| Raw Iron ×1 | Raw Energized Iron ×1 | 104,000 | 5 | Primary |
+| Iron Block ×1 | Energized Iron Block ×1 | 1,820,000 | 18 | Primary |
+| Iron Dust ×1 | Energized Iron Dust ×1 | 72,000 | 3 | Auxiliary |
+| Redstone Block ×1 | Energy Upgrade ×1 | 2,400,000 | 8 | Primary |
+| Raw Iron Block ×1 | Raw Energized Iron Block ×1 | 1,820,000 | 5 | Primary |
+
+> The machine processes recipes from the first input slot containing a valid recipe.

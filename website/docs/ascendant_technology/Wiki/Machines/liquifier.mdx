@@ -1,0 +1,90 @@
+---
+id: liquifier
+title: Liquifier
+sidebar_label: Liquifier
+---
+
+# Liquifier
+
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+  <img 
+    src="/img/addons/ascendant/renders/liquifier_render.png" 
+    alt="Liquifier Render"
+    width="25%" 
+    style={{ marginRight: "1rem" }}
+  />
+  <div>
+    <p>
+      The <b>Liquifier</b> melts solid items into fluids and can produce optional residue byproducts.
+    </p>
+    <p>
+      It supports <b>Liquified Aetherium</b> and <b>Dark Matter</b> as output fluids, making it a key part of the fluid processing chain.
+    </p>
+  </div>
+</div>
+
+---
+
+## Machine Information
+
+| Setting | Value |
+|----------|--------|
+| Energy Capacity | 8,192,000 DE (8.19 MDE) |
+| Energy Consumption | At least 3,600 DE per craft |
+| Base Processing Rate | 3,600 DE/t |
+| Fluid Tank Capacity | 128,000 mB |
+| Upgrade Slots | 3 |
+| Overclockable | Yes |
+
+---
+
+## Machine UI
+
+<p align="center">
+  <img 
+    src="/img/addons/ascendant/ui/liquifier_ui.png" 
+    alt="Liquifier UI" 
+    width="70%" 
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+  />
+</p>
+
+---
+
+## Usage Examples
+
+| Input | Output |
+|--------|---------|
+| Aetherium | Liquified Aetherium |
+| Ancient Debris | Dark Matter |
+| Obsidian | Dark Matter + chance of Crying Obsidian |
+
+---
+
+## Crafting Recipe
+
+{/* Crafting recipe image not yet available */}
+
+---
+
+## How It Works
+
+1. Insert a valid solid input item.
+2. Ensure free capacity in the fluid tank.
+3. Provide enough DE for the selected recipe.
+4. Extract fluid via pipes/capsules and collect byproducts when generated.
+
+---
+
+## Native Recipes
+
+| Input | Fluid (output) | Energy (DE) | Time (s) | Byproduct |
+|-------|----------------|-------------|----------|-----------|
+| Aetherium ×1 | Liquified Aetherium — 1,000 mB | 9,600 | 15 | Obsidian ×1 (25%) |
+| Aetherium Shard ×4 | Liquified Aetherium — 1,000 mB | 5,400 | 10 | — |
+| Ancient Debris ×2 | Dark Matter — 1,000 mB | 12,800 | 20 | Netherrack ×2 (35%) |
+| Void Essence ×3 | Dark Matter — 750 mB | 6,400 | 9 | Ender Pearl ×1 (20%) |
+| Obsidian ×2 | Dark Matter — 500 mB | 5,200 | 8 | Crying Obsidian ×1 (10%) |
+| Refined Obsidian Dust ×4 | Dark Matter — 1,000 mB | 7,600 | 12 | Obsidian ×1 (35%) |
+
+> Byproduct percentages represent the chance per craft.

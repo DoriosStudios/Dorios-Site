@@ -8,7 +8,7 @@ sidebar_label: Machines
 
 <p align="center">
   Explore the machine lineup of Ascendant Technology.  
-  This section now follows the same documentation structure used in UtilityCraft machine pages.
+  Many of these are unique, high-end machines designed for advanced automation, but there are also upgraded versions of standard machines.
 </p>
 
 ---
@@ -49,7 +49,7 @@ Reclaims useful materials from residue-type inputs.
 Extreme end-game duplicator powered by Dark Matter.
 
 ### [Vaporworks Processor](./vaporworks_processor)
-Fluid conversion processor for advanced production chains.
+Fluid-to-fluid processing machine for advanced conversion chains.
 
 ---
 

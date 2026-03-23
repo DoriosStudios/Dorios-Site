@@ -1,0 +1,87 @@
+---
+id: residue_processor
+title: Residue Processor
+sidebar_label: Residue Processor
+---
+
+# Residue Processor
+
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+  <img 
+    src="/img/addons/ascendant/renders/residue_processor_render.png" 
+    alt="Residue Processor Render"
+    width="25%" 
+    style={{ marginRight: "1rem" }}
+  />
+  <div>
+    <p>
+      The <b>Residue Processor</b> reclaims materials from waste-like inputs, with optional byproducts based on recipe chance.
+    </p>
+    <p>
+      It turns residues like <b>Void Essence</b> and <b>Rotten Flesh</b> into useful materials, reducing waste in automation setups.
+    </p>
+  </div>
+</div>
+
+---
+
+## Machine Information
+
+| Setting | Value |
+|----------|--------|
+| Energy Capacity | 12,800,000 DE (12.8 MDE) |
+| Energy Consumption | 2,600–7,800 DE per craft |
+| Base Processing Rate | 16,000 DE/t |
+| Upgrade Slots | 3 |
+| Overclockable | Yes |
+
+---
+
+## Machine UI
+
+<p align="center">
+  <img 
+    src="/img/addons/ascendant/ui/residue_processor_ui.png" 
+    alt="Residue Processor UI" 
+    width="70%" 
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+  />
+</p>
+
+---
+
+## Usage Examples
+
+| Input | Output |
+|--------|---------|
+| Void Essence | Aetherium Shards or Aetherium |
+| Rotten Flesh | Void Essence |
+| Ender Pearl Dust | Ender Pearl |
+
+---
+
+## Crafting Recipe
+
+{/* Crafting recipe image not yet available */}
+
+---
+
+## How It Works
+
+1. Insert a valid residue-type input.
+2. Provide DE and wait for processing.
+3. Collect guaranteed output and optional byproduct.
+
+---
+
+## Native Recipes
+
+| Input | Output | Byproduct | Energy (DE) | Time (s) |
+|-------|--------|-----------|-------------|----------|
+| Void Essence ×1 | Aetherium Shard ×2 | Iron Nugget ×2 (35%) | 5,200 | 5 |
+| Void Essence ×3 | Aetherium ×1 | Aetherium Shard ×1 (50%) | 7,800 | 7 |
+| Rotten Flesh ×3 | Void Essence ×1 | — | 2,600 | 4 |
+| Bone Block ×1 | Bone Meal ×9 | Void Essence ×1 (20%) | 2,600 | 4 |
+| Ender Pearl Dust ×2 | Ender Pearl ×1 | Gravel ×1 (50%) | 4,200 | 6 |
+
+> Byproduct percentages represent the chance per craft.
