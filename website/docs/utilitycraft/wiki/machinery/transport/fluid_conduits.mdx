@@ -6,48 +6,101 @@ sidebar_label: Fluid Conduits
 
 # Fluid Conduits
 
-Fluid transport is built around:
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+  <img
+    src="/img/addons/utilitycraft/transport/render_fluid_conduits.svg"
+    alt="Fluid Conduit Render"
+    width="30%"
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+  />
+  <div>
+    <p>
+      Fluid transport is built with <b>Fluid Pipe</b> and <b>Fluid Extractor</b>.
+    </p>
+    <p>
+      Localizations in <code>en_US.lang</code> identify them as <code>Fluid Pipe (Default)</code> and <code>Fluid Extractor (Default)</code>.
+    </p>
+  </div>
+</div>
 
-- **Fluid Pipe** (`utilitycraft:fluid_pipe`)
-- **Fluid Extractor** (`utilitycraft:fluid_extractor`)
+---
 
-## Source types supported by extractor
+## Components
 
-Runtime extraction supports:
+| Block | In-game name | UI |
+|---|---|---|
+| Fluid Pipe | Fluid Pipe (Default) | No |
+| Fluid Extractor | Fluid Extractor (Default) | Yes |
 
-- fluid container entities (machines/tanks)
-- vanilla source fluids (water/lava full blocks)
-- `utilitycraft:crucible` lava
-- `utilitycraft:sink` infinite water
+> As requested, the pipe itself has no UI. The configurable block is the extractor.
 
-> Source: `fluid_extractor` in `BP/scripts/machinery/transfer_system/system.js`
+---
 
-## Extractor modes and filters
+## Supported Source Types (Extractor)
 
-- transfer modes: `nearest`, `farthest`, `round`
-- optional fluid-type filter (when filter upgrade is enabled)
-- speed state tick interval:
-  - 0: 10t
-  - 1: 8t
-  - 2: 6t
-  - 3: 4t
-  - 4: 2t
+From runtime logic in `fluid_extractor`:
 
-## Throughput behavior
+- UtilityCraft fluid containers
+- Full vanilla source blocks:
+  - Water
+  - Lava
+- Crucible (lava levels)
+- Sink (infinite water)
 
-- per execution cycle transfer budget starts at `4000` mB in runtime
-- actual moved amount depends on destination free space and compatibility
+---
 
-### Crucible-specific rule
+## Modes, Speed, and Throughput
 
-Crucible extraction is quantized in **250 mB steps** and drains proportionally by transferred amount.
+- Transfer mode: nearest, farthest, and round-robin
+- Round-robin mode rotates target priority over time
+- Tick interval by speed state:
+  - 0 = 10t
+  - 1 = 8t
+  - 2 = 6t
+  - 3 = 4t
+  - 4 = 2t
+- Runtime transfer budget starts at `4000 mB` per execution cycle.
 
-## Color and network behavior
+### Crucible Rule
 
-Fluid networks also support color-tag segmentation (`dorios:color.*`) through scanning and connection logic.
+- Crucible extraction works in `250 mB` steps.
+- Draining updates the internal lava level based on the amount actually moved.
 
-## Source references
+---
+
+## Extractor UI Features
+
+The extractor menu includes:
+
+- ON/OFF toggle
+- transfer mode selector
+- fluid filter list view
+- add fluid type from mainhand fluid container
+- add fluid type from source block in front
+- remove configured fluid entries
+
+---
+
+## Crafting Recipe
+
+<p align="center">
+  <img
+    src="/img/addons/utilitycraft/transport/recipe_fluid_conduits.svg"
+    alt="Fluid Pipe and Fluid Extractor Recipes"
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "78%", margin: "auto" }}
+  />
+</p>
+
+- Fluid Pipe: shaped recipe, output 8
+- Fluid Extractor: shaped recipe using Fluid Pipe + Hopper
+
+---
+
+## Source References
 
 - `BP/blocks/machinery/pipes/fluid/fluid_pipe.json`
 - `BP/blocks/machinery/pipes/fluid/fluid_extractor.json`
+- `BP/recipes/blocks/machinery/pipes/fluid/fluid_pipe.json`
+- `BP/recipes/blocks/machinery/pipes/fluid/fluid_extractor.json`
 - `BP/scripts/machinery/transfer_system/system.js`
+- `RP/texts/en_US.lang`

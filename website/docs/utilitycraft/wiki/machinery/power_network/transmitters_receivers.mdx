@@ -6,19 +6,38 @@ sidebar_label: Transmitters & Receivers
 
 # Transmitters & Receivers
 
-Energy Transmitters and Receivers provide channel-based energy routing between distant network points.
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+	<img
+		src="/img/addons/utilitycraft/power_network/render_transmitters_receivers.svg"
+		alt="Transmitters and Receivers Render"
+		width="30%"
+		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+	/>
+	<div>
+		<p>
+			Transmitters and Receivers provide channel-based wireless DE routing between distant points.
+		</p>
+		<p>
+			Tier values below are based on current in-game data and English localization.
+		</p>
+	</div>
+</div>
+
+---
 
 ## Components
 
-- `basic_energy_transmitter`
-- `advanced_energy_transmitter`
-- `expert_energy_transmitter`
-- `ultimate_energy_transmitter`
+- Basic Transmitter
+- Advanced Transmitter
+- Expert Transmitter
+- Ultimate Transmitter
 
-- `basic_energy_receiver`
-- `advanced_energy_receiver`
-- `expert_energy_receiver`
-- `ultimate_energy_receiver`
+- Basic Receiver
+- Advanced Receiver
+- Expert Receiver
+- Ultimate Receiver
+
+---
 
 ## Tier values
 
@@ -40,33 +59,35 @@ Energy Transmitters and Receivers provide channel-based energy routing between d
 | Expert | 1,024,000 DE | 16,000 DE/t |
 | Ultimate | 6,400,000 DE | 100,000 DE/t |
 
+---
+
 ## Channel system
 
-Wireless linkage is done by shared entity tag:
+Wireless linkage uses a shared <b>3-color channel</b>.
 
-`bn:<primary>|<secondary>|<tertiary>`
+Example channel: <b>white / white / white</b>
 
-Example:
+A transmitter only sends power to receivers on the exact same channel.
 
-`bn:white|white|white`
+---
 
-A transmitter will only send to receivers that match its network tag.
+## Wrench Configuration Flow
 
-## Configuration flow
+Using the <b>Wrench</b>:
 
-Using wrench:
+- **Normal click on a receiver** opens node settings with:
+	- Node Mode ("Receiver" / "Transmitter")
+	- Transfer mode ("Nearest" / "Farthest" / "Round")
+- **Normal click on a transmitter** quickly toggles block mode.
+- **Sneak click on receiver/transmitter** opens channel settings to set the 3-color channel.
 
-- **Normal click on receiver** opens node menu (receiver/transmitter mode + transfer mode).
-- **Sneak click on receiver/transmitter** opens basic network color menu.
-- Network channel selection writes the `bn:` tag.
-
-> Runtime source: `openEnergyNodeMenu` and `openBasicNetworkMenu` in `BP/scripts/machinery/wrench.js`
+---
 
 ## Runtime behavior
 
 ### Transmitter
 
-- finds matching receivers in range and same `bn:` tag
+- finds matching receivers in range on the same channel
 - sends up to its per-tick rate budget
 - shows transferring amount in label UI
 
@@ -75,10 +96,25 @@ Using wrench:
 - receives from transmitters (same channel)
 - outputs energy to adjacent energy network using transfer logic
 
-## Source references
+---
 
-- `BP/blocks/machinery/generators/transmitter/*.json`
-- `BP/blocks/machinery/generators/receiver/*.json`
-- `BP/scripts/machinery/generators/transmitter.js`
-- `BP/scripts/machinery/generators/receiver.js`
-- `BP/scripts/machinery/wrench.js`
+## Localization Notes
+
+- In English localization, receiver blocks are currently displayed as "Energy Receptor".
+
+---
+
+## Crafting Recipe
+
+<p align="center">
+	<img
+		src="/img/addons/utilitycraft/power_network/recipe_transmitters_receivers.svg"
+		alt="Transmitter and Receiver Crafting Recipes"
+		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "82%", margin: "auto" }}
+	/>
+</p>
+
+- Basic transmitter has a dedicated recipe.
+- Receiver upgrade recipes use previous receiver tier as base.
+
+---

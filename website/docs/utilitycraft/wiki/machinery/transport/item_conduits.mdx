@@ -6,59 +6,112 @@ sidebar_label: Item Conduits
 
 # Item Conduits
 
-The item transport layer is built from three blocks:
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+  <img
+    src="/img/addons/utilitycraft/transport/render_item_conduits.svg"
+    alt="Item Conduit Render"
+    width="30%"
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+  />
+  <div>
+    <p>
+      Item transport is composed of <b>Item Conduit</b>, <b>Item Exporter</b>, and <b>Item Importer</b>.
+    </p>
+    <p>
+      This page is based on runtime behavior in <code>transfer_system/system.js</code> and localization entries in <code>en_US.lang</code>.
+    </p>
+  </div>
+</div>
 
-- **Item Conduit** (`utilitycraft:item_conduit`) — pipe path
-- **Item Exporter** (`utilitycraft:item_exporter`) — extracts from source and pushes to network
-- **Item Importer** (`utilitycraft:item_importer`) — filtered network entry to a target container
+---
 
-## Network model
+## Blocks and Localization
 
-Item networks are discovered and cached by BFS logic in the transfer system.
+| Block | In-game name | UI |
+|---|---|---|
+| Item Conduit | Item Conduit (Default) | No |
+| Item Exporter | Item Exporter (Default) | Yes |
+| Item Importer | Item Importer (Default) | Yes |
 
-- supports colored subnetworks (`dorios:color.*`)
-- exporter target cache is rebuilt when network updates are flagged
+> Following your rule: the conduit itself has no UI; exporter/importer are the configurable nodes.
 
-> Source: `startRescanItem` in `BP/scripts/machinery/transfer_system/system.js`
+---
 
-## Exporter behavior
+## Network Model (Script)
 
-`Item Exporter` key points:
+- Item networks are discovered by an automatic scan when the system updates.
+- Color channels let you run separate item lines in parallel.
+- Exporters cache discovered targets and rebuild that cache when the network changes.
+- Importers are resolved by world position so exporters can route items correctly.
 
-- source is the block in its facing direction (`minecraft:block_face`)
-- transfer mode options:
-  - `nearest`
-  - `farthest`
-  - `round`
-- filter upgrade enables whitelist/blacklist item tags
-- speed state changes tick interval:
-  - 0: 10t
-  - 1: 8t
-  - 2: 6t
-  - 3: 4t
-  - 4: 2t
-- per cycle transfer cap in runtime loop: up to `64` moved items
+---
 
-## Importer behavior
+## Exporter Behavior
 
-`Item Importer` key points:
+- Source container = the block directly in front of the exporter.
+- Transfer mode:
+  - nearest
+  - farthest
+  - round-robin
+- Tick interval by speed tier:
+  - 0 = 10t
+  - 1 = 8t
+  - 2 = 6t
+  - 3 = 4t
+  - 4 = 2t
+- Runtime send cap is 64 items per cycle.
+- Exporter menu supports:
+  - ON/OFF toggle
+  - transfer mode selection
+  - whitelist/blacklist toggle
+  - add/remove filter entries (requires filter upgrade)
 
-- has no pipe entity of its own; uses world dynamic config (`imp:x,y,z`)
-- supports normal filter mode (`whitelist`/`blacklist`)
-- supports smart filter mode (slot mapping)
-- resolves real target container in front of importer face
+---
 
-## Practical setup pattern
+## Importer Behavior
 
-1. Place source chest/machine.
-2. Face `Item Exporter` into source.
-3. Connect with `Item Conduit`.
-4. Place `Item Importer` facing destination container.
-5. Configure filter/mode only where needed.
+- Importer does not spawn its own pipe entity.
+- Importer settings are stored per block position.
+- Supports:
+  - normal filter (whitelist / blacklist)
+  - smart importer mode with slot mapping
+- Exporters resolve the real destination container in front of importer face before item insertion.
 
-## Source references
+---
+
+## Quick Setup Pattern
+
+1. Place a source container/machine.
+2. Face an <b>Item Exporter</b> toward the source.
+3. Connect paths with <b>Item Conduit</b>.
+4. Place <b>Item Importer</b> facing the destination.
+5. Configure mode/filter only where needed.
+
+---
+
+## Crafting Recipe
+
+<p align="center">
+  <img
+    src="/img/addons/utilitycraft/transport/recipe_item_conduits.svg"
+    alt="Item Conduit Crafting Recipes"
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "78%", margin: "auto" }}
+  />
+</p>
+
+- Item Conduit: shaped recipe, output 8
+- Item Exporter: shaped recipe using Item Conduit + Hopper
+- Item Importer: shaped recipe using Item Conduit + Hopper
+
+---
+
+## Source References
 
 - `BP/blocks/machinery/pipes/item/item_conduit.json`
 - `BP/blocks/machinery/pipes/item/item_exporter.json`
 - `BP/blocks/machinery/pipes/item/item_importer.json`
+- `BP/recipes/blocks/machinery/pipes/item_conduit/item_conduit.json`
+- `BP/recipes/blocks/machinery/pipes/item_exporter/item_exporter.json`
+- `BP/recipes/blocks/machinery/pipes/item_importer/item_importer.json`
 - `BP/scripts/machinery/transfer_system/system.js`
+- `RP/texts/en_US.lang`

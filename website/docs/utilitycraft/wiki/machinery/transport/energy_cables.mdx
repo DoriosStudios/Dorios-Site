@@ -6,28 +6,65 @@ sidebar_label: Energy Cables
 
 # Energy Cables
 
-`Energy Cable` (`utilitycraft:energy_cable`) is the backbone of wired DE distribution.
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+	<img
+		src="/img/addons/utilitycraft/transport/render_energy_cables.svg"
+		alt="Energy Cable Render"
+		width="30%"
+		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+	/>
+	<div>
+		<p>
+			The <b>Energy Cable</b> is the default wired backbone for DE transport in UtilityCraft.
+		</p>
+		<p>
+			In the English localization, it is shown in-game as <b>Energy Cable</b>.
+		</p>
+	</div>
+</div>
 
-## Role in network
+---
 
-- physically connects generators, machines, batteries, and compatible energy nodes
-- participates in energy network scans/rescans
-- supports color-tag network separation (`dorios:color.*`)
+## Script-backed Behavior
 
-## Technical notes
+- Energy cables participate in transfer-network scanning logic in <code>BP/scripts/machinery/transfer_system/system.js</code>.
+- They use the shared energy/tube network model and support color-based subnetworks.
+- Their shape updates by direction to visually show connected neighbors.
+- The cable itself has <b>no UI</b>; transfer limits are defined by producers/consumers and transport logic, not by a cable menu.
 
-- cable itself has no user UI
-- throughput is governed by source/receiver blocks and transfer logic, not by a fixed cable-tier limit
-- cable geometry updates by neighbor connection states for visual network feedback
+---
 
-## When to use
+## Technical Data
 
-- medium and long-distance power lines
-- clean machine rows with centralized generation
-- decoupling producers from consumers while keeping deterministic wiring
+| Property | Value |
+|---|---|
+| In-game name | Energy Cable |
+| Collision | Invisible collision box (`0,0,0`) |
+| Core role | Physical energy path + network connectivity |
+| Subnetworks | Color-based |
+| UI | None |
 
-## Source references
+---
+
+## Crafting Recipe
+
+<p align="center">
+	<img
+		src="/img/addons/utilitycraft/transport/recipe_energy_cable.svg"
+		alt="Energy Cable Crafting Recipe"
+		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "72%", margin: "auto" }}
+	/>
+</p>
+
+- Recipe output: <b>8x Energy Cable</b>
+- Source recipe: <code>BP/recipes/blocks/machinery/pipes/energy_cable.json</code>
+
+---
+
+## Source References
 
 - `BP/blocks/machinery/pipes/energy_cable.json`
+- `BP/recipes/blocks/machinery/pipes/energy_cable.json`
 - `BP/scripts/machinery/transfer_system/system.js`
-- `docs/utilitycraft/wiki/machinery/power_network/transmitters_receivers`
+- `RP/texts/en_US.lang`
+
