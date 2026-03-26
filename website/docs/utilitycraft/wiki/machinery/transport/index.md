@@ -16,4 +16,4 @@ UtilityCraft offers several ways to move energy, items, and fluids between your 
 | [Fluid Pipes](./utilitycraft-fluid-conduits) | Fluids (water, lava, etc.) | Fluid Pipe, Fluid Extractor |
 | [Mechanical Hoppers](./utilitycraft-mechanical-hoppers) | Items (pull, push, drop, vacuum) | Mechanic Hopper, Upper, Dropper, Ender Hopper |
 
-All transport systems support **color networks** and **Speed Upgrades**. Some also support **Filter Upgrades** for fine-grained control over what gets moved.
+All transport systems, except for Energy Cables, support **color networks** or/and **Speed Upgrades**. Some also support **Filter Upgrades** for fine-grained control over what gets moved.

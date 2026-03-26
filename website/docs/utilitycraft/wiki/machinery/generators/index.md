@@ -27,8 +27,8 @@ Each one works under specific conditions and can be upgraded through multiple ti
 
 See:
 
-- [Power Network](../power_network)
 - [Transport Systems](../transport)
+- [Wireless Energy](../transport/utilitycraft-wireless-energy)
 
 ---
 
