@@ -4,11 +4,29 @@ title: Lantern
 sidebar_label: Lantern
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 # Lantern
 
-The UtilityCraft **Lantern** is a wide-area lighting block.
+The UtilityCraft <b>Lantern</b> is a wide-area lighting block.
+It projects multiple light clusters for large halls, corridors, and automation floors.
 
-Use it when one small light source isn't enough.
+---
+
+## Block Information
+
+<BlockInfoGrid
+	items={[
+		{ label: 'Base Light Emission', value: '15' },
+		{ label: 'Projection Anchors', value: '4 (at ±19 on X/Z)' },
+		{ label: 'Projected Light Points', value: '160 (4 × 40)' },
+		{ label: 'Max Horizontal Reach from Lantern', value: '33 blocks' },
+		{ label: 'Max Vertical Projection Offset', value: '+3 blocks' },
+		{ label: 'Refresh Interval', value: 'Every 100 ticks (5 seconds)' },
+		{ label: 'Break Time', value: '0.8 seconds' },
+		{ label: 'Explosion Behavior', value: 'Not destructible by explosion' }
+	]}
+/>
 
 ---
 
@@ -20,9 +38,16 @@ Use it when one small light source isn't enough.
 
 ---
 
-## Behavior
+## Coverage Area
 
-In addition to normal block light, UtilityCraft applies extra projection behavior around the Lantern.
+Lantern coverage is projected as 4 offset light clusters (not a full filled circle).
+
+| Coverage Metric | Value |
+|---|---|
+| **Anchor offsets** | `(19, 0)`, `(-19, 0)`, `(0, 19)`, `(0, -19)` |
+| **Per-anchor pattern** | Same 40-point pattern as Big Torch |
+| **Farthest point from lantern center** | `19 + 14 = 33` blocks |
+| **Projected light level** | 15 |
 
 This helps maintain stronger practical illumination in bigger builds.
 
@@ -33,3 +58,14 @@ This helps maintain stronger practical illumination in bigger builds.
 - Long corridors
 - Open automation floors
 - Perimeter lighting where one point-light is not enough
+
+---
+
+## Crafting Recipe
+
+| Ingredient | Amount |
+|---|---:|
+| Big Torch | 2 |
+| Glowstone | 1 |
+| Iron Ingot | 2 |
+| Iron Bars | 4 |

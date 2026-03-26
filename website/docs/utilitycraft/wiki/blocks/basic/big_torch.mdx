@@ -4,11 +4,29 @@ title: Big Torch
 sidebar_label: Big Torch
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 # Big Torch
 
-The **Big Torch** is a strong utility light for larger builds.
+The <b>Big Torch</b> is a strong utility light for larger builds.
+It uses both native block light and projected light points to keep wide areas stable.
 
-It is designed to keep areas bright and stable over time.
+---
+
+## Block Information
+
+<BlockInfoGrid
+	items={[
+		{ label: 'Base Light Emission', value: '15' },
+		{ label: 'Projection Anchors', value: '1 (at block position)' },
+		{ label: 'Projected Light Points', value: '40' },
+		{ label: 'Max Horizontal Projection Reach', value: '14 blocks' },
+		{ label: 'Max Vertical Projection Offset', value: '+3 blocks' },
+		{ label: 'Refresh Interval', value: 'Every 100 ticks (5 seconds)' },
+		{ label: 'Break Time', value: '0.2 seconds' },
+		{ label: 'Explosion Behavior', value: 'Not destructible by explosion' }
+	]}
+/>
 
 ---
 
@@ -20,10 +38,33 @@ It is designed to keep areas bright and stable over time.
 
 ---
 
-## Behavior
+## Coverage Area
+
+The Big Torch places projected `light_block` points around itself (not a full filled circle).
+
+| Coverage Metric | Value |
+|---|---|
+| **Pattern Type** | Fixed projection points |
+| **Farthest X/Z offset from torch** | 14 |
+| **Vertical projection points** | Up to `y + 3` |
+| **Projected light level** | 15 |
+
+This means your lighting stays more consistent in big or busy areas.
+
+---
+
+## Runtime Behavior
 
 - Tracked when placed.
 - Removed from tracking when broken.
-- Light projection is periodically refreshed in the background.
+- Projection is periodically refreshed in the background.
 
-This means your lighting stays more consistent in big or busy areas.
+---
+
+## Crafting Recipe
+
+| Ingredient | Amount |
+|---|---:|
+| Flint Block | 1 |
+| Iron Ingot | 1 |
+| Any Log | 1 |

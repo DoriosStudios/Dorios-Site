@@ -4,11 +4,38 @@ title: Crucible
 sidebar_label: Crucible
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 # Crucible
 
-The **Crucible** turns stone-type blocks into lava.
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+	<img
+		src="/img/addons/utilitycraft/crucible_torch.jpg"
+		alt="Crucible In-Game Preview"
+		width="25%"
+		style={{ marginRight: "1rem" }}
+	/>
+	<div>
+		<p>
+			The <b>Crucible</b> turns stone-type blocks into lava.
+			It's one of the most useful early blocks for fluid automation.
+		</p>
+	</div>
+</div>
 
-It is one of the most useful basic blocks for starting fluid-based automation.
+---
+
+## Block Information
+
+<BlockInfoGrid
+	items={[
+		{ label: 'Lava Step', value: '250 mB' },
+		{ label: 'Max Lava State', value: '4 (1000 mB)' },
+		{ label: 'Smelt Threshold', value: 'Progress above 15' },
+		{ label: 'Requires Heat Source Below', value: 'Yes' },
+		{ label: 'Energy Usage', value: 'None' }
+	]}
+/>
 
 ---
 
@@ -33,7 +60,7 @@ Netherrack provides stronger value per item, so it's efficient for lava producti
 
 ---
 
-## Capacity and safety rules
+## Capacity and Safety Rules
 
 - Lava state max: `4` (1,000 mB total)
 - Internal input handling respects remaining capacity.
@@ -52,3 +79,16 @@ Important runtime behavior:
 - drain is proportional to actual transferred amount
 
 Perfect for feeding generators or lava-consuming machine loops.
+
+---
+
+## Crafting Recipe
+
+<p align="center">
+	<img
+		src="/img/addons/utilitycraft/recipe_crucible.jpg"
+		alt="Crucible Crafting Recipe"
+		width="70%"
+		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+	/>
+</p>

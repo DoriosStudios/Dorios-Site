@@ -4,14 +4,38 @@ title: Sieve
 sidebar_label: Sieve
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 # Sieve
 
-The **Sieve** is a manual progression block that turns base materials into useful drops.
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+	<img
+		src="/img/addons/utilitycraft/wooden_sieve.jpg"
+		alt="Sieve In-Game Preview"
+		width="25%"
+		style={{ marginRight: "1rem" }}
+	/>
+	<div>
+		<p>
+			The <b>Sieve</b> is a manual progression block that turns base materials into useful drops.
+			Results depend on your installed mesh tier and the processed input block.
+		</p>
+	</div>
+</div>
 
-Drop quality depends mainly on:
+---
 
-- the mesh tier you installed
-- the input block you process
+## Block Information
+
+<BlockInfoGrid
+	items={[
+		{ label: 'Operation Type', value: 'Manual' },
+		{ label: 'Mesh Required', value: 'Yes' },
+		{ label: 'Progress Stages', value: '4 → 0' },
+		{ label: 'Batch Interaction Area', value: '5×5 sieves on same Y level' },
+		{ label: 'Energy Usage', value: 'None' }
+	]}
+/>
 
 ---
 
@@ -54,3 +78,16 @@ This lets the Sieve support many progression paths, especially in early game.
 - Sneak + empty hand can remove the mesh when the block is idle.
 - Keep multiple sieves nearby to process faster as you expand.
 - Use better meshes when targeting rarer materials.
+
+---
+
+## Crafting Recipe
+
+<p align="center">
+	<img
+		src="/img/addons/utilitycraft/recipe_wooden_sieve.jpg"
+		alt="Sieve Crafting Recipe"
+		width="70%"
+		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+	/>
+</p>

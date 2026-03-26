@@ -4,11 +4,26 @@ title: Basic Trash Can
 sidebar_label: Basic Trash Can
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 # Basic Trash Can
 
-The **Basic Trash Can** permanently destroys any item inserted into it.
+The <b>Basic Trash Can</b> permanently destroys any item inserted into it.
+Use it as a safe overflow endpoint for automation lines that generate junk.
 
-Think of it as a safe overflow endpoint for automation lines.
+---
+
+## Block Information
+
+<BlockInfoGrid
+	items={[
+		{ label: 'Inventory Size', value: '27 slots' },
+		{ label: 'Tick Interval', value: 'Every 10 ticks' },
+		{ label: 'Energy Usage', value: 'None' },
+		{ label: 'Break Time', value: '1 second' },
+		{ label: 'Explosion Behavior', value: 'Not destructible by explosion' }
+	]}
+/>
 
 ---
 
@@ -20,21 +35,9 @@ Think of it as a safe overflow endpoint for automation lines.
 
 ---
 
-## Basic Info
-
-| Setting | Value |
-|---|---|
-| Inventory Size | 27 slots |
-| Energy Use | None |
-| Tick Interval | Every 10 ticks |
-
----
-
 ## Important Warning
 
 Items sent here are gone forever.
-
-Only connect this block to filtered outputs or true trash routes.
 
 ---
 
@@ -43,3 +46,15 @@ Only connect this block to filtered outputs or true trash routes.
 - Remove junk drops from mob farms.
 - Discard low-value byproducts from machines.
 - Keep your main storage clean and focused.
+
+---
+
+## Crafting Recipe
+
+This recipe is crafted in the **UtilityCraft Workbench**.
+
+| Ingredient | Amount |
+|---|---:|
+| Steel Ingot | 7 |
+| Barrel | 1 |
+| Flint and Steel | 1 |
