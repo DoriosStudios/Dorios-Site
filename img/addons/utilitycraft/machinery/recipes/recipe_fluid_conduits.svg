@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#0b1220" rx="24"/>
+  <text x="60" y="80" fill="#e2e8f0" font-size="44" font-family="Segoe UI, Arial" font-weight="700">Fluid Transport Recipes</text>
+
+  <g transform="translate(90,150)">
+    <text x="80" y="-20" fill="#cbd5e1" font-size="24" font-family="Segoe UI, Arial">Fluid Pipe (x8)</text>
+    <rect x="0" y="0" width="300" height="300" fill="#111827" stroke="#334155"/>
+    <g stroke="#475569" fill="#1f2937"><rect x="0" y="0" width="100" height="100"/><rect x="100" y="0" width="100" height="100"/><rect x="200" y="0" width="100" height="100"/><rect x="0" y="100" width="100" height="100"/><rect x="100" y="100" width="100" height="100"/><rect x="200" y="100" width="100" height="100"/><rect x="0" y="200" width="100" height="100"/><rect x="100" y="200" width="100" height="100"/><rect x="200" y="200" width="100" height="100"/></g>
+    <g fill="#e5e7eb" font-size="36" font-family="Consolas, monospace" text-anchor="middle" dominant-baseline="middle">
+      <text x="50" y="50">S</text><text x="150" y="50">S</text><text x="250" y="50">S</text>
+      <text x="50" y="150">G</text><text x="150" y="150">C</text><text x="250" y="150">G</text>
+      <text x="50" y="250">S</text><text x="150" y="250">S</text><text x="250" y="250">S</text>
+    </g>
+  </g>
+
+  <g transform="translate(620,150)">
+    <text x="45" y="-20" fill="#cbd5e1" font-size="24" font-family="Segoe UI, Arial">Fluid Extractor</text>
+    <rect x="0" y="0" width="300" height="300" fill="#111827" stroke="#334155"/>
+    <g stroke="#475569" fill="#1f2937"><rect x="0" y="0" width="100" height="100"/><rect x="100" y="0" width="100" height="100"/><rect x="200" y="0" width="100" height="100"/><rect x="0" y="100" width="100" height="100"/><rect x="100" y="100" width="100" height="100"/><rect x="200" y="100" width="100" height="100"/><rect x="0" y="200" width="100" height="100"/><rect x="100" y="200" width="100" height="100"/><rect x="200" y="200" width="100" height="100"/></g>
+    <g fill="#e5e7eb" font-size="36" font-family="Consolas, monospace" text-anchor="middle" dominant-baseline="middle">
+      <text x="150" y="50">S</text>
+      <text x="50" y="150">S</text><text x="150" y="150">H</text><text x="250" y="150">S</text>
+      <text x="150" y="250">S</text>
+    </g>
+  </g>
+
+  <text x="90" y="610" fill="#cbd5e1" font-size="25" font-family="Segoe UI, Arial">Legend: S = fluid_pipe, H = hopper, G = glass, C = bucket, steel nuggets in the base pipe.</text>
+</svg>
