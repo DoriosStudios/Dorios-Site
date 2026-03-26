@@ -14,4 +14,4 @@ UtilityCraft provides a set of blocks designed to automate mob farming — from 
 | [Mechanical Spawner](./mechanical_spawner) | Spawns mobs based on the essence assigned to it. |
 | [XP Magnet](./xp_magnet) | Pulls nearby XP orbs into its position for easy collection. |
 
-💡 **Tip:** Combine all three for a fully automated mob farm — the **Mechanical Spawner** spawns mobs, the **Mob Grinder** kills them, and the **XP Magnet** collects all XP orbs. Pair with an **XP Drain** and **Fluid Tank** to store the XP as fluid.
+💡 **Tip:** Combine all three for a fully automated mob farm — the **Mechanical Spawner** spawns mobs, the **Mob Grinder** kills them, and the **XP Magnet** collects all XP orbs. Use an **XP Drain** with a **Fluid Tank** only when you want to convert player XP into fluid.
