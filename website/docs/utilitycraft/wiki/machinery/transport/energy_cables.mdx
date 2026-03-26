@@ -6,43 +6,52 @@ sidebar_label: Energy Cables
 
 # Energy Cables
 
-<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
-	<img
-		src="/img/addons/utilitycraft/transport/render_energy_cables.svg"
-		alt="Energy Cable Render"
-		width="30%"
-		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-	/>
-	<div>
-		<p>
-			The <b>Energy Cable</b> is the default wired backbone for DE transport in UtilityCraft.
-		</p>
-		<p>
-			In the English localization, it is shown in-game as <b>Energy Cable</b>.
-		</p>
+<div style={{ display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+	<div style={{ textAlign: "center" }}>
+		<img
+			src="/img/addons/utilitycraft/machinery/renders/energy_cable_render.png"
+			alt="Energy Cable"
+			width="140"
+			style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+		/>
+		<p style={{ marginTop: "0.5rem", fontWeight: "600" }}>Energy Cable</p>
 	</div>
 </div>
 
----
-
-## Script-backed Behavior
-
-- Energy cables participate in transfer-network scanning logic in <code>BP/scripts/machinery/transfer_system/system.js</code>.
-- They use the shared energy/tube network model and support color-based subnetworks.
-- Their shape updates by direction to visually show connected neighbors.
-- The cable itself has <b>no UI</b>; transfer limits are defined by producers/consumers and transport logic, not by a cable menu.
+**Energy Cables** are the simplest way to move **Dorios Energy (DE)** between machines.  
+Just place them between a power source and the machine you want to power — no configuration needed.
 
 ---
 
-## Technical Data
+## How It Works
 
-| Property | Value |
-|---|---|
-| In-game name | Energy Cable |
-| Collision | Invisible collision box (`0,0,0`) |
-| Core role | Physical energy path + network connectivity |
-| Subnetworks | Color-based |
-| UI | None |
+Energy Cables automatically form connections with adjacent energy-compatible blocks. When you place a cable next to a generator or a machine, it links up and starts transmitting energy right away.
+
+- **No menus or settings** — just place and go.
+- Cables visually connect to nearby energy blocks, so you can easily see your network layout.
+- The transfer speed depends on the machines connected, not the cables themselves.
+
+---
+
+## Color Networks
+
+You can dye Energy Cables to create **separate energy networks** side by side. Cables of different colors won't connect to each other, which lets you run multiple independent power lines without interference.
+
+This is useful when you want to dedicate specific generators to specific machines without mixing their energy pools.
+
+---
+
+## Example Setup
+
+<p align="center">
+	<img
+		src="/img/addons/utilitycraft/machinery/pics/energy_cables_transfer.jpg"
+		alt="Basic Furnator powering an Auto Fisher via Energy Cables"
+		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "78%", margin: "auto" }}
+	/>
+</p>
+
+> A **Basic Furnator** supplying energy to an **Auto Fisher** through Energy Cables.
 
 ---
 
@@ -50,21 +59,11 @@ sidebar_label: Energy Cables
 
 <p align="center">
 	<img
-		src="/img/addons/utilitycraft/transport/recipe_energy_cable.svg"
+		src="/img/addons/utilitycraft/machinery/recipes/recipe_energy_cable.png"
 		alt="Energy Cable Crafting Recipe"
 		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "72%", margin: "auto" }}
 	/>
 </p>
 
-- Recipe output: <b>8x Energy Cable</b>
-- Source recipe: <code>BP/recipes/blocks/machinery/pipes/energy_cable.json</code>
-
----
-
-## Source References
-
-- `BP/blocks/machinery/pipes/energy_cable.json`
-- `BP/recipes/blocks/machinery/pipes/energy_cable.json`
-- `BP/scripts/machinery/transfer_system/system.js`
-- `RP/texts/en_US.lang`
+Crafts **8x Energy Cable**.
 

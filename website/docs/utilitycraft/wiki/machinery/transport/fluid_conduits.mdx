@@ -1,106 +1,148 @@
 ---
 id: utilitycraft-fluid-conduits
-title: Fluid Conduits
-sidebar_label: Fluid Conduits
+title: Fluid Pipes
+sidebar_label: Fluid Pipes
 ---
 
-# Fluid Conduits
+# Fluid Pipes
 
-<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
-  <img
-    src="/img/addons/utilitycraft/transport/render_fluid_conduits.svg"
-    alt="Fluid Conduit Render"
-    width="30%"
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-  />
-  <div>
-    <p>
-      Fluid transport is built with <b>Fluid Pipe</b> and <b>Fluid Extractor</b>.
-    </p>
-    <p>
-      Localizations in <code>en_US.lang</code> identify them as <code>Fluid Pipe (Default)</code> and <code>Fluid Extractor (Default)</code>.
-    </p>
-  </div>
+<div style={{ display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+	<div style={{ textAlign: "center" }}>
+		<img
+			src="/img/addons/utilitycraft/machinery/renders/fluid_pipe_render.png"
+			alt="Fluid Pipe"
+			width="140"
+			style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+		/>
+		<p style={{ marginTop: "0.5rem", fontWeight: "600" }}>Fluid Pipe</p>
+	</div>
+	<div style={{ textAlign: "center" }}>
+		<img
+			src="/img/addons/utilitycraft/machinery/renders/fluid_extractor_render.png"
+			alt="Fluid Extractor"
+			width="140"
+			style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+		/>
+		<p style={{ marginTop: "0.5rem", fontWeight: "600" }}>Fluid Extractor</p>
+	</div>
 </div>
 
----
+The **Fluid Pipe** system lets you pipe fluids like water and lava between machines automatically.
 
-## Components
+It's made up of two blocks:
 
-| Block | In-game name | UI |
-|---|---|---|
-| Fluid Pipe | Fluid Pipe (Default) | No |
-| Fluid Extractor | Fluid Extractor (Default) | Yes |
-
-> As requested, the pipe itself has no UI. The configurable block is the extractor.
+| Block | What It Does |
+|-------|-------------|
+| **Fluid Pipe** | The pipe that carries fluids from point A to point B. |
+| **Fluid Extractor** | Pulls fluid **out** of a source and pushes it through the pipe network. |
 
 ---
 
-## Supported Source Types (Extractor)
+## How to Set Up
 
-From runtime logic in `fluid_extractor`:
+1. Place a fluid source — this can be a **Sink**, a **Crucible**, a water/lava source block, or any UtilityCraft fluid container.
+2. Place a **Fluid Extractor** facing towards the source.
+3. Connect the Extractor to your destination machine using **Fluid Pipes**.
+4. The fluid will automatically flow to any connected machine that accepts it.
 
-- UtilityCraft fluid containers
-- Full vanilla source blocks:
-  - Water
-  - Lava
-- Crucible (lava levels)
-- Sink (infinite water)
+💡 **Tip:** The Fluid Extractor must face the source it's pulling from. Pipes just need to connect the path.
 
 ---
 
-## Modes, Speed, and Throughput
+## Compatible Sources
 
-- Transfer mode: nearest, farthest, and round-robin
-- Round-robin mode rotates target priority over time
-- Tick interval by speed state:
-  - 0 = 10t
-  - 1 = 8t
-  - 2 = 6t
-  - 3 = 4t
-  - 4 = 2t
-- Runtime transfer budget starts at `4000 mB` per execution cycle.
+The Fluid Extractor can pull fluids from:
 
-### Crucible Rule
-
-- Crucible extraction works in `250 mB` steps.
-- Draining updates the internal lava level based on the amount actually moved.
+- **Sinks** — infinite water supply
+- **Crucibles** — produces lava from cobblestone
+- **Water/Lava source blocks** — consumes the source block
+- **UtilityCraft fluid containers** — any machine or tank that stores fluids
 
 ---
 
-## Extractor UI Features
+## Example Setup
 
-The extractor menu includes:
+<p align="center">
+	<img
+		src="/img/addons/utilitycraft/machinery/pics/feeding_thermo_water.jpg"
+		alt="Fluid Extractor pulling water from a Sink to an Ultimate Thermo Generator"
+		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "78%", margin: "auto" }}
+	/>
+</p>
 
-- ON/OFF toggle
-- transfer mode selector
-- fluid filter list view
-- add fluid type from mainhand fluid container
-- add fluid type from source block in front
-- remove configured fluid entries
+> A **Fluid Extractor** pulling water from a **Sink** and feeding it into an **Ultimate Thermo Generator**.
+
+---
+
+## Transfer Modes
+
+The **Fluid Extractor** supports three transfer modes from its menu:
+
+| Mode | Behavior |
+|------|----------|
+| **Nearest** | Sends fluid to the closest destination first. |
+| **Farthest** | Sends fluid to the farthest destination first. |
+| **Round Robin** | Distributes fluid evenly across all connected destinations. |
+
+You can also toggle the Extractor **ON/OFF** at any time.
+
+---
+
+## Speed Upgrades
+
+The Fluid Extractor gets faster with **Speed Upgrades** installed:
+
+| Upgrade Level | Transfer Speed |
+|---------------|---------------|
+| 0 (No Upgrades) | Every 10 ticks |
+| 1 | Every 8 ticks |
+| 2 | Every 6 ticks |
+| 3 | Every 4 ticks |
+| 4 | Every 2 ticks |
+
+---
+
+## Filter Upgrades
+
+Adding a **Filter Upgrade** to the Fluid Extractor unlocks the ability to control **which fluids** are allowed to pass through.
+
+### Fluid Extractor Interface
+
+<p align="center">
+	<img
+		src="/img/addons/utilitycraft/machinery/ui/ui_fluid_extractor.png"
+		alt="Fluid Extractor interface configuration"
+		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "70%", margin: "auto" }}
+	/>
+</p>
+
+With a Filter Upgrade, the Extractor's menu lets you:
+- Add or remove fluids from the filter list.
+- Only fluids in the list will be extracted — all others are ignored.
+
+> The Fluid Extractor UI does **not** change when you install a Filter Upgrade. The same interface is used; the upgrade only enables filter actions.
+
+To add a fluid to the filter, either:
+- Hold a **fluid container** in your hand (e.g., a Water Bucket), or
+- Point the Extractor at a fluid source block and add it from the menu.
+
+---
+
+## Color Networks
+
+Like other conduit types, you can dye Fluid Pipes to create **independent fluid networks**. Different colors won't connect, allowing parallel fluid lines without cross-contamination.
 
 ---
 
 ## Crafting Recipe
 
 <p align="center">
-  <img
-    src="/img/addons/utilitycraft/transport/recipe_fluid_conduits.svg"
-    alt="Fluid Pipe and Fluid Extractor Recipes"
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "78%", margin: "auto" }}
-  />
+	<img
+		src="/img/addons/utilitycraft/machinery/recipes/recipe_fluid_conduits.svg"
+		alt="Fluid Pipe and Fluid Extractor Recipes"
+		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "78%", margin: "auto" }}
+	/>
 </p>
 
-- Fluid Pipe: shaped recipe, output 8
-- Fluid Extractor: shaped recipe using Fluid Pipe + Hopper
-
----
-
-## Source References
-
-- `BP/blocks/machinery/pipes/fluid/fluid_pipe.json`
-- `BP/blocks/machinery/pipes/fluid/fluid_extractor.json`
-- `BP/recipes/blocks/machinery/pipes/fluid/fluid_pipe.json`
-- `BP/recipes/blocks/machinery/pipes/fluid/fluid_extractor.json`
-- `BP/scripts/machinery/transfer_system/system.js`
-- `RP/texts/en_US.lang`
+- **Fluid Pipe** — Crafts **8x** per recipe.
+- **Fluid Extractor** — Uses a Fluid Pipe + Hopper.

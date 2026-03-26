@@ -6,108 +6,132 @@ sidebar_label: Mechanical Hoppers
 
 # Mechanical Hoppers
 
-<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
-	<img
-		src="/img/addons/utilitycraft/transport/render_mechanical_hoppers.svg"
-		alt="Mechanical Hoppers Render"
-		width="30%"
-		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-	/>
-	<div>
+<div style={{ display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+	<div style={{ textAlign: "center" }}>
+		<img
+			src="/img/addons/utilitycraft/machinery/renders/render_mechanical_hoppers.svg"
+			alt="Mechanical Hoppers"
+			width="200"
+			style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+		/>
 		<p>
-			UtilityCraft includes four hopper-style transport blocks for pull, push, drop, and vacuum pickup workflows.
-		</p>
-		<p>
-			Names and behavior below are grounded in <code>mech_hoppers.js</code>, block states, and <code>en_US.lang</code>.
+			UtilityCraft adds **four upgraded hoppers** that go beyond what vanilla hoppers can do — pulling, pushing, dropping, and vacuuming items with faster speeds and configurable filters.
 		</p>
 	</div>
 </div>
 
 ---
 
-## Variants
+## The Four Hoppers
 
-| Block | Primary role |
-|---|---|
-| Mechanic Hopper | Pull from above, output to side/down |
-| Mechanic Upper | Pull from below, output up/side |
-| Mechanical Dropper | Drops items into world directionally |
-| Ender Hopper | Vacuum pickup in configurable radius |
+| Block | What It Does |
+|-------|-------------|
+| **Mechanic Hopper** | Pulls items from above and outputs them to the side or below — like a vanilla hopper, but faster and filterable. |
+| **Mechanic Upper** | The reverse hopper — pulls items from **below** and pushes them **up** or to the side. |
+| **Mechanical Dropper** | Drops items into the world in the direction it faces. Great for feeding mobs or moving items into specific spots. |
+| **Ender Hopper** | Vacuums up dropped items within a configurable radius. Perfect for mob farms and item collection. |
 
 ---
 
-## Tick Intervals by Speed State
+## How They Work
 
-### Mechanic Hopper / Upper / Dropper
+### Mechanic Hopper & Mechanic Upper
 
-- 0 = 5t
-- 1 = 4t
-- 2 = 3t
-- 3 = 2t
-- 4 = 1t
+These work like an enhanced vanilla hopper:
+- Place them adjacent to a container or machine.
+- They automatically pull items from one side and output to the other.
+- The **Mechanic Upper** reverses the direction — it pulls from below instead of above.
+
+Both can optionally pull from **Minecarts** (Chest Minecarts and Hopper Minecarts) that are nearby, togglable in their settings.
+
+### Mechanical Dropper
+
+- Faces a direction when placed.
+- Drops items from its inventory into the world in that direction.
+- Useful for feeding items into specific areas or automated disposal.
 
 ### Ender Hopper
 
-- 0 = 10t
-- 1 = 8t
-- 2 = 6t
-- 3 = 4t
-- 4 = 2t
+- Picks up all dropped items within a configurable **pickup radius**.
+- Has an **ON/OFF toggle** and a **radius slider** in its settings.
+- Ideal for mob grinders, crop farms, or any setup that produces scattered drops.
 
 ---
 
-## Script-backed Behavior Details
+## Speed Upgrades
 
-- Shared filter model:
-	- Filter mode can be enabled with upgrades
-	- Whitelist and blacklist are both supported
-- Hopper and Upper can optionally pull from nearby minecarts (`minecraft:chest_minecart` / `minecraft:hopper_minecart`):
-	- minecart pulling can be toggled in settings
-- Ender Hopper:
-	- collects dropped items in configurable radius
-	- pickup radius can be configured
-	- can be toggled ON/OFF (`isOff`)
+All four hoppers benefit from **Speed Upgrades**:
 
----
+### Mechanic Hopper / Upper / Dropper
 
-## Interaction / UI
+| Upgrade Level | Transfer Speed |
+|---------------|---------------|
+| 0 (No Upgrades) | Every 5 ticks |
+| 1 | Every 4 ticks |
+| 2 | Every 3 ticks |
+| 3 | Every 2 ticks |
+| 4 | Every tick |
 
-- With filter upgrade, hopper-style blocks open a filter menu for:
-	- whitelist/blacklist mode
-	- minecart pull toggle
-	- add/remove filter entries
-- Sneak-interacting an Ender Hopper opens a settings modal:
-	- enabled toggle
-	- pickup radius slider
+### Ender Hopper
 
----
-
-## Crafting Recipe
-
-<p align="center">
-	<img
-		src="/img/addons/utilitycraft/transport/recipe_mechanical_hoppers.svg"
-		alt="Mechanical Hopper Crafting Recipes"
-		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "82%", margin: "auto" }}
-	/>
-</p>
-
-- Mechanic Hopper: shaped recipe with steel + hopper
-- Mechanic Upper: shapeless conversion from Mechanic Hopper
-- Mechanic Dropper: shaped recipe with steel + dropper
-- Ender Hopper: obsidian + ender eye + chest
+| Upgrade Level | Pickup Speed |
+|---------------|-------------|
+| 0 (No Upgrades) | Every 10 ticks |
+| 1 | Every 8 ticks |
+| 2 | Every 6 ticks |
+| 3 | Every 4 ticks |
+| 4 | Every 2 ticks |
 
 ---
 
-## Source References
+## Filter Upgrades
 
-- `BP/blocks/machinery/mechanical_hoppers/mechanic_hopper.json`
-- `BP/blocks/machinery/mechanical_hoppers/mechanic_upper.json`
-- `BP/blocks/machinery/mechanical_hoppers/mechanical_dropper.json`
-- `BP/blocks/machinery/mechanical_hoppers/ender_hopper.json`
-- `BP/recipes/blocks/machinery/mechanic_hopper.json`
-- `BP/recipes/blocks/machinery/mechanic_upper.json`
-- `BP/recipes/blocks/machinery/mechanic_dropper.json`
-- `BP/recipes/blocks/machinery/mob_grinding/ender_hopper.json`
-- `BP/scripts/machinery/hoppers/mech_hoppers.js`
-- `RP/texts/en_US.lang`
+Adding a **Filter Upgrade** to any mechanical hopper unlocks item filtering:
+
+- Switch between **Whitelist** (only allow specific items) and **Blacklist** (block specific items) modes.
+- Add or remove items from the filter list.
+- Filters apply to all operations — pulling, outputting, and minecart interaction.
+
+---
+
+## Crafting Recipes
+
+<div style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+	<div style={{ textAlign: "center", width: "42%", minWidth: "220px" }}>
+		<img
+			src="/img/addons/utilitycraft/machinery/recipes/recipe_mechanical_hopper.png"
+			alt="Mechanic Hopper Crafting Recipe"
+			style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "100%" }}
+		/>
+		<p><b>Mechanic Hopper</b></p>
+	</div>
+	<div style={{ textAlign: "center", width: "42%", minWidth: "220px" }}>
+		<img
+			src="/img/addons/utilitycraft/machinery/recipes/recipe_mechanical_upper.png"
+			alt="Mechanic Upper Crafting Recipe"
+			style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "100%" }}
+		/>
+		<p><b>Mechanic Upper</b></p>
+	</div>
+	<div style={{ textAlign: "center", width: "42%", minWidth: "220px" }}>
+		<img
+			src="/img/addons/utilitycraft/machinery/recipes/recipe_mechanical_dropper.png"
+			alt="Mechanical Dropper Crafting Recipe"
+			style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "100%" }}
+		/>
+		<p><b>Mechanical Dropper</b></p>
+	</div>
+	<div style={{ textAlign: "center", width: "42%", minWidth: "220px" }}>
+		<img
+			src="/img/addons/utilitycraft/machinery/recipes/recipe_ender_hopper.png"
+			alt="Ender Hopper Crafting Recipe"
+			style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "100%" }}
+		/>
+		<p><b>Ender Hopper</b></p>
+	</div>
+</div>
+
+- **Mechanic Hopper** — Steel + Hopper.
+- **Mechanic Upper** — Converted from a Mechanic Hopper (shapeless).
+- **Mechanical Dropper** — Steel + Dropper.
+- **Ender Hopper** — Obsidian + Ender Eye + Chest.

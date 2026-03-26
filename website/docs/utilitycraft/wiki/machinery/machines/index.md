@@ -68,3 +68,7 @@ Stores, transfers, and converts experience points into solid energy forms.
 <p align="center">
   More machines will be added soon as UtilityCraft expands.
 </p>
+
+---
+
+Looking to improve machine performance? See [Machine Upgrades](../upgrades).
