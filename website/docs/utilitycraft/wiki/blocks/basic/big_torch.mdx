@@ -17,8 +17,8 @@ import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
 	/>
 	<div>
 		<p>
-			The <b>Big Torch</b> is a strong utility light for larger builds.
-			It uses both native block light and projected light points to keep wide areas stable.
+			The <b>Big Torch</b> is a simple, high-power light for larger rooms.
+			Place it once, and it helps keep nearby areas bright with less effort.
 		</p>
 	</div>
 </div>
@@ -29,43 +29,30 @@ import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
 
 <BlockInfoGrid
 	items={[
-		{ label: 'Base Light Emission', value: '15' },
-		{ label: 'Projection Anchors', value: '1 (at block position)' },
-		{ label: 'Projected Light Points', value: '40' },
-		{ label: 'Max Horizontal Projection Reach', value: '14 blocks' },
-		{ label: 'Max Vertical Projection Offset', value: '+3 blocks' },
-		{ label: 'Refresh Interval', value: 'Every 100 ticks (5 seconds)' },
-		{ label: 'Break Time', value: '0.2 seconds' },
-		{ label: 'Explosion Behavior', value: 'Not destructible by explosion' }
+		{ label: 'Light Strength', value: 'Very high (15)' },
+		{ label: 'Extra Light Reach', value: 'Up to 14 blocks around it' },
+		{ label: 'Vertical Reach', value: 'Up to 3 blocks above' },
+		{ label: 'Light Refresh', value: 'Every 5 seconds' },
+		{ label: 'Break Speed', value: 'Fast (0.2 seconds)' },
+		{ label: 'Explosion Resistance', value: 'Does not break from explosions' }
 	]}
 />
 
 ---
 
-## Why Use It
+## Why Players Use It
 
 - Great for big rooms and work floors.
 - Helps keep dark corners under control.
-- More reliable for long-running bases than regular single-point lighting.
+- Good "place it and forget it" lighting for active bases.
 
 ---
 
-## Coverage Area
+## Lighting in Practice
 
-The Big Torch projects extra light points around itself (not a fully filled circle).
-
-<BlockInfoGrid
-	leftLabel="Coverage Metric"
-	rightLabel="Value"
-	items={[
-		{ label: 'Pattern Type', value: 'Fixed projection points' },
-		{ label: 'Farthest X/Z offset from torch', value: '14' },
-		{ label: 'Vertical projection points', value: 'Up to y + 3' },
-		{ label: 'Projected light level', value: '15' }
-	]}
-/>
-
-This means your lighting stays more consistent in big or busy areas.
+- It emits normal light from the block itself.
+- It also adds extra light points around the area.
+- These extra points are refreshed automatically in the background.
 
 ---
 

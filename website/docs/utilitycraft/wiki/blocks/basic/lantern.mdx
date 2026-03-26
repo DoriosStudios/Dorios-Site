@@ -17,8 +17,8 @@ import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
 	/>
 	<div>
 		<p>
-			The UtilityCraft <b>Lantern</b> is a wide-area lighting block.
-			It projects multiple light clusters for large halls, corridors, and automation floors.
+			The UtilityCraft <b>Lantern</b> is built for large spaces.
+			It spreads strong light across a much wider area than a normal light block.
 		</p>
 	</div>
 </div>
@@ -29,20 +29,19 @@ import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
 
 <BlockInfoGrid
 	items={[
-		{ label: 'Base Light Emission', value: '15' },
-		{ label: 'Projection Anchors', value: '4 (at ±19 on X/Z)' },
-		{ label: 'Projected Light Points', value: '160 (4 × 40)' },
-		{ label: 'Max Horizontal Reach from Lantern', value: '33 blocks' },
-		{ label: 'Max Vertical Projection Offset', value: '+3 blocks' },
-		{ label: 'Refresh Interval', value: 'Every 100 ticks (5 seconds)' },
-		{ label: 'Break Time', value: '0.8 seconds' },
-		{ label: 'Explosion Behavior', value: 'Not destructible by explosion' }
+		{ label: 'Light Strength', value: 'Very high (15)' },
+		{ label: 'Coverage Style', value: '4 wide light clusters around the lantern' },
+		{ label: 'Max Reach', value: 'Up to 33 blocks from center' },
+		{ label: 'Vertical Reach', value: 'Up to 3 blocks above' },
+		{ label: 'Light Refresh', value: 'Every 5 seconds' },
+		{ label: 'Break Speed', value: 'Medium (0.8 seconds)' },
+		{ label: 'Explosion Resistance', value: 'Does not break from explosions' }
 	]}
 />
 
 ---
 
-## Why It Helps
+## Why Players Use It
 
 - Covers larger spaces more effectively.
 - Great for open floors and long pathways.
@@ -50,22 +49,11 @@ import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
 
 ---
 
-## Coverage Area
+## Lighting in Practice
 
-Lantern coverage is projected as 4 offset light clusters (not a full filled circle).
-
-<BlockInfoGrid
-	leftLabel="Coverage Metric"
-	rightLabel="Value"
-	items={[
-		{ label: 'Anchor offsets', value: '(19, 0), (-19, 0), (0, 19), (0, -19)' },
-		{ label: 'Per-anchor pattern', value: 'Same 40-point pattern as Big Torch' },
-		{ label: 'Farthest point from lantern center', value: '19 + 14 = 33 blocks' },
-		{ label: 'Projected light level', value: '15' }
-	]}
-/>
-
-This helps maintain stronger practical illumination in bigger builds.
+- It emits normal light at the lantern block.
+- It also projects extra light in 4 directions.
+- This gives more consistent light in long or open builds.
 
 ---
 
