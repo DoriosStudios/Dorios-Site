@@ -1,0 +1,126 @@
+---
+id: utilitycraft-xp-drain-spout
+title: XP Drain & XP Spout
+sidebar_label: XP Drain & Spout
+---
+
+# XP Drain & XP Spout
+
+<div style={{ display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+	<div style={{ textAlign: "center" }}>
+		<img
+			src="/img/addons/utilitycraft/machinery/renders/xp_drain_render.png"
+			alt="XP Drain"
+			width="140"
+			style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+		/>
+		<p style={{ marginTop: "0.5rem", fontWeight: "600" }}>XP Drain</p>
+	</div>
+	<div style={{ textAlign: "center" }}>
+		<img
+			src="/img/addons/utilitycraft/machinery/renders/xp_spout_render.png"
+			alt="XP Spout"
+			width="140"
+			style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+		/>
+		<p style={{ marginTop: "0.5rem", fontWeight: "600" }}>XP Spout</p>
+	</div>
+</div>
+
+<p style={{ textAlign: "center", maxWidth: "760px", margin: "0 auto 1rem auto" }}>
+	The <b>XP Drain</b> and <b>XP Spout</b> are companion blocks for <b>Fluid Tanks</b>, allowing you to convert player XP into stored fluid and release it back as XP orbs.
+</p>
+
+---
+
+## XP Drain
+
+The **XP Drain** sits on top of a **Fluid Tank** and drains XP from any player standing on it.
+
+| Setting | Value |
+|----------|--------|
+| **Drain Rate** | 10 XP per tick |
+| **Detection Radius** | 0.8 blocks |
+| **Placement** | Top face of any Fluid Tank |
+| **Energy Usage** | None |
+
+### How It Works
+
+1. Place a **Fluid Tank** (any tier).  
+2. Place an **XP Drain** on top of the tank.  
+3. Stand on the drain — your XP will automatically flow into the tank below.  
+4. The drain stops when the tank is full or when you run out of XP.
+
+:::info
+The XP Drain can only be placed directly on top of a Fluid Tank. It will not attach to any other block.
+:::
+
+---
+
+### Crafting Recipe — XP Drain
+
+<p align="center">
+  <img 
+    src="/img/addons/utilitycraft/machinery/recipes/recipe_xp_drain.png" 
+    alt="XP Drain Crafting Recipe" 
+    width="60%" 
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+  />
+</p>
+
+| Ingredient | Amount |
+|------------|--------|
+| Steel Ingot | 4 |
+| Iron Bars | 4 |
+| Hopper | 1 |
+
+---
+
+## XP Spout
+
+The **XP Spout** attaches to the side of a **Fluid Tank** and releases stored XP as orbs when opened.
+
+| Setting | Value |
+|----------|--------|
+| **Output Rate** | Up to 5 XP orbs per tick |
+| **Placement** | Side face of any Fluid Tank |
+| **Energy Usage** | None |
+| **Toggle** | Left-click to open/close |
+
+### How It Works
+
+1. Place a **Fluid Tank** that contains XP fluid.  
+2. Place an **XP Spout** on the side of the tank.  
+3. **Left-click** the spout to open it — XP orbs will begin spawning from the spout.  
+4. Click again to close it. When the tank empties completely, the spout stops automatically.
+
+The spout releases orbs in the direction it faces, making it easy to aim XP into a collection area or directly at a player.
+
+---
+
+### Crafting Recipe — XP Spout
+
+<p align="center">
+  <img 
+    src="/img/addons/utilitycraft/machinery/recipes/recipe_xp_spout.png" 
+    alt="XP Spout Crafting Recipe" 
+    width="60%" 
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+  />
+</p>
+
+| Ingredient | Amount |
+|------------|--------|
+| Steel Ingot | 3 |
+| Lever | 1 |
+| Dropper | 1 |
+| Iron Ingot | 1 |
+
+---
+
+## Example Setup
+
+> Place a **Fluid Tank** → put an **XP Drain** on top → stand on it to store XP.  
+> Then attach an **XP Spout** on the side → click to release XP orbs when needed.
+
+💡 **Tip:** Combine with a **Mob Grinder** + **XP Magnet** setup to automatically collect XP from mob farms, store it in tanks, and dispense it on demand.

@@ -1,0 +1,103 @@
+---
+id: mob_grinder
+title: Mob Grinder
+sidebar_label: Mob Grinder
+---
+
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+  <img 
+    src="/img/addons/utilitycraft/machinery/renders/mob_grinder_render.png" 
+    alt="Mob Grinder Render"
+    width="25%" 
+    style={{ marginRight: "1rem" }}
+  />
+  <div>
+    <p>
+      The <b>Mob Grinder</b> is a block that continuously inflicts damage on all nearby entities within its effect radius.
+      It's ideal for automated mob farms, working best when paired with a <b>Mechanical Spawner</b> and an <b>XP Magnet</b>.
+    </p>
+  </div>
+</div>
+
+---
+
+### Block Information
+
+| Setting | Value |
+|----------|--------|
+| **Energy Usage** | None |
+| **Supports Range Upgrades** | Yes (0–4) |
+| **Supports Damage Upgrades** | Yes (1–8) |
+| **Tick Interval** | Every 5 ticks |
+
+💡 **Tip:** Use the configuration menu (interact with an empty hand) to fine-tune the range and damage levels without removing upgrades.
+
+---
+
+<p align="center">
+  <img 
+    src="/img/addons/utilitycraft/machinery/ui/ui_mob_grinder.png" 
+    alt="Mob Grinder Interface" 
+    width="70%" 
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+  />
+</p>
+
+---
+
+### Range Levels
+
+| Range Level | Effect Radius |
+|-------------|---------------|
+| 0 | 0.5 blocks |
+| 1 | 1 block |
+| 2 | 1.5 blocks |
+| 3 | 2 blocks |
+| 4 | 2.5 blocks |
+
+---
+
+### Damage Levels
+
+The Mob Grinder supports damage levels from **1** to **8**, controlled via the settings menu.  
+The maximum selectable damage depends on how many **Damage Upgrades** are installed.
+
+---
+
+### Crafting Recipe
+
+<p align="center">
+  <img 
+    src="/img/addons/utilitycraft/machinery/recipes/recipe_mob_grinder.png" 
+    alt="Mob Grinder Crafting Recipe" 
+    width="60%" 
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+  />
+</p>
+
+| Ingredient | Amount |
+|------------|--------|
+| Iron Sword | 2 |
+| Iron Ingot | 1 |
+| Redstone Block | 1 |
+| Cobblestone | 3 |
+
+---
+
+### How to Use
+
+1. Place the **Mob Grinder** where mobs will be.  
+2. Install **Range Upgrades** and **Damage Upgrades** as needed.  
+3. Interact with an empty hand to open the settings menu.  
+4. Toggle the grinder **On**, and adjust range and damage levels.  
+5. Any non-player, non-item entity within range will take damage every 5 ticks.
+
+---
+
+### Settings Menu
+
+| Control | Description |
+|---------|-------------|
+| **Off/On** | Toggles the grinder active or inactive. |
+| **Range Level** | Slider from 0 to your maximum upgrade level. |
+| **Damage Level** | Slider from 1 to your maximum upgrade level. |

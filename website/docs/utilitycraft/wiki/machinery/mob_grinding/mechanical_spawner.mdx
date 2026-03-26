@@ -1,0 +1,145 @@
+---
+id: mechanical_spawner
+title: Mechanical Spawner
+sidebar_label: Mechanical Spawner
+---
+
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+  <img 
+    src="/img/addons/utilitycraft/machinery/renders/mechanical_spawner_render.png" 
+    alt="Mechanical Spawner Render"
+    width="25%" 
+    style={{ marginRight: "1rem" }}
+  />
+  <div>
+    <p>
+      The <b>Mechanical Spawner</b> is a configurable mob spawner block.
+      Assign a <b>Mob Essence</b> to it, and it will periodically spawn the corresponding mob type.
+      Supports <b>Quantity Upgrades</b> to increase the number of mobs spawned per cycle.
+    </p>
+  </div>
+</div>
+
+---
+
+### Block Information
+
+| Setting | Value |
+|----------|--------|
+| **Energy Usage** | None |
+| **Spawn Interval** | 500–700 ticks (random) |
+| **Base Spawn Chance** | 60% per entity |
+| **Supports Quantity Upgrades** | Yes (0–4) |
+| **Destruction Time** | 3.0 seconds |
+
+💡 **Tip:** Use **Quantity Upgrades** to spawn more mobs per cycle — at max level, you get 4 entities per tick with a 25% bonus chance.
+
+---
+
+<p align="center">
+  <img 
+    src="/img/addons/utilitycraft/machinery/ui/ui_mechanical_spawner.png" 
+    alt="Mechanical Spawner Interface" 
+    width="70%" 
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+  />
+</p>
+
+---
+
+### Supported Mob Types
+
+The Mechanical Spawner supports **18 mob essences**:
+
+| Mob | Essence Item |
+|-----|-------------|
+| Blaze | Blaze Essence |
+| Chicken | Chicken Essence |
+| Cow | Cow Essence |
+| Creeper | Creeper Essence |
+| Enderman | Enderman Essence |
+| Guardian | Guardian Essence |
+| Hoglin | Hoglin Essence |
+| Illager | Illager Essence |
+| Magma Cube | Magma Cube Essence |
+| Mooshroom | Mooshroom Essence |
+| Pig | Pig Essence |
+| Piglin | Piglin Essence |
+| Sheep | Sheep Essence |
+| Skeleton | Skeleton Essence |
+| Slime | Slime Essence |
+| Spider | Spider Essence |
+| Wither Skeleton | Wither Skeleton Essence |
+| Zombie | Zombie Essence |
+
+:::info Illager Essence
+The **Illager Essence** spawns a weighted mix of illager types:  
+**Pillager** (45%), **Vindicator** (35%), **Witch** (15%), **Evoker** (1%).
+:::
+
+---
+
+### Quantity Upgrades
+
+| Quantity Level | Mobs per Cycle | Bonus Chance |
+|----------------|---------------|--------------|
+| 0 (No Upgrades) | 1 | — |
+| 1 | 2 | — |
+| 2 | 3 | — |
+| 3 | 4 | — |
+| 4 | 4 | +25% extra spawn chance |
+
+---
+
+### Crafting Recipe
+
+<p align="center">
+  <img 
+    src="/img/addons/utilitycraft/machinery/recipes/recipe_mechanical_spawner.png" 
+    alt="Mechanical Spawner Crafting Recipe" 
+    width="60%" 
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+  />
+</p>
+
+| Ingredient | Amount |
+|------------|--------|
+| Crying Obsidian | 4 |
+| Iron Bars | 4 |
+| Diamond | 1 |
+| Spawner Core | 1 |
+
+---
+
+### Spawner Core
+
+The **Spawner Core** is a required component to craft the **Mechanical Spawner**.
+
+<p align="center">
+  <img 
+    src="/img/addons/utilitycraft/machinery/recipes/recipe_spawner_core.png" 
+    alt="Spawner Core Crafting Recipe" 
+    width="60%" 
+    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
+  />
+</p>
+
+Craft the Spawner Core first, then use it in the Mechanical Spawner recipe.
+
+---
+
+### How to Use
+
+1. Place the **Mechanical Spawner**.  
+2. Hold a **Mob Essence** and **sneak + interact** to assign it.  
+3. Interact with an empty hand to open the toggle menu and turn it **On**.  
+4. The spawner will begin spawning the assigned mob at random intervals.
+
+### Managing Essences
+
+| Action | How |
+|--------|-----|
+| **Assign Essence** | Sneak + interact while holding an essence. |
+| **Swap Essence** | Sneak + interact with a different essence (requires double-tap confirmation). |
+| **Recover Essence** | Sneak + interact while holding a **Glass Bottle** to extract the current essence. |
+| **Toggle On/Off** | Interact with an empty hand (not sneaking) to open the settings menu. |

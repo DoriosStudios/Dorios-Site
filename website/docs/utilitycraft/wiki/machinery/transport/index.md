@@ -15,5 +15,7 @@ UtilityCraft offers several ways to move energy, items, and fluids between your 
 | [Item Conduits](./utilitycraft-item-conduits) | Items | Conduit, Exporter, Importer |
 | [Fluid Pipes](./utilitycraft-fluid-conduits) | Fluids (water, lava, etc.) | Fluid Pipe, Fluid Extractor |
 | [Mechanical Hoppers](./utilitycraft-mechanical-hoppers) | Items (pull, push, drop, vacuum) | Mechanic Hopper, Upper, Dropper, Ender Hopper |
+| [Fluid Tanks](./utilitycraft-fluid-tanks) | Fluid storage (XP, water, lava) | Basic, Advanced, Expert, Ultimate Tank |
+| [XP Drain & Spout](./utilitycraft-xp-drain-spout) | XP fluid (drain/release) | XP Drain, XP Spout |
 
 All transport systems, except for Energy Cables, support **color networks** or/and **Speed Upgrades**. Some also support **Filter Upgrades** for fine-grained control over what gets moved.
