@@ -52,13 +52,20 @@ It's made up of three blocks that work together:
 
 ## How to Set Up
 
+### Exporting Generally
 1. Place a container (chest, barrel, machine, etc.) with the items you want to move.
 2. Place an **Item Exporter** facing towards that container.
 3. Connect the Exporter to your destination using **Item Conduits**.
-4. Place an **Item Importer** facing towards the destination container.
-5. Done! Items will start transferring automatically.
+4. Done! Items will start transferring automatically.
 
-💡 **Tip:** The Exporter and Importer must face the container they interact with. Make sure the front of the block points at the right container.
+### Exporting Specifically
+1. Place a container (chest, barrel, machine, etc.) with the items you want to move.
+2. Place an **Item Exporter** facing towards that container.
+3. Connect the Exporter to your destination using **Item Conduits**.
+4. Place an **Item Importer** facing towards the destination container with a **Filter Upgrade** installed if you want to control which items are allowed through.
+5. Done! Items will start transferring automatically, following any filters you set up.
+
+💡 **Tip:** The Exporter must face the container they interact with. Make sure the front of the block points at the right container.
 
 ---
 
@@ -66,7 +73,7 @@ It's made up of three blocks that work together:
 
 <p align="center">
 	<img
-		src="/img/addons/utilitycraft/machinery/pics/item_exporter.png"
+		src="/img/addons/utilitycraft/machinery/pics/pulling_item_from_barrel.png"
 		alt="Item Exporter pulling fuel from a Barrel into an Incinerator"
 		style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)", width: "78%", margin: "auto" }}
 	/>
