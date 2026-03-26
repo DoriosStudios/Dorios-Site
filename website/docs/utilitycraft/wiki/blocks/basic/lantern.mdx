@@ -8,8 +8,20 @@ import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
 
 # Lantern
 
-The UtilityCraft <b>Lantern</b> is a wide-area lighting block.
-It projects multiple light clusters for large halls, corridors, and automation floors.
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+	<img
+		src="/img/addons/utilitycraft/basic/renders/big_lantern_render.png"
+		alt="Lantern Render"
+		width="25%"
+		style={{ marginRight: "1rem" }}
+	/>
+	<div>
+		<p>
+			The UtilityCraft <b>Lantern</b> is a wide-area lighting block.
+			It projects multiple light clusters for large halls, corridors, and automation floors.
+		</p>
+	</div>
+</div>
 
 ---
 
@@ -42,12 +54,16 @@ It projects multiple light clusters for large halls, corridors, and automation f
 
 Lantern coverage is projected as 4 offset light clusters (not a full filled circle).
 
-| Coverage Metric | Value |
-|---|---|
-| **Anchor offsets** | `(19, 0)`, `(-19, 0)`, `(0, 19)`, `(0, -19)` |
-| **Per-anchor pattern** | Same 40-point pattern as Big Torch |
-| **Farthest point from lantern center** | `19 + 14 = 33` blocks |
-| **Projected light level** | 15 |
+<BlockInfoGrid
+	leftLabel="Coverage Metric"
+	rightLabel="Value"
+	items={[
+		{ label: 'Anchor offsets', value: '(19, 0), (-19, 0), (0, 19), (0, -19)' },
+		{ label: 'Per-anchor pattern', value: 'Same 40-point pattern as Big Torch' },
+		{ label: 'Farthest point from lantern center', value: '19 + 14 = 33 blocks' },
+		{ label: 'Projected light level', value: '15' }
+	]}
+/>
 
 This helps maintain stronger practical illumination in bigger builds.
 
@@ -63,9 +79,13 @@ This helps maintain stronger practical illumination in bigger builds.
 
 ## Crafting Recipe
 
-| Ingredient | Amount |
-|---|---:|
-| Big Torch | 2 |
-| Glowstone | 1 |
-| Iron Ingot | 2 |
-| Iron Bars | 4 |
+<BlockInfoGrid
+	leftLabel="Ingredient"
+	rightLabel="Amount"
+	items={[
+		{ label: 'Big Torch', value: '2' },
+		{ label: 'Glowstone', value: '1' },
+		{ label: 'Iron Ingot', value: '2' },
+		{ label: 'Iron Bars', value: '4' }
+	]}
+/>

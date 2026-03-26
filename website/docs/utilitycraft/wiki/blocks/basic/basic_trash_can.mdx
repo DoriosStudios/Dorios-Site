@@ -8,8 +8,20 @@ import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
 
 # Basic Trash Can
 
-The <b>Basic Trash Can</b> permanently destroys any item inserted into it.
-Use it as a safe overflow endpoint for automation lines that generate junk.
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+	<img
+		src="/img/addons/utilitycraft/basic/renders/trash_can_render.png"
+		alt="Basic Trash Can Render"
+		width="25%"
+		style={{ marginRight: "1rem" }}
+	/>
+	<div>
+		<p>
+			The <b>Basic Trash Can</b> permanently destroys any item inserted into it.
+			Use it as a safe overflow endpoint for automation lines that generate junk.
+		</p>
+	</div>
+</div>
 
 ---
 
@@ -27,25 +39,15 @@ Use it as a safe overflow endpoint for automation lines that generate junk.
 
 ---
 
-## What It Does
+## Quick Notes
 
 - Deletes inserted items automatically.
 - Prevents storage systems from clogging with unwanted drops.
 - Works without energy.
-
----
-
-## Important Warning
-
-Items sent here are gone forever.
-
----
-
-## Common Uses
-
 - Remove junk drops from mob farms.
 - Discard low-value byproducts from machines.
 - Keep your main storage clean and focused.
+- ⚠️ Items sent here are gone forever.
 
 ---
 
@@ -53,8 +55,12 @@ Items sent here are gone forever.
 
 This recipe is crafted in the **UtilityCraft Workbench**.
 
-| Ingredient | Amount |
-|---|---:|
-| Steel Ingot | 7 |
-| Barrel | 1 |
-| Flint and Steel | 1 |
+<BlockInfoGrid
+	leftLabel="Ingredient"
+	rightLabel="Amount"
+	items={[
+		{ label: 'Steel Ingot', value: '7' },
+		{ label: 'Barrel', value: '1' },
+		{ label: 'Flint and Steel', value: '1' }
+	]}
+/>

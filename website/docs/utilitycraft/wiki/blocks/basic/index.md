@@ -12,27 +12,14 @@ They don't need Dorios Energy to work, and most are simple to use right away.
 
 ---
 
-## Included Blocks (At a Glance)
+## Included Blocks
 
-| Block | Main Purpose | Highlights |
-|---|---|---|
-| [Sieve](./utilitycraft-sieve) | Manual resource progression | Mesh tiers, block-specific drops, 5x5 interaction sweep |
-| [Crucible](./utilitycraft-crucible) | Lava production | Heat-based melting, 250 mB steps, up to 1000 mB |
-| [Sink](./utilitycraft-sink) | Infinite water source | Bucket interaction + extractor-compatible source |
-| [Basic Trash Can](./basic-trash-can) | Item deletion | 27-slot container, purges every 10 ticks |
-| [Big Torch](./utilitycraft-big-torch) | Area lighting | 40 projected light points, up to 14-block projection reach |
-| [Lantern](./utilitycraft-lantern) | Long-range lighting grid | 4 projection anchors, up to 33-block effective reach |
-
----
-
-## Included Block Pages
-
-- [Sieve](./utilitycraft-sieve)
-- [Crucible](./utilitycraft-crucible)
-- [Sink](./utilitycraft-sink)
-- [Basic Trash Can](./basic-trash-can)
-- [Big Torch](./utilitycraft-big-torch)
-- [Lantern](./utilitycraft-lantern)
+- [Sieve](./utilitycraft-sieve) — manual progression and resource filtering.
+- [Crucible](./utilitycraft-crucible) — converts blocks into lava.
+- [Sink](./utilitycraft-sink) — infinite water source for automation.
+- [Basic Trash Can](./basic-trash-can) — permanently deletes unwanted items.
+- [Big Torch](./utilitycraft-big-torch) — medium large-area light coverage.
+- [Lantern](./utilitycraft-lantern) — extra-large area light coverage.
 
 ---
 

@@ -8,8 +8,20 @@ import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
 
 # Big Torch
 
-The <b>Big Torch</b> is a strong utility light for larger builds.
-It uses both native block light and projected light points to keep wide areas stable.
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+	<img
+		src="/img/addons/utilitycraft/basic/renders/big_torch_render.png"
+		alt="Big Torch Render"
+		width="25%"
+		style={{ marginRight: "1rem" }}
+	/>
+	<div>
+		<p>
+			The <b>Big Torch</b> is a strong utility light for larger builds.
+			It uses both native block light and projected light points to keep wide areas stable.
+		</p>
+	</div>
+</div>
 
 ---
 
@@ -42,12 +54,16 @@ It uses both native block light and projected light points to keep wide areas st
 
 The Big Torch places projected `light_block` points around itself (not a full filled circle).
 
-| Coverage Metric | Value |
-|---|---|
-| **Pattern Type** | Fixed projection points |
-| **Farthest X/Z offset from torch** | 14 |
-| **Vertical projection points** | Up to `y + 3` |
-| **Projected light level** | 15 |
+<BlockInfoGrid
+	leftLabel="Coverage Metric"
+	rightLabel="Value"
+	items={[
+		{ label: 'Pattern Type', value: 'Fixed projection points' },
+		{ label: 'Farthest X/Z offset from torch', value: '14' },
+		{ label: 'Vertical projection points', value: 'Up to y + 3' },
+		{ label: 'Projected light level', value: '15' }
+	]}
+/>
 
 This means your lighting stays more consistent in big or busy areas.
 
@@ -63,8 +79,12 @@ This means your lighting stays more consistent in big or busy areas.
 
 ## Crafting Recipe
 
-| Ingredient | Amount |
-|---|---:|
-| Flint Block | 1 |
-| Iron Ingot | 1 |
-| Any Log | 1 |
+<BlockInfoGrid
+	leftLabel="Ingredient"
+	rightLabel="Amount"
+	items={[
+		{ label: 'Flint Block', value: '1' },
+		{ label: 'Iron Ingot', value: '1' },
+		{ label: 'Any Log', value: '1' }
+	]}
+/>

@@ -8,8 +8,20 @@ import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
 
 # Sink
 
-The <b>Sink</b> is an infinite water source block.
-It's one of the easiest ways to keep water-based automation running forever.
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+	<img
+		src="/img/addons/utilitycraft/basic/renders/sink_render.png"
+		alt="Sink Render"
+		width="25%"
+		style={{ marginRight: "1rem" }}
+	/>
+	<div>
+		<p>
+			The <b>Sink</b> is an infinite water source block.
+			It's one of the easiest ways to keep water-based automation running forever.
+		</p>
+	</div>
+</div>
 
 ---
 
@@ -54,13 +66,17 @@ That means you can pull water continuously with Fluid Extractors.
 
 ## Crafting Recipe
 
-| Ingredient | Amount |
-|---|---:|
-| Iron Ingot | 2 |
-| Heart of the Sea | 1 |
-| Water Bucket | 2 |
-| Ender Eye | 1 |
-| Planks | 2 |
-| Barrel | 1 |
+<BlockInfoGrid
+	leftLabel="Ingredient"
+	rightLabel="Amount"
+	items={[
+		{ label: 'Iron Ingot', value: '2' },
+		{ label: 'Heart of the Sea', value: '1' },
+		{ label: 'Water Bucket', value: '2' },
+		{ label: 'Ender Eye', value: '1' },
+		{ label: 'Planks', value: '2' },
+		{ label: 'Barrel', value: '1' }
+	]}
+/>
 
 The sink recipe also returns **2 empty buckets** after crafting.

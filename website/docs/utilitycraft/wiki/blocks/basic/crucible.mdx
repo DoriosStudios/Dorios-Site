@@ -10,8 +10,8 @@ import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
 
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
 	<img
-		src="/img/addons/utilitycraft/crucible_torch.jpg"
-		alt="Crucible In-Game Preview"
+		src="/img/addons/utilitycraft/basic/renders/crucible_render.png"
+		alt="Crucible Render"
 		width="25%"
 		style={{ marginRight: "1rem" }}
 	/>
@@ -51,34 +51,18 @@ Lava is generated in **250 mB steps**.
 
 ## Valid Inputs
 
-The Crucible accepts common stone-like materials, including:
+The Crucible accepts common stone-like materials:
 
-- Cobblestone / Stone / Diorite / Granite / Blackstone: `1`
-- Netherrack: `4`
-
-Netherrack provides stronger value per item, so it's efficient for lava production.
+- Cobblestone / Stone / Diorite / Granite / Blackstone → `1` unit
+- Netherrack → `4` units
 
 ---
 
-## Capacity and Safety Rules
+## Quick Notes
 
-- Lava state max: `4` (1,000 mB total)
-- Internal input handling respects remaining capacity.
-
-This helps avoid accidental overflow behavior.
-
----
-
-## Automation Compatibility
-
-You can pull Crucible lava using **Fluid Extractors**.
-
-Important runtime behavior:
-
-- transfer is quantized to **250 mB steps**
-- drain is proportional to actual transferred amount
-
-Perfect for feeding generators or lava-consuming machine loops.
+- Maximum stored lava: `1000 mB`.
+- Works with **Fluid Extractors** for automation.
+- Lava transfer happens in **250 mB** steps.
 
 ---
 
