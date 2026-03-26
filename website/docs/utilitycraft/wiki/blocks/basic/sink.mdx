@@ -6,34 +6,31 @@ sidebar_label: Sink
 
 # Sink
 
-The **Sink** is an infinite water utility block used for automation and fluid extraction setups.
+The **Sink** is an infinite water source block.
 
-## Player interaction
+It's one of the easiest ways to keep water-based automation running forever.
 
-Default interaction behavior:
+---
+
+## Player Interaction
+
+Basic interactions:
 
 - Empty bucket → gives water bucket
 - Water bucket → gives empty bucket
 
-> Source: `utilitycraft:sink` handler in `BP/scripts/blocks/on_interact.js`
+---
 
-## Automation interaction
+## Automation Use
 
-The fluid extractor system recognizes Sink as an **infinite water source**.
+Fluid systems treat Sink as an **infinite source**.
 
-- extractor can pull water continuously from Sink
-- source is treated as non-depleting in runtime
+That means you can pull water continuously with Fluid Extractors.
 
-> Source: `fluid_extractor` source handling in `BP/scripts/machinery/transfer_system/system.js`
+---
 
-## Typical use cases
+## Common Uses
 
 - Feeding fluid tank lines
 - Supplying machines requiring water-based loops
 - Stable starter fluid infrastructure
-
-## Source references
-
-- `BP/blocks/utility_blocks/sink.json`
-- `BP/scripts/blocks/on_interact.js`
-- `BP/scripts/machinery/transfer_system/system.js`

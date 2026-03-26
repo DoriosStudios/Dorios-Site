@@ -6,23 +6,30 @@ sidebar_label: Lantern
 
 # Lantern
 
-The UtilityCraft **Lantern** is a large-area lighting utility block.
+The UtilityCraft **Lantern** is a wide-area lighting block.
 
-## Extended light projection
+Use it when one small light source isn't enough.
 
-In addition to its block light, the script system applies projection anchors around the lantern to keep nearby areas lit.
+---
 
-Current anchor pattern is configured around cardinal offsets in the light block runtime.
+## Why It Helps
 
-> Source: `LIGHT_CONFIG` for `utilitycraft:lantern` in `BP/scripts/blocks/light_blocks.js`
+- Covers larger spaces more effectively.
+- Great for open floors and long pathways.
+- Keeps utility areas safer and easier to navigate.
 
-## Practical use
+---
+
+## Behavior
+
+In addition to normal block light, UtilityCraft applies extra projection behavior around the Lantern.
+
+This helps maintain stronger practical illumination in bigger builds.
+
+---
+
+## Recommended Use Cases
 
 - Long corridors
 - Open automation floors
 - Perimeter lighting where one point-light is not enough
-
-## Source references
-
-- `BP/blocks/utility_blocks/lantern.json`
-- `BP/scripts/blocks/light_blocks.js`

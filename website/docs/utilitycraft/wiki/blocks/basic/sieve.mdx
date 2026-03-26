@@ -6,22 +6,25 @@ sidebar_label: Sieve
 
 # Sieve
 
-The **Sieve** is a manual processing block that converts siftable materials into drops based on:
+The **Sieve** is a manual progression block that turns base materials into useful drops.
 
-- inserted mesh tier
-- current block being processed
-- per-drop chance rules
+Drop quality depends mainly on:
 
-## How it works
+- the mesh tier you installed
+- the input block you process
+
+---
+
+## How to Use
 
 1. Insert a valid mesh item.
 2. Insert a valid input block.
-3. Interact to reduce processing stage (`4 → 0`).
-4. On final stage, loot is rolled and spawned.
+3. Interact repeatedly to process it.
+4. At the final stage, drops are generated.
 
-> Runtime logic source: `BP/scripts/blocks/sieve.js`
+---
 
-## Mesh system
+## Mesh Tiers
 
 The block supports these mesh states:
 
@@ -34,23 +37,20 @@ The block supports these mesh states:
 - `diamond_mesh`
 - `netherite_mesh`
 
-Each mesh contributes tier/multiplier values through the mesh item component.
+Higher-tier meshes generally improve your results.
 
-## Inputs and drops
+---
 
-Accepted blocks and drop pools are defined by recipe config and can be expanded via ScriptEvent registration.
+## Inputs and Drops
 
-- Base recipes: `BP/scripts/config/recipes/sieve.js`
-- Runtime registration event: `utilitycraft:register_sieve_drop`
+Accepted inputs and drop pools are configured by UtilityCraft recipes.
 
-## Practical notes
+This lets the Sieve support many progression paths, especially in early game.
 
-- Sneak + empty hand removes mesh (only when idle/empty).
-- Invalid external mesh items are blocked in manual sieve flow.
-- The interaction script can process nearby sieves in a radius, enabling compact manual arrays.
+---
 
-## Source references
+## Practical Tips
 
-- `BP/blocks/addons_included/basics/sieve.json`
-- `BP/scripts/blocks/sieve.js`
-- `BP/scripts/config/recipes/sieve.js`
+- Sneak + empty hand can remove the mesh when the block is idle.
+- Keep multiple sieves nearby to process faster as you expand.
+- Use better meshes when targeting rarer materials.

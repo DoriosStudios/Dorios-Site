@@ -6,48 +6,49 @@ sidebar_label: Crucible
 
 # Crucible
 
-The **Crucible** converts stone-like inputs into lava using heat from the block below.
+The **Crucible** turns stone-type blocks into lava.
 
-## Core behavior
+It is one of the most useful basic blocks for starting fluid-based automation.
 
-- Stores both queued solids and generated lava in block states.
-- Produces lava in steps of **250 mB**.
-- Requires heat source under the block to progress smelting.
+---
 
-## Accepted inputs
+## How It Works
 
-Default conversion units in runtime:
+1. Place a heat source under the Crucible.
+2. Insert a valid solid block.
+3. Wait while it melts into lava.
+
+Lava is generated in **250 mB steps**.
+
+---
+
+## Valid Inputs
+
+The Crucible accepts common stone-like materials, including:
 
 - Cobblestone / Stone / Diorite / Granite / Blackstone: `1`
 - Netherrack: `4`
 
-> Source: `acceptedItems` in `BP/scripts/blocks/crucible.js`
+Netherrack provides stronger value per item, so it's efficient for lava production.
 
-## Heat progression
-
-Heat source strength is additive per tick cycle and smelt completes when progress passes threshold.
-
-> Source: `heatSources` + `onTick` in `BP/scripts/blocks/crucible.js`
+---
 
 ## Capacity and safety rules
 
 - Lava state max: `4` (1,000 mB total)
-- Internal insertion now respects remaining capacity before accepting new solid units.
-- This prevents overflow edge cases when using high-value inputs (like netherrack).
+- Internal input handling respects remaining capacity.
 
-## Fluid extraction compatibility
+This helps avoid accidental overflow behavior.
 
-Fluid extractors can pull Crucible lava.
+---
+
+## Automation Compatibility
+
+You can pull Crucible lava using **Fluid Extractors**.
 
 Important runtime behavior:
 
 - transfer is quantized to **250 mB steps**
 - drain is proportional to actual transferred amount
 
-> Source: `BP/scripts/machinery/transfer_system/system.js`
-
-## Source references
-
-- `BP/blocks/addons_included/basics/crucible.json`
-- `BP/scripts/blocks/crucible.js`
-- `BP/scripts/machinery/transfer_system/system.js`
+Perfect for feeding generators or lava-consuming machine loops.
