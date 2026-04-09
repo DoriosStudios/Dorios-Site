@@ -487,3 +487,20 @@ html[data-theme='dark'] .at-operation-title {
   background: linear-gradient(90deg, rgba(255, 130, 43, 0.18), rgba(255, 130, 43, 0.05));
   box-shadow: inset 0 0 0 1px rgba(255, 130, 43, 0.1);
 }
+
+.at-image-caption {
+  max-width: 760px;
+  margin: -0.35rem auto 1.1rem auto;
+  padding: 0 0.5rem;
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.at-image-caption em {
+  font-style: italic;
+}
+
+html[data-theme='dark'] .at-image-caption {
+  color: var(--ifm-color-emphasis-500);
+}

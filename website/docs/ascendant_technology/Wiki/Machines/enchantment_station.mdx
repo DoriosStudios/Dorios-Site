@@ -76,9 +76,13 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
   />
 </p>
 
+<p className="at-image-caption">
+  <em>“Enchant page screen showing the 3×3 enchanting grid, the information panel, the module slots (orange), and the upgrade slots (blue).”</em>
+</p>
+
 The **Enchant** page handles enchanting, repairs, curse cleanup, and reinforcement. It works best as a batch-upgrade station: install the right modules first, load similar items together, and let the machine process them in groups.
 
-### Main operations
+### Enchant Capabilities
 
 <h4 className="at-operation-title">
   <span className="at-operation-chip">Enhance</span>
@@ -111,7 +115,7 @@ The **Enchant** page handles enchanting, repairs, curse cleanup, and reinforceme
   <span>Reinforcement</span>
 </h4>
 
-Reinforcement gives durability-based equipment a larger safety buffer, making expensive items easier to keep in rotation for mining, combat, and exploration.
+Reinforcement is a new property that gives durability-based equipment a larger safety buffer, making expensive items easier to keep in rotation for mining, combat, and exploration.
 
 
 For armor specifically, [v0.8.0](https://github.com/DoriosStudios/Ascendant-Technology/releases/tag/v0.8.0-beta) reinforcement only improves durability. In **v0.9.0** *(not released yet)*, reinforcement on armor and shields also improves damage reduction.
@@ -123,15 +127,13 @@ For armor specifically, [v0.8.0](https://github.com/DoriosStudios/Ascendant-Tech
 | Reinforcement Module II | 50% of max durability |
 | Reinforcement Module III | 100% of max durability |
 
-- Best value comes from equipment you use constantly.
+- Reinforcement is used instead of durability when the item takes damage, so it can save you from losing an item to a single bad durability hit.
+  - When Reinforcement comes to zero, a sound will play and the item will be damaged normally until it breaks.
 - Non-durability items do not benefit from it.
 - Higher tiers matter most on armor, weapons, and tools you plan to keep.
+  - It is also a good choice for utility items like Elytra and Tridents that are expensive to replace but not worth repairing. Elytra will now longer leave you stranded when they take a durability hit, and Tridents will be more forgiving to use in combat.
 
-### Module system
-
-The station uses three module families: enchantability, reinforcement, and curse protection.
-
-### Enchantability modules
+### Enchantability Modules
 
 Each panel below shows the supported enchantments for that module tier in alphabetical order.
 
@@ -412,6 +414,10 @@ Each panel below shows the supported enchantments for that module tier in alphab
     width="70%" 
     style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
   />
+</p>
+
+<p className="at-image-caption">
+  <em>“Disenchant page screen showing the 3×3 enchanted-book output grid, the item slot for the equipment to be disenchanted, the catalyst slot, the book slot, and the module and upgrade slots.”</em>
 </p>
 
 The **Disenchant** page is the recovery side of the station. It can either preserve enchantments as books or convert them into XP fluid for later use.
