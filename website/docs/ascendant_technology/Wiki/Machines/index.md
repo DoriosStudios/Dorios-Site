@@ -56,35 +56,12 @@ Fluid-to-fluid processing machine for advanced conversion chains.
 
 ---
 
-## Wiki Implementation Status
-
-### Completed in this pass
-
-- Standardized machine page structure across all Ascendant machine docs:
-  - **Machine Information**
-  - **Machine UI**
-  - **Usage Examples**
-  - **Crafting Recipe**
-  - **How It Works**
-- Added missing machine pages for:
-  - **Enchantment Station**
-  - **Vaporworks Processor**
-
-### Still missing (general)
-
-- UI screenshots for Ascendant machines.
-- Crafting recipe images for Ascendant machines.
-- Full recipe tables for newly documented machines (Ascane Engine and Vaporworks Processor).
-- Dedicated wiki sections for non-machine Ascendant systems (generators, transportation, overclock, ores, storage, and construction blocks).
-
----
-
 <details className="ds-clean">
   <summary><span className="ds-arrow">▸</span> Internal</summary>
 
 <small>
 
-- [Table style lab](./ascendant_table_style_lab_internal) *(hidden test page)*
+- [Table style lab](./at_tester) *(hidden test page)*
 
 </small>
 
