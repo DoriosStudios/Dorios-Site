@@ -404,10 +404,9 @@
 
 .table-pixel-matrix {
   --ds-pixel-icon-col: 50px;
-  --ds-pixel-tier-col: 23%;
-  --ds-pixel-data-cols: 2;
+  --ds-pixel-tier-col: 160px;
   width: 100%;
-  table-layout: fixed;
+  table-layout: auto;
   border-collapse: separate;
   border-spacing: 0;
   position: relative;
@@ -431,14 +430,6 @@
     0 6px 16px rgba(0, 0, 0, 0.22),
     0 2px 10px rgba(0, 0, 0, 0.12),
     inset 0 0 0 1px rgba(255, 255, 255, 0.02);
-}
-
-.table-pixel-matrix:has(thead th:nth-child(5)) {
-  --ds-pixel-data-cols: 3;
-}
-
-.table-pixel-matrix:has(thead th:nth-child(6)) {
-  --ds-pixel-data-cols: 4;
 }
 
 /* Subtle diagonal accent lines */
@@ -482,7 +473,7 @@
 .table-pixel-matrix thead th:first-child {
   width: var(--ds-pixel-icon-col);
   padding-left: 10px;
-  padding-right: 8px;
+  padding-right: 10px;
 }
 
 .table-pixel-matrix thead th:nth-child(2) {
@@ -491,11 +482,7 @@
 }
 
 .table-pixel-matrix thead th:nth-child(n + 3) {
-  width: calc(
-    (100% - var(--ds-pixel-icon-col) - var(--ds-pixel-tier-col))
-      / var(--ds-pixel-data-cols)
-  );
-  padding-right: 10px;
+  text-align: center;
 }
 
 .table-pixel-matrix tbody td {
@@ -514,7 +501,7 @@
 .table-pixel-matrix tbody td:first-child {
   width: var(--ds-pixel-icon-col);
   padding-left: 10px;
-  padding-right: 8px;
+  padding-right: 10px;
   text-align: center;
 }
 
@@ -552,20 +539,24 @@
   letter-spacing: 0.03em;
 }
 
-.table-pixel-matrix .tier-basic {
-  color: #79e6ff;
+.table-pixel-matrix td.tier-basic,
+.table-pixel-matrix .tier-name.tier-basic {
+  color: #79e6ff !important;
 }
 
-.table-pixel-matrix .tier-advanced {
-  color: #ff8a8a;
+.table-pixel-matrix td.tier-advanced,
+.table-pixel-matrix .tier-name.tier-advanced {
+  color: #ff8a8a !important;
 }
 
-.table-pixel-matrix .tier-expert {
-  color: #d2d2d2;
+.table-pixel-matrix td.tier-expert,
+.table-pixel-matrix .tier-name.tier-expert {
+  color: #d2d2d2 !important;
 }
 
-.table-pixel-matrix .tier-ultimate {
-  color: #ffd34f;
+.table-pixel-matrix td.tier-ultimate,
+.table-pixel-matrix .tier-name.tier-ultimate {
+  color: #ffd34f !important;
 }
 
 .table-pixel-matrix.is-roomy thead th {
