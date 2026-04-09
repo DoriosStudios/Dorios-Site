@@ -84,7 +84,7 @@ Fluid-to-fluid processing machine for advanced conversion chains.
 
 <small>
 
-- [Table style lab](./table_style_lab_internal) *(hidden test page)*
+- [Table style lab](./ascendant_table_style_lab_internal) *(hidden test page)*
 
 </small>
 
