@@ -17,10 +17,28 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
   />
   <div>
     <p>
-      The <b>Enchantment Station</b> is a powerful enchantment-focused machine that handles both <b>enchanting</b> and <b>disenchanting</b> operations using Dorios Energy and fluid catalysts.
+      The <b>Enchantment Station</b> is a late-game gear hub that combines <b>enchanting</b>, <b>curse curation</b>, <b>repair</b>, <b>reinforcement</b>, and <b>disenchanting</b> in one machine.
+    </p>
+    <p>
+      Rather than acting like a simple enchanting bench, it behaves as a full gear workshop. It can improve equipment, clean up bad rolls, recover value from enchanted items, and feed future enchanting through stored XP fluid.
     </p>
   </div>
 </div>
+
+---
+
+## What this machine can do
+
+The station is built for long-term equipment progression. If you are investing in tools, weapons, armor, or enchant-heavy utility items, this machine becomes one of the most important support blocks in the entire addon.
+
+- Process multiple items in parallel in the main work area.
+- Add or improve enchantments based on installed module strength.
+- Remove configured curses during item curation.
+- Repair durability damage as part of the same processing cycle.
+- Apply reinforcement to extend long-term durability value.
+- Convert enchantments into enchanted books.
+- Convert enchantments into XP fluid when extraction resources are missing.
+- Provide separate feedback for main processing and disenchanting.
 
 ---
 
@@ -29,15 +47,17 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
 <BlockInfoGrid
   items={[
     { label: 'Energy Capacity', value: '25,600,000 DE' },
-    { label: 'Energy Cost (base)', value: '8,000 DE' },
+    { label: 'Base Energy Cost', value: '8,000 DE' },
     { label: 'Base Processing Rate', value: '64,000 DE/t' },
-    { label: 'Fluid Tank Capacity', value: '128,000 mB' },
+    { label: 'XP Fluid Tank Capacity', value: '128,000 mB' },
+    { label: 'Main Work Area', value: '9 concurrent item positions' },
+    { label: 'Module Slots', value: '3' },
     { label: 'Upgrade Slots', value: '3' },
-    { label: 'Overclockable', value: <a href="/docs/ascendant_technology/Wiki/Machines/overclock_network">Unknown</a> }
+    { label: <a href="/docs/ascendant_technology/Wiki/Machines/overclock_network">Overclockable</a>, value: 'Unknown' }
   ]}
 />
 
-> Overclock was not tested at the time of writing. Please verify in-game for current overclocking capabilities.
+> Overclock behavior is currently unverified. Confirm in-game for your version.
 
 ---
 
@@ -65,15 +85,410 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
 
 ---
 
-## Slot Layout
+## Functional overview
 
-| Slot Group | Purpose |
-|------------|---------|
-| Enchantment Grid | Main enchantment processing area |
-| Disenchant Input | Item source for extraction |
-| Catalyst | Catalyst requirement slot |
-| Disenchant Books | Book handling slot |
-| Output | Final result collection |
+The Enchantment Station is divided into two major workflows. The upper work area is focused on upgrading and maintaining gear, while the lower section handles disenchanting and XP recovery. This split makes the machine useful both when you are building your best equipment and when you are cleaning out old enchanted items.
+
+In practice, the station works best as a dedicated progression room block. One side improves items through enchantment, curation, repair, and reinforcement. The other side makes sure unwanted enchanted gear can still be turned into something valuable instead of being wasted.
+
+---
+
+## Main gear operations
+
+The main work area supports a 3×3 processing field, allowing several items to be worked on at the same time. Each item can follow a different path depending on its durability state, current enchantments, and the modules installed in the machine.
+
+### Enchanting
+
+Enchanting is the machine's most obvious job, but it is also more sophisticated than a simple one-roll system. The station builds a supported enchant result based on item compatibility and module strength, then applies upgrades when a better result is available.
+
+- Adds supported enchantments to eligible gear.
+- Improves existing enchantments when the module level allows it.
+- Consumes XP fluid based on the amount of enchant changes performed.
+- Becomes dramatically stronger as enchantability modules improve.
+
+### Curse curation
+
+Curse curation is one of the reasons this machine feels premium. Instead of only adding power, it can also clean up bad outcomes and remove configured curses from gear that would otherwise be annoying to keep using.
+
+- Removes supported curse effects from eligible items.
+- Helps rescue gear that would otherwise feel compromised.
+- Can happen alongside enchanting instead of replacing it.
+- Benefits from curse protection support for cleaner results.
+
+### Repairing
+
+Repair happens automatically when the machine receives a valid damaged item. That means the station can restore durability while still acting as an enchanting and reinforcement platform, instead of forcing you into a separate maintenance machine.
+
+- Repairs damaged gear during normal processing.
+- Works without needing a separate repair-only mode.
+- Combines naturally with reinforcement and enchant improvement.
+
+### Reinforcing
+
+Reinforcement is one of the station's most distinct mechanics. Instead of being only a temporary buff, it acts like a durability reserve that strengthens the item and helps preserve its lifespan across repeated use.
+
+- Applies reinforcement to supported durability items.
+- Scales final reinforcement strength by reinforcement module tier.
+- Improves the long-term value of frequently used tools, armor, and weapons.
+- Pairs especially well with high-investment gear.
+
+### Reinforcement values
+
+Reinforcement strength is determined by the installed reinforcement module tier.
+
+- **No reinforcement module**
+  - No reinforcement target is applied.
+
+- **Reinforcement Module I**
+  - Sets the reinforcement target to **25%** of the item's maximum durability.
+
+- **Reinforcement Module II**
+  - Sets the reinforcement target to **50%** of the item's maximum durability.
+
+- **Reinforcement Module III**
+  - Sets the reinforcement target to **100%** of the item's maximum durability.
+
+### Reinforcement behavior in practice
+
+Once reinforcement has been applied, the item gains a reserve that can help recover missing durability during use. This makes reinforced equipment feel more forgiving in long sessions and reduces how often prized gear has to be sent back for heavy maintenance.
+
+- Best suited for tools, weapons, and armor.
+- Not meaningful for items that do not use durability.
+- Most valuable on equipment used constantly in combat or mining.
+
+---
+
+## Module system
+
+Modules define the personality of the machine. A weaker setup turns the station into a maintenance bench, while a stronger setup turns it into a full end-game gear refiner.
+
+### Enchantability modules
+
+Enchantability modules expand both enchant strength and enchant variety. Higher levels keep earlier enchant families relevant, but unlock stronger ceilings and better premium options as the station matures.
+
+#### Enchantability Module I
+
+This level establishes the machine's core pool and basic power floor.
+
+- **Combat and mining basics**
+  - Sharpness I
+  - Smite I
+  - Bane of Arthropods I
+  - Impaling I
+  - Efficiency I
+  - Power I
+  - Density I
+
+- **Protection line**
+  - Protection I
+  - Fire Protection I
+  - Blast Protection I
+  - Projectile Protection I
+  - Feather Falling I
+  - Piercing I
+  - Breach I
+
+- **Utility line**
+  - Unbreaking I
+  - Fortune I
+  - Luck of the Sea I
+  - Lure I
+  - Loyalty I
+  - Quick Charge I
+  - Respiration I
+  - Thorns I
+  - Swift Sneak I
+  - Soul Speed I
+  - Wind Burst I
+  - Lunge I
+  - Depth Strider I
+  - Riptide I
+  - Looting I
+
+#### Enchantability Module II
+
+This level strengthens the core families and gives the station a more dependable progression curve.
+
+- **Combat and mining basics**
+  - Sharpness II
+  - Smite II
+  - Bane of Arthropods II
+  - Impaling II
+  - Efficiency II
+  - Power II
+  - Density II
+
+- **Protection line**
+  - Protection II
+  - Fire Protection II
+  - Blast Protection II
+  - Projectile Protection II
+  - Feather Falling II
+  - Piercing II
+  - Breach II
+
+- **Utility line**
+  - Unbreaking I
+  - Fortune I
+  - Luck of the Sea I
+  - Lure I
+  - Loyalty I
+  - Quick Charge I
+  - Respiration I
+  - Thorns I
+  - Swift Sneak I
+  - Soul Speed I
+  - Wind Burst I
+  - Lunge I
+  - Depth Strider I
+  - Riptide I
+  - Looting I
+
+#### Enchantability Module III
+
+This is where the station starts feeling noticeably stronger and begins unlocking better premium combat support.
+
+- **Combat and mining basics**
+  - Sharpness III
+  - Smite III
+  - Bane of Arthropods III
+  - Impaling III
+  - Efficiency III
+  - Power III
+  - Density III
+
+- **Protection line**
+  - Protection II
+  - Fire Protection II
+  - Blast Protection II
+  - Projectile Protection II
+  - Feather Falling II
+  - Piercing II
+  - Breach II
+
+- **Expanded premium options**
+  - Knockback I
+  - Fire Aspect I
+  - Punch I
+  - Frost Walker I
+
+- **Utility line**
+  - Unbreaking II
+  - Fortune II
+  - Luck of the Sea II
+  - Lure II
+  - Loyalty II
+  - Quick Charge II
+  - Respiration II
+  - Thorns II
+  - Swift Sneak II
+  - Soul Speed II
+  - Wind Burst II
+  - Lunge II
+  - Depth Strider II
+  - Riptide II
+  - Looting II
+
+#### Enchantability Module IV
+
+This level turns the station into a serious end-game enchanter for gear that is meant to stay with you for a long time.
+
+- **Combat and mining basics**
+  - Sharpness IV
+  - Smite IV
+  - Bane of Arthropods IV
+  - Impaling IV
+  - Efficiency IV
+  - Power IV
+  - Density IV
+
+- **Protection line**
+  - Protection III
+  - Fire Protection III
+  - Blast Protection III
+  - Projectile Protection III
+  - Feather Falling III
+  - Piercing III
+  - Breach III
+
+- **Expanded premium options**
+  - Knockback II
+  - Fire Aspect II
+  - Punch II
+  - Frost Walker II
+
+- **Utility line**
+  - Unbreaking II
+  - Fortune II
+  - Luck of the Sea II
+  - Lure II
+  - Loyalty II
+  - Quick Charge II
+  - Respiration II
+  - Thorns II
+  - Swift Sneak II
+  - Soul Speed II
+  - Wind Burst II
+  - Lunge II
+  - Depth Strider II
+  - Riptide II
+  - Looting II
+
+#### Enchantability Module V
+
+This is the machine's full enchantment tier, adding the rarest utility and treasure-style results from its supported pool.
+
+- **Combat and mining basics**
+  - Sharpness V
+  - Smite V
+  - Bane of Arthropods V
+  - Impaling V
+  - Efficiency V
+  - Power V
+  - Density V
+
+- **Protection line**
+  - Protection IV
+  - Fire Protection IV
+  - Blast Protection IV
+  - Projectile Protection IV
+  - Feather Falling IV
+  - Piercing IV
+  - Breach IV
+
+- **Premium utility line**
+  - Unbreaking III
+  - Fortune III
+  - Luck of the Sea III
+  - Lure III
+  - Loyalty III
+  - Quick Charge III
+  - Respiration III
+  - Thorns III
+  - Swift Sneak III
+  - Soul Speed III
+  - Wind Burst III
+  - Lunge III
+  - Depth Strider III
+  - Riptide III
+  - Looting III
+
+- **High-tier unlocks**
+  - Mending I
+  - Silk Touch I
+  - Infinity I
+  - Multishot I
+  - Channeling I
+  - Aqua Affinity I
+  - Flame I
+
+### Reinforcement modules
+
+Reinforcement modules are more straightforward than enchantability modules, but they completely change how valuable the machine is for long-term gear ownership.
+
+- Control the reinforcement target applied to supported items.
+- Raise durability reserve strength by tier.
+- Matter most for frequently used combat and mining equipment.
+
+### Curse protection module
+
+Curse protection is not just defensive padding. It helps the station avoid bad outcomes during enchant processing and strengthens curse curation as part of a cleaner refinement loop.
+
+- Reduces the chance of curse-related outcomes.
+- Helps maintain cleaner enchant results during repeated processing.
+- Supports safer high-value enchanting sessions.
+
+---
+
+## Disenchanting methods
+
+The lower section of the machine is dedicated to disenchanting. It supports two distinct modes, which makes it useful both for reclaiming individual enchantments and for turning unwanted enchanted items into stored XP value.
+
+### Extract mode
+
+Extract mode is the direct conversion path. It is the best option when you want to preserve the enchantment itself, not just its value.
+
+To operate properly, the station needs:
+
+- one enchanted source item;
+- a valid catalyst, normally **Refined Aetherium Shard**;
+- regular books for conversion;
+- free output space for enchanted books;
+- sufficient energy.
+
+When the process completes, the machine:
+
+- creates enchanted books from the extracted enchantments;
+- spends catalyst and books according to the amount extracted;
+- updates the original item so only the remaining enchantments stay on it.
+
+### Absorb mode
+
+Absorb mode is the fallback path when extraction materials are incomplete. Instead of producing enchanted books, the machine converts the source enchantments into XP fluid and stores that value internally.
+
+This mode is especially useful when you are clearing out surplus enchanted items and want to feed future enchanting work instead of preserving each individual enchantment.
+
+- Activates when the extraction path is incomplete.
+- Waits through a short conversion delay before releasing XP value.
+- Converts enchantment strength into XP fluid gain.
+- Stops early if the XP tank has no free space left.
+
+### Common disenchant blockers
+
+The disenchant section commonly pauses for a few very specific reasons.
+
+- The source item is missing.
+- The source item is stacked instead of being alone.
+- The item has no valid enchantments to process.
+- There is no free output space for book extraction.
+- Energy is unavailable.
+- The XP tank is full or unavailable for absorb mode.
+
+---
+
+## UI sections and responsibilities
+
+The two screenshots above show why the station feels denser than most machines in the addon. It is not only a processor; it is also a monitoring surface, with separate feedback for main processing and disenchanting.
+
+### Main status panel
+
+The main status area summarizes what the station is doing in the gear-processing field.
+
+- Shows whether the machine is actively working or waiting.
+- Reflects enchanting, repairing, reinforcing, and curation states.
+- Helps identify whether an item is already in a finished state.
+
+### Main work area
+
+The main work area is where your tools, armor, and other valid gear pieces are refined.
+
+- Supports parallel item handling.
+- Lets different items sit at different stages of progress.
+- Rewards batch preparation when upgrading multiple pieces of gear at once.
+
+### Disenchant section
+
+The disenchant section behaves like a dedicated secondary machine built into the same block.
+
+- Handles extraction and absorption separately from the main work area.
+- Reads catalyst, books, source item, and output availability.
+- Displays mode, state, and missing-resource feedback.
+
+### Output area
+
+The output area is especially important for extract mode because the station needs room to place enchanted books.
+
+- Stores extracted enchanted books.
+- Can bottleneck the machine if left full.
+- Should be cleared often during large recovery sessions.
+
+### Energy and XP displays
+
+The machine constantly depends on both power and stored XP value when advanced enchanting is involved.
+
+- Energy supports all active work.
+- XP fluid supports enchant-related upgrades.
+- Shortages in either resource can pause progress.
 
 ---
 
@@ -83,9 +498,22 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
 
 ---
 
-## How It Works
+## Practical operation checklist
 
-1. Insert items into the relevant enchant/disenchant input groups.
-2. Add catalyst when required.
-3. Ensure fluid and DE are available.
-4. Collect processed items from output slots.
+1. Decide whether you are improving gear or recovering enchantments.
+2. Insert eligible gear into the main work area when focusing on upgrades.
+3. Install the modules that match your desired outcome.
+4. Maintain both energy and XP fluid for advanced enchant work.
+5. For extract mode, provide catalyst, books, and enough free output space.
+6. For absorb mode, allow the machine time to convert enchantments into XP fluid.
+7. Clear outputs and repeat in batches for the best workflow.
+
+---
+
+## Operational notes
+
+- Cycle duration scales with the amount of active work on each item.
+- Energy demand rises with operation complexity and module influence.
+- Main processing and disenchanting can run in parallel sections.
+- Disenchanting expects a single source item, not stacked inputs.
+- If no valid enchantments are present, the disenchant section remains idle.
