@@ -36,17 +36,17 @@
   --ds-text-soft: rgba(255, 255, 255, 0.78);
   --ds-text-dim: rgba(255, 255, 255, 0.62);
 
-  --ds-radius-sm: 12px;
-  --ds-radius-md: 16px;
-  --ds-radius-lg: 20px;
-  --ds-radius-xl: 26px;
+  --ds-radius-sm: 8px;
+  --ds-radius-md: 10px;
+  --ds-radius-lg: 12px;
+  --ds-radius-xl: 14px;
 
-  --ds-shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.18);
-  --ds-shadow-md: 0 16px 42px rgba(0, 0, 0, 0.22);
-  --ds-shadow-lg: 0 22px 60px rgba(0, 0, 0, 0.28);
+  --ds-shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.16);
+  --ds-shadow-md: 0 6px 16px rgba(0, 0, 0, 0.2);
+  --ds-shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.24);
 
-  --ds-pad-x: 18px;
-  --ds-pad-y: 14px;
+  --ds-pad-x: 12px;
+  --ds-pad-y: 9px;
 
   --ds-font-ui:
     Inter,
@@ -90,9 +90,9 @@
     "Pixeloid Sans",
     monospace;
 
-  --ds-pixel-head-size: 1rem;
-  --ds-pixel-body-size: 1.22rem;
-  --ds-pixel-tier-size: 1.34rem;
+  --ds-pixel-head-size: 0.78rem;
+  --ds-pixel-body-size: 0.88rem;
+  --ds-pixel-tier-size: 0.95rem;
 }
 
 /* =========================================================
@@ -103,11 +103,11 @@
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  margin: 1.1rem 0 1.4rem;
+  margin: 0.75rem 0 1rem;
 }
 
 .ds-table-wrap > table {
-  min-width: 620px;
+  min-width: 520px;
 }
 
 .ds-section-divider {
@@ -165,15 +165,15 @@
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.075em;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  padding: 13px 18px;
+  padding: 9px 12px;
   border-bottom: 1px solid var(--ds-line);
   text-align: left;
 }
 
 .table-compact-premium tbody td {
-  padding: 13px 18px;
+  padding: 9px 12px;
   border-bottom: 1px solid var(--ds-line-soft);
   color: var(--ds-text-soft);
   line-height: 1.35;
@@ -205,11 +205,11 @@
 
 /* Slightly denser variant */
 .table-compact-premium.is-tight thead th {
-  padding: 11px 16px;
+  padding: 8px 10px;
 }
 
 .table-compact-premium.is-tight tbody td {
-  padding: 11px 16px;
+  padding: 8px 10px;
 }
 
 /* =========================================================
@@ -232,8 +232,8 @@
 .table-tech-panel thead th {
   background: linear-gradient(180deg, #1e222b 0%, #171a21 100%);
   color: #ffffff;
-  padding: 14px 20px;
-  font-size: 0.79rem;
+  padding: 9px 12px;
+  font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 800;
@@ -246,7 +246,7 @@
 }
 
 .table-tech-panel tbody td {
-  padding: 14px 22px;
+  padding: 9px 12px;
   border-bottom: 1px solid var(--ds-line-soft);
   line-height: 1.35;
 }
@@ -284,11 +284,11 @@
 
 /* More compact option for denser pages */
 .table-tech-panel.is-compact thead th {
-  padding: 12px 18px;
+  padding: 8px 10px;
 }
 
 .table-tech-panel.is-compact tbody td {
-  padding: 12px 18px;
+  padding: 8px 10px;
 }
 
 .table-tech-panel.is-compact tbody td:first-child {
@@ -310,14 +310,14 @@
   border-spacing: 0;
   background: linear-gradient(180deg, #1a1d24 0%, #16191f 100%);
   border: 1px solid var(--ds-line);
-  border-radius: 22px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--ds-shadow-md);
 }
 
 .table-matrix th,
 .table-matrix td {
-  padding: 14px 16px;
+  padding: 8px 10px;
   border-right: 1px solid var(--ds-line-soft);
   border-bottom: 1px solid var(--ds-line-soft);
 }
@@ -335,7 +335,7 @@
 .table-matrix thead th {
   background: linear-gradient(180deg, #1a1d24 0%, #14171d 100%);
   color: #ffffff;
-  font-size: 0.81rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.07em;
   text-align: center;
@@ -376,13 +376,13 @@
 .table-matrix .row-label {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
 }
 
 .table-matrix .row-label img,
 .table-matrix .row-label svg {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   flex-shrink: 0;
   object-fit: contain;
   opacity: 0.98;
@@ -391,7 +391,7 @@
 /* Denser matrix */
 .table-matrix.is-tight th,
 .table-matrix.is-tight td {
-  padding: 12px 14px;
+  padding: 7px 9px;
 }
 
 /* =========================================================
@@ -403,13 +403,17 @@
    ========================================================= */
 
 .table-pixel-matrix {
+  --ds-pixel-icon-col: 50px;
+  --ds-pixel-tier-col: 23%;
+  --ds-pixel-data-cols: 2;
   width: 100%;
+  table-layout: fixed;
   border-collapse: separate;
   border-spacing: 0;
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 34px;
+  border-radius: 14px;
   background:
     radial-gradient(
       90% 120% at 100% 100%,
@@ -424,9 +428,17 @@
     ),
     linear-gradient(180deg, #090b0f 0%, #080a0d 100%);
   box-shadow:
-    0 16px 40px rgba(0, 0, 0, 0.25),
-    0 4px 22px rgba(0, 0, 0, 0.14),
+    0 6px 16px rgba(0, 0, 0, 0.22),
+    0 2px 10px rgba(0, 0, 0, 0.12),
     inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.table-pixel-matrix:has(thead th:nth-child(5)) {
+  --ds-pixel-data-cols: 3;
+}
+
+.table-pixel-matrix:has(thead th:nth-child(6)) {
+  --ds-pixel-data-cols: 4;
 }
 
 /* Subtle diagonal accent lines */
@@ -462,34 +474,33 @@
   color: #ffffff;
   text-align: center;
   letter-spacing: 0;
-  padding: 26px 18px 14px;
+  padding: 10px 8px 8px;
   border: none;
   white-space: nowrap;
 }
 
 .table-pixel-matrix thead th:first-child {
-  width: 88px;
-  padding-left: 26px;
+  width: var(--ds-pixel-icon-col);
+  padding-left: 10px;
   padding-right: 8px;
 }
 
 .table-pixel-matrix thead th:nth-child(2) {
   text-align: left;
-  width: 23%;
+  width: var(--ds-pixel-tier-col);
 }
 
-.table-pixel-matrix thead th:nth-child(3) {
-  width: 42%;
-}
-
-.table-pixel-matrix thead th:nth-child(4) {
-  width: 22%;
-  padding-right: 26px;
+.table-pixel-matrix thead th:nth-child(n + 3) {
+  width: calc(
+    (100% - var(--ds-pixel-icon-col) - var(--ds-pixel-tier-col))
+      / var(--ds-pixel-data-cols)
+  );
+  padding-right: 10px;
 }
 
 .table-pixel-matrix tbody td {
   border: none;
-  padding: 19px 18px;
+  padding: 8px 8px;
   font-family: var(--ds-font-pixel);
   font-size: var(--ds-pixel-body-size);
   line-height: 1.12;
@@ -497,12 +508,12 @@
 }
 
 .table-pixel-matrix tbody tr:not(:last-child) td {
-  padding-bottom: 22px;
+  padding-bottom: 9px;
 }
 
 .table-pixel-matrix tbody td:first-child {
-  width: 88px;
-  padding-left: 26px;
+  width: var(--ds-pixel-icon-col);
+  padding-left: 10px;
   padding-right: 8px;
   text-align: center;
 }
@@ -513,19 +524,18 @@
   white-space: nowrap;
 }
 
-.table-pixel-matrix tbody td:nth-child(3),
-.table-pixel-matrix tbody td:nth-child(4) {
+.table-pixel-matrix tbody td:nth-child(n + 3) {
   text-align: center;
   white-space: nowrap;
 }
 
 .table-pixel-matrix tbody td:last-child {
-  padding-right: 26px;
+  padding-right: 10px;
 }
 
 .table-pixel-matrix .tier-icon {
-  width: clamp(26px, 3.6vw, 44px);
-  height: clamp(46px, 5.8vw, 68px);
+  width: 18px;
+  height: 28px;
   object-fit: contain;
   image-rendering: pixelated;
   filter:
@@ -559,33 +569,33 @@
 }
 
 .table-pixel-matrix.is-roomy thead th {
-  padding-top: 30px;
-  padding-bottom: 16px;
+  padding-top: 12px;
+  padding-bottom: 9px;
 }
 
 .table-pixel-matrix.is-roomy tbody td {
-  padding-top: 22px;
-  padding-bottom: 22px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .table-pixel-matrix.is-tight {
-  border-radius: 28px;
+  border-radius: 11px;
 }
 
 .table-pixel-matrix.is-tight thead th {
-  padding-top: 20px;
-  padding-bottom: 10px;
-  font-size: 0.94rem;
+  padding-top: 8px;
+  padding-bottom: 6px;
+  font-size: 0.72rem;
 }
 
 .table-pixel-matrix.is-tight tbody td {
-  padding-top: 14px;
-  padding-bottom: 14px;
-  font-size: 1.06rem;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 0.82rem;
 }
 
 .table-pixel-matrix.is-tight tbody td:nth-child(2) {
-  font-size: 1.12rem;
+  font-size: 0.88rem;
 }
 
 /* Optional extra separators for the pixel matrix */
@@ -597,7 +607,11 @@
 .table-pixel-matrix.has-column-guides th:nth-child(2),
 .table-pixel-matrix.has-column-guides td:nth-child(2),
 .table-pixel-matrix.has-column-guides th:nth-child(3),
-.table-pixel-matrix.has-column-guides td:nth-child(3) {
+.table-pixel-matrix.has-column-guides td:nth-child(3),
+.table-pixel-matrix.has-column-guides th:nth-child(4),
+.table-pixel-matrix.has-column-guides td:nth-child(4),
+.table-pixel-matrix.has-column-guides th:nth-child(5),
+.table-pixel-matrix.has-column-guides td:nth-child(5) {
   border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -609,18 +623,18 @@
 .info-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .info-row {
   display: grid;
   grid-template-columns: minmax(170px, 0.95fr) minmax(220px, 1.35fr);
-  gap: 16px;
+  gap: 10px;
   align-items: center;
   background: linear-gradient(180deg, #1c2027 0%, #181b22 100%);
   border: 1px solid var(--ds-line-soft);
-  border-radius: 15px;
-  padding: 13px 16px;
+  border-radius: 10px;
+  padding: 9px 12px;
   box-shadow: var(--ds-shadow-sm);
 }
 
@@ -639,27 +653,28 @@
 
 @media (max-width: 980px) {
   .table-pixel-matrix {
-    border-radius: 28px;
+    --ds-pixel-icon-col: 46px;
+    border-radius: 12px;
   }
 
   .table-pixel-matrix thead th:first-child,
   .table-pixel-matrix tbody td:first-child {
-    width: 76px;
+    width: 46px;
   }
 
   .table-pixel-matrix thead th {
-    padding-top: 22px;
+    padding-top: 9px;
   }
 
   .table-pixel-matrix tbody td {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 }
 
 @media (max-width: 760px) {
   .ds-table-wrap > table {
-    min-width: 560px;
+    min-width: 480px;
   }
 
   .table-compact-premium thead th,
@@ -673,39 +688,40 @@
   }
 
   .table-pixel-matrix {
-    border-radius: 22px;
+    --ds-pixel-icon-col: 42px;
+    border-radius: 10px;
   }
 
   .table-pixel-matrix thead th:first-child,
   .table-pixel-matrix tbody td:first-child {
-    width: 66px;
-    padding-left: 16px;
+    width: 42px;
+    padding-left: 8px;
   }
 
   .table-pixel-matrix thead th:last-child,
   .table-pixel-matrix tbody td:last-child {
-    padding-right: 16px;
+    padding-right: 8px;
   }
 
   .table-pixel-matrix .tier-icon {
-    width: 24px;
-    height: 40px;
+    width: 16px;
+    height: 24px;
   }
 }
 
 @media (max-width: 560px) {
   .ds-table-wrap > table {
-    min-width: 520px;
+    min-width: 430px;
   }
 
   .table-tech-panel,
   .table-matrix,
   .table-compact-premium {
-    border-radius: 14px;
+    border-radius: 10px;
   }
 
   .table-pixel-matrix {
-    border-radius: 18px;
+    border-radius: 9px;
   }
 
 }

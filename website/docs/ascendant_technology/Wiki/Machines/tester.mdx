@@ -1,34 +1,36 @@
 ---
 id: at_tester
-title: Internal Table Style Lab
-sidebar_label: Internal Table Style Lab
+title: Internal Thermo Generator Tier Lab
+sidebar_label: Internal Thermo Generator Tier Lab
 unlisted: true
 ---
 
-# Internal Table Style Lab
+# Thermo Generator — Internal Tier Lab
 
-> Internal style-lab clone to validate wiki table visuals. Keep this page unlisted.
+> Internal clone focused on one real UtilityCraft generator and its four tiers.
 
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
   <img
-    src="/img/addons/utilitycraft/machinery/renders/crusher_render.png"
-    alt="Crusher Render"
+    src="/img/addons/utilitycraft/machinery/renders/basic_thermo_generator_render.png"
+    alt="Basic Thermo Generator Render"
     width="25%"
     style={{ marginRight: "1rem" }}
   />
   <div>
     <p>
-      This internal clone exists to validate all wiki table styles in real page conditions.
+      The <b>Thermo Generator</b> produces <b>Dorios Energy (DE)</b> from heat sources
+      like lava, magma blocks, and fire.
     </p>
     <p>
-      Baseline values remain intentionally simple so design QA can focus only on hierarchy, spacing, and readability.
+      It uses water for cooling and scales significantly by tier, making it ideal
+      for testing compact, matrix, and pixel-tier table styles.
     </p>
   </div>
 </div>
 
 ---
 
-## 1) Compact Premium
+## 1) Generator Profile (Compact Premium)
 
 <div className="ds-table-wrap">
   <table className="table-compact-premium">
@@ -39,11 +41,11 @@ unlisted: true
       </tr>
     </thead>
     <tbody>
-      <tr><td>Energy Cap</td><td>64,000 DE</td></tr>
-      <tr><td>Energy Cost per Operation</td><td>800 DE</td></tr>
-      <tr><td>Base Processing Rate</td><td>20 DE/t</td></tr>
-      <tr><td>Accepts Speed Upgrades</td><td>Yes</td></tr>
-      <tr><td>Overclockable</td><td>No</td></tr>
+      <tr><td>Generator Type</td><td>Passive Heat + Water Cooling</td></tr>
+      <tr><td>Primary Fuel Source</td><td>Environmental Heat (no consumable fuel)</td></tr>
+      <tr><td>Tier Range</td><td>Basic, Advanced, Expert, Ultimate</td></tr>
+      <tr><td>Best Placement</td><td>Above lava / magma / fire with stable water feed</td></tr>
+      <tr><td>UI Focus</td><td>Stored DE + Water Level + Runtime Status</td></tr>
     </tbody>
   </table>
 </div>
@@ -52,34 +54,35 @@ unlisted: true
   <table className="table-compact-premium is-tight">
     <thead>
       <tr>
-        <th>Mode</th>
-        <th>Behavior</th>
+        <th>Heat Source</th>
+        <th>Multiplier</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td>Normal</td><td>Default spacing for readability.</td></tr>
-      <tr><td>Tight</td><td>Denser rows for long technical lists.</td></tr>
+      <tr><td>Lava</td><td>x1.00</td></tr>
+      <tr><td>Magma Block</td><td>x0.75</td></tr>
+      <tr><td>Fire</td><td>x0.50</td></tr>
     </tbody>
   </table>
 </div>
 
 ---
 
-## 2) Tech Panel
+## 2) Operation Rules (Tech Panel)
 
 <div className="ds-table-wrap">
   <table className="table-tech-panel">
     <thead>
       <tr>
-        <th>Block Information</th>
-        <th>Specification</th>
+        <th>System</th>
+        <th>Details</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td>Machine Type</td><td>Processing / Ore Utility</td></tr>
-      <tr><td>Energy Input</td><td>Cable / Wireless compatible</td></tr>
-      <tr><td>Upgrade Slots</td><td>Speed Upgrade supported</td></tr>
-      <tr><td>Automation</td><td>Fully automatable with conduits and hoppers</td></tr>
+      <tr><td>Activation</td><td>Requires valid heat source below the generator</td></tr>
+      <tr><td>Cooling</td><td>Consumes water continuously while active</td></tr>
+      <tr><td>Automation</td><td>Supports automated water input through fluid transport</td></tr>
+      <tr><td>Relocation</td><td>Stored DE remains when block is broken</td></tr>
     </tbody>
   </table>
 </div>
@@ -88,20 +91,20 @@ unlisted: true
   <table className="table-tech-panel is-compact">
     <thead>
       <tr>
-        <th>Compact Variant</th>
-        <th>Use Case</th>
+        <th>Water Input Method</th>
+        <th>Practical Notes</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td>is-compact</td><td>Useful where many stat panels exist on one page.</td></tr>
-      <tr><td>Default</td><td>Best for featured machine sections.</td></tr>
+      <tr><td>Bucket Fill</td><td>Fast for testing, not ideal for long automation chains</td></tr>
+      <tr><td>Fluid System</td><td>Best for permanent setups and continuous runtime</td></tr>
     </tbody>
   </table>
 </div>
 
 ---
 
-## 3) Matrix
+## 3) Tier Scaling Matrix
 
 <div className="ds-table-wrap">
   <table className="table-matrix">
@@ -110,7 +113,8 @@ unlisted: true
         <th className="corner-head">Tier / Stat</th>
         <th>Basic</th>
         <th>Advanced</th>
-        <th>Elite</th>
+        <th>Expert</th>
+        <th>Ultimate</th>
       </tr>
     </thead>
     <tbody>
@@ -121,28 +125,42 @@ unlisted: true
           </span>
         </th>
         <td>32,000 DE</td>
-        <td>64,000 DE</td>
         <td>128,000 DE</td>
+        <td>512,000 DE</td>
+        <td>3,200,000 DE</td>
       </tr>
       <tr>
         <th>
           <span className="row-label">
-            <img src="/img/dorios_logo.png" alt="icon" /> Input Rate
+            <img src="/img/dorios_logo.png" alt="icon" /> Generation Rate
           </span>
         </th>
         <td>20 DE/t</td>
-        <td>40 DE/t</td>
         <td>80 DE/t</td>
+        <td>320 DE/t</td>
+        <td>2,000 DE/t</td>
       </tr>
       <tr>
         <th>
           <span className="row-label">
-            <img src="/img/dorios_logo.png" alt="icon" /> Process Cost
+            <img src="/img/dorios_logo.png" alt="icon" /> Water Capacity
           </span>
         </th>
-        <td>800 DE</td>
-        <td>700 DE</td>
-        <td>600 DE</td>
+        <td>2,000 mB</td>
+        <td>8,000 mB</td>
+        <td>32,000 mB</td>
+        <td>200,000 mB</td>
+      </tr>
+      <tr>
+        <th>
+          <span className="row-label">
+            <img src="/img/dorios_logo.png" alt="icon" /> Water Usage
+          </span>
+        </th>
+        <td>0.5 mB/t</td>
+        <td>2 mB/t</td>
+        <td>8 mB/t</td>
+        <td>50 mB/t</td>
       </tr>
     </tbody>
   </table>
@@ -152,22 +170,23 @@ unlisted: true
   <table className="table-matrix is-tight">
     <thead>
       <tr>
-        <th className="corner-head">Tight Matrix</th>
+        <th className="corner-head">Tier Focus</th>
         <th>Basic</th>
         <th>Advanced</th>
-        <th>Elite</th>
+        <th>Expert</th>
+        <th>Ultimate</th>
       </tr>
     </thead>
     <tbody>
-      <tr><th>Queue Slots</th><td>2</td><td>4</td><td>8</td></tr>
-      <tr><th>Parallel Ops</th><td>1x</td><td>2x</td><td>4x</td></tr>
+      <tr><th>Setup Role</th><td>Early Base</td><td>Mid Automation</td><td>High Throughput</td><td>Late-Game Grid</td></tr>
+      <tr><th>Recommended Use</th><td>Starter DE</td><td>Machine Chains</td><td>Multi-line Factory</td><td>Heavy Infrastructure</td></tr>
     </tbody>
   </table>
 </div>
 
 ---
 
-## 4) Pixel Matrix / Tier Panel
+## 4) Pixel Matrix / Tier Panel (Thermo)
 
 <div className="ds-table-wrap">
   <table className="table-pixel-matrix has-row-separators has-column-guides">
@@ -176,7 +195,7 @@ unlisted: true
         <th aria-label="icon" />
         <th>Tier</th>
         <th>Energy Capacity</th>
-        <th>Rate</th>
+        <th>Rate (DE/t)</th>
       </tr>
     </thead>
     <tbody>
@@ -190,7 +209,7 @@ unlisted: true
         </td>
         <td className="pixel-muted tier-name tier-basic">Basic</td>
         <td>32,000 DE</td>
-        <td>20 DE/t</td>
+        <td>20</td>
       </tr>
       <tr>
         <td>
@@ -201,8 +220,8 @@ unlisted: true
           />
         </td>
         <td className="pixel-muted tier-name tier-advanced">Advanced</td>
-        <td>64,000 DE</td>
-        <td>40 DE/t</td>
+        <td>128,000 DE</td>
+        <td>80</td>
       </tr>
       <tr>
         <td>
@@ -213,8 +232,8 @@ unlisted: true
           />
         </td>
         <td className="pixel-muted tier-name tier-expert">Expert</td>
-        <td>128,000 DE</td>
-        <td>80 DE/t</td>
+        <td>512,000 DE</td>
+        <td>320</td>
       </tr>
       <tr>
         <td>
@@ -225,8 +244,8 @@ unlisted: true
           />
         </td>
         <td className="pixel-muted tier-name tier-ultimate">Ultimate</td>
-        <td>256,000 DE</td>
-        <td>160 DE/t</td>
+        <td>3,200,000 DE</td>
+        <td>2,000</td>
       </tr>
     </tbody>
   </table>
@@ -238,34 +257,34 @@ unlisted: true
       <tr>
         <th aria-label="icon" />
         <th>Tier</th>
-        <th>Capacity</th>
-        <th>Rate</th>
+        <th>Water</th>
+        <th>Use (mB/t)</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td><img className="tier-icon" src="/img/icons/one_roman_stylized.png" alt="Basic" /></td><td className="tier-name tier-basic">Basic</td><td>32k</td><td>20/t</td></tr>
-      <tr><td><img className="tier-icon" src="/img/icons/two_roman_stylized.png" alt="Advanced" /></td><td className="tier-name tier-advanced">Advanced</td><td>64k</td><td>40/t</td></tr>
-      <tr><td><img className="tier-icon" src="/img/icons/three_roman_stylized.png" alt="Expert" /></td><td className="tier-name tier-expert">Expert</td><td>128k</td><td>80/t</td></tr>
-      <tr><td><img className="tier-icon" src="/img/icons/four_roman_stylized.png" alt="Ultimate" /></td><td className="tier-name tier-ultimate">Ultimate</td><td>256k</td><td>160/t</td></tr>
+      <tr><td><img className="tier-icon" src="/img/icons/one_roman_stylized.png" alt="Basic" /></td><td className="tier-name tier-basic">Basic</td><td>2,000</td><td>0.5</td></tr>
+      <tr><td><img className="tier-icon" src="/img/icons/two_roman_stylized.png" alt="Advanced" /></td><td className="tier-name tier-advanced">Advanced</td><td>8,000</td><td>2</td></tr>
+      <tr><td><img className="tier-icon" src="/img/icons/three_roman_stylized.png" alt="Expert" /></td><td className="tier-name tier-expert">Expert</td><td>32,000</td><td>8</td></tr>
+      <tr><td><img className="tier-icon" src="/img/icons/four_roman_stylized.png" alt="Ultimate" /></td><td className="tier-name tier-ultimate">Ultimate</td><td>200,000</td><td>50</td></tr>
     </tbody>
   </table>
 </div>
 
 ---
 
-## 5) Extra: Info Rows
+## 5) Extra: Build Notes
 
 <div className="info-list">
   <div className="info-row">
-    <div className="info-row__label">Machine Family</div>
-    <div className="info-row__value">Ore processing / conversion</div>
+    <div className="info-row__label">Early Game Tip</div>
+    <div className="info-row__value">Use Basic with lava + manual bucket refill for cheap starter power.</div>
   </div>
   <div className="info-row">
-    <div className="info-row__label">Best Use</div>
-    <div className="info-row__value">Automation chains with conduits and hoppers</div>
+    <div className="info-row__label">Mid Game Tip</div>
+    <div className="info-row__value">Advanced/Expert become efficient with automated water from fluid networks.</div>
   </div>
   <div className="info-row">
-    <div className="info-row__label">Visual QA Note</div>
-    <div className="info-row__value">Check spacing, row contrast, and responsive behavior under 760px.</div>
+    <div className="info-row__label">Late Game Tip</div>
+    <div className="info-row__value">Ultimate suits heavy factories and backbone power distribution.</div>
   </div>
 </div>
