@@ -42,7 +42,7 @@ Converts solids into advanced fluids with optional byproducts.
 ### [Network Center](./network_center)
 Energy network scanner and real-time diagnostics hub.
 
-### [Overclock Network](./overclock_network)
+### [Overclock Network](/docs/ascendant_technology/Wiki/Machines/overclock_network)
 Relay + Tower overclock infrastructure for factory-wide machine boosting.
 
 ### [Residue Processor](./residue_processor)
