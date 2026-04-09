@@ -64,6 +64,14 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
 
 ---
 
+## Practical notes
+
+- The Energizer does not need catalysts or fluid.
+- It uses **Primary** and **Auxiliary** input slots plus one shared output.
+- Keeping the output clear helps when you run repeated crafts.
+
+---
+
 ## Crafting Recipe
 
 {/* Crafting recipe image not yet available */}
@@ -73,9 +81,15 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
 ## How It Works
 
 1. Insert items in the **Primary** and/or **Auxiliary** slot.
-2. The machine checks for the first valid recipe.
+2. The machine checks the available input slots for a valid recipe.
 3. If enough DE is available, processing starts automatically.
 4. Collect the result from the output slot.
+
+
+### Slot notes
+
+- Use the two input slots according to the recipes you want to queue.
+- Keep the shared output slot free during longer runs.
 
 ---
 
@@ -89,5 +103,3 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
 | Iron Dust ×1 | Energized Iron Dust ×1 | 72,000 | 3 | Auxiliary |
 | Redstone Block ×1 | Energy Upgrade ×1 | 2,400,000 | 8 | Primary |
 | Raw Iron Block ×1 | Raw Energized Iron Block ×1 | 1,820,000 | 5 | Primary |
-
-> The machine processes recipes from the first input slot containing a valid recipe.

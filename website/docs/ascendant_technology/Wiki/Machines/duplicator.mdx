@@ -32,8 +32,8 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
 <BlockInfoGrid
   items={[
     { label: 'Energy Capacity', value: '512,000,000 DE (512 MDE)' },
-    { label: 'Energy Consumption', value: '10,000–150,000,000 DE/s (depends on rarity)' },
-    { label: 'Base Processing Rate', value: '400 DE/t' },
+    { label: 'Typical Craft Cost', value: '1,600,000–40,000,000 DE (depends on rarity)' },
+    { label: 'Base Processing Rate', value: '16,000 DE/t' },
     { label: 'Fluid Tank Capacity', value: '512,000 mB (Liquified Aetherium)' },
     { label: 'Fluid Consumption', value: '50 mB/s of recipe time' },
     { label: 'Upgrade Slots', value: '3' },
@@ -70,6 +70,16 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
 
 ---
 
+## What makes the Duplicator special
+
+Unlike a simple transmutation machine, the Duplicator works from a template and gives you both the original item and a new copy when the craft finishes.
+
+- The finished result is normally **original + copy**, for a total of two items.
+- Valuable item details are preserved, which is what makes the machine so attractive for premium gear and specialty items.
+- Costs climb sharply with rarity, so this is a progression machine, not a casual convenience block.
+
+---
+
 ## How It Works
 
 1. Insert a valid template into the input slot.
@@ -77,26 +87,48 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
 3. Provide enough DE for the selected rarity tier.
 4. Collect the original and duplicated outputs from the result slots.
 
+### Output behavior
+
+- The **original stream** returns the source item after processing.
+- The **copy stream** holds the newly created duplicate.
+- Keeping both result slots clear is important for long runs.
+
+If you are duplicating valuable gear, this setup makes recovery feel much safer because the machine is designed around returning the template instead of consuming it outright.
+
 ---
 
 ## Restrictions
 
 - Cannot clone Lucky Tools, banners, or potions.
+- Cannot clone shulker boxes.
 - Singularity templates are crafted in the **Singularity Fabricator**.
 - The cloner block itself cannot be duplicated.
 
+Some items are blocked because they carry awkward or risky behavior for duplication. When that happens, the safest response is simple: let the machine say no and move on.
+
 ---
 
-## Cost by Rarity
+## Rarity pacing
 
-| Rarity | Energy Cost (DE/s) |
-|--------|---------------------|
-| Common | 10,000 |
-| Uncommon | 48,000 |
-| Rare | 240,000 |
-| Epic | 1,200,000 |
-| Legendary | 6,000,000 |
-| Mythic | 30,000,000 |
-| Transcendent | 150,000,000 |
+Known templates follow rarity-based time and cost profiles before speed boosts or overclock bonuses are applied.
 
-> Processing time increases with item complexity and rarity.
+| Rarity | Total Time | Total Cost |
+|--------|------------|------------|
+| Common | 30 minutes | 1,600,000 DE |
+| Uncommon | 52 minutes 30 seconds | 3,200,000 DE |
+| Rare | 1 hour 45 minutes | 5,600,000 DE |
+| Epic | 3 hours | 8,000,000 DE |
+| Legendary | 4 hours 7 minutes 30 seconds | 16,000,000 DE |
+| Mythic | 5 hours | 24,000,000 DE |
+| Transcendent | 6 hours 15 minutes | 40,000,000 DE |
+
+If a template is not part of the known rarity pool, the machine falls back to an **Unknown** profile. That fallback is much shorter, but it is also less predictable as a planning tool.
+
+---
+
+## Practical advice
+
+- Use the Duplicator for items worth waiting on.
+- Keep a steady supply of **Liquified Aetherium** before starting long runs.
+- Save the **Singularity Fabricator** for the truly absurd templates that the Duplicator refuses.
+- Treat speed boosts as convenience, not as a substitute for real energy infrastructure.

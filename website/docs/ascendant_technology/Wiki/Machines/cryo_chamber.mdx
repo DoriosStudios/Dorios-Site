@@ -20,7 +20,7 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
       The <b>Cryo Chamber</b> is a multifunction thermal machine with three parallel modules: <b>Cryo Stabilizer</b>, <b>Cooling Chamber</b>, and <b>Cryofluid Generator</b>.
     </p>
     <p>
-      It combines stabilization, cooling, and fluid generation into a single block, making it essential for late-game cryogenic processing.
+      It combines stabilization, cooling, and fluid generation into a single block.
     </p>
   </div>
 </div>
@@ -66,6 +66,16 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
 
 ---
 
+## Practical notes
+
+The Cryo Chamber groups three cold-processing roles in one interface, but each side still follows its own recipe and resource rules.
+
+- Use the stabilizer for energized or unstable materials.
+- Use the cooling grid for item cooling recipes.
+- Use the generator section when you need more Cryofluid.
+
+---
+
 ## Crafting Recipe
 
 {/* Crafting recipe image not yet available */}
@@ -78,7 +88,20 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
 2. Use each module according to its own slot/tank requirements.
 3. Stabilizer recipes may consume **Cryofluid**.
 4. Cooling recipes can run in parallel in the 3×3 grid.
-5. Use Titanium or Raw Titanium catalysts to generate Cryofluid from water.
+5. Use the generator section with its required water and catalyst setup when you need more Cryofluid.
+
+### Parallel operation
+
+The machine can support more than one cold-processing role in the same block.
+
+- Keep enough DE, Water, and Cryofluid available for smoother long sessions.
+
+---
+
+## Tank notes
+
+- The **Water tank** feeds the generator side.
+- The **Cryofluid tank** stores produced Cryofluid and supports recipes that consume it.
 
 ---
 

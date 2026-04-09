@@ -65,6 +65,14 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
 
 ---
 
+## Practical notes
+
+- Check tank capacity before starting larger batches.
+- Keep the residue/byproduct slot clear when recipes can produce extras.
+- If a new recipe refuses to start, clear incompatible stored fluid before switching runs.
+
+---
+
 ## Crafting Recipe
 
 {/* Crafting recipe image not yet available */}
@@ -77,6 +85,11 @@ import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
 2. Ensure free capacity in the fluid tank.
 3. Provide enough DE for the selected recipe.
 4. Extract fluid via pipes/capsules and collect byproducts when generated.
+
+### Tank and residue behavior
+
+- Keep enough free room in the tank for the selected output fluid.
+- Keep the residue slot clear if the active recipe can generate a byproduct.
 
 ---
 
