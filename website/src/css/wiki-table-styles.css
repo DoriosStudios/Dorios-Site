@@ -1,0 +1,640 @@
+/* Dorios / Wiki Table Styles
+   Use this file as a standalone stylesheet for Markdown React / MDX pages.
+   Focus:
+   - cleaner dark tables
+   - softer spacing
+   - stronger hierarchy
+   - a special "pixel matrix" style based on the visual mockup
+*/
+
+/* =========================================================
+   Core tokens
+   ========================================================= */
+
+:root {
+  --ds-bg: #0b0d12;
+  --ds-surface-0: #12151b;
+  --ds-surface-1: #171a21;
+  --ds-surface-2: #1c2028;
+  --ds-surface-3: #232833;
+
+  --ds-line-soft: rgba(255, 255, 255, 0.08);
+  --ds-line: rgba(255, 255, 255, 0.12);
+  --ds-line-strong: rgba(255, 255, 255, 0.18);
+
+  --ds-text: rgba(255, 255, 255, 0.94);
+  --ds-text-soft: rgba(255, 255, 255, 0.78);
+  --ds-text-dim: rgba(255, 255, 255, 0.62);
+
+  --ds-radius-sm: 12px;
+  --ds-radius-md: 16px;
+  --ds-radius-lg: 20px;
+  --ds-radius-xl: 26px;
+
+  --ds-shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.18);
+  --ds-shadow-md: 0 16px 42px rgba(0, 0, 0, 0.22);
+  --ds-shadow-lg: 0 22px 60px rgba(0, 0, 0, 0.28);
+
+  --ds-pad-x: 18px;
+  --ds-pad-y: 14px;
+
+  --ds-font-ui:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --ds-font-pixel:
+    "Minecraft Seven v2",
+    "Minecraft",
+    "Monocraft",
+    "Press Start 2P",
+    "Pixeloid Sans",
+    monospace;
+}
+
+/* =========================================================
+   Optional helpers
+   ========================================================= */
+
+.ds-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.1rem 0 1.4rem;
+}
+
+.ds-table-wrap > table {
+  min-width: 620px;
+}
+
+.ds-section-divider {
+  height: 1px;
+  border: 0;
+  margin: 2.2rem 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 10%,
+    rgba(255, 255, 255, 0.18) 90%,
+    transparent 100%
+  );
+}
+
+/* Prevent theme collisions from generic markdown table styles */
+.table-compact-premium,
+.table-tech-panel,
+.table-matrix,
+.table-pixel-matrix {
+  font-family: var(--ds-font-ui);
+  color: var(--ds-text);
+}
+
+.table-compact-premium th,
+.table-compact-premium td,
+.table-tech-panel th,
+.table-tech-panel td,
+.table-matrix th,
+.table-matrix td,
+.table-pixel-matrix th,
+.table-pixel-matrix td {
+  vertical-align: middle;
+}
+
+/* =========================================================
+   1) Compact Premium
+   Best for short "Setting / Value" tables
+   ========================================================= */
+
+.table-compact-premium {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: linear-gradient(180deg, #1d2027 0%, #191c22 100%);
+  border: 1px solid var(--ds-line);
+  border-radius: var(--ds-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.table-compact-premium thead th {
+  background: linear-gradient(180deg, #191c22 0%, #15181e 100%);
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--ds-line);
+  text-align: left;
+}
+
+.table-compact-premium tbody td {
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--ds-line-soft);
+  color: var(--ds-text-soft);
+  line-height: 1.35;
+}
+
+.table-compact-premium tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-compact-premium tbody tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.table-compact-premium tbody td:first-child {
+  width: 36%;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.table-compact-premium tbody td:last-child {
+  width: 64%;
+}
+
+/* Slightly denser variant */
+.table-compact-premium.is-tight thead th {
+  padding: 11px 16px;
+}
+
+.table-compact-premium.is-tight tbody td {
+  padding: 11px 16px;
+}
+
+/* =========================================================
+   2) Tech Panel
+   Best for wiki "Block Information" panels
+   ========================================================= */
+
+.table-tech-panel {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: linear-gradient(180deg, #1d2027 0%, #181b22 100%);
+  border: 1px solid var(--ds-line);
+  border-radius: var(--ds-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--ds-shadow-md);
+}
+
+.table-tech-panel thead th {
+  background: linear-gradient(180deg, #1e222b 0%, #171a21 100%);
+  color: #ffffff;
+  padding: 14px 20px;
+  font-size: 0.79rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  border-bottom: 1px solid var(--ds-line-strong);
+  text-align: left;
+}
+
+.table-tech-panel tbody td {
+  padding: 14px 22px;
+  border-bottom: 1px solid var(--ds-line-soft);
+  line-height: 1.35;
+}
+
+.table-tech-panel tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-tech-panel tbody td:first-child {
+  width: 34%;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.032) 0%,
+      rgba(255, 255, 255, 0.018) 100%
+    );
+  border-right: 1px solid var(--ds-line-soft);
+  font-weight: 750;
+  color: #ffffff;
+}
+
+.table-tech-panel tbody td:last-child {
+  color: var(--ds-text-soft);
+}
+
+.table-tech-panel tbody tr:nth-child(even) td:last-child {
+  background: rgba(255, 255, 255, 0.012);
+}
+
+/* More compact option for denser pages */
+.table-tech-panel.is-compact thead th {
+  padding: 12px 18px;
+}
+
+.table-tech-panel.is-compact tbody td {
+  padding: 12px 18px;
+}
+
+.table-tech-panel.is-compact tbody td:first-child {
+  width: 31%;
+}
+
+/* =========================================================
+   3) Matrix
+   Best for comparisons across tiers
+   Expected structure:
+   - thead: corner cell + top headers
+   - tbody: first cell in each row acts as lateral header
+   ========================================================= */
+
+.table-matrix {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: linear-gradient(180deg, #1a1d24 0%, #16191f 100%);
+  border: 1px solid var(--ds-line);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--ds-shadow-md);
+}
+
+.table-matrix th,
+.table-matrix td {
+  padding: 14px 16px;
+  border-right: 1px solid var(--ds-line-soft);
+  border-bottom: 1px solid var(--ds-line-soft);
+}
+
+.table-matrix th:last-child,
+.table-matrix td:last-child {
+  border-right: none;
+}
+
+.table-matrix tr:last-child th,
+.table-matrix tr:last-child td {
+  border-bottom: none;
+}
+
+.table-matrix thead th {
+  background: linear-gradient(180deg, #1a1d24 0%, #14171d 100%);
+  color: #ffffff;
+  font-size: 0.81rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  text-align: center;
+  font-weight: 800;
+}
+
+.table-matrix thead .corner-head {
+  text-align: left;
+  min-width: 220px;
+}
+
+.table-matrix tbody th {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.028) 0%,
+      rgba(255, 255, 255, 0.015) 100%
+    );
+  color: #ffffff;
+  font-weight: 750;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table-matrix tbody td {
+  text-align: center;
+  color: var(--ds-text-soft);
+  font-weight: 650;
+}
+
+.table-matrix tbody tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.table-matrix .row-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.table-matrix .row-label img,
+.table-matrix .row-label svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  object-fit: contain;
+  opacity: 0.98;
+}
+
+/* Denser matrix */
+.table-matrix.is-tight th,
+.table-matrix.is-tight td {
+  padding: 12px 14px;
+}
+
+/* =========================================================
+   4) Pixel Matrix / Tier Panel
+   Based on the mockup with icon + tier name + centered values
+   Expected structure:
+   thead: [icon spacer] [Tier] [Energy Capacity] [Rate]
+   tbody: [icon] [tier name] [capacity] [rate]
+   ========================================================= */
+
+.table-pixel-matrix {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 34px;
+  background:
+    radial-gradient(
+      90% 120% at 100% 100%,
+      rgba(0, 160, 70, 0.24) 0%,
+      rgba(0, 160, 70, 0.10) 20%,
+      rgba(0, 0, 0, 0) 58%
+    ),
+    linear-gradient(
+      150deg,
+      rgba(255, 255, 255, 0.035) 0%,
+      rgba(255, 255, 255, 0.0) 42%
+    ),
+    linear-gradient(180deg, #090b0f 0%, #080a0d 100%);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.25),
+    0 4px 22px rgba(0, 0, 0, 0.14),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+/* Subtle diagonal accent lines */
+.table-pixel-matrix::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      152deg,
+      transparent 48%,
+      rgba(0, 255, 128, 0.045) 49%,
+      rgba(0, 255, 128, 0.045) 50%,
+      transparent 51%
+    );
+  opacity: 0.6;
+}
+
+.table-pixel-matrix thead,
+.table-pixel-matrix tbody,
+.table-pixel-matrix tr,
+.table-pixel-matrix th,
+.table-pixel-matrix td {
+  position: relative;
+  z-index: 1;
+}
+
+.table-pixel-matrix thead th {
+  font-family: var(--ds-font-pixel);
+  font-size: clamp(0.78rem, 1.55vw, 1.12rem);
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 0;
+  padding: 26px 18px 14px;
+  border: none;
+  white-space: nowrap;
+}
+
+.table-pixel-matrix thead th:first-child {
+  width: 88px;
+  padding-left: 26px;
+  padding-right: 8px;
+}
+
+.table-pixel-matrix thead th:nth-child(2) {
+  text-align: left;
+  width: 23%;
+}
+
+.table-pixel-matrix thead th:nth-child(3) {
+  width: 42%;
+}
+
+.table-pixel-matrix thead th:nth-child(4) {
+  width: 22%;
+  padding-right: 26px;
+}
+
+.table-pixel-matrix tbody td {
+  border: none;
+  padding: 19px 18px;
+  font-family: var(--ds-font-pixel);
+  font-size: clamp(0.9rem, 1.85vw, 1.45rem);
+  line-height: 1.12;
+  color: #ffffff;
+}
+
+.table-pixel-matrix tbody tr:not(:last-child) td {
+  padding-bottom: 22px;
+}
+
+.table-pixel-matrix tbody td:first-child {
+  width: 88px;
+  padding-left: 26px;
+  padding-right: 8px;
+  text-align: center;
+}
+
+.table-pixel-matrix tbody td:nth-child(2) {
+  text-align: left;
+  font-size: clamp(0.95rem, 1.95vw, 1.55rem);
+  white-space: nowrap;
+}
+
+.table-pixel-matrix tbody td:nth-child(3),
+.table-pixel-matrix tbody td:nth-child(4) {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.table-pixel-matrix tbody td:last-child {
+  padding-right: 26px;
+}
+
+.table-pixel-matrix .tier-icon {
+  width: clamp(26px, 3.6vw, 44px);
+  height: clamp(46px, 5.8vw, 68px);
+  object-fit: contain;
+  image-rendering: pixelated;
+  filter:
+    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.05))
+    drop-shadow(0 8px 10px rgba(0, 0, 0, 0.22));
+}
+
+.table-pixel-matrix .pixel-muted {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.table-pixel-matrix.is-roomy thead th {
+  padding-top: 30px;
+  padding-bottom: 16px;
+}
+
+.table-pixel-matrix.is-roomy tbody td {
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+.table-pixel-matrix.is-tight {
+  border-radius: 28px;
+}
+
+.table-pixel-matrix.is-tight thead th {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-size: clamp(0.74rem, 1.45vw, 1rem);
+}
+
+.table-pixel-matrix.is-tight tbody td {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: clamp(0.82rem, 1.65vw, 1.22rem);
+}
+
+.table-pixel-matrix.is-tight tbody td:nth-child(2) {
+  font-size: clamp(0.88rem, 1.75vw, 1.28rem);
+}
+
+/* Optional extra separators for the pixel matrix */
+.table-pixel-matrix.has-row-separators tbody tr + tr td {
+  border-top: 1px solid rgba(255, 255, 255, 0.035);
+}
+
+/* Optional column guides */
+.table-pixel-matrix.has-column-guides th:nth-child(2),
+.table-pixel-matrix.has-column-guides td:nth-child(2),
+.table-pixel-matrix.has-column-guides th:nth-child(3),
+.table-pixel-matrix.has-column-guides td:nth-child(3) {
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* =========================================================
+   5) Simple info rows (extra)
+   Non-table alternative for short stat lists
+   ========================================================= */
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-row {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.95fr) minmax(220px, 1.35fr);
+  gap: 16px;
+  align-items: center;
+  background: linear-gradient(180deg, #1c2027 0%, #181b22 100%);
+  border: 1px solid var(--ds-line-soft);
+  border-radius: 15px;
+  padding: 13px 16px;
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.info-row__label {
+  color: #ffffff;
+  font-weight: 750;
+}
+
+.info-row__value {
+  color: var(--ds-text-soft);
+}
+
+/* =========================================================
+   Responsive adjustments
+   ========================================================= */
+
+@media (max-width: 980px) {
+  .table-pixel-matrix {
+    border-radius: 28px;
+  }
+
+  .table-pixel-matrix thead th:first-child,
+  .table-pixel-matrix tbody td:first-child {
+    width: 76px;
+  }
+
+  .table-pixel-matrix thead th {
+    padding-top: 22px;
+  }
+
+  .table-pixel-matrix tbody td {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  .ds-table-wrap > table {
+    min-width: 560px;
+  }
+
+  .table-compact-premium thead th,
+  .table-compact-premium tbody td,
+  .table-tech-panel thead th,
+  .table-tech-panel tbody td,
+  .table-matrix th,
+  .table-matrix td {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .table-pixel-matrix {
+    border-radius: 22px;
+  }
+
+  .table-pixel-matrix thead th:first-child,
+  .table-pixel-matrix tbody td:first-child {
+    width: 66px;
+    padding-left: 16px;
+  }
+
+  .table-pixel-matrix thead th:last-child,
+  .table-pixel-matrix tbody td:last-child {
+    padding-right: 16px;
+  }
+
+  .table-pixel-matrix .tier-icon {
+    width: 24px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 560px) {
+  .ds-table-wrap > table {
+    min-width: 520px;
+  }
+
+  .table-tech-panel,
+  .table-matrix,
+  .table-compact-premium {
+    border-radius: 14px;
+  }
+
+  .table-pixel-matrix {
+    border-radius: 18px;
+  }
+
+  .table-pixel-matrix thead th {
+    font-size: 0.78rem;
+  }
+
+  .table-pixel-matrix tbody td {
+    font-size: 0.9rem;
+  }
+
+  .table-pixel-matrix tbody td:nth-child(2) {
+    font-size: 0.95rem;
+  }
+}

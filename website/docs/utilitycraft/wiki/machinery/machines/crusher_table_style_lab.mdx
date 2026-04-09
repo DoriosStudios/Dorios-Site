@@ -1,0 +1,250 @@
+---
+id: crusher_table_style_lab
+title: Crusher (Table Style Lab)
+sidebar_label: Crusher (Style Lab)
+unlisted: true
+slug: /utilitycraft/internal/crusher-table-style-lab
+pagination_prev: null
+pagination_next: null
+---
+
+# Crusher
+
+> Internal style-lab clone to validate wiki table visuals. Keep this page unlisted.
+
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+  <img
+    src="/img/addons/utilitycraft/machinery/renders/crusher_render.png"
+    alt="Crusher Render"
+    width="25%"
+    style={{ marginRight: "1rem" }}
+  />
+  <div>
+    <p>
+      The <b>Crusher</b> is a machine that processes <b>ores, blocks, ingots, and plates</b> into dusts and refined forms.
+      This internal clone exists to test the new table styles in real wiki conditions.
+    </p>
+    <p>
+      Baseline values remain the same as the original machine page so design QA can focus only on visual hierarchy and spacing.
+    </p>
+  </div>
+</div>
+
+---
+
+## 1) Compact Premium
+
+<div className="ds-table-wrap">
+  <table className="table-compact-premium">
+    <thead>
+      <tr>
+        <th>Setting</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Energy Cap</td><td>64,000 DE</td></tr>
+      <tr><td>Energy Cost per Operation</td><td>800 DE</td></tr>
+      <tr><td>Base Processing Rate</td><td>20 DE/t</td></tr>
+      <tr><td>Accepts Speed Upgrades</td><td>Yes</td></tr>
+      <tr><td>Overclockable</td><td>No</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div className="ds-table-wrap">
+  <table className="table-compact-premium is-tight">
+    <thead>
+      <tr>
+        <th>Mode</th>
+        <th>Behavior</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Normal</td><td>Default spacing for readability.</td></tr>
+      <tr><td>Tight</td><td>Denser rows for long technical lists.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+## 2) Tech Panel
+
+<div className="ds-table-wrap">
+  <table className="table-tech-panel">
+    <thead>
+      <tr>
+        <th>Block Information</th>
+        <th>Specification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Machine Type</td><td>Processing / Ore Utility</td></tr>
+      <tr><td>Energy Input</td><td>Cable / Wireless compatible</td></tr>
+      <tr><td>Upgrade Slots</td><td>Speed Upgrade supported</td></tr>
+      <tr><td>Automation</td><td>Fully automatable with conduits and hoppers</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div className="ds-table-wrap">
+  <table className="table-tech-panel is-compact">
+    <thead>
+      <tr>
+        <th>Compact Variant</th>
+        <th>Use Case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>is-compact</td><td>Useful where many stat panels exist on one page.</td></tr>
+      <tr><td>Default</td><td>Best for featured machine sections.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+## 3) Matrix
+
+<div className="ds-table-wrap">
+  <table className="table-matrix">
+    <thead>
+      <tr>
+        <th className="corner-head">Tier / Stat</th>
+        <th>Basic</th>
+        <th>Advanced</th>
+        <th>Elite</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>
+          <span className="row-label">
+            <img src="/img/dorios_logo.png" alt="icon" /> Energy Capacity
+          </span>
+        </th>
+        <td>32,000 DE</td>
+        <td>64,000 DE</td>
+        <td>128,000 DE</td>
+      </tr>
+      <tr>
+        <th>
+          <span className="row-label">
+            <img src="/img/dorios_logo.png" alt="icon" /> Input Rate
+          </span>
+        </th>
+        <td>20 DE/t</td>
+        <td>40 DE/t</td>
+        <td>80 DE/t</td>
+      </tr>
+      <tr>
+        <th>
+          <span className="row-label">
+            <img src="/img/dorios_logo.png" alt="icon" /> Process Cost
+          </span>
+        </th>
+        <td>800 DE</td>
+        <td>700 DE</td>
+        <td>600 DE</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div className="ds-table-wrap">
+  <table className="table-matrix is-tight">
+    <thead>
+      <tr>
+        <th className="corner-head">Tight Matrix</th>
+        <th>Basic</th>
+        <th>Advanced</th>
+        <th>Elite</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th>Queue Slots</th><td>2</td><td>4</td><td>8</td></tr>
+      <tr><th>Parallel Ops</th><td>1x</td><td>2x</td><td>4x</td></tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+## 4) Pixel Matrix / Tier Panel
+
+<div className="ds-table-wrap">
+  <table className="table-pixel-matrix has-row-separators has-column-guides">
+    <thead>
+      <tr>
+        <th aria-label="icon" />
+        <th>Tier</th>
+        <th>Energy Capacity</th>
+        <th>Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <img className="tier-icon" src="/img/dorios_logo.png" alt="Basic tier" />
+        </td>
+        <td className="pixel-muted">Basic</td>
+        <td>32,000 DE</td>
+        <td>20 DE/t</td>
+      </tr>
+      <tr>
+        <td>
+          <img className="tier-icon" src="/img/dorios_logo.png" alt="Advanced tier" />
+        </td>
+        <td className="pixel-muted">Advanced</td>
+        <td>64,000 DE</td>
+        <td>40 DE/t</td>
+      </tr>
+      <tr>
+        <td>
+          <img className="tier-icon" src="/img/dorios_logo.png" alt="Elite tier" />
+        </td>
+        <td className="pixel-muted">Elite</td>
+        <td>128,000 DE</td>
+        <td>80 DE/t</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div className="ds-table-wrap">
+  <table className="table-pixel-matrix is-tight has-row-separators">
+    <thead>
+      <tr>
+        <th aria-label="icon" />
+        <th>Tier</th>
+        <th>Capacity</th>
+        <th>Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><img className="tier-icon" src="/img/dorios_logo.png" alt="B" /></td><td>B</td><td>32k</td><td>20/t</td></tr>
+      <tr><td><img className="tier-icon" src="/img/dorios_logo.png" alt="A" /></td><td>A</td><td>64k</td><td>40/t</td></tr>
+      <tr><td><img className="tier-icon" src="/img/dorios_logo.png" alt="E" /></td><td>E</td><td>128k</td><td>80/t</td></tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+## 5) Extra: Info Rows
+
+<div className="info-list">
+  <div className="info-row">
+    <div className="info-row__label">Machine Family</div>
+    <div className="info-row__value">Ore processing / conversion</div>
+  </div>
+  <div className="info-row">
+    <div className="info-row__label">Best Use</div>
+    <div className="info-row__value">Automation chains with conduits and hoppers</div>
+  </div>
+  <div className="info-row">
+    <div className="info-row__label">Visual QA Note</div>
+    <div className="info-row__value">Check spacing, row contrast, and responsive behavior under 760px.</div>
+  </div>
+</div>
