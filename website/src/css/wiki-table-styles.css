@@ -403,10 +403,11 @@
    ========================================================= */
 
 .table-pixel-matrix {
-  --ds-pixel-icon-col: 50px;
-  --ds-pixel-tier-col: 160px;
+  --ds-pixel-icon-col: 42px;
+  --ds-pixel-tier-col: 19%;
+  --ds-pixel-data-cols: 2;
   width: 100%;
-  table-layout: auto;
+  table-layout: fixed;
   border-collapse: separate;
   border-spacing: 0;
   position: relative;
@@ -430,6 +431,30 @@
     0 6px 16px rgba(0, 0, 0, 0.22),
     0 2px 10px rgba(0, 0, 0, 0.12),
     inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.table-pixel-matrix:has(thead th:nth-child(5)) {
+  --ds-pixel-data-cols: 3;
+}
+
+.table-pixel-matrix:has(thead th:nth-child(6)) {
+  --ds-pixel-data-cols: 4;
+}
+
+.table-pixel-matrix:has(thead th:nth-child(7)) {
+  --ds-pixel-data-cols: 5;
+}
+
+.table-pixel-matrix:has(thead th:nth-child(8)) {
+  --ds-pixel-data-cols: 6;
+}
+
+.ds-table-wrap > table.table-pixel-matrix:has(thead th:nth-child(7)) {
+  min-width: 680px;
+}
+
+.ds-table-wrap > table.table-pixel-matrix:has(thead th:nth-child(8)) {
+  min-width: 760px;
 }
 
 /* Subtle diagonal accent lines */
@@ -472,8 +497,8 @@
 
 .table-pixel-matrix thead th:first-child {
   width: var(--ds-pixel-icon-col);
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .table-pixel-matrix thead th:nth-child(2) {
@@ -482,7 +507,10 @@
 }
 
 .table-pixel-matrix thead th:nth-child(n + 3) {
-  text-align: center;
+  width: calc(
+    (100% - var(--ds-pixel-icon-col) - var(--ds-pixel-tier-col))
+      / var(--ds-pixel-data-cols)
+  );
 }
 
 .table-pixel-matrix tbody td {
@@ -500,8 +528,8 @@
 
 .table-pixel-matrix tbody td:first-child {
   width: var(--ds-pixel-icon-col);
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
   text-align: center;
 }
 
@@ -514,10 +542,6 @@
 .table-pixel-matrix tbody td:nth-child(n + 3) {
   text-align: center;
   white-space: nowrap;
-}
-
-.table-pixel-matrix tbody td:last-child {
-  padding-right: 10px;
 }
 
 .table-pixel-matrix .tier-icon {
@@ -539,24 +563,20 @@
   letter-spacing: 0.03em;
 }
 
-.table-pixel-matrix td.tier-basic,
-.table-pixel-matrix .tier-name.tier-basic {
-  color: #79e6ff !important;
+.table-pixel-matrix .tier-basic {
+  color: #ffd34f;
 }
 
-.table-pixel-matrix td.tier-advanced,
-.table-pixel-matrix .tier-name.tier-advanced {
-  color: #ff8a8a !important;
+.table-pixel-matrix .tier-advanced {
+  color: #ff8a8a;
 }
 
-.table-pixel-matrix td.tier-expert,
-.table-pixel-matrix .tier-name.tier-expert {
-  color: #d2d2d2 !important;
+.table-pixel-matrix .tier-expert {
+  color: #79e6ff;
 }
 
-.table-pixel-matrix td.tier-ultimate,
-.table-pixel-matrix .tier-name.tier-ultimate {
-  color: #ffd34f !important;
+.table-pixel-matrix .tier-ultimate {
+  color: #d2d2d2;
 }
 
 .table-pixel-matrix.is-roomy thead th {
@@ -602,7 +622,11 @@
 .table-pixel-matrix.has-column-guides th:nth-child(4),
 .table-pixel-matrix.has-column-guides td:nth-child(4),
 .table-pixel-matrix.has-column-guides th:nth-child(5),
-.table-pixel-matrix.has-column-guides td:nth-child(5) {
+.table-pixel-matrix.has-column-guides td:nth-child(5),
+.table-pixel-matrix.has-column-guides th:nth-child(6),
+.table-pixel-matrix.has-column-guides td:nth-child(6),
+.table-pixel-matrix.has-column-guides th:nth-child(7),
+.table-pixel-matrix.has-column-guides td:nth-child(7) {
   border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -644,13 +668,13 @@
 
 @media (max-width: 980px) {
   .table-pixel-matrix {
-    --ds-pixel-icon-col: 46px;
+    --ds-pixel-icon-col: 38px;
     border-radius: 12px;
   }
 
   .table-pixel-matrix thead th:first-child,
   .table-pixel-matrix tbody td:first-child {
-    width: 46px;
+    width: 38px;
   }
 
   .table-pixel-matrix thead th {
@@ -679,19 +703,14 @@
   }
 
   .table-pixel-matrix {
-    --ds-pixel-icon-col: 42px;
+    --ds-pixel-icon-col: 34px;
     border-radius: 10px;
   }
 
   .table-pixel-matrix thead th:first-child,
   .table-pixel-matrix tbody td:first-child {
-    width: 42px;
+    width: 34px;
     padding-left: 8px;
-  }
-
-  .table-pixel-matrix thead th:last-child,
-  .table-pixel-matrix tbody td:last-child {
-    padding-right: 8px;
   }
 
   .table-pixel-matrix .tier-icon {
