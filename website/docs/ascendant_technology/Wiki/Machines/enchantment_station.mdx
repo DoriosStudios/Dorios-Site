@@ -80,24 +80,36 @@ The **Enchant** page handles enchanting, repairs, curse cleanup, and reinforceme
 
 ### Main operations
 
-#### Enchanting
+<h4 className="at-operation-title">
+  <span className="at-operation-chip">Enhance</span>
+  <span>Enchanting</span>
+</h4>
 
 - Adds supported enchantments to eligible equipment.
 - Improves existing enchantments when the current module tier allows it.
 - Uses more XP fluid as the requested enchant work becomes stronger.
 
-#### Curse cleanup
+<h4 className="at-operation-title">
+  <span className="at-operation-chip">Cleanse</span>
+  <span>Curse cleanup</span>
+</h4>
 
 - Removes supported curse effects from eligible items.
 - Best used on equipment that already has good enchantments worth saving.
 - Becomes safer and more reliable with curse protection installed.
 
-#### Repairing
+<h4 className="at-operation-title">
+  <span className="at-operation-chip">Restore</span>
+  <span>Repairing</span>
+</h4>
 
 - Repairs damaged items during normal processing.
 - Lets you refresh equipment without moving to a separate station.
 
-#### Reinforcement
+<h4 className="at-operation-title">
+  <span className="at-operation-chip">Fortify</span>
+  <span>Reinforcement</span>
+</h4>
 
 Reinforcement gives durability-based equipment a larger safety buffer, making expensive items easier to keep in rotation for mining, combat, and exploration.
 
@@ -121,103 +133,265 @@ The station uses three module families: enchantability, reinforcement, and curse
 
 ### Enchantability modules
 
-Higher enchantability tiers raise the machine's enchant ceiling and widen the supported pool.
-
-| Module | Ceiling | Main purpose |
-| --- | --- | --- |
-| I | Level I | Enables the base pool |
-| II | Level II | Strengthens early core enchants |
-| III | Level III | Adds mid-tier premium options |
-| IV | Level IV | Pushes core enchants into late-game territory |
-| V | Level V | Unlocks treasure-style and rare utility results |
+Each panel below shows the supported enchantments for that module tier in alphabetical order.
 
 <details className="ds-clean">
   <summary>
     <span className="ds-arrow">▸</span>
-    <span>Attack &amp; ranged</span>
+    <span>Enchantability Module I — base pool</span>
   </summary>
 
 <br/>
 
-| Module | Enchantments |
-| --- | --- |
-| I | Sharpness I, Smite I, Bane of Arthropods I, Impaling I, Power I, Density I |
-| II | Sharpness II, Smite II, Bane of Arthropods II, Impaling II, Power II, Density II |
-| III | Sharpness III, Smite III, Bane of Arthropods III, Impaling III, Power III, Density III, Knockback I **(NEW)**, Fire Aspect I **(NEW)**, Punch I **(NEW)** |
-| IV | Sharpness IV, Smite IV, Bane of Arthropods IV, Impaling IV, Power IV, Density IV, Knockback II, Fire Aspect II, Punch II |
-| V | Sharpness V, Smite V, Bane of Arthropods V, Impaling V, Power V, Density V, Flame I **(NEW)** |
+- **Attack &amp; ranged**
+  - Bane of Arthropods I
+  - Density I
+  - Impaling I
+  - Power I
+  - Sharpness I
+  - Smite I
+
+- **Protection &amp; armor**
+  - Blast Protection I
+  - Breach I
+  - Feather Falling I
+  - Fire Protection I
+  - Piercing I
+  - Projectile Protection I
+  - Protection I
+  - Thorns I
+
+- **Tools, loot &amp; durability**
+  - Efficiency I
+  - Fortune I
+  - Looting I
+  - Unbreaking I
+
+- **Movement &amp; survival utility**
+  - Depth Strider I
+  - Respiration I
+  - Soul Speed I
+  - Swift Sneak I
+
+- **Fishing, trident, crossbow &amp; special utility**
+  - Loyalty I
+  - Luck of the Sea I
+  - Lunge I
+  - Lure I
+  - Quick Charge I
+  - Riptide I
+  - Wind Burst I
 
 </details>
 
 <details className="ds-clean">
   <summary>
     <span className="ds-arrow">▸</span>
-    <span>Tools, loot, and durability</span>
+    <span>Enchantability Module II — stronger early enchants</span>
   </summary>
 
 <br/>
 
-| Module | Enchantments |
-| --- | --- |
-| I | Efficiency I, Unbreaking I, Fortune I, Looting I |
-| II | Efficiency II, Unbreaking I, Fortune I, Looting I |
-| III | Efficiency III, Unbreaking II, Fortune II, Looting II |
-| IV | Efficiency IV, Unbreaking II, Fortune II, Looting II |
-| V | Efficiency V, Unbreaking III, Fortune III, Looting III, Silk Touch I **(NEW)**, Mending I **(NEW)** |
+- **Attack &amp; ranged**
+  - Bane of Arthropods II
+  - Density II
+  - Impaling II
+  - Power II
+  - Sharpness II
+  - Smite II
+
+- **Protection &amp; armor**
+  - Blast Protection II
+  - Breach II
+  - Feather Falling II
+  - Fire Protection II
+  - Piercing II
+  - Projectile Protection II
+  - Protection II
+  - Thorns I
+
+- **Tools, loot &amp; durability**
+  - Efficiency II
+  - Fortune I
+  - Looting I
+  - Unbreaking I
+
+- **Movement &amp; survival utility**
+  - Depth Strider I
+  - Respiration I
+  - Soul Speed I
+  - Swift Sneak I
+
+- **Fishing, trident, crossbow &amp; special utility**
+  - Loyalty I
+  - Luck of the Sea I
+  - Lunge I
+  - Lure I
+  - Quick Charge I
+  - Riptide I
+  - Wind Burst I
 
 </details>
 
 <details className="ds-clean">
   <summary>
     <span className="ds-arrow">▸</span>
-    <span>Protection &amp; armor</span>
+    <span>Enchantability Module III — mid-tier unlocks</span>
   </summary>
 
 <br/>
 
-| Module | Enchantments |
-| --- | --- |
-| I | Protection I, Fire Protection I, Blast Protection I, Projectile Protection I, Feather Falling I, Thorns I, Piercing I, Breach I |
-| II | Protection II, Fire Protection II, Blast Protection II, Projectile Protection II, Feather Falling II, Thorns I, Piercing II, Breach II |
-| III | Protection II, Fire Protection II, Blast Protection II, Projectile Protection II, Feather Falling II, Thorns II, Piercing II, Breach II |
-| IV | Protection III, Fire Protection III, Blast Protection III, Projectile Protection III, Feather Falling III, Thorns II, Piercing III, Breach III |
-| V | Protection IV, Fire Protection IV, Blast Protection IV, Projectile Protection IV, Feather Falling IV, Thorns III, Piercing IV, Breach IV |
+- **Attack &amp; ranged**
+  - Bane of Arthropods III
+  - Density III
+  - Fire Aspect I **(NEW)**
+  - Impaling III
+  - Knockback I **(NEW)**
+  - Power III
+  - Punch I **(NEW)**
+  - Sharpness III
+  - Smite III
+
+- **Protection &amp; armor**
+  - Blast Protection II
+  - Breach II
+  - Feather Falling II
+  - Fire Protection II
+  - Piercing II
+  - Projectile Protection II
+  - Protection II
+  - Thorns II
+
+- **Tools, loot &amp; durability**
+  - Efficiency III
+  - Fortune II
+  - Looting II
+  - Unbreaking II
+
+- **Movement &amp; survival utility**
+  - Depth Strider II
+  - Frost Walker I **(NEW)**
+  - Respiration II
+  - Soul Speed II
+  - Swift Sneak II
+
+- **Fishing, trident, crossbow &amp; special utility**
+  - Loyalty II
+  - Luck of the Sea II
+  - Lunge II
+  - Lure II
+  - Quick Charge II
+  - Riptide II
+  - Wind Burst II
 
 </details>
 
 <details className="ds-clean">
   <summary>
     <span className="ds-arrow">▸</span>
-    <span>Movement &amp; survival utility</span>
+    <span>Enchantability Module IV — late-game core upgrades</span>
   </summary>
 
 <br/>
 
-| Module | Enchantments |
-| --- | --- |
-| I | Respiration I, Depth Strider I, Swift Sneak I, Soul Speed I |
-| II | Respiration I, Depth Strider I, Swift Sneak I, Soul Speed I |
-| III | Respiration II, Depth Strider II, Swift Sneak II, Soul Speed II, Frost Walker I **(NEW)** |
-| IV | Respiration II, Depth Strider II, Swift Sneak II, Soul Speed II, Frost Walker II |
-| V | Respiration III, Depth Strider III, Swift Sneak III, Soul Speed III, Aqua Affinity I **(NEW)** |
+- **Attack &amp; ranged**
+  - Bane of Arthropods IV
+  - Density IV
+  - Fire Aspect II
+  - Impaling IV
+  - Knockback II
+  - Power IV
+  - Punch II
+  - Sharpness IV
+  - Smite IV
+
+- **Protection &amp; armor**
+  - Blast Protection III
+  - Breach III
+  - Feather Falling III
+  - Fire Protection III
+  - Piercing III
+  - Projectile Protection III
+  - Protection III
+  - Thorns II
+
+- **Tools, loot &amp; durability**
+  - Efficiency IV
+  - Fortune II
+  - Looting II
+  - Unbreaking II
+
+- **Movement &amp; survival utility**
+  - Depth Strider II
+  - Frost Walker II
+  - Respiration II
+  - Soul Speed II
+  - Swift Sneak II
+
+- **Fishing, trident, crossbow &amp; special utility**
+  - Loyalty II
+  - Luck of the Sea II
+  - Lunge II
+  - Lure II
+  - Quick Charge II
+  - Riptide II
+  - Wind Burst II
 
 </details>
 
 <details className="ds-clean">
   <summary>
     <span className="ds-arrow">▸</span>
-    <span>Fishing, trident, crossbow, and special utility</span>
+    <span>Enchantability Module V — rare and treasure-style unlocks</span>
   </summary>
 
 <br/>
 
-| Module | Enchantments |
-| --- | --- |
-| I | Luck of the Sea I, Lure I, Loyalty I, Quick Charge I, Wind Burst I, Lunge I, Riptide I |
-| II | Luck of the Sea I, Lure I, Loyalty I, Quick Charge I, Wind Burst I, Lunge I, Riptide I |
-| III | Luck of the Sea II, Lure II, Loyalty II, Quick Charge II, Wind Burst II, Lunge II, Riptide II |
-| IV | Luck of the Sea II, Lure II, Loyalty II, Quick Charge II, Wind Burst II, Lunge II, Riptide II |
-| V | Luck of the Sea III, Lure III, Loyalty III, Quick Charge III, Wind Burst III, Lunge III, Riptide III, Infinity I **(NEW)**, Multishot I **(NEW)**, Channeling I **(NEW)** |
+- **Attack &amp; ranged**
+  - Bane of Arthropods V
+  - Density V
+  - Flame I **(NEW)**
+  - Impaling V
+  - Power V
+  - Sharpness V
+  - Smite V
+
+- **Protection &amp; armor**
+  - Blast Protection IV
+  - Breach IV
+  - Feather Falling IV
+  - Fire Protection IV
+  - Piercing IV
+  - Projectile Protection IV
+  - Protection IV
+  - Thorns III
+
+- **Tools, loot &amp; durability**
+  - Efficiency V
+  - Fortune III
+  - Looting III
+  - Mending I **(NEW)**
+  - Silk Touch I **(NEW)**
+  - Unbreaking III
+
+- **Movement &amp; survival utility**
+  - Aqua Affinity I **(NEW)**
+  - Depth Strider III
+  - Respiration III
+  - Soul Speed III
+  - Swift Sneak III
+
+- **Fishing, trident, crossbow &amp; special utility**
+  - Channeling I **(NEW)**
+  - Infinity I **(NEW)**
+  - Loyalty III
+  - Luck of the Sea III
+  - Lunge III
+  - Lure III
+  - Multishot I **(NEW)**
+  - Quick Charge III
+  - Riptide III
+  - Wind Burst III
 
 </details>
 
@@ -242,7 +416,10 @@ Higher enchantability tiers raise the machine's enchant ceiling and widen the su
 
 The **Disenchant** page is the recovery side of the station. It can either preserve enchantments as books or convert them into XP fluid for later use.
 
-### Extract mode
+<h3 className="at-operation-title">
+  <span className="at-operation-chip">Recover</span>
+  <span>Extract mode</span>
+</h3>
 
 Use this when the enchantment itself is more valuable than the item.
 
@@ -251,7 +428,10 @@ Use this when the enchantment itself is more valuable than the item.
 - Produces enchanted books and updates the source item with whatever remains.
 - Fails if output space is blocked.
 
-### Absorb mode
+<h3 className="at-operation-title">
+  <span className="at-operation-chip">Recycle</span>
+  <span>Absorb mode</span>
+</h3>
 
 Use this when the item is disposable but the XP value is still useful.
 
