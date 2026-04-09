@@ -11,6 +11,16 @@
    Core tokens
    ========================================================= */
 
+@font-face {
+  font-family: "Dorios Minecraft";
+  src:
+    local("Minecraft"),
+    local("Minecraftia"),
+    local("Minecraft Seven v2"),
+    url("/fonts/Minecraft.ttf") format("truetype");
+  font-display: swap;
+}
+
 :root {
   --ds-bg: #0b0d12;
   --ds-surface-0: #12151b;
@@ -71,6 +81,7 @@
     monospace;
 
   --ds-font-pixel:
+    "Dorios Minecraft",
     "Minecraft Seven v2",
     "Minecraft",
     "Minecraftia",
@@ -524,6 +535,27 @@
 
 .table-pixel-matrix .pixel-muted {
   color: rgba(255, 255, 255, 0.84);
+}
+
+.table-pixel-matrix .tier-name {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.table-pixel-matrix .tier-basic {
+  color: #79e6ff;
+}
+
+.table-pixel-matrix .tier-advanced {
+  color: #ff8a8a;
+}
+
+.table-pixel-matrix .tier-expert {
+  color: #d2d2d2;
+}
+
+.table-pixel-matrix .tier-ultimate {
+  color: #ffd34f;
 }
 
 .table-pixel-matrix.is-roomy thead th {
