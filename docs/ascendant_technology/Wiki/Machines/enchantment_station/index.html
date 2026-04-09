@@ -15,8 +15,8 @@
 
 <link rel="search" type="application/opensearchdescription+xml" title="Dorios Studios" href="/opensearch.xml">
 
-<meta name="algolia-site-verification" content="CA75657DD7DCB62C"><link rel="stylesheet" href="/assets/css/styles.a3d6a3b0.css">
-<script src="/assets/js/runtime~main.490340ae.js" defer="defer"></script>
+<meta name="algolia-site-verification" content="CA75657DD7DCB62C"><link rel="stylesheet" href="/assets/css/styles.c6a4ee92.css">
+<script src="/assets/js/runtime~main.bc50a0f7.js" defer="defer"></script>
 <script src="/assets/js/main.81ee883c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -53,24 +53,24 @@
 <p align="center"><img src="/img/addons/ascendant/ui/enchantment_station_ui.png" alt="Enchantment Station UI" width="70%" style="border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.25)"></p>
 <p>The <strong>Enchant</strong> page handles enchanting, repairs, curse cleanup, and reinforcement. It works best as a batch-upgrade station: install the right modules first, load similar items together, and let the machine process them in groups.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="main-operations">Main operations<a href="#main-operations" class="hash-link" aria-label="Direct link to Main operations" title="Direct link to Main operations" translate="no">​</a></h3>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="enchanting">Enchanting<a href="#enchanting" class="hash-link" aria-label="Direct link to Enchanting" title="Direct link to Enchanting" translate="no">​</a></h4>
+<h4 class="at-operation-title"><span class="at-operation-chip">Enhance</span><span>Enchanting</span></h4>
 <ul>
 <li>Adds supported enchantments to eligible equipment.</li>
 <li>Improves existing enchantments when the current module tier allows it.</li>
 <li>Uses more XP fluid as the requested enchant work becomes stronger.</li>
 </ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="curse-cleanup">Curse cleanup<a href="#curse-cleanup" class="hash-link" aria-label="Direct link to Curse cleanup" title="Direct link to Curse cleanup" translate="no">​</a></h4>
+<h4 class="at-operation-title"><span class="at-operation-chip">Cleanse</span><span>Curse cleanup</span></h4>
 <ul>
 <li>Removes supported curse effects from eligible items.</li>
 <li>Best used on equipment that already has good enchantments worth saving.</li>
 <li>Becomes safer and more reliable with curse protection installed.</li>
 </ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="repairing">Repairing<a href="#repairing" class="hash-link" aria-label="Direct link to Repairing" title="Direct link to Repairing" translate="no">​</a></h4>
+<h4 class="at-operation-title"><span class="at-operation-chip">Restore</span><span>Repairing</span></h4>
 <ul>
 <li>Repairs damaged items during normal processing.</li>
 <li>Lets you refresh equipment without moving to a separate station.</li>
 </ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="reinforcement">Reinforcement<a href="#reinforcement" class="hash-link" aria-label="Direct link to Reinforcement" title="Direct link to Reinforcement" translate="no">​</a></h4>
+<h4 class="at-operation-title"><span class="at-operation-chip">Fortify</span><span>Reinforcement</span></h4>
 <p>Reinforcement gives durability-based equipment a larger safety buffer, making expensive items easier to keep in rotation for mining, combat, and exploration.</p>
 <p>For armor specifically, <a href="https://github.com/DoriosStudios/Ascendant-Technology/releases/tag/v0.8.0-beta" target="_blank" rel="noopener noreferrer">v0.8.0</a> reinforcement only improves durability. In <strong>v0.9.0</strong> <em>(not released yet)</em>, reinforcement on armor and shields also improves damage reduction.</p>
 <table><thead><tr><th>Module</th><th>Reinforcement target</th></tr></thead><tbody><tr><td>None</td><td>No reinforcement target</td></tr><tr><td>Reinforcement Module I</td><td>25% of max durability</td></tr><tr><td>Reinforcement Module II</td><td>50% of max durability</td></tr><tr><td>Reinforcement Module III</td><td>100% of max durability</td></tr></tbody></table>
@@ -82,13 +82,302 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="module-system">Module system<a href="#module-system" class="hash-link" aria-label="Direct link to Module system" title="Direct link to Module system" translate="no">​</a></h3>
 <p>The station uses three module families: enchantability, reinforcement, and curse protection.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="enchantability-modules">Enchantability modules<a href="#enchantability-modules" class="hash-link" aria-label="Direct link to Enchantability modules" title="Direct link to Enchantability modules" translate="no">​</a></h3>
-<p>Higher enchantability tiers raise the machine&#x27;s enchant ceiling and widen the supported pool.</p>
-<table><thead><tr><th>Module</th><th>Ceiling</th><th>Main purpose</th></tr></thead><tbody><tr><td>I</td><td>Level I</td><td>Enables the base pool</td></tr><tr><td>II</td><td>Level II</td><td>Strengthens early core enchants</td></tr><tr><td>III</td><td>Level III</td><td>Adds mid-tier premium options</td></tr><tr><td>IV</td><td>Level IV</td><td>Pushes core enchants into late-game territory</td></tr><tr><td>V</td><td>Level V</td><td>Unlocks treasure-style and rare utility results</td></tr></tbody></table>
-<details class="details_lb9f alert alert--info details_b_Ee ds-clean" data-collapsed="true"><summary><span class="ds-arrow">▸</span><span>Attack &amp; ranged</span></summary><div><div class="collapsibleContent_i85q"><br><table><thead><tr><th>Module</th><th>Enchantments</th></tr></thead><tbody><tr><td>I</td><td>Sharpness I, Smite I, Bane of Arthropods I, Impaling I, Power I, Density I</td></tr><tr><td>II</td><td>Sharpness II, Smite II, Bane of Arthropods II, Impaling II, Power II, Density II</td></tr><tr><td>III</td><td>Sharpness III, Smite III, Bane of Arthropods III, Impaling III, Power III, Density III, Knockback I <strong>(NEW)</strong>, Fire Aspect I <strong>(NEW)</strong>, Punch I <strong>(NEW)</strong></td></tr><tr><td>IV</td><td>Sharpness IV, Smite IV, Bane of Arthropods IV, Impaling IV, Power IV, Density IV, Knockback II, Fire Aspect II, Punch II</td></tr><tr><td>V</td><td>Sharpness V, Smite V, Bane of Arthropods V, Impaling V, Power V, Density V, Flame I <strong>(NEW)</strong></td></tr></tbody></table></div></div></details>
-<details class="details_lb9f alert alert--info details_b_Ee ds-clean" data-collapsed="true"><summary><span class="ds-arrow">▸</span><span>Tools, loot, and durability</span></summary><div><div class="collapsibleContent_i85q"><br><table><thead><tr><th>Module</th><th>Enchantments</th></tr></thead><tbody><tr><td>I</td><td>Efficiency I, Unbreaking I, Fortune I, Looting I</td></tr><tr><td>II</td><td>Efficiency II, Unbreaking I, Fortune I, Looting I</td></tr><tr><td>III</td><td>Efficiency III, Unbreaking II, Fortune II, Looting II</td></tr><tr><td>IV</td><td>Efficiency IV, Unbreaking II, Fortune II, Looting II</td></tr><tr><td>V</td><td>Efficiency V, Unbreaking III, Fortune III, Looting III, Silk Touch I <strong>(NEW)</strong>, Mending I <strong>(NEW)</strong></td></tr></tbody></table></div></div></details>
-<details class="details_lb9f alert alert--info details_b_Ee ds-clean" data-collapsed="true"><summary><span class="ds-arrow">▸</span><span>Protection &amp; armor</span></summary><div><div class="collapsibleContent_i85q"><br><table><thead><tr><th>Module</th><th>Enchantments</th></tr></thead><tbody><tr><td>I</td><td>Protection I, Fire Protection I, Blast Protection I, Projectile Protection I, Feather Falling I, Thorns I, Piercing I, Breach I</td></tr><tr><td>II</td><td>Protection II, Fire Protection II, Blast Protection II, Projectile Protection II, Feather Falling II, Thorns I, Piercing II, Breach II</td></tr><tr><td>III</td><td>Protection II, Fire Protection II, Blast Protection II, Projectile Protection II, Feather Falling II, Thorns II, Piercing II, Breach II</td></tr><tr><td>IV</td><td>Protection III, Fire Protection III, Blast Protection III, Projectile Protection III, Feather Falling III, Thorns II, Piercing III, Breach III</td></tr><tr><td>V</td><td>Protection IV, Fire Protection IV, Blast Protection IV, Projectile Protection IV, Feather Falling IV, Thorns III, Piercing IV, Breach IV</td></tr></tbody></table></div></div></details>
-<details class="details_lb9f alert alert--info details_b_Ee ds-clean" data-collapsed="true"><summary><span class="ds-arrow">▸</span><span>Movement &amp; survival utility</span></summary><div><div class="collapsibleContent_i85q"><br><table><thead><tr><th>Module</th><th>Enchantments</th></tr></thead><tbody><tr><td>I</td><td>Respiration I, Depth Strider I, Swift Sneak I, Soul Speed I</td></tr><tr><td>II</td><td>Respiration I, Depth Strider I, Swift Sneak I, Soul Speed I</td></tr><tr><td>III</td><td>Respiration II, Depth Strider II, Swift Sneak II, Soul Speed II, Frost Walker I <strong>(NEW)</strong></td></tr><tr><td>IV</td><td>Respiration II, Depth Strider II, Swift Sneak II, Soul Speed II, Frost Walker II</td></tr><tr><td>V</td><td>Respiration III, Depth Strider III, Swift Sneak III, Soul Speed III, Aqua Affinity I <strong>(NEW)</strong></td></tr></tbody></table></div></div></details>
-<details class="details_lb9f alert alert--info details_b_Ee ds-clean" data-collapsed="true"><summary><span class="ds-arrow">▸</span><span>Fishing, trident, crossbow, and special utility</span></summary><div><div class="collapsibleContent_i85q"><br><table><thead><tr><th>Module</th><th>Enchantments</th></tr></thead><tbody><tr><td>I</td><td>Luck of the Sea I, Lure I, Loyalty I, Quick Charge I, Wind Burst I, Lunge I, Riptide I</td></tr><tr><td>II</td><td>Luck of the Sea I, Lure I, Loyalty I, Quick Charge I, Wind Burst I, Lunge I, Riptide I</td></tr><tr><td>III</td><td>Luck of the Sea II, Lure II, Loyalty II, Quick Charge II, Wind Burst II, Lunge II, Riptide II</td></tr><tr><td>IV</td><td>Luck of the Sea II, Lure II, Loyalty II, Quick Charge II, Wind Burst II, Lunge II, Riptide II</td></tr><tr><td>V</td><td>Luck of the Sea III, Lure III, Loyalty III, Quick Charge III, Wind Burst III, Lunge III, Riptide III, Infinity I <strong>(NEW)</strong>, Multishot I <strong>(NEW)</strong>, Channeling I <strong>(NEW)</strong></td></tr></tbody></table></div></div></details>
+<p>Each panel below shows the supported enchantments for that module tier in alphabetical order.</p>
+<details class="details_lb9f alert alert--info details_b_Ee ds-clean" data-collapsed="true"><summary><span class="ds-arrow">▸</span><span>Enchantability Module I — base pool</span></summary><div><div class="collapsibleContent_i85q"><br><ul>
+<li>
+<p><strong>Attack &amp; ranged</strong></p>
+<ul>
+<li>Bane of Arthropods I</li>
+<li>Density I</li>
+<li>Impaling I</li>
+<li>Power I</li>
+<li>Sharpness I</li>
+<li>Smite I</li>
+</ul>
+</li>
+<li>
+<p><strong>Protection &amp; armor</strong></p>
+<ul>
+<li>Blast Protection I</li>
+<li>Breach I</li>
+<li>Feather Falling I</li>
+<li>Fire Protection I</li>
+<li>Piercing I</li>
+<li>Projectile Protection I</li>
+<li>Protection I</li>
+<li>Thorns I</li>
+</ul>
+</li>
+<li>
+<p><strong>Tools, loot &amp; durability</strong></p>
+<ul>
+<li>Efficiency I</li>
+<li>Fortune I</li>
+<li>Looting I</li>
+<li>Unbreaking I</li>
+</ul>
+</li>
+<li>
+<p><strong>Movement &amp; survival utility</strong></p>
+<ul>
+<li>Depth Strider I</li>
+<li>Respiration I</li>
+<li>Soul Speed I</li>
+<li>Swift Sneak I</li>
+</ul>
+</li>
+<li>
+<p><strong>Fishing, trident, crossbow &amp; special utility</strong></p>
+<ul>
+<li>Loyalty I</li>
+<li>Luck of the Sea I</li>
+<li>Lunge I</li>
+<li>Lure I</li>
+<li>Quick Charge I</li>
+<li>Riptide I</li>
+<li>Wind Burst I</li>
+</ul>
+</li>
+</ul></div></div></details>
+<details class="details_lb9f alert alert--info details_b_Ee ds-clean" data-collapsed="true"><summary><span class="ds-arrow">▸</span><span>Enchantability Module II — stronger early enchants</span></summary><div><div class="collapsibleContent_i85q"><br><ul>
+<li>
+<p><strong>Attack &amp; ranged</strong></p>
+<ul>
+<li>Bane of Arthropods II</li>
+<li>Density II</li>
+<li>Impaling II</li>
+<li>Power II</li>
+<li>Sharpness II</li>
+<li>Smite II</li>
+</ul>
+</li>
+<li>
+<p><strong>Protection &amp; armor</strong></p>
+<ul>
+<li>Blast Protection II</li>
+<li>Breach II</li>
+<li>Feather Falling II</li>
+<li>Fire Protection II</li>
+<li>Piercing II</li>
+<li>Projectile Protection II</li>
+<li>Protection II</li>
+<li>Thorns I</li>
+</ul>
+</li>
+<li>
+<p><strong>Tools, loot &amp; durability</strong></p>
+<ul>
+<li>Efficiency II</li>
+<li>Fortune I</li>
+<li>Looting I</li>
+<li>Unbreaking I</li>
+</ul>
+</li>
+<li>
+<p><strong>Movement &amp; survival utility</strong></p>
+<ul>
+<li>Depth Strider I</li>
+<li>Respiration I</li>
+<li>Soul Speed I</li>
+<li>Swift Sneak I</li>
+</ul>
+</li>
+<li>
+<p><strong>Fishing, trident, crossbow &amp; special utility</strong></p>
+<ul>
+<li>Loyalty I</li>
+<li>Luck of the Sea I</li>
+<li>Lunge I</li>
+<li>Lure I</li>
+<li>Quick Charge I</li>
+<li>Riptide I</li>
+<li>Wind Burst I</li>
+</ul>
+</li>
+</ul></div></div></details>
+<details class="details_lb9f alert alert--info details_b_Ee ds-clean" data-collapsed="true"><summary><span class="ds-arrow">▸</span><span>Enchantability Module III — mid-tier unlocks</span></summary><div><div class="collapsibleContent_i85q"><br><ul>
+<li>
+<p><strong>Attack &amp; ranged</strong></p>
+<ul>
+<li>Bane of Arthropods III</li>
+<li>Density III</li>
+<li>Fire Aspect I <strong>(NEW)</strong></li>
+<li>Impaling III</li>
+<li>Knockback I <strong>(NEW)</strong></li>
+<li>Power III</li>
+<li>Punch I <strong>(NEW)</strong></li>
+<li>Sharpness III</li>
+<li>Smite III</li>
+</ul>
+</li>
+<li>
+<p><strong>Protection &amp; armor</strong></p>
+<ul>
+<li>Blast Protection II</li>
+<li>Breach II</li>
+<li>Feather Falling II</li>
+<li>Fire Protection II</li>
+<li>Piercing II</li>
+<li>Projectile Protection II</li>
+<li>Protection II</li>
+<li>Thorns II</li>
+</ul>
+</li>
+<li>
+<p><strong>Tools, loot &amp; durability</strong></p>
+<ul>
+<li>Efficiency III</li>
+<li>Fortune II</li>
+<li>Looting II</li>
+<li>Unbreaking II</li>
+</ul>
+</li>
+<li>
+<p><strong>Movement &amp; survival utility</strong></p>
+<ul>
+<li>Depth Strider II</li>
+<li>Frost Walker I <strong>(NEW)</strong></li>
+<li>Respiration II</li>
+<li>Soul Speed II</li>
+<li>Swift Sneak II</li>
+</ul>
+</li>
+<li>
+<p><strong>Fishing, trident, crossbow &amp; special utility</strong></p>
+<ul>
+<li>Loyalty II</li>
+<li>Luck of the Sea II</li>
+<li>Lunge II</li>
+<li>Lure II</li>
+<li>Quick Charge II</li>
+<li>Riptide II</li>
+<li>Wind Burst II</li>
+</ul>
+</li>
+</ul></div></div></details>
+<details class="details_lb9f alert alert--info details_b_Ee ds-clean" data-collapsed="true"><summary><span class="ds-arrow">▸</span><span>Enchantability Module IV — late-game core upgrades</span></summary><div><div class="collapsibleContent_i85q"><br><ul>
+<li>
+<p><strong>Attack &amp; ranged</strong></p>
+<ul>
+<li>Bane of Arthropods IV</li>
+<li>Density IV</li>
+<li>Fire Aspect II</li>
+<li>Impaling IV</li>
+<li>Knockback II</li>
+<li>Power IV</li>
+<li>Punch II</li>
+<li>Sharpness IV</li>
+<li>Smite IV</li>
+</ul>
+</li>
+<li>
+<p><strong>Protection &amp; armor</strong></p>
+<ul>
+<li>Blast Protection III</li>
+<li>Breach III</li>
+<li>Feather Falling III</li>
+<li>Fire Protection III</li>
+<li>Piercing III</li>
+<li>Projectile Protection III</li>
+<li>Protection III</li>
+<li>Thorns II</li>
+</ul>
+</li>
+<li>
+<p><strong>Tools, loot &amp; durability</strong></p>
+<ul>
+<li>Efficiency IV</li>
+<li>Fortune II</li>
+<li>Looting II</li>
+<li>Unbreaking II</li>
+</ul>
+</li>
+<li>
+<p><strong>Movement &amp; survival utility</strong></p>
+<ul>
+<li>Depth Strider II</li>
+<li>Frost Walker II</li>
+<li>Respiration II</li>
+<li>Soul Speed II</li>
+<li>Swift Sneak II</li>
+</ul>
+</li>
+<li>
+<p><strong>Fishing, trident, crossbow &amp; special utility</strong></p>
+<ul>
+<li>Loyalty II</li>
+<li>Luck of the Sea II</li>
+<li>Lunge II</li>
+<li>Lure II</li>
+<li>Quick Charge II</li>
+<li>Riptide II</li>
+<li>Wind Burst II</li>
+</ul>
+</li>
+</ul></div></div></details>
+<details class="details_lb9f alert alert--info details_b_Ee ds-clean" data-collapsed="true"><summary><span class="ds-arrow">▸</span><span>Enchantability Module V — rare and treasure-style unlocks</span></summary><div><div class="collapsibleContent_i85q"><br><ul>
+<li>
+<p><strong>Attack &amp; ranged</strong></p>
+<ul>
+<li>Bane of Arthropods V</li>
+<li>Density V</li>
+<li>Flame I <strong>(NEW)</strong></li>
+<li>Impaling V</li>
+<li>Power V</li>
+<li>Sharpness V</li>
+<li>Smite V</li>
+</ul>
+</li>
+<li>
+<p><strong>Protection &amp; armor</strong></p>
+<ul>
+<li>Blast Protection IV</li>
+<li>Breach IV</li>
+<li>Feather Falling IV</li>
+<li>Fire Protection IV</li>
+<li>Piercing IV</li>
+<li>Projectile Protection IV</li>
+<li>Protection IV</li>
+<li>Thorns III</li>
+</ul>
+</li>
+<li>
+<p><strong>Tools, loot &amp; durability</strong></p>
+<ul>
+<li>Efficiency V</li>
+<li>Fortune III</li>
+<li>Looting III</li>
+<li>Mending I <strong>(NEW)</strong></li>
+<li>Silk Touch I <strong>(NEW)</strong></li>
+<li>Unbreaking III</li>
+</ul>
+</li>
+<li>
+<p><strong>Movement &amp; survival utility</strong></p>
+<ul>
+<li>Aqua Affinity I <strong>(NEW)</strong></li>
+<li>Depth Strider III</li>
+<li>Respiration III</li>
+<li>Soul Speed III</li>
+<li>Swift Sneak III</li>
+</ul>
+</li>
+<li>
+<p><strong>Fishing, trident, crossbow &amp; special utility</strong></p>
+<ul>
+<li>Channeling I <strong>(NEW)</strong></li>
+<li>Infinity I <strong>(NEW)</strong></li>
+<li>Loyalty III</li>
+<li>Luck of the Sea III</li>
+<li>Lunge III</li>
+<li>Lure III</li>
+<li>Multishot I <strong>(NEW)</strong></li>
+<li>Quick Charge III</li>
+<li>Riptide III</li>
+<li>Wind Burst III</li>
+</ul>
+</li>
+</ul></div></div></details>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="curse-protection-module">Curse protection module<a href="#curse-protection-module" class="hash-link" aria-label="Direct link to Curse protection module" title="Direct link to Curse protection module" translate="no">​</a></h3>
 <ul>
 <li>Reduces the chance of curse-related outcomes.</li>
@@ -99,7 +388,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="disenchant-mode">Disenchant Mode<a href="#disenchant-mode" class="hash-link" aria-label="Direct link to Disenchant Mode" title="Direct link to Disenchant Mode" translate="no">​</a></h2>
 <p align="center"><img src="/img/addons/ascendant/ui/disenchant_station_ui.png" alt="Enchantment Station Disenchant UI" width="70%" style="border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.25)"></p>
 <p>The <strong>Disenchant</strong> page is the recovery side of the station. It can either preserve enchantments as books or convert them into XP fluid for later use.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="extract-mode">Extract mode<a href="#extract-mode" class="hash-link" aria-label="Direct link to Extract mode" title="Direct link to Extract mode" translate="no">​</a></h3>
+<h3 class="at-operation-title"><span class="at-operation-chip">Recover</span><span>Extract mode</span></h3>
 <p>Use this when the enchantment itself is more valuable than the item.</p>
 <ul>
 <li>Requires one enchanted source item.</li>
@@ -107,7 +396,7 @@
 <li>Produces enchanted books and updates the source item with whatever remains.</li>
 <li>Fails if output space is blocked.</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="absorb-mode">Absorb mode<a href="#absorb-mode" class="hash-link" aria-label="Direct link to Absorb mode" title="Direct link to Absorb mode" translate="no">​</a></h3>
+<h3 class="at-operation-title"><span class="at-operation-chip">Recycle</span><span>Absorb mode</span></h3>
 <p>Use this when the item is disposable but the XP value is still useful.</p>
 <ul>
 <li>Activates when the extraction path is incomplete.</li>
@@ -134,7 +423,7 @@
 <li>Choose Extract mode for rare enchantments you want to store as books.</li>
 <li>Choose Absorb mode for unwanted enchanted loot when XP fluid is the real prize.</li>
 <li>Empty outputs between batches so the recovery side does not quietly stall.</li>
-</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/RealMilo504/Dorios-Site/tree/main/docs/ascendant_technology/Wiki/Machines/enchantment_station.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/ascendant_technology/Wiki/Machines/duplicator"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Duplicator</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/ascendant_technology/Wiki/Machines/energizer"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Energizer</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#what-this-machine-can-do" class="table-of-contents__link toc-highlight">What this machine can do</a></li><li><a href="#machine-information" class="table-of-contents__link toc-highlight">Machine Information</a></li><li><a href="#important-operational-notes" class="table-of-contents__link toc-highlight">Important operational notes</a></li><li><a href="#enchant-mode" class="table-of-contents__link toc-highlight">Enchant Mode</a><ul><li><a href="#main-operations" class="table-of-contents__link toc-highlight">Main operations</a></li><li><a href="#module-system" class="table-of-contents__link toc-highlight">Module system</a></li><li><a href="#enchantability-modules" class="table-of-contents__link toc-highlight">Enchantability modules</a></li><li><a href="#curse-protection-module" class="table-of-contents__link toc-highlight">Curse protection module</a></li></ul></li><li><a href="#disenchant-mode" class="table-of-contents__link toc-highlight">Disenchant Mode</a><ul><li><a href="#extract-mode" class="table-of-contents__link toc-highlight">Extract mode</a></li><li><a href="#absorb-mode" class="table-of-contents__link toc-highlight">Absorb mode</a></li><li><a href="#common-disenchant-blockers" class="table-of-contents__link toc-highlight">Common disenchant blockers</a></li></ul></li><li><a href="#crafting-recipe" class="table-of-contents__link toc-highlight">Crafting Recipe</a></li><li><a href="#recommended-workflow" class="table-of-contents__link toc-highlight">Recommended workflow</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item">
+</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/RealMilo504/Dorios-Site/tree/main/docs/ascendant_technology/Wiki/Machines/enchantment_station.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/ascendant_technology/Wiki/Machines/duplicator"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Duplicator</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/ascendant_technology/Wiki/Machines/energizer"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Energizer</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#what-this-machine-can-do" class="table-of-contents__link toc-highlight">What this machine can do</a></li><li><a href="#machine-information" class="table-of-contents__link toc-highlight">Machine Information</a></li><li><a href="#important-operational-notes" class="table-of-contents__link toc-highlight">Important operational notes</a></li><li><a href="#enchant-mode" class="table-of-contents__link toc-highlight">Enchant Mode</a><ul><li><a href="#main-operations" class="table-of-contents__link toc-highlight">Main operations</a></li><li><a href="#module-system" class="table-of-contents__link toc-highlight">Module system</a></li><li><a href="#enchantability-modules" class="table-of-contents__link toc-highlight">Enchantability modules</a></li><li><a href="#curse-protection-module" class="table-of-contents__link toc-highlight">Curse protection module</a></li></ul></li><li><a href="#disenchant-mode" class="table-of-contents__link toc-highlight">Disenchant Mode</a><ul><li><a href="#common-disenchant-blockers" class="table-of-contents__link toc-highlight">Common disenchant blockers</a></li></ul></li><li><a href="#crafting-recipe" class="table-of-contents__link toc-highlight">Crafting Recipe</a></li><li><a href="#recommended-workflow" class="table-of-contents__link toc-highlight">Recommended workflow</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item">
                   <a href="https://discord.gg/x36H3ZtmK5" target="_blank" rel="noopener">
                     <img src="https://cdn.simpleicons.org/discord/ffffff" alt="Discord" width="24" height="24" style="margin: 0 8px; opacity:0.8; transition:0.2s;" onmouseover='this.style.opacity="1"' onmouseout='this.style.opacity="0.8"'>
                   </a>
