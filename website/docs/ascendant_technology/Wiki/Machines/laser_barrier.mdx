@@ -4,6 +4,8 @@ title: Laser Barrier
 sidebar_label: Laser Barrier
 ---
 
+import BlockInfoGrid from '../../../src/components/BlockInfoGrid';
+
 # Laser Barrier
 
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
@@ -27,12 +29,14 @@ sidebar_label: Laser Barrier
 
 ## Machine Information
 
-| Setting | Value |
-|----------|--------|
-| Energy Capacity | 320,000 DE |
-| Energy Consumption | 800 DE per damage pulse cycle |
-| Upgrade Slots | 3 |
-| Overclockable | [Limited](./overclock_network) |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Capacity', value: '320,000 DE' },
+    { label: 'Energy Consumption', value: '800 DE per damage pulse cycle' },
+    { label: 'Upgrade Slots', value: '3' },
+    { label: 'Overclockable', value: <a href="./overclock_network">Limited</a> }
+  ]}
+/>
 
 ---
 

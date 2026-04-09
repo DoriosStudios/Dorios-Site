@@ -4,6 +4,8 @@ title: Network Center
 sidebar_label: Network Center
 ---
 
+import BlockInfoGrid from '../../../src/components/BlockInfoGrid';
+
 # Network Center
 
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
@@ -27,14 +29,16 @@ sidebar_label: Network Center
 
 ## Machine Information
 
-| Setting | Value |
-|----------|--------|
-| Energy Capacity | 800,000 DE |
-| Energy Consumption | 400 DE per scan cycle |
-| Base Processing Rate | 8,000 DE/t |
-| Scan Interval | ~2 seconds |
-| Network Safety Limit | 4,096 nodes |
-| Overclockable | [Yes](./overclock_network) |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Capacity', value: '800,000 DE' },
+    { label: 'Energy Consumption', value: '400 DE per scan cycle' },
+    { label: 'Base Processing Rate', value: '8,000 DE/t' },
+    { label: 'Scan Interval', value: '~2 seconds' },
+    { label: 'Network Safety Limit', value: '4,096 nodes' },
+    { label: 'Overclockable', value: <a href="./overclock_network">Yes</a> }
+  ]}
+/>
 
 ---
 

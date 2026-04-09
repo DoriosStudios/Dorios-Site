@@ -4,6 +4,8 @@ title: Singularity Fabricator
 sidebar_label: Singularity Fabricator
 ---
 
+import BlockInfoGrid from '../../../src/components/BlockInfoGrid';
+
 # Singularity Fabricator
 
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
@@ -27,15 +29,17 @@ sidebar_label: Singularity Fabricator
 
 ## Machine Information
 
-| Setting | Value |
-|----------|--------|
-| Energy Capacity | 1,000,000,000 DE (1 GDE) |
-| Minimum Energy Cost | 55,296,000,000 DE per craft |
-| Base Processing Rate | 2,560,000 DE/t |
-| Fluid Tank Capacity | 1,024,000 mB (Dark Matter) |
-| Minimum Processing Time | 3,600s (1 hour) |
-| Upgrade Slots | None |
-| Overclockable | [No](./overclock_network) |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Capacity', value: '1,000,000,000 DE (1 GDE)' },
+    { label: 'Minimum Energy Cost', value: '55,296,000,000 DE per craft' },
+    { label: 'Base Processing Rate', value: '2,560,000 DE/t' },
+    { label: 'Fluid Tank Capacity', value: '1,024,000 mB (Dark Matter)' },
+    { label: 'Minimum Processing Time', value: '3,600s (1 hour)' },
+    { label: 'Upgrade Slots', value: 'None' },
+    { label: 'Overclockable', value: <a href="./overclock_network">No</a> }
+  ]}
+/>
 
 ---
 

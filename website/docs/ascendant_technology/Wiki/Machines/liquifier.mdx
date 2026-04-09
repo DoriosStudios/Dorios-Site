@@ -4,6 +4,8 @@ title: Liquifier
 sidebar_label: Liquifier
 ---
 
+import BlockInfoGrid from '../../../src/components/BlockInfoGrid';
+
 # Liquifier
 
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
@@ -27,14 +29,16 @@ sidebar_label: Liquifier
 
 ## Machine Information
 
-| Setting | Value |
-|----------|--------|
-| Energy Capacity | 8,192,000 DE (8.19 MDE) |
-| Energy Consumption | 5,200–5,000,000 DE per craft |
-| Base Processing Rate | 3,600 DE/t |
-| Fluid Tank Capacity | 128,000 mB |
-| Upgrade Slots | 3 |
-| Overclockable | [Yes](./overclock_network) |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Capacity', value: '8,192,000 DE (8.19 MDE)' },
+    { label: 'Energy Consumption', value: '5,200–5,000,000 DE per craft' },
+    { label: 'Base Processing Rate', value: '3,600 DE/t' },
+    { label: 'Fluid Tank Capacity', value: '128,000 mB' },
+    { label: 'Upgrade Slots', value: '3' },
+    { label: 'Overclockable', value: <a href="./overclock_network">Yes</a> }
+  ]}
+/>
 
 ---
 

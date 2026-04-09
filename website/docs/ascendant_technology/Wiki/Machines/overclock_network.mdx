@@ -4,6 +4,8 @@ title: Overclock Network
 sidebar_label: Overclock Network
 ---
 
+import BlockInfoGrid from '../../../src/components/BlockInfoGrid';
+
 # Overclock Network
 
 The **Overclock Network** is a dual-machine system where the **Overclock Relay** and **Overclock Tower** depend on each other to operate at full capacity.
@@ -31,14 +33,16 @@ The **Overclock Network** is a dual-machine system where the **Overclock Relay**
 
 ### Relay Information
 
-| Setting | Value |
-|----------|--------|
-| Energy Capacity | 6,400,000 DE |
-| Energy Cost | 0 DE (distribution-only) |
-| Relay Energy Distribution | 20,000 DE/t |
-| Network Scan Range | 96 nodes |
-| Inventory Size | 5 slots |
-| Upgrade Slots | None |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Capacity', value: '6,400,000 DE' },
+    { label: 'Energy Cost', value: '0 DE (distribution-only)' },
+    { label: 'Relay Energy Distribution', value: '20,000 DE/t' },
+    { label: 'Network Scan Range', value: '96 nodes' },
+    { label: 'Inventory Size', value: '5 slots' },
+    { label: 'Upgrade Slots', value: 'None' }
+  ]}
+/>
 
 ---
 
@@ -63,15 +67,17 @@ The **Overclock Network** is a dual-machine system where the **Overclock Relay**
 
 ### Tower Information
 
-| Setting | Value |
-|----------|--------|
-| Energy Capacity | 102,400,000 DE |
-| Base Energy Cost | 32,000 DE/t |
-| Scaled Energy Cost | 32,000 × max(1, total power ÷ 2) |
-| Fuel Slots | 9 (slots 2–10) |
-| Relay Energy Share | 20,000 DE/t per relay |
-| Inventory Size | 15 slots |
-| Upgrade Slots | None |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Capacity', value: '102,400,000 DE' },
+    { label: 'Base Energy Cost', value: '32,000 DE/t' },
+    { label: 'Scaled Energy Cost', value: '32,000 × max(1, total power ÷ 2)' },
+    { label: 'Fuel Slots', value: '9 (slots 2–10)' },
+    { label: 'Relay Energy Share', value: '20,000 DE/t per relay' },
+    { label: 'Inventory Size', value: '15 slots' },
+    { label: 'Upgrade Slots', value: 'None' }
+  ]}
+/>
 
 ---
 

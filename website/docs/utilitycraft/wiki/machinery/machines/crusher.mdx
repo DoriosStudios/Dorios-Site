@@ -6,6 +6,7 @@ sidebar_label: Crusher
 
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
 
 # Crusher
 
@@ -31,13 +32,15 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 ## Machine Data
 
-| Setting | Value |
-|----------|--------|
-| Energy Cap | 64,000 DE |
-| Energy Cost per Operation | 800 DE |
-| Base Processing Rate | 20 DE/t |
-| Accepts Speed Upgrades | Yes |
-| Overclockable | No |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Cap', value: '64,000 DE' },
+    { label: 'Energy Cost per Operation', value: '800 DE' },
+    { label: 'Base Processing Rate', value: '20 DE/t' },
+    { label: 'Accepts Speed Upgrades', value: 'Yes' },
+    { label: 'Overclockable', value: 'No' }
+  ]}
+/>
 
 
 ---

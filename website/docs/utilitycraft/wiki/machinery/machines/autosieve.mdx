@@ -6,6 +6,7 @@ sidebar_label: Autosieve
 
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
 
 # Autosieve
 
@@ -31,13 +32,15 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 ## Machine Data
 
-| Setting | Value |
-|----------|--------|
-| Energy Capacity | 512,000 DE |
-| Energy Cost per Operation | 6400 DE |
-| Base Processing Rate | 160 DE/t |
-| Accepts Speed Upgrades | Yes |
-| Overclockable | No |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Capacity', value: '512,000 DE' },
+    { label: 'Energy Cost per Operation', value: '6400 DE' },
+    { label: 'Base Processing Rate', value: '160 DE/t' },
+    { label: 'Accepts Speed Upgrades', value: 'Yes' },
+    { label: 'Overclockable', value: 'No' }
+  ]}
+/>
 
 ---
 

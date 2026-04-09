@@ -4,6 +4,8 @@ title: Infuser
 sidebar_label: Infuser
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
   <img 
     src="/img/addons/utilitycraft/machinery/renders/infuser_render.png" 
@@ -23,12 +25,14 @@ sidebar_label: Infuser
 
 ### Machine Information
 
-| Setting | Value |
-|----------|--------|
-| **Energy Cap** | 64,000 DE |
-| **Energy Cost per Operation** | 800 DE |
-| **Accepts Speed Upgrades** | Yes |
-| **Overclockable** | No |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Cap', value: '64,000 DE' },
+    { label: 'Energy Cost per Operation', value: '800 DE' },
+    { label: 'Accepts Speed Upgrades', value: 'Yes' },
+    { label: 'Overclockable', value: 'No' }
+  ]}
+/>
 
 💡 **Tip:** Coal Dust and Charcoal Dust are more efficient, since **1 Coal = 2 Coal Dust** when processed in a Crusher before infusing.
 

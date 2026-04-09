@@ -4,6 +4,8 @@ title: Auto Fisher
 sidebar_label: Auto Fisher
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
   <img 
     src="/img/addons/utilitycraft/machinery/renders/autofisher_render.png" 
@@ -23,13 +25,15 @@ It is ideal for passive resource farms and can be improved with better Fishing N
 
 ### Machine Information
 
-| Setting | Value |
-|----------|--------|
-| **Energy Cap** | 512,000 DE |
-| **Energy Cost per Operation** | 6,400 DE |
-| **Base Processing Rate** | 40 DE/t |
-| **Accepts Speed Upgrades** | Yes |
-| **Overclockable** | No |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Cap', value: '512,000 DE' },
+    { label: 'Energy Cost per Operation', value: '6,400 DE' },
+    { label: 'Base Processing Rate', value: '40 DE/t' },
+    { label: 'Accepts Speed Upgrades', value: 'Yes' },
+    { label: 'Overclockable', value: 'No' }
+  ]}
+/>
 
 💡 **Tip:** Better net tiers improve loot quality and can increase the number of items per cycle.
 

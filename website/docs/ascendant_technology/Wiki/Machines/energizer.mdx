@@ -4,6 +4,8 @@ title: Energizer
 sidebar_label: Energizer
 ---
 
+import BlockInfoGrid from '../../../src/components/BlockInfoGrid';
+
 # Energizer
 
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
@@ -27,14 +29,16 @@ sidebar_label: Energizer
 
 ## Machine Information
 
-| Setting | Value |
-|----------|--------|
-| Energy Capacity | 256,000,000 DE (256 MDE) |
-| Energy Consumption | 72,000–2,400,000 DE per craft |
-| Base Processing Rate | 24,000 DE/t |
-| Input Slots | 2 (Primary + Auxiliary) |
-| Upgrade Slots | 3 |
-| Overclockable | [Yes](./overclock_network) |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Capacity', value: '256,000,000 DE (256 MDE)' },
+    { label: 'Energy Consumption', value: '72,000–2,400,000 DE per craft' },
+    { label: 'Base Processing Rate', value: '24,000 DE/t' },
+    { label: 'Input Slots', value: '2 (Primary + Auxiliary)' },
+    { label: 'Upgrade Slots', value: '3' },
+    { label: 'Overclockable', value: <a href="./overclock_network">Yes</a> }
+  ]}
+/>
 ---
 
 ## Machine UI

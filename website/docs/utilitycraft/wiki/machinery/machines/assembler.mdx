@@ -4,6 +4,8 @@ title: Assembler
 sidebar_label: Assembler
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 
 
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
@@ -25,12 +27,14 @@ making it a key machine for full automation setups.
 
 ### Machine Information
 
-| Setting | Value |
-|----------|--------|
-| **Energy Cap** | 256,000 DE |
-| **Energy Cost per Operation** | 1,600 DE |
-| **Base Processing Speed** | 20 DE/t |
-| **Overclockable** | No |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Cap', value: '256,000 DE' },
+    { label: 'Energy Cost per Operation', value: '1,600 DE' },
+    { label: 'Base Processing Speed', value: '20 DE/t' },
+    { label: 'Overclockable', value: 'No' }
+  ]}
+/>
 
 💡 **Tip:** The Assembler is most effective when paired with the **Digitizer**, allowing automated recipe recording and mass production.
 

@@ -4,6 +4,8 @@ title: Catalyst Weaver
 sidebar_label: Catalyst Weaver
 ---
 
+import BlockInfoGrid from '../../../src/components/BlockInfoGrid';
+
 # Catalyst Weaver
 
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
@@ -27,14 +29,16 @@ sidebar_label: Catalyst Weaver
 
 ## Machine Information
 
-| Setting | Value |
-|----------|--------|
-| Energy Capacity | 256,800,000 DE (256.8 MDE) |
-| Energy Consumption | 5,400–601,600 DE per craft |
-| Base Processing Rate | 180 DE/t |
-| Fluid Tank Capacity | 128,000 mB |
-| Upgrade Slots | 3 |
-| Overclockable | [Yes](./overclock_network) |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Capacity', value: '256,800,000 DE (256.8 MDE)' },
+    { label: 'Energy Consumption', value: '5,400–601,600 DE per craft' },
+    { label: 'Base Processing Rate', value: '180 DE/t' },
+    { label: 'Fluid Tank Capacity', value: '128,000 mB' },
+    { label: 'Upgrade Slots', value: '3' },
+    { label: 'Overclockable', value: <a href="./overclock_network">Yes</a> }
+  ]}
+/>
 
 ---
 

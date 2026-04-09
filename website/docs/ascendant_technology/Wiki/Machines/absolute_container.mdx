@@ -4,6 +4,8 @@ title: Absolute Container
 sidebar_label: Absolute Container
 ---
 
+import BlockInfoGrid from '../../../src/components/BlockInfoGrid';
+
 # Absolute Container
 
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
@@ -27,15 +29,17 @@ sidebar_label: Absolute Container
 
 ## Machine Information
 
-| Setting | Value |
-|----------|--------|
-| Energy Capacity | 25,600,000 DE (25.6 MDE) |
-| Fluid Capacity | 25,600,000 mB (25,600 buckets) |
-| Storage Capacity | 168 slots (14×12) |
-| Item Output | Automatic transfer from the last 9 slots |
-| Network Integration | Energy + fluid networks |
-| Upgrade Slots | None |
-| Overclockable | [No](./overclock_network) |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Capacity', value: '25,600,000 DE (25.6 MDE)' },
+    { label: 'Fluid Capacity', value: '25,600,000 mB (25,600 buckets)' },
+    { label: 'Storage Capacity', value: '168 slots (14×12)' },
+    { label: 'Item Output', value: 'Automatic transfer from the last 9 slots' },
+    { label: 'Network Integration', value: 'Energy + fluid networks' },
+    { label: 'Upgrade Slots', value: 'None' },
+    { label: 'Overclockable', value: <a href="./overclock_network">No</a> }
+  ]}
+/>
 
 ---
 

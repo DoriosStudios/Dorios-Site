@@ -4,6 +4,8 @@ title: XP Condenser
 sidebar_label: XP Condenser
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
   <img 
     src="/img/addons/utilitycraft/machinery/renders/xpcondenser_render.png" 
@@ -30,11 +32,13 @@ You can safely store large amounts of XP without risk of losing it on death.
 
 ### Machine Information
 
-| Setting | Value |
-|----------|--------|
-| **Energy Usage** | None |
-| **Storage Method** | Fluid Tanks |
-| **Operation Type** | Manual (player interaction) |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Usage', value: 'None' },
+    { label: 'Storage Method', value: 'Fluid Tanks' },
+    { label: 'Operation Type', value: 'Manual (player interaction)' }
+  ]}
+/>
 
 💡 **Tip:** Pair the XP Condenser with a **Tank System** to create mobile XP storage or automation setups that use XP as a fluid.
 

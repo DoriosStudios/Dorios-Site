@@ -4,6 +4,8 @@ title: Block Breaker
 sidebar_label: Block Breaker
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
   <img 
     src="/img/addons/utilitycraft/machinery/renders/block_breaker_render.png" 
@@ -23,12 +25,14 @@ making it ideal for farms, mining setups, and automation systems.
 
 ### Machine Information
 
-| Setting | Value |
-|----------|--------|
-| **Energy Cap** | 16,000 DE |
-| **Energy Cost per Operation** | 800 DE |
-| **Accepts Speed Upgrades** | Yes |
-| **Overclockable** | No |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Cap', value: '16,000 DE' },
+    { label: 'Energy Cost per Operation', value: '800 DE' },
+    { label: 'Accepts Speed Upgrades', value: 'Yes' },
+    { label: 'Overclockable', value: 'No' }
+  ]}
+/>
 
 💡 **Tip:** The Block Breaker’s speed can be improved using **Speed Upgrades**,  
 allowing it to break blocks as fast as every **0.25 seconds**.

@@ -4,6 +4,8 @@ title: Residue Processor
 sidebar_label: Residue Processor
 ---
 
+import BlockInfoGrid from '../../../src/components/BlockInfoGrid';
+
 # Residue Processor
 
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
@@ -27,13 +29,15 @@ sidebar_label: Residue Processor
 
 ## Machine Information
 
-| Setting | Value |
-|----------|--------|
-| Energy Capacity | 12,800,000 DE (12.8 MDE) |
-| Energy Consumption | 2,200–12,800 DE per craft |
-| Base Processing Rate | 16,000 DE/t |
-| Upgrade Slots | 3 |
-| Overclockable | [Yes](./overclock_network) |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Capacity', value: '12,800,000 DE (12.8 MDE)' },
+    { label: 'Energy Consumption', value: '2,200–12,800 DE per craft' },
+    { label: 'Base Processing Rate', value: '16,000 DE/t' },
+    { label: 'Upgrade Slots', value: '3' },
+    { label: 'Overclockable', value: <a href="./overclock_network">Yes</a> }
+  ]}
+/>
 
 ---
 

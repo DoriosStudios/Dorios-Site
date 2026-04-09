@@ -4,6 +4,8 @@ title: Cryo Chamber
 sidebar_label: Cryo Chamber
 ---
 
+import BlockInfoGrid from '../../../src/components/BlockInfoGrid';
+
 # Cryo Chamber
 
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
@@ -27,15 +29,17 @@ sidebar_label: Cryo Chamber
 
 ## Machine Information
 
-| Setting | Value |
-|----------|--------|
-| Energy Capacity | 128,000,000 DE (128 MDE) |
-| Energy Consumption | 2,400–64,000 DE per operation (depends on module/recipe) |
-| Base Processing Rate | 2,400 DE/t |
-| Water Tank | 64,000 mB |
-| Cryofluid Tank | 64,000 mB |
-| Upgrade Slots | 3 |
-| Overclockable | [Yes](./overclock_network) |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Capacity', value: '128,000,000 DE (128 MDE)' },
+    { label: 'Energy Consumption', value: '2,400–64,000 DE per operation (depends on module/recipe)' },
+    { label: 'Base Processing Rate', value: '2,400 DE/t' },
+    { label: 'Water Tank', value: '64,000 mB' },
+    { label: 'Cryofluid Tank', value: '64,000 mB' },
+    { label: 'Upgrade Slots', value: '3' },
+    { label: 'Overclockable', value: <a href="./overclock_network">Yes</a> }
+  ]}
+/>
 
 ---
 

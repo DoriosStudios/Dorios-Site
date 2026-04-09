@@ -4,6 +4,8 @@ title: Incinerator
 sidebar_label: Incinerator
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
   <img 
     src="/img/addons/utilitycraft/machinery/renders/incinerator_render.png" 
@@ -23,13 +25,15 @@ sidebar_label: Incinerator
 
 ### Machine Information
 
-| Setting | Value |
-|----------|--------|
-| **Energy Cap** | 16,000 DE |
-| **Energy Cost per Operation** | 800 DE |
-| **Base Processing Rate** | 20 DE/t |
-| **Accepts Speed Upgrades** | Yes |
-| **Overclockable** | No |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Cap', value: '16,000 DE' },
+    { label: 'Energy Cost per Operation', value: '800 DE' },
+    { label: 'Base Processing Rate', value: '20 DE/t' },
+    { label: 'Accepts Speed Upgrades', value: 'Yes' },
+    { label: 'Overclockable', value: 'No' }
+  ]}
+/>
 
 💡 **Tip:** The Incinerator can accept **Speed Upgrades** to increase smelting speed — up to 4 items per second at maximum speed.
 

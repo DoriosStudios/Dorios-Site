@@ -4,6 +4,8 @@ title: Digitizer
 sidebar_label: Digitizer
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
   <img 
     src="/img/addons/utilitycraft/machinery/renders/digitizer_render.png" 
@@ -22,13 +24,15 @@ sidebar_label: Digitizer
 
 ### Machine Information
 
-| Setting | Value |
-|----------|--------|
-| **Energy Cap** | 8,000 DE |
-| **Energy Cost per Operation** | 100 DE |
-| **Base Processing Speed** | 5 DE/t |
-| **Accepts Speed Upgrades** | Yes |
-| **Overclockable** | No |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Cap', value: '8,000 DE' },
+    { label: 'Energy Cost per Operation', value: '100 DE' },
+    { label: 'Base Processing Speed', value: '5 DE/t' },
+    { label: 'Accepts Speed Upgrades', value: 'Yes' },
+    { label: 'Overclockable', value: 'No' }
+  ]}
+/>
 
 💡 **Tip:** The Digitizer is essential for automation setups that use the **Assembler**, storing recipes for later use.
 

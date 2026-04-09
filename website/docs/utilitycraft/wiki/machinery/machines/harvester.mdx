@@ -4,6 +4,8 @@ title: Harvester
 sidebar_label: Harvester
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
   <img 
     src="/img/addons/utilitycraft/machinery/renders/harvester_render.png" 
@@ -23,12 +25,14 @@ sidebar_label: Harvester
 
 ### Machine Information
 
-| Setting | Value |
-|----------|--------|
-| **Energy Cap** | 32,000 DE |
-| **Energy Cost** | 100 DE per block harvested |
-| **Accepts Speed Upgrades** | Yes |
-| **Overclockable** | No |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Cap', value: '32,000 DE' },
+    { label: 'Energy Cost', value: '100 DE per block harvested' },
+    { label: 'Accepts Speed Upgrades', value: 'Yes' },
+    { label: 'Overclockable', value: 'No' }
+  ]}
+/>
 
 💡 **Tip:** With Range Upgrades, the Harvester can cover up to a **9x9** area.  
 At **Range Level 4**, items are dropped **behind the machine** for easy collection with hoppers.

@@ -4,6 +4,8 @@ title: Vaporworks Processor
 sidebar_label: Vaporworks Processor
 ---
 
+import BlockInfoGrid from '../../../src/components/BlockInfoGrid';
+
 # Vaporworks Processor
 
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
@@ -24,14 +26,16 @@ sidebar_label: Vaporworks Processor
 
 ## Machine Information
 
-| Setting | Value |
-|----------|--------|
-| Energy Capacity | 9,600,000 DE |
-| Energy Cost (base) | 2,400 DE |
-| Base Processing Rate | 12,000 DE/t |
-| Fluid Tank Capacity | 64,000 mB |
-| Upgrade Slots | 3 |
-| Overclockable | [Yes](./overclock_network) |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Capacity', value: '9,600,000 DE' },
+    { label: 'Energy Cost (base)', value: '2,400 DE' },
+    { label: 'Base Processing Rate', value: '12,000 DE/t' },
+    { label: 'Fluid Tank Capacity', value: '64,000 mB' },
+    { label: 'Upgrade Slots', value: '3' },
+    { label: 'Overclockable', value: <a href="./overclock_network">Yes</a> }
+  ]}
+/>
 
 ---
 

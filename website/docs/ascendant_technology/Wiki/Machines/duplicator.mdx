@@ -4,6 +4,8 @@ title: Duplicator
 sidebar_label: Duplicator
 ---
 
+import BlockInfoGrid from '../../../src/components/BlockInfoGrid';
+
 # Duplicator
 
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
@@ -27,15 +29,17 @@ sidebar_label: Duplicator
 
 ## Machine Information
 
-| Setting | Value |
-|----------|--------|
-| Energy Capacity | 512,000,000 DE (512 MDE) |
-| Energy Consumption | 10,000–150,000,000 DE/s (depends on rarity) |
-| Base Processing Rate | 400 DE/t |
-| Fluid Tank Capacity | 512,000 mB (Liquified Aetherium) |
-| Fluid Consumption | 50 mB/s of recipe time |
-| Upgrade Slots | 3 |
-| Overclockable | [Yes](./overclock_network) |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Capacity', value: '512,000,000 DE (512 MDE)' },
+    { label: 'Energy Consumption', value: '10,000–150,000,000 DE/s (depends on rarity)' },
+    { label: 'Base Processing Rate', value: '400 DE/t' },
+    { label: 'Fluid Tank Capacity', value: '512,000 mB (Liquified Aetherium)' },
+    { label: 'Fluid Consumption', value: '50 mB/s of recipe time' },
+    { label: 'Upgrade Slots', value: '3' },
+    { label: 'Overclockable', value: <a href="./overclock_network">Yes</a> }
+  ]}
+/>
 
 ---
 

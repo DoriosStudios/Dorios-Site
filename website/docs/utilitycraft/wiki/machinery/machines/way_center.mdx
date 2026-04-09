@@ -4,6 +4,8 @@ title: Way Center
 sidebar_label: Way Center
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
   <img 
     src="/img/addons/utilitycraft/machinery/renders/waycenter_render.png" 
@@ -30,11 +32,13 @@ Once a carpet is activated, you can teleport back to the Way Center, allowing se
 
 ### Machine Information
 
-| Setting | Value |
-|----------|--------|
-| **Energy Usage** | None |
-| **Teleportation Cost** | Consumes XP based on distance |
-| **Cross-Dimensional Travel** | Supported (with additional XP cost) |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Usage', value: 'None' },
+    { label: 'Teleportation Cost', value: 'Consumes XP based on distance' },
+    { label: 'Cross-Dimensional Travel', value: 'Supported (with additional XP cost)' }
+  ]}
+/>
 
 💡 **Tip:** The farther the distance, the more **XP** it consumes.  
 Cross-dimensional teleportation increases the cost even more.

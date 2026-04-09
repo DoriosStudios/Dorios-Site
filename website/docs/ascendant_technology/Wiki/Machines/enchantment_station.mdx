@@ -4,6 +4,8 @@ title: Enchantment Station
 sidebar_label: Enchantment Station
 ---
 
+import BlockInfoGrid from '../../../src/components/BlockInfoGrid';
+
 # Enchantment Station
 
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
@@ -24,14 +26,16 @@ sidebar_label: Enchantment Station
 
 ## Machine Information
 
-| Setting | Value |
-|----------|--------|
-| Energy Capacity | 25,600,000 DE |
-| Energy Cost (base) | 8,000 DE |
-| Base Processing Rate | 64,000 DE/t |
-| Fluid Tank Capacity | 128,000 mB |
-| Upgrade Slots | 3 |
-| Overclockable | [See Overclock Network](./overclock_network) |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Capacity', value: '25,600,000 DE' },
+    { label: 'Energy Cost (base)', value: '8,000 DE' },
+    { label: 'Base Processing Rate', value: '64,000 DE/t' },
+    { label: 'Fluid Tank Capacity', value: '128,000 mB' },
+    { label: 'Upgrade Slots', value: '3' },
+    { label: 'Overclockable', value: <a href="./overclock_network">See Overclock Network</a> }
+  ]}
+/>
 
 > Overclock was not tested at the time of writing. Please verify in-game for current overclocking capabilities.
 

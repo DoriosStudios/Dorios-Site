@@ -4,6 +4,8 @@ title: Induction Anvil
 sidebar_label: Induction Anvil
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
   <img 
     src="/img/addons/utilitycraft/machinery/renders/induction_anvil_render.png" 
@@ -23,13 +25,15 @@ sidebar_label: Induction Anvil
 
 ### Machine Information
 
-| Setting | Value |
-|----------|--------|
-| **Energy Cap** | 16,000 DE |
-| **Energy Cost** | 5 DE per durability point |
-| **Base Repair Speed** | 1 durability per tick |
-| **Accepts Speed Upgrades** | Yes |
-| **Overclockable** | No |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Cap', value: '16,000 DE' },
+    { label: 'Energy Cost', value: '5 DE per durability point' },
+    { label: 'Base Repair Speed', value: '1 durability per tick' },
+    { label: 'Accepts Speed Upgrades', value: 'Yes' },
+    { label: 'Overclockable', value: 'No' }
+  ]}
+/>
 
 💡 **Tip:** The Induction Anvil can be upgraded with **Speed Upgrades** to repair items much faster — up to **64 durability per second** at maximum level.
 

@@ -4,6 +4,8 @@ title: Magmatic Chamber
 sidebar_label: Magmatic Chamber
 ---
 
+import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+
 <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
   <img 
     src="/img/addons/utilitycraft/machinery/renders/magmatic_chamber_render.png" 
@@ -23,13 +25,15 @@ sidebar_label: Magmatic Chamber
 
 ### Machine Information
 
-| Setting | Value |
-|----------|--------|
-| **Energy Cap** | 640,000 DE |
-| **Energy Cost per Operation** | 8,000 DE |
-| **Base Processing Speed** | 200 DE/t |
-| **Accepts Speed Upgrades** | Yes |
-| **Overclockable** | No |
+<BlockInfoGrid
+  items={[
+    { label: 'Energy Cap', value: '640,000 DE' },
+    { label: 'Energy Cost per Operation', value: '8,000 DE' },
+    { label: 'Base Processing Speed', value: '200 DE/t' },
+    { label: 'Accepts Speed Upgrades', value: 'Yes' },
+    { label: 'Overclockable', value: 'No' }
+  ]}
+/>
 
 💡 **Tip:** **Netherrack** produces the most lava when melted.
 
