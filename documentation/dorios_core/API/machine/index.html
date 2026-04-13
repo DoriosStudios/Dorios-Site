@@ -16,7 +16,7 @@
 <link rel="search" type="application/opensearchdescription+xml" title="Dorios Studios" href="/opensearch.xml">
 
 <meta name="algolia-site-verification" content="CA75657DD7DCB62C"><link rel="stylesheet" href="/assets/css/styles.6401d15e.css">
-<script src="/assets/js/runtime~main.aa1ace2c.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.496cd79b.js" defer="defer"></script>
 <script src="/assets/js/main.81ee883c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -154,7 +154,99 @@
 <li>Updates adjacent networks.</li>
 </ol>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-2">Parameters<a href="#parameters-2" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters" translate="no">​</a></h3>
-<ul class="api-params"><li><span class="param-name">event</span><span class="param-type">object</span><p>Placement event data containing block, player, permutation to place, and optional cancel flag.</p></li><li><span class="param-name">config</span><span class="param-type">MachineSettings</span><p>Machine configuration describing entity type, capacities, and placement behavior.</p></li><li><span class="param-name">callback</span><span class="param-type">function</span><p>Optional callback executed after the entity has been spawned and initialized.</p></li></ul>
+<ul class="api-params"><li><span class="param-name">event</span><span class="param-type">object</span><p>Placement event data containing block, player, permutation to place, and optional cancel flag.</p></li><li><span class="param-name">config</span><span class="param-type">MachineSettings</span><p>Machine configuration used to spawn the backing machine entity and initialize
+its placement, energy storage, and optional fluid storage. See the detailed
+<code>config</code> breakdown below.</p></li><li><span class="param-name">callback</span><span class="param-type">function</span><p>Optional callback executed after the entity has been spawned and initialized.</p></li></ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="config-structure"><code>config</code> structure<a href="#config-structure" class="hash-link" aria-label="Direct link to config-structure" title="Direct link to config-structure" translate="no">​</a></h4>
+<p><code>spawnEntity()</code> does not just receive a generic <code>MachineSettings</code> object. It
+expects the parts of the machine definition that placement depends on:</p>
+<div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  rotation</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> boolean</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token literal-property property" style="color:#36acaa">entity</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    name</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> string</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    type</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> string</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    input_type</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> string</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    output_type</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> string</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    inventory_size</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> number</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token literal-property property" style="color:#36acaa">machine</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token literal-property property" style="color:#36acaa">energy_cap</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> number</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    fluid_cap</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> number</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    energy_cost</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> number</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    rate_speed_base</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> number</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    upgrades</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> number</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    fluid_types</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> number</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre></div></div>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="top-level-fields">Top-Level Fields<a href="#top-level-fields" class="hash-link" aria-label="Direct link to Top-Level Fields" title="Direct link to Top-Level Fields" translate="no">​</a></h5>
+<ul>
+<li>
+<p><code>rotation</code> <em>(optional)</em><br>
+<!-- -->When <code>true</code>, placement is rerouted through <code>Rotation.facing(player, block, permutationToPlace)</code>.
+The method also sets <code>event.cancel = true</code>, and in Survival mode it manually
+clears one item from the player&#x27;s hand before finishing placement.</p>
+</li>
+<li>
+<p><code>entity</code> <em>(required)</em><br>
+<!-- -->Entity definition forwarded to <code>Utils.spawnEntity(block, config)</code>. This part
+of the config tells the spawn helper what kind of machine entity to create and
+how its inventory/layout should be prepared.</p>
+</li>
+<li>
+<p><code>machine</code> <em>(required)</em><br>
+<!-- -->Machine runtime definition. This section contains the capacity values used
+immediately after spawn, along with the rest of the machine settings used by
+the machine class later during operation.</p>
+</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="configentity"><code>config.entity</code><a href="#configentity" class="hash-link" aria-label="Direct link to configentity" title="Direct link to configentity" translate="no">​</a></h5>
+<ul>
+<li>
+<p><code>name</code> <em>(optional)</em><br>
+<!-- -->Specific entity name or identifier used by the spawn helper when the machine
+needs to create a named backing entity.</p>
+</li>
+<li>
+<p><code>type</code> <em>(optional)</em><br>
+<!-- -->Entity layout/type used by the spawn helper to select the correct machine
+entity behavior, such as a simple item machine or a fluid-capable machine.</p>
+</li>
+<li>
+<p><code>input_type</code> <em>(optional)</em><br>
+<!-- -->Declares the machine input layout for item-processing machines.</p>
+</li>
+<li>
+<p><code>output_type</code> <em>(optional)</em><br>
+<!-- -->Declares the machine output layout for item-processing machines.</p>
+</li>
+<li>
+<p><code>inventory_size</code> <em>(optional)</em><br>
+<!-- -->Total number of inventory slots the spawned machine entity should have.</p>
+</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="configmachine"><code>config.machine</code><a href="#configmachine" class="hash-link" aria-label="Direct link to configmachine" title="Direct link to configmachine" translate="no">​</a></h5>
+<ul>
+<li>
+<p><code>energy_cap</code> <em>(required)</em><br>
+<!-- -->Used directly by <code>spawnEntity()</code> through <code>EnergyStorage.setCap(...)</code> to define
+the machine&#x27;s maximum energy storage.</p>
+</li>
+<li>
+<p><code>fluid_cap</code> <em>(optional)</em><br>
+<!-- -->If this value exists, <code>spawnEntity()</code> creates a <code>FluidStorage</code>, sets its
+capacity, displays it, and restores fluid from the held item when fluid data
+is present.</p>
+</li>
+<li>
+<p><code>energy_cost</code> <em>(optional)</em><br>
+<!-- -->Not read directly inside <code>spawnEntity()</code>, but still part of the same machine
+definition and used later by the machine runtime to determine operation cost.</p>
+</li>
+<li>
+<p><code>rate_speed_base</code> <em>(optional)</em><br>
+<!-- -->Not read directly in this method, but used later by the <code>Machine</code> class as
+the machine&#x27;s base processing speed.</p>
+</li>
+<li>
+<p><code>upgrades</code> <em>(optional)</em><br>
+<!-- -->Array of upgrade slot indexes supported by the machine. This is not consumed
+directly by <code>spawnEntity()</code>, but it is part of the runtime settings used once
+the machine exists.</p>
+</li>
+<li>
+<p><code>fluid_types</code> <em>(optional)</em><br>
+<!-- -->Number of fluid types supported by the machine. This field is not read
+directly by <code>spawnEntity()</code>, but it belongs to the same fluid-machine
+definition used after placement.</p>
+</li>
+</ul>
+<p>Directly read fields in this method are <code>config.rotation</code>,
+<code>config.machine.energy_cap</code>, and <code>config.machine.fluid_cap</code>. The rest of the
+object is passed into spawn/runtime helpers, so it should match the full machine
+definition used by your block component.</p>
 <hr>
 <h1>Methods</h1>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="transferitems">transferItems<a href="#transferitems" class="hash-link" aria-label="Direct link to transferItems" title="Direct link to transferItems" translate="no">​</a></h2>
