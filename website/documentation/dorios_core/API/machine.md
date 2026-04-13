@@ -298,7 +298,9 @@ Placement event data containing block, player, permutation to place, and optiona
 <span class="param-name">config</span>
 <span class="param-type">MachineSettings</span>
 
-Machine configuration describing entity type, capacities, and placement behavior.
+Machine configuration used to spawn the backing machine entity and initialize
+its placement, energy storage, and optional fluid storage. See the detailed
+`config` breakdown below.
 </li>
 
 <li>
@@ -309,6 +311,102 @@ Optional callback executed after the entity has been spawned and initialized.
 </li>
 
 </ul>
+
+#### `config` structure
+
+`spawnEntity()` does not just receive a generic `MachineSettings` object. It
+expects the parts of the machine definition that placement depends on:
+
+```js
+{
+  rotation?: boolean,
+  entity: {
+    name?: string,
+    type?: string,
+    input_type?: string,
+    output_type?: string,
+    inventory_size?: number
+  },
+  machine: {
+    energy_cap: number,
+    fluid_cap?: number,
+    energy_cost?: number,
+    rate_speed_base?: number,
+    upgrades?: number[],
+    fluid_types?: number
+  }
+}
+```
+
+##### Top-Level Fields
+
+- `rotation` *(optional)*  
+  When `true`, placement is rerouted through `Rotation.facing(player, block, permutationToPlace)`.
+  The method also sets `event.cancel = true`, and in Survival mode it manually
+  clears one item from the player's hand before finishing placement.
+
+- `entity` *(required)*  
+  Entity definition forwarded to `Utils.spawnEntity(block, config)`. This part
+  of the config tells the spawn helper what kind of machine entity to create and
+  how its inventory/layout should be prepared.
+
+- `machine` *(required)*  
+  Machine runtime definition. This section contains the capacity values used
+  immediately after spawn, along with the rest of the machine settings used by
+  the machine class later during operation.
+
+##### `config.entity`
+
+- `name` *(optional)*  
+  Specific entity name or identifier used by the spawn helper when the machine
+  needs to create a named backing entity.
+
+- `type` *(optional)*  
+  Entity layout/type used by the spawn helper to select the correct machine
+  entity behavior, such as a simple item machine or a fluid-capable machine.
+
+- `input_type` *(optional)*  
+  Declares the machine input layout for item-processing machines.
+
+- `output_type` *(optional)*  
+  Declares the machine output layout for item-processing machines.
+
+- `inventory_size` *(optional)*  
+  Total number of inventory slots the spawned machine entity should have.
+
+##### `config.machine`
+
+- `energy_cap` *(required)*  
+  Used directly by `spawnEntity()` through `EnergyStorage.setCap(...)` to define
+  the machine's maximum energy storage.
+
+- `fluid_cap` *(optional)*  
+  If this value exists, `spawnEntity()` creates a `FluidStorage`, sets its
+  capacity, displays it, and restores fluid from the held item when fluid data
+  is present.
+
+- `energy_cost` *(optional)*  
+  Not read directly inside `spawnEntity()`, but still part of the same machine
+  definition and used later by the machine runtime to determine operation cost.
+
+- `rate_speed_base` *(optional)*  
+  Not read directly in this method, but used later by the `Machine` class as
+  the machine's base processing speed.
+
+- `upgrades` *(optional)*  
+  Array of upgrade slot indexes supported by the machine. This is not consumed
+  directly by `spawnEntity()`, but it is part of the runtime settings used once
+  the machine exists.
+
+- `fluid_types` *(optional)*  
+  Number of fluid types supported by the machine. This field is not read
+  directly by `spawnEntity()`, but it belongs to the same fluid-machine
+  definition used after placement.
+
+Directly read fields in this method are `config.rotation`,
+`config.machine.energy_cap`, and `config.machine.fluid_cap`. The rest of the
+object is passed into spawn/runtime helpers, so it should match the full machine
+definition used by your block component.
 
 ---
 
