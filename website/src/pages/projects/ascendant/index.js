@@ -4,7 +4,7 @@ import styles from "../project.module.css";
 
 export default function AscendantTechnologyPage() {
   const media = [
-    { type: "image", src: "/img/addons/ascendant/MCPEDL.jpg" },
+    { type: "image", src: "/img/addons/ascendant/MCPEDL.png" },
     { type: "image", src: "/img/addons/ascendant/showcase/armors.png" },
     { type: "image", src: "/img/addons/ascendant/showcase/at_machines.png" },
     { type: "image", src: "/img/addons/ascendant/showcase/liquifier_processing_obsidian.png" },
