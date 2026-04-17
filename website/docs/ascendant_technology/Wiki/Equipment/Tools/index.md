@@ -1,42 +1,31 @@
 ---
-id: ascendant-equipment-tools
 title: Tools
 sidebar_label: Tools
 ---
 
 # Tools
 
-<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+Ascendant Technology's tool lines follow its material progression. **Titanium Tools** are the first full advanced toolkit, while **Aetherium Tools** turn the same lineup into a much stronger late-game option.
+
+---
+
+## [Aetherium Tools](./aetherium_tools)
+
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem", flexWrap: "wrap" }}>
   <img
-    src="/img/addons/ascendant/equipment/renders/tools_overview_render.png"
-    alt="Tools Overview Render"
-    width="24%"
+    src="/img/addons/ascendant/equipment/tools/aetherium_aiot.png"
+    alt="Aetherium AIOT"
+    width="18%"
     style={{ imageRendering: "pixelated" }}
   />
   <div>
     <p>
-      Ascendant tools include combat, mining, and hybrid utility formats for both <b>Aetherium</b> and <b>Titanium</b>.
-    </p>
-    <p>
-      Visual references are intentionally placed for all entries, including pending render slots.
+      The late-game utility line. These are the tools for players who want top durability, stronger combat stats, and the best hybrid options in the addon.
     </p>
   </div>
 </div>
 
----
-
-## Aetherium Tools
-
-<p align="center">
-  <img
-    src="/img/addons/ascendant/equipment/renders/aetherium_tools_set_render.png"
-    alt="Aetherium Tools Set Render"
-    width="45%"
-    style={{ imageRendering: "pixelated" }}
-  />
-</p>
-
-<div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", alignItems: "center", justifyContent: "center", marginTop: "0.75rem" }}>
+<div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", alignItems: "center", marginTop: "0.75rem" }}>
   <img src="/img/addons/ascendant/equipment/tools/aetherium_sword.png" alt="Aetherium Sword" width="52" title="Aetherium Sword" style={{ imageRendering: "pixelated" }} />
   <img src="/img/addons/ascendant/equipment/tools/aetherium_pickaxe.png" alt="Aetherium Pickaxe" width="52" title="Aetherium Pickaxe" style={{ imageRendering: "pixelated" }} />
   <img src="/img/addons/ascendant/equipment/tools/aetherium_axe.png" alt="Aetherium Axe" width="52" title="Aetherium Axe" style={{ imageRendering: "pixelated" }} />
@@ -49,18 +38,23 @@ sidebar_label: Tools
 
 ---
 
-## Titanium Tools
+## [Titanium Tools](./titanium_tools)
 
-<p align="center">
+<div style={{ display: "flex", alignItems: "center", gap: "1.5rem", flexWrap: "wrap" }}>
   <img
-    src="/img/addons/ascendant/equipment/renders/titanium_tools_set_render.png"
-    alt="Titanium Tools Set Render"
-    width="45%"
+    src="/img/addons/ascendant/equipment/tools/titanium_aiot.png"
+    alt="Titanium AIOT"
+    width="18%"
     style={{ imageRendering: "pixelated" }}
   />
-</p>
+  <div>
+    <p>
+      The first complete advanced tool family. Titanium gives you the full lineup, including Hammer, Paxel, and AIOT variants, without needing rare late-game materials.
+    </p>
+  </div>
+</div>
 
-<div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", alignItems: "center", justifyContent: "center", marginTop: "0.75rem" }}>
+<div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", alignItems: "center", marginTop: "0.75rem" }}>
   <img src="/img/addons/ascendant/equipment/tools/titanium_sword.png" alt="Titanium Sword" width="52" title="Titanium Sword" style={{ imageRendering: "pixelated" }} />
   <img src="/img/addons/ascendant/equipment/tools/titanium_pickaxe.png" alt="Titanium Pickaxe" width="52" title="Titanium Pickaxe" style={{ imageRendering: "pixelated" }} />
   <img src="/img/addons/ascendant/equipment/tools/titanium_axe.png" alt="Titanium Axe" width="52" title="Titanium Axe" style={{ imageRendering: "pixelated" }} />
@@ -70,24 +64,3 @@ sidebar_label: Tools
   <img src="/img/addons/ascendant/equipment/tools/titanium_aiot.png" alt="Titanium AIOT" width="52" title="Titanium AIOT" style={{ imageRendering: "pixelated" }} />
   <img src="/img/addons/ascendant/equipment/tools/titanium_hammer.png" alt="Titanium Hammer" width="52" title="Titanium Hammer" style={{ imageRendering: "pixelated" }} />
 </div>
-
----
-
-## Tool list
-
-- Aetherium Sword
-- Aetherium Pickaxe
-- Aetherium Axe
-- Aetherium Shovel
-- Aetherium Hoe
-- Aetherium Paxel
-- Aetherium AIOT
-- Aetherium Hammer
-- Titanium Sword
-- Titanium Pickaxe
-- Titanium Axe
-- Titanium Shovel
-- Titanium Hoe
-- Titanium Paxel
-- Titanium AIOT
-- Titanium Hammer
