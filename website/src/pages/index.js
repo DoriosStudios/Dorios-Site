@@ -16,6 +16,10 @@ const addons = [
     folder: "smelters",
   },
   {
+    title: "Ascendant Technology",
+    folder: "ascendant",
+  },
+  {
     title: "Bountiful Bonsais",
     folder: "bonsais",
   },
@@ -91,12 +95,12 @@ export default function Home() {
         <div className={styles.gridContainer}>
 
           {addons.map((addon, i) => (
-            <a key={i} href={`/projects/${addon.folder}`} className={styles.cardLink}>
+            <a key={i} href={addon.href ?? `/projects/${addon.folder}`} className={styles.cardLink}>
               <div className={styles.card}>
 
                 {/* Imagen completa */}
                 <img
-                  src={`/img/addons/${addon.folder}/MCPEDL.png`}
+                  src={`/img/addons/${addon.folder}/${addon.cover ?? 'MCPEDL.png'}`}
                   className={styles.cardImage}
                 />
 
