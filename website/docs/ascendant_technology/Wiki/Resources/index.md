@@ -7,7 +7,7 @@ sidebar_label: Resources
 <h1 align="center">Ascendant Technology – Resources</h1>
 
 <p align="center">
-	Track the core material ecosystem of Ascendant Technology, from ore progression to machine-grade fluids.
+	Explore the material and fluid network that powers Ascendant Technology, from mined ore lines to machine-grade liquids and upcoming industrial alloys.
 </p>
 
 <p align="center">
@@ -16,14 +16,19 @@ sidebar_label: Resources
 
 ---
 
-## Resources Overview
+## Browse the resource wiki
 
 ### [Ores](./Ores/)
-Core mineral and processed item lines, including Aetherium and Titanium variants.
+Material lines such as **Titanium**, **Aetherium**, and the planned **Tungsten** branch, with notes on mining, refinement, and major crafting roles.
 
 ### [Fluids](./Fluids/)
-Advanced fluid references currently represented by filled capsule visuals.
+Factory liquids such as **Cryofluid**, **Liquified Aetherium**, **Dark Matter**, and **Steam**, each with its own production chain and machine role.
 
 ---
 
-> Image paths are already included in this pass, including upcoming renders that may be added later.
+## What these pages cover
+
+- how each resource is obtained
+- what machines or crafting branches it supports
+- which forms matter most in progression
+- availability warnings for content that is planned but not playable yet
