@@ -8,16 +8,16 @@ const addons = [
     folder: "utilitycraft",
   },
   {
+    title: "Ascendant Technology",
+    folder: "ascendant",
+  },
+  {
     title: "Dorios' Trinkets",
     folder: "trinkets",
   },
   {
     title: "Better Smelters",
     folder: "smelters",
-  },
-  {
-    title: "Ascendant Technology",
-    folder: "ascendant",
   },
   {
     title: "Bountiful Bonsais",
