@@ -5,10 +5,9 @@ import styles from "../project.module.css";
 export default function AscendantTechnologyPage() {
   const media = [
     { type: "image", src: "/img/addons/ascendant/MCPEDL.jpg" },
-    { type: "image", src: "/img/addons/ascendant/renders/catalyst_weaver_render.png" },
-    { type: "image", src: "/img/addons/ascendant/renders/cryo_chamber_render.png" },
-    { type: "image", src: "/img/addons/ascendant/ui/network_center_ui.png" },
-    { type: "image", src: "/img/addons/ascendant/renders/singularity_fab_render.png" },
+    { type: "image", src: "/img/addons/ascendant/showcase/armors.png" },
+    { type: "image", src: "/img/addons/ascendant/showcase/at_machines.png" },
+    { type: "image", src: "/img/addons/ascendant/showcase/liquifier_processing_obsidian.png" },
   ];
 
   const [current, setCurrent] = useState(0);
