@@ -4,6 +4,7 @@ title: Catalyst Weaver
 sidebar_label: Catalyst Weaver
 ---
 
+import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -33,7 +34,7 @@ import TabItem from '@theme/TabItem';
 <BlockInfoGrid
   items={[
     { label: 'Energy Capacity', value: '256,800,000 DE (256.8 MDE)' },
-    { label: 'Energy Consumption', value: '5,400–601,600 DE per craft' },
+    { label: 'Base Energy Consumption', value: '3,200 DE' },
     { label: 'Base Processing Rate', value: '180 DE/t' },
     { label: 'Fluid Tank Capacity', value: '128,000 mB' },
     { label: 'Upgrade Slots', value: '3' },
@@ -60,6 +61,29 @@ import TabItem from '@theme/TabItem';
 ## Crafting Recipe
 
 {/* Crafting recipe image not yet available */}
+
+<details className="ds-clean">
+  <summary><span className="ds-arrow">▸</span> Crafting ingredients in text</summary>
+
+- Crafted in: **UtilityCraft Workbench**
+- Unlock item: **Compressed Diamond Block 2** (`utilitycraft:compressed_diamond_block_2`)
+
+**Pattern**
+
+- Top row: **Ultimate Fluid Tank** (`utilitycraft:ultimate_fluid_tank`) ×1, **Pink Dye** (`minecraft:pink_dye`) ×1, **Ultimate Fluid Tank** (`utilitycraft:ultimate_fluid_tank`) ×1
+- Middle row: **Ultimate Chip** (`utilitycraft:ultimate_chip`) ×1, **Infuser** (`utilitycraft:infuser`) ×1, **Ultimate Chip** (`utilitycraft:ultimate_chip`) ×1
+- Bottom row: **Compressed Redstone Block 2** (`utilitycraft:compressed_redstone_block_2`) ×1, **Compressed Diamond Block 2** (`utilitycraft:compressed_diamond_block_2`) ×1, **Compressed Redstone Block 2** (`utilitycraft:compressed_redstone_block_2`) ×1
+
+**Total ingredients**
+
+- **Ultimate Fluid Tank** (`utilitycraft:ultimate_fluid_tank`) ×2
+- **Pink Dye** (`minecraft:pink_dye`) ×1
+- **Ultimate Chip** (`utilitycraft:ultimate_chip`) ×2
+- **Infuser** (`utilitycraft:infuser`) ×1
+- **Compressed Redstone Block 2** (`utilitycraft:compressed_redstone_block_2`) ×2
+- **Compressed Diamond Block 2** (`utilitycraft:compressed_diamond_block_2`) ×1
+
+</details>
 
 ---
 
@@ -88,6 +112,8 @@ import TabItem from '@theme/TabItem';
 ---
 
 ## Native Recipes
+
+> This player-facing list intentionally omits the Refining Table assembly recipe.
 
 
 <Tabs>

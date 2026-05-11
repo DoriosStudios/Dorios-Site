@@ -1,0 +1,135 @@
+const recipeData = {
+  absolute_container: {
+    title: 'Absolute Container',
+    resultId: 'utilitycraft:absolute_container',
+    items: [
+      { id: 'utilitycraft:aetherium', amount: 2, label: 'Aetherium' },
+      { id: 'utilitycraft:ultimate_fluid_tank', amount: 1, label: 'Ultimate Fluid Tank' },
+      { id: 'minecraft:netherite_block', amount: 2, label: 'Netherite Block' },
+      { id: 'utilitycraft:absolute_battery', amount: 1, label: 'Absolute Battery' },
+      { id: 'minecraft:chest', amount: 2, label: 'Chest' },
+      { id: 'utilitycraft:network_center', amount: 1, label: 'Network Center' },
+    ],
+  },
+  cryo_chamber: {
+    title: 'Cryo Chamber',
+    resultId: 'utilitycraft:cryo_chamber',
+    items: [
+      { id: 'minecraft:packed_ice', amount: 2, label: 'Packed Ice' },
+      { id: 'utilitycraft:ultimate_chip', amount: 1, label: 'Ultimate Chip' },
+      { id: 'utilitycraft:advanced_fluid_tank', amount: 2, label: 'Advanced Fluid Tank' },
+      { id: 'utilitycraft:machine_case', amount: 1, label: 'Machine Case' },
+      { id: 'utilitycraft:compressed_steel_block', amount: 2, label: 'Compressed Steel Block' },
+      { id: 'utilitycraft:titanium_block', amount: 2, label: 'Titanium Block' },
+    ],
+  },
+  duplicator: {
+    title: 'Duplicator',
+    resultId: 'utilitycraft:duplicator',
+    items: [
+      { id: 'utilitycraft:aetherium', amount: 2, label: 'Aetherium' },
+      { id: 'utilitycraft:ender_hopper', amount: 1, label: 'Ender Hopper' },
+      { id: 'utilitycraft:compressed_energized_iron_block_2', amount: 2, label: 'Compressed Energized Iron Block 2' },
+      { id: 'minecraft:ender_eye', amount: 1, label: 'Ender Eye' },
+      { id: 'utilitycraft:compressed_steel_block', amount: 2, label: 'Compressed Steel Block' },
+      { id: 'utilitycraft:machine_case', amount: 1, label: 'Machine Case' },
+    ],
+  },
+  enchantment_station: {
+    title: 'Enchantment Station',
+    resultId: 'utilitycraft:enchantment_station',
+    items: [
+      { id: 'minecraft:echo_shard', amount: 2, label: 'Echo Shard' },
+      { id: 'minecraft:nether_star', amount: 1, label: 'Nether Star' },
+      { id: 'utilitycraft:compressed_gold_block', amount: 2, label: 'Compressed Gold Block' },
+      { id: 'minecraft:enchanting_table', amount: 1, label: 'Enchanting Table' },
+      { id: 'utilitycraft:compressed_diamond_block', amount: 2, label: 'Compressed Diamond Block' },
+      { id: 'utilitycraft:aetherium_block', amount: 2, label: 'Aetherium Block' },
+    ],
+  },
+  energizer: {
+    title: 'Energizer',
+    resultId: 'utilitycraft:energizer',
+    items: [
+      { id: 'utilitycraft:aetherium', amount: 2, label: 'Aetherium' },
+      { id: 'utilitycraft:ultimate_chip', amount: 3, label: 'Ultimate Chip' },
+      { id: 'utilitycraft:machine_case', amount: 2, label: 'Machine Case' },
+      { id: 'minecraft:redstone_block', amount: 1, label: 'Redstone Block' },
+      { id: 'utilitycraft:compressed_energized_iron_block_2', amount: 2, label: 'Compressed Energized Iron Block 2' },
+    ],
+  },
+  laser_barrier: {
+    title: 'Laser Barrier',
+    resultId: 'utilitycraft:laser_barrier',
+    items: [
+      { id: 'minecraft:glass', amount: 2, label: 'Glass' },
+      { id: 'minecraft:redstone_lamp', amount: 1, label: 'Redstone Lamp' },
+      { id: 'minecraft:redstone_block', amount: 2, label: 'Redstone Block' },
+      { id: 'utilitycraft:machine_case', amount: 1, label: 'Machine Case' },
+      { id: 'utilitycraft:advanced_chip', amount: 2, label: 'Advanced Chip' },
+      { id: 'utilitycraft:ultimate_chip', amount: 1, label: 'Ultimate Chip' },
+    ],
+  },
+  liquifier: {
+    title: 'Liquifier',
+    resultId: 'utilitycraft:liquifier',
+    items: [
+      { id: 'utilitycraft:aetherium_shard', amount: 2, label: 'Aetherium Shard' },
+      { id: 'utilitycraft:ultimate_fluid_tank', amount: 1, label: 'Ultimate Fluid Tank' },
+      { id: 'utilitycraft:compressed_energized_iron_block_2', amount: 2, label: 'Compressed Energized Iron Block 2' },
+      { id: 'utilitycraft:machine_case', amount: 1, label: 'Machine Case' },
+      { id: 'utilitycraft:compressed_steel_block', amount: 2, label: 'Compressed Steel Block' },
+      { id: 'utilitycraft:aetherium', amount: 2, label: 'Aetherium' },
+    ],
+  },
+  network_center: {
+    title: 'Network Center',
+    resultId: 'utilitycraft:network_center',
+    items: [
+      { id: 'minecraft:glass', amount: 2, label: 'Glass' },
+      { id: 'minecraft:comparator', amount: 1, label: 'Comparator' },
+      { id: 'utilitycraft:machine_case', amount: 2, label: 'Machine Case' },
+      { id: 'utilitycraft:steel_ingot', amount: 1, label: 'Steel Ingot' },
+      { id: 'utilitycraft:titanium_plate', amount: 2, label: 'Titanium Plate' },
+      { id: 'utilitycraft:ultimate_chip', amount: 1, label: 'Ultimate Chip' },
+    ],
+  },
+  residue_processor: {
+    title: 'Residue Processor',
+    resultId: 'utilitycraft:residue_processor',
+    items: [
+      { id: 'minecraft:soul_sand', amount: 2, label: 'Soul Sand' },
+      { id: 'minecraft:hopper', amount: 1, label: 'Hopper' },
+      { id: 'utilitycraft:machine_case', amount: 2, label: 'Machine Case' },
+      { id: 'utilitycraft:crusher', amount: 1, label: 'Crusher' },
+      { id: 'utilitycraft:aetherium', amount: 2, label: 'Aetherium' },
+      { id: 'utilitycraft:ultimate_chip', amount: 1, label: 'Ultimate Chip' },
+    ],
+  },
+  singularity_fabricator: {
+    title: 'Singularity Fabricator',
+    resultId: 'utilitycraft:singularity_fabricator',
+    items: [
+      { id: 'utilitycraft:aetherium', amount: 2, label: 'Aetherium' },
+      { id: 'minecraft:beacon', amount: 1, label: 'Beacon' },
+      { id: 'utilitycraft:compressed_redstone_block_4', amount: 2, label: 'Compressed Redstone Block 4' },
+      { id: 'utilitycraft:duplicator', amount: 1, label: 'Duplicator' },
+      { id: 'minecraft:netherite_block', amount: 2, label: 'Netherite Block' },
+      { id: 'utilitycraft:ultimate_fluid_tank', amount: 1, label: 'Ultimate Fluid Tank' },
+    ],
+  },
+  vaporworks_processor: {
+    title: 'Vaporworks Processor',
+    resultId: 'utilitycraft:vaporworks_processor',
+    items: [
+      { id: 'minecraft:waxed_copper', amount: 2, label: 'Waxed Copper' },
+      { id: 'minecraft:waxed_copper_grate', amount: 2, label: 'Waxed Copper Grate' },
+      { id: 'utilitycraft:advanced_chip', amount: 2, label: 'Advanced Chip' },
+      { id: 'minecraft:blast_furnace', amount: 1, label: 'Blast Furnace' },
+      { id: 'utilitycraft:compressed_copper_block', amount: 2, label: 'Compressed Copper Block' },
+      { id: 'utilitycraft:machine_case', amount: 2, label: 'Machine Case' },
+    ],
+  },
+};
+
+export default recipeData;
