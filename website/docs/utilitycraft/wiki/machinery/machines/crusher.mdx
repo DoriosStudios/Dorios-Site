@@ -7,6 +7,7 @@ sidebar_label: Crusher
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import BlockInfoGrid from '../../../../../src/components/BlockInfoGrid';
+import RecipeIngredientDetails from '../../../../../src/components/RecipeIngredientDetails';
 
 # Crusher
 
@@ -102,6 +103,8 @@ It automatically updates as materials are processed, allowing for fully automate
     style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
   />
 </p>
+
+<RecipeIngredientDetails recipeId="crusher" />
 
 ---
 

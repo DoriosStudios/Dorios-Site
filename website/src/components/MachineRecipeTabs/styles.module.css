@@ -1,0 +1,237 @@
+.wrap {
+  --rt-accent: #ff6b00;
+  --rt-accent-soft: color-mix(in srgb, var(--rt-accent) 14%, transparent);
+  --rt-accent-strong: color-mix(in srgb, var(--rt-accent) 32%, transparent);
+  --rt-input: #f4b15c;
+  --rt-catalysts: #c67cff;
+  --rt-fluid: #56b8ff;
+  --rt-output: #58d68d;
+  --rt-byproduct: #8f9bb3;
+  --rt-cost: #ff8b5f;
+  --rt-speed: #ff6fd8;
+  margin: 1rem 0 1.35rem;
+}
+
+.tabList {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--rt-accent) 10%, var(--ifm-card-background-color));
+  border: 1px solid color-mix(in srgb, var(--rt-accent) 18%, var(--ifm-color-emphasis-300));
+  margin-bottom: 0.85rem;
+}
+
+.tabButton {
+  border: 0;
+  background: transparent;
+  color: var(--ifm-color-content-secondary);
+  padding: 0.34rem 0.82rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.1;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.tabButton:hover {
+  color: var(--ifm-color-content);
+  background: color-mix(in srgb, var(--rt-accent) 10%, transparent);
+}
+
+.tabButtonActive {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--rt-accent) 82%, white 8%), var(--rt-accent));
+  color: #ffffff;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--rt-accent) 65%, black 8%) inset;
+}
+
+.note,
+.footerNote {
+  margin: 0.25rem 0 0.8rem;
+  color: var(--ifm-color-content-secondary);
+  font-size: 0.94rem;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid color-mix(in srgb, var(--rt-accent) 16%, var(--ifm-color-emphasis-300));
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--rt-accent) 4%, var(--ifm-card-background-color));
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 780px;
+}
+
+.tableHead {
+  color: #ffffff;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding: 0.58rem 0.72rem;
+  text-align: left;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  white-space: nowrap;
+}
+
+.tableHead[data-kind='input'] { background: color-mix(in srgb, var(--rt-input) 30%, transparent); }
+.tableHead[data-kind='catalysts'] { background: color-mix(in srgb, var(--rt-catalysts) 28%, transparent); }
+.tableHead[data-kind='fluid'] { background: color-mix(in srgb, var(--rt-fluid) 26%, transparent); }
+.tableHead[data-kind='output'] { background: color-mix(in srgb, var(--rt-output) 28%, transparent); }
+.tableHead[data-kind='byproduct'] { background: color-mix(in srgb, var(--rt-byproduct) 28%, transparent); }
+.tableHead[data-kind='cost'] { background: color-mix(in srgb, var(--rt-cost) 26%, transparent); }
+.tableHead[data-kind='speed'] { background: color-mix(in srgb, var(--rt-speed) 24%, transparent); }
+
+.tableCell {
+  padding: 0.58rem 0.72rem;
+  vertical-align: top;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.table tbody tr:nth-child(even) .tableCell {
+  background: color-mix(in srgb, var(--rt-accent) 3%, transparent);
+}
+
+.cellStack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.group {
+  border: 1px solid color-mix(in srgb, var(--rt-accent) 18%, var(--ifm-color-emphasis-300));
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--rt-accent) 5%, var(--ifm-card-background-color)), transparent);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.group + .group {
+  margin-top: 0.85rem;
+}
+
+.groupTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.groupTitle {
+  margin: 0;
+  font-size: 1.04rem;
+}
+
+.groupHint {
+  color: var(--ifm-color-content-secondary);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.recipeCard {
+  border-top: 1px dashed color-mix(in srgb, var(--rt-accent) 22%, var(--ifm-color-emphasis-300));
+  padding-top: 0.7rem;
+}
+
+.recipeCard:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.variantRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+
+.variantBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.24rem 0.56rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--rt-accent) 18%, transparent);
+  color: var(--ifm-color-content);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.variantNote {
+  color: var(--ifm-color-content-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.lineList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.34rem;
+}
+
+.line {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  line-height: 1.42;
+}
+
+.lineDash {
+  color: var(--ifm-color-content-secondary);
+  font-weight: 700;
+}
+
+.fieldTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.8rem;
+  padding: 0.18rem 0.45rem;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  flex-shrink: 0;
+}
+
+.fieldTag[data-kind='input'] { background: var(--rt-input); }
+.fieldTag[data-kind='catalysts'] { background: var(--rt-catalysts); }
+.fieldTag[data-kind='fluid'] { background: var(--rt-fluid); }
+.fieldTag[data-kind='output'] { background: var(--rt-output); }
+.fieldTag[data-kind='byproduct'] { background: var(--rt-byproduct); }
+.fieldTag[data-kind='cost'] { background: var(--rt-cost); }
+.fieldTag[data-kind='speed'] { background: var(--rt-speed); }
+.fieldTag[data-kind='note'] { background: var(--rt-accent); }
+
+.lineValue {
+  color: var(--ifm-color-content);
+}
+
+@media (max-width: 680px) {
+  .group {
+    padding: 0.8rem 0.85rem;
+  }
+
+  .groupTitleRow {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .fieldTag {
+    min-width: 4.45rem;
+  }
+}
