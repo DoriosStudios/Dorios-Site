@@ -5,8 +5,8 @@ sidebar_label: Catalyst Weaver
 ---
 
 import BlockInfoGrid from '../../../../src/components/BlockInfoGrid';
-import MachineRecipeTabs from '../../../../src/components/MachineRecipeTabs';
-import catalystWeaverRecipes from '../../../../src/components/MachineRecipeTabs/catalystWeaverRecipes';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Catalyst Weaver
 
@@ -115,17 +115,195 @@ import catalystWeaverRecipes from '../../../../src/components/MachineRecipeTabs/
 
 > This player-facing list intentionally omits the Refining Table assembly recipe.
 
-<MachineRecipeTabs
-  recipes={catalystWeaverRecipes}
-  accentColor="#d86db6"
-  fieldColors={{
-    input: '#f0b24d',
-    catalysts: '#d26dff',
-    fluid: '#4baef0',
-    output: '#43c77d',
-    byproduct: '#8794ad',
-    cost: '#ff8a5b',
-    speed: '#ff6fc7',
-  }}
-  footerNote="Legend: Catalyst slots support up to 6 entries, byproducts are chance-based, and lower speed multipliers mean slower processing."
-/>
+<Tabs>
+  <TabItem value="table" label="Table" default>
+
+| Output | Variant | Input | Catalysts | Fluid | Byproduct | Cost | Speed |
+|--------|---------|-------|-----------|-------|-----------|------|-------|
+| Aetherium Ingot ×1 | Default / cheapest route | Gold Ingot ×1 | Steel Ingot ×1<br />Energized Iron Ingot ×1<br />Ender Pearl Dust ×4<br />Aetherium Shard ×4 | Lava — 8,000 mB | Stabilized Obsidian Dust 0–2 (5%) | 12,000 DE | 0.5x |
+| Aetherium Ingot ×1 | Alternative route | Netherite Ingot ×1 | Aetherium Shard ×4 | Lava — 8,000 mB | — | 512,000 DE | 12.0x |
+| Stabilized Obsidian Dust ×2 | — | Crying Obsidian Dust ×4 | Glowstone Dust ×2<br />Energized Iron Dust ×1 | Liquified Aetherium — 250 mB | Obsidian ×1 (0.1%) | 5,400 DE | 1.0x |
+| Bronze Ingot ×1 | — | Gold Ingot ×1 | Copper Dust ×4 | — | — | 6,400 DE | 1.0x |
+| Hyper Processing Upgrade ×1 | — | Speed Upgrade ×1 | Energized Iron Dust ×2<br />Aetherium Shard ×1<br />Titanium Plate ×1 | — | — | 12,800 DE | 0.25x |
+| Quadruple Compressed Blackstone ×1 | — | Quadruple Compressed Cobblestone ×1 | Quadruple Compressed Coal Block ×1 | — | — | 601,600 DE | 0.5x |
+| Refined Aetherium Shard ×1 | — | Aetherium Shard ×1 | Amethyst Shard ×1 | Dark Matter — 800 mB | — | 6,400 DE | 1.0x |
+| Diamond ×1 | — | Diamond Dust ×2 | Iron Ingot ×1 | Lava — 100 mB | — | 3,200 DE | 1.0x |
+| Emerald ×1 | — | Emerald Dust ×2 | Iron Ingot ×1 | Lava — 100 mB | — | 3,200 DE | 1.0x |
+| Quartz ×1 | — | Quartz Dust ×2 | Iron Ingot ×1 | Lava — 100 mB | — | 3,200 DE | 1.0x |
+| Amethyst Shard ×1 | — | Amethyst Dust ×2 | Iron Ingot ×1 | Lava — 100 mB | — | 3,200 DE | 1.0x |
+| Void Essence ×1 | — | Glass Bottle ×1 | Crushed Endstone ×1 | Dark Matter — 100 mB | — | 32,000 DE | 0.5x |
+
+  </TabItem>
+  <TabItem value="list" label="List">
+
+<h3>Aetherium Ingot</h3>
+
+<p><strong>Default / cheapest route</strong></p>
+
+<ul>
+  <li>Input: Gold Ingot ×1</li>
+  <li>
+    Catalysts:
+    <ul>
+      <li>Steel Ingot ×1</li>
+      <li>Energized Iron Ingot ×1</li>
+      <li>Ender Pearl Dust ×4</li>
+      <li>Aetherium Shard ×4</li>
+    </ul>
+  </li>
+  <li>Fluid: Lava — 8,000 mB</li>
+  <li>Output: Aetherium Ingot ×1</li>
+  <li>Byproduct: Stabilized Obsidian Dust 0–2 (5%)</li>
+  <li>Cost: 12,000 DE</li>
+  <li>Speed: 0.5x</li>
+</ul>
+
+<p><strong>Alternative route</strong></p>
+
+<ul>
+  <li>Input: Netherite Ingot ×1</li>
+  <li>Catalysts: Aetherium Shard ×4</li>
+  <li>Fluid: Lava — 8,000 mB</li>
+  <li>Output: Aetherium Ingot ×1</li>
+  <li>Byproduct: —</li>
+  <li>Cost: 512,000 DE</li>
+  <li>Speed: 12.0x</li>
+</ul>
+
+<h3>Stabilized Obsidian Dust</h3>
+
+<ul>
+  <li>Input: Crying Obsidian Dust ×4</li>
+  <li>
+    Catalysts:
+    <ul>
+      <li>Glowstone Dust ×2</li>
+      <li>Energized Iron Dust ×1</li>
+    </ul>
+  </li>
+  <li>Fluid: Liquified Aetherium — 250 mB</li>
+  <li>Output: Stabilized Obsidian Dust ×2</li>
+  <li>Byproduct: Obsidian ×1 (0.1%)</li>
+  <li>Cost: 5,400 DE</li>
+  <li>Speed: 1.0x</li>
+</ul>
+
+<h3>Bronze Ingot</h3>
+
+<ul>
+  <li>Input: Gold Ingot ×1</li>
+  <li>Catalysts: Copper Dust ×4</li>
+  <li>Fluid: —</li>
+  <li>Output: Bronze Ingot ×1</li>
+  <li>Byproduct: —</li>
+  <li>Cost: 6,400 DE</li>
+  <li>Speed: 1.0x</li>
+</ul>
+
+<h3>Hyper Processing Upgrade</h3>
+
+<ul>
+  <li>Input: Speed Upgrade ×1</li>
+  <li>
+    Catalysts:
+    <ul>
+      <li>Energized Iron Dust ×2</li>
+      <li>Aetherium Shard ×1</li>
+      <li>Titanium Plate ×1</li>
+    </ul>
+  </li>
+  <li>Fluid: —</li>
+  <li>Output: Hyper Processing Upgrade ×1</li>
+  <li>Byproduct: —</li>
+  <li>Cost: 12,800 DE</li>
+  <li>Speed: 0.25x</li>
+</ul>
+
+<h3>Quadruple Compressed Blackstone</h3>
+
+<ul>
+  <li>Input: Quadruple Compressed Cobblestone ×1</li>
+  <li>Catalysts: Quadruple Compressed Coal Block ×1</li>
+  <li>Fluid: —</li>
+  <li>Output: Quadruple Compressed Blackstone ×1</li>
+  <li>Byproduct: —</li>
+  <li>Cost: 601,600 DE</li>
+  <li>Speed: 0.5x</li>
+</ul>
+
+<h3>Refined Aetherium Shard</h3>
+
+<ul>
+  <li>Input: Aetherium Shard ×1</li>
+  <li>Catalysts: Amethyst Shard ×1</li>
+  <li>Fluid: Dark Matter — 800 mB</li>
+  <li>Output: Refined Aetherium Shard ×1</li>
+  <li>Byproduct: —</li>
+  <li>Cost: 6,400 DE</li>
+  <li>Speed: 1.0x</li>
+</ul>
+
+<h3>Diamond</h3>
+
+<ul>
+  <li>Input: Diamond Dust ×2</li>
+  <li>Catalysts: Iron Ingot ×1</li>
+  <li>Fluid: Lava — 100 mB</li>
+  <li>Output: Diamond ×1</li>
+  <li>Byproduct: —</li>
+  <li>Cost: 3,200 DE</li>
+  <li>Speed: 1.0x</li>
+</ul>
+
+<h3>Emerald</h3>
+
+<ul>
+  <li>Input: Emerald Dust ×2</li>
+  <li>Catalysts: Iron Ingot ×1</li>
+  <li>Fluid: Lava — 100 mB</li>
+  <li>Output: Emerald ×1</li>
+  <li>Byproduct: —</li>
+  <li>Cost: 3,200 DE</li>
+  <li>Speed: 1.0x</li>
+</ul>
+
+<h3>Quartz</h3>
+
+<ul>
+  <li>Input: Quartz Dust ×2</li>
+  <li>Catalysts: Iron Ingot ×1</li>
+  <li>Fluid: Lava — 100 mB</li>
+  <li>Output: Quartz ×1</li>
+  <li>Byproduct: —</li>
+  <li>Cost: 3,200 DE</li>
+  <li>Speed: 1.0x</li>
+</ul>
+
+<h3>Amethyst Shard</h3>
+
+<ul>
+  <li>Input: Amethyst Dust ×2</li>
+  <li>Catalysts: Iron Ingot ×1</li>
+  <li>Fluid: Lava — 100 mB</li>
+  <li>Output: Amethyst Shard ×1</li>
+  <li>Byproduct: —</li>
+  <li>Cost: 3,200 DE</li>
+  <li>Speed: 1.0x</li>
+</ul>
+
+<h3>Void Essence</h3>
+
+<ul>
+  <li>Input: Glass Bottle ×1</li>
+  <li>Catalysts: Crushed Endstone ×1</li>
+  <li>Fluid: Dark Matter — 100 mB</li>
+  <li>Output: Void Essence ×1</li>
+  <li>Byproduct: —</li>
+  <li>Cost: 32,000 DE</li>
+  <li>Speed: 0.5x</li>
+</ul>
+
+  </TabItem>
+</Tabs>
+
+> **Legend:** Catalysts use up to 6 slots; byproducts are chance-based; lower speed multipliers mean slower processing.
