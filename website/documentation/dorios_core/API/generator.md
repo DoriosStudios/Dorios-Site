@@ -8,37 +8,18 @@ sidebar_position: 2
 # Generator
 
 :::info
-`Generator` is the base class used for all **energy-producing machines** in UtilityCraft.
+`Generator` is the runtime helper for energy-producing blocks.
 
-It extends [`BasicMachine`](./basic-machine) and therefore inherits all base infrastructure such as:
-
-- entity access
-- block access
-- dimension access
-- inventory container access
-- progress tracking
-- energy integration
-- tick refresh validation
-- energy and UI display helpers
-
-The `Generator` class adds behavior specific to **energy generation systems**, including:
-
-- generator configuration access
-- generator entity spawning
-- generator destruction handling
-- nearby machine detection
-- energy transfer mode configuration
+It extends [`BasicMachine`](./basic-machine), reads generation settings from `settings.generator`, and provides shared placement, destruction, energy storage, optional fluid storage, and transfer-mode UI behavior.
 :::
 
 Hierarchy:
 
-```
+```text
 BasicMachine
-└─ Generator
+`- Generator
+   `- MultiblockGenerator
 ```
-
-All methods and properties from **BasicMachine** are available here.  
-This page documents **only the additional behavior introduced by `Generator`.**
 
 ---
 
@@ -51,8 +32,6 @@ This page documents **only the additional behavior introduced by `Generator`.**
 <div class="api-index-item"><span class="api-property">P</span><a href="#settings">settings</a></div>
 
 </div>
-
----
 
 ## Static Methods
 
@@ -77,41 +56,18 @@ This page documents **only the additional behavior introduced by `Generator`.**
 
 </div>
 
-Creates a new generator instance using the infrastructure provided by [`BasicMachine`](./basic-machine).
+Creates a generator runtime.
 
-### Parameters
+`Generator` passes this to `BasicMachine`:
 
-<ul class="api-params">
+```js
+super(block, {
+  rate: settings?.generator?.rate_speed_base ?? 0,
+  ignoreTick: settings.ignoreTick,
+});
+```
 
-<li>
-<span class="param-name">block</span>
-<span class="param-type">Block</span>
-
-Block representing the generator in the world.
-</li>
-
-<li>
-<span class="param-name">settings</span>
-<span class="param-type">GeneratorSettings</span>
-
-Generator configuration object defining behavior such as:
-
-- base generation rate
-- energy capacity
-- fluid capacity (optional)
-- entity type
-</li>
-
-</ul>
-
-### Behavior
-
-The constructor performs the following:
-
-1. Reads the base generation rate from `settings.generator.rate_speed_base`.
-2. Calls the `BasicMachine` constructor with that rate.
-3. Validates that the generator entity exists and the tick is valid.
-4. Stores the generator settings for later use.
+If `valid` is true, the full `settings` object is stored on the instance.
 
 ---
 
@@ -121,21 +77,7 @@ The constructor performs the following:
 
 Type: `GeneratorSettings`
 
-Stores the generator configuration passed into the constructor.
-
-```js
-const settings = generator.settings
-```
-
-This configuration usually contains:
-
-- generator energy capacity
-- fluid capacity (if the generator consumes fluids)
-- generation rate
-- entity identifier
-- inventory size
-
-It allows generator implementations to access their configuration without needing to re-read external definitions.
+The full settings object passed into the constructor.
 
 ---
 
@@ -149,79 +91,55 @@ It allows generator implementations to access their configuration without needin
 
 </div>
 
-Handles the destruction of a generator block.
+Handles generator block destruction.
 
-### Behavior
+Behavior:
 
-When a generator is broken:
+- Finds the helper entity at the block location.
+- Reads stored energy and first fluid tank.
+- Writes stored values into the dropped block item's lore.
+- Releases the generator tick group.
+- Drops non-UI inventory items.
+- Removes the helper entity.
+- Spawns the preserved generator item.
 
-1. Retrieves the generator entity associated with the block.
-2. Reads stored **energy and fluid values**.
-3. Encodes those values into the dropped block item lore.
-4. Drops all stored inventory items.
-5. Removes the generator entity.
-6. Spawns the generator block item preserving stored information.
-
-If the player is in **Creative mode**, the original block drop is removed so the custom preserved drop replaces it.
-
-### Returns
-
-Type: `boolean`
-
-Returns `true` if a generator entity was processed.  
-Returns `false` if no entity was found.
-
----
+Returns `true` when a helper entity was found and queued for cleanup.
 
 ## spawnEntity
 
 <div class="api-signature">
 
-`Generator.spawnEntity(event, config, callback?)`
+`Generator.spawnEntity(event, config, callback?): void`
 
 </div>
 
-Spawns the generator entity when the block is placed.
+Spawns and initializes a generator helper entity.
 
-### Behavior
+Directly used fields:
 
-1. Reads the item held in the player's main hand.
-2. Extracts stored **energy and fluid data** from the item.
-3. Spawns the generator entity.
-4. Initializes generator energy capacity and stored energy.
-5. Initializes fluid storage if the generator supports fluids.
-6. Registers nearby machine positions.
-7. Executes an optional callback after initialization.
-8. Updates adjacent energy networks.
+```js
+{
+  entity: {
+    name?: string,
+    type?: string,
+    inventory_size?: number,
+  },
+  generator: {
+    energy_cap: number,
+    fluid_cap?: number,
+    rate_speed_base?: number,
+  },
+}
+```
 
-### Parameters
+Behavior:
 
-<ul class="api-params">
-
-<li>
-<span class="param-name">event</span>
-<span class="param-type">object</span>
-
-Placement event containing block location, player, and permutation.
-</li>
-
-<li>
-<span class="param-name">config</span>
-<span class="param-type">GeneratorSettings</span>
-
-Generator configuration describing entity type, capacities and generator properties.
-</li>
-
-<li>
-<span class="param-name">callback</span>
-<span class="param-type">function</span>
-
-Optional callback executed after the generator entity has been initialized.
-</li>
-
-</ul>
-
----
+- Reads preserved energy/fluid from the placed item lore.
+- Spawns the helper entity with `Utils.spawnEntity(block, config)`.
+- Sets energy capacity and restored energy.
+- Initializes one fluid tank when `config.generator.fluid_cap` exists.
+- Runs `callback(entity)` after initialization.
+- Updates adjacent networks for the placed block.
 
 ## addNearbyMachines
 
@@ -231,39 +149,11 @@ Optional callback executed after the generator entity has been initialized.
 
 </div>
 
-Adds position tags for all blocks surrounding the generator entity.
+Adds `pos:[x,y,z]` tags for all six adjacent block positions.
 
-### Behavior
-
-The generator scans the **six adjacent blocks**:
-
-- East
-- West
-- Up
-- Down
-- South
-- North
-
-For each adjacent position it adds a tag using the format:
-
-```
-pos:[x,y,z]
-```
-
-These tags allow energy transfer systems to quickly identify nearby machines without performing expensive block scans.
-
-### Example
-
-```
-pos:[101,64,-23]
-pos:[99,64,-23]
-pos:[100,65,-23]
-pos:[100,63,-23]
-```
-
-These tags are later used by energy transfer logic to determine valid targets.
-
----
+:::warning
+This method is marked deprecated in the current source. Network tags are now rebuilt from real placed energy blocks through the pipe update flow. Avoid using this as the default registration path for new generators.
+:::
 
 ## openGeneratorTransferModeMenu
 
@@ -273,53 +163,26 @@ These tags are later used by energy transfer logic to determine valid targets.
 
 </div>
 
-Opens a configuration menu allowing players to change the generator energy distribution mode.
+Opens a `ModalFormData` dropdown that lets a player set the generator's `transferMode` dynamic property.
 
-### Transfer Modes
+Supported modes:
 
-Generators support three distribution strategies:
-
-| Mode | Description |
-|-----|-------------|
-| nearest | Sends energy to the closest machine first |
-| farthest | Sends energy to the farthest machine first |
-| round | Distributes energy evenly across all connected machines |
-
-### Behavior
-
-1. Reads the current generator transfer mode.
-2. Opens a dropdown menu.
-3. Allows the player to select a new mode.
-4. Stores the new value as a dynamic property.
-5. Displays a confirmation message in the player's action bar.
-
-### Example Result
-
-```
-Transfer mode set to: Nearest
-```
+| Mode | Behavior |
+| --- | --- |
+| `nearest` | Send energy to the closest valid target first. |
+| `farthest` | Send energy to farther targets first. |
+| `round` | Distribute energy across valid targets. |
 
 ---
 
 # Example
 
 ```js
-const generator = new Generator(block, settings)
+const generator = new Generator(block, settings);
+if (!generator.valid) return;
 
-if (!generator.valid) return
-
-generator.displayEnergy()
+const generated = generator.rate;
+generator.energy.add(generated);
+generator.energy.transferToNetwork(generated, generator.entity.getDynamicProperty("transferMode"));
+generator.displayEnergy();
 ```
-
----
-
-# Notes
-
-`Generator` is used as the base implementation for **all UtilityCraft generators**, including:
-
-- Furnator
-- Magmator
-- Thermo Generator
-- Solar Panel
-
-Each generator defines its own generation logic but shares the infrastructure provided by this class.

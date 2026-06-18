@@ -8,23 +8,18 @@ sidebar_position: 0
 # BasicMachine
 
 :::info
-`BasicMachine` is the foundational class of **Dorios Machinery Core**.
+`BasicMachine` is the base runtime wrapper for a machine block and its helper entity.
 
-It provides the base infrastructure required for machine logic including:
-
-- machine entity access
-- inventory container access
-- progress tracking
-- energy integration
-- refresh‑speed tick validation
+It resolves the machine entity, checks the scheduler, exposes the entity inventory, creates an `EnergyStorage` instance, and provides common UI/progress helpers. Most addons use [`Machine`](./machine) or [`Generator`](./generator), but both are built on this class.
 :::
 
-Both higher level machine classes extend this base:
+Hierarchy:
 
-```
+```text
 BasicMachine
-├─ Machine
-└─ Generator
+|- Machine
+|- Generator
+`- MultiblockMachine
 ```
 
 ---
@@ -35,24 +30,23 @@ BasicMachine
 
 <div class="api-grid">
 
+<div class="api-index-item"><span class="api-property">P</span><a href="#valid">valid</a></div>
 <div class="api-index-item"><span class="api-property">P</span><a href="#entity">entity</a></div>
 <div class="api-index-item"><span class="api-property">P</span><a href="#block">block</a></div>
 <div class="api-index-item"><span class="api-property">P</span><a href="#dimension">dimension</a></div>
 <div class="api-index-item"><span class="api-property">P</span><a href="#container">container</a></div>
 <div class="api-index-item"><span class="api-property">P</span><a href="#energy">energy</a></div>
+<div class="api-index-item"><span class="api-property">P</span><a href="#shouldupdateui">shouldUpdateUI</a></div>
 <div class="api-index-item"><span class="api-property">P</span><a href="#baserate">baseRate</a></div>
+<div class="api-index-item"><span class="api-property">P</span><a href="#processinginterval">processingInterval</a></div>
 <div class="api-index-item"><span class="api-property">P</span><a href="#rate">rate</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#valid">valid</a></div>
 
 </div>
-
----
 
 ## Methods
 
 <div class="api-grid">
 
-<div class="api-index-item"><span class="api-method">M</span><a href="#new-basicmachine">constructor</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#setrate">setRate</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#setlabel">setLabel</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#on">on</a></div>
@@ -75,11 +69,11 @@ BasicMachine
 
 <div class="api-signature">
 
-`new BasicMachine(block: Block, rate: number)`
+`new BasicMachine(block: Block, options: { rate?: number, ignoreTick?: boolean })`
 
 </div>
 
-Creates a new machine instance bound to a machine block.
+Creates a runtime wrapper for the machine at `block`.
 
 ### Parameters
 
@@ -89,174 +83,114 @@ Creates a new machine instance bound to a machine block.
 <span class="param-name">block</span>
 <span class="param-type">Block</span>
 
-The block representing the machine in the world.
+The machine block in the world.
 </li>
 
 <li>
-<span class="param-name">rate</span>
+<span class="param-name">options.rate</span>
 <span class="param-type">number</span>
 
-Base energy processing rate defined by the machine configuration.
+Base rate designed around 20 TPS logic. `Machine` reads this from `settings.machine.rate_speed_base`; `Generator` reads it from `settings.generator.rate_speed_base`.
+</li>
+
+<li>
+<span class="param-name">options.ignoreTick</span>
+<span class="param-type">boolean</span>
+
+When `true`, bypasses `TickScheduler.shouldProcessMachine()` for this wrapper instance.
 </li>
 
 </ul>
+
+### Behavior
+
+1. Sets `valid` to `false`.
+2. Resolves the helper entity from the block.
+3. Checks whether the UI is open with `Utils.hasOpenUI(entity)`.
+4. Skips the tick unless `ignoreTick` is true or the scheduler allows processing.
+5. Creates `EnergyStorage`.
+6. Reads the entity inventory container.
+7. Calculates `processingInterval` and effective `rate`.
+8. Sets `valid` to `true`.
+
+Typical usage:
+
+```js
+const machine = new BasicMachine(block, { rate: 20 });
+if (!machine.valid) return;
+```
 
 ---
 
 # Properties
 
+## valid
+
+Type: `boolean`
+
+Whether this runtime wrapper is ready to run logic on the current tick.
+
+`valid` is `false` if the helper entity is missing, the scheduler skipped this tick, or the entity inventory cannot be read.
+
 ## entity
 
 Type: `Entity`
 
-Reference to the machine entity associated with the block.
-
-```js
-const entity = machine.entity
-```
-
-This entity stores runtime machine data such as:
-
-- dynamic properties
-- progress values
-- machine inventory
-
----
+The helper entity associated with the machine block. It stores inventory, dynamic properties, tags, energy data, fluid data, and tick group state.
 
 ## block
 
 Type: `Block`
 
-Block representing the machine in the world.
-
-```js
-const block = machine.block
-```
-
-Used for block state manipulation and machine visuals.
-
----
+The machine block represented by this runtime.
 
 ## dimension
 
 Type: `Dimension`
 
-Dimension where the machine exists.
-
-```js
-const dimension = machine.dimension
-```
-
-Useful when interacting with nearby entities or spawning items.
-
----
+The block's dimension.
 
 ## container
 
 Type: `Container`
 
-Inventory container attached to the machine entity.
-
-```js
-const container = machine.container
-```
-
-Used for:
-
-- input items
-- output items
-- UI display items
-
----
+The inventory container from the helper entity.
 
 ## energy
 
 Type: `EnergyStorage`
 
-Energy manager associated with the machine.
+Energy manager attached to the helper entity.
 
-```js
-const energy = machine.energy
-```
+## shouldUpdateUI
 
-Handles:
+Type: `boolean`
 
-- energy capacity
-- energy transfer
-- energy UI display
-
----
+`true` when at least one player has the machine UI open. UI-rendering helpers return early when this is false.
 
 ## baseRate
 
 Type: `number`
 
-Base processing rate defined by the machine configuration.
+The unscaled machine rate supplied through `options.rate`.
 
-```js
-const baseRate = machine.baseRate
-```
+## processingInterval
 
-This value represents the **energy or progress rate per tick**, assuming normal Minecraft tick speed.
+Type: `number`
 
-Example:
-
-```
-baseRate = 20
-```
-
-Means the machine processes **20 units per tick**.
-
----
+The tick interval returned by `TickScheduler.getProcessingInterval(entity)`. Open UIs currently use a short interval; closed machines use the active scheduler profile interval.
 
 ## rate
 
 Type: `number`
 
-Effective processing rate used internally by the machine.
+Effective per-run rate:
 
 ```js
-const rate = machine.rate
+rate = baseRate * processingInterval;
 ```
 
-The rate is automatically scaled using the addon's **refresh speed**.
-
-```
-rate = baseRate * tickSpeed
-```
-
-Example:
-
-```
-baseRate = 20
-tickSpeed = 20
-rate = 400
-```
-
-This ensures machines keep the same behavior even when the addon processes logic less frequently.
-
----
-
-## valid
-
-Type: `boolean`
-
-Indicates whether the machine should process logic during the current tick.
-
-```js
-const valid = machine.valid
-```
-
-The machine becomes invalid if:
-
-- the machine entity cannot be found
-- the current tick is skipped due to refresh‑speed optimization
-
-Typical usage:
-
-```js
-if (!machine.valid) return
-```
+Use this value for work performed only when `valid` is true.
 
 ---
 
@@ -270,54 +204,41 @@ if (!machine.valid) return
 
 </div>
 
-Updates the machine base rate and recalculates the effective rate.
-
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">baseRate</span>
-<span class="param-type">number</span>
-
-New base processing rate.
-</li>
-
-</ul>
-
----
+Updates `baseRate` and recalculates `rate` using the current `processingInterval`.
 
 ## setLabel
 
 <div class="api-signature">
 
-`setLabel(text: string, slot?: number): void`
+`setLabel(text: string | string[], slot?: number): void`
 
 </div>
 
-Displays a label inside the machine inventory using a placeholder item.
+Writes a label item into the machine inventory. The default slot is `1`.
 
-### Parameters
+If `text` is a string, it becomes the item `nameTag`. If `text` is an array, the first item becomes `nameTag` and the remaining items become lore lines.
 
-<ul class="api-params">
+This method only updates while `shouldUpdateUI` is true.
 
-<li>
-<span class="param-name">text</span>
-<span class="param-type">string</span>
+## on
 
-Text displayed in the label.
-</li>
+<div class="api-signature">
 
-<li>
-<span class="param-name">slot</span>
-<span class="param-type">number</span>
+`on(): void`
 
-Inventory slot used for the label.
-</li>
+</div>
 
-</ul>
+Sets the block state `utilitycraft:on` to `true`.
 
----
+## off
+
+<div class="api-signature">
+
+`off(): void`
+
+</div>
+
+Sets the block state `utilitycraft:on` to `false`.
 
 ## addProgress
 
@@ -327,29 +248,7 @@ Inventory slot used for the label.
 
 </div>
 
-Adds progress to the machine.
-
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">amount</span>
-<span class="param-type">number</span>
-
-Amount of progress added to the machine.
-</li>
-
-<li>
-<span class="param-name">index</span>
-<span class="param-type">number</span>
-
-Optional progress index used when machines track multiple progress values.
-</li>
-
-</ul>
-
----
+Adds to the dynamic property `dorios:progress_{index}`. The default index is `0`.
 
 ## getProgress
 
@@ -359,185 +258,54 @@ Optional progress index used when machines track multiple progress values.
 
 </div>
 
-Returns the current progress value stored in the machine.
-
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">index</span>
-<span class="param-type">number</span>
-
-Progress index to retrieve.
-</li>
-
-</ul>
-
----
+Reads `dorios:progress_{index}`. Returns `0` when unset.
 
 ## setProgress
 
 <div class="api-signature">
 
-`setProgress(value: number, options?: object): void`
+`setProgress(value: number, maxValue?: number, options?: ProgressDisplayOptions): void`
 
 </div>
 
-Sets the machine progress value and optionally updates the visual progress bar.
+Stores progress and optionally redraws the progress item.
 
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">value</span>
-<span class="param-type">number</span>
-
-New progress value.
-</li>
-
-<li>
-<span class="param-name">options</span>
-<span class="param-type">object</span>
-
-Optional display configuration.
-
-Supported options:
-
+```ts
+type ProgressDisplayOptions = {
+  slot?: number;      // default 2
+  type?: string;      // default "progress_right_big_bar"
+  display?: boolean;  // default true
+  index?: number;     // default 0
+  scale?: number;     // default 22 modern, 16 legacy
+  legacy?: boolean;   // default false
+};
 ```
-slot?: number
-type?: string
-display?: boolean
-index?: number
-```
-</li>
 
-</ul>
-
-### Options
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">slot</span>
-<span class="param-type">number</span>
-
-Inventory slot used to render the progress item.
-</li>
-
-<li>
-<span class="param-name">type</span>
-<span class="param-type">string</span>
-
-Texture type used for the progress indicator.
-
-Example:
-
-```
-arrow_right
-arrow_left
-```
-</li>
-
-<li>
-<span class="param-name">display</span>
-<span class="param-type">boolean</span>
-
-Whether the progress bar should update visually.
-</li>
-
-<li>
-<span class="param-name">index</span>
-<span class="param-type">number</span>
-
-Progress index used when multiple progress bars exist.
-</li>
-
-</ul>
-
----
+`value` is clamped to at least `0`.
 
 ## displayProgress
 
 <div class="api-signature">
 
-`displayProgress(maxValue: number, options?: object): void`
+`displayProgress(maxValue?: number, options?: ProgressDisplayOptions): void`
 
 </div>
 
-Displays the machine progress visually inside the machine inventory.
+Displays the progress bar in the entity inventory.
 
-### Parameters
+Modern progress uses padded frame ids like:
 
-<ul class="api-params">
-
-<li>
-<span class="param-name">maxValue</span>
-<span class="param-type">number</span>
-
-Maximum progress value used to normalize the visual scale.
-</li>
-
-<li>
-<span class="param-name">options</span>
-<span class="param-type">object</span>
-
-Display configuration options.
-
-```
-slot?: number
-type?: string
-index?: number
-scale?: number
-```
-</li>
-
-</ul>
-
-### Options
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">slot</span>
-<span class="param-type">number</span>
-
-Inventory slot used to display the progress item.
-</li>
-
-<li>
-<span class="param-name">type</span>
-<span class="param-type">string</span>
-
-Progress bar texture identifier.
-</li>
-
-<li>
-<span class="param-name">index</span>
-<span class="param-type">number</span>
-
-Progress index to read from.
-</li>
-
-<li>
-<span class="param-name">scale</span>
-<span class="param-type">number</span>
-
-Maximum visual progress scale.
-
-Example:
-
-```
-scale = 16
+```text
+utilitycraft:progress_right_big_bar_00
+utilitycraft:progress_right_big_bar_22
 ```
 
-Creates a progress bar with **16 visual steps**.
-</li>
+When `legacy: true`, it uses the older non-padded frame naming:
 
-</ul>
-
----
+```text
+utilitycraft:arrow_right_0
+utilitycraft:arrow_right_16
+```
 
 ## displayEnergy
 
@@ -547,22 +315,7 @@ Creates a progress bar with **16 visual steps**.
 
 </div>
 
-Displays the current machine energy using `EnergyStorage.display()`.
-
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">slot</span>
-<span class="param-type">number</span>
-
-Inventory slot used to display the energy bar.
-</li>
-
-</ul>
-
----
+Delegates to `this.energy.display(slot)`. The default slot is `0`. This method only updates while `shouldUpdateUI` is true.
 
 ## blockSlots
 
@@ -572,22 +325,7 @@ Inventory slot used to display the energy bar.
 
 </div>
 
-Blocks inventory slots using a placeholder item.
-
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">slots</span>
-<span class="param-type">number[]</span>
-
-Array of slot indices to block.
-</li>
-
-</ul>
-
----
+Fills empty inventory slots with the blocker item `utilitycraft:arrow_right_0`.
 
 ## unblockSlots
 
@@ -597,46 +335,20 @@ Array of slot indices to block.
 
 </div>
 
-Removes placeholder items used for blocked slots.
-
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">slots</span>
-<span class="param-type">number[]</span>
-
-Array of slot indices to unblock.
-</li>
-
-</ul>
+Clears blocker items from the given slots.
 
 ---
 
 # Example
 
 ```js
-const machine = new BasicMachine(block, 20)
+const machine = new BasicMachine(block, { rate: 20 });
+if (!machine.valid) return;
 
-if (!machine.valid) return
+machine.displayEnergy();
+machine.addProgress(machine.rate);
 
-machine.displayEnergy()
-
-machine.addProgress(machine.rate)
-
-if (machine.getProgress() >= 200) {
-  machine.setProgress(0)
+if (machine.getProgress() >= 800) {
+  machine.setProgress(0);
 }
 ```
-
----
-
-# Notes
-
-`BasicMachine` is designed as the core infrastructure class of Dorios Machinery Core.
-
-Higher‑level machine behavior is implemented in:
-
-- `Machine`
-- `Generator`

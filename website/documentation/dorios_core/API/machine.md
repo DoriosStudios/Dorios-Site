@@ -8,40 +8,17 @@ sidebar_position: 1
 # Machine
 
 :::info
-`Machine` is the main operational class used by **UtilityCraft machines**.
+`Machine` is the main runtime helper for item-processing UtilityCraft-style machines.
 
-It extends [`BasicMachine`](./basic-machine) and inherits all its base properties and methods, including:
-
-- entity access
-- block access
-- dimension access
-- inventory container access
-- progress tracking
-- energy integration
-- tick refresh validation
-- progress and energy UI rendering
-
-The `Machine` class adds higher-level machine behavior such as:
-
-- machine settings access
-- upgrade handling
-- boost calculation
-- item transfer automation
-- item pulling from containers
-- machine placement and destruction logic
-- energy cost management
-- machine status and warning displays
+It extends [`BasicMachine`](./basic-machine), adds machine settings, upgrade boosts, preserved placement/destruction, cached item output transfer, and machine status labels.
 :::
 
 Hierarchy:
 
 ```text
 BasicMachine
-└─ Machine
+`- Machine
 ```
-
-All methods and properties from **BasicMachine** are available here.  
-This page documents the **additional properties and methods introduced by `Machine`**.
 
 ---
 
@@ -57,8 +34,6 @@ This page documents the **additional properties and methods introduced by `Machi
 
 </div>
 
----
-
 ## Static Methods
 
 <div class="api-grid">
@@ -68,14 +43,14 @@ This page documents the **additional properties and methods introduced by `Machi
 
 </div>
 
----
-
 ## Methods
 
 <div class="api-grid">
 
 <div class="api-index-item"><span class="api-method">M</span><a href="#transferitems">transferItems</a></div>
+<div class="api-index-item"><span class="api-method">M</span><a href="#hasoutputitems">hasOutputItems</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#pullitemsfromabove">pullItemsFromAbove</a></div>
+<div class="api-index-item"><span class="api-method">M</span><a href="#setprogress">setProgress</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#displayprogress">displayProgress</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#setenergycost">setEnergyCost</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#getenergycost">getEnergyCost</a></div>
@@ -97,44 +72,18 @@ This page documents the **additional properties and methods introduced by `Machi
 
 </div>
 
-Creates a new machine instance using the infrastructure provided by [`BasicMachine`](./basic-machine).
+Creates a machine runtime from a block and settings object.
 
-### Parameters
+`Machine` passes this to `BasicMachine`:
 
-<ul class="api-params">
+```js
+super(block, {
+  rate: settings.machine.rate_speed_base ?? 0,
+  ignoreTick: settings.ignoreTick,
+});
+```
 
-<li>
-<span class="param-name">block</span>
-<span class="param-type">Block</span>
-
-Block representing the machine in the world.
-</li>
-
-<li>
-<span class="param-name">settings</span>
-<span class="param-type">MachineSettings</span>
-
-Machine configuration object that defines machine behavior such as:
-
-- base rate
-- energy capacity
-- fluid capacity
-- upgrades
-- rotation behavior
-</li>
-
-</ul>
-
-### Behavior
-
-The constructor performs the following steps:
-
-1. Calls `BasicMachine` constructor using `settings.machine.rate_speed_base`.
-2. Validates that the machine entity exists and that the current tick is valid.
-3. Stores the provided machine settings.
-4. Reads upgrade levels from configured upgrade slots.
-5. Calculates machine boosts.
-6. Recalculates the effective machine rate.
+If upgrades are configured, the constructor scans the upgrade slots, calculates speed/consumption boosts, and adjusts the effective base rate.
 
 ---
 
@@ -144,74 +93,39 @@ The constructor performs the following steps:
 
 Type: `MachineSettings`
 
-Full machine configuration object passed into the constructor.
-
-```js
-const settings = machine.settings
-```
-
-This property stores the machine definition used by the class, including values such as:
-
-- machine energy capacity
-- machine fluid capacity
-- base rate
-- upgrade slot definitions
-- rotation options
-
-It is typically used by subclasses or machine implementations that need access to their full configuration.
-
----
+The full settings object passed into the constructor.
 
 ## upgrades
 
-Type: `UpgradeLevels`
+Type:
 
-Upgrade levels currently detected inside the machine upgrade slots.
-
-```js
-const upgrades = machine.upgrades
-```
-
-Typical structure:
-
-```js
+```ts
 {
-  energy: 0,
-  range: 0,
-  speed: 0,
-  ultimate: 0
+  energy: number;
+  range: number;
+  speed: number;
+  ultimate: number;
 }
 ```
 
-These values are calculated from the items currently placed in the configured upgrade slots.
-
----
+Upgrade item counts found in `settings.machine.upgrades`. Upgrade items must have the tag `utilitycraft:is_upgrade`; the upgrade type is parsed from the item id prefix before `_upgrade`.
 
 ## boosts
 
-Type: `{ speed: number, consumption: number }`
+Type:
 
-Calculated boost values derived from installed upgrades.
-
-```js
-const boosts = machine.boosts
-```
-
-Structure:
-
-```js
+```ts
 {
-  speed: 1,
-  consumption: 1
+  speed: number;
+  consumption: number;
 }
 ```
 
-### Meaning
+Calculated from speed and energy upgrade counts.
 
-- `speed` increases the machine processing speed
-- `consumption` affects the effective energy cost multiplier
-
-These values are used internally to adjust machine rate and operation cost.
+- Speed upgrades use `1 + 0.125 * n * (n + 1)` with `n` capped at `8`.
+- Energy upgrades lower energy consumption, also capped at `8`.
+- The effective machine rate is adjusted with `speed * consumption`.
 
 ---
 
@@ -225,97 +139,31 @@ These values are used internally to adjust machine rate and operation cost.
 
 </div>
 
-Handles the destruction of a machine block.
+Handles block destruction for normal machines.
 
-### Behavior
+Behavior:
 
-When a machine is broken:
+- Finds the helper entity at the block location.
+- Reads stored energy and first fluid tank.
+- Writes stored values into the dropped block item's lore.
+- Releases the machine tick group.
+- Drops non-UI inventory items.
+- Removes the helper entity.
+- Spawns the preserved block item.
 
-1. Retrieves the machine entity associated with the block.
-2. Reads stored **energy and fluid data**.
-3. Encodes that data into the dropped block item lore.
-4. Drops all items stored in the machine inventory.
-5. Removes the machine entity.
-6. Spawns the machine block item with stored information.
-
-If the player is in **Creative mode**, the original block item drop is removed so the machine can be replaced by the custom preserved drop.
-
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">event</span>
-<span class="param-type">object</span>
-
-Block break event data containing block, broken permutation, player, and dimension.
-</li>
-
-</ul>
-
-### Returns
-
-Type: `boolean`
-
-Returns `true` if a machine entity was found and processed.  
-Returns `false` if no machine entity was associated with the block.
-
----
+Returns `true` when a helper entity was found and queued for cleanup.
 
 ## spawnEntity
 
 <div class="api-signature">
 
-`Machine.spawnEntity(event, config, callback?)`
+`Machine.spawnEntity(event, config, callback?): void`
 
 </div>
 
-Spawns the machine entity when the block is placed.
+Spawns and initializes a helper entity when the machine block is placed.
 
-### Behavior
-
-1. Reads the item held by the player.
-2. Extracts stored **energy and fluid information** from the placed item.
-3. Handles optional **machine rotation** before final placement.
-4. Spawns the machine entity.
-5. Initializes machine energy storage.
-6. Initializes fluid storage if the machine supports fluids.
-7. Executes an optional callback after initialization.
-8. Updates adjacent networks.
-
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">event</span>
-<span class="param-type">object</span>
-
-Placement event data containing block, player, permutation to place, and optional cancel flag.
-</li>
-
-<li>
-<span class="param-name">config</span>
-<span class="param-type">MachineSettings</span>
-
-Machine configuration used to spawn the backing machine entity and initialize
-its placement, energy storage, and optional fluid storage. See the detailed
-`config` breakdown below.
-</li>
-
-<li>
-<span class="param-name">callback</span>
-<span class="param-type">function</span>
-
-Optional callback executed after the entity has been spawned and initialized.
-</li>
-
-</ul>
-
-#### `config` structure
-
-`spawnEntity()` does not just receive a generic `MachineSettings` object. It
-expects the parts of the machine definition that placement depends on:
+Directly used fields:
 
 ```js
 {
@@ -325,88 +173,28 @@ expects the parts of the machine definition that placement depends on:
     type?: string,
     input_type?: string,
     output_type?: string,
-    inventory_size?: number
+    inventory_size?: number,
   },
   machine: {
     energy_cap: number,
     fluid_cap?: number,
-    energy_cost?: number,
     rate_speed_base?: number,
+    energy_cost?: number,
     upgrades?: number[],
-    fluid_types?: number
-  }
+    fluid_types?: number,
+  },
 }
 ```
 
-##### Top-Level Fields
+Behavior:
 
-- `rotation` *(optional)*  
-  When `true`, placement is rerouted through `Rotation.facing(player, block, permutationToPlace)`.
-  The method also sets `event.cancel = true`, and in Survival mode it manually
-  clears one item from the player's hand before finishing placement.
-
-- `entity` *(required)*  
-  Entity definition forwarded to `Utils.spawnEntity(block, config)`. This part
-  of the config tells the spawn helper what kind of machine entity to create and
-  how its inventory/layout should be prepared.
-
-- `machine` *(required)*  
-  Machine runtime definition. This section contains the capacity values used
-  immediately after spawn, along with the rest of the machine settings used by
-  the machine class later during operation.
-
-##### `config.entity`
-
-- `name` *(optional)*  
-  Specific entity name or identifier used by the spawn helper when the machine
-  needs to create a named backing entity.
-
-- `type` *(optional)*  
-  Entity layout/type used by the spawn helper to select the correct machine
-  entity behavior, such as a simple item machine or a fluid-capable machine.
-
-- `input_type` *(optional)*  
-  Declares the machine input layout for item-processing machines.
-
-- `output_type` *(optional)*  
-  Declares the machine output layout for item-processing machines.
-
-- `inventory_size` *(optional)*  
-  Total number of inventory slots the spawned machine entity should have.
-
-##### `config.machine`
-
-- `energy_cap` *(required)*  
-  Used directly by `spawnEntity()` through `EnergyStorage.setCap(...)` to define
-  the machine's maximum energy storage.
-
-- `fluid_cap` *(optional)*  
-  If this value exists, `spawnEntity()` creates a `FluidStorage`, sets its
-  capacity, displays it, and restores fluid from the held item when fluid data
-  is present.
-
-- `energy_cost` *(optional)*  
-  Not read directly inside `spawnEntity()`, but still part of the same machine
-  definition and used later by the machine runtime to determine operation cost.
-
-- `rate_speed_base` *(optional)*  
-  Not read directly in this method, but used later by the `Machine` class as
-  the machine's base processing speed.
-
-- `upgrades` *(optional)*  
-  Array of upgrade slot indexes supported by the machine. This is not consumed
-  directly by `spawnEntity()`, but it is part of the runtime settings used once
-  the machine exists.
-
-- `fluid_types` *(optional)*  
-  Number of fluid types supported by the machine. This field is not read
-  directly by `spawnEntity()`, but it belongs to the same fluid-machine
-  definition used after placement.
-
-Directly read fields in this method are `config.rotation`,
-`config.machine.energy_cap`, and `config.machine.fluid_cap`. The rest of the
-object is passed into spawn/runtime helpers, so it should match the full machine
-definition used by your block component.
+- Reads preserved energy/fluid values from the placed item lore.
+- If `rotation` is true, cancels normal placement and uses [`Rotation.facing`](./rotation).
+- Spawns the helper entity with `Utils.spawnEntity(block, config)`.
+- Sets energy capacity and restored energy.
+- Initializes one fluid tank when `config.machine.fluid_cap` exists.
+- Runs `callback(entity)` after initialization.
+- Updates adjacent item/energy/fluid networks for the placed block.
 
 ---
 
@@ -420,24 +208,28 @@ definition used by your block component.
 
 </div>
 
-Transfers items from the machine inventory into the container located **behind the machine**.
+Transfers machine output items into the cached item output target.
 
-### Behavior
+Current behavior:
 
-1. Reads the machine facing direction using `utilitycraft:axis`.
-2. Resolves the opposite direction vector.
-3. Finds the adjacent block in that opposite direction.
-4. Gets the machine output slot range.
-5. Transfers items using `DoriosAPI.containers.transferItemsAt()`.
+- Reads the allowed output slot range from `DoriosAPI.containers.getAllowedOutputRange(this.entity)`.
+- Uses [`OutputTracker`](./output-tracker) to read or refresh the target location.
+- Calls `DoriosAPI.containers.transferItemsAt(this.container, targetLoc, this.dimension, range)`.
+- Clears stale cached targets when the transfer API returns `-1`.
 
-### Returns
+The output target is based on the block's `utilitycraft:axis` state and points to the opposite side of the machine.
 
-Type: `boolean`
+Returns `true` only when at least one item moved.
 
-Returns `true` if the transfer attempt was executed.  
-Returns `false` if the machine facing state was missing or invalid.
+## hasOutputItems
 
----
+<div class="api-signature">
+
+`hasOutputItems(): boolean`
+
+</div>
+
+Returns whether the configured output slot or output slot range contains at least one item.
 
 ## pullItemsFromAbove
 
@@ -447,76 +239,45 @@ Returns `false` if the machine facing state was missing or invalid.
 
 </div>
 
-Pulls items from the container directly above the machine into a specific internal slot.
+Pulls one compatible stack from the vanilla container directly above the machine into `targetSlot`.
 
-### Parameters
+It only works with blocks listed in `DoriosAPI.constants.vanillaContainers`.
 
-<ul class="api-params">
+## setProgress
 
-<li>
-<span class="param-name">targetSlot</span>
-<span class="param-type">number</span>
+<div class="api-signature">
 
-Machine inventory slot where the item should be inserted.
-</li>
+`setProgress(value: number, options?: MachineProgressOptions): void`
 
-</ul>
+</div>
 
-### Behavior
+Stores progress using the current energy cost as the default max value.
 
-- Checks whether the block above is a supported vanilla container.
-- Reads the source container inventory.
-- If the target slot is empty, moves the first compatible stack.
-- If the target slot already contains the same item, merges stacks until full.
-
-### Returns
-
-Type: `boolean`
-
-Returns `true` if an item transfer occurred.  
-Returns `false` if no compatible transfer was possible.
-
----
+```ts
+type MachineProgressOptions = {
+  maxValue?: number;
+  slot?: number;
+  type?: string;
+  display?: boolean;
+  index?: number;
+  scale?: number;
+  legacy?: boolean;
+};
+```
 
 ## displayProgress
 
 <div class="api-signature">
 
-`displayProgress(options?: object): void`
+`displayProgress(options?: MachineProgressOptions): void`
+
+`displayProgress(maxValue: number, options?: MachineProgressOptions): void`
 
 </div>
 
-Displays the machine progress bar using the configured energy cost as the maximum progress value.
+Displays progress using `getEnergyCost(index)` unless `maxValue` is supplied.
 
-This method overrides the base progress display behavior from [`BasicMachine`](./basic-machine).
-
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">options</span>
-<span class="param-type">object</span>
-
-Optional progress display configuration.
-
-Supported options:
-
-```js
-slot?: number
-type?: string
-index?: number
-scale?: number
-```
-</li>
-
-</ul>
-
-### Notes
-
-Internally this method calls the base `displayProgress()` implementation, but uses `getEnergyCost()` to determine the progress maximum.
-
----
+The two-call-shape support exists so `Machine` can be called directly by addon code and internally by `BasicMachine`.
 
 ## setEnergyCost
 
@@ -526,31 +287,7 @@ Internally this method calls the base `displayProgress()` implementation, but us
 
 </div>
 
-Sets the energy cost required to complete one machine operation.
-
-The value is stored as a dynamic property on the machine entity.
-
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">value</span>
-<span class="param-type">number</span>
-
-Energy cost representing full progress.
-</li>
-
-<li>
-<span class="param-name">index</span>
-<span class="param-type">number</span>
-
-Optional cost index for machines that track multiple processes.
-</li>
-
-</ul>
-
----
+Stores the operation cost in `dorios:energy_cost_{index}`. Values are clamped to at least `1`.
 
 ## getEnergyCost
 
@@ -560,32 +297,7 @@ Optional cost index for machines that track multiple processes.
 
 </div>
 
-Returns the stored energy cost for the specified process index.
-
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">index</span>
-<span class="param-type">number</span>
-
-Optional cost index.
-</li>
-
-</ul>
-
-### Returns
-
-Type: `number`
-
-If no value is stored, the default returned value is:
-
-```js
-800
-```
-
----
+Reads the stored operation cost. Returns `800` when unset.
 
 ## displayEnergy
 
@@ -595,85 +307,19 @@ If no value is stored, the default returned value is:
 
 </div>
 
-Displays the machine energy bar in the inventory UI.
-
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">slot</span>
-<span class="param-type">number</span>
-
-Optional inventory slot used for the energy display.
-</li>
-
-</ul>
-
-### Notes
-
-Internally delegates to `this.energy.display(slot)`.
-
----
+Delegates to `this.energy.display(slot)`. Unlike `BasicMachine.displayEnergy()`, this override does not check `shouldUpdateUI` before delegating.
 
 ## showWarning
 
 <div class="api-signature">
 
-`showWarning(message: string, options?: object): void`
+`showWarning(message: string, options?: MachineProgressOptions & { resetProgress?: boolean, displayProgress?: boolean }): void`
 
 </div>
 
-Displays a warning label in the machine interface.
+Displays a warning label, turns the block off, refreshes energy UI, and by default resets progress to `0`.
 
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">message</span>
-<span class="param-type">string</span>
-
-Warning text shown to the player.
-</li>
-
-<li>
-<span class="param-name">options</span>
-<span class="param-type">object</span>
-
-Optional warning behavior settings.
-
-Supported options:
-
-```js
-resetProgress?: boolean
-displayProgress?: boolean
-slot?: number
-type?: string
-index?: number
-scale?: number
-```
-</li>
-
-</ul>
-
-### Behavior
-
-- optionally resets progress
-- optionally redraws the progress bar
-- redraws the energy bar
-- turns the machine off
-- shows formatted machine statistics
-- displays the warning message
-
-This method is commonly used for states such as:
-
-- missing input
-- blocked output
-- invalid recipe
-- missing conditions
-
----
+Set `resetProgress: false` for warnings like "No Energy" where partial progress should be preserved.
 
 ## showStatus
 
@@ -683,58 +329,33 @@ This method is commonly used for states such as:
 
 </div>
 
-Displays a normal machine status label.
-
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">message</span>
-<span class="param-type">string</span>
-
-Status text shown to the player.
-</li>
-
-</ul>
-
-### Behavior
-
-- redraws the energy bar
-- displays current machine boost information
-- displays current operation cost
-- displays current machine rate
-
-Unlike `showWarning`, this method does **not** reset progress.
+Displays the normal running label with speed, efficiency, operation cost, and base rate information.
 
 ---
 
 # Example
 
 ```js
-const machine = new Machine(block, settings)
+const machine = new Machine(block, settings);
+if (!machine.valid) return;
 
-if (!machine.valid) return
+const input = machine.container.getItem(3);
+if (!input) {
+  machine.showWarning("No Input Item");
+  return;
+}
 
-machine.displayEnergy()
-machine.displayProgress()
+machine.setEnergyCost(settings.machine.energy_cost);
 
-machine.showStatus("Running")
-machine.transferItems()
+if (!machine.energy.has(machine.rate * machine.boosts.consumption)) {
+  machine.showWarning("No Energy", { resetProgress: false });
+  return;
+}
+
+machine.energy.consume(machine.rate * machine.boosts.consumption);
+machine.addProgress(machine.rate);
+machine.transferItems();
+machine.on();
+machine.displayProgress();
+machine.showStatus("Running");
 ```
-
----
-
-# Notes
-
-`Machine` is the primary implementation class used by most **UtilityCraft** machines.
-
-Examples include:
-
-- Crusher
-- Incinerator
-- Electro Press
-- Block Breaker
-- Block Placer
-
-These machines inherit all base infrastructure from [`BasicMachine`](./basic-machine) and then use `Machine` for common machine behavior such as upgrades, UI, transfer logic, and preserved placement data.

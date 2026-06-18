@@ -8,18 +8,9 @@ sidebar_position: 3
 # EnergyStorage
 
 :::info
-`EnergyStorage` is the utility class responsible for managing **Dorios Energy (DE)** for entities.
+`EnergyStorage` manages Dorios Energy (DE) for entities using scoreboards.
 
-It provides a scoreboard‑based energy system that allows machines, generators, batteries, and other energy containers to:
-
-- store energy
-- consume energy
-- transfer energy between entities
-- display energy visually
-- manage large values safely using mantissa/exponent storage
-
-Unlike `Machine` or `Generator`, this class is **not tied to blocks**.  
-Instead, it operates directly on **entities that represent energy containers**.
+It stores both current energy and capacity as mantissa/exponent pairs, allowing very large values while staying within scoreboard-safe ranges.
 :::
 
 ---
@@ -36,8 +27,6 @@ Instead, it operates directly on **entities that represent energy containers**.
 
 </div>
 
----
-
 ## Static Methods
 
 <div class="api-grid">
@@ -50,8 +39,6 @@ Instead, it operates directly on **entities that represent energy containers**.
 <div class="api-index-item"><span class="api-method">M</span><a href="#setcap-static">setCap</a></div>
 
 </div>
-
----
 
 ## Methods
 
@@ -91,27 +78,7 @@ Instead, it operates directly on **entities that represent energy containers**.
 
 </div>
 
-Creates a new energy manager attached to the given entity.
-
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">entity</span>
-<span class="param-type">Entity</span>
-
-Entity used as the energy container.
-</li>
-
-</ul>
-
-### Behavior
-
-1. Stores a reference to the entity.
-2. Retrieves the entity scoreboard identity.
-3. If the entity is not initialized, calls `initializeEntity()`.
-4. Reads and caches the entity energy capacity.
+Creates an energy manager for an entity. If the entity does not yet have a scoreboard identity, the Core attempts to initialize it first.
 
 ---
 
@@ -121,41 +88,19 @@ Entity used as the energy container.
 
 Type: `Entity`
 
-Reference to the entity whose energy is managed.
-
-```js
-const entity = energy.entity
-```
-
-This entity represents the machine, generator, or battery storing energy.
-
----
+Entity whose energy is managed.
 
 ## scoreId
 
 Type: `ScoreboardIdentity`
 
-The scoreboard identity associated with the entity.
-
-```js
-const id = energy.scoreId
-```
-
-All energy values are stored using this scoreboard identity.
-
----
+Scoreboard identity used for all energy objectives.
 
 ## cap
 
 Type: `number`
 
-Cached maximum energy capacity of the entity.
-
-```js
-const capacity = energy.cap
-```
-
-This value is retrieved from scoreboard objectives.
+Cached capacity loaded from `getCap()`.
 
 ---
 
@@ -169,49 +114,45 @@ This value is retrieved from scoreboard objectives.
 
 </div>
 
-Initializes and caches the scoreboard objectives used for energy storage.
+Loads or creates the shared objectives:
 
-This method must be executed **once after world load**.
+- `energy`
+- `energyExp`
+- `energyCap`
+- `energyCapExp`
 
-Loaded objectives:
-
-- energy
-- energyExp
-- energyCap
-- energyCapExp
-
----
+This is called automatically by the DoriosCore initializer on `worldLoad`.
 
 ## normalizeValue
 
 <div class="api-signature">
 
-`EnergyStorage.normalizeValue(amount: number)`
+`EnergyStorage.normalizeValue(amount: number): { value: number, exp: number }`
 
 </div>
 
-Converts a large number into mantissa/exponent format to stay within scoreboard limits.
-
-Example:
+Converts a raw value to a scoreboard-safe mantissa/exponent pair.
 
 ```js
-EnergyStorage.normalizeValue(25600000)
-// → { value: 25600, exp: 3 }
+EnergyStorage.normalizeValue(25_600_000);
+// { value: 25600000, exp: 0 }
 ```
 
----
+Values are only shifted when the mantissa would exceed `1e9`.
 
 ## combineValue
 
 <div class="api-signature">
 
-`EnergyStorage.combineValue(value: number, exp: number)`
+`EnergyStorage.combineValue(value: number, exp: number): number`
 
 </div>
 
-Reconstructs a full number from mantissa and exponent.
+Reconstructs the raw value:
 
----
+```js
+EnergyStorage.combineValue(25600, 3); // 25600000
+```
 
 ## formatEnergyToText
 
@@ -221,44 +162,17 @@ Reconstructs a full number from mantissa and exponent.
 
 </div>
 
-Formats Dorios Energy values into human readable units.
-
-Units supported:
-
-- DE
-- kDE
-- MDE
-- GDE
-- TDE
-- PDE
-
-Example:
-
-```js
-EnergyStorage.formatEnergyToText(15300)
-// → "15.3 kDE"
-```
-
----
+Formats values as `DE`, `kDE`, `MDE`, `GDE`, `TDE`, or `PDE`.
 
 ## getEnergyFromText
 
 <div class="api-signature">
 
-`EnergyStorage.getEnergyFromText(input: string, index?: number): number`
+`EnergyStorage.getEnergyFromText(input: string, index?: number): number | undefined`
 
 </div>
 
-Parses a formatted energy string and returns the numeric DE value.
-
-Example:
-
-```js
-EnergyStorage.getEnergyFromText("Energy: 12.5 kDE / 256 kDE", 0)
-// → 12500
-```
-
----
+Parses a formatted lore/status string and returns the selected DE value. `index` selects which number to read; `0` is current energy and `1` is capacity in preserved machine lore.
 
 ## setCap (static)
 
@@ -268,7 +182,7 @@ EnergyStorage.getEnergyFromText("Energy: 12.5 kDE / 256 kDE", 0)
 
 </div>
 
-Sets the energy capacity directly for an entity.
+Sets capacity directly for an entity.
 
 ---
 
@@ -276,152 +190,215 @@ Sets the energy capacity directly for an entity.
 
 ## setCap
 
-Sets the maximum energy capacity for the entity.
+<div class="api-signature">
 
----
+`setCap(amount: number): void`
+
+</div>
+
+Sets maximum capacity for this entity.
 
 ## getCap
 
-Returns the entity's maximum energy capacity.
+<div class="api-signature">
 
----
+`getCap(): number`
+
+</div>
+
+Reads and caches maximum capacity.
 
 ## getCapNormalized
 
-Returns the capacity using mantissa/exponent values.
+<div class="api-signature">
 
----
+`getCapNormalized(): { value: number, exp: number }`
+
+</div>
+
+Reads capacity without combining mantissa and exponent.
 
 ## set
 
-Sets the current energy value.
+<div class="api-signature">
 
----
+`set(amount: number): void`
+
+</div>
+
+Sets current energy.
 
 ## get
 
-Returns the current stored energy.
+<div class="api-signature">
 
----
+`get(): number`
+
+</div>
+
+Returns current energy.
 
 ## getNormalized
 
-Returns the normalized energy value `{ value, exp }`.
+<div class="api-signature">
 
----
+`getNormalized(): { value: number, exp: number }`
+
+</div>
+
+Returns current energy as stored.
 
 ## getFreeSpace
 
-Returns how much energy capacity remains.
+<div class="api-signature">
 
----
+`getFreeSpace(): number`
+
+</div>
+
+Returns remaining capacity.
 
 ## add
 
-Adds energy to the entity while respecting capacity limits.
+<div class="api-signature">
 
----
+`add(amount: number): number`
+
+</div>
+
+Adds energy while respecting capacity. Negative values are allowed internally for subtraction. Returns the amount applied.
 
 ## display
 
-Displays a **48‑frame energy bar item** inside the entity inventory.
+<div class="api-signature">
 
----
+`display(slot?: number): void`
+
+</div>
+
+Writes a 48-frame energy bar item into the entity inventory. The default slot is `0`.
 
 ## consume
 
-Consumes energy from the entity.
+<div class="api-signature">
 
----
+`consume(amount: number): number`
+
+</div>
+
+Consumes energy only if the full amount is available. Returns `0` when insufficient. Entities tagged with the Core creative tag act as if the amount was consumed without reducing storage.
 
 ## has
 
-Checks if the entity has at least the specified energy.
+<div class="api-signature">
 
----
+`has(amount: number): boolean`
+
+</div>
+
+Returns whether current energy is at least `amount`.
 
 ## isFull
 
-Returns true if the entity energy is at capacity.
+<div class="api-signature">
 
----
+`isFull(): boolean`
+
+</div>
+
+Returns whether free space is `0`.
 
 ## rebalance
 
-Normalizes the energy value to maintain optimal mantissa/exponent scale.
+<div class="api-signature">
 
----
+`rebalance(): void`
+
+</div>
+
+Rewrites current energy through `set(get())` to normalize mantissa/exponent storage.
 
 ## getPercent
 
-Returns the energy level as a percentage of capacity.
+<div class="api-signature">
 
----
+`getPercent(): number`
+
+</div>
+
+Returns storage percentage from `0` to `100`.
 
 ## transferTo
 
-Transfers energy to another `EnergyStorage` instance.
+<div class="api-signature">
 
----
+`transferTo(other: EnergyStorage, amount: number): number`
+
+</div>
+
+Transfers up to `amount` into another storage, limited by source energy and target free space.
 
 ## transferToEntity
 
-Transfers energy directly to another entity.
+<div class="api-signature">
 
----
+`transferToEntity(entity: Entity, amount: number): number`
+
+</div>
+
+Creates a temporary `EnergyStorage` for the target entity and transfers to it.
 
 ## receiveFrom
 
-Receives energy from another `EnergyStorage` instance.
+<div class="api-signature">
 
----
+`receiveFrom(other: EnergyStorage, amount: number): number`
+
+</div>
+
+Consumes from another storage and adds to this one.
 
 ## receiveFromEntity
 
-Receives energy from another entity.
+<div class="api-signature">
 
----
+`receiveFromEntity(entity: Entity, amount: number): number`
+
+</div>
+
+Creates a temporary `EnergyStorage` for the source entity and receives from it.
 
 ## transferToNetwork
 
-Transfers energy to connected machines within the energy network.
+<div class="api-signature">
 
-Supported modes:
+`transferToNetwork(speed: number, mode?: "nearest" | "farthest" | "round"): number`
 
-- nearest
-- farthest
-- round
+</div>
 
-This method is used by generators and batteries to distribute energy automatically.
+Transfers energy to connected energy containers.
+
+Current behavior:
+
+- Reads cached network nodes from dynamic property `dorios:energy_nodes`.
+- Rebuilds the cache from `pos:[x,y,z]` and `net:[x,y,z]` tags when needed.
+- Removes stale network tags and stale cached nodes.
+- Uses the entity dynamic property `transferMode` when `mode` is not supplied.
 
 ---
 
 # Example
 
 ```js
-const energy = new EnergyStorage(entity)
+const energy = new EnergyStorage(entity);
 
-energy.setCap(25600000)
-energy.set(5000000)
+energy.setCap(256000);
+energy.add(5000);
 
-if (energy.has(1000)) {
-  energy.consume(1000)
+if (energy.has(800)) {
+  energy.consume(800);
 }
 
-energy.display()
+energy.transferToNetwork(energy.get(), "nearest");
+energy.display();
 ```
-
----
-
-# Notes
-
-`EnergyStorage` is the **core energy system** used across the Dorios machinery ecosystem.
-
-It is used by:
-
-- `Machine`
-- `Generator`
-- batteries
-- energy networks
-
-All Dorios Energy values are stored using **scoreboards with mantissa/exponent scaling** to safely support extremely large energy values.

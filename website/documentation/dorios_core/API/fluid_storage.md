@@ -8,20 +8,9 @@ sidebar_position: 4
 # FluidStorage
 
 :::info
-`FluidStorage` is the utility class responsible for managing **fluids (mB)** for entities.
+`FluidStorage` manages fluids for entities using scoreboard-backed tanks.
 
-It provides a scoreboard‑based fluid system that allows machines, tanks, and other containers to:
-
-- store fluids
-- insert and extract fluids
-- transfer fluids between entities
-- interact with fluid containers (buckets, cells, etc.)
-- display fluid visually
-- manage large values safely using mantissa/exponent storage
-
-Like `EnergyStorage`, this system stores values using **mantissa/exponent scaling** so large fluid values remain safe for scoreboard storage.
-
-Each `FluidStorage` instance represents **one tank index of an entity**.
+Each instance represents one tank index on one entity. The class also handles fluid item registration, bucket/cell-style interactions, tank entity spawning, cached output transfer, and multi-tank lookup.
 :::
 
 ---
@@ -35,13 +24,12 @@ Each `FluidStorage` instance represents **one tank index of an entity**.
 <div class="api-index-item"><span class="api-property">P</span><a href="#entity">entity</a></div>
 <div class="api-index-item"><span class="api-property">P</span><a href="#index">index</a></div>
 <div class="api-index-item"><span class="api-property">P</span><a href="#scoreid">scoreId</a></div>
+<div class="api-index-item"><span class="api-property">P</span><a href="#shouldupdateui">shouldUpdateUI</a></div>
 <div class="api-index-item"><span class="api-property">P</span><a href="#scores">scores</a></div>
 <div class="api-index-item"><span class="api-property">P</span><a href="#type">type</a></div>
 <div class="api-index-item"><span class="api-property">P</span><a href="#cap">cap</a></div>
 
 </div>
-
----
 
 ## Static Properties
 
@@ -52,13 +40,12 @@ Each `FluidStorage` instance represents **one tank index of an entity**.
 
 </div>
 
----
-
 ## Static Methods
 
 <div class="api-grid">
 
 <div class="api-index-item"><span class="api-method">M</span><a href="#initializesingle">initializeSingle</a></div>
+<div class="api-index-item"><span class="api-method">M</span><a href="#hasopenui">hasOpenUI</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#initializemultiple">initializeMultiple</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#initializeobjectives">initializeObjectives</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#getmaxliquids">getMaxLiquids</a></div>
@@ -67,6 +54,7 @@ Each `FluidStorage` instance represents **one tank index of an entity**.
 <div class="api-index-item"><span class="api-method">M</span><a href="#formatfluid">formatFluid</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#getfluidfromtext">getFluidFromText</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#getcontainerdata">getContainerData</a></div>
+<div class="api-index-item"><span class="api-method">M</span><a href="#replaceheldfluiditem">replaceHeldFluidItem</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#initialize">initialize</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#transferbetween">transferBetween</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#findtype">findType</a></div>
@@ -76,12 +64,13 @@ Each `FluidStorage` instance represents **one tank index of an entity**.
 
 </div>
 
----
-
 ## Methods
 
 <div class="api-grid">
 
+<div class="api-index-item"><span class="api-method">M</span><a href="#hasfixedfluidtype">hasFixedFluidType</a></div>
+<div class="api-index-item"><span class="api-method">M</span><a href="#tryinsert">tryInsert</a></div>
+<div class="api-index-item"><span class="api-method">M</span><a href="#fluiditem">fluidItem</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#setcap">setCap</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#getcap">getCap</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#set">set</a></div>
@@ -93,12 +82,10 @@ Each `FluidStorage` instance represents **one tank index of an entity**.
 <div class="api-index-item"><span class="api-method">M</span><a href="#isfull">isFull</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#gettype">getType</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#settype">setType</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#tryinsert">tryInsert</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#fluiditem">fluidItem</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#transferto">transferTo</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#receivefrom">receiveFrom</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#transfertonetwork">transferToNetwork</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#transferfluids">transferFluids</a></div>
+<div class="api-index-item"><span class="api-method">M</span><a href="#transferto">transferTo</a></div>
+<div class="api-index-item"><span class="api-method">M</span><a href="#receivefrom">receiveFrom</a></div>
 <div class="api-index-item"><span class="api-method">M</span><a href="#display">display</a></div>
 
 </div>
@@ -115,35 +102,9 @@ Each `FluidStorage` instance represents **one tank index of an entity**.
 
 </div>
 
-Creates a new fluid manager attached to the given entity.
+Creates a fluid manager for `entity` and tank `index`. The default index is `0`.
 
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">entity</span>
-<span class="param-type">Entity</span>
-
-Entity representing the machine or tank container.
-</li>
-
-<li>
-<span class="param-name">index</span>
-<span class="param-type">number</span>
-
-Tank index managed by this instance.
-</li>
-
-</ul>
-
-### Behavior
-
-1. Stores a reference to the entity.
-2. Retrieves the entity scoreboard identity.
-3. Loads the scoreboard objectives for the specified tank index.
-4. Reads and caches the tank capacity.
-5. Determines the fluid type stored in the tank.
+The constructor loads the scoreboard objectives for the index, reads the current fluid type, reads capacity, and resets the type to `empty` when the tank has no fluid unless the entity has the fixed-fluid-type tag.
 
 ---
 
@@ -153,72 +114,52 @@ Tank index managed by this instance.
 
 Type: `Entity`
 
-Entity representing the machine or tank storing fluid.
-
----
+Entity whose tank is managed.
 
 ## index
 
 Type: `number`
 
-Index of the fluid tank handled by this instance.
-
-Example:
-
-```js
-const tank0 = new FluidStorage(entity, 0)
-const tank1 = new FluidStorage(entity, 1)
-```
-
----
+Tank index.
 
 ## scoreId
 
 Type: `ScoreboardIdentity`
 
-Scoreboard identity used to store the tank values.
+Scoreboard identity used by this tank.
 
----
+## shouldUpdateUI
+
+Type: `boolean`
+
+Whether at least one player has this entity UI open.
 
 ## scores
 
-Cached scoreboard objectives for this tank.
+Type:
 
-Structure:
-
-```js
+```ts
 {
- fluid,
- fluidExp,
- fluidCap,
- fluidCapExp
+  fluid: ScoreboardObjective;
+  fluidExp: ScoreboardObjective;
+  fluidCap: ScoreboardObjective;
+  fluidCapExp: ScoreboardObjective;
 }
 ```
 
----
+The objectives for this tank index.
 
 ## type
 
 Type: `string`
 
-Current fluid type stored in the tank.
-
-Examples:
-
-```
-water
-lava
-oil
-empty
-```
-
----
+Cached current fluid type.
 
 ## cap
 
 Type: `number`
 
-Cached maximum capacity of the tank.
+Cached capacity.
 
 ---
 
@@ -226,38 +167,48 @@ Cached maximum capacity of the tank.
 
 ## itemFluidStorages
 
-Defines items that **contain fluids**.
+Type:
 
-Example:
+```ts
+Record<string, {
+  amount: number;
+  type: string;
+  output?: string;
+  infinite?: boolean;
+}>
+```
+
+Defines items that insert fluid into tanks.
 
 ```js
-FluidStorage.itemFluidStorages["minecraft:lava_bucket"]
+FluidStorage.itemFluidStorages["minecraft:lava_bucket"] = {
+  amount: 1000,
+  type: "lava",
+  output: "minecraft:bucket",
+};
 ```
-
-Returns:
-
-```
-{ amount:1000, type:"lava", output:"minecraft:bucket" }
-```
-
----
 
 ## itemFluidHolders
 
-Defines items capable of **extracting fluids**.
+Type:
 
-Example:
+```ts
+Record<string, {
+  types: Record<string, string>;
+  required: number;
+}>
+```
+
+Defines items that extract fluid from tanks.
 
 ```js
-{
- "minecraft:bucket":{
-    types:{
-      water:"minecraft:water_bucket",
-      lava:"minecraft:lava_bucket"
-    },
-    required:1000
- }
-}
+FluidStorage.itemFluidHolders["minecraft:bucket"] = {
+  required: 1000,
+  types: {
+    water: "minecraft:water_bucket",
+    lava: "minecraft:lava_bucket",
+  },
+};
 ```
 
 ---
@@ -266,243 +217,318 @@ Example:
 
 ## initializeSingle
 
-Creates a single tank for an entity.
+<div class="api-signature">
 
----
+`FluidStorage.initializeSingle(entity: Entity): FluidStorage`
+
+</div>
+
+Returns `new FluidStorage(entity, 0)`.
+
+## hasOpenUI
+
+<div class="api-signature">
+
+`FluidStorage.hasOpenUI(entity: Entity): boolean`
+
+</div>
+
+Reads the `utilitycraft:players` entity property.
 
 ## initializeMultiple
 
-Initializes multiple tanks for a machine.
+<div class="api-signature">
 
----
+`FluidStorage.initializeMultiple(entity: Entity, count: number): FluidStorage[]`
+
+</div>
+
+Stores `count` in the `maxLiquids` scoreboard and returns one `FluidStorage` per tank index.
 
 ## initializeObjectives
 
-Ensures scoreboard objectives exist for a tank index.
+<div class="api-signature">
 
----
+`FluidStorage.initializeObjectives(index?: number): void`
+
+</div>
+
+Loads or creates `maxLiquids` plus the four objectives for the requested tank index.
 
 ## getMaxLiquids
 
-Returns how many tanks an entity supports.
+<div class="api-signature">
 
----
+`FluidStorage.getMaxLiquids(entity: Entity): number`
 
-## normalizeValue
+</div>
 
-Converts a value into mantissa/exponent format.
+Returns the number of tanks supported by an entity. It checks `maxLiquids`, then falls back to `fluid{index}Type:` tags, then defaults to `1`.
 
----
+## normalizeValue / combineValue
 
-## combineValue
+<div class="api-signature">
 
-Reconstructs a number from mantissa/exponent.
+`FluidStorage.normalizeValue(amount: number): { value: number, exp: number }`
 
----
+`FluidStorage.combineValue(value: number, exp: number): number`
+
+</div>
+
+Same mantissa/exponent pattern as `EnergyStorage`.
 
 ## formatFluid
 
-Formats fluid values into readable units.
+<div class="api-signature">
 
-Example:
+`FluidStorage.formatFluid(value: number): string`
 
-```
-5000 → 5.0 kB
-```
+</div>
 
----
+Formats mB values as `mB`, `B`, `KB`, `MB`, `GB`, `TB`, `PB`, or `EB`.
 
 ## getFluidFromText
 
-Extracts fluid information from formatted text.
+<div class="api-signature">
 
----
+`FluidStorage.getFluidFromText(input: string): { type: string, amount: number }`
+
+</div>
+
+Parses preserved fluid lore/status text. Returns `{ type: "empty", amount: 0 }` when parsing fails.
 
 ## getContainerData
 
-Returns fluid container data for an item.
+<div class="api-signature">
 
----
+`FluidStorage.getContainerData(id: string): object | null`
+
+</div>
+
+Returns a fluid insertion definition from `itemFluidStorages`.
+
+## replaceHeldFluidItem
+
+<div class="api-signature">
+
+`FluidStorage.replaceHeldFluidItem(player: Player, expectedTypeId: string, nextTypeId?: string): boolean`
+
+</div>
+
+Safely replaces or decrements the selected held item after a fluid interaction.
 
 ## initialize
 
-Initializes fluid scoreboards for an entity.
+<div class="api-signature">
 
----
+`FluidStorage.initialize(entity: Entity): void`
+
+</div>
+
+Runs the initial fluid scoreboard command for a newly spawned fluid entity.
 
 ## transferBetween
 
-Transfers fluid between two block locations.
+<div class="api-signature">
 
----
+`FluidStorage.transferBetween(dim: Dimension, sourceLoc: Vector3, targetLoc: Vector3, amount?: number): boolean`
+
+</div>
+
+Transfers fluid between two blocks tagged `dorios:fluid`. If the target is a fluid tank block without an entity, the tank entity is spawned automatically.
 
 ## findType
 
-Finds the first tank matching a fluid type.
+<div class="api-signature">
 
----
+`FluidStorage.findType(entity: Entity, type: string): FluidStorage | null`
+
+</div>
+
+Returns the first tank with `type`, or the first empty tank with free space.
 
 ## handleFluidItemInteraction
 
-Handles player interaction with fluid items.
+<div class="api-signature">
 
----
+`FluidStorage.handleFluidItemInteraction(player: Player, entity: Entity, mainHand?: ItemStack): void`
+
+</div>
+
+Handles player insertion using a registered fluid item, updates the action bar, and replaces the held item outside Creative mode.
 
 ## addfluidToTank
 
-Creates a tank entity and inserts fluid.
+<div class="api-signature">
 
----
+`FluidStorage.addfluidToTank(block: Block, type: string, amount: number): Entity | undefined`
+
+</div>
+
+Spawns a `utilitycraft:fluid_tank_{type}` entity for a tank block when missing, sets the proper capacity, sets type, and adds fluid.
 
 ## getTankCapacity
 
-Returns the default capacity for tank blocks.
+<div class="api-signature">
+
+`FluidStorage.getTankCapacity(typeId: string): number`
+
+</div>
+
+Returns configured tank capacity. Unknown tank ids fall back to the basic tank capacity.
 
 ---
 
 # Methods
 
-## setCap
+## hasFixedFluidType
 
-Sets the tank capacity.
+<div class="api-signature">
 
----
+`hasFixedFluidType(): boolean`
 
-## getCap
+</div>
 
-Returns the tank capacity.
-
----
-
-## set
-
-Sets the current fluid amount.
-
----
-
-## get
-
-Returns the stored fluid amount.
-
----
-
-## add
-
-Adds or removes fluid from the tank.
-
----
-
-## consume
-
-Consumes fluid from the tank.
-
----
-
-## getFreeSpace
-
-Returns remaining tank capacity.
-
----
-
-## has
-
-Checks if the tank has a minimum amount of fluid.
-
----
-
-## isFull
-
-Returns true if the tank is full.
-
----
-
-## getType
-
-Returns the stored fluid type.
-
----
-
-## setType
-
-Sets the tank fluid type.
-
----
+Returns whether the entity has the fixed-fluid-type tag.
 
 ## tryInsert
 
-Attempts to insert a fluid type into the tank.
+<div class="api-signature">
 
----
+`tryInsert(type: string, amount: number): boolean`
+
+</div>
+
+Inserts fluid only when the tank is empty or already stores the same type and has enough free space.
 
 ## fluidItem
 
-Handles item‑based fluid interactions.
+<div class="api-signature">
 
----
+`fluidItem(typeId: string): string | false`
 
-## transferTo
+</div>
 
-Transfers fluid to another `FluidStorage` instance.
+Applies an item-based fluid interaction.
 
----
+- Registered storage items insert fluid and return their output item id or `false`.
+- Registered holder items extract fluid and return the filled output item id.
+- Unknown or invalid items return `false`.
 
-## receiveFrom
+## setCap / getCap
 
-Receives fluid from another tank.
+<div class="api-signature">
 
----
+`setCap(amount: number): void`
+
+`getCap(): number`
+
+</div>
+
+Sets or reads tank capacity.
+
+## set / get / add / consume
+
+<div class="api-signature">
+
+`set(amount: number): void`
+
+`get(): number`
+
+`add(amount: number): number`
+
+`consume(amount: number): number`
+
+</div>
+
+Manage the stored fluid amount. `consume()` requires the full amount to be available unless the entity has the creative tag.
+
+## getFreeSpace / has / isFull
+
+<div class="api-signature">
+
+`getFreeSpace(): number`
+
+`has(amount: number): boolean`
+
+`isFull(): boolean`
+
+</div>
+
+Capacity helpers.
+
+## getType / setType
+
+<div class="api-signature">
+
+`getType(): string`
+
+`setType(type: string): void`
+
+</div>
+
+Fluid type is stored as an entity tag:
+
+```text
+fluid0Type:water
+fluid1Type:lava
+```
 
 ## transferToNetwork
 
-Transfers fluid to connected tanks in the fluid network.
+<div class="api-signature">
 
-Supported modes:
+`transferToNetwork(speed: number, mode?: "nearest" | "farthest" | "round", nodes: Vector3[]): number`
 
-- nearest
-- farthest
-- round
+</div>
 
----
+Transfers fluid to precomputed network nodes. Unlike energy transfer, fluid transfer currently expects the node list to be supplied.
 
 ## transferFluids
 
-Transfers fluid based on block facing direction.
+<div class="api-signature">
 
----
+`transferFluids(block: Block, amount?: number): boolean`
+
+</div>
+
+Transfers fluid to this entity's cached fluid output target through [`OutputTracker`](./output-tracker). The default amount is `100` mB.
+
+## transferTo / receiveFrom
+
+<div class="api-signature">
+
+`transferTo(other: FluidStorage, amount: number): number`
+
+`receiveFrom(other: FluidStorage, amount: number): number`
+
+</div>
+
+Transfers fluid between tanks. The target must be empty or already contain the same fluid type.
 
 ## display
 
-Displays a **48‑frame fluid bar item** in the entity inventory.
+<div class="api-signature">
+
+`display(slot?: number): void`
+
+</div>
+
+Writes a 48-frame fluid bar item to the entity inventory while the UI is open. The default slot is `4`.
 
 ---
 
 # Example
 
 ```js
-const tank = new FluidStorage(entity, 0)
-
-tank.setCap(32000)
-tank.setType("water")
-
-tank.add(1000)
+const tank = FluidStorage.initializeSingle(entity);
+tank.setCap(32000);
+tank.setType("water");
+tank.add(1000);
 
 if (tank.has(500)) {
-  tank.consume(500)
+  tank.consume(500);
 }
 
-tank.display()
+tank.display();
 ```
-
----
-
-# Notes
-
-`FluidStorage` is the **core fluid system** used across Dorios machines and tanks.
-
-It is used by:
-
-- fluid tanks
-- machines with internal liquids
-- fluid transport networks
-
-All fluid values are stored using **scoreboards with mantissa/exponent scaling** to support very large fluid values safely.
