@@ -71,9 +71,9 @@ The template's UI files already expose slots `0` through `4`, so you can test th
 3. [Create the helper entity](./helper-entity)
 4. [Process a recipe with script](./scripted-recipe)
 5. [Consume energy](./consume-energy)
-6. [Test the machine](./test-machine)
+6. [Complex recipes](./complex-recipes)
+7. [Test the machine](./test-machine)
 
 Each page starts from the result of the previous page. Do not skip directly to energy consumption unless the block, component, and helper entity already work.
 
 Start with [Create the block](./create-block).
-

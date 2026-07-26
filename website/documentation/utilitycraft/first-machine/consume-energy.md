@@ -274,4 +274,4 @@ Progress is stored first without an automatic redraw, then the energy and progre
 
 All label lines begin with `§r`, including the first line.
 
-The machine implementation is complete. Continue with [Test the machine](./test-machine).
+The machine implementation is complete. Continue with [Complex Recipes](./complex-recipes) to learn how machines with several inputs can select recipes without scanning the complete recipe catalog every tick.

@@ -1,6 +1,6 @@
 ---
 title: Test the Machine
-sidebar_position: 7
+sidebar_position: 8
 description: Build, run, and verify the first machine across valid recipes, blocked outputs, energy loss, reloads, and destruction.
 ---
 
@@ -192,4 +192,3 @@ The test is not complete if the machine appears to work but produces repeating s
 - [ ] The Content Log has no repeating errors from this machine.
 
 You now have a complete scripted machine lifecycle. Continue with [Machine UI](../machine-ui/) to replace the temporary template interface with one you understand and own.
-
