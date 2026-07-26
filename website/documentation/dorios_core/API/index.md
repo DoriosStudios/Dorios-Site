@@ -89,9 +89,9 @@ These functions are advanced APIs. `Machine.spawnEntity()`, `Machine.onDestroy()
 
 | Member | Kind | Description |
 | --- | --- | --- |
-| [`Multiblock`](./multiblock) | Facade | Structure detection, activation, deactivation, entity lookup, and constants. |
-| `MultiblockMachine` | Class | Component-scaled processing controller. |
-| `MultiblockGenerator` | Class | Multiblock generator controller. |
+| [`Multiblock`](./multiblock) | Facade | Structure detection, activation, deactivation, entity lookup, link-node activation, and constants. |
+| [`MultiblockMachine`](./multiblock-machine) | Class | Component-scaled processing controller with progress, output, and information-label helpers. |
+| [`MultiblockGenerator`](./multiblock-generator) | Class | Multiblock generator controller with fill behavior and addon-owned activation calculations. |
 
 ## Protocol constants
 
