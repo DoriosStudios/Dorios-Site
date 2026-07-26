@@ -2,7 +2,7 @@
   "label": "API reference",
   "position": 4,
   "collapsible": true,
-  "collapsed": false,
+  "collapsed": true,
   "link": {
     "type": "doc",
     "id": "dorios_core/API/api-overview"
