@@ -1,76 +1,32 @@
 ---
 id: energy-storage
+title: EnergyStorage class
 sidebar_label: EnergyStorage
-title: EnergyStorage Class
-sidebar_position: 3
+sidebar_position: 5
+description: Store, format, display, consume, and transfer Dorios Energy on a helper entity.
 ---
 
-# EnergyStorage
+# EnergyStorage class
 
-:::info
-`EnergyStorage` manages Dorios Energy (DE) for entities using scoreboards.
+Namespace: `DoriosCore` · Package: `DoriosCore/index.js`
 
-It stores both current energy and capacity as mantissa/exponent pairs, allowing very large values while staying within scoreboard-safe ranges.
-:::
+`EnergyStorage` manages Dorios Energy (DE) on a helper entity. It uses scoreboard-safe mantissa and exponent values so large capacities remain usable through ordinary numeric methods.
 
----
+```js
+import { EnergyStorage } from "DoriosCore/index.js";
+```
 
-# Index
+## Definition
 
-## Properties
+<div class="api-signature">
 
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-property">P</span><a href="#entity">entity</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#scoreid">scoreId</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#cap">cap</a></div>
+`class EnergyStorage`
 
 </div>
 
-## Static Methods
+## Constructor
 
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-method">M</span><a href="#initializeobjectives">initializeObjectives</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#normalizevalue">normalizeValue</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#combinevalue">combineValue</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#formatenergytotext">formatEnergyToText</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#getenergyfromtext">getEnergyFromText</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#setcap-static">setCap</a></div>
-
-</div>
-
-## Methods
-
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-method">M</span><a href="#setcap">setCap</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#getcap">getCap</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#getcapnormalized">getCapNormalized</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#set">set</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#get">get</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#getnormalized">getNormalized</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#getfreespace">getFreeSpace</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#add">add</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#display">display</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#consume">consume</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#has">has</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#isfull">isFull</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#rebalance">rebalance</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#getpercent">getPercent</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#transferto">transferTo</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#transfertoentity">transferToEntity</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#receivefrom">receiveFrom</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#receivefromentity">receiveFromEntity</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#transfertonetwork">transferToNetwork</a></div>
-
-</div>
-
----
-
-# Constructor
-
-## new EnergyStorage
+### new EnergyStorage(entity)
 
 <div class="api-signature">
 
@@ -78,35 +34,27 @@ It stores both current energy and capacity as mantissa/exponent pairs, allowing 
 
 </div>
 
-Creates an energy manager for an entity. If the entity does not yet have a scoreboard identity, the Core attempts to initialize it first.
+Creates an energy manager and ensures the entity has a scoreboard identity.
 
----
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `entity` | `Entity` | Helper or storage entity whose energy values are managed. |
 
-# Properties
+```js
+const energy = new EnergyStorage(entity);
+```
 
-## entity
+## Properties
 
-Type: `Entity`
+| Property | Type | Description |
+| --- | --- | --- |
+| `entity` | `Entity` | Entity that owns the stored energy. |
+| `scoreId` | `ScoreboardIdentity | undefined` | Identity used by the energy objectives. |
+| `cap` | `number` | Cached capacity last loaded or assigned by the manager. |
 
-Entity whose energy is managed.
+## Static methods
 
-## scoreId
-
-Type: `ScoreboardIdentity`
-
-Scoreboard identity used for all energy objectives.
-
-## cap
-
-Type: `number`
-
-Cached capacity loaded from `getCap()`.
-
----
-
-# Static Methods
-
-## initializeObjectives
+### EnergyStorage.initializeObjectives()
 
 <div class="api-signature">
 
@@ -114,33 +62,32 @@ Cached capacity loaded from `getCap()`.
 
 </div>
 
-Loads or creates the shared objectives:
+Creates or loads the `energy`, `energyExp`, `energyCap`, and `energyCapExp` scoreboard objectives. DoriosCore calls this during initialization; normal addons do not need to call it.
 
-- `energy`
-- `energyExp`
-- `energyCap`
-- `energyCapExp`
-
-This is called automatically by the DoriosCore initializer on `worldLoad`.
-
-## normalizeValue
+### EnergyStorage.normalizeValue(amount)
 
 <div class="api-signature">
 
-`EnergyStorage.normalizeValue(amount: number): { value: number, exp: number }`
+`EnergyStorage.normalizeValue(amount: number): NormalizedValue`
 
 </div>
 
-Converts a raw value to a scoreboard-safe mantissa/exponent pair.
+Converts a number into a scoreboard-safe pair.
 
-```js
-EnergyStorage.normalizeValue(25_600_000);
-// { value: 25600000, exp: 0 }
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `amount` | `number` | Raw energy amount to normalize. Nonfinite values are normalized safely by the storage implementation. |
+
+Returns:
+
+```ts
+interface NormalizedValue {
+  value: number; // mantissa
+  exp: number;   // base-10 exponent
+}
 ```
 
-Values are only shifted when the mantissa would exceed `1e9`.
-
-## combineValue
+### EnergyStorage.combineValue(value, exp)
 
 <div class="api-signature">
 
@@ -148,13 +95,14 @@ Values are only shifted when the mantissa would exceed `1e9`.
 
 </div>
 
-Reconstructs the raw value:
+Reconstructs `value × 10^exp`.
 
-```js
-EnergyStorage.combineValue(25600, 3); // 25600000
-```
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | `number` | Stored mantissa. |
+| `exp` | `number` | Stored base-10 exponent. |
 
-## formatEnergyToText
+### EnergyStorage.formatEnergyToText(value)
 
 <div class="api-signature">
 
@@ -162,9 +110,13 @@ EnergyStorage.combineValue(25600, 3); // 25600000
 
 </div>
 
-Formats values as `DE`, `kDE`, `MDE`, `GDE`, `TDE`, or `PDE`.
+Formats energy using `DE`, `kDE`, `MDE`, `GDE`, `TDE`, or `PDE`.
 
-## getEnergyFromText
+```js
+EnergyStorage.formatEnergyToText(1_500_000); // "1.50 MDE"
+```
+
+### EnergyStorage.getEnergyFromText(input, index)
 
 <div class="api-signature">
 
@@ -172,9 +124,16 @@ Formats values as `DE`, `kDE`, `MDE`, `GDE`, `TDE`, or `PDE`.
 
 </div>
 
-Parses a formatted lore/status string and returns the selected DE value. `index` selects which number to read; `0` is current energy and `1` is capacity in preserved machine lore.
+Parses a formatted energy amount from display or preserved-lore text.
 
-## setCap (static)
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `input` | `string` | — | Text containing one or more formatted DE values. |
+| `index` | `number` | `0` | Zero-based formatted value to return. For preserved `stored / capacity` text, `0` selects stored energy and `1` selects capacity. |
+
+Returns `undefined` when the requested value cannot be parsed.
+
+### EnergyStorage.setCap(entity, amount)
 
 <div class="api-signature">
 
@@ -182,13 +141,16 @@ Parses a formatted lore/status string and returns the selected DE value. `index`
 
 </div>
 
-Sets capacity directly for an entity.
+Sets capacity without retaining a manager instance.
 
----
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `entity` | `Entity` | Entity receiving the new capacity. |
+| `amount` | `number` | Maximum DE amount. |
 
-# Methods
+## Instance methods
 
-## setCap
+### setCap(amount)
 
 <div class="api-signature">
 
@@ -196,9 +158,9 @@ Sets capacity directly for an entity.
 
 </div>
 
-Sets maximum capacity for this entity.
+Stores a new maximum capacity and updates the cached `cap` value.
 
-## getCap
+### getCap()
 
 <div class="api-signature">
 
@@ -206,19 +168,19 @@ Sets maximum capacity for this entity.
 
 </div>
 
-Reads and caches maximum capacity.
+Reads, combines, caches, and returns maximum capacity.
 
-## getCapNormalized
+### getCapNormalized()
 
 <div class="api-signature">
 
-`getCapNormalized(): { value: number, exp: number }`
+`getCapNormalized(): NormalizedValue`
 
 </div>
 
-Reads capacity without combining mantissa and exponent.
+Returns the capacity mantissa and exponent without combining them.
 
-## set
+### set(amount)
 
 <div class="api-signature">
 
@@ -226,9 +188,13 @@ Reads capacity without combining mantissa and exponent.
 
 </div>
 
-Sets current energy.
+Normalizes and stores the raw current energy amount. Use `add()` or `consume()` when capacity and availability must be enforced.
 
-## get
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `amount` | `number` | Raw stored amount. |
+
+### get()
 
 <div class="api-signature">
 
@@ -236,19 +202,19 @@ Sets current energy.
 
 </div>
 
-Returns current energy.
+Returns current stored energy as a regular number.
 
-## getNormalized
+### getNormalized()
 
 <div class="api-signature">
 
-`getNormalized(): { value: number, exp: number }`
+`getNormalized(): NormalizedValue`
 
 </div>
 
-Returns current energy as stored.
+Returns current stored energy as a mantissa/exponent pair.
 
-## getFreeSpace
+### getFreeSpace()
 
 <div class="api-signature">
 
@@ -256,9 +222,9 @@ Returns current energy as stored.
 
 </div>
 
-Returns remaining capacity.
+Returns `max(0, capacity - stored)`.
 
-## add
+### add(amount)
 
 <div class="api-signature">
 
@@ -266,19 +232,15 @@ Returns remaining capacity.
 
 </div>
 
-Adds energy while respecting capacity. Negative values are allowed internally for subtraction. Returns the amount applied.
+Adds energy without exceeding free capacity for positive requests. Negative values subtract directly, so callers should use `consume()` when insufficient storage must fail safely.
 
-## display
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `amount` | `number` | Requested signed energy change. |
 
-<div class="api-signature">
+Returns the signed amount actually applied.
 
-`display(slot?: number): void`
-
-</div>
-
-Writes a 48-frame energy bar item into the entity inventory. The default slot is `0`.
-
-## consume
+### consume(amount)
 
 <div class="api-signature">
 
@@ -286,9 +248,15 @@ Writes a 48-frame energy bar item into the entity inventory. The default slot is
 
 </div>
 
-Consumes energy only if the full amount is available. Returns `0` when insufficient. Entities tagged with the Core creative tag act as if the amount was consumed without reducing storage.
+Consumes the full requested amount only when it is available. Entities tagged `dorios:infinite_storage` or with the legacy `creative` tag report success without reducing their value.
 
-## has
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `amount` | `number` | Positive amount required by the operation. |
+
+Returns `amount` on success and `0` for nonpositive or insufficient requests.
+
+### has(amount)
 
 <div class="api-signature">
 
@@ -296,9 +264,9 @@ Consumes energy only if the full amount is available. Returns `0` when insuffici
 
 </div>
 
-Returns whether current energy is at least `amount`.
+Returns whether stored energy is at least `amount`.
 
-## isFull
+### isFull()
 
 <div class="api-signature">
 
@@ -306,9 +274,9 @@ Returns whether current energy is at least `amount`.
 
 </div>
 
-Returns whether free space is `0`.
+Returns whether no free capacity remains.
 
-## rebalance
+### rebalance()
 
 <div class="api-signature">
 
@@ -316,9 +284,9 @@ Returns whether free space is `0`.
 
 </div>
 
-Rewrites current energy through `set(get())` to normalize mantissa/exponent storage.
+Reads and rewrites the current amount to restore the preferred mantissa/exponent scale.
 
-## getPercent
+### getPercent()
 
 <div class="api-signature">
 
@@ -326,9 +294,23 @@ Rewrites current energy through `set(get())` to normalize mantissa/exponent stor
 
 </div>
 
-Returns storage percentage from `0` to `100`.
+Returns fill percentage from `0` through `100`.
 
-## transferTo
+### display(slot)
+
+<div class="api-signature">
+
+`display(slot?: number): void`
+
+</div>
+
+Writes the correct 48-frame `utilitycraft:energy_00` through `utilitycraft:energy_48` item into the entity inventory. The item label includes stored energy, capacity, and percentage.
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `slot` | `number` | `0` | Destination inventory slot. |
+
+### transferTo(other, amount)
 
 <div class="api-signature">
 
@@ -336,9 +318,16 @@ Returns storage percentage from `0` to `100`.
 
 </div>
 
-Transfers up to `amount` into another storage, limited by source energy and target free space.
+Moves up to `amount`, limited by source contents and target free space.
 
-## transferToEntity
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `other` | `EnergyStorage` | Receiving storage. |
+| `amount` | `number` | Maximum DE to move. |
+
+Returns the transferred amount.
+
+### transferToEntity(entity, amount)
 
 <div class="api-signature">
 
@@ -346,9 +335,9 @@ Transfers up to `amount` into another storage, limited by source energy and targ
 
 </div>
 
-Creates a temporary `EnergyStorage` for the target entity and transfers to it.
+Creates an `EnergyStorage` wrapper for `entity` and transfers up to `amount` into it.
 
-## receiveFrom
+### receiveFrom(other, amount)
 
 <div class="api-signature">
 
@@ -356,9 +345,9 @@ Creates a temporary `EnergyStorage` for the target entity and transfers to it.
 
 </div>
 
-Consumes from another storage and adds to this one.
+Moves energy from `other` into this storage. The amount is limited by the source and this storage's free space.
 
-## receiveFromEntity
+### receiveFromEntity(entity, amount)
 
 <div class="api-signature">
 
@@ -366,39 +355,45 @@ Consumes from another storage and adds to this one.
 
 </div>
 
-Creates a temporary `EnergyStorage` for the source entity and receives from it.
+Creates a source wrapper for `entity` and receives up to `amount`.
 
-## transferToNetwork
+### transferToNetwork(speed, mode)
 
 <div class="api-signature">
 
-`transferToNetwork(speed: number, mode?: "nearest" | "farthest" | "round"): number`
+`transferToNetwork(speed: number, mode?: TransferMode): number`
 
 </div>
 
-Transfers energy to connected energy containers.
+Sends energy to node positions supplied by UtilityCore's network system. DoriosCore performs the storage transfers; UtilityCore owns network discovery and connectivity.
 
-Current behavior:
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `speed` | `number` | — | Total maximum DE sent by this call. |
+| `mode` | `"nearest" \| "farthest" \| "round"` | Entity `transferMode`, then `nearest` | Target ordering or distribution behavior. |
 
-- Reads cached network nodes from dynamic property `dorios:energy_nodes`.
-- Rebuilds the cache from `pos:[x,y,z]` and `net:[x,y,z]` tags when needed.
-- Removes stale network tags and stale cached nodes.
-- Uses the entity dynamic property `transferMode` when `mode` is not supplied.
+Stale cached node positions and tags are removed when they no longer resolve to energy containers. Returns total transferred energy.
 
----
-
-# Example
+## Example
 
 ```js
-const energy = new EnergyStorage(entity);
+import { EnergyStorage } from "DoriosCore/index.js";
 
-energy.setCap(256000);
-energy.add(5000);
+const energy = new EnergyStorage(entity);
+energy.setCap(256_000);
+
+const accepted = energy.add(5_000);
 
 if (energy.has(800)) {
   energy.consume(800);
 }
 
-energy.transferToNetwork(energy.get(), "nearest");
-energy.display();
+energy.transferToNetwork(4_000, "nearest");
+energy.display(0);
 ```
+
+## Remarks
+
+- `Machine` and `Generator` automatically create an energy manager as `runtime.energy`.
+- Normal addon code does not manipulate scoreboard objectives directly.
+- Call `display()` only for a slot backed by the required UtilityCraft resource-pack frames.

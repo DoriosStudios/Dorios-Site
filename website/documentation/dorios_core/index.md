@@ -1,161 +1,141 @@
 ---
 id: intro
-sidebar_label: Dorios Machinery Core
-title: Dorios Machinery Core
+title: DoriosCore documentation
+sidebar_label: Overview
+sidebar_position: 1
+description: Build UtilityCraft-compatible machines, generators, storage, IO interfaces, upgrades, and multiblocks with the public DoriosCore API.
+keywords:
+  - DoriosCore
+  - UtilityCraft
+  - Minecraft Bedrock scripting
+  - machinery API
 ---
 
-# Dorios Machinery Core
+<div class="dc-hero">
+  <p class="dc-eyebrow">UTILITYCRAFT DEVELOPMENT</p>
+  <h1>DoriosCore</h1>
+  <p class="dc-lead">The machinery library shared by UtilityCraft and its extensions. Build compatible machines, generators, resource storage, configurable IO, upgrades, and multiblocks without changing the Core.</p>
+  <div class="dc-actions">
+    <a class="button button--primary button--lg" href="./getting-started">Get started</a>
+    <a class="button button--secondary button--lg" href="./API/">Browse the API</a>
+  </div>
+</div>
 
-**Dorios Machinery Core** is the shared scripting runtime used by UtilityCraft machinery and by addons that need compatible machines, generators, storage, fluid handling, UI buttons, scheduler control, rotation helpers, and multiblock controllers.
-
-The current public entry point is:
+:::info Stable public entry point
+Every addon imports DoriosCore from `DoriosCore/index.js`. Imports from internal files are not part of the supported API.
+:::
 
 ```js
-import {
-  Machine,
-  Generator,
-  BasicMachine,
-  EnergyStorage,
-  FluidStorage,
-  TickScheduler,
-  OutputTracker,
-  ButtonManager,
-  Rotation,
-  Multiblock,
-  MultiblockMachine,
-  MultiblockGenerator,
-  addOpenUICount,
-  removeOpenUICount,
-} from "DoriosCore/index.js";
+import { Machine, EnergyStorage, registerIOInterface } from "DoriosCore/index.js";
 ```
 
-Importing `DoriosCore/index.js` also loads the Core initializer. That initializer creates the shared energy and fluid scoreboards, tracks the global machine tick counter, preloads the shared UI button item, and subscribes to Core script events.
+## What is DoriosCore?
 
----
+DoriosCore is a JavaScript library for Minecraft Bedrock machinery addons. It supplies the common runtime used to create machines and generators that follow the same lifecycle and storage rules as UtilityCraft.
 
-## What The Core Provides
+It is appropriate to call this an **API**: the term refers to the public classes, functions, constants, and type contracts that addon scripts can use. It is not a web API and it does not make HTTP requests.
 
-Dorios Machinery Core includes:
+<div class="dc-card-grid">
+  <article class="dc-card">
+    <span class="dc-card-kicker">MACHINERY</span>
+    <h3>Machines and generators</h3>
+    <p>Use runtime wrappers with scheduling, progress, energy, inventories, UI labels, preserved resources, and safe placement and destruction.</p>
+  </article>
+  <article class="dc-card">
+    <span class="dc-card-kicker">RESOURCES</span>
+    <h3>Energy, liquids, and gases</h3>
+    <p>Store large values, create multiple indexed tanks, render resource displays, and transfer resources between compatible containers.</p>
+  </article>
+  <article class="dc-card">
+    <span class="dc-card-kicker">CONFIGURATION</span>
+    <h3>IO and upgrades</h3>
+    <p>Expose six-face item, liquid, and gas controls and consume standard or addon-defined upgrade perks in your own processing logic.</p>
+  </article>
+  <article class="dc-card">
+    <span class="dc-card-kicker">STRUCTURES</span>
+    <h3>Multiblocks</h3>
+    <p>Detect structures, activate controllers, calculate component-based stats, route through ports, and restore blocks during deactivation.</p>
+  </article>
+</div>
 
-- machine and generator base classes
-- scoreboard-backed Dorios Energy storage
-- scoreboard-backed fluid storage with multi-tank support
-- preserved drops for machines, generators, and tanks
-- cached item and fluid output targets
-- machine tick scheduling for open and closed UIs
-- inventory button callbacks for machine UIs
-- placement and wrench rotation helpers
-- multiblock detection, activation, deactivation, and controller classes
-- script events for integration between addons
+## Responsibilities
 
-The systems are designed to work together while still allowing each addon to define its own machines, recipes, blocks, entities, and UI layout.
+Understanding the library boundary prevents incompatible addons and duplicated systems.
 
----
+| Project | Responsibility |
+| --- | --- |
+| **DoriosLib** | Global Dorios utilities and registries used across different projects. |
+| **DoriosCore** | Machinery runtime: machine classes, resource storage, IO documents, UI interfaces, upgrades, scheduling, rotation, and multiblocks. |
+| **UtilityCore** | UtilityCraft-owned systems, including machinery networks. DoriosCore does **not** own the networks. |
+| **Your addon core** | Custom reusable behavior that extends DoriosCore, such as heat, pressure, radiation, or a specialized recipe cycle. |
 
-## Runtime Model
+## Requirements
 
-Most machines follow this pattern:
+- A Minecraft Bedrock project using the Script API versions supported by the current UtilityCraft manifest.
+- **UtilityCraft 3.5.0 or newer** enabled in the world.
+- DoriosLib and DoriosCore available through UtilityCraft.
+- A script bundler or Regolith configuration that resolves the public library aliases.
 
-1. A block component calls `Machine.spawnEntity()` or `Generator.spawnEntity()` during placement.
-2. The Core spawns a helper entity at the block position.
-3. Energy, fluid, inventory slot configuration, represented block id, and tick-group data are stored on that entity.
-4. On block ticks, the addon creates a runtime wrapper such as `new Machine(block, settings)`.
-5. If `runtime.valid` is false, the machine should skip work for that tick.
-6. The machine reads input, consumes energy or fluid, writes output, and refreshes UI only when needed.
-7. On break, `onDestroy()` drops inventory and returns the block item with stored energy/fluid lore.
+For a working starting point, clone the [UtilityCraft Addon Template](https://github.com/DoriosStudios/UtilityCraft-Addon-Template). It includes functional blocks, entities, screens, IO, upgrades, liquids, gases, generators, and multiblocks.
+
+## Library boundary
+
+Treat the `DoriosCore` and `DoriosLib` dependency folders as read-only. Addons consume them; they do not patch them.
+
+```text
+BP/scripts/
+├─ DoriosCore/          # Dependency: do not modify
+├─ DoriosLib/           # Dependency: do not modify
+├─ ADDONNAME_CORE/      # Your reusable subclasses and systems
+├─ config/              # Registrations and shared data
+├─ examples/            # Concrete blocks and gameplay behavior
+└─ main.js              # Load order and initialization
+```
+
+When behavior does not belong in the shared machinery library, extend a public class in `ADDONNAME_CORE`:
 
 ```js
-DoriosAPI.register.blockComponent("simple_machine", {
-  beforeOnPlayerPlace(e, { params: settings }) {
-    Machine.spawnEntity(e, settings);
-  },
+// BP/scripts/MYADDON_CORE/ThermalMachine.js
+import { Machine } from "DoriosCore/index.js";
 
-  onTick(e, { params: settings }) {
-    const machine = new Machine(e.block, settings);
-    if (!machine.valid) return;
+export class ThermalMachine extends Machine {
+  getHeat() {
+    return Number(this.entity.getDynamicProperty("myaddon:heat") ?? 0);
+  }
 
-    machine.setEnergyCost(settings.machine.energy_cost);
-
-    if (!machine.energy.has(machine.rate)) {
-      machine.showWarning("No Energy", { resetProgress: false });
-      return;
-    }
-
-    machine.energy.consume(machine.rate);
-    machine.addProgress(machine.rate);
-    machine.displayProgress();
-    machine.showStatus("Running");
-  },
-
-  onPlayerBreak(e) {
-    Machine.onDestroy(e);
-  },
-});
+  setHeat(value) {
+    this.entity.setDynamicProperty("myaddon:heat", Math.max(0, value));
+  }
+}
 ```
 
----
+See [Extend DoriosCore](./extend-dorios-core) for the complete pattern and rules.
 
-## Settings Shape
+## Recommended learning path
 
-Machine and generator configs are passed from block component params. The Core reads only the fields it needs, but the current UtilityCraft patterns use shapes like these:
+1. Follow [Get started](./getting-started) to understand load order and create a machine runtime safely.
+2. Read [Machine lifecycle](./getting-started#machine-lifecycle) before implementing processing logic.
+3. Learn [how to extend DoriosCore](./extend-dorios-core) without editing library code.
+4. Browse the [complete API surface](./API/) and open the reference page for the system you need.
+5. Compare your implementation with the public examples in the [Addon Template](https://github.com/DoriosStudios/UtilityCraft-Addon-Template), [UtilityCraft](https://github.com/DoriosStudios/UtilityCraft), and [Heavy Machinery](https://github.com/DoriosStudios/UtilityCraft-Heavy-Machinery).
 
-```js
-const machineSettings = {
-  rotation: true,
-  entity: {
-    name: "Crusher",
-    type: "simple",
-    input_type: "simple",
-    output_type: "simple",
-    inventory_size: 9,
-  },
-  machine: {
-    energy_cap: 32000,
-    energy_cost: 800,
-    rate_speed_base: 20,
-    fluid_cap: 8000,
-    fluid_types: 1,
-    upgrades: [4, 5],
-  },
-};
-```
+## API at a glance
 
-```js
-const generatorSettings = {
-  entity: {
-    name: "Furnator",
-    inventory_size: 9,
-  },
-  generator: {
-    energy_cap: 64000,
-    rate_speed_base: 40,
-    fluid_cap: 8000,
-  },
-};
-```
+| Area | Start with | Use it for |
+| --- | --- | --- |
+| Runtime | [`Machine`](./API/machine), [`Generator`](./API/generator) | Normal processing machines and energy generators. |
+| Storage | [`EnergyStorage`](./API/energy-storage), [`FluidStorage`](./API/fluid-storage), `GasStorage` | Energy, liquid, and gas capacity and transfer. |
+| IO | `registerIOInterface`, `IOInterface` | Six-face input/output configuration for items and indexed resources. |
+| Upgrades | `MachineUpgradeRegistry` | Standard perks such as `speed`, `energy_cost`, `energy_efficiency`, and `process_batch`, plus addon-owned perks. |
+| Runtime helpers | [`TickScheduler`](./API/tick-scheduler), [`OutputTracker`](./API/output-tracker), [`Rotation`](./API/rotation) | Efficient ticks, cached outputs, and block orientation. |
+| Multiblocks | [`Multiblock`](./API/multiblock), `MultiblockMachine`, `MultiblockGenerator` | Component-based structures and controller runtimes. |
 
-`ignoreTick: true` may be added at the top level when a machine must bypass the scheduler for a specific tick path, such as placement setup.
+The [API reference](./API/) lists all **103 runtime exports** and **93 type-only contracts** currently exposed by `DoriosCore/index.js`.
 
----
+## Source and examples
 
-## Main API Pages
+These documentation examples describe how to use the public API. They do not mirror private file locations or require consumers to understand DoriosCore internals.
 
-- [BasicMachine](./API/basic-machine) - shared block/entity/runtime wrapper
-- [Machine](./API/machine) - item-processing machine helper
-- [Generator](./API/generator) - energy-producing machine helper
-- [EnergyStorage](./API/energy-storage) - Dorios Energy storage
-- [FluidStorage](./API/fluid-storage) - fluid storage and container interactions
-- [TickScheduler](./API/tick-scheduler) - open/closed machine processing schedule
-- [OutputTracker](./API/output-tracker) - cached item/fluid output targets
-- [ButtonManager](./API/button-manager) - inventory UI buttons
-- [Rotation](./API/rotation) - placement and wrench rotation helpers
-- [Multiblock](./API/multiblock) - multiblock facade and controller classes
-- [Script Events](./API/script-events) - Core script-event integration points
-
----
-
-## Compatibility Notes
-
-DoriosCore uses shared tags, scoreboards, dynamic properties, and script events so compatible addons can share machinery infrastructure. Energy and fluid values are stored with mantissa/exponent scoreboards to support values larger than normal scoreboard-safe ranges.
-
-When building another addon on top of the Core, prefer importing from `DoriosCore/index.js` instead of deep internal paths. Deep paths are useful while developing the Core itself, but the index export is the stable integration surface.
+- [UtilityCraft Addon Template](https://github.com/DoriosStudios/UtilityCraft-Addon-Template) — recommended starting project and focused examples.
+- [UtilityCraft](https://github.com/DoriosStudios/UtilityCraft) — production machinery implementations.
+- [UtilityCraft Heavy Machinery](https://github.com/DoriosStudios/UtilityCraft-Heavy-Machinery) — multiblock controllers, components, and ports.

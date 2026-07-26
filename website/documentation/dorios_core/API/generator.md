@@ -1,54 +1,38 @@
 ---
 id: generator
+title: Generator class
 sidebar_label: Generator
-title: Generator Class
-sidebar_position: 2
+sidebar_position: 4
+description: Energy-producing runtime with resource preservation and transfer-mode controls.
 ---
 
-# Generator
+# Generator class
 
-:::info
-`Generator` is the runtime helper for energy-producing blocks.
+Namespace: `DoriosCore` · Package: `DoriosCore/index.js`
 
-It extends [`BasicMachine`](./basic-machine), reads generation settings from `settings.generator`, and provides shared placement, destruction, energy storage, optional fluid storage, and transfer-mode UI behavior.
-:::
+`Generator` is the standard runtime for energy-producing blocks. It supplies scheduler-aware rates, energy storage, optional indexed liquid and gas tanks, IO processing, resource-preserving placement and destruction, and an energy-transfer mode form.
 
-Hierarchy:
+```js
+import { Generator } from "DoriosCore/index.js";
+```
+
+## Definition
+
+<div class="api-signature">
+
+`class Generator extends BasicMachine`
+
+</div>
 
 ```text
 BasicMachine
-`- Generator
-   `- MultiblockGenerator
+└─ Generator
+   └─ MultiblockGenerator
 ```
 
----
+## Constructor
 
-# Index
-
-## Properties
-
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-property">P</span><a href="#settings">settings</a></div>
-
-</div>
-
-## Static Methods
-
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-method">M</span><a href="#ondestroy">onDestroy</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#spawnentity">spawnEntity</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#addnearbymachines">addNearbyMachines</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#opengeneratortransfermodemenu">openGeneratorTransferModeMenu</a></div>
-
-</div>
-
----
-
-# Constructor
-
-## new Generator
+### new Generator(block, settings)
 
 <div class="api-signature">
 
@@ -56,92 +40,109 @@ BasicMachine
 
 </div>
 
-Creates a generator runtime.
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `block` | `Block` | Generator block in the world. |
+| `settings` | `GeneratorSettings` | Entity, generation-rate, storage, and optional multiblock configuration. |
 
-`Generator` passes this to `BasicMachine`:
+The base rate is `settings.generator.rate_speed_base ?? 0`. As with every `BasicMachine` subclass, check `valid` before using runtime properties.
 
 ```js
-super(block, {
-  rate: settings?.generator?.rate_speed_base ?? 0,
-  ignoreTick: settings.ignoreTick,
-});
+const generator = new Generator(block, settings);
+if (!generator.valid) return;
 ```
 
-If `valid` is true, the full `settings` object is stored on the instance.
+## GeneratorSettings
 
----
-
-# Properties
-
-## settings
-
-Type: `GeneratorSettings`
-
-The full settings object passed into the constructor.
-
----
-
-# Static Methods
-
-## onDestroy
-
-<div class="api-signature">
-
-`Generator.onDestroy(event): boolean`
-
-</div>
-
-Handles generator block destruction.
-
-Behavior:
-
-- Finds the helper entity at the block location.
-- Reads stored energy and first fluid tank.
-- Writes stored values into the dropped block item's lore.
-- Releases the generator tick group.
-- Drops non-UI inventory items.
-- Removes the helper entity.
-- Spawns the preserved generator item.
-
-Returns `true` when a helper entity was found and queued for cleanup.
-
-## spawnEntity
-
-<div class="api-signature">
-
-`Generator.spawnEntity(event, config, callback?): void`
-
-</div>
-
-Spawns and initializes a generator helper entity.
-
-Directly used fields:
-
-```js
-{
-  entity: {
-    name?: string,
-    type?: string,
-    inventory_size?: number,
-  },
-  generator: {
-    energy_cap: number,
-    fluid_cap?: number,
-    rate_speed_base?: number,
-  },
+```ts
+interface GeneratorSettings {
+  entity: MachineEntityConfig;
+  generator: GeneratorRuntimeConfig;
+  spawn_offset?: Vector3;
+  rotation?: boolean;
+  ignoreTick?: boolean;
+  requirements?: Record<string, Requirement>;
+  required_case?: string;
+  fillBlocksConfig?: FillBlocksConfig;
+  deactivateConfig?: FillBlocksConfig;
+  missingEnergyWarning?: string;
 }
 ```
 
-Behavior:
+### GeneratorRuntimeConfig
 
-- Reads preserved energy/fluid from the placed item lore.
-- Spawns the helper entity with `Utils.spawnEntity(block, config)`.
-- Sets energy capacity and restored energy.
-- Initializes one fluid tank when `config.generator.fluid_cap` exists.
-- Runs `callback(entity)` after initialization.
-- Updates adjacent networks for the placed block.
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rate_speed_base` | `number` | No | Energy generation rate per ordinary tick before scheduler scaling. Defaults to `0`. |
+| `energy_cap` | `number` | No | Generator energy capacity. |
+| `fluid_cap` | `number` | No | Capacity assigned to every configured liquid tank. |
+| `fluid_types` | `number` | No | Number of indexed liquid tanks. Defaults to `1` when liquid storage exists. |
+| `gas_cap` | `number` | No | Capacity assigned to every configured gas tank. |
+| `gas_types` | `number` | No | Number of indexed gas tanks. Defaults to `1` when gas storage exists. |
 
-## addNearbyMachines
+The entity-related properties have the same meaning as [`MachineSettings`](./machine#machinesettings).
+
+## Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `settings` | `GeneratorSettings` | Original settings supplied to the valid runtime. |
+
+All scheduler, block, entity, inventory, energy, rate, UI, progress, and IO properties are inherited from [`BasicMachine`](./basic-machine).
+
+## Static methods
+
+### Generator.spawnEntity(event, config, callback)
+
+<div class="api-signature">
+
+`Generator.spawnEntity(event: PlacementEventLike, config: GeneratorSettings, callback?: (entity: Entity) => void): void`
+
+</div>
+
+Queues creation and initialization of a generator helper entity.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `event.block` | `Block` | Yes | Block receiving the helper entity. |
+| `event.player` | `Player` | Yes | Player placing the generator; its held item may contain preserved resources. |
+| `event.permutationToPlace` | `BlockPermutation` | Yes | Placed block permutation used when notifying adjacent systems. |
+| `config` | `GeneratorSettings` | Yes | Helper entity and generator storage configuration. |
+| `callback` | `(entity: Entity) => void` | No | Runs after storage and IO setup, before registered interface buttons are finalized. |
+
+The method initializes energy capacity, creates every configured liquid and gas index, restores preserved resource lore, prepares IO documents, runs the callback, installs interfaces, and notifies adjacent UtilityCore-managed networks.
+
+```js
+beforeOnPlayerPlace(event, { params: settings }) {
+  Generator.spawnEntity(event, settings, (entity) => {
+    const generator = new Generator(event.block, {
+      ...settings,
+      ignoreTick: true,
+    });
+    if (!generator.valid) return;
+    generator.displayEnergy();
+  });
+}
+```
+
+### Generator.onDestroy(event)
+
+<div class="api-signature">
+
+`Generator.onDestroy(event: DestroyEventLike): boolean`
+
+</div>
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `event.block` | `Block` | Generator block being destroyed. |
+| `event.brokenBlockPermutation` | `BlockPermutation` | Supplies the preserved block item ID. |
+| `event.player` | `Player | undefined` | Player responsible for the break when available. |
+| `event.dimension` | `Dimension` | Dimension containing the block and helper entity. |
+
+Returns `false` when no helper entity exists. Otherwise queues inventory drops, scheduler release, helper removal, and a generator item containing serialized energy and every liquid/gas tank.
+
+### Generator.addNearbyMachines(entity)
 
 <div class="api-signature">
 
@@ -149,13 +150,13 @@ Behavior:
 
 </div>
 
-Adds `pos:[x,y,z]` tags for all six adjacent block positions.
-
-:::warning
-This method is marked deprecated in the current source. Network tags are now rebuilt from real placed energy blocks through the pipe update flow. Avoid using this as the default registration path for new generators.
+:::warning Deprecated
+Network tags are rebuilt through real placed blocks and UtilityCore's update flow. Do not register all six adjacent positions for new generators.
 :::
 
-## openGeneratorTransferModeMenu
+Adds legacy `pos:[x,y,z]` tags for all six neighboring block locations.
+
+### Generator.openGeneratorTransferModeMenu(entity, player)
 
 <div class="api-signature">
 
@@ -163,26 +164,63 @@ This method is marked deprecated in the current source. Network tags are now reb
 
 </div>
 
-Opens a `ModalFormData` dropdown that lets a player set the generator's `transferMode` dynamic property.
+Opens a localized modal form and stores the selected value in the entity's `transferMode` dynamic property.
 
-Supported modes:
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `entity` | `Entity` | Generator helper entity that owns the transfer mode. |
+| `player` | `Player` | Player shown the form and confirmation action bar. |
+
+Available values:
 
 | Mode | Behavior |
 | --- | --- |
-| `nearest` | Send energy to the closest valid target first. |
-| `farthest` | Send energy to farther targets first. |
-| `round` | Distribute energy across valid targets. |
+| `nearest` | Prioritize the nearest compatible targets. |
+| `farthest` | Prioritize the farthest compatible targets. |
+| `round` | Distribute across targets in round-robin order. |
 
----
+The method returns immediately if either parameter is missing. Closing the form leaves the existing mode unchanged; invalid selections fall back to `nearest`.
 
-# Example
+## Inherited methods
+
+`Generator` uses these inherited methods directly:
+
+- `processIO()` for item, liquid, and gas face transfers.
+- `on()` and `off()` for active block state.
+- `setLabel()` for UI status.
+- `displayEnergy()` and `displayProgress()` for standard UI slots.
+- `setRate()` when an addon needs to adjust the effective base generation rate.
+
+See [`BasicMachine`](./basic-machine) for every inherited signature.
+
+## Example: passive generator
 
 ```js
-const generator = new Generator(block, settings);
-if (!generator.valid) return;
+import { EnergyStorage, Generator } from "DoriosCore/index.js";
 
-const generated = generator.rate;
-generator.energy.add(generated);
-generator.energy.transferToNetwork(generated, generator.entity.getDynamicProperty("transferMode"));
-generator.displayEnergy();
+function tick(block, settings) {
+  const generator = new Generator(block, settings);
+  if (!generator.valid) return;
+
+  generator.processIO();
+
+  const produced = generator.energy.add(generator.rate);
+  generator.energy.transferToNetwork(generator.rate * 4);
+
+  if (produced <= 0) {
+    generator.off();
+    generator.setLabel("§eEnergy Full");
+    generator.displayEnergy();
+    return;
+  }
+
+  generator.on();
+  generator.displayEnergy();
+  generator.setLabel([
+    "§aGenerator Running",
+    `§7Produced: §f${EnergyStorage.formatEnergyToText(produced)}`,
+  ]);
+}
 ```
+
+For gas-fueled generation, see the [Gas Turbine example](https://github.com/DoriosStudios/UtilityCraft-Addon-Template/blob/main/BP/scripts/examples/generators/gasTurbine.js).

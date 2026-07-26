@@ -1,70 +1,40 @@
 ---
 id: machine
+title: Machine class
 sidebar_label: Machine
-title: Machine Class
-sidebar_position: 1
+sidebar_position: 3
+description: Processing-machine runtime with energy, progress, upgrades, IO, placement, and destruction helpers.
 ---
 
-# Machine
+# Machine class
 
-:::info
-`Machine` is the main runtime helper for item-processing UtilityCraft-style machines.
+Namespace: `DoriosCore` · Package: `DoriosCore/index.js`
 
-It extends [`BasicMachine`](./basic-machine), adds machine settings, upgrade boosts, preserved placement/destruction, cached item output transfer, and machine status labels.
-:::
+`Machine` is the primary runtime class for processing machinery. It adds upgrade boosts, operation costs, item transfer helpers, status labels, and the standard placement and destruction lifecycle to [`BasicMachine`](./basic-machine).
 
-Hierarchy:
+```js
+import { Machine } from "DoriosCore/index.js";
+```
+
+## Definition
+
+<div class="api-signature">
+
+`class Machine extends BasicMachine`
+
+</div>
+
+Inheritance:
 
 ```text
 BasicMachine
-`- Machine
+└─ Machine
+   └─ MultiblockMachine
 ```
 
----
+## Constructor
 
-# Index
-
-## Properties
-
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-property">P</span><a href="#settings">settings</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#upgrades">upgrades</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#boosts">boosts</a></div>
-
-</div>
-
-## Static Methods
-
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-method">M</span><a href="#ondestroy">onDestroy</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#spawnentity">spawnEntity</a></div>
-
-</div>
-
-## Methods
-
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-method">M</span><a href="#transferitems">transferItems</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#hasoutputitems">hasOutputItems</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#pullitemsfromabove">pullItemsFromAbove</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#setprogress">setProgress</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#displayprogress">displayProgress</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#setenergycost">setEnergyCost</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#getenergycost">getEnergyCost</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#displayenergy">displayEnergy</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#showwarning">showWarning</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#showstatus">showStatus</a></div>
-
-</div>
-
----
-
-# Constructor
-
-## new Machine
+### new Machine(block, settings)
 
 <div class="api-signature">
 
@@ -72,135 +42,160 @@ BasicMachine
 
 </div>
 
-Creates a machine runtime from a block and settings object.
+Creates a scheduled runtime for a placed machine.
 
-`Machine` passes this to `BasicMachine`:
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `block` | `Block` | Machine block in the world. |
+| `settings` | `MachineSettings` | Entity, rotation, storage, rate, and upgrade configuration. |
+
+`settings.machine.rate_speed_base` defaults to `0`. After the base runtime becomes valid, the constructor resolves installed upgrade perks and calculates:
+
+```text
+consumption = max(0.01, energy_cost / energy_efficiency)
+adjusted base rate = configured base rate × speed × consumption
+effective rate = adjusted base rate × scheduler interval
+```
+
+Overclock contributes `35%` speed and `25%` energy cost per level unless `settings.machine.overclock` is `false`.
 
 ```js
-super(block, {
-  rate: settings.machine.rate_speed_base ?? 0,
-  ignoreTick: settings.ignoreTick,
-});
+const machine = new Machine(block, settings);
+if (!machine.valid) return;
 ```
 
-If upgrades are configured, the constructor scans the upgrade slots, calculates speed/consumption boosts, and adjusts the effective base rate.
-
----
-
-# Properties
-
-## settings
-
-Type: `MachineSettings`
-
-The full settings object passed into the constructor.
-
-## upgrades
-
-Type:
+## MachineSettings
 
 ```ts
-{
-  energy: number;
-  range: number;
-  speed: number;
-  ultimate: number;
+interface MachineSettings {
+  entity: MachineEntityConfig;
+  machine: MachineRuntimeConfig;
+  spawn_offset?: Vector3;
+  rotation?: boolean;
+  ignoreTick?: boolean;
+  requirements?: Record<string, Requirement>;
+  required_case?: string;
 }
 ```
 
-Upgrade item counts found in `settings.machine.upgrades`. Upgrade items must have the tag `utilitycraft:is_upgrade`; the upgrade type is parsed from the item id prefix before `_upgrade`.
+### MachineEntityConfig
 
-## boosts
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `inventory_size` | `number` | Yes | Inventory-size event suffix used by the helper entity. |
+| `identifier` | `string` | No | Helper entity identifier. Uses DoriosCore's default when omitted. |
+| `name` | `string` | No | Localization/name suffix for the helper entity. |
+| `input_range` | `[number, number]` | No | Inclusive item input range for compatible container setup. |
+| `output_range` | `[number, number]` | No | Inclusive item output range. |
+| `input_slot` | `number` | No | Single input-slot shortcut. |
+| `output_slot` | `number` | No | Single output-slot shortcut. |
+| `fixed_fluid_types` | `boolean` | No | Keeps indexed liquid types when their amount reaches zero. |
+| `fixed_gas_types` | `boolean` | No | Keeps indexed gas types when their amount reaches zero. |
+| `type` | `string` | No | Optional helper-entity event suffix triggered after spawn. |
 
-Type:
+### MachineRuntimeConfig
 
-```ts
-{
-  speed: number;
-  consumption: number;
-}
-```
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rate_speed_base` | `number` | No | Base work/energy rate before scheduler and upgrade scaling. Defaults to `0`. |
+| `energy_cap` | `number` | No | Maximum energy stored by the helper entity. |
+| `fluid_cap` | `number` | No | Capacity assigned to every indexed liquid tank. |
+| `fluid_types` | `number` | No | Number of liquid tanks. Defaults to `1` when `fluid_cap` is set. |
+| `gas_cap` | `number` | No | Capacity assigned to every indexed gas tank. |
+| `gas_types` | `number` | No | Number of gas tanks. Defaults to `1` when `gas_cap` is set. |
+| `upgrades` | `number[]` | No | Ordered inventory slots scanned by `MachineUpgradeRegistry`. |
+| `overclock` | `boolean` | No | Set to `false` to ignore the helper entity's overclock property. |
 
-Calculated from speed and energy upgrade counts.
+Additional addon-owned fields can be placed in a subclass-specific settings contract.
 
-- Speed upgrades use `1 + 0.125 * n * (n + 1)` with `n` capped at `8`.
-- Energy upgrades lower energy consumption, also capped at `8`.
-- The effective machine rate is adjusted with `speed * consumption`.
+## Properties
 
----
+| Property | Type | Description |
+| --- | --- | --- |
+| `settings` | `MachineSettings` | Original settings supplied to the constructor. |
+| `boosts` | `MachineBoosts` | Standard and addon-defined numeric perks resolved from upgrade slots. |
 
-# Static Methods
+`Machine` also inherits every property from [`BasicMachine`](./basic-machine#properties).
 
-## onDestroy
+### boosts
+
+| Property | Base | Description |
+| --- | ---: | --- |
+| `speed` | `1` | Processing-speed multiplier. |
+| `energy_cost` | `1` | Energy-cost multiplier before efficiency. |
+| `energy_efficiency` | `1` | Efficiency divisor. |
+| `process_batch` | `1` | Operations per completed process. |
+| `overclock` | Entity property | Current overclock level. |
+| `consumption` | Calculated | `energy_cost / energy_efficiency`, clamped to at least `0.01`. |
+
+See [`MachineUpgradeRegistry`](./machine-upgrades) for registration and duplicate-category rules.
+
+## Static methods
+
+### Machine.spawnEntity(event, config, callback)
 
 <div class="api-signature">
 
-`Machine.onDestroy(event): boolean`
+`Machine.spawnEntity(event: PlacementEventLike, config: MachineSettings, callback?: (entity: Entity) => void): void`
 
 </div>
 
-Handles block destruction for normal machines.
+Queues creation and initialization of the helper entity.
 
-Behavior:
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `event.block` | `Block` | Yes | Block receiving the helper entity. |
+| `event.player` | `Player` | Yes | Player placing the machine. Used for held-item restoration and optional rotation. |
+| `event.permutationToPlace` | `BlockPermutation` | Yes | Original placement permutation. |
+| `event.cancel` | `boolean` | No | Set to `true` internally when manual rotation placement is enabled. |
+| `config` | `MachineSettings` | Yes | Entity and machine configuration. |
+| `callback` | `(entity: Entity) => void` | No | Runs after storage and IO initialization, before interface buttons are finalized. |
 
-- Finds the helper entity at the block location.
-- Reads stored energy and first fluid tank.
-- Writes stored values into the dropped block item's lore.
-- Releases the machine tick group.
-- Drops non-UI inventory items.
-- Removes the helper entity.
-- Spawns the preserved block item.
+The method:
 
-Returns `true` when a helper entity was found and queued for cleanup.
-
-## spawnEntity
-
-<div class="api-signature">
-
-`Machine.spawnEntity(event, config, callback?): void`
-
-</div>
-
-Spawns and initializes a helper entity when the machine block is placed.
-
-Directly used fields:
+1. Reads preserved energy, liquid, and gas data from the placed item lore.
+2. Applies manual facing when `rotation` is enabled.
+3. Spawns the configured helper entity.
+4. Sets energy capacity.
+5. Creates all configured liquid and gas tanks and applies their capacities.
+6. Restores every preserved resource index.
+7. Prepares item, liquid, and gas IO documents.
+8. Runs `callback` and installs registered interface buttons.
+9. Notifies adjacent UtilityCore-managed networks that the block changed.
 
 ```js
-{
-  rotation?: boolean,
-  entity: {
-    name?: string,
-    type?: string,
-    input_type?: string,
-    output_type?: string,
-    inventory_size?: number,
-  },
-  machine: {
-    energy_cap: number,
-    fluid_cap?: number,
-    rate_speed_base?: number,
-    energy_cost?: number,
-    upgrades?: number[],
-    fluid_types?: number,
-  },
+beforeOnPlayerPlace(event, { params: settings }) {
+  Machine.spawnEntity(event, settings, () => {
+    const machine = new Machine(event.block, { ...settings, ignoreTick: true });
+    if (!machine.valid) return;
+    machine.setEnergyCost(settings.machine.energy_cost);
+    machine.displayProgress();
+  });
 }
 ```
 
-Behavior:
+### Machine.onDestroy(event)
 
-- Reads preserved energy/fluid values from the placed item lore.
-- If `rotation` is true, cancels normal placement and uses [`Rotation.facing`](./rotation).
-- Spawns the helper entity with `Utils.spawnEntity(block, config)`.
-- Sets energy capacity and restored energy.
-- Initializes one fluid tank when `config.machine.fluid_cap` exists.
-- Runs `callback(entity)` after initialization.
-- Updates adjacent item/energy/fluid networks for the placed block.
+<div class="api-signature">
 
----
+`Machine.onDestroy(event: DestroyEventLike): boolean`
 
-# Methods
+</div>
 
-## transferItems
+Queues cleanup for the machine at the broken block location.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `event.block` | `Block` | Block being destroyed. |
+| `event.brokenBlockPermutation` | `BlockPermutation` | Original permutation; its type ID becomes the preserved block item. |
+| `event.player` | `Player | undefined` | Player responsible for the break when available. |
+| `event.dimension` | `Dimension` | Dimension containing the block and helper entity. |
+
+Returns `false` when no helper entity is found. Otherwise returns `true` immediately after cleanup is queued. Cleanup serializes energy and all indexed liquid/gas values, releases the scheduler group, drops non-interface inventory, removes the helper entity, and spawns the preserved block item.
+
+## Instance methods
+
+### transferItems()
 
 <div class="api-signature">
 
@@ -208,20 +203,11 @@ Behavior:
 
 </div>
 
-Transfers machine output items into the cached item output target.
+Transfers registered output slots into the cached item output target. The target's opposite face policy is respected. Stale cached targets are cleared. Returns `true` when at least one item moves.
 
-Current behavior:
+For new machines with configurable six-face IO, prefer inherited [`processIO()`](./basic-machine) to process inputs and outputs together.
 
-- Reads the allowed output slot range from `DoriosAPI.containers.getAllowedOutputRange(this.entity)`.
-- Uses [`OutputTracker`](./output-tracker) to read or refresh the target location.
-- Calls `DoriosAPI.containers.transferItemsAt(this.container, targetLoc, this.dimension, range)`.
-- Clears stale cached targets when the transfer API returns `-1`.
-
-The output target is based on the block's `utilitycraft:axis` state and points to the opposite side of the machine.
-
-Returns `true` only when at least one item moved.
-
-## hasOutputItems
+### hasOutputItems()
 
 <div class="api-signature">
 
@@ -229,9 +215,9 @@ Returns `true` only when at least one item moved.
 
 </div>
 
-Returns whether the configured output slot or output slot range contains at least one item.
+Returns whether at least one no-face output slot currently contains an item.
 
-## pullItemsFromAbove
+### pullItemsFromAbove(targetSlot)
 
 <div class="api-signature">
 
@@ -239,47 +225,41 @@ Returns whether the configured output slot or output slot range contains at leas
 
 </div>
 
-Pulls one compatible stack from the vanilla container directly above the machine into `targetSlot`.
+Attempts to move items from the compatible container directly above the machine into one machine slot. The source's down-face output policy is respected.
 
-It only works with blocks listed in `DoriosAPI.constants.vanillaContainers`.
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `targetSlot` | `number` | Machine inventory slot that should receive the item. |
 
-## setProgress
+Returns `true` after the first successful transfer; otherwise `false`.
 
-<div class="api-signature">
-
-`setProgress(value: number, options?: MachineProgressOptions): void`
-
-</div>
-
-Stores progress using the current energy cost as the default max value.
-
-```ts
-type MachineProgressOptions = {
-  maxValue?: number;
-  slot?: number;
-  type?: string;
-  display?: boolean;
-  index?: number;
-  scale?: number;
-  legacy?: boolean;
-};
-```
-
-## displayProgress
+### setProgress(value, options)
 
 <div class="api-signature">
 
-`displayProgress(options?: MachineProgressOptions): void`
-
-`displayProgress(maxValue: number, options?: MachineProgressOptions): void`
+`setProgress(value: number, options?: ProgressOptions): void`
 
 </div>
 
-Displays progress using `getEnergyCost(index)` unless `maxValue` is supplied.
+Stores progress using `options.maxValue` or the selected energy cost as the full value.
 
-The two-call-shape support exists so `Machine` can be called directly by addon code and internally by `BasicMachine`.
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | `number` | New nonnegative progress value. |
+| `options` | `ProgressOptions` | Progress slot, type, display, index, scale, legacy mode, and optional `maxValue`. |
 
-## setEnergyCost
+### displayProgress(options)
+
+<div class="api-signature">
+
+`displayProgress(options?: ProgressOptions): void`<br />
+`displayProgress(maxValue: number, options?: ProgressOptions): void`
+
+</div>
+
+Draws progress using the selected energy cost by default. Supply `maxValue` explicitly for a different process scale. All `ProgressOptions` fields and defaults are documented by [`BasicMachine.displayProgress()`](./basic-machine).
+
+### setEnergyCost(value, index)
 
 <div class="api-signature">
 
@@ -287,9 +267,14 @@ The two-call-shape support exists so `Machine` can be called directly by addon c
 
 </div>
 
-Stores the operation cost in `dorios:energy_cost_{index}`. Values are clamped to at least `1`.
+Stores the full operation cost in the dynamic property `dorios:energy_cost_{index}`.
 
-## getEnergyCost
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `number` | — | Operation cost. Values below `1` are stored as `1`. |
+| `index` | `number` | `0` | Cost/progress channel. |
+
+### getEnergyCost(index)
 
 <div class="api-signature">
 
@@ -297,9 +282,9 @@ Stores the operation cost in `dorios:energy_cost_{index}`. Values are clamped to
 
 </div>
 
-Reads the stored operation cost. Returns `800` when unset.
+Returns the stored cost for `index`, or `800` when unset.
 
-## displayEnergy
+### displayEnergy(slot)
 
 <div class="api-signature">
 
@@ -307,21 +292,32 @@ Reads the stored operation cost. Returns `800` when unset.
 
 </div>
 
-Delegates to `this.energy.display(slot)`. Unlike `BasicMachine.displayEnergy()`, this override does not check `shouldUpdateUI` before delegating.
+Calls `energy.display(slot)`.
 
-## showWarning
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `slot` | `number` | `0` | Inventory slot containing the energy display item. |
+
+### showWarning(message, options)
 
 <div class="api-signature">
 
-`showWarning(message: string, options?: MachineProgressOptions & { resetProgress?: boolean, displayProgress?: boolean }): void`
+`showWarning(message: string, options?: WarningOptions): void`
 
 </div>
 
-Displays a warning label, turns the block off, refreshes energy UI, and by default resets progress to `0`.
+Shows a yellow status label, redraws energy, turns the block off, and resets progress unless disabled.
 
-Set `resetProgress: false` for warnings like "No Energy" where partial progress should be preserved.
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `message` | `string` | — | Warning text. The standard label appends an exclamation mark. |
+| `options.resetProgress` | `boolean` | `true` | Whether to set progress to zero. |
+| `options.displayProgress` | `boolean` | `true` | Whether resetting progress redraws the bar. |
+| Remaining options | `ProgressOptions` | See progress API | Selects slot, type, index, scale, and legacy rendering. |
 
-## showStatus
+Use `{ resetProgress: false }` for temporary conditions such as missing energy when partial work should remain.
+
+### showStatus(message)
 
 <div class="api-signature">
 
@@ -329,33 +325,39 @@ Set `resetProgress: false` for warnings like "No Energy" where partial progress 
 
 </div>
 
-Displays the normal running label with speed, efficiency, operation cost, and base rate information.
+Shows a green running label containing the supplied message, speed, effective efficiency, energy cost, and base rate. It also redraws energy and does not change progress.
 
----
-
-# Example
+## Processing example
 
 ```js
-const machine = new Machine(block, settings);
-if (!machine.valid) return;
+import { Machine } from "DoriosCore/index.js";
 
-const input = machine.container.getItem(3);
-if (!input) {
-  machine.showWarning("No Input Item");
-  return;
+function tick(block, settings) {
+  const machine = new Machine(block, settings);
+  if (!machine.valid) return;
+
+  machine.processIO();
+  machine.setEnergyCost(800);
+
+  const energyStep = machine.rate * machine.boosts.consumption;
+  if (!machine.energy.has(energyStep)) {
+    machine.showWarning("No Energy", { resetProgress: false });
+    return;
+  }
+
+  machine.energy.consume(energyStep);
+  machine.addProgress(machine.rate);
+
+  if (machine.getProgress() >= machine.getEnergyCost()) {
+    const crafts = Math.max(1, Math.floor(machine.boosts.process_batch));
+    // Validate and mutate recipe inputs/outputs for `crafts` operations.
+    machine.setProgress(0);
+  }
+
+  machine.on();
+  machine.displayProgress();
+  machine.showStatus("Running");
 }
-
-machine.setEnergyCost(settings.machine.energy_cost);
-
-if (!machine.energy.has(machine.rate * machine.boosts.consumption)) {
-  machine.showWarning("No Energy", { resetProgress: false });
-  return;
-}
-
-machine.energy.consume(machine.rate * machine.boosts.consumption);
-machine.addProgress(machine.rate);
-machine.transferItems();
-machine.on();
-machine.displayProgress();
-machine.showStatus("Running");
 ```
+
+For a complete capacity-safe scripted recipe, see the [Thermal Crusher](https://github.com/DoriosStudios/UtilityCraft-Addon-Template/blob/main/BP/scripts/examples/machines/thermalCrusher.js).

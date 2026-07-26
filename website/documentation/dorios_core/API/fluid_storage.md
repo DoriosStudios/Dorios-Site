@@ -1,100 +1,26 @@
 ---
 id: fluid-storage
+title: FluidStorage class
 sidebar_label: FluidStorage
-title: FluidStorage Class
-sidebar_position: 4
+sidebar_position: 6
+description: Manage indexed liquid storage, container interactions, displays, and transfers.
 ---
 
-# FluidStorage
+# FluidStorage class
 
-:::info
-`FluidStorage` manages fluids for entities using scoreboard-backed tanks.
+Namespace: `DoriosCore` · Package: `DoriosCore/index.js`
 
-Each instance represents one tank index on one entity. The class also handles fluid item registration, bucket/cell-style interactions, tank entity spawning, cached output transfer, and multi-tank lookup.
-:::
+`FluidStorage` manages one indexed liquid tank on a helper entity. It provides large-value storage, liquid type tags, registered item interactions, UI frames, tank block entities, direct transfers, and integration with UtilityCore-managed liquid networks.
 
----
+```js
+import { FluidStorage } from "DoriosCore/index.js";
+```
 
-# Index
+Liquid amounts use millibuckets (`mB`): `1000 mB = 1 B`.
 
-## Properties
+## Constructor
 
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-property">P</span><a href="#entity">entity</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#index">index</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#scoreid">scoreId</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#shouldupdateui">shouldUpdateUI</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#scores">scores</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#type">type</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#cap">cap</a></div>
-
-</div>
-
-## Static Properties
-
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-property">P</span><a href="#itemfluidstorages">itemFluidStorages</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#itemfluidholders">itemFluidHolders</a></div>
-
-</div>
-
-## Static Methods
-
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-method">M</span><a href="#initializesingle">initializeSingle</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#hasopenui">hasOpenUI</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#initializemultiple">initializeMultiple</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#initializeobjectives">initializeObjectives</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#getmaxliquids">getMaxLiquids</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#normalizevalue">normalizeValue</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#combinevalue">combineValue</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#formatfluid">formatFluid</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#getfluidfromtext">getFluidFromText</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#getcontainerdata">getContainerData</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#replaceheldfluiditem">replaceHeldFluidItem</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#initialize">initialize</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#transferbetween">transferBetween</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#findtype">findType</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#handlefluiditeminteraction">handleFluidItemInteraction</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#addfluidtotank">addfluidToTank</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#gettankcapacity">getTankCapacity</a></div>
-
-</div>
-
-## Methods
-
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-method">M</span><a href="#hasfixedfluidtype">hasFixedFluidType</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#tryinsert">tryInsert</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#fluiditem">fluidItem</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#setcap">setCap</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#getcap">getCap</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#set">set</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#get">get</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#add">add</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#consume">consume</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#getfreespace">getFreeSpace</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#has">has</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#isfull">isFull</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#gettype">getType</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#settype">setType</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#transfertonetwork">transferToNetwork</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#transferfluids">transferFluids</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#transferto">transferTo</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#receivefrom">receiveFrom</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#display">display</a></div>
-
-</div>
-
----
-
-# Constructor
-
-## new FluidStorage
+### new FluidStorage(entity, index)
 
 <div class="api-signature">
 
@@ -102,120 +28,68 @@ Each instance represents one tank index on one entity. The class also handles fl
 
 </div>
 
-Creates a fluid manager for `entity` and tank `index`. The default index is `0`.
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `entity` | `Entity` | — | Entity owning the liquid tanks. |
+| `index` | `number` | `0` | Independent tank index managed by this instance. |
 
-The constructor loads the scoreboard objectives for the index, reads the current fluid type, reads capacity, and resets the type to `empty` when the tank has no fluid unless the entity has the fixed-fluid-type tag.
+The constructor binds the four objectives for `index`, reads type and capacity, and resets an empty tank to type `empty` unless the entity has the fixed-type tag.
 
----
+## Properties
 
-# Properties
+| Property | Type | Description |
+| --- | --- | --- |
+| `entity` | `Entity` | Owner of this liquid tank. |
+| `index` | `number` | Indexed tank managed by this wrapper. |
+| `scoreId` | `ScoreboardIdentity | undefined` | Entity scoreboard identity. |
+| `scores` | `{ fluid, fluidExp, fluidCap, fluidCapExp }` | Objectives bound to this index. Each value can be `undefined` before initialization. |
+| `shouldUpdateUI` | `boolean` | Whether a player had the entity UI open when this wrapper was created. |
+| `type` | `string` | Cached type, such as `water`, `lava`, `example_coolant`, or `empty`. |
+| `cap` | `number` | Cached capacity in mB. |
 
-## entity
+## Static properties
 
-Type: `Entity`
+### FluidStorage.itemFluidStorages
 
-Entity whose tank is managed.
+<div class="api-signature">
 
-## index
+`Record<string, FluidContainerData>`
 
-Type: `number`
+</div>
 
-Tank index.
-
-## scoreId
-
-Type: `ScoreboardIdentity`
-
-Scoreboard identity used by this tank.
-
-## shouldUpdateUI
-
-Type: `boolean`
-
-Whether at least one player has this entity UI open.
-
-## scores
-
-Type:
+Insertion items keyed by exact item identifier.
 
 ```ts
-{
-  fluid: ScoreboardObjective;
-  fluidExp: ScoreboardObjective;
-  fluidCap: ScoreboardObjective;
-  fluidCapExp: ScoreboardObjective;
-}
-```
-
-The objectives for this tank index.
-
-## type
-
-Type: `string`
-
-Cached current fluid type.
-
-## cap
-
-Type: `number`
-
-Cached capacity.
-
----
-
-# Static Properties
-
-## itemFluidStorages
-
-Type:
-
-```ts
-Record<string, {
+interface FluidContainerData {
   amount: number;
   type: string;
   output?: string;
   infinite?: boolean;
-}>
+}
 ```
 
-Defines items that insert fluid into tanks.
+### FluidStorage.itemFluidHolders
 
-```js
-FluidStorage.itemFluidStorages["minecraft:lava_bucket"] = {
-  amount: 1000,
-  type: "lava",
-  output: "minecraft:bucket",
-};
-```
+<div class="api-signature">
 
-## itemFluidHolders
+`Record<string, FluidHolderData>`
 
-Type:
+</div>
+
+Empty holders that extract a supported liquid into a resulting item.
 
 ```ts
-Record<string, {
+interface FluidHolderData {
   types: Record<string, string>;
   required: number;
-}>
+}
 ```
 
-Defines items that extract fluid from tanks.
+Use the corresponding DoriosLib registry for normal cross-addon registration rather than mutating these maps directly.
 
-```js
-FluidStorage.itemFluidHolders["minecraft:bucket"] = {
-  required: 1000,
-  types: {
-    water: "minecraft:water_bucket",
-    lava: "minecraft:lava_bucket",
-  },
-};
-```
+## Initialization methods
 
----
-
-# Static Methods
-
-## initializeSingle
+### FluidStorage.initializeSingle(entity)
 
 <div class="api-signature">
 
@@ -223,19 +97,9 @@ FluidStorage.itemFluidHolders["minecraft:bucket"] = {
 
 </div>
 
-Returns `new FluidStorage(entity, 0)`.
+Returns a wrapper for tank index `0`.
 
-## hasOpenUI
-
-<div class="api-signature">
-
-`FluidStorage.hasOpenUI(entity: Entity): boolean`
-
-</div>
-
-Reads the `utilitycraft:players` entity property.
-
-## initializeMultiple
+### FluidStorage.initializeMultiple(entity, count)
 
 <div class="api-signature">
 
@@ -243,9 +107,20 @@ Reads the `utilitycraft:players` entity property.
 
 </div>
 
-Stores `count` in the `maxLiquids` scoreboard and returns one `FluidStorage` per tank index.
+Stores the supported tank count, initializes objectives for indices `0` through `count - 1`, and returns their wrappers.
 
-## initializeObjectives
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `entity` | `Entity` | Entity receiving the indexed tanks. |
+| `count` | `number` | Number of tank indices to create. Use a positive integer. |
+
+```js
+const [inputTank, outputTank] = FluidStorage.initializeMultiple(entity, 2);
+inputTank.setCap(8_000);
+outputTank.setCap(8_000);
+```
+
+### FluidStorage.initializeObjectives(index)
 
 <div class="api-signature">
 
@@ -253,71 +128,9 @@ Stores `count` in the `maxLiquids` scoreboard and returns one `FluidStorage` per
 
 </div>
 
-Loads or creates `maxLiquids` plus the four objectives for the requested tank index.
+Creates or loads `maxLiquids` and the amount/exponent/capacity objectives for `index`. The normal spawn lifecycle initializes these automatically.
 
-## getMaxLiquids
-
-<div class="api-signature">
-
-`FluidStorage.getMaxLiquids(entity: Entity): number`
-
-</div>
-
-Returns the number of tanks supported by an entity. It checks `maxLiquids`, then falls back to `fluid{index}Type:` tags, then defaults to `1`.
-
-## normalizeValue / combineValue
-
-<div class="api-signature">
-
-`FluidStorage.normalizeValue(amount: number): { value: number, exp: number }`
-
-`FluidStorage.combineValue(value: number, exp: number): number`
-
-</div>
-
-Same mantissa/exponent pattern as `EnergyStorage`.
-
-## formatFluid
-
-<div class="api-signature">
-
-`FluidStorage.formatFluid(value: number): string`
-
-</div>
-
-Formats mB values as `mB`, `B`, `KB`, `MB`, `GB`, `TB`, `PB`, or `EB`.
-
-## getFluidFromText
-
-<div class="api-signature">
-
-`FluidStorage.getFluidFromText(input: string): { type: string, amount: number }`
-
-</div>
-
-Parses preserved fluid lore/status text. Returns `{ type: "empty", amount: 0 }` when parsing fails.
-
-## getContainerData
-
-<div class="api-signature">
-
-`FluidStorage.getContainerData(id: string): object | null`
-
-</div>
-
-Returns a fluid insertion definition from `itemFluidStorages`.
-
-## replaceHeldFluidItem
-
-<div class="api-signature">
-
-`FluidStorage.replaceHeldFluidItem(player: Player, expectedTypeId: string, nextTypeId?: string): boolean`
-
-</div>
-
-Safely replaces or decrements the selected held item after a fluid interaction.
-
-## initialize
+### FluidStorage.initialize(entity)
 
 <div class="api-signature">
 
@@ -325,29 +138,85 @@ Safely replaces or decrements the selected held item after a fluid interaction.
 
 </div>
 
-Runs the initial fluid scoreboard command for a newly spawned fluid entity.
+Bootstraps the base liquid scoreboard identity for a newly spawned standalone liquid entity.
 
-## transferBetween
-
-<div class="api-signature">
-
-`FluidStorage.transferBetween(dim: Dimension, sourceLoc: Vector3, targetLoc: Vector3, amount?: number): boolean`
-
-</div>
-
-Transfers fluid between two blocks tagged `dorios:fluid`. If the target is a fluid tank block without an entity, the tank entity is spawned automatically.
-
-## findType
+### FluidStorage.hasOpenUI(entity)
 
 <div class="api-signature">
 
-`FluidStorage.findType(entity: Entity, type: string): FluidStorage | null`
+`FluidStorage.hasOpenUI(entity: Entity): boolean`
 
 </div>
 
-Returns the first tank with `type`, or the first empty tank with free space.
+Returns whether the entity's open-player property is greater than zero. Invalid entities return `false`.
 
-## handleFluidItemInteraction
+### FluidStorage.getMaxLiquids(entity)
+
+<div class="api-signature">
+
+`FluidStorage.getMaxLiquids(entity: Entity): number`
+
+</div>
+
+Returns the declared tank count. It uses the `maxLiquids` score, then indexed type tags, and always returns at least `1`.
+
+## Formatting and item helpers
+
+### FluidStorage.normalizeValue(amount)
+
+`normalizeValue(amount: number): NormalizedValue` converts a raw amount to a scoreboard-safe mantissa and base-10 exponent.
+
+### FluidStorage.combineValue(value, exp)
+
+`combineValue(value: number, exp: number): number` reconstructs `value × 10^exp`.
+
+### FluidStorage.formatFluid(value)
+
+`formatFluid(value: number): string` formats a nonnegative amount using `mB`, `B`, `KB`, `MB`, `GB`, `TB`, `PB`, or `EB`.
+
+### FluidStorage.getFluidFromText(input)
+
+<div class="api-signature">
+
+`FluidStorage.getFluidFromText(input: string): { type: string; amount: number }`
+
+</div>
+
+Parses a formatted type and amount from legacy display/lore text. Returns `{ type: "empty", amount: 0 }` when parsing fails.
+
+### FluidStorage.getContainerData(id)
+
+`getContainerData(id: string): FluidContainerData | null` returns registered insertion data for an exact item ID.
+
+### FluidStorage.getSelectedInventoryItem(player)
+
+<div class="api-signature">
+
+`FluidStorage.getSelectedInventoryItem(player: Player): SelectedInventoryItem | null`
+
+</div>
+
+Returns the selected hotbar slot, player inventory container, and current item. Returns `null` when the player or inventory cannot be resolved.
+
+### FluidStorage.replaceHeldFluidItem(player, expectedTypeId, nextTypeId)
+
+<div class="api-signature">
+
+`FluidStorage.replaceHeldFluidItem(player: Player, expectedTypeId: string, nextTypeId?: string): boolean`
+
+</div>
+
+Safely consumes or replaces one selected item after a liquid interaction.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `player` | `Player` | Yes | Player whose selected slot is changed. Creative players succeed without mutation. |
+| `expectedTypeId` | `string` | Yes | Item ID that must still be present in the selected slot. |
+| `nextTypeId` | `string` | No | Result item. Omit to consume without replacement. |
+
+Stacked inputs are decremented and the result is inserted elsewhere; overflow is dropped at the player. A single input is replaced in place.
+
+### FluidStorage.handleFluidItemInteraction(player, entity, mainHand)
 
 <div class="api-signature">
 
@@ -355,43 +224,82 @@ Returns the first tank with `type`, or the first empty tank with free space.
 
 </div>
 
-Handles player insertion using a registered fluid item, updates the action bar, and replaces the held item outside Creative mode.
+Uses a registered insertion item against the first compatible indexed tank, shows the updated amount on the action bar, and updates the held item outside Creative mode.
 
-## addfluidToTank
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `player` | `Player` | Yes | Interacting player. |
+| `entity` | `Entity` | Yes | Target with one or more liquid tanks. |
+| `mainHand` | `ItemStack` | No | Explicit interaction item; when omitted, the player's main hand is read. |
 
-<div class="api-signature">
+## Storage methods
 
-`FluidStorage.addfluidToTank(block: Block, type: string, amount: number): Entity | undefined`
+### hasFixedFluidType()
 
-</div>
+`hasFixedFluidType(): boolean` returns whether the entity has tag `dorios:constant_fluid_type`. Fixed tanks keep their type when empty.
 
-Spawns a `utilitycraft:fluid_tank_{type}` entity for a tank block when missing, sets the proper capacity, sets type, and adds fluid.
-
-## getTankCapacity
-
-<div class="api-signature">
-
-`FluidStorage.getTankCapacity(typeId: string): number`
-
-</div>
-
-Returns configured tank capacity. Unknown tank ids fall back to the basic tank capacity.
-
----
-
-# Methods
-
-## hasFixedFluidType
+### setCap(amount) / getCap()
 
 <div class="api-signature">
 
-`hasFixedFluidType(): boolean`
+`setCap(amount: number): void`<br />
+`getCap(): number`
 
 </div>
 
-Returns whether the entity has the fixed-fluid-type tag.
+`setCap` stores maximum capacity in mB and reduces current storage if the new capacity is smaller. `getCap` reads, caches, and returns it.
 
-## tryInsert
+### set(amount) / get()
+
+<div class="api-signature">
+
+`set(amount: number): void`<br />
+`get(): number`
+
+</div>
+
+`set` writes a raw normalized amount; `get` returns the combined amount. Prefer `add`, `consume`, or `tryInsert` when capacity and availability must be enforced.
+
+### add(amount)
+
+<div class="api-signature">
+
+`add(amount: number): number`
+
+</div>
+
+Adds a signed amount, limiting positive additions to free capacity. Returns the signed amount applied. For standalone UtilityCraft tank entities, this also updates their visible health and removes the empty resource entity when appropriate.
+
+### consume(amount)
+
+<div class="api-signature">
+
+`consume(amount: number): number`
+
+</div>
+
+Consumes the full amount only when enough liquid is stored. Infinite and legacy creative storage tags report success without changing storage. Returns the amount consumed or `0`.
+
+### getFreeSpace() / has(amount) / isFull()
+
+| Method | Returns | Description |
+| --- | --- | --- |
+| `getFreeSpace()` | `number` | Remaining capacity in mB. |
+| `has(amount: number)` | `boolean` | Whether at least `amount` is stored. |
+| `isFull()` | `boolean` | Whether stored amount has reached capacity. |
+
+### getType() / setType(type)
+
+<div class="api-signature">
+
+`getType(): string`<br />
+`setType(type: string): void`
+
+</div>
+
+Types are stored as indexed tags such as `fluid0Type:water`. `setType` removes the previous tag, adds the new tag, and refreshes the cached `type`.
+
+### tryInsert(type, amount)
 
 <div class="api-signature">
 
@@ -399,9 +307,9 @@ Returns whether the entity has the fixed-fluid-type tag.
 
 </div>
 
-Inserts fluid only when the tank is empty or already stores the same type and has enough free space.
+Performs an exact insertion only when `amount` is positive, the tank is empty or already contains `type`, and the full amount fits. Empty tanks adopt `type`.
 
-## fluidItem
+### fluidItem(typeId)
 
 <div class="api-signature">
 
@@ -409,82 +317,50 @@ Inserts fluid only when the tank is empty or already stores the same type and ha
 
 </div>
 
-Applies an item-based fluid interaction.
+Processes one registered insertion or extraction item.
 
-- Registered storage items insert fluid and return their output item id or `false`.
-- Registered holder items extract fluid and return the filled output item id.
-- Unknown or invalid items return `false`.
+- Finite insertion adds the registered amount and returns its `output`, or `false` when no output is defined.
+- Infinite insertion fills all free space and returns `output ?? typeId`.
+- A registered holder consumes its `required` amount and returns the type-specific filled item.
+- Unsupported or invalid operations return `false`.
 
-## setCap / getCap
+## Transfer methods
 
-<div class="api-signature">
-
-`setCap(amount: number): void`
-
-`getCap(): number`
-
-</div>
-
-Sets or reads tank capacity.
-
-## set / get / add / consume
+### FluidStorage.transferBetween(dim, sourceLoc, targetLoc, amount)
 
 <div class="api-signature">
 
-`set(amount: number): void`
-
-`get(): number`
-
-`add(amount: number): number`
-
-`consume(amount: number): number`
+`FluidStorage.transferBetween(dim: Dimension, sourceLoc: Vector3, targetLoc: Vector3, amount?: number): boolean`
 
 </div>
 
-Manage the stored fluid amount. `consume()` requires the full amount to be available unless the entity has the creative tag.
+Transfers index `0` between two blocks tagged `dorios:fluid`. Empty tank blocks receive their helper entity automatically.
 
-## getFreeSpace / has / isFull
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `dim` | `Dimension` | — | Dimension containing both endpoints. |
+| `sourceLoc` | `Vector3` | — | Source block coordinates. |
+| `targetLoc` | `Vector3` | — | Target block coordinates. |
+| `amount` | `number` | `100` | Maximum mB transferred. |
+
+Returns `true` when liquid moves.
+
+### FluidStorage.findType(entity, type)
+
+`findType(entity: Entity, type: string): FluidStorage | null` returns the existing indexed tank containing `type`; otherwise the first empty tank with free space; otherwise `null`.
+
+### transferTo(other, amount) / receiveFrom(other, amount)
 
 <div class="api-signature">
 
-`getFreeSpace(): number`
-
-`has(amount: number): boolean`
-
-`isFull(): boolean`
+`transferTo(other: FluidStorage, amount: number): number`<br />
+`receiveFrom(other: FluidStorage, amount: number): number`
 
 </div>
 
-Capacity helpers.
+Moves up to `amount` between wrappers. The receiver must be empty or contain the same type. The return value is the amount moved. `receiveFrom` delegates to `other.transferTo(this, amount)`.
 
-## getType / setType
-
-<div class="api-signature">
-
-`getType(): string`
-
-`setType(type: string): void`
-
-</div>
-
-Fluid type is stored as an entity tag:
-
-```text
-fluid0Type:water
-fluid1Type:lava
-```
-
-## transferToNetwork
-
-<div class="api-signature">
-
-`transferToNetwork(speed: number, mode?: "nearest" | "farthest" | "round", nodes: Vector3[]): number`
-
-</div>
-
-Transfers fluid to precomputed network nodes. Unlike energy transfer, fluid transfer currently expects the node list to be supplied.
-
-## transferFluids
+### transferFluids(block, amount)
 
 <div class="api-signature">
 
@@ -492,21 +368,36 @@ Transfers fluid to precomputed network nodes. Unlike energy transfer, fluid tran
 
 </div>
 
-Transfers fluid to this entity's cached fluid output target through [`OutputTracker`](./output-tracker). The default amount is `100` mB.
+Transfers to the cached single liquid output target and clears stale targets.
 
-## transferTo / receiveFrom
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `block` | `Block` | — | Source block represented by this storage entity. |
+| `amount` | `number` | `100` | Maximum mB moved. |
+
+For new six-face machinery use `machine.processIO()`; this method remains useful for a fixed legacy output direction.
+
+### transferToNetwork(speed, mode, nodes)
 
 <div class="api-signature">
 
-`transferTo(other: FluidStorage, amount: number): number`
-
-`receiveFrom(other: FluidStorage, amount: number): number`
+`transferToNetwork(speed: number, mode?: TransferMode, nodes?: Vector3[]): number`
 
 </div>
 
-Transfers fluid between tanks. The target must be empty or already contain the same fluid type.
+Transfers liquid to precomputed positions supplied by UtilityCore.
 
-## display
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `speed` | `number` | — | Total maximum mB sent. |
+| `mode` | `"nearest" \| "farthest" \| "round"` | `nearest` | Sequential or distributed target processing. |
+| `nodes` | `Vector3[]` | — | Precomputed network nodes. Missing or empty arrays return `0`. |
+
+Returns total mB transferred. Network discovery is not owned by DoriosCore.
+
+## Display and tank blocks
+
+### display(slot)
 
 <div class="api-signature">
 
@@ -514,21 +405,51 @@ Transfers fluid between tanks. The target must be empty or already contain the s
 
 </div>
 
-Writes a 48-frame fluid bar item to the entity inventory while the UI is open. The default slot is `4`.
+While the UI is open, writes `utilitycraft:{type}_00` through `utilitycraft:{type}_48` into the selected slot. Empty tanks use the shared empty resource bar.
 
----
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `slot` | `number` | `4` | Inventory slot used by the liquid display. |
 
-# Example
+:::important Resource frames
+Every registered custom liquid displayed in a UI needs item definitions for all 49 frame IDs and matching textures. A standalone liquid also needs its resource entity definition and texture. The Addon Template contains a verified implementation.
+:::
+
+### FluidStorage.addfluidToTank(block, type, amount)
+
+<div class="api-signature">
+
+`FluidStorage.addfluidToTank(block: Block, type: string, amount: number): Entity | undefined | false`
+
+</div>
+
+Finds or spawns `utilitycraft:fluid_tank_{type}`, initializes capacity from the tank block tier, assigns its type, and adds `amount`.
+
+:::note Exact method name
+The public method is currently named `addfluidToTank` with a lowercase `f`. Use that spelling for compatibility.
+:::
+
+### FluidStorage.getTankCapacity(typeId)
+
+`getTankCapacity(typeId: string): number` returns `8000`, `32000`, `128000`, or `512000` mB for UtilityCraft's basic through ultimate tanks. Unknown IDs use the basic capacity.
+
+## Example
 
 ```js
-const tank = FluidStorage.initializeSingle(entity);
-tank.setCap(32000);
-tank.setType("water");
-tank.add(1000);
+import { FluidStorage } from "DoriosCore/index.js";
 
-if (tank.has(500)) {
-  tank.consume(500);
+const [coolant, waste] = FluidStorage.initializeMultiple(entity, 2);
+coolant.setCap(8_000);
+waste.setCap(8_000);
+coolant.setType("example_coolant");
+
+if (coolant.has(250) && waste.getFreeSpace() >= 100) {
+  coolant.consume(250);
+  waste.tryInsert("example_waste", 100);
 }
 
-tank.display();
+coolant.display(4);
+waste.display(5);
 ```
+
+See the complete [Fluid Washer](https://github.com/DoriosStudios/UtilityCraft-Addon-Template/blob/main/BP/scripts/examples/machines/fluidWasher.js) for scripted processing and IO registration.

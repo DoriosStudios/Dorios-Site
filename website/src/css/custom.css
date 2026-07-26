@@ -504,3 +504,102 @@ html[data-theme='dark'] .at-operation-title {
 html[data-theme='dark'] .at-image-caption {
   color: var(--ifm-color-emphasis-500);
 }
+
+/* DoriosCore documentation */
+.dc-hero {
+  margin: 0 0 2rem;
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  overflow: hidden;
+  border: 1px solid rgba(255, 107, 0, 0.2);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 88% 20%, rgba(255, 107, 0, 0.2), transparent 28%),
+    linear-gradient(135deg, rgba(255, 107, 0, 0.12), rgba(255, 107, 0, 0.025));
+}
+
+.dc-hero h1 {
+  margin: 0.1rem 0 0.65rem;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  letter-spacing: -0.045em;
+}
+
+.dc-eyebrow,
+.dc-card-kicker {
+  margin: 0;
+  color: var(--ifm-color-primary);
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.dc-lead {
+  max-width: 780px;
+  margin-bottom: 1.4rem;
+  color: var(--ifm-color-emphasis-800);
+  font-size: clamp(1.05rem, 2vw, 1.24rem);
+  line-height: 1.65;
+}
+
+.dc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.dc-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.dc-card {
+  padding: 1.25rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  background: var(--ifm-card-background-color);
+  box-shadow: 0 8px 28px rgba(16, 24, 40, 0.05);
+}
+
+.dc-card h3 {
+  margin: 0.35rem 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.dc-card p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.dc-scope-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.dc-scope-list span {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 999px;
+  background: var(--ifm-color-emphasis-100);
+  font-size: 0.86rem;
+}
+
+html[data-theme='dark'] .dc-lead {
+  color: var(--ifm-color-emphasis-700);
+}
+
+html[data-theme='dark'] .dc-card {
+  box-shadow: none;
+}
+
+@media (max-width: 700px) {
+  .dc-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dc-actions .button {
+    width: 100%;
+  }
+}

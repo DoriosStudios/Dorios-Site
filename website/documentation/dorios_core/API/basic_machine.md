@@ -1,202 +1,94 @@
 ---
 id: basic-machine
+title: BasicMachine class
 sidebar_label: BasicMachine
-title: BasicMachine Class
-sidebar_position: 0
+sidebar_position: 2
+description: Base scheduled runtime for DoriosCore machines and generators.
 ---
 
-# BasicMachine
+# BasicMachine class
 
-:::info
-`BasicMachine` is the base runtime wrapper for a machine block and its helper entity.
+Namespace: `DoriosCore` · Package: `DoriosCore/index.js`
 
-It resolves the machine entity, checks the scheduler, exposes the entity inventory, creates an `EnergyStorage` instance, and provides common UI/progress helpers. Most addons use [`Machine`](./machine) or [`Generator`](./generator), but both are built on this class.
-:::
+`BasicMachine` is the base runtime wrapper shared by machines and generators. It resolves the block's helper entity, applies scheduler rules, exposes its inventory and energy storage, prepares item/liquid/gas IO documents, and provides common UI and progress helpers.
 
-Hierarchy:
-
-```text
-BasicMachine
-|- Machine
-|- Generator
-`- MultiblockMachine
+```js
+import { BasicMachine } from "DoriosCore/index.js";
 ```
 
----
-
-# Index
-
-## Properties
-
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-property">P</span><a href="#valid">valid</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#entity">entity</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#block">block</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#dimension">dimension</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#container">container</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#energy">energy</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#shouldupdateui">shouldUpdateUI</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#baserate">baseRate</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#processinginterval">processingInterval</a></div>
-<div class="api-index-item"><span class="api-property">P</span><a href="#rate">rate</a></div>
-
-</div>
-
-## Methods
-
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-method">M</span><a href="#setrate">setRate</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#setlabel">setLabel</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#on">on</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#off">off</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#addprogress">addProgress</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#getprogress">getProgress</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#setprogress">setProgress</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#displayprogress">displayProgress</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#displayenergy">displayEnergy</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#blockslots">blockSlots</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#unblockslots">unblockSlots</a></div>
-
-</div>
-
----
-
-# Constructor
-
-## new BasicMachine
+## Definition
 
 <div class="api-signature">
 
-`new BasicMachine(block: Block, options: { rate?: number, ignoreTick?: boolean })`
+`class BasicMachine`
 
 </div>
 
-Creates a runtime wrapper for the machine at `block`.
+Inheritance:
 
-### Parameters
-
-<ul class="api-params">
-
-<li>
-<span class="param-name">block</span>
-<span class="param-type">Block</span>
-
-The machine block in the world.
-</li>
-
-<li>
-<span class="param-name">options.rate</span>
-<span class="param-type">number</span>
-
-Base rate designed around 20 TPS logic. `Machine` reads this from `settings.machine.rate_speed_base`; `Generator` reads it from `settings.generator.rate_speed_base`.
-</li>
-
-<li>
-<span class="param-name">options.ignoreTick</span>
-<span class="param-type">boolean</span>
-
-When `true`, bypasses `TickScheduler.shouldProcessMachine()` for this wrapper instance.
-</li>
-
-</ul>
-
-### Behavior
-
-1. Sets `valid` to `false`.
-2. Resolves the helper entity from the block.
-3. Checks whether the UI is open with `Utils.hasOpenUI(entity)`.
-4. Skips the tick unless `ignoreTick` is true or the scheduler allows processing.
-5. Creates `EnergyStorage`.
-6. Reads the entity inventory container.
-7. Calculates `processingInterval` and effective `rate`.
-8. Sets `valid` to `true`.
-
-Typical usage:
-
-```js
-const machine = new BasicMachine(block, { rate: 20 });
-if (!machine.valid) return;
+```text
+BasicMachine
+├─ Machine
+│  └─ MultiblockMachine
+└─ Generator
+   └─ MultiblockGenerator
 ```
 
----
+Most addons instantiate [`Machine`](./machine) or [`Generator`](./generator). Extend `BasicMachine` directly only when the runtime is neither a processing machine nor an energy generator.
 
-# Properties
+## Constructor
 
-## valid
+### new BasicMachine(block, options)
 
-Type: `boolean`
+<div class="api-signature">
 
-Whether this runtime wrapper is ready to run logic on the current tick.
+`new BasicMachine(block: Block, options: BasicMachineOptions)`
 
-`valid` is `false` if the helper entity is missing, the scheduler skipped this tick, or the entity inventory cannot be read.
+</div>
 
-## entity
+Creates a runtime wrapper for the helper entity associated with `block`.
 
-Type: `Entity`
+#### Parameters
 
-The helper entity associated with the machine block. It stores inventory, dynamic properties, tags, energy data, fluid data, and tick group state.
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `block` | `Block` | Yes | Machine block in the world. |
+| `options` | `BasicMachineOptions` | Yes | Runtime rate and scheduler behavior. |
+| `options.rate` | `number` | Yes | Base rate designed for ordinary 20 TPS logic. DoriosCore does not provide a fallback at this level. |
+| `options.ignoreTick` | `boolean` | No | When `true`, bypasses scheduler throttling for this instance. Defaults to `false`. |
 
-## block
-
-Type: `Block`
-
-The machine block represented by this runtime.
-
-## dimension
-
-Type: `Dimension`
-
-The block's dimension.
-
-## container
-
-Type: `Container`
-
-The inventory container from the helper entity.
-
-## energy
-
-Type: `EnergyStorage`
-
-Energy manager attached to the helper entity.
-
-## shouldUpdateUI
-
-Type: `boolean`
-
-`true` when at least one player has the machine UI open. UI-rendering helpers return early when this is false.
-
-## baseRate
-
-Type: `number`
-
-The unscaled machine rate supplied through `options.rate`.
-
-## processingInterval
-
-Type: `number`
-
-The tick interval returned by `TickScheduler.getProcessingInterval(entity)`. Open UIs currently use a short interval; closed machines use the active scheduler profile interval.
-
-## rate
-
-Type: `number`
-
-Effective per-run rate:
+The constructor sets `valid` to `false` before resolving runtime state. It becomes `true` only after the helper entity, scheduler check, inventory, energy manager, effective rate, and IO documents have been prepared.
 
 ```js
-rate = baseRate * processingInterval;
+const runtime = new BasicMachine(block, { rate: 20 });
+if (!runtime.valid) return;
 ```
 
-Use this value for work performed only when `valid` is true.
+:::warning
+Always guard `valid`. An invalid wrapper usually means the scheduler did not select this machine on the current tick; it is not necessarily an error.
+:::
 
----
+## Properties
 
-# Methods
+| Property | Type | Description |
+| --- | --- | --- |
+| `valid` | `boolean` | Whether the runtime is ready for this processing tick. |
+| `entity` | `Entity` | Helper entity paired with the block. Use only after the validity guard. |
+| `block` | `Block` | Block represented by this runtime. |
+| `dimension` | `Dimension` | Dimension containing the block. |
+| `container` | `Container` | Inventory container exposed by the helper entity. |
+| `energy` | [`EnergyStorage`](./energy-storage) | Energy manager bound to the helper entity. |
+| `shouldUpdateUI` | `boolean` | Whether a player currently has this container UI open. |
+| `baseRate` | `number` | Rate before scheduler-interval scaling. |
+| `processingInterval` | `number` | Effective interval returned by `TickScheduler`. |
+| `rate` | `number` | `baseRate × processingInterval`. Use this for work done on valid ticks. |
+| `itemIOReady` | `boolean` | Whether the persisted complex item IO document is ready locally. |
+| `fluidIOReady` | `boolean` | Whether the indexed-liquid IO document is ready locally. |
+| `gasIOReady` | `boolean` | Whether the indexed-gas IO document is ready locally. |
 
-## setRate
+## Methods
+
+### setRate(baseRate)
 
 <div class="api-signature">
 
@@ -204,9 +96,13 @@ Use this value for work performed only when `valid` is true.
 
 </div>
 
-Updates `baseRate` and recalculates `rate` using the current `processingInterval`.
+Updates `baseRate` and recalculates `rate` with the current `processingInterval`.
 
-## setLabel
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `baseRate` | `number` | New unscaled processing or generation rate. |
+
+### setLabel(text, slot)
 
 <div class="api-signature">
 
@@ -214,13 +110,22 @@ Updates `baseRate` and recalculates `rate` using the current `processingInterval
 
 </div>
 
-Writes a label item into the machine inventory. The default slot is `1`.
+Writes the machine label item while `shouldUpdateUI` is `true`.
 
-If `text` is a string, it becomes the item `nameTag`. If `text` is an array, the first item becomes `nameTag` and the remaining items become lore lines.
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `text` | `string \| string[]` | — | A string becomes the item name. In an array, the first entry is the name and remaining entries become lore. |
+| `slot` | `number` | `1` | Inventory slot used by the label. Existing items in the slot are reused. |
 
-This method only updates while `shouldUpdateUI` is true.
+```js
+machine.setLabel([
+  "§aCrusher Running",
+  "§7Input: §fCobblestone",
+  "§7Output: §fGravel",
+]);
+```
 
-## on
+### on()
 
 <div class="api-signature">
 
@@ -228,9 +133,9 @@ This method only updates while `shouldUpdateUI` is true.
 
 </div>
 
-Sets the block state `utilitycraft:on` to `true`.
+Sets the block state `utilitycraft:on` to `true`. The block definition and resource pack can use this state for its active texture.
 
-## off
+### off()
 
 <div class="api-signature">
 
@@ -240,7 +145,7 @@ Sets the block state `utilitycraft:on` to `true`.
 
 Sets the block state `utilitycraft:on` to `false`.
 
-## addProgress
+### addProgress(amount, index)
 
 <div class="api-signature">
 
@@ -248,9 +153,14 @@ Sets the block state `utilitycraft:on` to `false`.
 
 </div>
 
-Adds to the dynamic property `dorios:progress_{index}`. The default index is `0`.
+Adds `amount` to one dynamic progress channel.
 
-## getProgress
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `amount` | `number` | — | Value added to the current progress. May be negative. |
+| `index` | `number` | `0` | Progress channel stored as `dorios:progress_{index}`. |
+
+### getProgress(index)
 
 <div class="api-signature">
 
@@ -258,56 +168,55 @@ Adds to the dynamic property `dorios:progress_{index}`. The default index is `0`
 
 </div>
 
-Reads `dorios:progress_{index}`. Returns `0` when unset.
+Returns the current value of a progress channel, or `0` when it has not been set.
 
-## setProgress
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `index` | `number` | `0` | Progress channel to read. |
 
-<div class="api-signature">
-
-`setProgress(value: number, maxValue?: number, options?: ProgressDisplayOptions): void`
-
-</div>
-
-Stores progress and optionally redraws the progress item.
-
-```ts
-type ProgressDisplayOptions = {
-  slot?: number;      // default 2
-  type?: string;      // default "progress_right_big_bar"
-  display?: boolean;  // default true
-  index?: number;     // default 0
-  scale?: number;     // default 22 modern, 16 legacy
-  legacy?: boolean;   // default false
-};
-```
-
-`value` is clamped to at least `0`.
-
-## displayProgress
+### setProgress(value, maxValue, options)
 
 <div class="api-signature">
 
-`displayProgress(maxValue?: number, options?: ProgressDisplayOptions): void`
+`setProgress(value: number, maxValue?: number, options?: ProgressOptions): void`
 
 </div>
 
-Displays the progress bar in the entity inventory.
+Stores a nonnegative progress value and optionally redraws its bar.
 
-Modern progress uses padded frame ids like:
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `number` | — | New progress value. Values below zero are stored as zero. |
+| `maxValue` | `number` | `800` | Value represented by a full bar. |
+| `options.slot` | `number` | `2` | Inventory slot containing the progress item. |
+| `options.type` | `string` | `progress_right_big_bar` | Item-ID suffix for modern progress frames. |
+| `options.display` | `boolean` | `true` | Whether to call `displayProgress()` after storing. |
+| `options.index` | `number` | `0` | Progress channel. |
+| `options.scale` | `number` | `16` when passed through this method | Maximum visual frame forwarded to the renderer. |
+| `options.legacy` | `boolean` | `false` | Uses non-padded legacy frame IDs when true. |
 
-```text
-utilitycraft:progress_right_big_bar_00
-utilitycraft:progress_right_big_bar_22
-```
+### displayProgress(maxValue, options)
 
-When `legacy: true`, it uses the older non-padded frame naming:
+<div class="api-signature">
 
-```text
-utilitycraft:arrow_right_0
-utilitycraft:arrow_right_16
-```
+`displayProgress(maxValue?: number, options?: ProgressOptions): void`
 
-## displayEnergy
+</div>
+
+Draws the selected progress channel as an item frame while the UI is open. It returns without changing the container when `maxValue` is zero or negative.
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `maxValue` | `number` | `800` | Value represented by a full bar. |
+| `options.slot` | `number` | `2` | Destination inventory slot. |
+| `options.type` | `string` | `progress_right_big_bar` | Modern frame prefix; legacy mode defaults to `arrow_right`. |
+| `options.index` | `number` | `0` | Progress channel to render. |
+| `options.scale` | `number` | `22` modern, `16` legacy | Highest visual frame number. |
+| `options.legacy` | `boolean` | `false` | Chooses legacy non-padded IDs. |
+
+Modern IDs are padded, for example `utilitycraft:progress_right_big_bar_00`. Legacy IDs use names such as `utilitycraft:arrow_right_0`.
+
+### displayEnergy(slot)
 
 <div class="api-signature">
 
@@ -315,9 +224,50 @@ utilitycraft:arrow_right_16
 
 </div>
 
-Delegates to `this.energy.display(slot)`. The default slot is `0`. This method only updates while `shouldUpdateUI` is true.
+Calls `energy.display(slot)` only while the UI is open.
 
-## blockSlots
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `slot` | `number` | `0` | Inventory slot for the energy bar. |
+
+### processIO(limits)
+
+<div class="api-signature">
+
+`processIO(limits?: ProcessIOLimits): ProcessIOSummary`
+
+</div>
+
+Processes enabled item, liquid, and gas faces using the registered IO documents. Resource indices are independent from inventory slots.
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `limits.maxInputSlotsScannedPerTick` | `number` | `9` | External inventory slots examined per enabled input face. |
+| `limits.maxOutputSlotsMovedPerTick` | `number` | `9` | Machine output slots attempted per enabled output face. |
+| `limits.maxFluidMovedPerTick` | `number` | `2500` | Total liquid amount moved during the call. |
+| `limits.maxGasMovedPerTick` | `number` | `2500` | Total gas amount moved during the call. |
+
+Returns:
+
+```ts
+interface ProcessIOSummary {
+  itemsMoved: number;
+  inputSlotsScanned: number;
+  fluidMoved: number;
+  gasMoved: number;
+}
+```
+
+Invalid runtimes return a summary containing four zeros. Item input scanning maintains a rotating cursor so large neighboring inventories are scanned fairly across ticks.
+
+```js
+const moved = machine.processIO({
+  maxFluidMovedPerTick: 1000,
+  maxGasMovedPerTick: 500,
+});
+```
+
+### blockSlots(slots)
 
 <div class="api-signature">
 
@@ -325,9 +275,13 @@ Delegates to `this.energy.display(slot)`. The default slot is `0`. This method o
 
 </div>
 
-Fills empty inventory slots with the blocker item `utilitycraft:arrow_right_0`.
+Fills each empty slot with the standard blocker item. Existing items are not replaced.
 
-## unblockSlots
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `slots` | `number[]` | Inventory slot indices to reserve. |
+
+### unblockSlots(slots)
 
 <div class="api-signature">
 
@@ -335,20 +289,28 @@ Fills empty inventory slots with the blocker item `utilitycraft:arrow_right_0`.
 
 </div>
 
-Clears blocker items from the given slots.
+Clears only slots containing the standard blocker item; ordinary items are preserved.
 
----
-
-# Example
+## Example
 
 ```js
+import { BasicMachine } from "DoriosCore/index.js";
+
 const machine = new BasicMachine(block, { rate: 20 });
 if (!machine.valid) return;
 
-machine.displayEnergy();
+machine.processIO();
 machine.addProgress(machine.rate);
+machine.displayEnergy();
+machine.displayProgress(800);
 
 if (machine.getProgress() >= 800) {
-  machine.setProgress(0);
+  machine.setProgress(0, 800);
 }
 ```
+
+## Remarks
+
+- Construct a new runtime only in the machine's tick path; do not retain it between ticks.
+- UI methods are intentionally skipped while the container is closed.
+- Networks remain owned by UtilityCore. `processIO()` operates through compatible container and neighbor abstractions exposed to DoriosCore.

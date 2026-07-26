@@ -1,0 +1,10 @@
+{
+  "label": "DoriosCore",
+  "position": 1,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "doc",
+    "id": "dorios_core/intro"
+  }
+}
