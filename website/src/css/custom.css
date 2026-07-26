@@ -603,3 +603,78 @@ html[data-theme='dark'] .dc-card {
     width: 100%;
   }
 }
+
+/* UtilityCraft UI Core documentation */
+.uc-ui-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0 1.75rem;
+}
+
+.uc-ui-swatch {
+  display: flex;
+  min-height: 126px;
+  margin: 0;
+  padding: 0.85rem;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.65rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  background:
+    linear-gradient(45deg, var(--ifm-color-emphasis-100) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--ifm-color-emphasis-100) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--ifm-color-emphasis-100) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--ifm-color-emphasis-100) 75%),
+    var(--ifm-background-surface-color);
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  background-size: 16px 16px;
+}
+
+.uc-ui-swatch img {
+  width: auto;
+  height: 54px;
+  max-width: 104px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.22));
+}
+
+.uc-ui-swatch--wide img {
+  width: 136px;
+  height: 70px;
+  max-width: 100%;
+}
+
+.uc-ui-swatch figcaption {
+  padding: 0.2rem 0.35rem;
+  border-radius: 5px;
+  background: var(--ifm-background-color);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+.uc-ui-machine-preview {
+  display: block;
+  width: min(100%, 780px);
+  margin: 1rem auto 1.75rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  image-rendering: pixelated;
+  box-shadow: 0 12px 34px rgba(16, 24, 40, 0.12);
+}
+
+.uc-ui-contract {
+  margin: 1rem 0 1.5rem;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid var(--ifm-color-primary);
+  border-radius: 0 8px 8px 0;
+  background: var(--ifm-color-emphasis-100);
+}
+
+.uc-ui-contract p:last-child {
+  margin-bottom: 0;
+}

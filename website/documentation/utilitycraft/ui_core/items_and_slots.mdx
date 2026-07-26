@@ -1,0 +1,163 @@
+---
+id: items-and-slots
+title: Items, progress displays, and slots
+sidebar_label: Items and slots
+sidebar_position: 3
+description: Reference the UtilityCraft UI Core item renderers, progress displays, machine slots, and exact IO slot outline names.
+---
+
+# Items, progress displays, and slots
+
+These controls render items already present in the machine helper entity's `container_items` collection. They do not create an inventory, move items, or choose an IO mode. The script and entity definition own that behavior; JSON UI only displays the corresponding collection index.
+
+## Item display controls
+
+| Element | Cell / renderer size | Hover | Intended use |
+| --- | --- | --- | --- |
+| `uc.button_item_display` | 18 / 16 | Button behavior | Small collection-backed button icon. |
+| `uc.item_display` | 18 / 16 | No | Small read-only item or state frame. |
+| `uc.item_display_medium` | 34 / 32 | No | Medium read-only item. |
+| `uc.item_display_large` | 50 / 48 | No | Large read-only resource fill or illustration. |
+| `uc.item_display_hover` | 18 / 16 | Yes | Small item with item tooltip and focus navigation. |
+| `uc.item_display_hover_medium` | 34 / 32 | Yes | Medium item with tooltip. |
+| `uc.item_display_hover_large` | 50 / 48 | Yes | Large item with tooltip; used by resource bars. |
+| `uc.progress_display` | 34 / 32 | No | Animated progress-frame item. Focus navigation is disabled. |
+| `uc.output_item` | 26 / 26 | Native slot | Large output item primitive. |
+| `uc.input_item` | 18 / 18 | Native slot | Standard container item primitive. |
+
+```json title="Display a script-updated progress frame"
+{
+  "progress@uc.progress_display": {
+    "collection_index": 2,
+    "offset": [28, 23]
+  }
+}
+```
+
+`progress_display` does not calculate progress. The machine script updates the item at index `2` to the correct frame identifier, and the UI renders that item.
+
+### Common item-renderer variables
+
+The display controls expose the variables below. A wrapper may fix some values to its documented size.
+
+| Variable | Type | Default | Purpose |
+| --- | --- | --- | --- |
+| `$cell_image_size` | `[number, number]` | Depends on control | Overall cell image size. |
+| `$cell_overlay_ref` | control reference | `"common.cell_overlay"` | Overlay used for stack count, durability, and storage indicators. |
+| `$stack_count_required` | `boolean` | `true` | Enables the stack-count overlay. |
+| `$durability_bar_required` | `boolean` | `true` | Enables the durability overlay when applicable. |
+| `$storage_bar_required` | `boolean` | `true` | Enables the storage overlay when applicable. |
+| `$item_renderer` | control reference | `"common.item_renderer"` | Minecraft item-renderer control. |
+| `$item_renderer_panel_size` | `[number, number]` | Depends on control | Panel containing the rendered item. |
+| `$item_renderer_size` | `[number, number]` | Depends on control | Rendered item size. |
+| `$item_renderer_offset` | `[number, number]` | `[0, 0]` | Item offset inside its renderer panel. |
+
+Hover variants additionally accept:
+
+| Variable | Type | Default | Purpose |
+| --- | --- | --- | --- |
+| `$button_ref` | control reference | `"uc.slot_button"` | Button/tooltip implementation placed over the item. |
+| `$focus_id` | `string` | `""` | Controller focus identifier. |
+| `$focus_override_up` | `string` | `""` | Explicit focus destination when moving up. |
+| `$focus_override_down` | `string` | `""` | Explicit focus destination when moving down. |
+| `$focus_override_left` | `string` | `""` | Explicit focus destination when moving left. |
+| `$focus_override_right` | `string` | `""` | Explicit focus destination when moving right. |
+
+## Internal item primitives
+
+`uc._slot_visual` and `uc._slot_visual_hover` implement the renderer, overlay, count, durability/storage bars, and focus bindings used by the public controls. `_slot_visual_hover` also accepts `$button_ref`. Their remaining variables are the common item-renderer and focus variables listed above.
+
+Prefer a public `item_display*` wrapper unless you are building a new shared UI abstraction and need full control over the renderer internals.
+
+## Machine slots
+
+| Element | Size | Variables | What it displays |
+| --- | ---: | --- | --- |
+| `uc.input_slot` | 18x18 | `$slot_background_texture` = `textures/ui/slots/input_1_slot` | Interactive container item with an input outline. |
+| `uc.fuel_slot` | 18x18 | None | Interactive container item with the fuel outline. |
+| `uc.upgrade_slot` | 18x18 | `$show_slot_background` = `true` | Interactive upgrade slot; its outline can be hidden. |
+| `uc.output_slot` | 26x26 | `$slot_background_texture` = `textures/ui/slots/output_1_slot` | Larger interactive container item with an output outline. |
+
+```json title="Input, progress, and output"
+{
+  "input@uc.input_slot": {
+    "collection_index": 3,
+    "offset": [0, 30]
+  }
+},
+{
+  "progress@uc.progress_display": {
+    "collection_index": 2,
+    "offset": [28, 23]
+  }
+},
+{
+  "output@uc.output_slot": {
+    "collection_index": 4,
+    "offset": [56, 26]
+  }
+}
+```
+
+:::important Slot names are exact
+The recognized numbered controls are `input_1_slot` through `input_9_slot` and `output_1_slot` through `output_9_slot`. Names such as `input_1`, `input_2`, or `output_1` are not UI Core controls.
+:::
+
+### Numbered input aliases
+
+`uc.input_1_slot` through `uc.input_9_slot` inherit `uc.input_slot` and set the matching outline texture. Use the number assigned by the machine's IO definition.
+
+```json
+{
+  "secondary_input@uc.input_2_slot": {
+    "collection_index": 4,
+    "offset": [18, 30]
+  }
+}
+```
+
+<div className="uc-ui-gallery">
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/input_1_slot.png" alt="Input 1 outline" /><figcaption>input_1_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/input_2_slot.png" alt="Input 2 outline" /><figcaption>input_2_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/input_3_slot.png" alt="Input 3 outline" /><figcaption>input_3_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/input_4_slot.png" alt="Input 4 outline" /><figcaption>input_4_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/input_5_slot.png" alt="Input 5 outline" /><figcaption>input_5_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/input_6_slot.png" alt="Input 6 outline" /><figcaption>input_6_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/input_7_slot.png" alt="Input 7 outline" /><figcaption>input_7_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/input_8_slot.png" alt="Input 8 outline" /><figcaption>input_8_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/input_9_slot.png" alt="Input 9 outline" /><figcaption>input_9_slot</figcaption></figure>
+</div>
+
+### Numbered output aliases
+
+`uc.output_1_slot` through `uc.output_9_slot` inherit `uc.output_slot` and select the matching output outline.
+
+<div className="uc-ui-gallery">
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/output_1_slot.png" alt="Output 1 outline" /><figcaption>output_1_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/output_2_slot.png" alt="Output 2 outline" /><figcaption>output_2_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/output_3_slot.png" alt="Output 3 outline" /><figcaption>output_3_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/output_4_slot.png" alt="Output 4 outline" /><figcaption>output_4_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/output_5_slot.png" alt="Output 5 outline" /><figcaption>output_5_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/output_6_slot.png" alt="Output 6 outline" /><figcaption>output_6_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/output_7_slot.png" alt="Output 7 outline" /><figcaption>output_7_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/output_8_slot.png" alt="Output 8 outline" /><figcaption>output_8_slot</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/output_9_slot.png" alt="Output 9 outline" /><figcaption>output_9_slot</figcaption></figure>
+</div>
+
+## IO state outline textures
+
+These textures are also consumed by `uc.io_face_outline` to explain the state encoded by an IO button item.
+
+<div className="uc-ui-gallery">
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/default_slot.png" alt="Default slot outline" /><figcaption>default</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/none_slot.png" alt="Disabled or none slot outline" /><figcaption>disabled / none</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/normal_slot.png" alt="Normal slot outline" /><figcaption>normal</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/both_slot.png" alt="Both input and output outline" /><figcaption>both</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/upgrade_slot.png" alt="Upgrade slot outline" /><figcaption>upgrade</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/fuel_slot.png" alt="Fuel slot outline" /><figcaption>fuel</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/item_resource_slot.png" alt="Item resource outline" /><figcaption>item resource</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/liquid_resource_slot.png" alt="Liquid resource outline" /><figcaption>liquid resource</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/gas_resource_slot.png" alt="Gas resource outline" /><figcaption>gas resource</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/slots/energy_slot.png" alt="Energy resource outline" /><figcaption>energy</figcaption></figure>
+</div>
+

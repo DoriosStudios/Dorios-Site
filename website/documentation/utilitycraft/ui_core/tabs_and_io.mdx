@@ -1,0 +1,212 @@
+---
+id: tabs-and-io
+title: Tabs, upgrades, and IO configuration
+sidebar_label: Tabs and IO
+sidebar_position: 5
+description: Configure UtilityCraft UI Core toggles, upgrade panels, item/liquid/gas IO faces, and machine information tabs.
+---
+
+# Tabs, upgrades, and IO configuration
+
+The standard right-side machine tabs share one radio-toggle group. Opening upgrades, IO, or information selects that tab; selecting the close state hides the active panel. Keep the default shared group names unless you intentionally build more than one independent tab set in the same screen.
+
+<div className="uc-ui-gallery">
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/toggles/upgrade_unchecked.png" alt="Closed upgrades tab" /><figcaption>upgrades closed</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/toggles/upgrade_checked.png" alt="Open upgrades tab" /><figcaption>upgrades open</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/toggles/io_unchecked.png" alt="Closed IO tab" /><figcaption>IO closed</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/toggles/io_checked.png" alt="Open IO tab" /><figcaption>IO open</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/toggles/info_unchecked.png" alt="Closed information tab" /><figcaption>info closed</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/toggles/info_checked.png" alt="Open information tab" /><figcaption>info open</figcaption></figure>
+</div>
+
+## Standard tab composition
+
+```json
+{
+  "upgrades@uc.upgrades_tab": {
+    "$upgrade_index_1": 5,
+    "$upgrade_index_2": 6,
+    "$has_first_upgrade": true,
+    "$has_second_upgrade": true
+  }
+},
+{
+  "io@uc.io_tab": {
+    "$has_item_io": true,
+    "$has_fluid_io": true,
+    "$has_gas_io": false,
+    "$io_item_top_index": 8,
+    "$io_fluid_top_index": 14
+  }
+},
+{
+  "info@uc.info_tab": {
+    "$info_description": "ui.example:info.machine"
+  }
+}
+```
+
+All three controls default `$item_collection_name` to `container_items`. `upgrades_tab`, `io_tab`, and `info_tab` also default `$right_machine_tabs_name` to `right_machine_tabs`, which makes them mutually exclusive.
+
+## `uc.upgrades_tab`
+
+Creates the standard upgrades button and panel. The panel supports up to four upgrade slots.
+
+| Variable | Type | Default | Purpose |
+| --- | --- | --- | --- |
+| `$item_collection_name` | `string` | `"container_items"` | Collection containing upgrade items. |
+| `$upgrade_index_1` ... `$upgrade_index_4` | `number` | `4`, `5`, `6`, `7` | Collection index for each upgrade slot. |
+| `$has_first_upgrade` | `boolean` | `true` | Shows slot 1. |
+| `$has_second_upgrade` | `boolean` | `true` | Shows slot 2. |
+| `$has_third_upgrade` | `boolean` | `false` | Shows slot 3. |
+| `$has_fourth_upgrade` | `boolean` | `false` | Shows slot 4. |
+| `$upgrade_overlay_1` | texture path | `textures/items/machinery/speed_upgrade` | Empty-slot guide for slot 1. |
+| `$upgrade_overlay_2` | texture path | `textures/items/machinery/energy_upgrade` | Empty-slot guide for slot 2. |
+| `$upgrade_overlay_3` | texture path | `textures/items/machinery/range_upgrade` | Empty-slot guide for slot 3. |
+| `$upgrade_overlay_4` | texture path | `textures/items/machinery/quantity_upgrade` | Empty-slot guide for slot 4. |
+| `$right_machine_tabs_name` | `string` | `"right_machine_tabs"` | Shared radio-toggle group. |
+| `$upgrade_toggle_control_name` | `string` | `"upgrade_toggle_button"` | Binding name used to open and close the panel. |
+
+The UI overlays are visual hints only. The machine's registered upgrade slots and upgrade definitions determine which items are accepted and which values are modified.
+
+## `uc.io_tab`
+
+Creates the standard IO button and configuration panel. It can expose separate item, liquid, and gas pages. Each page contains six block-face buttons in this order: top, left, front, right, bottom, back.
+
+### Feature and tab variables
+
+| Variable | Type | Default | Purpose |
+| --- | --- | --- | --- |
+| `$item_collection_name` | `string` | `"container_items"` | Collection containing IO button items. |
+| `$info_description` | `string` | `""` | Reserved description value passed by the shared panel. |
+| `$has_io_config` | `boolean` | `true` | Shows the IO configuration feature. |
+| `$has_item_io` | `boolean` | `true` | Shows the item page selector and face controls. |
+| `$has_fluid_io` | `boolean` | `false` | Shows the liquid page selector and face controls. |
+| `$has_gas_io` | `boolean` | `false` | Shows the gas page selector and face controls. |
+| `$io_items_default` | `boolean` | `true` | Initial checked state for the item selector. |
+| `$io_fluids_default` | `boolean` | `false` | Initial checked state for the liquid selector. |
+| `$io_gases_default` | `boolean` | `false` | Initial checked state for the gas selector. |
+| `$io_default_tab_index` | `number` | `0` | Forced selected index in the item/liquid/gas radio group. |
+| `$right_machine_tabs_name` | `string` | `"right_machine_tabs"` | Shared right-side tab group. |
+| `$io_toggle_control_name` | `string` | `"io_toggle_button"` | Open/close binding name. |
+| `$io_config_tabs_name` | `string` | `"io_config_tabs"` | Item/liquid/gas radio group name. |
+| `$io_items_toggle_control_name` | `string` | `"io_items_toggle_button"` | Item-page binding name. |
+| `$io_fluids_toggle_control_name` | `string` | `"io_fluids_toggle_button"` | Liquid-page binding name. |
+| `$io_gases_toggle_control_name` | `string` | `"io_gases_toggle_button"` | Gas-page binding name. |
+
+The three default mode descriptions are `IO Modes:` followed by blue inputs 1-9 and red outputs 1-9. Override them when a machine supports fewer modes or additional semantic roles:
+
+```json
+{
+  "io@uc.io_tab": {
+    "$has_item_io": true,
+    "$has_fluid_io": true,
+    "$io_items_modes_description": "§rItem IO Modes:\n§r- §9Input 1\n§r- §cOutput 1",
+    "$io_fluids_modes_description": "§rLiquid IO Modes:\n§r- §9Input 1"
+  }
+}
+```
+
+Use `§r` at the beginning of every custom formatted line so formatting inherited from another label or item name cannot leak into it.
+
+### Face collection indices
+
+| Resource | Top | Left | Front | Right | Bottom | Back |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Item | `$io_item_top_index` = 8 | `$io_item_left_index` = 9 | `$io_item_front_index` = 10 | `$io_item_right_index` = 11 | `$io_item_bottom_index` = 12 | `$io_item_back_index` = 13 |
+| Liquid | `$io_fluid_top_index` = 14 | `$io_fluid_left_index` = 15 | `$io_fluid_front_index` = 16 | `$io_fluid_right_index` = 17 | `$io_fluid_bottom_index` = 18 | `$io_fluid_back_index` = 19 |
+| Gas | `$io_gas_top_index` = 20 | `$io_gas_left_index` = 21 | `$io_gas_front_index` = 22 | `$io_gas_right_index` = 23 | `$io_gas_bottom_index` = 24 | `$io_gas_back_index` = 25 |
+
+Every visible resource page needs six valid helper-entity indices. The item at each index carries the current IO state in its hover text; clicking the face button dispatches the shared machine-button action.
+
+### Face textures
+
+| Variable | Default texture |
+| --- | --- |
+| `$io_top_texture` | `textures/blocks/machines/exhibitor_base_up` |
+| `$io_left_texture` | `textures/blocks/machines/exhibitor_base_west` |
+| `$io_front_texture` | `textures/blocks/machines/exhibitor_base_north` |
+| `$io_right_texture` | `textures/blocks/machines/exhibitor_base_east` |
+| `$io_bottom_texture` | `textures/blocks/machines/exhibitor_base_down` |
+| `$io_back_texture` | `textures/blocks/machines/exhibitor_base_south` |
+
+These six textures visualize block orientation. Override them only when the machine needs a different face diagram.
+
+<div className="uc-ui-gallery">
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/toggles/item_unchecked.png" alt="Unchecked item IO page" /><figcaption>items unchecked</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/toggles/item_checked.png" alt="Checked item IO page" /><figcaption>items checked</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/toggles/fluid_unchecked.png" alt="Unchecked liquid IO page" /><figcaption>liquids unchecked</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/toggles/fluid_checked.png" alt="Checked liquid IO page" /><figcaption>liquids checked</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/toggles/gas_unchecked.png" alt="Unchecked gas IO page" /><figcaption>gases unchecked</figcaption></figure>
+  <figure className="uc-ui-swatch"><img src="/img/documentation/utilitycraft/ui-core/toggles/gas_checked.png" alt="Checked gas IO page" /><figcaption>gases checked</figcaption></figure>
+</div>
+
+## Lower-level IO controls
+
+Normal machines should use `uc.io_tab`. The following controls are its compositional parts.
+
+### `uc.io_face_slots`
+
+Builds the six-face diagram. It accepts `$io_top_index`, `$io_left_index`, `$io_front_index`, `$io_right_index`, `$io_bottom_index`, and `$io_back_index` (defaults 8-13), plus the six `$io_*_texture` variables listed above.
+
+### `uc.io_face_button`
+
+Combines one machine button, one face texture, and one state outline.
+
+| Variable | Default |
+| --- | --- |
+| `$item_collection_name` | `"container_items"` |
+| `$io_button_index` | `0` |
+| `$io_button_offset` | `[0, 0]` |
+| `$io_face_offset` | `[0, 1]` |
+| `$io_face_texture` | `textures/blocks/machines/exhibitor_base_north` |
+
+### `uc.io_face_outline`
+
+Reads the selected IO button item's hover text and draws the outline matching its exact state marker.
+
+| Variable family | Defaults / accepted states |
+| --- | --- |
+| `$item_collection_name`, `$io_button_index`, `$io_button_offset` | `container_items`, `0`, `[0,0]` |
+| `$io_default_texture`, `$io_disabled_texture`, `$io_none_texture`, `$io_normal_texture` | Corresponding `default`, `none`, and `normal` slot textures. |
+| `$io_input_1_texture` ... `$io_input_9_texture` | `textures/ui/slots/input_1_slot` ... `input_9_slot`. |
+| `$io_output_1_texture` ... `$io_output_9_texture` | `textures/ui/slots/output_1_slot` ... `output_9_slot`. |
+| `$io_both_texture`, `$io_upgrade_texture`, `$io_fuel_texture` | Corresponding slot textures. |
+| `$io_item_resource_texture`, `$io_liquid_resource_texture`, `$io_gas_resource_texture`, `$io_energy_texture` | Corresponding resource slot textures. |
+
+The exact recognized state markers are `default`, `disabled`, `none`, `normal`, `input_1` through `input_9`, `output_1` through `output_9`, `both`, `upgrade`, `fuel`, `item_resource`, `liquid_resource`, `gas_resource`, and `energy`.
+
+`uc.io_state_outline` is the internal 18x18 image primitive used once per possible state. It expects `$item_collection_name`, `$io_button_index`, `$io_button_offset`, `$io_state_name`, and `$io_outline_texture` from its parent.
+
+## `uc.info_tab`
+
+Creates a localized, scrollable information panel.
+
+| Variable | Type | Default | Purpose |
+| --- | --- | --- | --- |
+| `$item_collection_name` | `string` | `"container_items"` | Shared collection context. |
+| `$info_description` | `string` | `""` when omitted | Localization key or literal description shown in the scroll area. |
+| `$right_machine_tabs_name` | `string` | `"right_machine_tabs"` | Shared right-tab radio group. |
+| `$info_toggle_control_name` | `string` | `"info_toggle_button"` | Open/close binding name. |
+
+`uc.info_description_scroll_content` is the internal vertical scrolling content. It accepts `$info_description`, default `""`. For a normal machine, pass the value to `info_tab` and let it compose the scroll control.
+
+## Generic toggle utilities
+
+### `uc.toggle_button`
+
+A reusable Minecraft JSON UI toggle with optional radio grouping, tooltip, background, and icon.
+
+| Variable group | Variables and defaults |
+| --- | --- |
+| Identity/state | `$toggle_name="toggle_button"`, `$toggle_index=0`, `$toggle_group=false`, `$toggle_default_state=false`, `$toggle_group_default_selected=0`, `$toggle_control_name=""` |
+| Layout | `$toggle_layer=0`, `$toggle_size=[18,18]`, `$toggle_lost_reset=true` |
+| Tooltip | `$toggle_hover_text=""`, `$toggle_checked_hover_text=""`, both localization flags `false`, `$toggle_checked_hover_text_from_hover=false` |
+| State textures | `$toggle_unchecked`, `$toggle_checked`, `$toggle_unchecked_hover`, `$toggle_checked_hover` use the matching `textures/ui/buttons/*` defaults |
+| Background | `$has_toggle_bg=false`, `$toggle_bg_texture="textures/ui/toggle_button/right_bg"`, `$toggle_bg_size=[24,24]`, `$toggle_bg_offset=[0,0]`, `$toggle_bg_layer=-6` |
+| Optional icon | `$has_toggle_icon=false`, `$toggle_icon_size=[16,16]`, four `$toggle_icon_*` texture paths default to `""`, `$toggle_icon_uv_size=[16,16]` |
+
+`uc.button_display` renders the collection item used as a 16x16 button visual. It accepts `$item_collection_name` and `$collection_index` (default `0`).
+
+`uc.toggle_button_panel` shows an arbitrary `$controls` array while the toggle named by `$panel_control_name` is checked. Both variables default to an empty value.
+

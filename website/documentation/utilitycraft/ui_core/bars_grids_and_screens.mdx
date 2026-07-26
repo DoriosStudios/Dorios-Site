@@ -1,0 +1,165 @@
+---
+id: bars-grids-and-screens
+title: Resource bars, slot layouts, and screens
+sidebar_label: Bars, grids, and screens
+sidebar_position: 4
+description: Use UtilityCraft energy and fluid bars, multi-resource displays, slot stacks and grids, and standard machine screen backgrounds.
+---
+
+# Resource bars, slot layouts, and screens
+
+Resource bars visualize display items supplied by the helper entity. Energy, liquid, and gas storage classes are responsible for selecting and updating those display items; the JSON UI control supplies the border, tooltip, and placement.
+
+## Standard resource bars
+
+| Element | Capacity display | Border | Variables |
+| --- | --- | --- | --- |
+| `uc.energy_bar` | One large display item | Energy | `$item_collection_name`, `$has_bg`, `$bar_bg_texture`, `$collection_index` |
+| `uc.fluid_bar` | One large display item | Liquid | `$item_collection_name`, `$has_bg`, `$collection_index` |
+| `uc.liquid_bar` | One large display item | Liquid plus optional IO outline | `$item_collection_name`, `$has_bg`, `$bar_bg_texture`, `$collection_index`, `$show_liquid_outline`, `$liquid_outline_texture` |
+| `uc.big_energy_bar` | Three overlapping display items | Wide energy | `$item_collection_name`, `$collection_index` |
+| `uc.big_fluid_bar` | Three overlapping display items | Wide liquid | `$item_collection_name`, `$collection_index` |
+
+Defaults are `container_items`, index `0`, and no background except for `energy_bar`, whose `$has_bg` is `true`. The default `$bar_bg_texture` is `textures/ui/toggle_button/left_bg`. `liquid_bar` defaults `$show_liquid_outline` to `false` and `$liquid_outline_texture` to the input-1 outline.
+
+```json title="Energy and liquid displays"
+{
+  "energy@uc.energy_bar": {
+    "$collection_index": 0,
+    "offset": [-101, -13]
+  }
+},
+{
+  "coolant@uc.liquid_input_1_bar": {
+    "$collection_index": 6,
+    "offset": [-80, -13]
+  }
+}
+```
+
+:::note `$collection_index` versus `collection_index`
+The resource-bar wrappers expose `$collection_index` and forward it to their nested display. Slot controls usually receive the standard `collection_index` property directly. Follow the variable table for the selected control.
+:::
+
+<div className="uc-ui-gallery">
+  <figure className="uc-ui-swatch uc-ui-swatch--wide"><img src="/img/documentation/utilitycraft/ui-core/chrome/energy_border.png" alt="UtilityCraft energy bar border" /><figcaption>energy_bar border</figcaption></figure>
+  <figure className="uc-ui-swatch uc-ui-swatch--wide"><img src="/img/documentation/utilitycraft/ui-core/chrome/liquid_border.png" alt="UtilityCraft liquid bar border" /><figcaption>liquid_bar border</figcaption></figure>
+  <figure className="uc-ui-swatch uc-ui-swatch--wide"><img src="/img/documentation/utilitycraft/ui-core/chrome/big_energy_border.png" alt="UtilityCraft wide energy bar border" /><figcaption>big_energy_bar border</figcaption></figure>
+  <figure className="uc-ui-swatch uc-ui-swatch--wide"><img src="/img/documentation/utilitycraft/ui-core/chrome/big_liquid_border.png" alt="UtilityCraft wide liquid bar border" /><figcaption>big_fluid_bar border</figcaption></figure>
+</div>
+
+## Liquid IO aliases
+
+The following controls inherit `uc.liquid_bar`, enable its IO outline, and choose an exact IO color. They accept the same variables as `liquid_bar`; overriding `$liquid_outline_texture` is possible but normally unnecessary.
+
+| Direction | Exact controls |
+| --- | --- |
+| Inputs | `uc.liquid_input_1_bar` through `uc.liquid_input_9_bar` |
+| Outputs | `uc.liquid_output_1_bar` through `uc.liquid_output_9_bar` |
+| Fuel | `uc.liquid_fuel_bar` |
+
+Use the alias matching the port type registered by the machine. The number is meaningful: it connects the display color to the same `input_1` through `input_9` or `output_1` through `output_9` IO types used by DoriosCore.
+
+## Generic and multi-part bars
+
+These lower-level wrappers are useful when a custom display spans several item frames.
+
+| Element | Visible parts | Variables |
+| --- | ---: | --- |
+| `uc.bar` | 1 | `$item_collection_name`, `$is_energy`, `$is_liquid`, `$has_bg`, `$bar_bg_texture`, `$collection_index` |
+| `uc.bar_double` | 2 | `$item_collection_name`, `$is_energy`, `$is_liquid`, `$collection_index` |
+| `uc.bar_triple` | 3 | Same |
+| `uc.bar_quadruple` | 4 | Same |
+| `uc.bar_quintuple` | 5 | Same |
+
+`$is_energy` and `$is_liquid` default to `false`; enable only the border that represents the resource. All parts use the same collection index because a storage display is composed from overlapping render passes of the same display item.
+
+### `uc._bar_multi`
+
+Internal implementation for two- through five-part bars. It accepts:
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `$item_collection_name` | `"container_items"` | Source collection. |
+| `$is_energy`, `$is_liquid` | `false` | Selects the wide border. |
+| `$collection_index` | `0` | Display-item index. |
+| `$show_1`, `$show_2`, `$show_3` | `true` | Shows the first three render parts. |
+| `$show_4`, `$show_5` | `false` | Shows the optional fourth and fifth parts. |
+| `$offset_1` ... `$offset_5` | `[-6,14]`, `[10,14]`, `[26,14]`, `[42,14]`, `[58,14]` | Position of each render part. |
+
+`uc.bar_background` draws the optional background. It accepts `$bar_bg_texture` (default `textures/ui/toggle_button/left_bg`); its nested cell size is fixed to `[24, 56]`.
+
+## Slot stacks
+
+### `uc.slot_stack_vertical`
+
+Places up to three native container items vertically. It accepts:
+
+| Variable | Default |
+| --- | --- |
+| `$item_collection_name` | `"container_items"` |
+| `$has_bg` | `false` |
+| `$has_first`, `$has_second`, `$has_third` | `true` |
+| `$collection_index_first` | `0` |
+| `$collection_index_second` | `1` |
+| `$collection_index_third` | `2` |
+
+### `uc.slot_stack_horizontal`
+
+Uses the same visibility and index variables, without `$has_bg`, and positions the items left, center, and right.
+
+```json
+{
+  "inputs@uc.slot_stack_horizontal": {
+    "$collection_index_first": 3,
+    "$collection_index_second": 4,
+    "$collection_index_third": 5,
+    "$has_third": false,
+    "offset": [-18, 0]
+  }
+}
+```
+
+## Slot grids
+
+| Element | Size | Indices | Variables |
+| --- | ---: | --- | --- |
+| `uc.slot_grid_2x2` | 36x36 | `$collection_index_1` ... `$collection_index_4`, default `0` ... `3` | `$item_collection_name`, `$slot_outline_texture`, index variables |
+| `uc.slot_grid_3x3` | 54x54 | `$collection_index_1` ... `$collection_index_9`, default `0` ... `8` | Same family through index 9 |
+
+`$slot_outline_texture` defaults to `textures/ui/slots/default_slot`. The grid outline is 38x38 for the 2x2 control and 56x56 for the 3x3 control, extending one pixel around the interactive cells.
+
+```json
+{
+  "recipe_inputs@uc.slot_grid_3x3": {
+    "offset": [12, 13],
+    "$collection_index_1": 3,
+    "$collection_index_2": 4,
+    "$collection_index_3": 5,
+    "$collection_index_4": 6,
+    "$collection_index_5": 7,
+    "$collection_index_6": 8,
+    "$collection_index_7": 9,
+    "$collection_index_8": 10,
+    "$collection_index_9": 11,
+    "$slot_outline_texture": "textures/ui/slots/input_1_slot"
+  }
+}
+```
+
+## Machine screens
+
+| Element | Size | Default offset | Purpose |
+| --- | ---: | ---: | --- |
+| `uc.machine_small_screen` | 52x52 | `[11, 14]` | Standard square machine content area. |
+| `uc.big_machine_screen` | 104x52 | `[11, 14]` | Wide content area for a larger slot layout or additional status. |
+| `uc.machine_side_panel` | 90x166 | `[-86, -7]` | Extra panel to the left of the standard machine window. |
+
+<div className="uc-ui-gallery">
+  <figure className="uc-ui-swatch uc-ui-swatch--wide"><img src="/img/documentation/utilitycraft/ui-core/chrome/screen_vertical_bg.png" alt="Small UtilityCraft machine screen" /><figcaption>machine_small_screen</figcaption></figure>
+  <figure className="uc-ui-swatch uc-ui-swatch--wide"><img src="/img/documentation/utilitycraft/ui-core/chrome/screen_thermo_bg.png" alt="Wide UtilityCraft machine screen" /><figcaption>big_machine_screen</figcaption></figure>
+  <figure className="uc-ui-swatch uc-ui-swatch--wide"><img src="/img/documentation/utilitycraft/ui-core/chrome/side_panel.png" alt="UtilityCraft machine side panel" /><figcaption>machine_side_panel</figcaption></figure>
+</div>
+
+The side panel accepts `$item_collection_name`, defaulting to `container_items`. Use it only when the standard machine screen cannot contain the required controls. For a normal machine whose controls fit, keep the standard screen and machine label arrangement used by UtilityCraft.
+

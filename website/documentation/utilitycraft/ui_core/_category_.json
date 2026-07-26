@@ -1,0 +1,10 @@
+{
+  "label": "Machine UI Core",
+  "position": 4,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "doc",
+    "id": "utilitycraft/ui_core/ui-core-overview"
+  }
+}
