@@ -2,7 +2,7 @@
 id: utilitycraft-documentation
 title: Create UtilityCraft Extensions
 sidebar_label: UtilityCraft Extensions
-sidebar_position: 3
+sidebar_position: 1
 pagination_prev: null
 description: Learn to create UtilityCraft machines, generators, integrations, and addon-owned systems with DoriosLib and DoriosCore.
 ---
@@ -49,12 +49,12 @@ The documentation is organized as a progressive course:
 | Section | Goal | Status |
 | --- | --- | --- |
 | [Getting Started](./getting-started/) | Install, inspect, and run the template safely. | Available |
-| [Your First Machine](./first-machine/) | Build a complete beginner-friendly scripted machine. | Planned |
-| [Machine UI](./machine-ui/) | Add slots, labels, progress, and standard tabs. | Planned |
-| [Machine IO](./machine-io/) | Configure faces and item, liquid, and gas routing. | Planned |
-| [Machine Upgrades](./machine-upgrades/) | Register and consume standard and addon-owned perks. | Planned |
-| [UtilityCraft Registries](./registries/) | Register recipes, resources, plants, fuels, and drops with DoriosLib. | Planned |
-| [Reusable Components](./reusable-components/) | Use existing block and item components correctly. | Planned |
+| [Your First Machine](./first-machine/) | Build a complete beginner-friendly scripted machine. | Available |
+| [Machine UI](./machine-ui/) | Add slots, labels, progress, and standard tabs. | Available |
+| [Machine IO](./machine-io/) | Configure faces and item, liquid, and gas routing. | Available |
+| [Machine Upgrades](./machine-upgrades/) | Register and consume standard and addon-owned perks. | Available |
+| [UtilityCraft Registries](./registries/) | Register recipes, resources, plants, fuels, and drops with DoriosLib. | Available |
+| [Reusable Components](./reusable-components/) | Use existing block and item components correctly. | Available |
 | [Generators](./generators/) | Create passive, fuel, liquid, and gas generators. | Planned |
 | [Advanced Examples](./advanced/) | Extend DoriosCore safely and build multiblocks and ports. | Planned |
 | [Machine UI Core](./ui_core/) | Look up every shared `@uc.*` JSON UI element. | Reference available |
