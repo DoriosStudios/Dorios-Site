@@ -55,8 +55,8 @@ The documentation is organized as a progressive course:
 | [Machine Upgrades](./machine-upgrades/) | Register and consume standard and addon-owned perks. | Available |
 | [UtilityCraft Registries](./registries/) | Register recipes, resources, plants, fuels, and drops with DoriosLib. | Available |
 | [Reusable Components](./reusable-components/) | Use existing block and item components correctly. | Available |
-| [Generators](./generators/) | Create passive, fuel, liquid, and gas generators. | Planned |
-| [Advanced Examples](./advanced/) | Extend DoriosCore safely and build multiblocks and ports. | Planned |
+| [Generators](./generators/) | Create passive, fuel, liquid, and gas generators. | Available |
+| [Advanced Examples](./advanced/) | Extend DoriosCore safely and build multiblocks and ports. | Available |
 | [Machine UI Core](./ui_core/) | Look up every shared `@uc.*` JSON UI element. | Reference available |
 
 ## Rules followed throughout this course
