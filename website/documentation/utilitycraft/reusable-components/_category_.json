@@ -1,0 +1,10 @@
+{
+  "label": "Reusable Components",
+  "position": 7,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "utilitycraft/reusable-components/reusable-components"
+  }
+}

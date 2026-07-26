@@ -1,0 +1,10 @@
+{
+  "label": "Machine IO",
+  "position": 4,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "utilitycraft/machine-io/machine-io"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Machine UI",
+  "position": 3,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "utilitycraft/machine-ui/machine-ui"
+  }
+}

@@ -62,49 +62,49 @@ DoriosLib validates that the top-level payload is an object and JSON serializabl
 
 `registerAutoFisherDrop(payload: RegistrationPayload | RegistrationPayload[]): void`
 
-Registers one definition object or an array of Auto Fisher drop definitions. See the [AutoFisher registration reference](/documentation/utilitycraft/recipes/autofisher).
+Registers one definition object or an array of Auto Fisher drop definitions. See the [Fishing and Sieve integration guide](/documentation/utilitycraft/registries/fishing-sieve).
 
 ### registerCrafterRecipe
 
 `registerCrafterRecipe(payload: RegistrationPayload): void`
 
-Registers Assembler/autocrafter recipes. See [Assembler recipe registration](/documentation/utilitycraft/recipes/assembler).
+Registers Assembler/autocrafter recipes. See [UtilityCraft machine recipe registration](/documentation/utilitycraft/registries/machine-recipes).
 
 ### registerCrusherRecipe
 
 `registerCrusherRecipe(payload: RegistrationPayload): void`
 
-Registers Crusher recipes. See [Crusher recipe registration](/documentation/utilitycraft/recipes/crusher).
+Registers Crusher recipes. See [UtilityCraft machine recipe registration](/documentation/utilitycraft/registries/machine-recipes).
 
 ### registerFurnaceRecipe
 
 `registerFurnaceRecipe(payload: RegistrationPayload): void`
 
-Registers UtilityCraft furnace/incinerator recipes. See [Incinerator registration](/documentation/utilitycraft/recipes/incinerator).
+Registers UtilityCraft furnace/incinerator recipes. See [UtilityCraft machine recipe registration](/documentation/utilitycraft/registries/machine-recipes).
 
 ### registerInfuserRecipe
 
 `registerInfuserRecipe(payload: RegistrationPayload): void`
 
-Registers Infuser input pairs and outputs. See [Infuser registration](/documentation/utilitycraft/recipes/infuser).
+Registers Infuser input pairs and outputs. See [UtilityCraft machine recipe registration](/documentation/utilitycraft/registries/machine-recipes).
 
 ### registerMelterRecipe
 
 `registerMelterRecipe(payload: RegistrationPayload): void`
 
-Registers Magmatic Chamber/melter recipes. See [Magmatic Chamber registration](/documentation/utilitycraft/recipes/magmatic-chamber).
+Registers Magmatic Chamber/melter recipes. See [UtilityCraft machine recipe registration](/documentation/utilitycraft/registries/machine-recipes).
 
 ### registerPressRecipe
 
 `registerPressRecipe(payload: RegistrationPayload): void`
 
-Registers Electro Press recipes. See [Electro Press registration](/documentation/utilitycraft/recipes/electro-press).
+Registers Electro Press recipes. See [UtilityCraft machine recipe registration](/documentation/utilitycraft/registries/machine-recipes).
 
 ### registerSieveDrop
 
 `registerSieveDrop(payload: RegistrationPayload): void`
 
-Registers AutoSieve drop data. See [AutoSieve registration](/documentation/utilitycraft/recipes/autosieve).
+Registers AutoSieve drop data. See the [Fishing and Sieve integration guide](/documentation/utilitycraft/registries/fishing-sieve).
 
 ## Resource and fuel registrations
 
@@ -158,7 +158,7 @@ Registers a gas and its item/display integration. The addon's corresponding fram
 
 `registerFuel(payload: RegistrationPayload): void`
 
-Registers generator fuel values. See [Fuel registration](/documentation/utilitycraft/recipes/fuel).
+Registers generator fuel values. See [Fuels and Coolants](/documentation/utilitycraft/registries/fuels-coolants).
 
 ## Plants, bonsais, upgrades, and slots
 
@@ -166,7 +166,7 @@ Registers generator fuel values. See [Fuel registration](/documentation/utilityc
 
 `registerPlant(payload: RegistrationPayload): void`
 
-Registers Seed Synthesizer/plant data. See [plant registration](/documentation/utilitycraft/recipes/seed-synthesizer).
+Registers Seed Synthesizer/plant data. See [Plants and Bonsais](/documentation/utilitycraft/registries/plants-bonsais).
 
 ### registerBonsai
 

@@ -1,0 +1,10 @@
+{
+  "label": "UtilityCraft Registries",
+  "position": 6,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "utilitycraft/registries/registries"
+  }
+}
