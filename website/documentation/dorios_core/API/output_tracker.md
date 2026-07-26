@@ -1,65 +1,131 @@
 ---
 id: output-tracker
+title: OutputTracker class
 sidebar_label: OutputTracker
-title: OutputTracker Class
-sidebar_position: 6
+sidebar_position: 16
+description: Cache adjacent item, liquid, and gas compatibility for machine transfer logic.
 ---
 
-# OutputTracker
+# OutputTracker class
 
-:::info
-`OutputTracker` caches item and fluid output targets for machines.
+Namespace: `DoriosCore` · Package: `DoriosCore/index.js`
 
-It replaces older logic that rescanned or pushed to a direction every transfer call. Machines now read a cached target and refresh it when placement changes or when the cached target becomes stale.
-:::
+`OutputTracker` caches two related forms of transfer state:
 
----
+- compatibility for item, liquid, and gas targets on all six absolute faces;
+- the single legacy output target selected from a block's facing state.
 
-# Output Direction
+```js
+import { OutputTracker } from "DoriosCore/index.js";
+```
 
-`OutputTracker.getOutputLocation(block)` reads the machine block state `utilitycraft:axis` and returns the block position on the opposite side.
+[`BasicMachine.processIO()`](./process-io) uses the six-face cache automatically. The cache only records whether a compatible neighbor exists; the machine's IO document still decides which faces are inputs, outputs, or disabled.
 
-| Axis | Output offset |
-| --- | --- |
-| `east` | `x - 1` |
-| `west` | `x + 1` |
-| `north` | `z + 1` |
-| `south` | `z - 1` |
-| `up` | `y - 1` |
-| `down` | `y + 1` |
-
----
-
-# API
-
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-method">M</span><a href="#isoutputtarget">isOutputTarget</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#getoutputlocation">getOutputLocation</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#getoutputtarget">getOutputTarget</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#setoutputtarget">setOutputTarget</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#clearoutputtarget">clearOutputTarget</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#refreshoutput">refreshOutput</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#refreshadjacentoutputs">refreshAdjacentOutputs</a></div>
-
-</div>
-
----
-
-## isOutputTarget
+## Definition
 
 <div class="api-signature">
 
-`OutputTracker.isOutputTarget(block: Block | undefined, type: "item" | "fluid"): boolean`
+`class OutputTracker`
 
 </div>
 
-Checks whether a block can receive the requested transfer type.
+All members are static. Do not construct this class.
 
-- `item`: block has tag `dorios:item` or is a vanilla container.
-- `fluid`: block has tag `dorios:fluid` and does not have tag `dorios:isTube`.
+## Transfer types and groups
 
-## getOutputLocation
+```ts
+type OutputTransferType = "item" | "fluid" | "gas";
+type IOTargetGroup = "items" | "liquids" | "gases";
+```
+
+The singular transfer type is used by legacy output-target methods. The plural group name addresses the six-face cache.
+
+## Target compatibility
+
+### isOutputTarget(block, type)
+
+<div class="api-signature">
+
+`OutputTracker.isOutputTarget(block: Block | undefined, type: OutputTransferType): boolean`
+
+</div>
+
+Returns whether `block` can receive the requested resource.
+
+| Type | Requirement |
+| --- | --- |
+| `item` | `resolveItemContainerAt()` can resolve an inventory at the block location. |
+| `fluid` | The block has `dorios:fluid` and does not have `dorios:isTube`. |
+| `gas` | The block has `dorios:gas` and does not have `dorios:isTube`. |
+
+Missing blocks and unsupported type strings return `false`.
+
+### getNeighborLocation(block, direction)
+
+<div class="api-signature">
+
+`OutputTracker.getNeighborLocation(block: Block, direction: DirectionName | string): Vector3 | undefined`
+
+</div>
+
+Returns the location one block from `block` in `up`, `down`, `north`, `south`, `east`, or `west`. Invalid blocks and directions return `undefined`.
+
+## Six-face IO cache
+
+### getIOTargets(entity)
+
+<div class="api-signature">
+
+`OutputTracker.getIOTargets(entity: Entity | undefined): Record<string, Record<string, boolean>>`
+
+</div>
+
+Parses `dorios:io_targets` from a helper entity. Invalid JSON is cleared and returns an empty object.
+
+A machine that supports every resource can produce:
+
+```js
+{
+  items: { up: true, down: false, north: true, south: false, east: false, west: false },
+  liquids: { up: false, down: true, north: false, south: false, east: true, west: false },
+  gases: { up: false, down: false, north: false, south: true, east: false, west: true },
+}
+```
+
+### refreshIOTargets(block)
+
+<div class="api-signature">
+
+`OutputTracker.refreshIOTargets(block: Block | undefined): Record<string, Record<string, boolean>> | undefined`
+
+</div>
+
+Rebuilds compatibility for all supported resources and directions, stores the result on the helper entity, and returns it.
+
+The block must be one of:
+
+- a block tagged `dorios:machine`;
+- a block tagged with both `dorios:generator` and `dorios:io`.
+
+Only resource groups represented by block tags are included: `dorios:item`, `dorios:fluid`, and `dorios:gas`. The method returns `undefined` when the block is not an IO owner or its helper entity cannot be resolved.
+
+### refreshAdjacentIOTargets(block)
+
+`OutputTracker.refreshAdjacentIOTargets(block: Block | undefined): void` rebuilds the six-face cache of every adjacent machine or opted-in generator.
+
+### isIOTargetEnabled(entity, group, direction)
+
+<div class="api-signature">
+
+`OutputTracker.isIOTargetEnabled(entity: Entity | undefined, group: "items" | "liquids" | "gases", direction: string): boolean`
+
+</div>
+
+Returns `true` only when the cached entry for that exact group and direction is `true`. Missing or stale entries return `false`.
+
+## Facing-based output cache
+
+### getOutputLocation(block)
 
 <div class="api-signature">
 
@@ -67,71 +133,69 @@ Checks whether a block can receive the requested transfer type.
 
 </div>
 
-Returns the output location based on `utilitycraft:axis`.
+Reads the first available facing state in this order:
 
-## getOutputTarget
+1. `minecraft:facing_direction`
+2. `minecraft:cardinal_direction`
+3. `utilitycraft:axis`
 
-<div class="api-signature">
+It returns the adjacent location on the machine's output side. An unsupported or absent direction returns `undefined`.
 
-`OutputTracker.getOutputTarget(entity: Entity, type: "item" | "fluid"): Vector3 | undefined`
+### getOutputTarget(entity, type)
 
-</div>
+`OutputTracker.getOutputTarget(entity: Entity, type: OutputTransferType): Vector3 | undefined` reads a cached target from the helper entity.
 
-Reads the cached target from entity dynamic properties:
+| Type | Dynamic property |
+| --- | --- |
+| `item` | `dorios:item_output` |
+| `fluid` | `dorios:fluid_output` |
+| `gas` | `dorios:gas_output` |
 
-- `dorios:item_output`
-- `dorios:fluid_output`
+Malformed JSON or coordinates are rejected. JSON parsing failures also clear the property.
 
-Invalid JSON is cleared automatically.
+### setOutputTarget(entity, type, target)
 
-## setOutputTarget
+`OutputTracker.setOutputTarget(entity: Entity, type: OutputTransferType, target: Vector3): void` serializes `target` into the property for `type`. Missing entities, targets, and unsupported types are ignored.
 
-<div class="api-signature">
+### clearOutputTarget(entity, type)
 
-`OutputTracker.setOutputTarget(entity: Entity, type: "item" | "fluid", target: Vector3): void`
+`OutputTracker.clearOutputTarget(entity: Entity, type: OutputTransferType): void` removes the property for `type`. Missing entities and unsupported types are ignored.
 
-</div>
-
-Stores a cached target.
-
-## clearOutputTarget
-
-<div class="api-signature">
-
-`OutputTracker.clearOutputTarget(entity: Entity, type: "item" | "fluid"): void`
-
-</div>
-
-Clears a cached target.
-
-## refreshOutput
+### refreshOutput(block, type)
 
 <div class="api-signature">
 
-`OutputTracker.refreshOutput(block: Block, type: "item" | "fluid"): Vector3 | undefined`
+`OutputTracker.refreshOutput(block: Block, type: OutputTransferType): Vector3 | undefined`
 
 </div>
 
-Recalculates and stores a target for a machine block. The block must resolve to a helper entity with the `dorios:machine` type family.
+Resolves the helper entity, calculates the facing-based output location, verifies target compatibility, and stores the target. If the location or target is invalid, the existing cached target is cleared.
 
-## refreshAdjacentOutputs
+Returns the valid target location or `undefined`.
 
-<div class="api-signature">
+### refreshAdjacentOutputs(block, type)
 
-`OutputTracker.refreshAdjacentOutputs(block: Block, type: "item" | "fluid"): void`
+`OutputTracker.refreshAdjacentOutputs(block: Block, type: OutputTransferType): void` recalculates `type` for every adjacent block tagged `dorios:machine`.
 
-</div>
+## Automatic refresh
 
-Refreshes output targets for adjacent machine blocks. This is used when an output target block is placed next to an existing machine.
+Importing DoriosCore installs block placement and break listeners. Two ticks after a change, DoriosCore refreshes relevant six-face caches and item, liquid, and gas output targets around the changed position.
 
----
+Transfer code can also refresh lazily, allowing machines placed before a compatible target to recover.
 
-# Automatic Updates
+## Example: diagnose one machine face
 
-`OutputTracker` subscribes to `world.afterEvents.playerPlaceBlock`. After a short delay:
+```js
+import { OutputTracker } from "DoriosCore/index.js";
 
-- newly placed machine blocks refresh item and fluid outputs,
-- newly placed item targets refresh adjacent machine item outputs,
-- newly placed fluid targets refresh adjacent machine fluid outputs.
+const targets = OutputTracker.refreshIOTargets(machine.block);
+const canOutputGasUp =
+  machine.getGasIOMode("up") === "output" &&
+  targets?.gases?.up === true;
+```
 
-Machine transfer methods still refresh lazily when no cache exists, so already-placed machines can recover without requiring a new placement.
+## Remarks
+
+- Compatibility does not grant permission to transfer. Always combine it with the normalized IO configuration.
+- Direction keys are absolute world directions, not relative front, back, left, or right names.
+- UtilityCore owns networks. This class only caches directly adjacent compatible targets for DoriosCore machinery.

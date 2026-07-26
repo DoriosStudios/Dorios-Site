@@ -209,7 +209,7 @@ function tick(block, settings) {
 
   if (produced <= 0) {
     generator.off();
-    generator.setLabel("§eEnergy Full");
+    generator.setLabel("§r§eEnergy Full");
     generator.displayEnergy();
     return;
   }
@@ -217,8 +217,8 @@ function tick(block, settings) {
   generator.on();
   generator.displayEnergy();
   generator.setLabel([
-    "§aGenerator Running",
-    `§7Produced: §f${EnergyStorage.formatEnergyToText(produced)}`,
+    "§r§aGenerator Running",
+    `§r§7Produced: §f${EnergyStorage.formatEnergyToText(produced)}`,
   ]);
 }
 ```

@@ -40,21 +40,21 @@ The current public entry point exposes **103 runtime members** and **93 type-onl
 
 | Members | Scope | Description |
 | --- | --- | --- |
-| `registerIOInterface`, `registerIOInterfaceForBlockTag` | Primary | Register six-face item, liquid, and gas controls by block ID or block tag. |
-| `ensureBlockIOInterface`, `hasRegisteredIOInterface` | Primary | Materialize or query a block's registered UI interface. |
-| `IOInterface` | Primary | Object facade containing the IO registration operations. |
-| `registerLinkNodeIO`, `getLinkNodeIODefinition`, `openLinkNodeIOForm` | Primary | Define and operate item, liquid, and gas routing for multiblock link-node ports. |
-| `InterfaceManager`, `encodeInterfaceSlot`, `decodeInterfaceSlot`, `stripInterfaceSlotCode` | Advanced | Low-level entity-container interface and button infrastructure. |
+| [`registerIOInterface`, `registerIOInterfaceForBlockTag`](./io-interface) | Primary | Register six-face item, liquid, and gas controls by block ID or block tag. |
+| [`ensureBlockIOInterface`, `hasRegisteredIOInterface`](./io-interface) | Primary | Materialize or query a block's registered UI interface. |
+| [`IOInterface`](./io-interface) | Primary | Object facade containing the IO registration operations. |
+| [`registerLinkNodeIO`, `getLinkNodeIODefinition`, `openLinkNodeIOForm`](./link-node-io) | Primary | Define and operate item, liquid, and gas routing for multiblock link-node ports. |
+| [`InterfaceManager`, `encodeInterfaceSlot`, `decodeInterfaceSlot`, `stripInterfaceSlotCode`](./interface-manager) | Advanced | Low-level entity-container interface and button infrastructure. |
 
 ## Liquid IO documents
 
-These functions manage the normalized per-face IO document stored by compatible liquid containers.
+These functions manage the normalized per-face IO document stored by compatible liquid containers. See [Liquid IO documents](./fluid-io).
 
 `DEFAULT_FLUID_IO_MODE`, `FLUID_CONFIG_VERSION`, `FLUID_CONFIG_KEY`, `FLUID_CONTAINER_FAMILY`, `FLUID_CONFIG_EVENT_NAMESPACE`, `SET_FLUID_CONFIG_EVENT_ID`, `registerFluidIODefinition`, `getFluidIODefinition`, `ensureFluidIOConfig`, `setFluidConfig`, `getFluidConfig`, `getFluidConfigRevision`, `getFluidStatus`, `getInputFluidIndices`, `getOutputFluidIndices`, `getFluidIODirectionMode`, `cycleFluidIODirectionMode`, `normalizeFluidConfig`, `cloneFluidConfig`.
 
 ## Gas IO documents
 
-Gas containers expose a parallel document API:
+Gas containers expose a parallel document API. See [Gas IO documents](./gas-io).
 
 `DEFAULT_GAS_IO_MODE`, `GAS_CONFIG_VERSION`, `GAS_CONFIG_KEY`, `GAS_CONTAINER_FAMILY`, `GAS_CONFIG_EVENT_NAMESPACE`, `SET_GAS_CONFIG_EVENT_ID`, `registerGasIODefinition`, `getGasIODefinition`, `ensureGasIOConfig`, `setGasConfig`, `getGasConfig`, `getGasConfigRevision`, `getGasStatus`, `getInputGasIndices`, `getOutputGasIndices`, `getGasIODirectionMode`, `cycleGasIODirectionMode`, `normalizeGasConfig`, `cloneGasConfig`.
 
@@ -62,9 +62,9 @@ Gas containers expose a parallel document API:
 
 | Resource | Members |
 | --- | --- |
-| Items | `resolveItemContainerAt` |
-| Liquids | `resolveFluidContainer`, `resolveFluidContainerAt`, `getFluidInputIndices`, `getFluidOutputIndices`, `getFluidContainerRevision`, `transferFluid`, `insertFluid`, `getFluidStorage` |
-| Gases | `resolveGasContainer`, `resolveGasContainerAt`, `getGasInputIndices`, `getGasOutputIndices`, `getGasContainerRevision`, `transferGas`, `insertGas`, `getGasStorage` |
+| Items | [`resolveItemContainerAt`](./container-adapters) |
+| Liquids | [`resolveFluidContainer`, `resolveFluidContainerAt`, `getFluidInputIndices`, `getFluidOutputIndices`, `getFluidContainerRevision`, `transferFluid`, `insertFluid`, `getFluidStorage`](./container-adapters) |
+| Gases | [`resolveGasContainer`, `resolveGasContainerAt`, `getGasInputIndices`, `getGasOutputIndices`, `getGasContainerRevision`, `transferGas`, `insertGas`, `getGasStorage`](./container-adapters) |
 
 Use these advanced adapters when transferring resources between arbitrary compatible targets. Normal `Machine.processIO()` calls already use the registered machine IO.
 
@@ -75,13 +75,13 @@ Use these advanced adapters when transferring resources between arbitrary compat
 | [`TickScheduler`](./tick-scheduler) | Primary / Advanced | Distributes closed-machine work across groups and exposes the active profile. |
 | [`OutputTracker`](./output-tracker) | Advanced | Caches enabled item, liquid, and gas output targets. |
 | [`Rotation`](./rotation) | Primary | Handles placement facing and wrench rotation. |
-| `ContainerSessionManager` | Advanced | Tracks which player has which helper-entity container open. |
+| [`ContainerSessionManager`](./container-sessions) | Advanced | Tracks open helper-entity containers and player-specific sessions. |
 | `ButtonItemStack`, `loadButtonItemStack`, [`ButtonManager`](./button-manager) | Compatibility | Existing polling-based container buttons. Prefer registered interfaces for new IO controls. |
-| `addOpenUICount`, `removeOpenUICount` | Advanced | Maintains the open-UI counter used by scheduling and rendering. |
+| [`addOpenUICount`, `removeOpenUICount`](./container-sessions) | Advanced | Maintains the open-UI counter used by scheduling and rendering. |
 
 ## Resource lore
 
-`RESOURCE_LORE_MARKERS`, `buildEnergyLoreLine`, `buildFluidLoreLine`, `buildGasLoreLine`, `createResourceLore`, `parseResourceLore`, `getResourcesFromItem`, and `restoreResourceSnapshot` serialize stored resources into a placed machine's dropped item and restore them after placement.
+[`RESOURCE_LORE_MARKERS`, `buildEnergyLoreLine`, `buildFluidLoreLine`, `buildGasLoreLine`, `createResourceLore`, `parseResourceLore`, `getResourcesFromItem`, and `restoreResourceSnapshot`](./resource-lore) serialize stored resources into a placed machine's dropped item and restore them after placement.
 
 These functions are advanced APIs. `Machine.spawnEntity()`, `Machine.onDestroy()`, `Generator.spawnEntity()`, and `Generator.onDestroy()` already handle the normal lifecycle.
 
@@ -95,9 +95,11 @@ These functions are advanced APIs. `Machine.spawnEntity()`, `Machine.onDestroy()
 
 ## Protocol constants
 
-Advanced integrations can use `TICK_GROUP_PROPERTY_ID`, `TICK_GROUP_COUNTS_PROPERTY_ID`, `DEFAULT_ENTITY_ID`, `DEFAULT_SCHEDULER_PROFILE`, `SET_SCHEDULER_PROFILE_EVENT_ID`, `SET_TICK_SPEED_EVENT_ID`, `REGISTER_GAS_ITEM_EVENT_ID`, `REGISTER_GAS_HOLDER_EVENT_ID`, and `REGISTER_MACHINE_UPGRADE_EVENT_ID`.
+Advanced integrations can use [`TICK_GROUP_PROPERTY_ID`, `TICK_GROUP_COUNTS_PROPERTY_ID`, `DEFAULT_ENTITY_ID`, `DEFAULT_SCHEDULER_PROFILE`, `SET_SCHEDULER_PROFILE_EVENT_ID`, `SET_TICK_SPEED_EVENT_ID`, `REGISTER_GAS_ITEM_EVENT_ID`, `REGISTER_GAS_HOLDER_EVENT_ID`, and `REGISTER_MACHINE_UPGRADE_EVENT_ID`](./protocol-constants).
 
 Prefer the corresponding classes and DoriosLib registries over sending protocol events manually.
+
+See [DoriosCore script events](./script-events) for the supported cross-addon and command payloads.
 
 ## Type-only contracts
 

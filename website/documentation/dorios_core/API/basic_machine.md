@@ -119,9 +119,9 @@ Writes the machine label item while `shouldUpdateUI` is `true`.
 
 ```js
 machine.setLabel([
-  "§aCrusher Running",
-  "§7Input: §fCobblestone",
-  "§7Output: §fGravel",
+  "§r§aCrusher Running",
+  "§r§7Input: §fCobblestone",
+  "§r§7Output: §fGravel",
 ]);
 ```
 
@@ -259,6 +259,8 @@ interface ProcessIOSummary {
 ```
 
 Invalid runtimes return a summary containing four zeros. Item input scanning maintains a rotating cursor so large neighboring inventories are scanned fairly across ticks.
+
+See [Process machine IO](./process-io) for processing order, face resolution, fallbacks, fairness, and adapter selection.
 
 ```js
 const moved = machine.processIO({

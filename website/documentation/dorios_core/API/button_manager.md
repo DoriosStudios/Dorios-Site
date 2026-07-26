@@ -1,96 +1,121 @@
 ---
 id: button-manager
+title: ButtonManager class
 sidebar_label: ButtonManager
-title: ButtonManager Class
-sidebar_position: 7
+sidebar_position: 20
+description: Maintain polling-based button slots in legacy and specialized machine container UIs.
 ---
 
-# ButtonManager
+# ButtonManager class
 
-:::info
-`ButtonManager` turns inventory slots into clickable machine UI buttons.
+Namespace: `DoriosCore` · Package: `DoriosCore/index.js`
 
-It watches registered slots for item changes, restores the shared button item, and runs a callback for the machine entity.
-:::
-
----
-
-# Setup
-
-The DoriosCore initializer calls:
+`ButtonManager` is the compatibility button watcher for machine container UIs. It detects a button press as a change to a registered inventory slot, runs a callback, and restores the shared button item.
 
 ```js
-loadButtonItemStack("utilitycraft:ui_filler", ItemStack);
+import {
+  ButtonItemStack,
+  ButtonManager,
+  loadButtonItemStack,
+} from "DoriosCore/index.js";
 ```
 
-That creates the shared button item template used to restore button slots.
+:::tip
+Use [`InterfaceManager`](./interface-manager) for new addon-owned controls and [`registerIOInterface`](./io-interface) for IO tabs. Use `ButtonManager` when maintaining an existing polling-based UI or when its one-tick slot watcher is specifically required.
+:::
 
-Register button definitions once, then call `ensureWatching()` from the machine tick while its UI should be interactive.
-
----
-
-# API
-
-<div class="api-grid">
-
-<div class="api-index-item"><span class="api-method">M</span><a href="#loadbuttonitemstack">loadButtonItemStack</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#registermachinebutton">registerMachineButton</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#unregistermachinebutton">unregisterMachineButton</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#ensurewatching">ensureWatching</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#unwatchentity">unwatchEntity</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#ensurebuttonitems">ensureButtonItems</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#start">start</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#stop">stop</a></div>
-<div class="api-index-item"><span class="api-method">M</span><a href="#tick">tick</a></div>
-
-</div>
-
----
-
-## loadButtonItemStack
-
-<div class="api-signature">
-
-`loadButtonItemStack(itemId?: string, ItemStackClass: typeof ItemStack): ItemStack | null`
-
-</div>
-
-Initializes the shared button item template. The default item id is `utilitycraft:ui_filler`.
-
-## registerMachineButton
-
-<div class="api-signature">
-
-`ButtonManager.registerMachineButton(machineId: string, slot: number | number[], onPressEvent?: Function): boolean`
-
-</div>
-
-Registers or replaces button definitions for a machine id.
-
-Callback shape:
+## Button contracts
 
 ```ts
-({
-  entity,
-  block,
-  container,
-  slot,
-}) => string | void
+interface ButtonDefinition {
+  slot: number;
+  onPressEvent: ButtonPressCallback;
+}
+
+type ButtonPressCallback = (event: ButtonPressEvent) => string | void;
+
+interface ButtonPressEvent {
+  entity: Entity;
+  block: Block | undefined;
+  container: Container;
+  slot: number;
+}
+
+interface ButtonWatcher {
+  entity: Entity;
+  machineId: string;
+  cacheBySlot: Map<number, string>;
+}
 ```
 
-If the callback returns a string, that string becomes the restored button item's `nameTag`. Use a dynamic button UI element if the UI needs to display that label.
+The watcher compares item type IDs, not amount, lore, or name tags. If the callback returns a string, that string becomes the restored button's `nameTag` for that entity and press.
 
-## unregisterMachineButton
+## Shared button item
+
+### ButtonItemStack
 
 <div class="api-signature">
 
-`ButtonManager.unregisterMachineButton(machineId: string, slot: number | number[]): boolean`
+`ButtonItemStack: ItemStack | null`
 
 </div>
 
-Removes button definitions.
+Shared template cloned whenever DoriosCore restores a watched slot. DoriosCore initializes it during world load with `utilitycraft:ui_filler` and a blank name.
 
-## ensureWatching
+### loadButtonItemStack(itemId, ItemStackClass)
+
+<div class="api-signature">
+
+`loadButtonItemStack(itemId?: string, ItemStackClass?: typeof ItemStack): ItemStack | null`
+
+</div>
+
+Creates the shared template, assigns a blank name tag, stores it in `ButtonItemStack`, and returns it.
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `itemId` | `string` | `utilitycraft:ui_filler` | Valid button item identifier supplied by an active resource and behavior pack. |
+| `ItemStackClass` | `typeof ItemStack` | — | Minecraft `ItemStack` constructor. A missing constructor returns `null`. |
+
+Normal addons do not call this because DoriosCore initializes the standard item.
+
+## Static state
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `ButtonManager.machineDefinitions` | `Map<string, ButtonDefinition[]>` | Registered, slot-sorted definitions by machine ID. |
+| `ButtonManager.activeWatchers` | `Map<string, ButtonWatcher>` | Runtime watchers keyed by helper entity ID. |
+| `ButtonManager.intervalId` | `number \| undefined` | Current one-tick interval handle. |
+
+Treat these maps as diagnostic state. Use registration and watcher methods to modify the system.
+
+## Registration methods
+
+### registerMachineButton(machineId, slot, onPressEvent)
+
+<div class="api-signature">
+
+`ButtonManager.registerMachineButton(machineId: string, slot: number | number[], onPressEvent?: ButtonPressCallback): boolean`
+
+</div>
+
+Registers one callback for one or more slots. Existing definitions at those slots are replaced; new slots are added and sorted.
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `machineId` | `string` | Nonempty identifier used later by `ensureWatching()`. Conventionally the block type ID. |
+| `slot` | `number \| number[]` | One or more unique nonnegative integer inventory slots. |
+| `onPressEvent` | `ButtonPressCallback` | Callback invoked when a watched slot's item type changes. Defaults to a no-op. |
+
+Returns `false` for an empty ID, empty slot array, or any invalid slot. Otherwise returns `true`.
+
+### unregisterMachineButton(machineId, slot)
+
+`ButtonManager.unregisterMachineButton(machineId: string, slot: number | number[]): boolean` removes the specified slots. It returns `true` only when at least one existing definition was removed. A machine ID with no remaining definitions is removed from the registry.
+
+## Watcher lifecycle
+
+### ensureWatching(entity, machineId)
 
 <div class="api-signature">
 
@@ -98,69 +123,97 @@ Removes button definitions.
 
 </div>
 
-Ensures the entity is being watched using the registered buttons for `machineId`.
+Ensures a helper entity is actively watched with the definitions registered under `machineId`.
 
-This method:
+The method resolves the entity inventory, restores missing button items, creates or updates watcher state, synchronizes its cache, and starts the global interval. It returns `false` when the entity has no ID, the machine has no definitions, or no inventory container exists.
 
-- validates inventory access,
-- restores missing button items,
-- syncs the watcher cache,
-- starts the global watcher loop.
+Call it from the machine tick while the UI should remain interactive.
 
-## unwatchEntity
+### unwatchEntity(entity)
 
-<div class="api-signature">
+`ButtonManager.unwatchEntity(entity: Entity): boolean` removes the watcher for one entity. When no watchers remain, it stops the global interval. Returns whether a watcher existed.
 
-`ButtonManager.unwatchEntity(entity: Entity): boolean`
-
-</div>
-
-Stops watching an entity. If no active watchers remain, the global loop stops.
-
-## ensureButtonItems
+### createWatcher(entity, machineId, container, buttons)
 
 <div class="api-signature">
 
-`ButtonManager.ensureButtonItems(container: Container, buttons: ButtonDefinition[]): void`
+`ButtonManager.createWatcher(entity: Entity, machineId: string, container: Container, buttons: ButtonDefinition[]): ButtonWatcher`
 
 </div>
 
-Restores the shared button item in every registered slot.
+Creates watcher state and records the current item type in every registered slot. This is a low-level helper; `ensureWatching()` calls it automatically.
 
-## start / stop / tick
+### ensureButtonItems(container, buttons)
+
+`ButtonManager.ensureButtonItems(container: Container, buttons: ButtonDefinition[]): void` fills each registered slot whose current item type is not the shared button type. Each slot receives an independent clone.
+
+If the shared template is not initialized, the method does nothing.
+
+### syncWatcherCache(watcher, container, buttons)
 
 <div class="api-signature">
 
-`ButtonManager.start(): void`
-
-`ButtonManager.stop(): void`
-
-`ButtonManager.tick(): void`
+`ButtonManager.syncWatcherCache(watcher: Pick<ButtonWatcher, "cacheBySlot">, container: Container, buttons: ButtonDefinition[]): void`
 
 </div>
 
-Low-level watcher controls. `ensureWatching()` normally manages these automatically.
+Removes cached slots that are no longer registered and initializes cache entries for newly registered slots. Existing entries are preserved so a pending item-type change can still be detected.
 
----
+## Runner methods
 
-# Example
+### start()
+
+`ButtonManager.start(): void` starts the shared one-tick watcher interval when it is not already running.
+
+### stop()
+
+`ButtonManager.stop(): void` clears the watcher interval and resets `intervalId`. It does not clear definitions or watcher maps.
+
+### tick()
+
+`ButtonManager.tick(): void` runs one detection pass across all active watchers.
+
+For each watcher, it:
+
+1. validates the entity, definitions, and inventory;
+2. synchronizes registered slots;
+3. compares each current item type with the cached type;
+4. invokes the callback for every changed slot;
+5. restores a cloned button item even if the callback throws;
+6. stores the restored slot state.
+
+Invalid or failing watchers are removed. The interval stops when no watchers remain. `start()` invokes this automatically; direct calls are mainly useful for controlled tests.
+
+## Example: polling-based mode button
 
 ```js
-import { ButtonManager } from "DoriosCore/index.js";
+import * as DoriosLib from "DoriosLib/index.js";
+import { ButtonManager, Machine } from "DoriosCore/index.js";
 
-ButtonManager.registerMachineButton("utilitycraft:mode_machine", 8, ({ entity }) => {
-  const current = entity.getDynamicProperty("mode") ?? "input";
+const MACHINE_ID = "example:mode_machine";
+
+ButtonManager.registerMachineButton(MACHINE_ID, 8, ({ entity }) => {
+  const current = entity.getDynamicProperty("example:mode") ?? "input";
   const next = current === "input" ? "output" : "input";
-  entity.setDynamicProperty("mode", next);
-  return `Mode: ${next}`;
+  entity.setDynamicProperty("example:mode", next);
+  return `§r§eMode: §f${next}`;
 });
 
-DoriosAPI.register.blockComponent("mode_machine", {
-  onTick(e, { params: settings }) {
-    const machine = new Machine(e.block, settings);
+DoriosLib.registry.blockComponent("example:mode_machine", {
+  onTick(event, { params: settings }) {
+    const machine = new Machine(event.block, settings);
     if (!machine.valid) return;
 
-    ButtonManager.ensureWatching(machine.entity, "utilitycraft:mode_machine");
+    ButtonManager.ensureWatching(machine.entity, MACHINE_ID);
   },
 });
 ```
+
+Reserve slot `8` in the helper inventory and UI. Do not also use it for resources, recipes, upgrades, displays, or an `InterfaceManager` interface.
+
+## Remarks
+
+- Register definitions once during script initialization, not on every machine tick.
+- A callback can be shared across several slots; inspect `event.slot` to distinguish them.
+- Dynamic labels require the matching dynamic-button UI control. Returning a string does not change UI JSON by itself.
+- Call `unwatchEntity()` during custom cleanup when the entity remains valid but should no longer be polled.

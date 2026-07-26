@@ -204,3 +204,10 @@ IOInterface.registerIOInterface("myaddon:crusher", config);
 
 The direct function imports and facade methods have identical behavior.
 
+## Related advanced APIs
+
+- [Process machine IO](./process-io) explains how registered faces execute at runtime.
+- [Liquid IO documents](./fluid-io) and [Gas IO documents](./gas-io) expose the persisted per-face policies.
+- [InterfaceManager](./interface-manager) powers the event-driven button layer.
+- [Link-node IO](./link-node-io) configures logical multiblock ports.
+- [Container adapters](./container-adapters) provide direct endpoint resolution and transfers.
