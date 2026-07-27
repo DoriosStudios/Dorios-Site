@@ -18,7 +18,7 @@ The current template manifest targets:
 
 | Requirement | Template value |
 | --- | --- |
-| Minimum engine version | `1.21.120` |
+| Minimum engine version | `1.26.30` |
 | `@minecraft/server` | `2.8.0` |
 | `@minecraft/server-ui` | `2.0.0` |
 
