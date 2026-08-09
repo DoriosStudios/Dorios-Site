@@ -1,0 +1,2352 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-09T05:33:03.558467+00:00",
+  "project": {
+    "id": "trinkets",
+    "name": "Dorios' Trinkets"
+  },
+  "counts": {
+    "items": 92,
+    "catalogItems": 92,
+    "blocks": 6,
+    "entities": 2,
+    "recipes": 13,
+    "variantGroups": 0
+  },
+  "content": {
+    "items": [
+      {
+        "id": "abyssal_clam_shell",
+        "slug": "abyssal-clam-shell",
+        "identifier": "dorios:abyssal_clam_shell",
+        "name": "Abyssal Clam Shell",
+        "category": "Abyssal",
+        "image": "textures/items/abyssal_clam_shell.png",
+        "source": "BP/items/abyssal/abyssal_clam_shell.json"
+      },
+      {
+        "id": "abyssal_diver_helmet",
+        "slug": "abyssal-diver-helmet",
+        "identifier": "dorios:abyssal_diver_helmet",
+        "name": "Abyssal Diver's Helmet",
+        "category": "Abyssal",
+        "image": "textures/items/abyssal_diver_helmet.png",
+        "source": "BP/items/abyssal/abyssal_diver_helmet.json"
+      },
+      {
+        "id": "abyssal_essence",
+        "slug": "abyssal-essence",
+        "identifier": "dorios:abyssal_essence",
+        "name": "Abyssal Essence",
+        "category": "Abyssal",
+        "image": "textures/items/flippers.png",
+        "source": "BP/items/abyssal/abyssal_essence.json"
+      },
+      {
+        "id": "abyssal_orb",
+        "slug": "abyssal-orb",
+        "identifier": "dorios:abyssal_orb",
+        "name": "Abyssal Orb",
+        "category": "Abyssal",
+        "image": "textures/items/abyssal_orb.png",
+        "source": "BP/items/abyssal/abyssal_orb.json"
+      },
+      {
+        "id": "abyssal_sun_amulet",
+        "slug": "abyssal-sun-amulet",
+        "identifier": "dorios:abyssal_sun_amulet",
+        "name": "Abyssal Sun Amulet",
+        "category": "General",
+        "image": "textures/items/abyssal_sun_amulet.png",
+        "source": "BP/items/abyssal_sun_amulet.json"
+      },
+      {
+        "id": "black_heart",
+        "slug": "black-heart",
+        "identifier": "dorios:black_heart",
+        "name": "Black Heart",
+        "category": "Hearts",
+        "image": "textures/items/black_heart.png",
+        "source": "BP/items/hearts/black_heart.json"
+      },
+      {
+        "id": "blazed_heart_necklace",
+        "slug": "blazed-heart-necklace",
+        "identifier": "dorios:blazed_heart_necklace",
+        "name": "Blazed Heart Necklace",
+        "category": "General",
+        "image": "textures/items/blazed_heart_necklace.png",
+        "source": "BP/items/blazed_heart_necklace.json"
+      },
+      {
+        "id": "blazing_amulet",
+        "slug": "blazing-amulet",
+        "identifier": "dorios:blazing_amulet",
+        "name": "Blazing Amulet",
+        "category": "General",
+        "image": "textures/items/blazing_amulet.png",
+        "source": "BP/items/blazing_amulet.json"
+      },
+      {
+        "id": "fire_claw",
+        "slug": "fire-claw",
+        "identifier": "dorios:fire_claw",
+        "name": "Blazing Claws",
+        "category": "Gauntlet",
+        "image": "textures/items/fire_claw.png",
+        "source": "BP/items/gauntlet/fire_claw.json"
+      },
+      {
+        "id": "paladin_boots",
+        "slug": "paladin-boots",
+        "identifier": "dorios:paladin_boots",
+        "name": "Blessed Boots",
+        "category": "General",
+        "image": "textures/items/paladin_boots.png",
+        "source": "BP/items/paladin_boots.json"
+      },
+      {
+        "id": "paladin_chestplate",
+        "slug": "paladin-chestplate",
+        "identifier": "dorios:paladin_chestplate",
+        "name": "Blessed Chestplate",
+        "category": "General",
+        "image": "textures/items/paladin_chestplate.png",
+        "source": "BP/items/paladin_chestplate.json"
+      },
+      {
+        "id": "paladin_helmet",
+        "slug": "paladin-helmet",
+        "identifier": "dorios:paladin_helmet",
+        "name": "Blessed Helmet",
+        "category": "General",
+        "image": "textures/items/paladin_helmet.png",
+        "source": "BP/items/paladin_helmet.json"
+      },
+      {
+        "id": "paladin_leggings",
+        "slug": "paladin-leggings",
+        "identifier": "dorios:paladin_leggings",
+        "name": "Blessed Leggings",
+        "category": "General",
+        "image": "textures/items/paladin_leggings.png",
+        "source": "BP/items/paladin_leggings.json"
+      },
+      {
+        "id": "blood_pact",
+        "slug": "blood-pact",
+        "identifier": "dorios:blood_pact",
+        "name": "Blood Pact",
+        "category": "General",
+        "image": "textures/items/blood_pact.png",
+        "source": "BP/items/blood_pact.json"
+      },
+      {
+        "id": "blood_pendant",
+        "slug": "blood-pendant",
+        "identifier": "dorios:blood_pendant",
+        "name": "Blood Pendant",
+        "category": "General",
+        "image": "textures/items/blood_pendant.png",
+        "source": "BP/items/blood_pendant.json"
+      },
+      {
+        "id": "bloodbound_amulet",
+        "slug": "bloodbound-amulet",
+        "identifier": "dorios:bloodbound_amulet",
+        "name": "Bloodbound Amulet",
+        "category": "General",
+        "image": "textures/items/bloodbound_amulet.png",
+        "source": "BP/items/bloodbound_amulet.json"
+      },
+      {
+        "id": "bloodbound_emblem",
+        "slug": "bloodbound-emblem",
+        "identifier": "dorios:bloodbound_emblem",
+        "name": "Bloodbound Emblem",
+        "category": "General",
+        "image": "textures/items/bloodbound_emblem.png",
+        "source": "BP/items/bloodbound_emblem.json"
+      },
+      {
+        "id": "blood_boots",
+        "slug": "blood-boots",
+        "identifier": "dorios:blood_boots",
+        "name": "Bloodforged Boots",
+        "category": "General",
+        "image": "textures/items/blood_boots.png",
+        "source": "BP/items/blood_boots.json"
+      },
+      {
+        "id": "blood_chestplate",
+        "slug": "blood-chestplate",
+        "identifier": "dorios:blood_chestplate",
+        "name": "Bloodforged Chestguard",
+        "category": "General",
+        "image": "textures/items/blood_chestplate.png",
+        "source": "BP/items/blood_chestplace.json"
+      },
+      {
+        "id": "blood_leggings",
+        "slug": "blood-leggings",
+        "identifier": "dorios:blood_leggings",
+        "name": "Bloodforged Greaves",
+        "category": "General",
+        "image": "textures/items/blood_leggings.png",
+        "source": "BP/items/blood_leggings.json"
+      },
+      {
+        "id": "blood_helmet",
+        "slug": "blood-helmet",
+        "identifier": "dorios:blood_helmet",
+        "name": "Bloodforged Helm",
+        "category": "General",
+        "image": "textures/items/blood_helmet.png",
+        "source": "BP/items/blood_helmet.json"
+      },
+      {
+        "id": "bloodgem",
+        "slug": "bloodgem",
+        "identifier": "dorios:bloodgem",
+        "name": "Bloodgem",
+        "category": "General",
+        "image": "textures/items/bloodgem.png",
+        "source": "BP/items/bloodgem.json"
+      },
+      {
+        "id": "bloodstained_heart",
+        "slug": "bloodstained-heart",
+        "identifier": "dorios:bloodstained_heart",
+        "name": "Bloodstained Heart",
+        "category": "General",
+        "image": "textures/items/bloodstained_heart.png",
+        "source": "BP/items/bloodstained_heart.json"
+      },
+      {
+        "id": "bloodtide_chalice",
+        "slug": "bloodtide-chalice",
+        "identifier": "dorios:bloodtide_chalice",
+        "name": "Bloodtide Chalice",
+        "category": "General",
+        "image": "textures/items/bloodtide_chalice.png",
+        "source": "BP/items/bloodtide_chalice.json"
+      },
+      {
+        "id": "broken_paladin_helmet",
+        "slug": "broken-paladin-helmet",
+        "identifier": "dorios:broken_paladin_helmet",
+        "name": "Broken Paladin Helmet",
+        "category": "General",
+        "image": "textures/items/broken_warrior_helmet.png",
+        "source": "BP/items/broken_paladin_helmet.json"
+      },
+      {
+        "id": "candy_heart",
+        "slug": "candy-heart",
+        "identifier": "dorios:candy_heart",
+        "name": "Candy Heart",
+        "category": "Hearts",
+        "image": "textures/items/candy_heart.png",
+        "source": "BP/items/hearts/candy_heart.json"
+      },
+      {
+        "id": "cloud_steps_boots",
+        "slug": "cloud-steps-boots",
+        "identifier": "dorios:cloud_steps_boots",
+        "name": "Cloudstep Boots",
+        "category": "General",
+        "image": "textures/items/cloud_steps_boots.png",
+        "source": "BP/items/cloud_steps_boots.json"
+      },
+      {
+        "id": "dead_abyssal_orb",
+        "slug": "dead-abyssal-orb",
+        "identifier": "dorios:dead_abyssal_orb",
+        "name": "Dead Abyssal Orb",
+        "category": "Abyssal",
+        "image": "textures/items/dead_abyssal_orb.png",
+        "source": "BP/items/abyssal/dead_abyssal_orb.json"
+      },
+      {
+        "id": "dragon_heart",
+        "slug": "dragon-heart",
+        "identifier": "dorios:dragon_heart",
+        "name": "Dragon's Heart",
+        "category": "General",
+        "image": "textures/items/dragons_heart.png",
+        "source": "BP/items/dragon_heart.json"
+      },
+      {
+        "id": "empty_ring",
+        "slug": "empty-ring",
+        "identifier": "dorios:empty_ring",
+        "name": "Empty Ring",
+        "category": "Rings",
+        "image": "textures/items/empty_ring_material.png",
+        "source": "BP/items/rings/empty_ring.json"
+      },
+      {
+        "id": "eternal_heart",
+        "slug": "eternal-heart",
+        "identifier": "dorios:eternal_heart",
+        "name": "Eternal Heart",
+        "category": "Hearts",
+        "image": "textures/items/eternal_heart.png",
+        "source": "BP/items/hearts/eternal_heart.json"
+      },
+      {
+        "id": "ice_gauntlet",
+        "slug": "ice-gauntlet",
+        "identifier": "dorios:ice_gauntlet",
+        "name": "Frost Gauntlet",
+        "category": "Gauntlet",
+        "image": "textures/items/ice_gauntlet.png",
+        "source": "BP/items/gauntlet/ice_gauntlet.json"
+      },
+      {
+        "id": "frost_quiver",
+        "slug": "frost-quiver",
+        "identifier": "dorios:frost_quiver",
+        "name": "Frost Quiver",
+        "category": "General",
+        "image": "textures/items/frost_quiver.png",
+        "source": "BP/items/frost_quiver.json"
+      },
+      {
+        "id": "ice_claw",
+        "slug": "ice-claw",
+        "identifier": "dorios:ice_claw",
+        "name": "Glazing Claws",
+        "category": "Gauntlet",
+        "image": "textures/items/ice_claw.png",
+        "source": "BP/items/gauntlet/ice_claw.json"
+      },
+      {
+        "id": "guardian_ring",
+        "slug": "guardian-ring",
+        "identifier": "dorios:guardian_ring",
+        "name": "Guardian's Ring",
+        "category": "Rings",
+        "image": "textures/items/guardian_ring.png",
+        "source": "BP/items/rings/guardian_ring.json"
+      },
+      {
+        "id": "healer_ring",
+        "slug": "healer-ring",
+        "identifier": "dorios:healer_ring",
+        "name": "Healer's Ring",
+        "category": "Rings",
+        "image": "textures/items/healer_ring.png",
+        "source": "BP/items/rings/healer_ring.json"
+      },
+      {
+        "id": "heavy_empty_ring",
+        "slug": "heavy-empty-ring",
+        "identifier": "dorios:heavy_empty_ring",
+        "name": "Heavy Empty Ring",
+        "category": "General",
+        "image": "textures/items/heavy_empty_ring_material.png",
+        "source": "BP/items/heavy_empty_ring.json"
+      },
+      {
+        "id": "heavy_guardian_ring",
+        "slug": "heavy-guardian-ring",
+        "identifier": "dorios:heavy_guardian_ring",
+        "name": "Heavy Guardian's Ring",
+        "category": "General",
+        "image": "textures/items/heavy_guardian_ring.png",
+        "source": "BP/items/heavy_guardian_ring.json"
+      },
+      {
+        "id": "heavy_healer_ring",
+        "slug": "heavy-healer-ring",
+        "identifier": "dorios:heavy_healer_ring",
+        "name": "Heavy Healer's Ring",
+        "category": "General",
+        "image": "textures/items/heavy_healer_ring.png",
+        "source": "BP/items/heavy_healer_ring.json"
+      },
+      {
+        "id": "heavy_miner_ring",
+        "slug": "heavy-miner-ring",
+        "identifier": "dorios:heavy_miner_ring",
+        "name": "Heavy Miner's Ring",
+        "category": "General",
+        "image": "textures/items/heavy_miner_ring.png",
+        "source": "BP/items/heavy_miner_ring.json"
+      },
+      {
+        "id": "heavy_runner_ring",
+        "slug": "heavy-runner-ring",
+        "identifier": "dorios:heavy_runner_ring",
+        "name": "Heavy Runner's Ring",
+        "category": "General",
+        "image": "textures/items/heavy_runner_ring.png",
+        "source": "BP/items/heavy_runner_ring.json"
+      },
+      {
+        "id": "heavy_warrior_ring",
+        "slug": "heavy-warrior-ring",
+        "identifier": "dorios:heavy_warrior_ring",
+        "name": "Heavy Warrior's Ring",
+        "category": "General",
+        "image": "textures/items/heavy_warrior_ring.png",
+        "source": "BP/items/heavy_warrior_ring.json"
+      },
+      {
+        "id": "holy_cross",
+        "slug": "holy-cross",
+        "identifier": "dorios:holy_cross",
+        "name": "Holy Cross",
+        "category": "General",
+        "image": "textures/items/holy_cross.png",
+        "source": "BP/items/holy_cross.json"
+      },
+      {
+        "id": "idle_bloom",
+        "slug": "idle-bloom",
+        "identifier": "dorios:idle_bloom",
+        "name": "Idle Bloom",
+        "category": "General",
+        "image": "textures/items/idle_bloom.png",
+        "source": "BP/items/idle_bloom.json"
+      },
+      {
+        "id": "immaculate_heart",
+        "slug": "immaculate-heart",
+        "identifier": "dorios:immaculate_heart",
+        "name": "Immaculate Heart",
+        "category": "Hearts",
+        "image": "textures/items/immaculate_heart.png",
+        "source": "BP/items/hearts/immaculate_heart.json"
+      },
+      {
+        "id": "fire_gauntlet",
+        "slug": "fire-gauntlet",
+        "identifier": "dorios:fire_gauntlet",
+        "name": "Infernal Gauntlet",
+        "category": "Gauntlet",
+        "image": "textures/items/fire_gauntlet.png",
+        "source": "BP/items/gauntlet/fire_gauntlet.json"
+      },
+      {
+        "id": "lava_waders",
+        "slug": "lava-waders",
+        "identifier": "dorios:lava_waders",
+        "name": "Lava Waders",
+        "category": "General",
+        "image": "textures/items/lava_waders.png",
+        "source": "BP/items/lava_waders.json"
+      },
+      {
+        "id": "mender_pendant",
+        "slug": "mender-pendant",
+        "identifier": "dorios:mender_pendant",
+        "name": "Mender's Pendant",
+        "category": "General",
+        "image": "textures/items/mender_pendant.png",
+        "source": "BP/items/mender_pendant.json"
+      },
+      {
+        "id": "miner_ring",
+        "slug": "miner-ring",
+        "identifier": "dorios:miner_ring",
+        "name": "Miner's Ring",
+        "category": "Rings",
+        "image": "textures/items/miner_ring.png",
+        "source": "BP/items/rings/miner_ring.json"
+      },
+      {
+        "id": "molten_quiver",
+        "slug": "molten-quiver",
+        "identifier": "dorios:molten_quiver",
+        "name": "Molten Quiver",
+        "category": "General",
+        "image": "textures/items/molten_quiver.png",
+        "source": "BP/items/molten_quiver.json"
+      },
+      {
+        "id": "night_vision_goggles",
+        "slug": "night-vision-goggles",
+        "identifier": "dorios:night_vision_goggles",
+        "name": "Night Vision Goggles",
+        "category": "General",
+        "image": "textures/items/night_vision_goggles.png",
+        "source": "BP/items/night_vision_goggles.json"
+      },
+      {
+        "id": "night_vision_mask",
+        "slug": "night-vision-mask",
+        "identifier": "dorios:night_vision_mask",
+        "name": "Night Vision Mask",
+        "category": "General",
+        "image": "textures/items/night_vision_mask.png",
+        "source": "BP/items/night_vision_mask.json"
+      },
+      {
+        "id": "obsidian_skull",
+        "slug": "obsidian-skull",
+        "identifier": "dorios:obsidian_skull",
+        "name": "Obsidian Skull",
+        "category": "General",
+        "image": "textures/items/obsidian_skull.png",
+        "source": "BP/items/obsidian_skull.json"
+      },
+      {
+        "id": "purity_blossom",
+        "slug": "purity-blossom",
+        "identifier": "dorios:purity_blossom",
+        "name": "Purity Blossom",
+        "category": "General",
+        "image": "textures/items/bezoar.png",
+        "source": "BP/items/purity_blossom.json"
+      },
+      {
+        "id": "rabbit_rush",
+        "slug": "rabbit-rush",
+        "identifier": "dorios:rabbit_rush",
+        "name": "Rabbit's Rush",
+        "category": "General",
+        "image": "textures/items/rabbit_rush.png",
+        "source": "BP/items/rabbit_rush.json"
+      },
+      {
+        "id": "recover_scroll",
+        "slug": "recover-scroll",
+        "identifier": "dorios:recover_scroll",
+        "name": "Recover Scroll",
+        "category": "Core",
+        "image": "textures/items/recover_scroll.png",
+        "source": "BP/items/core/recover_scroll.json"
+      },
+      {
+        "id": "repair_talis",
+        "slug": "repair-talis",
+        "identifier": "dorios:repair_talis",
+        "name": "Repair Talisman",
+        "category": "General",
+        "image": "textures/items/repair_talisman.png",
+        "source": "BP/items/repair_talisman.json"
+      },
+      {
+        "id": "restored_paladin_helmet",
+        "slug": "restored-paladin-helmet",
+        "identifier": "dorios:restored_paladin_helmet",
+        "name": "Restored Paladin Helmet",
+        "category": "General",
+        "image": "textures/items/warrior_helmet.png",
+        "source": "BP/items/restored_paladin_helmet.json"
+      },
+      {
+        "id": "rotten_heart",
+        "slug": "rotten-heart",
+        "identifier": "dorios:rotten_heart",
+        "name": "Rotten Heart",
+        "category": "Hearts",
+        "image": "textures/items/rotten_heart.png",
+        "source": "BP/items/hearts/rotten_heart.json"
+      },
+      {
+        "id": "runner_ring",
+        "slug": "runner-ring",
+        "identifier": "dorios:runner_ring",
+        "name": "Runner's Ring",
+        "category": "Rings",
+        "image": "textures/items/runner_ring.png",
+        "source": "BP/items/rings/runner_ring.json"
+      },
+      {
+        "id": "rush_of_fear",
+        "slug": "rush-of-fear",
+        "identifier": "dorios:rush_of_fear",
+        "name": "Rush of Fear",
+        "category": "General",
+        "image": "textures/items/rush_of_fear.png",
+        "source": "BP/items/rush_of_fear.json"
+      },
+      {
+        "id": "sacred_heart",
+        "slug": "sacred-heart",
+        "identifier": "dorios:sacred_heart",
+        "name": "Sacred Heart",
+        "category": "Hearts",
+        "image": "textures/items/sacred_heart.png",
+        "source": "BP/items/hearts/sacred_heart.json"
+      },
+      {
+        "id": "scroll",
+        "slug": "scroll",
+        "identifier": "dorios:scroll",
+        "name": "Scroll",
+        "category": "Core",
+        "image": "textures/items/scroll.png",
+        "source": "BP/items/core/scroll.json"
+      },
+      {
+        "id": "soul_heart",
+        "slug": "soul-heart",
+        "identifier": "dorios:soul_heart",
+        "name": "Soul Heart",
+        "category": "Hearts",
+        "image": "textures/items/soul_heart.png",
+        "source": "BP/items/hearts/soul_heart.json"
+      },
+      {
+        "id": "stats_scroll",
+        "slug": "stats-scroll",
+        "identifier": "dorios:stats_scroll",
+        "name": "Stats Scroll",
+        "category": "Core",
+        "image": "textures/items/stats_scroll.png",
+        "source": "BP/items/core/stats_scroll.json"
+      },
+      {
+        "id": "strong_abyssal_ring",
+        "slug": "strong-abyssal-ring",
+        "identifier": "dorios:strong_abyssal_ring",
+        "name": "Strong Abyssal Ring",
+        "category": "General",
+        "image": "textures/items/strong_abyssal_ring.png",
+        "source": "BP/items/strong_abyssal_ring.json"
+      },
+      {
+        "id": "strong_ancient_ring",
+        "slug": "strong-ancient-ring",
+        "identifier": "dorios:strong_ancient_ring",
+        "name": "Strong Ancient Ring",
+        "category": "General",
+        "image": "textures/items/strong_ancient_ring.png",
+        "source": "BP/items/strong_ancient_ring.json"
+      },
+      {
+        "id": "strong_blood_ring",
+        "slug": "strong-blood-ring",
+        "identifier": "dorios:strong_blood_ring",
+        "name": "Strong Blood Ring",
+        "category": "General",
+        "image": "textures/items/strong_blood_ring.png",
+        "source": "BP/items/strong_blood_ring.json"
+      },
+      {
+        "id": "strong_breeze_ring",
+        "slug": "strong-breeze-ring",
+        "identifier": "dorios:strong_breeze_ring",
+        "name": "Strong Breeze Ring",
+        "category": "General",
+        "image": "textures/items/strong_breeze_ring.png",
+        "source": "BP/items/strong_breeze_ring.json"
+      },
+      {
+        "id": "strong_brute_ring",
+        "slug": "strong-brute-ring",
+        "identifier": "dorios:strong_brute_ring",
+        "name": "Strong Brute Ring",
+        "category": "General",
+        "image": "textures/items/strong_brute_ring.png",
+        "source": "BP/items/strong_brute_ring.json"
+      },
+      {
+        "id": "strong_celestial_ring",
+        "slug": "strong-celestial-ring",
+        "identifier": "dorios:strong_celestial_ring",
+        "name": "Strong Celestial Ring",
+        "category": "General",
+        "image": "textures/items/strong_celestial_ring.png",
+        "source": "BP/items/strong_celestial_ring.json"
+      },
+      {
+        "id": "strong_echo_ring",
+        "slug": "strong-echo-ring",
+        "identifier": "dorios:strong_echo_ring",
+        "name": "Strong Echo Ring",
+        "category": "General",
+        "image": "textures/items/strong_echo_ring.png",
+        "source": "BP/items/strong_echo_ring.json"
+      },
+      {
+        "id": "strong_ender_ring",
+        "slug": "strong-ender-ring",
+        "identifier": "dorios:strong_ender_ring",
+        "name": "Strong Ender Ring",
+        "category": "General",
+        "image": "textures/items/strong_ender_ring.png",
+        "source": "BP/items/strong_ender_ring.json"
+      },
+      {
+        "id": "strong_fortress_ring",
+        "slug": "strong-fortress-ring",
+        "identifier": "dorios:strong_fortress_ring",
+        "name": "Strong Fortress Ring",
+        "category": "General",
+        "image": "textures/items/strong_fortress_ring.png",
+        "source": "BP/items/strong_fortress_ring.json"
+      },
+      {
+        "id": "strong_inferno_ring",
+        "slug": "strong-inferno-ring",
+        "identifier": "dorios:strong_inferno_ring",
+        "name": "Strong Inferno Ring",
+        "category": "General",
+        "image": "textures/items/strong_inferno_ring.png",
+        "source": "BP/items/strong_inferno_ring.json"
+      },
+      {
+        "id": "strong_jade_ring",
+        "slug": "strong-jade-ring",
+        "identifier": "dorios:strong_jade_ring",
+        "name": "Strong Jade Ring",
+        "category": "General",
+        "image": "textures/items/strong_jade_ring.png",
+        "source": "BP/items/strong_jade_ring.json"
+      },
+      {
+        "id": "strong_shulker_ring",
+        "slug": "strong-shulker-ring",
+        "identifier": "dorios:strong_shulker_ring",
+        "name": "Strong Shulker Ring",
+        "category": "General",
+        "image": "textures/items/strong_shulker_ring.png",
+        "source": "BP/items/strong_shulker_ring.json"
+      },
+      {
+        "id": "strong_trader_ring",
+        "slug": "strong-trader-ring",
+        "identifier": "dorios:strong_trader_ring",
+        "name": "Strong Trader Ring",
+        "category": "General",
+        "image": "textures/items/strong_trader_ring.png",
+        "source": "BP/items/strong_trader_ring.json"
+      },
+      {
+        "id": "tideforged_carapace",
+        "slug": "tideforged-carapace",
+        "identifier": "dorios:tideforged_carapace",
+        "name": "Tideforged Carapace",
+        "category": "General",
+        "image": "textures/items/Tideforged Carapace.png",
+        "source": "BP/items/tideforged_carapace.json"
+      },
+      {
+        "id": "tideforged_eye",
+        "slug": "tideforged-eye",
+        "identifier": "dorios:tideforged_eye",
+        "name": "Tideforged Eye",
+        "category": "General",
+        "image": "textures/items/Tideforged Eye.png",
+        "source": "BP/items/tideforged_eye.json"
+      },
+      {
+        "id": "tideforged_heart",
+        "slug": "tideforged-heart",
+        "identifier": "dorios:tideforged_heart",
+        "name": "Tideforged Heart",
+        "category": "General",
+        "image": "textures/items/Tideforged Heart.png",
+        "source": "BP/items/tideforged_heart.json"
+      },
+      {
+        "id": "tideforged_knuckles",
+        "slug": "tideforged-knuckles",
+        "identifier": "dorios:tideforged_knuckles",
+        "name": "Tideforged Knuckles",
+        "category": "General",
+        "image": "textures/items/tideforged_knuckles.png",
+        "source": "BP/items/tideforged_knuckles.json"
+      },
+      {
+        "id": "tideforged_pendant",
+        "slug": "tideforged-pendant",
+        "identifier": "dorios:tideforged_pendant",
+        "name": "Tideforged Pendant",
+        "category": "General",
+        "image": "textures/items/Tideforged Pendant.png",
+        "source": "BP/items/tideforged_pendant.json"
+      },
+      {
+        "id": "tideforged_ring",
+        "slug": "tideforged-ring",
+        "identifier": "dorios:tideforged_ring",
+        "name": "Tideforged Ring",
+        "category": "General",
+        "image": "textures/items/tideforged_ring.png",
+        "source": "BP/items/tideforged_ring.json"
+      },
+      {
+        "id": "tideforged_stars",
+        "slug": "tideforged-stars",
+        "identifier": "dorios:tideforged_stars",
+        "name": "Tideforged Stars",
+        "category": "General",
+        "image": "textures/items/tideforged_stars.png",
+        "source": "BP/items/tideforged_stars.json"
+      },
+      {
+        "id": "venom_gauntlet",
+        "slug": "venom-gauntlet",
+        "identifier": "dorios:venom_gauntlet",
+        "name": "Toxic Gauntlet",
+        "category": "Gauntlet",
+        "image": "textures/items/venom_gauntlet.png",
+        "source": "BP/items/gauntlet/venom_gauntlet.json"
+      },
+      {
+        "id": "venom_quiver",
+        "slug": "venom-quiver",
+        "identifier": "dorios:venom_quiver",
+        "name": "Toxin Quiver",
+        "category": "General",
+        "image": "textures/items/venom_quiver.png",
+        "source": "BP/items/venom_quiver.json"
+      },
+      {
+        "id": "venom_claw",
+        "slug": "venom-claw",
+        "identifier": "dorios:venom_claw",
+        "name": "Viper Claws",
+        "category": "Gauntlet",
+        "image": "textures/items/venom_claw.png",
+        "source": "BP/items/gauntlet/venom_claw.json"
+      },
+      {
+        "id": "voodoo",
+        "slug": "voodoo",
+        "identifier": "dorios:voodoo",
+        "name": "Voodoo",
+        "category": "General",
+        "image": "textures/items/voodoo.png",
+        "source": "BP/items/voodoo.json"
+      },
+      {
+        "id": "warden_heart",
+        "slug": "warden-heart",
+        "identifier": "dorios:warden_heart",
+        "name": "Warden's Heart",
+        "category": "Hearts",
+        "image": "textures/items/warden_heart.png",
+        "source": "BP/items/hearts/warden_heart.json"
+      },
+      {
+        "id": "warrior_ring",
+        "slug": "warrior-ring",
+        "identifier": "dorios:warrior_ring",
+        "name": "Warrior's Ring",
+        "category": "Rings",
+        "image": "textures/items/warrior_ring.png",
+        "source": "BP/items/rings/warrior_ring.json"
+      },
+      {
+        "id": "wither_heart",
+        "slug": "wither-heart",
+        "identifier": "dorios:wither_heart",
+        "name": "Wither's Heart",
+        "category": "Hearts",
+        "image": "textures/items/wither_heart.png",
+        "source": "BP/items/hearts/wither_heart.json"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "lava_flow_0",
+        "slug": "lava-flow-0",
+        "identifier": "dorios:lava_flow_0",
+        "name": "Solid Lava",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/lava_solid_0.png",
+          "left": "textures/blocks/lava_solid_0.png",
+          "right": "textures/blocks/lava_solid_0.png"
+        },
+        "componentKeys": [
+          "dorios:block_tick",
+          "minecraft:tick"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/lava_flow_0.json"
+      },
+      {
+        "id": "lava_flow_1",
+        "slug": "lava-flow-1",
+        "identifier": "dorios:lava_flow_1",
+        "name": "Solid Lava",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/lava_solid_1.png",
+          "left": "textures/blocks/lava_solid_1.png",
+          "right": "textures/blocks/lava_solid_1.png"
+        },
+        "componentKeys": [
+          "dorios:block_tick",
+          "minecraft:tick"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/lava_flow_1.json"
+      },
+      {
+        "id": "lava_flow_2",
+        "slug": "lava-flow-2",
+        "identifier": "dorios:lava_flow_2",
+        "name": "Solid Lava",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/lava_solid_2.png",
+          "left": "textures/blocks/lava_solid_2.png",
+          "right": "textures/blocks/lava_solid_2.png"
+        },
+        "componentKeys": [
+          "dorios:block_tick",
+          "minecraft:tick"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/lava_flow_2.json"
+      },
+      {
+        "id": "lava_solid_0",
+        "slug": "lava-solid-0",
+        "identifier": "dorios:lava_solid_0",
+        "name": "Solid Lava",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/lava_solid_0.png",
+          "left": "textures/blocks/lava_solid_0.png",
+          "right": "textures/blocks/lava_solid_0.png"
+        },
+        "componentKeys": [
+          "dorios:block_tick",
+          "minecraft:tick"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/lava_solid_0.json"
+      },
+      {
+        "id": "lava_solid_1",
+        "slug": "lava-solid-1",
+        "identifier": "dorios:lava_solid_1",
+        "name": "Solid Lava",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/lava_solid_1.png",
+          "left": "textures/blocks/lava_solid_1.png",
+          "right": "textures/blocks/lava_solid_1.png"
+        },
+        "componentKeys": [
+          "dorios:block_tick",
+          "minecraft:tick"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/lava_solid_1.json"
+      },
+      {
+        "id": "lava_solid_2",
+        "slug": "lava-solid-2",
+        "identifier": "dorios:lava_solid_2",
+        "name": "Solid Lava",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/lava_solid_2.png",
+          "left": "textures/blocks/lava_solid_2.png",
+          "right": "textures/blocks/lava_solid_2.png"
+        },
+        "componentKeys": [
+          "dorios:block_tick",
+          "minecraft:tick"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/lava_solid_2.json"
+      }
+    ],
+    "entities": [
+      {
+        "id": "player",
+        "slug": "player",
+        "identifier": "minecraft:player",
+        "name": "Player",
+        "category": "General",
+        "image": null,
+        "source": "BP/entities/player.json"
+      },
+      {
+        "id": "trinkets_inv",
+        "slug": "trinkets-inv",
+        "identifier": "dorios:trinkets_inv",
+        "name": "Trinkets Inv",
+        "category": "General",
+        "image": null,
+        "source": "BP/entities/trinkets_inv.json"
+      }
+    ],
+    "recipes": [
+      {
+        "id": "abyssal_orb",
+        "identifier": "dorios:abyssal_orb",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "heart_of_the_sea",
+            "count": 2
+          },
+          {
+            "id": "dorios:dead_abyssal_orb",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "dorios:abyssal_orb",
+          "count": 1
+        },
+        "source": "BP/recipes/abyssal_orb.json"
+      },
+      {
+        "id": "empty_ring",
+        "identifier": "dorios:empty_ring",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "iron_nugget",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_nugget",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          null,
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_nugget",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_nugget",
+            "count": 1
+          }
+        ],
+        "slotCount": 8,
+        "result": {
+          "id": "dorios:empty_ring",
+          "count": 1
+        },
+        "source": "BP/recipes/empty_ring.json"
+      },
+      {
+        "id": "guardian_ring",
+        "identifier": "dorios:guardian_ring",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "diamond_block",
+            "count": 1
+          },
+          {
+            "id": "nether_star",
+            "count": 1
+          },
+          {
+            "id": "diamond_block",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "dorios:empty_ring",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:potion",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:potion",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "dorios:guardian_ring",
+          "count": 1
+        },
+        "source": "BP/recipes/guardian_ring.json"
+      },
+      {
+        "id": "healer_ring",
+        "identifier": "dorios:healer_ring",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:potion",
+            "count": 1
+          },
+          {
+            "id": "diamond_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:potion",
+            "count": 1
+          },
+          {
+            "id": "iron_block",
+            "count": 1
+          },
+          {
+            "id": "dorios:empty_ring",
+            "count": 1
+          },
+          {
+            "id": "iron_block",
+            "count": 1
+          },
+          {
+            "id": "ghast_tear",
+            "count": 1
+          },
+          {
+            "id": "iron_block",
+            "count": 1
+          },
+          {
+            "id": "ghast_tear",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "dorios:healer_ring",
+          "count": 1
+        },
+        "source": "BP/recipes/healer_ring.json"
+      },
+      {
+        "id": "miner_ring",
+        "identifier": "dorios:miner_ring",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "redstone_block",
+            "count": 1
+          },
+          {
+            "id": "golden_pickaxe",
+            "count": 1
+          },
+          {
+            "id": "redstone_block",
+            "count": 1
+          },
+          {
+            "id": "gold_block",
+            "count": 1
+          },
+          {
+            "id": "dorios:empty_ring",
+            "count": 1
+          },
+          {
+            "id": "gold_block",
+            "count": 1
+          },
+          {
+            "id": "glowstone_dust",
+            "count": 1
+          },
+          {
+            "id": "gold_block",
+            "count": 1
+          },
+          {
+            "id": "glowstone_dust",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "dorios:miner_ring",
+          "count": 1
+        },
+        "source": "BP/recipes/miner_ring.json"
+      },
+      {
+        "id": "night_vision_goggles",
+        "identifier": "dorios:night_vision_goggles",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "leather",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "leather",
+            "count": 1
+          },
+          {
+            "id": "tinted_glass",
+            "count": 1
+          },
+          {
+            "id": "potion",
+            "count": 1
+          },
+          {
+            "id": "tinted_glass",
+            "count": 1
+          },
+          {
+            "id": "leather",
+            "count": 1
+          },
+          null,
+          {
+            "id": "leather",
+            "count": 1
+          }
+        ],
+        "slotCount": 8,
+        "result": {
+          "id": "dorios:night_vision_goggles",
+          "count": 1
+        },
+        "source": "BP/recipes/night_vision_goggles.json"
+      },
+      {
+        "id": "obsidian_skull",
+        "identifier": "dorios:obsidian_skull",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "obsidian",
+            "count": 1
+          },
+          {
+            "id": "obsidian",
+            "count": 1
+          },
+          {
+            "id": "obsidian",
+            "count": 1
+          },
+          {
+            "id": "obsidian",
+            "count": 1
+          },
+          {
+            "id": "wither_skeleton_skull",
+            "count": 1
+          },
+          {
+            "id": "obsidian",
+            "count": 1
+          },
+          {
+            "id": "obsidian",
+            "count": 1
+          },
+          {
+            "id": "obsidian",
+            "count": 1
+          },
+          {
+            "id": "obsidian",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "dorios:obsidian_skull",
+          "count": 1
+        },
+        "source": "BP/recipes/obsidian_skull.json"
+      },
+      {
+        "id": "recover_scroll",
+        "identifier": "dorios:recover_scroll",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "dorios:stats_scroll",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "dorios:recover_scroll",
+          "count": 1
+        },
+        "source": "BP/recipes/core/recover_scroll.json"
+      },
+      {
+        "id": "runner_ring",
+        "identifier": "dorios:runner_ring",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:potion",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:potion",
+            "count": 1
+          },
+          {
+            "id": "rabbit_hide",
+            "count": 1
+          },
+          {
+            "id": "dorios:empty_ring",
+            "count": 1
+          },
+          {
+            "id": "rabbit_hide",
+            "count": 1
+          },
+          {
+            "id": "feather",
+            "count": 1
+          },
+          {
+            "id": "rabbit_foot",
+            "count": 1
+          },
+          {
+            "id": "feather",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "dorios:runner_ring",
+          "count": 1
+        },
+        "source": "BP/recipes/runner_ring.json"
+      },
+      {
+        "id": "scroll",
+        "identifier": "dorios:scroll",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "paper",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "dorios:scroll",
+          "count": 1
+        },
+        "source": "BP/recipes/core/scroll.json"
+      },
+      {
+        "id": "scrollv2",
+        "identifier": "dorios:scrollv2",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "dorios:recover_scroll",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "dorios:scroll",
+          "count": 1
+        },
+        "source": "BP/recipes/core/scrollv2.json"
+      },
+      {
+        "id": "stats_scroll",
+        "identifier": "dorios:stats_scroll",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "dorios:scroll",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "dorios:stats_scroll",
+          "count": 1
+        },
+        "source": "BP/recipes/core/stats_scroll.json"
+      },
+      {
+        "id": "warden_heart",
+        "identifier": "dorios:warden_heart",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "echo_shard",
+            "count": 1
+          },
+          {
+            "id": "sculk_catalyst",
+            "count": 1
+          },
+          {
+            "id": "echo_shard",
+            "count": 1
+          },
+          {
+            "id": "diamond_block",
+            "count": 1
+          },
+          {
+            "id": "dorios:soul_heart",
+            "count": 1
+          },
+          {
+            "id": "diamond_block",
+            "count": 1
+          },
+          {
+            "id": "echo_shard",
+            "count": 1
+          },
+          {
+            "id": "diamond_block",
+            "count": 1
+          },
+          {
+            "id": "echo_shard",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "dorios:warden_heart",
+          "count": 1
+        },
+        "source": "BP/recipes/warden_heart.json"
+      }
+    ]
+  },
+  "catalog": {
+    "items": [
+      {
+        "id": "abyssal_clam_shell",
+        "slug": "abyssal-clam-shell",
+        "identifier": "dorios:abyssal_clam_shell",
+        "name": "Abyssal Clam Shell",
+        "category": "Abyssal",
+        "image": "textures/items/abyssal_clam_shell.png",
+        "source": "BP/items/abyssal/abyssal_clam_shell.json"
+      },
+      {
+        "id": "abyssal_diver_helmet",
+        "slug": "abyssal-diver-helmet",
+        "identifier": "dorios:abyssal_diver_helmet",
+        "name": "Abyssal Diver's Helmet",
+        "category": "Abyssal",
+        "image": "textures/items/abyssal_diver_helmet.png",
+        "source": "BP/items/abyssal/abyssal_diver_helmet.json"
+      },
+      {
+        "id": "abyssal_essence",
+        "slug": "abyssal-essence",
+        "identifier": "dorios:abyssal_essence",
+        "name": "Abyssal Essence",
+        "category": "Abyssal",
+        "image": "textures/items/flippers.png",
+        "source": "BP/items/abyssal/abyssal_essence.json"
+      },
+      {
+        "id": "abyssal_orb",
+        "slug": "abyssal-orb",
+        "identifier": "dorios:abyssal_orb",
+        "name": "Abyssal Orb",
+        "category": "Abyssal",
+        "image": "textures/items/abyssal_orb.png",
+        "source": "BP/items/abyssal/abyssal_orb.json"
+      },
+      {
+        "id": "abyssal_sun_amulet",
+        "slug": "abyssal-sun-amulet",
+        "identifier": "dorios:abyssal_sun_amulet",
+        "name": "Abyssal Sun Amulet",
+        "category": "General",
+        "image": "textures/items/abyssal_sun_amulet.png",
+        "source": "BP/items/abyssal_sun_amulet.json"
+      },
+      {
+        "id": "black_heart",
+        "slug": "black-heart",
+        "identifier": "dorios:black_heart",
+        "name": "Black Heart",
+        "category": "Hearts",
+        "image": "textures/items/black_heart.png",
+        "source": "BP/items/hearts/black_heart.json"
+      },
+      {
+        "id": "blazed_heart_necklace",
+        "slug": "blazed-heart-necklace",
+        "identifier": "dorios:blazed_heart_necklace",
+        "name": "Blazed Heart Necklace",
+        "category": "General",
+        "image": "textures/items/blazed_heart_necklace.png",
+        "source": "BP/items/blazed_heart_necklace.json"
+      },
+      {
+        "id": "blazing_amulet",
+        "slug": "blazing-amulet",
+        "identifier": "dorios:blazing_amulet",
+        "name": "Blazing Amulet",
+        "category": "General",
+        "image": "textures/items/blazing_amulet.png",
+        "source": "BP/items/blazing_amulet.json"
+      },
+      {
+        "id": "fire_claw",
+        "slug": "fire-claw",
+        "identifier": "dorios:fire_claw",
+        "name": "Blazing Claws",
+        "category": "Gauntlet",
+        "image": "textures/items/fire_claw.png",
+        "source": "BP/items/gauntlet/fire_claw.json"
+      },
+      {
+        "id": "paladin_boots",
+        "slug": "paladin-boots",
+        "identifier": "dorios:paladin_boots",
+        "name": "Blessed Boots",
+        "category": "General",
+        "image": "textures/items/paladin_boots.png",
+        "source": "BP/items/paladin_boots.json"
+      },
+      {
+        "id": "paladin_chestplate",
+        "slug": "paladin-chestplate",
+        "identifier": "dorios:paladin_chestplate",
+        "name": "Blessed Chestplate",
+        "category": "General",
+        "image": "textures/items/paladin_chestplate.png",
+        "source": "BP/items/paladin_chestplate.json"
+      },
+      {
+        "id": "paladin_helmet",
+        "slug": "paladin-helmet",
+        "identifier": "dorios:paladin_helmet",
+        "name": "Blessed Helmet",
+        "category": "General",
+        "image": "textures/items/paladin_helmet.png",
+        "source": "BP/items/paladin_helmet.json"
+      },
+      {
+        "id": "paladin_leggings",
+        "slug": "paladin-leggings",
+        "identifier": "dorios:paladin_leggings",
+        "name": "Blessed Leggings",
+        "category": "General",
+        "image": "textures/items/paladin_leggings.png",
+        "source": "BP/items/paladin_leggings.json"
+      },
+      {
+        "id": "blood_pact",
+        "slug": "blood-pact",
+        "identifier": "dorios:blood_pact",
+        "name": "Blood Pact",
+        "category": "General",
+        "image": "textures/items/blood_pact.png",
+        "source": "BP/items/blood_pact.json"
+      },
+      {
+        "id": "blood_pendant",
+        "slug": "blood-pendant",
+        "identifier": "dorios:blood_pendant",
+        "name": "Blood Pendant",
+        "category": "General",
+        "image": "textures/items/blood_pendant.png",
+        "source": "BP/items/blood_pendant.json"
+      },
+      {
+        "id": "bloodbound_amulet",
+        "slug": "bloodbound-amulet",
+        "identifier": "dorios:bloodbound_amulet",
+        "name": "Bloodbound Amulet",
+        "category": "General",
+        "image": "textures/items/bloodbound_amulet.png",
+        "source": "BP/items/bloodbound_amulet.json"
+      },
+      {
+        "id": "bloodbound_emblem",
+        "slug": "bloodbound-emblem",
+        "identifier": "dorios:bloodbound_emblem",
+        "name": "Bloodbound Emblem",
+        "category": "General",
+        "image": "textures/items/bloodbound_emblem.png",
+        "source": "BP/items/bloodbound_emblem.json"
+      },
+      {
+        "id": "blood_boots",
+        "slug": "blood-boots",
+        "identifier": "dorios:blood_boots",
+        "name": "Bloodforged Boots",
+        "category": "General",
+        "image": "textures/items/blood_boots.png",
+        "source": "BP/items/blood_boots.json"
+      },
+      {
+        "id": "blood_chestplate",
+        "slug": "blood-chestplate",
+        "identifier": "dorios:blood_chestplate",
+        "name": "Bloodforged Chestguard",
+        "category": "General",
+        "image": "textures/items/blood_chestplate.png",
+        "source": "BP/items/blood_chestplace.json"
+      },
+      {
+        "id": "blood_leggings",
+        "slug": "blood-leggings",
+        "identifier": "dorios:blood_leggings",
+        "name": "Bloodforged Greaves",
+        "category": "General",
+        "image": "textures/items/blood_leggings.png",
+        "source": "BP/items/blood_leggings.json"
+      },
+      {
+        "id": "blood_helmet",
+        "slug": "blood-helmet",
+        "identifier": "dorios:blood_helmet",
+        "name": "Bloodforged Helm",
+        "category": "General",
+        "image": "textures/items/blood_helmet.png",
+        "source": "BP/items/blood_helmet.json"
+      },
+      {
+        "id": "bloodgem",
+        "slug": "bloodgem",
+        "identifier": "dorios:bloodgem",
+        "name": "Bloodgem",
+        "category": "General",
+        "image": "textures/items/bloodgem.png",
+        "source": "BP/items/bloodgem.json"
+      },
+      {
+        "id": "bloodstained_heart",
+        "slug": "bloodstained-heart",
+        "identifier": "dorios:bloodstained_heart",
+        "name": "Bloodstained Heart",
+        "category": "General",
+        "image": "textures/items/bloodstained_heart.png",
+        "source": "BP/items/bloodstained_heart.json"
+      },
+      {
+        "id": "bloodtide_chalice",
+        "slug": "bloodtide-chalice",
+        "identifier": "dorios:bloodtide_chalice",
+        "name": "Bloodtide Chalice",
+        "category": "General",
+        "image": "textures/items/bloodtide_chalice.png",
+        "source": "BP/items/bloodtide_chalice.json"
+      },
+      {
+        "id": "broken_paladin_helmet",
+        "slug": "broken-paladin-helmet",
+        "identifier": "dorios:broken_paladin_helmet",
+        "name": "Broken Paladin Helmet",
+        "category": "General",
+        "image": "textures/items/broken_warrior_helmet.png",
+        "source": "BP/items/broken_paladin_helmet.json"
+      },
+      {
+        "id": "candy_heart",
+        "slug": "candy-heart",
+        "identifier": "dorios:candy_heart",
+        "name": "Candy Heart",
+        "category": "Hearts",
+        "image": "textures/items/candy_heart.png",
+        "source": "BP/items/hearts/candy_heart.json"
+      },
+      {
+        "id": "cloud_steps_boots",
+        "slug": "cloud-steps-boots",
+        "identifier": "dorios:cloud_steps_boots",
+        "name": "Cloudstep Boots",
+        "category": "General",
+        "image": "textures/items/cloud_steps_boots.png",
+        "source": "BP/items/cloud_steps_boots.json"
+      },
+      {
+        "id": "dead_abyssal_orb",
+        "slug": "dead-abyssal-orb",
+        "identifier": "dorios:dead_abyssal_orb",
+        "name": "Dead Abyssal Orb",
+        "category": "Abyssal",
+        "image": "textures/items/dead_abyssal_orb.png",
+        "source": "BP/items/abyssal/dead_abyssal_orb.json"
+      },
+      {
+        "id": "dragon_heart",
+        "slug": "dragon-heart",
+        "identifier": "dorios:dragon_heart",
+        "name": "Dragon's Heart",
+        "category": "General",
+        "image": "textures/items/dragons_heart.png",
+        "source": "BP/items/dragon_heart.json"
+      },
+      {
+        "id": "empty_ring",
+        "slug": "empty-ring",
+        "identifier": "dorios:empty_ring",
+        "name": "Empty Ring",
+        "category": "Rings",
+        "image": "textures/items/empty_ring_material.png",
+        "source": "BP/items/rings/empty_ring.json"
+      },
+      {
+        "id": "eternal_heart",
+        "slug": "eternal-heart",
+        "identifier": "dorios:eternal_heart",
+        "name": "Eternal Heart",
+        "category": "Hearts",
+        "image": "textures/items/eternal_heart.png",
+        "source": "BP/items/hearts/eternal_heart.json"
+      },
+      {
+        "id": "ice_gauntlet",
+        "slug": "ice-gauntlet",
+        "identifier": "dorios:ice_gauntlet",
+        "name": "Frost Gauntlet",
+        "category": "Gauntlet",
+        "image": "textures/items/ice_gauntlet.png",
+        "source": "BP/items/gauntlet/ice_gauntlet.json"
+      },
+      {
+        "id": "frost_quiver",
+        "slug": "frost-quiver",
+        "identifier": "dorios:frost_quiver",
+        "name": "Frost Quiver",
+        "category": "General",
+        "image": "textures/items/frost_quiver.png",
+        "source": "BP/items/frost_quiver.json"
+      },
+      {
+        "id": "ice_claw",
+        "slug": "ice-claw",
+        "identifier": "dorios:ice_claw",
+        "name": "Glazing Claws",
+        "category": "Gauntlet",
+        "image": "textures/items/ice_claw.png",
+        "source": "BP/items/gauntlet/ice_claw.json"
+      },
+      {
+        "id": "guardian_ring",
+        "slug": "guardian-ring",
+        "identifier": "dorios:guardian_ring",
+        "name": "Guardian's Ring",
+        "category": "Rings",
+        "image": "textures/items/guardian_ring.png",
+        "source": "BP/items/rings/guardian_ring.json"
+      },
+      {
+        "id": "healer_ring",
+        "slug": "healer-ring",
+        "identifier": "dorios:healer_ring",
+        "name": "Healer's Ring",
+        "category": "Rings",
+        "image": "textures/items/healer_ring.png",
+        "source": "BP/items/rings/healer_ring.json"
+      },
+      {
+        "id": "heavy_empty_ring",
+        "slug": "heavy-empty-ring",
+        "identifier": "dorios:heavy_empty_ring",
+        "name": "Heavy Empty Ring",
+        "category": "General",
+        "image": "textures/items/heavy_empty_ring_material.png",
+        "source": "BP/items/heavy_empty_ring.json"
+      },
+      {
+        "id": "heavy_guardian_ring",
+        "slug": "heavy-guardian-ring",
+        "identifier": "dorios:heavy_guardian_ring",
+        "name": "Heavy Guardian's Ring",
+        "category": "General",
+        "image": "textures/items/heavy_guardian_ring.png",
+        "source": "BP/items/heavy_guardian_ring.json"
+      },
+      {
+        "id": "heavy_healer_ring",
+        "slug": "heavy-healer-ring",
+        "identifier": "dorios:heavy_healer_ring",
+        "name": "Heavy Healer's Ring",
+        "category": "General",
+        "image": "textures/items/heavy_healer_ring.png",
+        "source": "BP/items/heavy_healer_ring.json"
+      },
+      {
+        "id": "heavy_miner_ring",
+        "slug": "heavy-miner-ring",
+        "identifier": "dorios:heavy_miner_ring",
+        "name": "Heavy Miner's Ring",
+        "category": "General",
+        "image": "textures/items/heavy_miner_ring.png",
+        "source": "BP/items/heavy_miner_ring.json"
+      },
+      {
+        "id": "heavy_runner_ring",
+        "slug": "heavy-runner-ring",
+        "identifier": "dorios:heavy_runner_ring",
+        "name": "Heavy Runner's Ring",
+        "category": "General",
+        "image": "textures/items/heavy_runner_ring.png",
+        "source": "BP/items/heavy_runner_ring.json"
+      },
+      {
+        "id": "heavy_warrior_ring",
+        "slug": "heavy-warrior-ring",
+        "identifier": "dorios:heavy_warrior_ring",
+        "name": "Heavy Warrior's Ring",
+        "category": "General",
+        "image": "textures/items/heavy_warrior_ring.png",
+        "source": "BP/items/heavy_warrior_ring.json"
+      },
+      {
+        "id": "holy_cross",
+        "slug": "holy-cross",
+        "identifier": "dorios:holy_cross",
+        "name": "Holy Cross",
+        "category": "General",
+        "image": "textures/items/holy_cross.png",
+        "source": "BP/items/holy_cross.json"
+      },
+      {
+        "id": "idle_bloom",
+        "slug": "idle-bloom",
+        "identifier": "dorios:idle_bloom",
+        "name": "Idle Bloom",
+        "category": "General",
+        "image": "textures/items/idle_bloom.png",
+        "source": "BP/items/idle_bloom.json"
+      },
+      {
+        "id": "immaculate_heart",
+        "slug": "immaculate-heart",
+        "identifier": "dorios:immaculate_heart",
+        "name": "Immaculate Heart",
+        "category": "Hearts",
+        "image": "textures/items/immaculate_heart.png",
+        "source": "BP/items/hearts/immaculate_heart.json"
+      },
+      {
+        "id": "fire_gauntlet",
+        "slug": "fire-gauntlet",
+        "identifier": "dorios:fire_gauntlet",
+        "name": "Infernal Gauntlet",
+        "category": "Gauntlet",
+        "image": "textures/items/fire_gauntlet.png",
+        "source": "BP/items/gauntlet/fire_gauntlet.json"
+      },
+      {
+        "id": "lava_waders",
+        "slug": "lava-waders",
+        "identifier": "dorios:lava_waders",
+        "name": "Lava Waders",
+        "category": "General",
+        "image": "textures/items/lava_waders.png",
+        "source": "BP/items/lava_waders.json"
+      },
+      {
+        "id": "mender_pendant",
+        "slug": "mender-pendant",
+        "identifier": "dorios:mender_pendant",
+        "name": "Mender's Pendant",
+        "category": "General",
+        "image": "textures/items/mender_pendant.png",
+        "source": "BP/items/mender_pendant.json"
+      },
+      {
+        "id": "miner_ring",
+        "slug": "miner-ring",
+        "identifier": "dorios:miner_ring",
+        "name": "Miner's Ring",
+        "category": "Rings",
+        "image": "textures/items/miner_ring.png",
+        "source": "BP/items/rings/miner_ring.json"
+      },
+      {
+        "id": "molten_quiver",
+        "slug": "molten-quiver",
+        "identifier": "dorios:molten_quiver",
+        "name": "Molten Quiver",
+        "category": "General",
+        "image": "textures/items/molten_quiver.png",
+        "source": "BP/items/molten_quiver.json"
+      },
+      {
+        "id": "night_vision_goggles",
+        "slug": "night-vision-goggles",
+        "identifier": "dorios:night_vision_goggles",
+        "name": "Night Vision Goggles",
+        "category": "General",
+        "image": "textures/items/night_vision_goggles.png",
+        "source": "BP/items/night_vision_goggles.json"
+      },
+      {
+        "id": "night_vision_mask",
+        "slug": "night-vision-mask",
+        "identifier": "dorios:night_vision_mask",
+        "name": "Night Vision Mask",
+        "category": "General",
+        "image": "textures/items/night_vision_mask.png",
+        "source": "BP/items/night_vision_mask.json"
+      },
+      {
+        "id": "obsidian_skull",
+        "slug": "obsidian-skull",
+        "identifier": "dorios:obsidian_skull",
+        "name": "Obsidian Skull",
+        "category": "General",
+        "image": "textures/items/obsidian_skull.png",
+        "source": "BP/items/obsidian_skull.json"
+      },
+      {
+        "id": "purity_blossom",
+        "slug": "purity-blossom",
+        "identifier": "dorios:purity_blossom",
+        "name": "Purity Blossom",
+        "category": "General",
+        "image": "textures/items/bezoar.png",
+        "source": "BP/items/purity_blossom.json"
+      },
+      {
+        "id": "rabbit_rush",
+        "slug": "rabbit-rush",
+        "identifier": "dorios:rabbit_rush",
+        "name": "Rabbit's Rush",
+        "category": "General",
+        "image": "textures/items/rabbit_rush.png",
+        "source": "BP/items/rabbit_rush.json"
+      },
+      {
+        "id": "recover_scroll",
+        "slug": "recover-scroll",
+        "identifier": "dorios:recover_scroll",
+        "name": "Recover Scroll",
+        "category": "Core",
+        "image": "textures/items/recover_scroll.png",
+        "source": "BP/items/core/recover_scroll.json"
+      },
+      {
+        "id": "repair_talis",
+        "slug": "repair-talis",
+        "identifier": "dorios:repair_talis",
+        "name": "Repair Talisman",
+        "category": "General",
+        "image": "textures/items/repair_talisman.png",
+        "source": "BP/items/repair_talisman.json"
+      },
+      {
+        "id": "restored_paladin_helmet",
+        "slug": "restored-paladin-helmet",
+        "identifier": "dorios:restored_paladin_helmet",
+        "name": "Restored Paladin Helmet",
+        "category": "General",
+        "image": "textures/items/warrior_helmet.png",
+        "source": "BP/items/restored_paladin_helmet.json"
+      },
+      {
+        "id": "rotten_heart",
+        "slug": "rotten-heart",
+        "identifier": "dorios:rotten_heart",
+        "name": "Rotten Heart",
+        "category": "Hearts",
+        "image": "textures/items/rotten_heart.png",
+        "source": "BP/items/hearts/rotten_heart.json"
+      },
+      {
+        "id": "runner_ring",
+        "slug": "runner-ring",
+        "identifier": "dorios:runner_ring",
+        "name": "Runner's Ring",
+        "category": "Rings",
+        "image": "textures/items/runner_ring.png",
+        "source": "BP/items/rings/runner_ring.json"
+      },
+      {
+        "id": "rush_of_fear",
+        "slug": "rush-of-fear",
+        "identifier": "dorios:rush_of_fear",
+        "name": "Rush of Fear",
+        "category": "General",
+        "image": "textures/items/rush_of_fear.png",
+        "source": "BP/items/rush_of_fear.json"
+      },
+      {
+        "id": "sacred_heart",
+        "slug": "sacred-heart",
+        "identifier": "dorios:sacred_heart",
+        "name": "Sacred Heart",
+        "category": "Hearts",
+        "image": "textures/items/sacred_heart.png",
+        "source": "BP/items/hearts/sacred_heart.json"
+      },
+      {
+        "id": "scroll",
+        "slug": "scroll",
+        "identifier": "dorios:scroll",
+        "name": "Scroll",
+        "category": "Core",
+        "image": "textures/items/scroll.png",
+        "source": "BP/items/core/scroll.json"
+      },
+      {
+        "id": "soul_heart",
+        "slug": "soul-heart",
+        "identifier": "dorios:soul_heart",
+        "name": "Soul Heart",
+        "category": "Hearts",
+        "image": "textures/items/soul_heart.png",
+        "source": "BP/items/hearts/soul_heart.json"
+      },
+      {
+        "id": "stats_scroll",
+        "slug": "stats-scroll",
+        "identifier": "dorios:stats_scroll",
+        "name": "Stats Scroll",
+        "category": "Core",
+        "image": "textures/items/stats_scroll.png",
+        "source": "BP/items/core/stats_scroll.json"
+      },
+      {
+        "id": "strong_abyssal_ring",
+        "slug": "strong-abyssal-ring",
+        "identifier": "dorios:strong_abyssal_ring",
+        "name": "Strong Abyssal Ring",
+        "category": "General",
+        "image": "textures/items/strong_abyssal_ring.png",
+        "source": "BP/items/strong_abyssal_ring.json"
+      },
+      {
+        "id": "strong_ancient_ring",
+        "slug": "strong-ancient-ring",
+        "identifier": "dorios:strong_ancient_ring",
+        "name": "Strong Ancient Ring",
+        "category": "General",
+        "image": "textures/items/strong_ancient_ring.png",
+        "source": "BP/items/strong_ancient_ring.json"
+      },
+      {
+        "id": "strong_blood_ring",
+        "slug": "strong-blood-ring",
+        "identifier": "dorios:strong_blood_ring",
+        "name": "Strong Blood Ring",
+        "category": "General",
+        "image": "textures/items/strong_blood_ring.png",
+        "source": "BP/items/strong_blood_ring.json"
+      },
+      {
+        "id": "strong_breeze_ring",
+        "slug": "strong-breeze-ring",
+        "identifier": "dorios:strong_breeze_ring",
+        "name": "Strong Breeze Ring",
+        "category": "General",
+        "image": "textures/items/strong_breeze_ring.png",
+        "source": "BP/items/strong_breeze_ring.json"
+      },
+      {
+        "id": "strong_brute_ring",
+        "slug": "strong-brute-ring",
+        "identifier": "dorios:strong_brute_ring",
+        "name": "Strong Brute Ring",
+        "category": "General",
+        "image": "textures/items/strong_brute_ring.png",
+        "source": "BP/items/strong_brute_ring.json"
+      },
+      {
+        "id": "strong_celestial_ring",
+        "slug": "strong-celestial-ring",
+        "identifier": "dorios:strong_celestial_ring",
+        "name": "Strong Celestial Ring",
+        "category": "General",
+        "image": "textures/items/strong_celestial_ring.png",
+        "source": "BP/items/strong_celestial_ring.json"
+      },
+      {
+        "id": "strong_echo_ring",
+        "slug": "strong-echo-ring",
+        "identifier": "dorios:strong_echo_ring",
+        "name": "Strong Echo Ring",
+        "category": "General",
+        "image": "textures/items/strong_echo_ring.png",
+        "source": "BP/items/strong_echo_ring.json"
+      },
+      {
+        "id": "strong_ender_ring",
+        "slug": "strong-ender-ring",
+        "identifier": "dorios:strong_ender_ring",
+        "name": "Strong Ender Ring",
+        "category": "General",
+        "image": "textures/items/strong_ender_ring.png",
+        "source": "BP/items/strong_ender_ring.json"
+      },
+      {
+        "id": "strong_fortress_ring",
+        "slug": "strong-fortress-ring",
+        "identifier": "dorios:strong_fortress_ring",
+        "name": "Strong Fortress Ring",
+        "category": "General",
+        "image": "textures/items/strong_fortress_ring.png",
+        "source": "BP/items/strong_fortress_ring.json"
+      },
+      {
+        "id": "strong_inferno_ring",
+        "slug": "strong-inferno-ring",
+        "identifier": "dorios:strong_inferno_ring",
+        "name": "Strong Inferno Ring",
+        "category": "General",
+        "image": "textures/items/strong_inferno_ring.png",
+        "source": "BP/items/strong_inferno_ring.json"
+      },
+      {
+        "id": "strong_jade_ring",
+        "slug": "strong-jade-ring",
+        "identifier": "dorios:strong_jade_ring",
+        "name": "Strong Jade Ring",
+        "category": "General",
+        "image": "textures/items/strong_jade_ring.png",
+        "source": "BP/items/strong_jade_ring.json"
+      },
+      {
+        "id": "strong_shulker_ring",
+        "slug": "strong-shulker-ring",
+        "identifier": "dorios:strong_shulker_ring",
+        "name": "Strong Shulker Ring",
+        "category": "General",
+        "image": "textures/items/strong_shulker_ring.png",
+        "source": "BP/items/strong_shulker_ring.json"
+      },
+      {
+        "id": "strong_trader_ring",
+        "slug": "strong-trader-ring",
+        "identifier": "dorios:strong_trader_ring",
+        "name": "Strong Trader Ring",
+        "category": "General",
+        "image": "textures/items/strong_trader_ring.png",
+        "source": "BP/items/strong_trader_ring.json"
+      },
+      {
+        "id": "tideforged_carapace",
+        "slug": "tideforged-carapace",
+        "identifier": "dorios:tideforged_carapace",
+        "name": "Tideforged Carapace",
+        "category": "General",
+        "image": "textures/items/Tideforged Carapace.png",
+        "source": "BP/items/tideforged_carapace.json"
+      },
+      {
+        "id": "tideforged_eye",
+        "slug": "tideforged-eye",
+        "identifier": "dorios:tideforged_eye",
+        "name": "Tideforged Eye",
+        "category": "General",
+        "image": "textures/items/Tideforged Eye.png",
+        "source": "BP/items/tideforged_eye.json"
+      },
+      {
+        "id": "tideforged_heart",
+        "slug": "tideforged-heart",
+        "identifier": "dorios:tideforged_heart",
+        "name": "Tideforged Heart",
+        "category": "General",
+        "image": "textures/items/Tideforged Heart.png",
+        "source": "BP/items/tideforged_heart.json"
+      },
+      {
+        "id": "tideforged_knuckles",
+        "slug": "tideforged-knuckles",
+        "identifier": "dorios:tideforged_knuckles",
+        "name": "Tideforged Knuckles",
+        "category": "General",
+        "image": "textures/items/tideforged_knuckles.png",
+        "source": "BP/items/tideforged_knuckles.json"
+      },
+      {
+        "id": "tideforged_pendant",
+        "slug": "tideforged-pendant",
+        "identifier": "dorios:tideforged_pendant",
+        "name": "Tideforged Pendant",
+        "category": "General",
+        "image": "textures/items/Tideforged Pendant.png",
+        "source": "BP/items/tideforged_pendant.json"
+      },
+      {
+        "id": "tideforged_ring",
+        "slug": "tideforged-ring",
+        "identifier": "dorios:tideforged_ring",
+        "name": "Tideforged Ring",
+        "category": "General",
+        "image": "textures/items/tideforged_ring.png",
+        "source": "BP/items/tideforged_ring.json"
+      },
+      {
+        "id": "tideforged_stars",
+        "slug": "tideforged-stars",
+        "identifier": "dorios:tideforged_stars",
+        "name": "Tideforged Stars",
+        "category": "General",
+        "image": "textures/items/tideforged_stars.png",
+        "source": "BP/items/tideforged_stars.json"
+      },
+      {
+        "id": "venom_gauntlet",
+        "slug": "venom-gauntlet",
+        "identifier": "dorios:venom_gauntlet",
+        "name": "Toxic Gauntlet",
+        "category": "Gauntlet",
+        "image": "textures/items/venom_gauntlet.png",
+        "source": "BP/items/gauntlet/venom_gauntlet.json"
+      },
+      {
+        "id": "venom_quiver",
+        "slug": "venom-quiver",
+        "identifier": "dorios:venom_quiver",
+        "name": "Toxin Quiver",
+        "category": "General",
+        "image": "textures/items/venom_quiver.png",
+        "source": "BP/items/venom_quiver.json"
+      },
+      {
+        "id": "venom_claw",
+        "slug": "venom-claw",
+        "identifier": "dorios:venom_claw",
+        "name": "Viper Claws",
+        "category": "Gauntlet",
+        "image": "textures/items/venom_claw.png",
+        "source": "BP/items/gauntlet/venom_claw.json"
+      },
+      {
+        "id": "voodoo",
+        "slug": "voodoo",
+        "identifier": "dorios:voodoo",
+        "name": "Voodoo",
+        "category": "General",
+        "image": "textures/items/voodoo.png",
+        "source": "BP/items/voodoo.json"
+      },
+      {
+        "id": "warden_heart",
+        "slug": "warden-heart",
+        "identifier": "dorios:warden_heart",
+        "name": "Warden's Heart",
+        "category": "Hearts",
+        "image": "textures/items/warden_heart.png",
+        "source": "BP/items/hearts/warden_heart.json"
+      },
+      {
+        "id": "warrior_ring",
+        "slug": "warrior-ring",
+        "identifier": "dorios:warrior_ring",
+        "name": "Warrior's Ring",
+        "category": "Rings",
+        "image": "textures/items/warrior_ring.png",
+        "source": "BP/items/rings/warrior_ring.json"
+      },
+      {
+        "id": "wither_heart",
+        "slug": "wither-heart",
+        "identifier": "dorios:wither_heart",
+        "name": "Wither's Heart",
+        "category": "Hearts",
+        "image": "textures/items/wither_heart.png",
+        "source": "BP/items/hearts/wither_heart.json"
+      }
+    ]
+  },
+  "variantGroups": []
+}

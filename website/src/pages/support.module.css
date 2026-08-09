@@ -1,0 +1,392 @@
+.page {
+  width: min(calc(100% - var(--ds-page-inline)), var(--ds-content-max));
+  margin: 0 auto;
+  padding: var(--ds-section-space) 0;
+  font-family: var(--ds-ui-font, "Space Grotesk Variable", "Space Grotesk", sans-serif);
+}
+
+.hero {
+  max-width: 880px;
+  margin-bottom: var(--ds-section-space-small);
+}
+
+.kicker,
+.calloutKicker {
+  margin: 0 0 1.1rem;
+  font-size: .8rem;
+  font-weight: 730;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.kicker {
+  color: var(--ds-accent-light);
+}
+
+.hero h1,
+.communityCopy h2,
+.callout h2,
+.patronPanel strong {
+  font-family: var(--ds-display-font, "League Spartan Variable", "League Spartan", sans-serif);
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--ds-text);
+  font-size: var(--ds-display-heading);
+  font-weight: 800;
+  letter-spacing: -.08em;
+  line-height: .82;
+}
+
+.hero h1 span {
+  color: var(--ds-accent);
+}
+
+.lead {
+  max-width: 650px;
+  margin: 1.5rem 0 0;
+  color: var(--ds-muted);
+  font-size: clamp(1.02rem, 1.5vw, 1.18rem);
+  line-height: 1.65;
+}
+
+.communityCards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--ds-grid-gap);
+}
+
+.communityCard {
+  --platform-accent: var(--ds-accent);
+  min-height: 270px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  padding: clamp(1.25rem, 2vw, 1.6rem);
+  border: 1px solid var(--ds-border);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 85% 12%, color-mix(in srgb, var(--platform-accent) 16%, transparent), transparent 38%),
+    var(--ds-surface);
+  color: var(--ds-text);
+  text-decoration: none;
+  isolation: isolate;
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.communityCard[data-platform='discord'] {
+  --platform-accent: #5865f2;
+}
+
+.communityCard[data-platform='youtube'] {
+  --platform-accent: #ff0033;
+}
+
+.communityCard[data-platform='github'] {
+  --platform-accent: var(--ds-accent);
+}
+
+.communityCard:hover,
+.communityCard:focus-visible {
+  border-color: color-mix(in srgb, var(--platform-accent) 72%, var(--ds-border));
+  box-shadow: 0 20px 48px color-mix(in srgb, var(--ds-bg) 64%, transparent);
+  transform: translateY(-5px);
+}
+
+.communityCard:focus-visible,
+.patronPanel:focus-visible {
+  outline: 2px solid var(--ds-accent);
+  outline-offset: 5px;
+}
+
+.cardTopline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brandIcon,
+.externalIcon,
+.patreonIcon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.brandIcon {
+  width: 52px;
+  height: 52px;
+  border: 1px solid color-mix(in srgb, var(--platform-accent) 50%, var(--ds-border));
+  border-radius: 15px;
+  background: color-mix(in srgb, var(--platform-accent) 14%, transparent);
+  color: color-mix(in srgb, var(--platform-accent) 82%, var(--ds-text));
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.brandIcon svg {
+  width: 25px;
+  height: 25px;
+  fill: currentColor;
+}
+
+.externalIcon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid color-mix(in srgb, var(--ds-border) 80%, transparent);
+  border-radius: 11px;
+  color: var(--ds-muted);
+}
+
+.externalIcon svg,
+.cardAction svg,
+.patronPanel i svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.communityCard:hover .brandIcon,
+.communityCard:focus-visible .brandIcon {
+  background: var(--platform-accent);
+  color: #fff;
+  transform: rotate(-3deg) scale(1.04);
+}
+
+.communityCopy {
+  margin-top: auto;
+}
+
+.communityCopy > span {
+  display: block;
+  margin-bottom: .65rem;
+  color: var(--ds-accent-light);
+  font-size: .8rem;
+  font-weight: 720;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.communityCopy h2 {
+  max-width: 11ch;
+  margin: 0;
+  color: var(--ds-text);
+  font-size: clamp(2rem, 2.9vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -.06em;
+  line-height: .9;
+}
+
+.cardAction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding-top: .95rem;
+  border-top: 1px solid color-mix(in srgb, var(--ds-border) 68%, transparent);
+  color: var(--ds-text);
+  font-size: .85rem;
+  font-weight: 720;
+}
+
+.cardAction svg {
+  color: var(--ds-accent-light);
+  transition: transform 180ms ease;
+}
+
+.communityCard:hover .cardAction svg,
+.communityCard:focus-visible .cardAction svg {
+  transform: translate(3px, -2px);
+}
+
+.callout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr);
+  align-items: stretch;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  margin-top: var(--ds-section-space-small);
+  padding: clamp(1.65rem, 4vw, 3.5rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--ds-accent-ink) 18%, transparent);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 93% 0%, rgba(255, 255, 255, .28), transparent 32%),
+    linear-gradient(135deg, var(--ds-accent), color-mix(in srgb, var(--ds-accent) 78%, #ffb16f));
+  color: var(--ds-accent-ink);
+}
+
+.calloutCopy {
+  align-self: center;
+}
+
+.calloutKicker {
+  color: color-mix(in srgb, var(--ds-accent-ink) 74%, transparent);
+}
+
+.callout h2 {
+  max-width: 780px;
+  margin: 0;
+  color: inherit;
+  font-size: var(--ds-section-heading);
+  font-weight: 800;
+  letter-spacing: -.075em;
+  line-height: .84;
+}
+
+.calloutCopy > p:last-child {
+  max-width: 610px;
+  margin: 1.35rem 0 0;
+  color: color-mix(in srgb, var(--ds-accent-ink) 84%, transparent);
+  font-size: 1.06rem;
+  line-height: 1.65;
+}
+
+.patronPanel {
+  min-height: 230px;
+  position: relative;
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(1.25rem, 2vw, 1.65rem);
+  border: 1px solid color-mix(in srgb, var(--ds-accent-ink) 22%, transparent);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .16);
+  color: var(--ds-accent-ink);
+  text-decoration: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22);
+  transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.patronPanel:hover,
+.patronPanel:focus-visible {
+  background: rgba(255, 255, 255, .25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), 0 14px 32px rgba(54, 20, 2, .14);
+  transform: translateY(-4px);
+}
+
+.patreonIcon {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 1.35rem;
+  left: 1.35rem;
+  border: 1px solid color-mix(in srgb, var(--ds-accent-ink) 22%, transparent);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .2);
+}
+
+.patreonIcon svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.patronPanel > span:not(.patreonIcon) {
+  margin-bottom: .55rem;
+  font-size: .8rem;
+  font-weight: 730;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.patronPanel strong {
+  max-width: 8ch;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -.055em;
+  line-height: .88;
+}
+
+.patronPanel i {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  right: 1.35rem;
+  bottom: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--ds-accent-ink) 22%, transparent);
+  border-radius: 11px;
+  font-style: normal;
+  transition: transform 180ms ease;
+}
+
+.patronPanel:hover i,
+.patronPanel:focus-visible i {
+  transform: translate(3px, -2px);
+}
+
+@media (max-width: 920px) {
+  .communityCards {
+    grid-template-columns: 1fr;
+  }
+
+  .communityCard {
+    min-height: 220px;
+  }
+
+  .communityCopy h2 {
+    max-width: none;
+  }
+
+  .callout {
+    grid-template-columns: 1fr;
+  }
+
+  .patronPanel {
+    min-height: 190px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page {
+    padding: 3.5rem 0;
+  }
+
+  .communityCard {
+    min-height: 215px;
+    border-radius: 18px;
+  }
+
+  .callout {
+    border-radius: 20px;
+  }
+
+  .patronPanel {
+    min-height: 205px;
+    border-radius: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .communityCard,
+  .brandIcon,
+  .cardAction svg,
+  .patronPanel,
+  .patronPanel i {
+    transition: none;
+  }
+
+  .communityCard:hover,
+  .communityCard:focus-visible,
+  .communityCard:hover .brandIcon,
+  .communityCard:focus-visible .brandIcon,
+  .communityCard:hover .cardAction svg,
+  .communityCard:focus-visible .cardAction svg,
+  .patronPanel:hover,
+  .patronPanel:focus-visible,
+  .patronPanel:hover i,
+  .patronPanel:focus-visible i {
+    transform: none;
+  }
+}

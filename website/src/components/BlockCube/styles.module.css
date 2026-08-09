@@ -1,0 +1,83 @@
+.cube {
+  --cube-width: min(84vw, 36rem);
+  width: var(--cube-width);
+  aspect-ratio: 1 / 1;
+  position: relative;
+  margin: 1.25rem auto;
+  isolation: isolate;
+  overflow: visible;
+  container-type: inline-size;
+  perspective: 260cqi;
+  perspective-origin: 50% 44%;
+}
+
+.cubeObject {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 68cqi;
+  height: 68cqi;
+  transform: translate(-50%, -50%) rotateX(-31deg) rotateY(45deg);
+  transform-style: preserve-3d;
+}
+
+.face {
+  width: 68cqi;
+  height: 68cqi;
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color, #1c1c1c);
+  backface-visibility: hidden;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.22);
+  transition: filter 180ms ease;
+}
+
+.face img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+/* The three supplied textures become real planes in a single 3D space. */
+.top {
+  transform: rotateX(90deg) translateZ(34cqi);
+  transform-origin: center;
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(34cqi);
+  transform-origin: center;
+}
+
+.right {
+  transform: translateZ(34cqi);
+  transform-origin: center;
+}
+
+.face:hover,
+.face:focus-visible {
+  filter: brightness(1.14);
+}
+
+.face:focus-visible {
+  outline: 3px solid var(--ifm-color-primary, #ff6414);
+  outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+  .cube { --cube-width: min(92vw, 28rem); }
+}
+
+@supports not (width: 1cqi) {
+  .cube { perspective: 720px; }
+  .cubeObject,
+  .face { width: 10rem; height: 10rem; }
+  .cubeObject { transform: translate(-50%, -50%) rotateX(-31deg) rotateY(45deg); }
+  .top { transform: rotateX(90deg) translateZ(5rem); }
+  .left { transform: rotateY(-90deg) translateZ(5rem); }
+  .right { transform: translateZ(5rem); }
+}

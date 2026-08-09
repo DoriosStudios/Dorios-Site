@@ -3,6 +3,7 @@
 
 # Production
 /build
+/static/img/social/wiki/
 
 # Generated files
 .docusaurus

@@ -22,9 +22,24 @@ const config = {
         content: 'CA75657DD7DCB62C',
       },
     },
+    {
+      // The Docusaurus route tracker expects window.gtag to exist. Keep a
+      // harmless queue available when the external Google script is delayed
+      // or blocked by browser privacy settings.
+      tagName: 'script',
+      attributes: {},
+      innerHTML: `
+        window.dataLayer = window.dataLayer || [];
+        if (typeof window.gtag !== 'function') {
+          window.gtag = function gtag() {
+            window.dataLayer.push(arguments);
+          };
+        }
+      `,
+    },
   ],
 
-  organizationName: 'RealMilo504',
+  organizationName: 'DoriosStudios',
   projectName: 'Dorios-Site',
 
   onBrokenLinks: 'throw',
@@ -40,7 +55,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          editUrl: 'https://github.com/RealMilo504/Dorios-Site/tree/main/',
+          editUrl: 'https://github.com/DoriosStudios/Dorios-Site/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -49,7 +64,7 @@ const config = {
             xslt: true,
           },
           include: ['**/*.md', '**/*.mdx'],
-          editUrl: 'https://github.com/RealMilo504/Dorios-Site/tree/main/',
+          editUrl: 'https://github.com/DoriosStudios/Dorios-Site/tree/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -65,6 +80,7 @@ const config = {
     ],
   ],
   plugins: [
+    require.resolve('./plugins/addon-wiki-routes'),
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -72,7 +88,7 @@ const config = {
         path: 'documentation',
         routeBasePath: 'documentation',
         sidebarPath: require.resolve('./sidebars.js'),
-        editUrl: 'https://github.com/RealMilo504/Dorios-Site/tree/main/',
+        editUrl: 'https://github.com/DoriosStudios/Dorios-Site/tree/main/',
       },
     ],
   ],
@@ -80,7 +96,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/dorios-social-card.jpg',
+      image: 'img/dorios_logo_blackbg.png',
 
    metadata: [
         {
@@ -99,9 +115,6 @@ const config = {
 
         // Your REAL logo
         { property: 'og:image', content: 'https://doriosstudios.com/img/dorios_logo_blackbg.png' },
-        { property: 'og:image:width', content: '512' },
-        { property: 'og:image:height', content: '512' },
-        { property: 'og:image:type', content: 'image/png' },
 
         { property: 'og:url', content: 'https://doriosstudios.com' },
         { property: 'og:type', content: 'website' },
@@ -142,13 +155,8 @@ const config = {
           src: 'img/dorios_logo.png',
         },
         items: [
-          { type: 'search', position: 'right' },
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Wikis',
-          },
+          {to: '/projects', label: 'Projects', position: 'left'},
+          {to: '/wiki', label: 'Wiki', position: 'left'},
           {
             type: 'docSidebar',
             sidebarId: 'documentationSidebar',
@@ -156,7 +164,9 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          { to: '/about', label: 'About Us', position: 'left' }
+          {to: '/studio', label: 'Studio', position: 'left'},
+          {to: '/support', label: 'Support', position: 'left'},
+          {type: 'search', position: 'right'},
         ],
       },
 

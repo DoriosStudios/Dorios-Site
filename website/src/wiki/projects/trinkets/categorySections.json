@@ -1,0 +1,17 @@
+[
+  {"id": "hearty-charms", "label": "Hearty Charms", "icon": "♥"},
+  {"id": "feet", "label": "Feet", "icon": "↟"},
+  {"id": "rings", "label": "Rings", "icon": "○", "categories": ["Rings", "Heavy Rings", "Strong Rings"], "aliases": ["heavy-rings", "strong-rings"]},
+  {"id": "head", "label": "Head", "icon": "⌃"},
+  {"id": "body", "label": "Body", "icon": "◇"},
+  {"id": "necklaces", "label": "Necklaces", "icon": "⌄"},
+  {"id": "charms", "label": "Charms", "icon": "✦"},
+  {"id": "talismans", "label": "Talismans", "icon": "✧"},
+  {"id": "gauntlets", "label": "Gauntlets", "icon": "◆"},
+  {"id": "dolls", "label": "Dolls", "icon": "♙"},
+  {"id": "archaic-charms", "label": "Archaic Charms", "icon": "✺"},
+  {"id": "amulets", "label": "Amulets", "icon": "◈"},
+  {"id": "armor-sets", "label": "Armor Sets", "icon": "⬡"},
+  {"id": "ring-materials", "label": "Ring Materials", "icon": "∙"},
+  {"id": "utility-items", "label": "Utility Items", "icon": "+"}
+]

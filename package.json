@@ -1,0 +1,13 @@
+{
+  "name": "dorios-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm ci --prefix website && npm run build --prefix website",
+    "start": "npm run start --prefix website -- --host 0.0.0.0",
+    "serve": "npm run serve --prefix website -- --host 0.0.0.0 --port 3000 --no-open"
+  },
+  "engines": {
+    "node": ">=20.0"
+  }
+}
