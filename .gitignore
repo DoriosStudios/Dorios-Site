@@ -1,0 +1,9 @@
+.references/
+references/
+node_modules/
+__pycache__/
+*.py[cod]
+website/.docusaurus/
+website/build/
+website/static/img/addons/**/*.rar
+*.log

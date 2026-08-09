@@ -1,0 +1,393 @@
+.projectsPage {
+	width: min(calc(100% - var(--ds-page-inline)), var(--ds-content-max));
+	margin: 0 auto;
+	padding: var(--ds-section-space) 0;
+}
+.intro {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(280px, 0.46fr);
+	gap: 0.8rem clamp(1.5rem, 3vw, 3rem);
+	margin-bottom: var(--ds-section-space-small);
+	align-items: end;
+}
+.kicker,
+.overline {
+	margin: 0;
+	color: var(--ds-accent-light);
+	font-size: 0.7rem;
+	font-weight: 800;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+.intro .kicker {
+	grid-column: 1 / -1;
+	margin-bottom: 0;
+}
+.intro h1,
+.catalog h2 {
+	margin: 0;
+	color: var(--ds-text);
+	font-size: var(--ds-display-heading);
+	font-weight: 800;
+	letter-spacing: -0.078em;
+	line-height: 0.82;
+}
+.intro h1 span {
+	color: var(--ds-accent);
+}
+.intro > p:last-child {
+	max-width: 390px;
+	margin: 0;
+	color: var(--ds-muted);
+	font-size: 1rem;
+	line-height: 1.65;
+}
+
+.spotlightGrid {
+	display: grid;
+	grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+	grid-template-rows: repeat(2, minmax(0, 1fr));
+	gap: var(--ds-grid-gap);
+}
+.featureCard {
+	min-width: 0;
+	overflow: hidden;
+	border: 1px solid color-mix(in srgb, var(--card-primary) 44%, var(--ds-border));
+	border-radius: 24px;
+	background:
+		radial-gradient(circle at 100% 0, color-mix(in srgb, var(--card-primary) 16%, transparent), transparent 34%),
+		linear-gradient(145deg, var(--ds-surface), color-mix(in srgb, var(--card-secondary) 8%, var(--ds-surface)));
+	color: var(--ds-text);
+	box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ds-text) 3%, transparent);
+}
+.utilityCard {
+	grid-row: span 2;
+	display: flex;
+	flex-direction: column;
+	padding: 0.8rem;
+	transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+.utilityCard:hover,
+.utilityCard:focus-visible {
+	border-color: color-mix(in srgb, var(--card-primary) 68%, var(--ds-text));
+	box-shadow: 0 18px 42px color-mix(in srgb, var(--card-primary) 18%, transparent);
+	transform: translateY(-3px);
+}
+.visualFrame {
+	overflow: hidden;
+	border-radius: 16px;
+	background:
+		radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--card-secondary) 18%, transparent), transparent 48%),
+		color-mix(in srgb, var(--card-primary) 10%, var(--ds-surface-raised));
+}
+.iconFrame {
+	background:
+		radial-gradient(circle, color-mix(in srgb, var(--card-primary) 24%, transparent), transparent 58%),
+		var(--ds-surface-raised);
+}
+.iconFrame img {
+	padding: clamp(1.5rem, 4.5vw, 4rem);
+	image-rendering: pixelated;
+}
+.utilityCard .visualFrame {
+	aspect-ratio: 16 / 9;
+}
+.visualFrame img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+	transition: transform 500ms ease;
+}
+.featureCard:hover .visualFrame img,
+.featureCard:focus-visible .visualFrame img {
+	transform: scale(1.035);
+}
+.featureCopy {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 0.75rem 1.5rem;
+	padding: clamp(1.05rem, 2.2vw, 1.65rem) 0.5rem 0.35rem;
+}
+.featureCopy h2 {
+	grid-column: 1 / -1;
+	margin: 0;
+	font-size: clamp(2.55rem, 4vw, 4.6rem);
+	font-weight: 800;
+	letter-spacing: -0.075em;
+	line-height: 0.82;
+	overflow-wrap: normal;
+	word-break: normal;
+}
+.description {
+	max-width: 470px;
+	margin: 0;
+	color: var(--ds-muted);
+	line-height: 1.55;
+}
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+}
+.tags span {
+	padding: 0.34rem 0.5rem;
+	border: 1px solid var(--ds-border);
+	border-radius: 999px;
+	color: var(--ds-muted);
+	font-size: 0.66rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+.tags span:first-child {
+	border-color: color-mix(in srgb, var(--card-primary) 65%, var(--ds-border));
+	color: color-mix(in srgb, var(--card-primary) 52%, var(--ds-text));
+}
+.overline {
+	margin-top: 0.9rem;
+}
+.featureArrow {
+	align-self: end;
+	justify-self: end;
+	width: 44px;
+	height: 44px;
+	display: grid;
+	place-items: center;
+	border-radius: 13px;
+	background: var(--ds-surface-raised);
+	color: color-mix(in srgb, var(--card-primary) 58%, var(--ds-text));
+	font-size: 1.35rem;
+	font-style: normal;
+	transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+.utilityCard:hover .featureArrow,
+.utilityCard:focus-visible .featureArrow {
+	background: color-mix(in srgb, var(--card-primary) 72%, var(--ds-surface-raised));
+	color: var(--ds-text);
+	transform: translate(3px, -3px);
+}
+
+.sideCard {
+	position: relative;
+	display: grid;
+	grid-template-columns: minmax(150px, 43%) minmax(0, 1fr);
+	gap: 0.75rem;
+	align-items: stretch;
+	padding: 0.7rem;
+	transition:
+		border-color 180ms ease,
+		transform 180ms ease;
+}
+.sideCard:hover,
+.sideCard:focus-visible {
+	border-color: color-mix(in srgb, var(--card-primary) 68%, var(--ds-text));
+	transform: translateY(-2px);
+}
+.compactCopy {
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 0.3rem 0.2rem;
+}
+.compactCopy h2 {
+	margin: 0.55rem 0;
+	font-size: clamp(1.4rem, 2.1vw, 2.15rem);
+	font-weight: 800;
+	letter-spacing: -0.07em;
+	line-height: 0.88;
+}
+.compactCopy > p:last-child {
+	margin: 0;
+	color: var(--ds-muted);
+	font-size: 0.84rem;
+	line-height: 1.45;
+}
+.sideCard .visualFrame {
+	width: 100%;
+	min-height: 0;
+	aspect-ratio: 16 / 9;
+	align-self: center;
+}
+.cardArrow {
+	position: absolute;
+	right: 1.1rem;
+	bottom: 0.9rem;
+	color: color-mix(in srgb, var(--card-primary) 58%, var(--ds-text));
+	font-size: 1.35rem;
+	font-style: normal;
+}
+
+.catalog {
+	margin-top: var(--ds-section-space);
+}
+.catalogHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	gap: 1.5rem;
+	margin-bottom: 1.75rem;
+}
+.catalog h2 {
+	font-size: var(--ds-section-heading);
+}
+.catalogGrid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: var(--ds-grid-gap);
+}
+.catalogCard {
+	min-width: 0;
+	padding: 0.65rem;
+	border: 1px solid color-mix(in srgb, var(--card-primary) 44%, var(--ds-border));
+	border-radius: 18px;
+	background:
+		radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--card-secondary) 12%, transparent), transparent 40%),
+		color-mix(in srgb, var(--card-primary) 5%, var(--ds-surface));
+	color: var(--ds-text);
+	transition:
+		transform 180ms ease,
+		border-color 180ms ease;
+}
+.catalogCard:hover,
+.catalogCard:focus-visible {
+	border-color: color-mix(in srgb, var(--card-primary) 68%, var(--ds-text));
+	box-shadow: 0 14px 30px color-mix(in srgb, var(--card-primary) 14%, transparent);
+	transform: translateY(-3px);
+}
+.catalogImage {
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+	border-radius: 12px;
+	background: color-mix(in srgb, var(--card-primary) 10%, var(--ds-surface-raised));
+}
+.catalogImage img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+	transition: transform 450ms ease;
+}
+.catalogCard:hover img,
+.catalogCard:focus-visible img {
+	transform: scale(1.04);
+}
+.catalogCopy {
+	position: relative;
+	padding: 0.8rem 0.15rem 0.25rem;
+}
+.catalogCopy h3 {
+	max-width: calc(100% - 2.5rem);
+	margin: 0.75rem 0 0;
+	font-size: clamp(1.2rem, 2vw, 1.75rem);
+	font-weight: 800;
+	letter-spacing: -0.06em;
+	line-height: 0.95;
+}
+.catalogCopy > span {
+	position: absolute;
+	right: 0.15rem;
+	bottom: 0.25rem;
+	color: color-mix(in srgb, var(--card-primary) 58%, var(--ds-text));
+	font-size: 1.3rem;
+}
+.projectsPage a:focus-visible {
+	outline: 2px solid var(--ds-accent);
+	outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+	.intro {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+	.intro .kicker {
+		margin-bottom: 0;
+	}
+	.spotlightGrid {
+		grid-template-columns: 1fr;
+		grid-template-rows: none;
+	}
+	.utilityCard {
+		grid-row: auto;
+	}
+	.sideCard {
+		min-height: 180px;
+	}
+	.catalogGrid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+@media (max-width: 560px) {
+	.projectsPage {
+		padding: 3.25rem 0;
+	}
+	.featureCard {
+		border-radius: 19px;
+	}
+	.utilityCard {
+		padding: 0.7rem;
+	}
+	.featureCopy {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		padding: 1.15rem 0.3rem 0.2rem;
+	}
+	.description {
+		font-size: 0.95rem;
+	}
+	.sideCard {
+		grid-template-columns: minmax(135px, 43%) minmax(0, 1fr);
+		padding: 0.7rem;
+	}
+	.sideCard .visualFrame {
+		min-height: 0;
+		border-radius: 12px;
+	}
+	.catalogHeader {
+		display: block;
+	}
+	.catalogHeader .kicker {
+		margin-bottom: 1rem;
+	}
+	.catalogGrid {
+		grid-template-columns: 1fr;
+	}
+}
+@media (max-width: 460px) {
+	.sideCard {
+		grid-template-columns: 1fr;
+	}
+	.sideCard .visualFrame {
+		min-height: 0;
+		aspect-ratio: 16 / 9;
+	}
+	.compactCopy {
+		padding: 0.8rem 0.35rem 1.4rem;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.featureCard,
+	.catalogCard,
+	.visualFrame img,
+	.catalogImage img,
+	.featureArrow {
+		transition: none;
+	}
+	.featureCard:hover .visualFrame img,
+	.featureCard:focus-visible .visualFrame img,
+	.catalogCard:hover img,
+	.catalogCard:focus-visible img,
+	.sideCard:hover,
+	.sideCard:focus-visible,
+	.catalogCard:hover,
+	.catalogCard:focus-visible,
+	.utilityCard:hover,
+	.utilityCard:focus-visible,
+	.utilityCard:hover .featureArrow,
+	.utilityCard:focus-visible .featureArrow {
+		transform: none;
+	}
+}

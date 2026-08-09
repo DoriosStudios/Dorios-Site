@@ -1,0 +1,9 @@
+{
+  "exclude": {
+    "identifierPatterns": [
+      "utilitycraft:network_center",
+      "utilitycraft:reinforced_importer",
+      "utilitycraft:reinforced_exporter"
+    ]
+  }
+}

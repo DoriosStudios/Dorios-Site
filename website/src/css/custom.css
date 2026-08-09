@@ -1,5 +1,10 @@
 @import './wiki-table-styles.css';
 
+/* The studio landing pages provide their own responsive navigation. */
+body:has(.dorios-marketing-page) .navbar {
+  display: none;
+}
+
 :root {
   /* Blaze Orange palette */
   --ifm-color-primary: #ff6b00;

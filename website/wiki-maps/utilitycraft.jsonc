@@ -1,0 +1,16 @@
+{
+  "exclude": {
+    "pathPatterns": [
+      "blocks/**",
+      "vanilla/source/**"
+    ],
+    "identifierPatterns": [
+      "utilitycraft:machine_area_outline",
+      "utilitycraft:pedestal_area_outline"
+    ]
+  },
+  "blockItemIcons": {
+    "prismarine_crystal_crop": "prismarine_crystals_seeds",
+    "netherstar_crop": "nether_star_seeds"
+  }
+}

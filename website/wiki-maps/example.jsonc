@@ -1,0 +1,11 @@
+{
+  // UI item folders and placeholder/dummy identifiers are excluded by default.
+  "exclude": {
+    "pathPatterns": [
+      "**/debug/**"
+    ],
+    "identifierPatterns": [
+      "*:internal_preview_*"
+    ]
+  }
+}
