@@ -284,6 +284,8 @@ export function createGeneratedProject({
   machineCategoryOrder = [],
   machineFilter = isMachineBlock,
   generatorFilter = isGeneratorBlock,
+  includeBlockSection = true,
+  includeEntitySection = false,
 }) {
   const basePath = `/wiki/${id}`;
   const assetRoot = `/img/wiki/${id}`;
@@ -340,10 +342,10 @@ export function createGeneratedProject({
   const available = {
     overview: true,
     items: items.length > 0,
-    blocks: blocks.length > 0,
+    blocks: includeBlockSection && blocks.length > 0,
     machines: machines.length > 0,
     generators: generators.length > 0,
-    entities: entities.length > 0,
+    entities: includeEntitySection && entities.length > 0,
     recipes: craftingRecipeDetails.length > 0,
     mechanics: mechanics.length > 0,
   };

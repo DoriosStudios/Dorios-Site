@@ -1,0 +1,17 @@
+[
+  {"id": "utilitycraft", "modId": 1095313},
+  {"id": "smelters", "modId": 1241687},
+  {"id": "bonsais", "modId": 1087426},
+  {"id": "excavate", "modId": 1360468},
+  {"id": "trinkets", "modId": 1173489},
+  {"id": "atelier", "modId": 1396749},
+  {"id": "basics", "modId": 1249403},
+  {"id": "cobblestone-generators", "modId": 1086676},
+  {"id": "compressy", "modId": 1387104},
+  {"id": "crops", "modId": 1097197},
+  {"id": "dummy", "modId": 1095457},
+  {"id": "lamps", "modId": 1265361},
+  {"id": "paxels", "modId": 1379131},
+  {"id": "pillars", "modId": 1089788},
+  {"id": "trees", "modId": 1310972}
+]

@@ -7,7 +7,6 @@ export const wikiSections = [
   {id: 'blocks', label: 'Blocks', icon: '◆', href: '/wiki/heavy-machinery/blocks'},
   {id: 'machines', label: 'Machines', icon: '▦', href: '/wiki/heavy-machinery/machines'},
   {id: 'generators', label: 'Generators', icon: '◉', href: '/wiki/heavy-machinery/generators'},
-  {id: 'entities', label: 'Entities', icon: '◎', href: '/wiki/heavy-machinery/entities'},
   {id: 'recipes', label: 'Recipes', icon: '▤', href: '/wiki/heavy-machinery/recipes'},
   {id: 'mechanics', label: 'Mechanics', icon: '⚙', href: '/wiki/heavy-machinery/mechanics'},
 ];

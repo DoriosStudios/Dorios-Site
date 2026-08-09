@@ -6,6 +6,7 @@ import DoriosMarketingShell from '../DoriosMarketingShell';
 import SocialMetadata from '../SocialMetadata';
 import {projectCardPalette} from '../../data/cardPalettes';
 import githubReleaseStats from '../../data/githubReleaseStats.json';
+import curseForgeStats from '../../data/curseForgeStats.json';
 import {projectCatalog, relatedProjects} from '../../data/projects';
 import styles from './styles.module.css';
 
@@ -34,7 +35,7 @@ function abbreviatedDownloadCount(value) {
 }
 
 function availableMetrics(project) {
-  const releaseDownloads = githubReleaseStats[project.id]?.downloads;
+  const releaseDownloads = curseForgeStats[project.id]?.downloads ?? githubReleaseStats[project.id]?.downloads;
   const metrics = releaseDownloads === undefined
     ? project.metrics
     : {downloads: releaseDownloads, ...project.metrics};

@@ -53,7 +53,6 @@ module.exports = function doriosGeneratedRoutesPlugin() {
         blocks: data.blocks.map((entry) => entry.slug),
         machines: data.machines.map((entry) => entry.id),
         generators: data.generators.map((entry) => entry.id),
-        entities: data.entities.map((entry) => entry.id),
         mechanics: data.mechanics.map((entry) => slugify(entry.name)),
         recipes: [
           ...recipeData.craftingRecipeDetails.map((entry) => `crafting-${entry.id}`),
@@ -106,7 +105,6 @@ module.exports = function doriosGeneratedRoutesPlugin() {
           blocks.length && sectionVisible('blocks') && 'blocks',
           machines.length && 'machines',
           generators.length && 'generators',
-          project.manifest.content.entities.length && sectionVisible('entities') && 'entities',
           project.manifest.content.recipes.length && 'recipes',
           project.mechanics.length && 'mechanics',
         ].filter(Boolean);
@@ -125,7 +123,7 @@ module.exports = function doriosGeneratedRoutesPlugin() {
           blocks: sectionVisible('blocks') ? blocks.map((entry) => entry.slug) : [],
           machines: machines.map((entry) => entry.id),
           generators: generators.map((entry) => entry.id),
-          entities: sectionVisible('entities') ? project.manifest.content.entities.map((entry) => entry.slug ?? entry.id) : [],
+          entities: [],
           recipes: project.manifest.content.recipes.map((entry) => `crafting-${entry.id}`),
           mechanics: project.mechanics,
         });

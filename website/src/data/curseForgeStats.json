@@ -1,0 +1,107 @@
+{
+  "utilitycraft": {
+    "modId": 1095313,
+    "downloads": 615694,
+    "display": "615.6K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  "smelters": {
+    "modId": 1241687,
+    "downloads": 228322,
+    "display": "228.3K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  "bonsais": {
+    "modId": 1087426,
+    "downloads": 80247,
+    "display": "80.2K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  "excavate": {
+    "modId": 1360468,
+    "downloads": 35963,
+    "display": "35.9K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  "trinkets": {
+    "modId": 1173489,
+    "downloads": 200794,
+    "display": "200.7K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  "atelier": {
+    "modId": 1396749,
+    "downloads": 11496,
+    "display": "11.4K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  "basics": {
+    "modId": 1249403,
+    "downloads": 9473,
+    "display": "9.4K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  "cobblestone-generators": {
+    "modId": 1086676,
+    "downloads": 46219,
+    "display": "46.2K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  "compressy": {
+    "modId": 1387104,
+    "downloads": 3249,
+    "display": "3.2K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  "crops": {
+    "modId": 1097197,
+    "downloads": 22160,
+    "display": "22.1K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  "dummy": {
+    "modId": 1095457,
+    "downloads": 33183,
+    "display": "33.1K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  "lamps": {
+    "modId": 1265361,
+    "downloads": 16224,
+    "display": "16.2K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  "paxels": {
+    "modId": 1379131,
+    "downloads": 20981,
+    "display": "20.9K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  "pillars": {
+    "modId": 1089788,
+    "downloads": 10233,
+    "display": "10.2K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  },
+  "trees": {
+    "modId": 1310972,
+    "downloads": 7904,
+    "display": "7.9K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-09T00:00:00.000Z"
+  }
+}

@@ -7,7 +7,6 @@ const pageMeta = {
   blocks: ['Heavy Machinery Blocks', 'Casings, controllers, ports, modules, and storage blocks in Heavy Machinery.'],
   machines: ['Heavy Machinery Machines', 'Multiblock factories and industrial processing machines in Heavy Machinery.'],
   generators: ['Heavy Machinery Generators', 'Energy generation and storage multiblocks in Heavy Machinery.'],
-  entities: ['Heavy Machinery Entities', 'Runtime entities used by Heavy Machinery multiblocks and fluids.'],
   recipes: ['Heavy Machinery Recipes', 'Crafting and industrial processing recipes in Heavy Machinery.'],
   mechanics: ['Heavy Machinery Mechanics', 'Energy, multiblock, modularity, fluid, and automation systems.'],
 };
@@ -17,7 +16,6 @@ const sectionDescriptions = {
   blocks: 'Every registered block, organized by construction tier and industrial role.',
   machines: 'Modular multiblock factories that turn Dorios Energy into high-throughput processing.',
   generators: 'Large-scale systems for producing, storing, and distributing Dorios Energy.',
-  entities: 'Runtime anchors that preserve inventories, energy, fluids, interfaces, and multiblock state.',
   recipes: 'Construction recipes and machine processes indexed directly from the add-on structure.',
   mechanics: 'The shared systems that make machines, generators, ports, and modules work together.',
 };
