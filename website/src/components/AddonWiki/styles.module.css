@@ -2334,6 +2334,11 @@
 }
 
 @media (max-width: 420px) {
+	.contextBar { gap: 0.55rem; padding-block: 0.55rem; }
+	.breadcrumb { min-width: 0; overflow: hidden; }
+	.breadcrumb a { flex: 0 0 auto; }
+	.breadcrumb a:last-of-type { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+	.search { min-height: 40px; border-radius: 11px; }
 	.overviewShortcuts > div { grid-template-columns: 1fr; }
 	.catalogRow {
 		grid-template-columns: 52px minmax(0, 1fr) auto;

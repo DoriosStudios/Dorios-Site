@@ -48,6 +48,10 @@
 .shell *::before,
 .shell *::after { box-sizing: border-box; }
 
+.shell > *,
+.shell > :global(main),
+.shell > :global(main) > * { min-width: 0; max-width: 100%; }
+
 .shell a { color: inherit; text-decoration: none; }
 .shell > :global(main) { flex: 1 0 auto; }
 .shell h1,
@@ -245,7 +249,9 @@
 }
 
 @media (max-width: 560px) {
-  .shell { --ds-page-inline: 28px; --ds-page-gutter: 14px; }
+  .shell { --ds-page-inline: 20px; --ds-page-gutter: 10px; }
+  .siteHeader { gap: 0.55rem; }
+  .headerActions { gap: 0.35rem; }
   .brandMark { width: 29px; height: 29px; }
   .brand { font-size: 0.96rem; }
   .themeToggle { width: 42px; justify-content: center; padding: 0; }
@@ -258,9 +264,27 @@
   .discordLink { width: 42px; justify-content: center; padding: 0; }
   .siteFooter { grid-template-columns: 1fr auto; gap: 0.8rem 1rem; }
   .footerBrand { grid-column: 1; }
-  .siteFooter small { grid-column: 2; }
+  .siteFooter small { grid-column: 2; white-space: normal; text-align: right; }
   .footerLinks { flex-wrap: wrap; }
   .footerLinks { grid-column: 1 / -1; }
+}
+
+@media (max-width: 460px) {
+  .shell { --ds-page-inline: 14px; --ds-page-gutter: 7px; }
+  .siteHeader { grid-template-columns: auto minmax(0, 1fr); padding-top: 0.55rem; }
+  .brand > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .headerActions { justify-self: end; }
+  .themeToggle,
+  .discordLink { width: 38px; min-height: 38px; }
+  .primaryNav { gap: 0.9rem; padding-bottom: 0.55rem; font-size: 0.75rem; }
+}
+
+@media (max-width: 380px) {
+  .siteFooter { grid-template-columns: 1fr; }
+  .siteFooter small,
+  .footerBrand,
+  .footerLinks { grid-column: 1; }
+  .siteFooter small { text-align: left; }
 }
 
 @media (prefers-reduced-motion: reduce) {

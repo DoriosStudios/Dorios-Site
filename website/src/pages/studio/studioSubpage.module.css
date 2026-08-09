@@ -1,4 +1,5 @@
 .page {
+  min-width: 0;
   width: min(calc(100% - var(--ds-page-inline)), var(--ds-content-max));
   margin: 0 auto;
   padding: 1.15rem 0 clamp(3.75rem, 7vw, 6.5rem);
@@ -9,6 +10,15 @@
 .page h1,
 .page h2,
 .page h3 { font-family: var(--ds-display-font, "League Spartan Variable", "League Spartan", sans-serif); }
+
+.page > *,
+.hero > *,
+.teamDirectory,
+.teamGroup,
+.teamGroupHeader > div,
+.peopleGrid,
+.personCard,
+.personCopy { min-width: 0; max-width: 100%; }
 
 .subnav {
   min-height: 50px;
@@ -70,7 +80,7 @@
   line-height: 0.84;
 }
 .hero h1 span { color: var(--ds-accent); }
-.lead { max-width: 690px; margin: 1.35rem 0 0; color: var(--ds-muted); font-size: clamp(1.02rem, 1.5vw, 1.18rem); line-height: 1.65; }
+.lead { max-width: 690px; margin: 1.35rem 0 0; overflow-wrap: anywhere; color: var(--ds-muted); font-size: clamp(1.02rem, 1.5vw, 1.18rem); line-height: 1.65; }
 .recordNote { padding: 1.15rem; border: 1px solid var(--ds-border); border-radius: 16px; background: color-mix(in srgb, var(--ds-bg) 70%, transparent); backdrop-filter: blur(10px); }
 .recordNote > span { color: var(--ds-accent-light); font-size: 0.76rem; font-weight: 750; letter-spacing: 0.09em; text-transform: uppercase; }
 .recordNote p { margin: 0.65rem 0 0; color: var(--ds-muted); font-size: 0.9rem; line-height: 1.58; }
@@ -289,13 +299,48 @@
   .teamDirectory { gap: 2rem; }
   .teamGroupHeader { grid-template-columns: 2rem minmax(0, 1fr); gap: 0.5rem; }
   .peopleGrid,
-  .featuredGrid { grid-template-columns: 1fr; }
+  .featuredGrid,
+  .founderGrid { width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
   .personCard,
-  .featuredCard { grid-column: auto; grid-template-columns: 148px minmax(0, 1fr); grid-template-rows: minmax(240px, auto); }
-  .portrait { min-height: 240px; }
+  .featuredCard {
+    min-width: 0;
+    position: relative;
+    display: block;
+    grid-column: auto;
+    aspect-ratio: 1;
+    min-height: 0;
+    border-radius: 15px;
+  }
+  .portrait { position: absolute; inset: 0; min-height: 0; }
+  .portrait::after { background: linear-gradient(180deg, transparent 38%, color-mix(in srgb, var(--ds-bg) 90%, transparent) 100%); }
+  .portrait img { object-position: center 18%; filter: saturate(0.94); }
   .personCopy,
-  .featuredCard .personCopy { min-height: 240px; }
+  .featuredCard .personCopy {
+    min-height: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    padding: 0.65rem;
+    background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--ds-bg) 82%, transparent));
+  }
+  .personCopy > p { margin-bottom: 0.22rem; font-size: clamp(0.5rem, 2.2vw, 0.63rem); line-height: 1.1; }
+  .personCopy h3 { overflow: hidden; font-size: clamp(0.95rem, 4.6vw, 1.25rem); text-overflow: ellipsis; white-space: nowrap; }
+  .specialties,
+  .personCopy > .personBio { display: none; }
+  .ownerBadge { top: 0.45rem; right: 0.45rem; padding: 0.28rem 0.38rem; font-size: 0.54rem; }
   .documentationBar { border-radius: 18px; }
+}
+
+@media (max-width: 340px) {
+  .page { width: min(calc(100% - 16px), var(--ds-content-max)); }
+  .teamGroupHeader p { display: none; }
+  .teamGroupHeader h2 { font-size: 1.55rem; }
+  .personCopy { padding: 0.45rem; }
+  .personCopy > p { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ownerBadge { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

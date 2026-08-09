@@ -221,6 +221,7 @@ a.dependencyCard:focus-visible .dependencyVisual img { transform: scale(1.06); }
 }
 
 @media (max-width: 420px) {
+  .hero h1.singleWordTitle { white-space: normal; overflow-wrap: anywhere; }
   .additionalMetrics { grid-template-columns: 1fr; }
   .metadataList > div { align-items: flex-start; flex-direction: column; gap: .35rem; }
   .metadataList dd { text-align: left; }
