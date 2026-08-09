@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[88635],{90823:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"entities","slug":"apple-tree"}')}}]);

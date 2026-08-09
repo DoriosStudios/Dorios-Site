@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[80301],{46172:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"entities","slug":"bomb"}')}}]);
