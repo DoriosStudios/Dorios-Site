@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[77531],{911:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"entities","slug":"mechanical-spawner-hoglin"}')}}]);

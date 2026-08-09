@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[56604],{96043:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"entities","slug":"mechanical-spawner-slime"}')}}]);

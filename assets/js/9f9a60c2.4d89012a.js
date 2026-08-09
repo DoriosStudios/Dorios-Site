@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[87257],{44923:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"refined-aetherium-shard"}')}}]);
