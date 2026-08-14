@@ -508,10 +508,12 @@
       },
       "links": {
         "repository": "https://github.com/DoriosStudios/UtilityCraft-Digital-Storage",
-        "releases": "https://github.com/DoriosStudios/UtilityCraft-Digital-Storage/releases"
+        "releases": "https://github.com/DoriosStudios/UtilityCraft-Digital-Storage/releases",
+        "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/utilitycraft-digital-storage",
+        "mcpedl": "https://mcpedl.com/utilitycraft-digital-storage/"
       },
       "media": {
-        "cover": null,
+        "cover": "/img/projects/digital-storage/MCPEDL.png",
         "icon": "/img/projects/digital-storage/icon.png",
         "coverFit": "cover",
         "alt": "Digital Storage project artwork"

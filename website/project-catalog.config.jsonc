@@ -99,6 +99,10 @@
       "category": "Technology",
       "lifecycle": "Released",
       "summary": "A digital item-network extension for UtilityCraft with scalable storage, terminals, importers, exporters, and connected inventories.",
+      "cover": "/img/projects/digital-storage/MCPEDL.png",
+      "coverFit": "cover",
+      "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/utilitycraft-digital-storage",
+      "mcpedl": "https://mcpedl.com/utilitycraft-digital-storage/",
       "requires": ["UtilityCraft 3.5.1+"],
       "tags": ["Storage", "Networks", "Automation"]
     },
