@@ -76,6 +76,15 @@ const config = {
           trackingID: 'G-LZN8PGKZFW',
           anonymizeIP: true,
         },
+        sitemap: {
+          // Keep canonical project and Wiki routes discoverable while omitting legacy project aliases.
+          // Documentation remains under the default sitemap handling.
+          createSitemapItems: async ({defaultCreateSitemapItems, ...params}) => {
+            const items = await defaultCreateSitemapItems(params);
+            const legacyPaths = new Set(['/projects/ascendant', '/projects/cobble_gens']);
+            return items.filter((item) => !legacyPaths.has(new URL(item.url).pathname.replace(/\/$/, '')));
+          },
+        },
       }),
     ],
   ],

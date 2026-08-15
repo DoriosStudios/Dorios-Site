@@ -2,7 +2,7 @@
   min-width: 0;
   width: min(calc(100% - var(--ds-page-inline)), var(--ds-content-max));
   margin: 0 auto;
-  padding: 1.15rem 0 clamp(3.75rem, 7vw, 6.5rem);
+	padding: .9rem 0 clamp(2.5rem, 4vw, 4.5rem);
   color: var(--ds-text);
   font-family: var(--ds-ui-font, "Space Grotesk Variable", sans-serif);
 }
@@ -46,10 +46,10 @@
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
-  gap: clamp(2rem, 5vw, 5rem);
+	gap: clamp(1.25rem, 2.8vw, 2.8rem);
   align-items: end;
   overflow: hidden;
-  padding: clamp(2rem, 4.3vw, 4.25rem);
+	padding: clamp(1.45rem, 2.8vw, 2.6rem);
   border: 1px solid color-mix(in srgb, var(--ds-accent) 36%, var(--ds-border));
   border-radius: 24px;
   background:
@@ -61,7 +61,7 @@
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  margin: 0 0 1.55rem;
+	margin: 0 0 1rem;
   color: var(--ds-muted);
   font-size: 0.82rem;
   font-weight: 650;
@@ -74,13 +74,13 @@
   max-width: 820px;
   margin: 0;
   color: var(--ds-text);
-  font-size: clamp(3.35rem, 6.8vw, 6.6rem);
+	font-size: clamp(2.85rem, 4.9vw, 5.1rem);
   font-weight: 800;
   letter-spacing: -0.075em;
   line-height: 0.84;
 }
 .hero h1 span { color: var(--ds-accent); }
-.lead { max-width: 690px; margin: 1.35rem 0 0; overflow-wrap: anywhere; color: var(--ds-muted); font-size: clamp(1.02rem, 1.5vw, 1.18rem); line-height: 1.65; }
+.lead { max-width: 760px; margin: .9rem 0 0; overflow-wrap: anywhere; color: var(--ds-muted); font-size: clamp(.94rem, 1.1vw, 1.06rem); line-height: 1.55; }
 .recordNote { padding: 1.15rem; border: 1px solid var(--ds-border); border-radius: 16px; background: color-mix(in srgb, var(--ds-bg) 70%, transparent); backdrop-filter: blur(10px); }
 .recordNote > span { color: var(--ds-accent-light); font-size: 0.76rem; font-weight: 750; letter-spacing: 0.09em; text-transform: uppercase; }
 .recordNote p { margin: 0.65rem 0 0; color: var(--ds-muted); font-size: 0.9rem; line-height: 1.58; }
@@ -93,7 +93,7 @@
 .proseCredit svg,
 .toolList svg { width: 1rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
 
-.teamDirectory { display: grid; gap: clamp(2rem, 4vw, 3.2rem); margin-top: clamp(2.8rem, 5vw, 4.5rem); }
+.teamDirectory { display: grid; gap: clamp(1.4rem, 2.5vw, 2.25rem); margin-top: clamp(1.8rem, 3vw, 2.7rem); }
 .teamGroup { padding-top: 1rem; border-top: 1px solid var(--ds-border); }
 .teamGroupHeader {
   display: grid;
@@ -106,7 +106,7 @@
 .teamGroupHeader > span { padding-top: 0.28rem; color: var(--ds-accent); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.09em; }
 .teamGroupHeader h2 { margin: 0; color: var(--ds-text); font-size: clamp(1.9rem, 3vw, 2.7rem); font-weight: 800; letter-spacing: -0.055em; line-height: 0.95; }
 .teamGroupHeader p { margin: 0.35rem 0 0; color: var(--ds-muted); font-size: 0.88rem; line-height: 1.45; }
-.peopleSection { margin-top: clamp(3.8rem, 7vw, 6.7rem); }
+.peopleSection { margin-top: clamp(2.5rem, 4vw, 3.8rem); }
 .sectionHeading {
   display: grid;
   grid-template-columns: 3.2rem minmax(0, 1fr);
@@ -123,8 +123,8 @@
 .founderGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .featuredGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .personCard {
-  display: grid;
-  grid-template-rows: 300px auto;
+	display: grid;
+	grid-template-rows: 236px auto;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--card-primary) 48%, var(--ds-border));
   border-radius: 17px;
@@ -139,7 +139,7 @@
 .portrait img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 18%; filter: saturate(0.82); transition: filter 220ms ease, transform 360ms ease; }
 .personCard:hover .portrait img { filter: saturate(1); transform: scale(1.025); }
 .ownerBadge { position: absolute; top: 0.65rem; right: 0.65rem; z-index: 1; padding: 0.32rem 0.48rem; border: 1px solid color-mix(in srgb, var(--card-primary) 68%, var(--ds-text)); border-radius: 8px; background: color-mix(in srgb, var(--ds-bg) 78%, transparent); color: color-mix(in srgb, var(--card-primary) 50%, var(--ds-text)); font-size: 0.67rem; font-weight: 800; letter-spacing: 0.08em; line-height: 1; text-transform: uppercase; backdrop-filter: blur(10px); }
-.personCopy { min-height: 172px; padding: 1rem; }
+.personCopy { min-height: 138px; padding: .8rem; }
 .personCopy > p { margin: 0 0 0.38rem; color: color-mix(in srgb, var(--card-primary) 52%, var(--ds-text)); font-size: 0.7rem; font-weight: 750; letter-spacing: 0.065em; line-height: 1.25; text-transform: uppercase; }
 .personCopy h3 { margin: 0; color: var(--ds-text); font-size: clamp(1.3rem, 1.8vw, 1.62rem); letter-spacing: -0.04em; line-height: 1; }
 .specialties { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.62rem; }
@@ -148,18 +148,18 @@
 .featuredCard {
   grid-column: span 2;
   grid-template-columns: minmax(180px, 0.88fr) minmax(0, 1.12fr);
-  grid-template-rows: minmax(440px, auto);
+	grid-template-rows: minmax(340px, auto);
   border-color: color-mix(in srgb, var(--card-primary) 62%, var(--ds-border));
 }
-.featuredCard .personCopy { min-height: 400px; display: flex; flex-direction: column; justify-content: center; }
+.featuredCard .personCopy { min-height: 300px; display: flex; flex-direction: column; justify-content: center; }
 
 .documentationBar {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: clamp(1.5rem, 4vw, 4rem);
   align-items: center;
-  margin-top: clamp(2.8rem, 5vw, 4.5rem);
-  padding: clamp(1.3rem, 2.8vw, 2.2rem);
+	margin-top: clamp(1.8rem, 3vw, 2.7rem);
+	padding: clamp(1rem, 2vw, 1.5rem);
   border: 1px solid color-mix(in srgb, var(--ds-accent) 42%, var(--ds-border));
   border-radius: 20px;
   background: linear-gradient(120deg, color-mix(in srgb, var(--ds-accent) 9%, var(--ds-surface)), var(--ds-surface));

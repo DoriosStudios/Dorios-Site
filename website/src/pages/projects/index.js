@@ -1,15 +1,19 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import DoriosMarketingShell from '../../components/DoriosMarketingShell';
 import {projectCardPalette} from '../../data/cardPalettes';
-import {featuredProjects, listedProjects} from '../../data/projects';
+import {featuredProjects, getProject, listedProjects} from '../../data/projects';
 import styles from './projects.module.css';
 
 const compactFeaturedSummaries = {
   'heavy-machinery': 'Large-scale multiblocks and late-game industrial processing for UtilityCraft.',
   'ascendant-technology': 'Superior machines and advanced materials for UtilityCraft’s end game.',
 };
+
+const primaryCarouselProjects = ['utilitycraft', 'trinkets']
+  .map((projectSlug) => getProject(projectSlug))
+  .filter(Boolean);
 
 function Tags({project}) {
   return <div className={styles.tags}><span>{project.kind}</span><span>{project.category}</span>{project.ownership === 'community' && <span>Community</span>}</div>;
@@ -29,10 +33,10 @@ function ProjectImage({project, eager = false}) {
   );
 }
 
-function FeaturedCard({project, primary = false}) {
+function FeaturedCard({project, primary = false, carousel = false}) {
   if (primary) {
     return (
-      <Link className={`${styles.featureCard} ${styles.utilityCard}`} to={project.routes.project} style={projectCardPalette(project)}>
+      <Link className={`${styles.featureCard} ${styles.utilityCard} ${carousel ? styles.carouselCard : ''}`} to={project.routes.project} style={projectCardPalette(project)}>
         <ProjectImage project={project} eager />
         <div className={styles.featureCopy}>
           <div><p className={styles.overline}>Featured project</p><Tags project={project} /></div>
@@ -57,8 +61,27 @@ function FeaturedCard({project, primary = false}) {
   );
 }
 
+function FeaturedCarousel() {
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  useEffect(() => {
+    if (paused || primaryCarouselProjects.length < 2) return undefined;
+    const timer = window.setInterval(() => setIndex((current) => (current + 1) % primaryCarouselProjects.length), 5200);
+    return () => window.clearInterval(timer);
+  }, [paused]);
+  if (!primaryCarouselProjects.length) return null;
+  return (
+    <section className={styles.primaryCarousel} aria-label="Featured projects" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocusCapture={() => setPaused(true)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false); }}>
+      <FeaturedCard key={primaryCarouselProjects[index].id} project={primaryCarouselProjects[index]} primary carousel />
+      {primaryCarouselProjects.length > 1 && <div className={styles.carouselPager} aria-label="Featured project carousel">
+        {primaryCarouselProjects.map((project, projectIndex) => <button type="button" key={project.id} className={projectIndex === index ? styles.carouselPagerActive : ''} onClick={() => setIndex(projectIndex)} aria-label={`Show ${project.name}`} aria-current={projectIndex === index ? 'true' : undefined} />)}
+      </div>}
+    </section>
+  );
+}
+
 export default function ProjectsPage() {
-  const featuredIds = new Set(featuredProjects.map((project) => project.id));
+  const featuredIds = new Set([...featuredProjects, ...primaryCarouselProjects].map((project) => project.id));
   const catalogProjects = listedProjects.filter((project) => !featuredIds.has(project.id));
   return (
     <Layout title="Projects" description="Minecraft Bedrock projects by Dorios Studios." noFooter>
@@ -71,8 +94,8 @@ export default function ProjectsPage() {
           </section>
 
           <section className={styles.spotlightGrid} aria-label="Featured projects">
-            {featuredProjects[0] && <FeaturedCard project={featuredProjects[0]} primary />}
-            {featuredProjects.slice(1, 3).map((project) => <FeaturedCard project={project} key={project.id} />)}
+            <FeaturedCarousel />
+            {featuredProjects.filter((project) => project.id !== 'utilitycraft').slice(0, 2).map((project) => <FeaturedCard project={project} key={project.id} />)}
           </section>
 
           <section className={styles.catalog} aria-labelledby="catalog-title">

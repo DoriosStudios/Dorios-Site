@@ -96,8 +96,7 @@ export default function Home() {
             </div>
             <div className={styles.heroFootnote}><span>Discover the studio</span><span className={styles.scrollLine} aria-hidden="true" /><span>Since 2021</span></div>
             <section className={styles.featuredProjects} aria-label="Featured projects">
-              {featuredShortcuts.map((project) => (
-                <Link className={styles.featuredProjectCard} to={project.routes.project} key={project.id} style={projectCardPalette(project)}>
+              {featuredShortcuts.map((project) => <Link className={styles.featuredProjectCard} to={project.routes.project} key={project.id} style={projectCardPalette(project)}>
                   <span className={styles.featuredThumbnail}>
                     <img src={project.media.icon} alt="" loading="lazy" />
                   </span>
@@ -109,8 +108,7 @@ export default function Home() {
                     <strong>{project.name}</strong>
                   </span>
                   <span className={styles.featuredArrow}><ArrowUpRight /></span>
-                </Link>
-              ))}
+                </Link>)}
             </section>
           </section>
         </main>

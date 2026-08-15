@@ -92,10 +92,10 @@
         "releases": "https://github.com/DoriosStudios/UtilityCraft-Heavy-Machinery/releases"
       },
       "media": {
-        "cover": "/img/wiki/heavy-machinery/guide/controllers_showcase.png",
+        "cover": null,
         "icon": "/img/projects/heavy-machinery/icon.png",
         "coverFit": "contain",
-        "alt": "Heavy Machinery project artwork"
+        "alt": "Heavy Machinery pack icon"
       },
       "metrics": {
         "items": 28,
@@ -755,8 +755,6 @@
       },
       "metrics": {
         "items": 92,
-        "blocks": 6,
-        "entities": 2,
         "recipes": 13
       },
       "source": {

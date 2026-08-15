@@ -64,6 +64,7 @@ module.exports = function doriosGeneratedRoutesPlugin() {
         {
           id: 'utilitycraft',
           manifest: require(path.join(projectRoot, 'utilitycraft', 'manifest.json')),
+          processingRecipes: require(path.join(projectRoot, 'utilitycraft', 'processingRecipes.json')),
           machineFilter: (block) => block.componentKeys?.includes('tag:dorios:machine'),
           generatorFilter: (block) => block.componentKeys?.includes('tag:dorios:generator'),
           mechanics: ['dorios-energy', 'machine-tiers', 'energy-networks', 'item-and-fluid-transport', 'machine-upgrades', 'bonsai-automation'],
@@ -93,10 +94,15 @@ module.exports = function doriosGeneratedRoutesPlugin() {
       ];
 
       generatedProjects.forEach((project) => {
-        const blocks = project.manifest.content.blocks;
-        const machines = blocks.filter((block) => project.machineFilter(block)
+        const allBlocks = project.manifest.content.blocks;
+        const machines = allBlocks.filter((block) => project.machineFilter(block)
           || project.additionalMachineIds?.includes(block.id));
-        const generators = blocks.filter(project.generatorFilter);
+        const generators = allBlocks.filter(project.generatorFilter);
+        const specializedBlockIds = new Set([
+          ...machines.map((block) => block.id),
+          ...generators.map((block) => block.id),
+        ]);
+        const blocks = allBlocks.filter((block) => !specializedBlockIds.has(block.id));
         const sectionVisible = (section) => !project.hiddenSections?.includes(section);
         const sections = [
           'overview',
@@ -105,7 +111,7 @@ module.exports = function doriosGeneratedRoutesPlugin() {
           blocks.length && sectionVisible('blocks') && 'blocks',
           machines.length && 'machines',
           generators.length && 'generators',
-          project.manifest.content.recipes.length && 'recipes',
+          (project.manifest.content.recipes.length || project.processingRecipes?.length) && 'recipes',
           project.mechanics.length && 'mechanics',
         ].filter(Boolean);
         addSectionRoutes(project.id, sections);
@@ -124,7 +130,10 @@ module.exports = function doriosGeneratedRoutesPlugin() {
           machines: machines.map((entry) => entry.id),
           generators: generators.map((entry) => entry.id),
           entities: [],
-          recipes: project.manifest.content.recipes.map((entry) => `crafting-${entry.id}`),
+          recipes: [
+            ...project.manifest.content.recipes.map((entry) => `crafting-${entry.id}`),
+            ...(project.processingRecipes ?? []).map((entry) => `processing-${entry.id}`),
+          ],
           mechanics: project.mechanics,
         });
       });

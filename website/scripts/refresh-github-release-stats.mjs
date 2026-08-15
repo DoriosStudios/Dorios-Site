@@ -11,6 +11,10 @@ const projects = [
     id: 'ascendant-technology',
     repository: 'DoriosStudios/Ascendant-Technology',
   },
+  {
+    id: 'heavy-machinery',
+    repository: 'DoriosStudios/UtilityCraft-Heavy-Machinery',
+  },
 ];
 
 function abbreviatedDownloadCount(value) {

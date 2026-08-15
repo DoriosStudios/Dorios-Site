@@ -282,6 +282,7 @@ const project = createGeneratedProject({
   name: "Dorios' Trinkets",
   repository: 'https://github.com/DoriosStudios/Dorios-Trinkets',
   includeBlockSection: false,
+  itemCatalogColumns: 1,
   overview: {
     eyebrow: 'Accessory and character-build reference',
     description: 'A complete guide to equippable trinkets, dedicated accessory slots, attribute bonuses, status effects, immunities, loot sources, armor sets, and supporting items.',

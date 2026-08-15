@@ -311,7 +311,12 @@ def _machine_metadata(root: dict[str, Any], components: dict[str, Any]) -> dict[
         (key, value)
         for key, value in components.items()
         if isinstance(value, dict)
-        and (isinstance(value.get("entity"), dict) or isinstance(value.get("machine"), dict))
+        and (
+            isinstance(value.get("entity"), dict)
+            or isinstance(value.get("machine"), dict)
+            or isinstance(value.get("generator"), dict)
+            or "energy_cap" in value
+        )
     ), None)
     if component_entry is None:
         return None
@@ -319,6 +324,12 @@ def _machine_metadata(root: dict[str, Any], components: dict[str, Any]) -> dict[
     component_key, component_value = component_entry
     entity = component_value.get("entity", {})
     machine = component_value.get("machine", {})
+    generator = component_value.get("generator", {})
+    power = (
+        machine if isinstance(machine, dict) and machine
+        else generator if isinstance(generator, dict) and generator
+        else component_value if "energy_cap" in component_value else {}
+    )
     upgrades_value = components.get("utilitycraft:machine_upgrades", [])
     upgrades = [
         {
@@ -337,7 +348,7 @@ def _machine_metadata(root: dict[str, Any], components: dict[str, Any]) -> dict[
     enabled_states = placement.get("enabled_states", []) if isinstance(placement, dict) else []
 
     interfaces: list[str] = []
-    if machine.get("energy_cap", 0) > 0 and machine.get("energy_cost", 0) > 0:
+    if power.get("energy_cap", 0) > 0 and (power.get("energy_cost", 0) > 0 or power.get("rate_speed_base", 0) > 0):
         interfaces.append("Energy")
     if "tag:dorios:item" in components:
         interfaces.append("Items")
@@ -354,13 +365,14 @@ def _machine_metadata(root: dict[str, Any], components: dict[str, Any]) -> dict[
         "inputRange": entity.get("input_range"),
         "outputSlot": entity.get("output_slot"),
         "outputRange": entity.get("output_range"),
-        "energyCapacity": machine.get("energy_cap"),
-        "energyCost": machine.get("energy_cost"),
-        "baseRate": machine.get("rate_speed_base"),
-        "fluidCapacity": machine.get("fluid_cap"),
-        "fluidTypes": machine.get("fluid_types"),
-        "gasCapacity": machine.get("gas_cap"),
-        "gasTypes": machine.get("gas_types"),
+        "systemKind": "generator" if generator else "machine" if machine else "energy",
+        "energyCapacity": power.get("energy_cap"),
+        "energyCost": power.get("energy_cost"),
+        "baseRate": power.get("rate_speed_base"),
+        "fluidCapacity": power.get("fluid_cap"),
+        "fluidTypes": power.get("fluid_types"),
+        "gasCapacity": power.get("gas_cap"),
+        "gasTypes": power.get("gas_types"),
         "recipeType": recipe_type,
         "upgradeSlots": machine.get("upgrades"),
         "upgrades": upgrades,
@@ -373,6 +385,38 @@ def _machine_metadata(root: dict[str, Any], components: dict[str, Any]) -> dict[
         for key, value in metadata.items()
         if value is not None and value != []
     }
+
+
+def _block_metadata(root: dict[str, Any], components: dict[str, Any]) -> dict[str, Any]:
+    """Extract player-facing physical block properties without inventing defaults."""
+    mining = components.get("minecraft:destructible_by_mining")
+    explosion = components.get("minecraft:destructible_by_explosion")
+    loot = components.get("minecraft:loot")
+    placement = root.get("description", {}).get("traits", {}).get("minecraft:placement_direction", {})
+    enabled_states = placement.get("enabled_states", []) if isinstance(placement, dict) else []
+    tool_tags = {
+        "tag:minecraft:is_pickaxe_item_destructible": "Pickaxe",
+        "tag:minecraft:is_axe_item_destructible": "Axe",
+        "tag:minecraft:is_shovel_item_destructible": "Shovel",
+        "tag:minecraft:is_hoe_item_destructible": "Hoe",
+    }
+
+    metadata: dict[str, Any] = {
+        "breakTime": mining.get("seconds_to_destroy") if isinstance(mining, dict) else None,
+        "mineable": mining is not False if mining is not None else None,
+        "explosionResistance": (
+            "Immune" if explosion is False
+            else explosion.get("explosion_resistance") if isinstance(explosion, dict)
+            else None
+        ),
+        "lightEmission": components.get("minecraft:light_emission"),
+        "friction": components.get("minecraft:friction"),
+        "mapColor": components.get("minecraft:map_color"),
+        "lootTable": loot if isinstance(loot, str) else loot.get("table") if isinstance(loot, dict) else None,
+        "tool": next((label for tag, label in tool_tags.items() if tag in components), None),
+        "directional": any(str(state).endswith("direction") for state in enabled_states),
+    }
+    return {key: value for key, value in metadata.items() if value is not None}
 
 
 def _parse_blocks(
@@ -424,7 +468,7 @@ def _parse_blocks(
         fallback_faces = legacy_faces.get(identifier, {})
         faces = {position: faces.get(position) or fallback_faces.get(position) for position in ("top", "left", "right")}
         geometries = _geometry_identifiers(root)
-        entries.append({
+        entry = {
             "id": identifier.split(":", 1)[-1],
             "slug": _slug(identifier.split(":", 1)[-1]),
             "identifier": identifier,
@@ -436,7 +480,11 @@ def _parse_blocks(
             "componentKeys": sorted(components),
             "machineData": _machine_metadata(root, components),
             "source": _source(path, project_root),
-        })
+        }
+        block_data = _block_metadata(root, components)
+        if block_data:
+            entry["blockData"] = block_data
+        entries.append(entry)
     deduplicated: dict[str, dict[str, Any]] = {}
     for entry in entries:
         deduplicated.setdefault(entry["identifier"], entry)

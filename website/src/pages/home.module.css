@@ -6,13 +6,13 @@
 
 .hero {
 	flex: 1;
-	min-height: clamp(540px, 66svh, 680px);
+	min-height: clamp(470px, 57svh, 590px);
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	isolation: isolate;
-	padding: clamp(2.5rem, 4vw, 4rem)
+	padding: clamp(1.7rem, 2.8vw, 2.8rem)
 		max(var(--ds-page-gutter), calc((100% - var(--ds-content-max)) / 2));
 	border-bottom: 1px solid var(--ds-border);
 	background:
@@ -46,7 +46,7 @@
 	flex: none;
 	width: max-content;
 	color: var(--ds-accent-light);
-	font-size: clamp(2.6rem, 5.8vw, 6rem);
+	font-size: clamp(2.3rem, 4.5vw, 4.9rem);
 	font-weight: 900;
 	letter-spacing: -0.065em;
 	line-height: 0.82;
@@ -95,13 +95,13 @@
 .heroGrid {
 	width: 100%;
 	display: grid;
-	grid-template-columns: minmax(0, 1.22fr) minmax(290px, 0.78fr);
-	gap: clamp(2rem, 5vw, 5rem);
+	grid-template-columns: minmax(0, 1.06fr) minmax(360px, 0.94fr);
+	gap: clamp(1.5rem, 3.5vw, 3.5rem);
 	align-items: center;
-	margin-top: -2.25rem;
+	margin-top: -0.5rem;
 }
 .heroCopy {
-	max-width: 700px;
+	max-width: 660px;
 }
 .eyebrow {
 	margin: 0 0 1.2rem;
@@ -113,7 +113,7 @@
 	text-transform: uppercase;
 }
 .hero h1 {
-	max-width: 700px;
+	max-width: 650px;
 	margin: 0;
 	color: var(--ds-text);
 	font-size: var(--ds-display-heading);
@@ -126,7 +126,7 @@
 }
 .heroLead {
 	max-width: 540px;
-	margin: 1.5rem 0;
+	margin: 1.05rem 0;
 	color: var(--ds-muted);
 	font-size: clamp(0.96rem, 1.35vw, 1.12rem);
 	line-height: 1.6;
@@ -154,10 +154,10 @@
 }
 
 .editorialNav {
-	height: clamp(340px, 36vw, 400px);
+	height: clamp(272px, 25vw, 314px);
 	display: flex;
 	flex-direction: column;
-	gap: 0.7rem;
+	gap: 0.55rem;
 }
 .editorialCard {
 	min-height: 0;
@@ -168,7 +168,7 @@
 	align-items: center;
 	gap: 0.8rem;
 	overflow: hidden;
-	padding: 0.9rem 1.25rem;
+	padding: 0.7rem 1rem;
 	border: 0;
 	border-radius: 20px;
 	background: color-mix(in srgb, var(--ds-surface) 82%, transparent);
@@ -188,7 +188,7 @@
 .editorialCardActive {
 	z-index: 1;
 	flex-grow: 1.8;
-	padding-left: 1.65rem;
+	padding-left: 1.3rem;
 	border-radius: 22px;
 	background: linear-gradient(
 		100deg,
@@ -219,7 +219,7 @@
 		transform 300ms ease;
 }
 .editorialCard strong {
-	font-size: clamp(1.85rem, 2.8vw, 2.7rem);
+	font-size: clamp(1.55rem, 2.25vw, 2.15rem);
 	font-weight: 800;
 	letter-spacing: -0.05em;
 	line-height: 0.95;
@@ -248,7 +248,7 @@
 	display: flex;
 	align-items: center;
 	gap: 0.85rem;
-	margin-top: clamp(1.5rem, 2.5vw, 2.5rem);
+	margin-top: clamp(0.9rem, 1.6vw, 1.35rem);
 	color: var(--ds-muted);
 	font-size: 0.66rem;
 	font-weight: 700;
@@ -269,13 +269,13 @@
 	margin: clamp(0.9rem, 1.6vw, 1.25rem) 0 0;
 }
 .featuredProjectCard {
-	min-height: 132px;
+	min-height: 108px;
 	display: grid;
-	grid-template-columns: 96px minmax(0, 1fr) 36px;
+	grid-template-columns: 78px minmax(0, 1fr) 32px;
 	gap: clamp(0.85rem, 1.6vw, 1.25rem);
 	align-items: center;
 	overflow: hidden;
-	padding: 0.8rem 1rem 0.8rem 0.8rem;
+	padding: 0.65rem 0.8rem 0.65rem 0.65rem;
 	border: 1px solid color-mix(in srgb, var(--card-primary) 48%, var(--ds-border));
 	border-radius: 20px;
 	background:
@@ -298,12 +298,12 @@
 	outline-offset: 3px;
 }
 .featuredThumbnail {
-	width: 96px;
+	width: 78px;
 	aspect-ratio: 1;
 	display: grid;
 	place-items: center;
 	overflow: hidden;
-	border-radius: 15px;
+	border-radius: 13px;
 	background:
 		radial-gradient(circle, color-mix(in srgb, var(--card-secondary) 25%, transparent), transparent 70%),
 		color-mix(in srgb, var(--card-primary) 13%, var(--ds-surface-raised));
@@ -343,7 +343,7 @@
 .featuredCopy > strong {
 	overflow: hidden;
 	font-family: var(--ds-display-font, "League Spartan Variable", "League Spartan", sans-serif);
-	font-size: clamp(1.35rem, 2vw, 1.75rem);
+	font-size: clamp(1.2rem, 1.7vw, 1.5rem);
 	font-weight: 800;
 	letter-spacing: -0.04em;
 	line-height: 0.95;
@@ -351,8 +351,8 @@
 	white-space: nowrap;
 }
 .featuredArrow {
-	width: 34px;
-	height: 34px;
+	width: 30px;
+	height: 30px;
 	display: grid;
 	place-items: center;
 	border-radius: 11px;
@@ -431,11 +431,11 @@
 		grid-template-columns: 1fr;
 	}
 	.featuredProjectCard {
-		min-height: 116px;
-		grid-template-columns: 84px minmax(0, 1fr) 34px;
+		min-height: 84px;
+		grid-template-columns: 68px minmax(0, 1fr) 30px;
 	}
 	.featuredThumbnail {
-		width: 84px;
+		width: 68px;
 	}
 	.heroGrid {
 		margin-top: -0.75rem;

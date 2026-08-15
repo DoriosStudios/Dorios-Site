@@ -1,5 +1,6 @@
 import * as data from './data.js';
 import {craftingRecipeDetails} from './recipeData.js';
+import {vanillaStationMeta} from '../vanillaStationMeta.js';
 
 const pageMeta = {
   overview: ['Heavy Machinery Wiki', 'Technical reference for UtilityCraft: Heavy Machinery.'],
@@ -21,7 +22,7 @@ const sectionDescriptions = {
 };
 
 const stationMeta = {
-  crafting_table: {label: 'Crafting Table', face: 'recipe-faces/utilitycraft_workbench.png'},
+  ...vanillaStationMeta,
   utilitycraft_workbench: {label: 'UtilityCraft Workbench', face: 'recipe-faces/utilitycraft_workbench.png'},
   crusher: {label: 'Crusher', face: 'blocks/multiblock/crusher_controller_north.png'},
   'electro-press': {label: 'Electro Press', face: 'blocks/multiblock/electro_press_controller_north.png'},
@@ -55,13 +56,14 @@ const heavyMachineryProject = {
   items: data.items,
   allItems: data.items,
   blocks: data.blocks,
+  allBlocks: data.blocks,
   machines: data.machines,
   generators: data.generators,
-  entities: data.entities,
   mechanics: data.mechanics,
   craftingRecipes: data.craftingRecipes,
   craftingRecipeDetails,
   processingRecipes: data.processingRecipes,
+  groupItemsByCategory: true,
   recipeFallbackFace: 'recipe-faces/utilitycraft_workbench.png',
   fallbackImage: 'items/control_panel.png',
   overview: {

@@ -7,3 +7,4 @@ website/.docusaurus/
 website/build/
 website/static/img/addons/**/*.rar
 *.log
+*.err

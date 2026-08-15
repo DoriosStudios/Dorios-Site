@@ -1,26 +1,30 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
-import {useColorMode} from '@docusaurus/theme-common';
-import '@fontsource-variable/league-spartan';
-import '@fontsource-variable/space-grotesk';
-import styles from './styles.module.css';
+import React from "react";
+import Link from "@docusaurus/Link";
+import { useColorMode } from "@docusaurus/theme-common";
+import "@fontsource-variable/league-spartan";
+import "@fontsource-variable/space-grotesk";
+import styles from "./styles.module.css";
 
 function navigationFor(project) {
   return [
-    {label: 'Projects', to: '/projects', key: 'projects'},
-    project && {label: 'Project', to: project.routes.project, key: 'project'},
-    {label: 'Wiki', to: project?.routes.wiki ?? '/wiki', key: 'wiki'},
-    {label: 'Documentation', to: '/documentation/dorios_core/', key: 'documentation'},
-    {label: 'Studio', to: '/studio', key: 'studio'},
-    {label: 'Support', to: '/support', key: 'support'},
+    { label: "Projects", to: "/projects", key: "projects" },
+    project && { label: "Project", to: project.routes.project, key: "project" },
+    { label: "Wiki", to: project?.routes.wiki ?? "/wiki", key: "wiki" },
+    {
+      label: "Documentation",
+      to: "/documentation/dorios_core/",
+      key: "documentation",
+    },
+    { label: "Studio", to: "/studio", key: "studio" },
+    { label: "Support", to: "/support", key: "support" },
   ].filter(Boolean);
 }
 
 function ThemeToggle() {
-  const {colorMode, setColorMode} = useColorMode();
-  const isDarkTheme = colorMode === 'dark';
-  const nextTheme = isDarkTheme ? 'light' : 'dark';
-  const nextThemeLabel = isDarkTheme ? 'Light' : 'Dark';
+  const { colorMode, setColorMode } = useColorMode();
+  const isDarkTheme = colorMode === "dark";
+  const nextTheme = isDarkTheme ? "light" : "dark";
+  const nextThemeLabel = isDarkTheme ? "Light" : "Dark";
 
   return (
     <button
@@ -48,18 +52,44 @@ function ThemeToggle() {
   );
 }
 
-export function DoriosHeader({activePage, project}) {
+function DoriosMark({ footer = false }) {
+  const { colorMode } = useColorMode();
+  const logoSource =
+    colorMode === "light" ? "/img/black_no_bg.png" : "/img/white_no_bg.png";
+  const blazingSource =
+    colorMode === "light"
+      ? "/img/blazing_animated_transparent.gif"
+      : "/img/blazing_animated_transparent.gif";
+
+  return (
+    <span
+      className={`${styles.brandMarkWrap}${footer ? ` ${styles.footerMarkWrap}` : ""}`}
+      aria-hidden="true"
+    >
+      <img src={logoSource} alt="" className={styles.brandMark} />
+      <img src={blazingSource} alt="" className={styles.blazingMark} />
+    </span>
+  );
+}
+
+export function DoriosHeader({ activePage, project }) {
   const navigation = navigationFor(project);
   return (
     <header className={styles.siteHeader}>
       <Link className={styles.brand} to="/" aria-label="Dorios Studios home">
-        <img src="/img/dorios_logo.png" alt="" className={styles.brandMark} />
-        <span>Dorios <em>Studios</em></span>
+        <DoriosMark />
+        <span className={styles.brandLabel}>
+          Dorios <em>Studios</em>
+        </span>
       </Link>
 
       <nav className={styles.primaryNav} aria-label="Primary navigation">
         {navigation.map((item) => (
-          <Link key={item.key} to={item.to} aria-current={activePage === item.key ? 'page' : undefined}>
+          <Link
+            key={item.key}
+            to={item.to}
+            aria-current={activePage === item.key ? "page" : undefined}
+          >
             {item.label}
           </Link>
         ))}
@@ -67,7 +97,12 @@ export function DoriosHeader({activePage, project}) {
 
       <div className={styles.headerActions}>
         <ThemeToggle />
-        <a className={styles.discordLink} href="https://discord.gg/x36H3ZtmK5" target="_blank" rel="noreferrer">
+        <a
+          className={styles.discordLink}
+          href="https://discord.gg/x36H3ZtmK5"
+          target="_blank"
+          rel="noreferrer"
+        >
           <span>Join Discord</span>
           <span className={styles.actionSeparator} aria-hidden="true" />
           <span className={styles.actionIcon} aria-hidden="true">
@@ -86,7 +121,7 @@ export function DoriosFooter() {
   return (
     <footer className={styles.siteFooter}>
       <Link className={styles.footerBrand} to="/">
-        <img src="/img/dorios_logo.png" alt="" />
+        <DoriosMark footer />
         <span>Dorios Studios</span>
       </Link>
       <p>Creating bigger worlds, one addon at a time.</p>
@@ -94,14 +129,24 @@ export function DoriosFooter() {
         <Link to="/projects">Projects</Link>
         <Link to="/studio">Studio</Link>
         <Link to="/support">Support</Link>
-        <a href="https://github.com/DoriosStudios" target="_blank" rel="noreferrer">GitHub</a>
+        <a
+          href="https://github.com/DoriosStudios"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
       </div>
       <small>© {new Date().getFullYear()} Dorios Studios</small>
     </footer>
   );
 }
 
-export default function DoriosMarketingShell({activePage, project, children}) {
+export default function DoriosMarketingShell({
+  activePage,
+  project,
+  children,
+}) {
   return (
     <div className={`dorios-marketing-page ${styles.shell}`}>
       <DoriosHeader activePage={activePage} project={project} />

@@ -177,13 +177,6 @@ export const generators = [
   {id: 'nuclear-reactor', name: 'Nuclear Reactor', status: 'Experimental', tier: 'Netherite infrastructure', fuel: 'Uranium assemblies', output: 'Under active development', risk: 'Controller and reactor components are present; behavior is not finalized', description: 'The repository includes its controller, fuel assemblies, rod control, and liquid control blocks. Runtime documentation will be finalized with the reactor implementation.', image: 'guide/controllers_showcase.png', components: ['Nuclear Controller', 'Fuel Assemblies', 'Rod Control', 'Liquid Controller']},
 ];
 
-export const entities = [
-  {id: 'multiblock_machine', identifier: 'utilitycraft:multiblock_machine', name: 'Multiblock Machine Entity', category: 'Runtime controller', image: 'guide/controllers_showcase.png', description: 'Internal entity used to persist inventory, energy, components, progress, and interface state for active multiblock machines.'},
-  {id: 'power_condenser', identifier: 'utilitycraft:power_condenser', name: 'Power Condenser Entity', category: 'Energy runtime', image: 'guide/components_showcase.png', description: 'Runtime anchor for the Power Condenser Matrix, including energy capacity and automatic network transfer state.'},
-  {id: 'thermo_reactor', identifier: 'utilitycraft:thermo_reactor', name: 'Thermal Reactor Entity', category: 'Generator runtime', image: 'guide/thermal_reactor_ui.png', description: 'Stores Thermal Reactor fuel, coolant, temperature, pressure, efficiency, burn rate, and operating state.'},
-  {id: 'fluid_tank_saline_coolant', identifier: 'utilitycraft:fluid_tank_saline_coolant', name: 'Saline Coolant Tank Entity', category: 'Fluid runtime', image: 'items/saline_coolant_bucket.png', description: 'Internal fluid entity representing saline coolant storage used by reactor and liquid systems.'},
-];
-
 const slugify = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 export const processingRecipes = [

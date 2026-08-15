@@ -1,3 +1,5 @@
+import {vanillaStationFor} from './vanillaStationMeta.js';
+
 const SECTION_DEFINITIONS = [
   {id: 'overview', label: 'Overview', icon: '⌂'},
   {id: 'items', label: 'Items', icon: '◇'},
@@ -54,10 +56,14 @@ function normalizeItem(entry) {
   };
 }
 
-function normalizeBlock(entry) {
+function normalizeBlock(entry, {generatedCompressedRenders = false} = {}) {
   const identifier = entry.identifier ?? entry.id;
+  const generatedCompressedRender = generatedCompressedRenders && entry.category === 'Compressed'
+    ? `renders/compressed_blocks/${entry.id}.png`
+    : undefined;
   return {
     ...entry,
+    render: entry.render ?? generatedCompressedRender,
     id: identifier,
     identifier,
     shortId: entry.id,
@@ -202,12 +208,13 @@ function machineFromBlock(block, profile = {}) {
   };
 }
 
-function generatorFromBlock(block) {
-  const systemType = block.shortId.includes('battery')
+function generatorFromBlock(block, profile = {}) {
+  const machineData = block.machineData ?? {};
+  const systemType = profile.systemType ?? (block.shortId.includes('battery')
     ? 'Storage'
     : /energy_(?:receiver|transmitter)/.test(block.shortId)
       ? 'Transport'
-      : 'Generation';
+      : 'Generation');
   const operatingFacts = {
     Generation: {
       fuel: 'Configured fuel or environment',
@@ -225,6 +232,19 @@ function generatorFromBlock(block) {
       risk: 'Moves energy between network endpoints',
     },
   }[systemType];
+  const defaultGenerationType = systemType !== 'Generation'
+    ? systemType
+    : /solar|wind/.test(block.shortId)
+      ? 'Passive'
+      : machineData.entityType === 'fluid_generator'
+        ? 'Active (Fluid)'
+        : 'Active (Item)';
+  const baseGeneration = machineData.baseRate > 0
+    ? `${formatMachineNumber(machineData.baseRate)} DE/t`
+    : 'Not applicable';
+  const energyCapacity = machineData.energyCapacity > 0
+    ? `${formatMachineNumber(machineData.energyCapacity)} DE`
+    : 'Not applicable';
   return {
     id: block.shortId,
     name: block.name,
@@ -233,12 +253,22 @@ function generatorFromBlock(block) {
     faces: block.faces,
     render: block.render,
     itemImage: block.itemImage,
-    image: block.itemImage ?? block.render ?? block.faces?.right,
-    status: systemType,
+    image: block.render ?? block.itemImage ?? block.faces?.right,
+    status: profile.status ?? systemType,
     systemType,
-    tier: tierFor(block.name, block.category),
+    family: profile.family ?? (systemType === 'Generation' ? block.name.replace(/^(?:Basic|Advanced|Expert|Ultimate)\s+/i, '').replace(/\s+Generator$/i, '') : systemType),
+    familyOrder: profile.familyOrder ?? Number.MAX_SAFE_INTEGER,
+    tier: profile.tier ?? tierFor(block.name, block.category),
+    tierOrder: profile.tierOrder ?? Number.MAX_SAFE_INTEGER,
+    generationType: profile.generationType ?? defaultGenerationType,
+    baseGeneration: profile.baseGeneration ?? baseGeneration,
+    energyCapacity: profile.energyCapacity ?? energyCapacity,
     ...operatingFacts,
-    components: [],
+    fuel: profile.fuel ?? operatingFacts.fuel,
+    output: profile.output ?? operatingFacts.output,
+    risk: profile.risk ?? operatingFacts.risk,
+    components: profile.components ?? [],
+    machineData,
   };
 }
 
@@ -249,6 +279,11 @@ function buildStationMeta(recipes, blocks, assetRoot, dependencyProjects) {
   ];
 
   return [...new Set(recipes.map((recipe) => recipe.station))].reduce((result, station) => {
+    const vanillaStation = vanillaStationFor(station);
+    if (vanillaStation) {
+      result[station] = vanillaStation;
+      return result;
+    }
     const rawStationId = station.replace(/^.*:/, '').replace(/-/g, '_');
     const stationId = rawStationId.replace(/^utilitycraft_/, '');
     const source = sources.find((candidate) => candidate.blocks.some((entry) => (
@@ -257,7 +292,7 @@ function buildStationMeta(recipes, blocks, assetRoot, dependencyProjects) {
     const block = source?.blocks.find((entry) => (
       entry.shortId === stationId || entry.shortId === rawStationId
     ));
-    const face = block?.itemImage ?? block?.render ?? block?.faces?.right;
+    const face = block?.render ?? block?.itemImage ?? block?.faces?.right;
     result[station] = {
       label: stationId === 'workbench' ? 'UtilityCraft Workbench' : titleize(station),
       face: face ? `${source.assetRoot}/${face}` : null,
@@ -275,6 +310,7 @@ export function createGeneratedProject({
   mechanics = [],
   machineNotice,
   mechanicsGuide,
+  processingRecipes = [],
   sectionDescriptions = {},
   entityFilter = () => true,
   additionalMachineIds = [],
@@ -282,31 +318,45 @@ export function createGeneratedProject({
   dependencyProjects = [],
   machineProfiles = {},
   machineCategoryOrder = [],
+  generatorProfiles = {},
+  generatorCategoryOrder = [],
   machineFilter = isMachineBlock,
   generatorFilter = isGeneratorBlock,
   includeBlockSection = true,
   includeEntitySection = false,
+  itemCatalogColumns,
 }) {
   const basePath = `/wiki/${id}`;
   const assetRoot = `/img/wiki/${id}`;
   const rawItems = manifest.content.items.map(normalizeItem);
   const items = (manifest.catalog?.items ?? manifest.content.items).map(normalizeItem);
-  const blocks = manifest.content.blocks.map(normalizeBlock);
-  const entities = manifest.content.entities.map(normalizeEntity).filter(entityFilter);
+  const allBlocks = includeBlockSection
+    ? manifest.content.blocks.map((entry) => normalizeBlock(entry, {
+      generatedCompressedRenders: id === 'utilitycraft',
+    }))
+    : [];
+  const entities = includeEntitySection
+    ? manifest.content.entities.map(normalizeEntity).filter(entityFilter)
+    : [];
   const craftingRecipeDetails = manifest.content.recipes.map(normalizeRecipe).filter(Boolean);
-  const machines = blocks
+  const machineBlocks = allBlocks
     .filter((block) => machineFilter(block) || additionalMachineIds.includes(block.shortId))
     .map((block) => machineFromBlock(block, machineProfiles[block.shortId]));
-  const generators = blocks
+  const generatorBlocks = allBlocks
     .filter((block) => generatorFilter(block) || additionalGeneratorIds.includes(block.shortId))
-    .map(generatorFromBlock);
+    .map((block) => generatorFromBlock(block, generatorProfiles[block.shortId]));
+  const machineIds = new Set(machineBlocks.map((machine) => machine.id));
+  const generatorIds = new Set(generatorBlocks.map((generator) => generator.id));
+  const blocks = allBlocks.filter((block) => !machineIds.has(block.shortId) && !generatorIds.has(block.shortId));
+  const machines = machineBlocks;
+  const generators = generatorBlocks;
   const fallbackFace = machines
     .map((machine) => {
-      const block = blocks.find((entry) => entry.slug === machine.blockSlug);
-      return block?.itemImage ?? block?.render ?? block?.faces?.right;
+      const block = allBlocks.find((entry) => entry.slug === machine.blockSlug);
+      return block?.render ?? block?.itemImage ?? block?.faces?.right;
     })
     .find(Boolean)
-    ?? blocks.map((block) => block.itemImage ?? block.render ?? block.faces?.right).find(Boolean)
+    ?? allBlocks.map((block) => block.render ?? block.itemImage ?? block.faces?.right).find(Boolean)
     ?? items.map((item) => item.image).find(Boolean);
 
   const groupSlugByIdentifier = items.reduce((lookup, item) => {
@@ -330,7 +380,18 @@ export function createGeneratedProject({
     }))),
   ];
   const lookupBlocks = [
-    ...blocks,
+    ...allBlocks.map((block) => {
+      const entryType = machineIds.has(block.shortId)
+        ? 'machines'
+        : generatorIds.has(block.shortId)
+          ? 'generators'
+          : 'blocks';
+      return {
+        ...block,
+        entryType,
+        catalogSlug: entryType === 'blocks' ? block.slug : block.shortId,
+      };
+    }),
     ...dependencyProjects.flatMap((project) => project.blocks.map((entry) => ({
       ...entry,
       assetRoot: project.assetRoot,
@@ -346,7 +407,7 @@ export function createGeneratedProject({
     machines: machines.length > 0,
     generators: generators.length > 0,
     entities: includeEntitySection && entities.length > 0,
-    recipes: craftingRecipeDetails.length > 0,
+    recipes: craftingRecipeDetails.length > 0 || processingRecipes.length > 0,
     mechanics: mechanics.length > 0,
   };
   const wikiSections = SECTION_DEFINITIONS
@@ -374,7 +435,7 @@ export function createGeneratedProject({
     wikiSections,
     pageMeta,
     sectionDescriptions: {...SECTION_COPY, ...sectionDescriptions},
-    stationMeta: buildStationMeta(craftingRecipeDetails, blocks, assetRoot, dependencyProjects),
+    stationMeta: buildStationMeta([...craftingRecipeDetails, ...processingRecipes], allBlocks, assetRoot, dependencyProjects),
     recipeFallbackFace: fallbackFace,
     fallbackImage: items.map((item) => item.image).find(Boolean) ?? fallbackFace,
     machineControllerIds: machines.reduce((result, machine) => {
@@ -385,15 +446,18 @@ export function createGeneratedProject({
     allItems,
     lookupItems,
     lookupBlocks,
-    blocks,
+    allBlocks,
+    blocks: includeBlockSection ? blocks : [],
     machines,
     machineCategoryOrder,
+    itemCatalogColumns,
     generators,
-    entities,
+    generatorCategoryOrder,
+    entities: includeEntitySection ? entities : [],
     mechanics,
     craftingRecipes: craftingRecipeDetails,
     craftingRecipeDetails,
-    processingRecipes: [],
+    processingRecipes,
     overview: {
       ...overview,
       heroImage: overview.heroImage ?? fallbackFace,
