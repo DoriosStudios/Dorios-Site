@@ -10,6 +10,39 @@ const GENERATOR_TIERS = [
   ['ultimate', 'Ultimate'],
 ];
 
+// Player-facing block behavior that is implemented in scripts rather than in
+// the Bedrock block component payload. Keep this local so the generated wiki
+// can expose it through Block Details without turning utility blocks into
+// machines.
+const blockProfiles = {
+  big_torch: {
+    blockDetails: [['Illumination range', '14 blocks']],
+  },
+  lantern: {
+    blockDetails: [['Illumination range', '14 blocks per projection · reaches 33 blocks on the outer axes']],
+  },
+};
+
+const meshProfiles = Object.fromEntries([
+  ['string_mesh', 0, 0.75],
+  ['flint_mesh', 1, 1],
+  ['copper_mesh', 2, 1.25],
+  ['iron_mesh', 3, 1.5],
+  ['golden_mesh', 4, 2],
+  ['emerald_mesh', 5, 2.5],
+  ['diamond_mesh', 6, 3],
+  ['netherite_mesh', 7, 4],
+].map(([id, tier, multiplier]) => [id, {
+  documentation: {
+    description: `A Tier ${tier} sieve mesh that controls which Autosieve drops are eligible and scales each listed drop chance.`,
+    statisticsTitle: 'Sieve Performance',
+    statistics: [
+      ['Mesh tier', `Tier ${tier}`],
+      ['Drop chance multiplier', `×${multiplier}`],
+    ],
+  },
+}]));
+
 const generatorFamilies = [
   {family: 'Furnator', type: 'Active (Item)', fuel: 'Burnable items', ids: GENERATOR_TIERS.map(([id]) => `${id}_furnator`)},
   {family: 'Magmator', type: 'Active (Fluid)', fuel: 'Lava', ids: GENERATOR_TIERS.map(([id]) => `${id}_magmator`)},
@@ -41,6 +74,8 @@ const utilitycraft = createGeneratedProject({
   name: 'UtilityCraft',
   repository: 'https://github.com/DoriosStudios/UtilityCraft',
   machineProfiles,
+  blockProfiles,
+  itemProfiles: meshProfiles,
   processingRecipes,
   generatorProfiles,
   generatorCategoryOrder: [...generatorFamilies.map(({family}) => family), 'Energy Storage', 'Energy Distribution'],

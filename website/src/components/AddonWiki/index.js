@@ -346,15 +346,18 @@ function catalogEntryFor(project, value) {
 }
 
 const VANILLA_ASSET_ALIASES = {
+  acacia_sapling: 'sapling_acacia',
   beetroot_seeds: 'seeds_beetroot',
+  birch_sapling: 'sapling_birch',
   black_dye: 'dye_powder_black',
   blue_dye: 'dye_powder_blue',
   brown_dye: 'dye_powder_brown',
   clock: 'clock_item',
+  cocoa_beans: 'cocoa_seeds',
   cyan_dye: 'dye_powder_cyan',
+  dark_oak_sapling: 'sapling_roofed_oak',
   fermented_spider_eye: 'spider_eye_fermented',
   fishing_rod: 'fishing_rod_uncast',
-  glow_ink_sac: 'dye_powder_glow',
   golden_apple: 'apple_golden',
   golden_axe: 'gold_axe',
   golden_carrot: 'carrot_golden',
@@ -362,8 +365,9 @@ const VANILLA_ASSET_ALIASES = {
   golden_pickaxe: 'gold_pickaxe',
   golden_shovel: 'gold_shovel',
   golden_sword: 'gold_sword',
+  grass_block: 'grass',
   heart_of_the_sea: 'heartofthesea_closed',
-  ink_sac: 'dye_powder_black',
+  jungle_sapling: 'sapling_jungle',
   lava_bucket: 'bucket_lava',
   light_blue_dye: 'dye_powder_light_blue',
   light_gray_dye: 'dye_powder_silver',
@@ -371,6 +375,7 @@ const VANILLA_ASSET_ALIASES = {
   magenta_dye: 'dye_powder_magenta',
   melon_seeds: 'seeds_melon',
   nether_brick: 'netherbrick',
+  oak_sapling: 'sapling_oak',
   orange_dye: 'dye_powder_orange',
   pink_dye: 'dye_powder_pink',
   popped_chorus_fruit: 'chorus_fruit_popped',
@@ -380,6 +385,7 @@ const VANILLA_ASSET_ALIASES = {
   red_dye: 'dye_powder_red',
   redstone: 'redstone_dust',
   slime_ball: 'slimeball',
+  spruce_sapling: 'sapling_spruce',
   water_bucket: 'bucket_water',
   wheat_seeds: 'seeds_wheat',
   white_dye: 'dye_powder_white',
@@ -435,16 +441,29 @@ function RecipeSlot({ingredient, result = false}) {
       {(ingredient.count ?? 1) > 1 && <b className={styles.slotCount}>{ingredient.count}</b>}
     </>
   );
-  return link ? <Link className={`${styles.recipeSlot} ${result ? styles.resultSlot : ''}`} to={link} aria-label={name}>{content}</Link>
-    : <span className={`${styles.recipeSlot} ${result ? styles.resultSlot : ''}`} title={name}>{content}</span>;
+  const className = `${styles.recipeSlot} ${result ? styles.resultSlot : ''}`;
+  return link ? <Link className={className} to={link} aria-label={name} title={name} data-tooltip={name}>{content}</Link>
+    : <span className={className} role="img" aria-label={name} title={name} data-tooltip={name}>{content}</span>;
 }
 
 function normalizedProcessingRecipe(recipe) {
   if (recipe.slots && recipe.result) {
+    const seenResults = new Set();
+    const results = [{...recipe.result}, ...[
+      ...(Array.isArray(recipe.results) ? recipe.results : []),
+      ...(Array.isArray(recipe.outputs) ? recipe.outputs : []),
+      ...(Array.isArray(recipe.secondaryOutputs) ? recipe.secondaryOutputs : []),
+    ]].filter(Boolean).filter((ingredient) => {
+      const key = `${ingredient.id ?? ingredient.label}|${ingredient.count ?? 1}`;
+      if (seenResults.has(key)) return false;
+      seenResults.add(key);
+      return true;
+    });
     return {
       ...recipe,
       slots: [...recipe.slots, ...Array(9)].slice(0, 9),
       result: {...recipe.result},
+      results,
     };
   }
   const slots = Array(9).fill(null);
@@ -452,23 +471,50 @@ function normalizedProcessingRecipe(recipe) {
     const match = raw.match(/^(\d+)×\s*(.*)$/);
     slots[index] = {label: match ? match[2] : raw, count: match ? Number(match[1]) : 1};
   });
-  const outputMatch = recipe.output.match(/^(\d+)×\s*(.*)$/);
+  const outputs = recipe.output.split(' + ').map((raw) => {
+    const outputMatch = raw.match(/^(\d+)×\s*(.*)$/);
+    return {label: outputMatch ? outputMatch[2] : raw, count: outputMatch ? Number(outputMatch[1]) : 1};
+  });
   return {
     ...recipe,
     slots,
-    result: {label: outputMatch ? outputMatch[2] : recipe.output, count: outputMatch ? Number(outputMatch[1]) : 1},
+    result: outputs[0],
+    results: outputs,
   };
 }
 
-const LINEAR_PROCESSING_STATIONS = new Set(['crusher', 'electro_press', 'electro-press', 'incinerator']);
+function ingredientLabel(ingredient) {
+  if (!ingredient) return 'Unknown item';
+  return ingredient.label ?? (ingredient.id ? formatIdentifier(ingredient.id) : 'Unknown item');
+}
 
-function isLinearProcessingRecipe(recipe) {
-  return Boolean(
-    recipe?.type
-    && LINEAR_PROCESSING_STATIONS.has(recipe.station)
-    && recipe.result
-    && recipe.slots?.filter(Boolean).length === 1,
-  );
+function recipeOutputs(recipe) {
+  return recipe.results?.filter(Boolean) ?? [recipe.result].filter(Boolean);
+}
+
+function usesLinearRecipeFlow(recipe) {
+  return Boolean(recipe?.result && (recipe?.type || recipe?.kind !== 'shaped'));
+}
+
+function compactProcessingMetric(value) {
+  if (value === undefined || value === null || value === '') return null;
+  if (typeof value === 'number') return `${Number(value).toLocaleString('en-US')} DE/action`;
+  const source = String(value).trim();
+  const match = source.match(/^([\d,.]+)\s*DE(?:\/(t|action))?$/i);
+  if (!match) return source;
+  const amount = Number(match[1].replace(/,/g, ''));
+  if (!Number.isFinite(amount)) return source;
+  const unit = [[1e12, 'T'], [1e9, 'G'], [1e6, 'M'], [1e3, 'k']].find(([threshold]) => amount >= threshold);
+  const display = unit
+    ? `${Number((amount / unit[0]).toFixed(amount / unit[0] >= 100 ? 0 : 1))} ${unit[1]}DE`
+    : `${amount.toLocaleString('en-US')} DE`;
+  return match[2] ? `${display}/${match[2]}` : display;
+}
+
+function processingMetric(recipe, machine) {
+  return compactProcessingMetric(
+    recipe.cost ?? recipe.energyCost ?? recipe.energy ?? machine?.machineData?.energyCost,
+  ) ?? (recipe.chance !== undefined ? `${Math.round(recipe.chance * 100)}% chance` : null);
 }
 
 function RecipeCard({recipe}) {
@@ -479,8 +525,11 @@ function RecipeCard({recipe}) {
   };
   const type = recipe.type ? 'processing' : 'crafting';
   const detailHref = `${project.basePath}/recipes/${type}-${recipe.id}`;
-  const linear = isLinearProcessingRecipe(recipe);
-  const linearInput = linear ? recipe.slots.find(Boolean) : null;
+  const linear = usesLinearRecipeFlow(recipe);
+  const inputs = recipe.slots?.filter(Boolean) ?? [];
+  const outputs = recipeOutputs(recipe);
+  const inputName = inputs.map(ingredientLabel).join(' + ');
+  const outputName = outputs.map(ingredientLabel).join(' + ');
 
   return (
     <article className={`${styles.recipeCard} ${linear ? styles.linearRecipeCard : ''}`}>
@@ -498,12 +547,25 @@ function RecipeCard({recipe}) {
       </header>
       <div className={`${styles.recipeFlow} ${linear ? styles.linearRecipeFlow : ''}`}>
         {linear
-          ? <RecipeSlot ingredient={linearInput} />
+          ? <div className={styles.linearRecipeInput}>
+            <div className={styles.linearRecipeSlots}>
+              {inputs.map((ingredient, index) => <React.Fragment key={`${ingredient.id ?? ingredient.label}-${index}`}>
+                {index > 0 && <span className={styles.recipeFlowJoin} aria-hidden="true">+</span>}
+                <RecipeSlot ingredient={ingredient} />
+              </React.Fragment>)}
+            </div>
+            <strong title={inputName}>{inputName}</strong>
+          </div>
           : <div className={styles.craftingSlots}>{recipe.slots.map((ingredient, slot) => <RecipeSlot key={slot} ingredient={ingredient} />)}</div>}
         <span className={styles.recipeArrow} aria-hidden="true">→</span>
         <div className={styles.recipeResult}>
-          <RecipeSlot ingredient={recipe.result} result />
-          <strong>{recipe.result.label ?? formatIdentifier(recipe.result.id)}</strong>
+          <div className={styles.recipeResultSlots}>
+            {outputs.map((ingredient, index) => <React.Fragment key={`${ingredient.id ?? ingredient.label}-${index}`}>
+              {index > 0 && <span className={styles.recipeFlowJoin} aria-hidden="true">+</span>}
+              <RecipeSlot ingredient={ingredient} result />
+            </React.Fragment>)}
+          </div>
+          <strong title={outputName}>{outputName}</strong>
         </div>
       </div>
     </article>
@@ -768,57 +830,111 @@ function documentedMachine(machine) {
   };
 }
 
-const MACHINE_REFERENCE_GROUPS = [
-  {
-    id: 'specifications',
-    title: 'Machine specifications',
-    copy: 'Power, capacity, timing and upgrade limits verified in the add-on configuration.',
-    matches: /energy|power|capacity|rate|cycle|duration|processing|upgrade|module|cost|consumption|budget/i,
-  },
-  {
-    id: 'interface',
-    title: 'Interface',
-    copy: 'Inventory, controller, recipe and orientation details used to configure the machine.',
-    matches: /inventory|container|controller|tier|orientation|recipe|crafting|batch|slot|tank|layout/i,
-  },
-  {
-    id: 'behavior',
-    title: 'I/O and behavior',
-    copy: 'What the machine accepts, where results go and how it interacts with the world.',
-    matches: null,
-  },
-];
+function compactNumber(value) {
+  return Number(value).toLocaleString('en-US');
+}
 
-function groupedMachineReferences(machine) {
-  const grouped = Object.fromEntries(MACHINE_REFERENCE_GROUPS.map(({id}) => [id, []]));
+function uniqueFacts(pairs) {
   const seen = new Set();
-  const ioValues = new Set(machine.io.map(([, value]) => String(value).trim().toLowerCase()));
-  const add = (groupId, pair) => {
-    const [label, value] = pair;
-    if (value === undefined || value === null || value === '') return;
-    const key = `${String(label).trim().toLowerCase()}|${String(value).trim().toLowerCase()}`;
-    if (seen.has(key)) return;
+  return pairs.filter((pair) => Array.isArray(pair)).filter(([label, value]) => value !== undefined && value !== null && value !== '').filter(([label, value]) => {
+    const key = `${String(label).trim().toLowerCase()}|${Array.isArray(value) ? value.join(',') : String(value).trim().toLowerCase()}`;
+    if (seen.has(key)) return false;
     seen.add(key);
-    grouped[groupId].push(pair);
-  };
-
-  machine.specifications.forEach((pair) => {
-    const label = String(pair[0]);
-    const groupId = /input|output|accept|produce|placement|target|operation|automation|working face|side config|range/i.test(label)
-      ? 'behavior'
-      : /inventory|container|controller|tier|orientation|recipe|crafting|batch|slot|tank|layout/i.test(label)
-        ? 'interface'
-        : MACHINE_REFERENCE_GROUPS[0].matches.test(label)
-          ? 'specifications'
-          : 'behavior';
-    if (groupId === 'behavior' && ioValues.has(String(pair[1]).trim().toLowerCase())) return;
-    add(groupId, pair);
+    return true;
   });
-  machine.io.forEach((pair) => add('behavior', pair));
+}
 
-  return MACHINE_REFERENCE_GROUPS
-    .map((group) => ({...group, items: grouped[group.id]}))
-    .filter(({items}) => items.length > 0);
+function categoryTagsForMachine(machine, controller) {
+  const components = controller?.componentKeys ?? [];
+  const tags = ['Machine', 'Technology'];
+  if (machine.category) tags.push(machine.category);
+  if (components.some((component) => /dorios:energy|energy/.test(component))) tags.push('Power');
+  if (components.some((component) => /machine_recipes/.test(component))) tags.push('Processing');
+  if (/storage/i.test(machine.category ?? '')) tags.push('Storage');
+  if (/automation/i.test(machine.category ?? '')) tags.push('Automation');
+  if (/generator/i.test(machine.category ?? '')) tags.push('Generator');
+  if (/utility/i.test(machine.category ?? '')) tags.push('Utility');
+  return [...new Set(tags)];
+}
+
+function machineBlockDetails(machine, controller) {
+  const data = controller?.blockData ?? {};
+  const breakTime = data.breakTime !== undefined ? `${compactNumber(data.breakTime)} s` : null;
+  return {
+    items: uniqueFacts([
+      ['Identifier', controller?.identifier ?? controller?.id ?? machine.identifier ?? machine.id],
+      ['Block type', 'Machine'],
+      breakTime && ['Breaking time', breakTime],
+      data.tool && ['Required tool', data.tool],
+      data.toolTier && ['Required tool tier', data.toolTier],
+    ]),
+    tags: categoryTagsForMachine(machine, controller),
+  };
+}
+
+function machineSpecificationFacts(machine) {
+  const data = machine.machineData ?? {};
+  const rate = Number(data.baseRate);
+  const cost = Number(data.energyCost);
+  const processingTime = Number.isFinite(rate) && rate > 0 && Number.isFinite(cost) && cost > 0
+    ? `${compactNumber(Math.ceil(cost / rate))} ticks / ${Number((cost / rate / 20).toFixed(2))}s`
+    : null;
+  const upgradeTypes = data.upgrades?.map((upgrade) => formatIdentifier(upgrade.type)).filter(Boolean);
+  const upgradeSlots = data.upgradeSlots?.length ?? data.upgrades?.length;
+  const generatedLabels = /^(?:base consumption|energy capacity|base energy rate|nominal base cycle|interface container|fluid capacity|gas capacity|production type|upgrade support|orientation)$/i;
+  const configuredSpecifications = (machine.specifications ?? []).filter(([label]) => !generatedLabels.test(String(label)));
+  const configuredIo = (machine.io ?? []).flatMap(([label, value]) => {
+    if (/^energy$/i.test(String(label)) && (data.energyCapacity > 0 || data.energyCost > 0)) return [];
+    if (/^items$/i.test(String(label))) {
+      const itemLabel = /output|extract/i.test(String(value)) ? 'Item output' : /input|insert/i.test(String(value)) ? 'Item input' : 'Items';
+      return [[itemLabel, value]];
+    }
+    return [[label, value]];
+  });
+  return uniqueFacts([
+    data.energyCapacity > 0 && ['Energy capacity', `${compactNumber(data.energyCapacity)} DE`],
+    data.energyCost > 0 && ['Base energy consumption', `${compactNumber(data.energyCost)} DE/action`],
+    data.baseRate > 0 && ['Base energy rate', `${compactNumber(data.baseRate)} DE/t`],
+    processingTime && ['Base processing time', processingTime],
+    data.inventorySize > 0 && ['Interface container', `${compactNumber(data.inventorySize)} total UI slots`],
+    data.fluidCapacity > 0 && ['Fluid capacity', `${compactNumber(data.fluidCapacity)} mB`],
+    data.gasCapacity > 0 && ['Gas capacity', `${compactNumber(data.gasCapacity)} mB`],
+    upgradeSlots > 0 && ['Upgrade slots', upgradeSlots],
+    upgradeTypes?.length && ['Supported upgrades', upgradeTypes],
+    data.interfaces?.length && ['Interfaces', data.interfaces],
+    data.inputRange && ['Input slots', Array.isArray(data.inputRange) ? data.inputRange.join('–') : data.inputRange],
+    data.outputRange && ['Output slots', Array.isArray(data.outputRange) ? data.outputRange.join('–') : data.outputRange],
+    machine.productionType && ['Production type', machine.productionType],
+    ['Input', machine.input],
+    ['Output', machine.output],
+    ...configuredSpecifications,
+    ...configuredIo,
+  ]);
+}
+
+function normalizedStationId(value) {
+  return String(value ?? '').trim().toLowerCase().replace(/[\s-]+/g, '_');
+}
+
+function machineRecipeSets(project, machine, controller) {
+  const stationIds = new Set([
+    machine.id,
+    machine.recipe,
+    machine.machineData?.recipeType,
+    machine.machineData?.component?.split(':').pop(),
+  ].filter(Boolean).map(normalizedStationId));
+  const resultIds = new Set([
+    controller?.id,
+    controller?.identifier,
+    machine.id,
+    machine.identifier,
+  ].filter(Boolean));
+  return {
+    obtain: project.craftingRecipeDetails.filter((recipe) => resultIds.has(recipe.result?.id)),
+    catalog: project.processingRecipes
+      .map(normalizedProcessingRecipe)
+      .filter((recipe) => stationIds.has(normalizedStationId(recipe.station))),
+  };
 }
 
 function MachinesPage({query}) {
@@ -1061,7 +1177,8 @@ function blockDetailFacts(entry) {
     ? `${Number(data.explosionResistance).toLocaleString('en-US')}`
     : data.explosionResistance;
   return [
-    ['Category', entry.category],
+    ['Identifier', entry.identifier ?? entry.id],
+    ['Block type', entry.blockType ?? 'Block'],
     entry.tier && entry.tier !== 'Standard' && ['Tier', entry.tier],
     formattedBreakTime && ['Break time', formattedBreakTime],
     data.mineable === false && ['Mining', 'Cannot be mined'],
@@ -1072,43 +1189,30 @@ function blockDetailFacts(entry) {
     data.mapColor && ['Map color', data.mapColor],
     data.lootTable && ['Loot table', data.lootTable],
     data.directional && ['Orientation', 'Directional placement'],
-    ['Identifier', entry.identifier ?? entry.id],
+    ...(entry.blockDetails ?? []),
   ].filter(Boolean);
+}
+
+function blockCategoryTags(entry) {
+  const components = entry.componentKeys ?? [];
+  const tags = [entry.category];
+  if (components.some((component) => /dorios:energy|tag:dorios:energy/.test(component))) tags.push('Power');
+  if (components.some((component) => /dorios:fluid/.test(component))) tags.push('Fluid');
+  if (components.some((component) => /dorios:machine/.test(component))) tags.push('Machine');
+  if (components.some((component) => /dorios:generator/.test(component))) tags.push('Generator');
+  if (entry.blockData?.lightEmission !== undefined) tags.push('Lighting');
+  return [...new Set(tags.filter(Boolean))];
 }
 
 function entryReferenceGroups(entryType, entry) {
   if (entryType === 'blocks') {
-    const data = entry.blockData ?? {};
-    const formattedBreakTime = data.breakTime !== undefined ? `${Number(data.breakTime).toLocaleString('en-US')} s` : null;
-    const formattedResistance = typeof data.explosionResistance === 'number'
-      ? Number(data.explosionResistance).toLocaleString('en-US')
-      : data.explosionResistance;
     return [
       {
-        id: 'specifications',
+        id: 'details',
         title: 'Block Details',
-        copy: 'Physical properties that affect placement, mining, and durability.',
-        items: [
-          formattedBreakTime && ['Break time', formattedBreakTime],
-          formattedResistance && ['Explosion resistance', formattedResistance],
-          data.tool && ['Preferred tool', data.tool],
-          data.mineable === false && ['Mining', 'Cannot be mined'],
-          data.lightEmission !== undefined && ['Light emission', data.lightEmission],
-          data.friction !== undefined && ['Friction', data.friction],
-        ].filter(Boolean),
-      },
-      {
-        id: 'interface',
-        title: 'Registry & placement',
-        copy: 'Classification and world-facing behavior for this block.',
-        items: [
-          ['Category', entry.category],
-          entry.tier && entry.tier !== 'Standard' && ['Tier', entry.tier],
-          data.directional && ['Orientation', 'Directional placement'],
-          data.mapColor && ['Map color', data.mapColor],
-          data.lootTable && ['Loot table', data.lootTable],
-          ['Identifier', entry.identifier ?? entry.id],
-        ].filter(Boolean),
+        copy: 'Physical behavior, useful limits and registry information for this block.',
+        items: blockDetailFacts(entry),
+        tags: blockCategoryTags(entry),
       },
     ].filter((group) => group.items.length);
   }
@@ -1160,6 +1264,7 @@ function EntryReference({entryType, groups}) {
               <div><h3>{group.title}</h3><p>{group.copy}</p></div>
             </div>
             <MachinePropertyList items={group.items} />
+            <PropertyTags tags={group.tags} />
           </section>
         ))}
       </div>
@@ -1245,6 +1350,8 @@ function normalizedItemDocumentation(entry) {
       specialAbility: capabilities.specialAbility,
       immunities: meaningfulList(capabilities.immunities),
     },
+    statisticsTitle: source.statisticsTitle,
+    statistics: meaningfulList(source.statistics),
     acquisition: {
       entityDrops: meaningfulList(source.acquisition?.entityDrops),
       structures: meaningfulList(source.acquisition?.structures),
@@ -1352,25 +1459,135 @@ function RelatedItemCard({project, item}) {
   return href ? <Link className={styles.relatedItemCard} to={href}>{content}</Link> : <div className={styles.relatedItemCard}>{content}</div>;
 }
 
+function ItemDocumentationTabs({project, documentation, basics, groups, statistics, recipes, usedIn, relatedItems, compactProcessingRecipes}) {
+  const [activeTab, setActiveTab] = useState('item-details');
+  const recipeCount = recipes.crafting.length + recipes.machine.length;
+  const hasSources = documentation.acquisition.entityDrops.length > 0
+    || documentation.acquisition.structures.length > 0 || documentation.acquisition.biomes.length > 0;
+  const isTrinket = groups.length > 0 || Boolean(documentation.basic.equipSlot && documentation.basic.equipSlot !== 'Not a trinket slot');
+  const tabs = [
+    {
+      id: 'item-details',
+      label: 'Item Details',
+      content: <div className={styles.itemTabLayout}>
+        <section className={`${styles.itemEditorialSection} ${styles.itemBasicSection}`} aria-labelledby="item-basic-information">
+          <ItemSectionHeading id="item-basic-information" icon="info">Basic Information</ItemSectionHeading>
+          <dl className={styles.itemBasicList}>{basics.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+        </section>
+        {statistics.length > 0 && <section className={`${styles.itemEditorialSection} ${styles.itemStatisticsSection}`} aria-labelledby="item-statistics">
+          <ItemSectionHeading id="item-statistics" icon="capabilities">{documentation.statisticsTitle ?? 'Item Statistics'}</ItemSectionHeading>
+          <dl className={styles.itemBasicList}>{statistics.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+        </section>}
+        {relatedItems.length > 0 && <section className={`${styles.itemEditorialSection} ${styles.itemRelatedSection}`} aria-labelledby="item-related-items">
+          <ItemSectionHeading id="item-related-items" icon="related">Related Items</ItemSectionHeading>
+          <div className={styles.relatedItemGrid}>{relatedItems.map((item) => <RelatedItemCard project={project} item={item} key={item.identifier ?? item.id} />)}</div>
+        </section>}
+      </div>,
+    },
+    ...(isTrinket ? [{
+      id: 'trinket-capabilities',
+      label: 'Trinket Capabilities',
+      content: <section className={`${styles.itemEditorialSection} ${styles.itemCapabilitiesSection}`} aria-labelledby="item-capabilities">
+        <ItemSectionHeading id="item-capabilities" icon="capabilities">Trinket Capabilities</ItemSectionHeading>
+        {groups.length > 0
+          ? <div className={styles.capabilityGrid}>{groups.map((group) => <CapabilityGroup key={group.id} group={group} />)}</div>
+          : <p className={styles.capabilityEmpty}>No attribute modifiers, effects, abilities, or immunities are documented for this trinket.</p>}
+      </section>,
+    }] : []),
+    ...(hasSources ? [{
+      id: 'sources',
+      label: 'Sources',
+      content: <section className={`${styles.itemEditorialSection} ${styles.itemSourcesSection}`} aria-labelledby="item-sources">
+        <ItemSectionHeading id="item-sources" icon="obtain">Sources</ItemSectionHeading>
+        <div className={styles.acquisitionGrid}>
+          {documentation.acquisition.entityDrops.map((drop, index) => <AcquisitionCard key={`${drop.entity}-${index}`} icon="entity" eyebrow="Entity Drop" title={formatIdentifier(drop.entity)} chance={formatChance(drop.chance)} quantity={quantityLabel(drop)} />)}
+          {documentation.acquisition.structures.map((loot, index) => {
+            const dimension = loot.conditions?.dimension ? formatIdentifier(loot.conditions.dimension) : null;
+            const structure = loot.structure === 'default' ? (dimension ? `${dimension} Loot` : 'World Loot') : formatIdentifier(loot.structure);
+            return <AcquisitionCard key={`${loot.structure}-${index}`} icon="structure" eyebrow="Structure Loot" title={structure} chance={formatChance(loot.chance)} note={loot.table ?? loot.category} />;
+          })}
+          {documentation.acquisition.biomes.map((loot, index) => <AcquisitionCard key={`${loot.biome}-${index}`} icon="biome" eyebrow="Biome Loot" title={formatIdentifier(loot.biome)} chance={formatChance(loot.chance)} />)}
+        </div>
+      </section>,
+    }] : []),
+    ...(recipeCount > 0 || usedIn.length > 0 ? [{
+      id: 'recipes',
+      label: 'Recipes',
+      content: <div className={styles.itemTabLayout}>
+        {recipeCount > 0 && <section className={`${styles.itemEditorialSection} ${styles.itemRecipeSection}`} aria-labelledby="item-recipes">
+          <ItemSectionHeading id="item-recipes" icon="recipe">How to Obtain</ItemSectionHeading>
+          <div className={`${styles.recipeAcquisition} ${compactProcessingRecipes ? styles.compactRecipeAcquisition : ''}`}>
+            <header><DetailIcon name="recipe" /><div><small>Recipes</small><h3>{recipeCount} documented recipe{recipeCount === 1 ? '' : 's'}</h3></div></header>
+            <div>{recipes.crafting.map((recipe) => <RecipeCard key={`crafting-${recipe.id}`} recipe={recipe} />)}{recipes.machine.map((recipe) => <RecipeCard key={`machine-${recipe.id}`} recipe={recipe} />)}</div>
+          </div>
+        </section>}
+        {usedIn.length > 0 && <section className={`${styles.itemEditorialSection} ${styles.itemUsedInSection}`} aria-labelledby="item-used-in">
+          <ItemSectionHeading id="item-used-in" icon="used">Used In</ItemSectionHeading>
+          <div className={styles.usedInGrid}>{usedIn.map((recipe) => <RecipeResultLink project={project} recipe={recipe} key={`${recipe.type ?? 'recipe'}-${recipe.id}`} />)}</div>
+        </section>}
+      </div>,
+    }] : []),
+    ...(documentation.usage ? [{
+      id: 'usage',
+      label: 'Usage',
+      content: <section className={`${styles.itemEditorialSection} ${styles.itemUsageSection}`} aria-labelledby="item-usage">
+        <ItemSectionHeading id="item-usage" icon="usage">Usage</ItemSectionHeading>
+        <div className={styles.itemUsage}><DetailIcon name="usage" /><p>{documentation.usage}</p></div>
+      </section>,
+    }] : []),
+  ];
+
+  return (
+    <section className={styles.machineReference} aria-labelledby="item-reference">
+      <header>
+        <div>
+          <p className={styles.eyebrow}>{isTrinket ? 'Trinket reference' : 'Item reference'}</p>
+          <h2 id="item-reference">Built to be understood</h2>
+        </div>
+        <p>Choose a section to inspect item properties, capabilities, sources, and recipes without mixing unrelated data.</p>
+      </header>
+      <div className={styles.itemTabs} role="tablist" aria-label="Item documentation sections">
+        {tabs.map((tab) => <button
+          key={tab.id}
+          id={`item-tab-${tab.id}`}
+          type="button"
+          role="tab"
+          aria-selected={activeTab === tab.id}
+          aria-controls={`item-panel-${tab.id}`}
+          className={activeTab === tab.id ? styles.activeItemTab : undefined}
+          onClick={() => setActiveTab(tab.id)}
+        >{tab.label}</button>)}
+      </div>
+      {tabs.map((tab) => <div
+        key={tab.id}
+        id={`item-panel-${tab.id}`}
+        role="tabpanel"
+        aria-labelledby={`item-tab-${tab.id}`}
+        className={styles.itemTabPanel}
+        hidden={activeTab !== tab.id}
+      >{tab.content}</div>)}
+    </section>
+  );
+}
+
 function ItemDetail({entry, visual}) {
   const project = useWikiProject();
   const documentation = normalizedItemDocumentation(entry);
   const groups = capabilityGroups(documentation.capabilities);
+  const statistics = documentation.statistics;
   const recipes = obtainingRecipes(project, entry);
   const usedIn = recipesUsingItem(project, entry);
   const relatedItems = relatedItemsFor(project, entry, recipes, usedIn);
   const recipeCount = recipes.crafting.length + recipes.machine.length;
   const compactProcessingRecipes = recipes.crafting.length === 0
     && recipes.machine.length > 1
-    && recipes.machine.every(isLinearProcessingRecipe);
+    && recipes.machine.every(usesLinearRecipeFlow);
   const basics = [
     ['Item Type', documentation.basic.itemType],
     ['Equip Slot', documentation.basic.equipSlot && documentation.basic.equipSlot !== 'Not a trinket slot' ? documentation.basic.equipSlot : null],
     ['Maximum Stack', documentation.basic.maximumStack],
     ['Add-on', project.name],
   ].filter(([, value]) => value !== undefined && value !== null && value !== '');
-  const hasAcquisition = recipeCount > 0 || documentation.acquisition.entityDrops.length > 0
-    || documentation.acquisition.structures.length > 0 || documentation.acquisition.biomes.length > 0;
   const typeLabel = String(documentation.basic.itemType ?? entry.category ?? 'Item').toUpperCase();
   return (
     <article className={styles.itemDetailPage}>
@@ -1381,50 +1598,17 @@ function ItemDetail({entry, visual}) {
           {documentation.basic.identifier && <div className={styles.itemIdentifier}><span>Identifier</span><code>{documentation.basic.identifier}</code><CopyIdentifierButton identifier={documentation.basic.identifier} /></div>}
         </div>
       </header>
-
-      <div className={styles.itemDetailLayout}>
-      <section className={`${styles.itemEditorialSection} ${styles.itemBasicSection}`} aria-labelledby="item-basic-information">
-        <ItemSectionHeading id="item-basic-information" icon="info">Basic Information</ItemSectionHeading>
-        <dl className={styles.itemBasicList}>{basics.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
-      </section>
-
-      {hasAcquisition && <section className={`${styles.itemEditorialSection} ${styles.itemObtainSection}`} aria-labelledby="item-obtain">
-        <ItemSectionHeading id="item-obtain" icon="obtain">How to Obtain</ItemSectionHeading>
-        <div className={styles.acquisitionGrid}>
-          {documentation.acquisition.entityDrops.map((drop, index) => <AcquisitionCard key={`${drop.entity}-${index}`} icon="entity" eyebrow="Entity Drop" title={formatIdentifier(drop.entity)} chance={formatChance(drop.chance)} quantity={quantityLabel(drop)} />)}
-          {documentation.acquisition.structures.map((loot, index) => {
-            const dimension = loot.conditions?.dimension ? formatIdentifier(loot.conditions.dimension) : null;
-            const structure = loot.structure === 'default' ? (dimension ? `${dimension} Loot` : 'World Loot') : formatIdentifier(loot.structure);
-            return <AcquisitionCard key={`${loot.structure}-${index}`} icon="structure" eyebrow="Structure Loot" title={structure} chance={formatChance(loot.chance)} note={loot.table ?? loot.category} />;
-          })}
-          {documentation.acquisition.biomes.map((loot, index) => <AcquisitionCard key={`${loot.biome}-${index}`} icon="biome" eyebrow="Biome Loot" title={formatIdentifier(loot.biome)} chance={formatChance(loot.chance)} />)}
-          {recipeCount > 0 && <section className={`${styles.recipeAcquisition} ${compactProcessingRecipes ? styles.compactRecipeAcquisition : ''}`}>
-            <header><DetailIcon name="recipe" /><div><small>Recipes</small><h3>{recipeCount} documented recipe{recipeCount === 1 ? '' : 's'}</h3></div></header>
-            <div>{recipes.crafting.map((recipe) => <RecipeCard key={`crafting-${recipe.id}`} recipe={recipe} />)}{recipes.machine.map((recipe) => <RecipeCard key={`machine-${recipe.id}`} recipe={recipe} />)}</div>
-          </section>}
-        </div>
-      </section>}
-
-      {groups.length > 0 && <section className={`${styles.itemEditorialSection} ${styles.itemCapabilitiesSection}`} aria-labelledby="item-capabilities">
-        <ItemSectionHeading id="item-capabilities" icon="capabilities">Trinket Capabilities</ItemSectionHeading>
-        <div className={styles.capabilityGrid}>{groups.map((group) => <CapabilityGroup key={group.id} group={group} />)}</div>
-      </section>}
-
-      {usedIn.length > 0 && <section className={`${styles.itemEditorialSection} ${styles.itemUsedInSection}`} aria-labelledby="item-used-in">
-        <ItemSectionHeading id="item-used-in" icon="used">Used In</ItemSectionHeading>
-        <div className={styles.usedInGrid}>{usedIn.map((recipe) => <RecipeResultLink project={project} recipe={recipe} key={`${recipe.type ?? 'recipe'}-${recipe.id}`} />)}</div>
-      </section>}
-
-      {relatedItems.length > 0 && <section className={`${styles.itemEditorialSection} ${styles.itemRelatedSection}`} aria-labelledby="item-related-items">
-        <ItemSectionHeading id="item-related-items" icon="related">Related Items</ItemSectionHeading>
-        <div className={styles.relatedItemGrid}>{relatedItems.map((item) => <RelatedItemCard project={project} item={item} key={item.identifier ?? item.id} />)}</div>
-      </section>}
-
-      {documentation.usage && <section className={`${styles.itemEditorialSection} ${styles.itemUsageSection}`} aria-labelledby="item-usage">
-        <ItemSectionHeading id="item-usage" icon="usage">Usage</ItemSectionHeading>
-        <div className={styles.itemUsage}><DetailIcon name="usage" /><p>{documentation.usage}</p></div>
-      </section>}
-      </div>
+      <ItemDocumentationTabs
+        project={project}
+        documentation={documentation}
+        basics={basics}
+        groups={groups}
+        statistics={statistics}
+        recipes={recipes}
+        usedIn={usedIn}
+        relatedItems={relatedItems}
+        compactProcessingRecipes={compactProcessingRecipes}
+      />
     </article>
   );
 }
@@ -1439,21 +1623,292 @@ function MachinePropertyList({items, className = ''}) {
   );
 }
 
+function PropertyTags({tags}) {
+  if (!tags?.length) return null;
+  return <div className={styles.propertyTags} aria-label="Category tags">{tags.map((tag) => <span key={tag}>{tag}</span>)}</div>;
+}
+
+function MachineReferencePanel({index, title, copy, items, tags}) {
+  if (!items.length && !tags?.length) return null;
+  return (
+    <section className={styles.machineReferenceGroup} data-group={title.toLowerCase().replace(/\s+/g, '-')}>
+      <div className={styles.machineReferenceHeading}>
+        <span aria-hidden="true">{String(index).padStart(2, '0')}</span>
+        <div><h3>{title}</h3><p>{copy}</p></div>
+      </div>
+      <MachinePropertyList items={items} />
+      <PropertyTags tags={tags} />
+    </section>
+  );
+}
+
+function ProcessingCatalogCard({recipe, machine}) {
+  const inputs = recipe.slots.filter(Boolean);
+  const results = recipeOutputs(recipe);
+  const title = results.map(ingredientLabel).join(' + ');
+  const metric = processingMetric(recipe, machine);
+  return (
+    <article className={styles.machineProcessCard}>
+      <h4 title={title}>{title}</h4>
+      <div className={styles.machineProcessFlow}>
+        <div className={styles.machineProcessInputs}>
+          {inputs.map((ingredient, index) => <React.Fragment key={`${ingredient.id ?? ingredient.label}-${index}`}>
+            {index > 0 && <span className={styles.machineProcessJoin} aria-hidden="true">+</span>}
+            <RecipeSlot ingredient={ingredient} />
+          </React.Fragment>)}
+        </div>
+        <div className={styles.machineProcessCenter}>
+          <span className={styles.machineProcessArrow} aria-hidden="true">→</span>
+          {metric && <small>{metric}</small>}
+        </div>
+        <div className={styles.machineProcessOutputs}>
+          {results.map((ingredient, index) => <React.Fragment key={`${ingredient.id ?? ingredient.label}-${index}`}>
+            {index > 0 && <span className={styles.machineProcessJoin} aria-hidden="true">+</span>}
+            <RecipeSlot ingredient={ingredient} result />
+          </React.Fragment>)}
+        </div>
+      </div>
+    </article>
+  );
+}
+
+const SIEVE_MESH_TIERS = [
+  'String',
+  'Flint',
+  'Copper',
+  'Iron',
+  'Golden',
+  'Emerald',
+  'Diamond',
+  'Netherite',
+];
+
+function sieveTierForRecipe(recipe) {
+  const explicitTier = Number(recipe.meshTier ?? recipe.tier);
+  if (Number.isInteger(explicitTier) && explicitTier >= 0) {
+    return Math.min(explicitTier, SIEVE_MESH_TIERS.length - 1);
+  }
+  const identifier = String(recipe.id ?? recipe.identifier ?? '');
+  const matchedTier = identifier.match(/mesh-tier-(\d+)/i);
+  return matchedTier ? Math.min(Number(matchedTier[1]), SIEVE_MESH_TIERS.length - 1) : 0;
+}
+
+function formatSieveChance(chance) {
+  const percentage = Number(chance ?? 0) * 100;
+  return `${percentage.toLocaleString('en-US', {maximumFractionDigits: 2})}%`;
+}
+
+function formatSieveAmount(amount) {
+  const maximum = Number(amount ?? 1);
+  return maximum > 1 ? `1–${maximum}` : '1';
+}
+
+function autosieveContentId(value) {
+  return `autosieve-drops-${String(value).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
+}
+
+function autosieveRecipeGroups(recipes) {
+  const grouped = new Map();
+  recipes.forEach((recipe) => {
+    const input = recipe.slots?.find(Boolean);
+    const result = recipe.result;
+    if (!input || !result) return;
+    const id = input.id ?? input.label ?? recipe.id;
+    if (!grouped.has(id)) grouped.set(id, {id, input, drops: []});
+    grouped.get(id).drops.push({
+      id: recipe.id,
+      result,
+      chance: Number(recipe.chance ?? 0),
+      amount: result.count ?? 1,
+      tier: sieveTierForRecipe(recipe),
+    });
+  });
+
+  const priority = ['minecraft:dirt', 'minecraft:gravel', 'minecraft:sand'];
+  return [...grouped.values()]
+    .map((group) => ({
+      ...group,
+      drops: group.drops.sort((first, second) => first.tier - second.tier || second.chance - first.chance || ingredientLabel(first.result).localeCompare(ingredientLabel(second.result))),
+    }))
+    .sort((first, second) => {
+      const firstPriority = priority.indexOf(first.id);
+      const secondPriority = priority.indexOf(second.id);
+      if (firstPriority !== -1 || secondPriority !== -1) {
+        return (firstPriority === -1 ? priority.length : firstPriority) - (secondPriority === -1 ? priority.length : secondPriority);
+      }
+      return ingredientLabel(first.input).localeCompare(ingredientLabel(second.input));
+    });
+}
+
+function SieveItemVisual({ingredient, className}) {
+  const project = useWikiProject();
+  const value = ingredient?.id ?? ingredient?.label;
+  const name = ingredientLabel(ingredient);
+  const image = visualFor(project, value);
+  const href = detailLinkFor(project, value);
+  const content = image ? <img src={image} alt="" loading="lazy" /> : <span aria-hidden="true">◇</span>;
+  return href
+    ? <Link className={className} to={href} aria-label={name} title={name}>{content}</Link>
+    : <span className={className} role="img" aria-label={name} title={name}>{content}</span>;
+}
+
+function SieveMeshBadge({tier, className = ''}) {
+  const project = useWikiProject();
+  const name = SIEVE_MESH_TIERS[tier] ?? SIEVE_MESH_TIERS[0];
+  const identifier = `utilitycraft:${name.toLowerCase()}_mesh`;
+  const image = visualFor(project, identifier);
+  const href = detailLinkFor(project, identifier);
+  const content = <>{image ? <img src={image} alt="" loading="lazy" /> : <span aria-hidden="true">▧</span>}<span>{name}</span></>;
+  const classes = `${styles.sieveMeshBadge} ${className}`.trim();
+  return href
+    ? <Link className={classes} to={href} title={`Open ${name} Mesh`}>{content}</Link>
+    : <span className={classes} title={`${name} mesh`}>{content}</span>;
+}
+
+function AutoSieveDropRows({drops}) {
+  return (
+    <div className={styles.autosieveDropRows}>
+      {drops.map((drop) => (
+        <div className={styles.autosieveDropRow} key={drop.id}>
+          <div className={styles.autosieveDropName}><SieveItemVisual ingredient={drop.result} className={styles.autosieveDropVisual} /><strong>{ingredientLabel(drop.result)}</strong></div>
+          <span>{formatSieveChance(drop.chance)}</span>
+          <span>{formatSieveAmount(drop.amount)}</span>
+          <SieveMeshBadge tier={drop.tier} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function AutoSieveSiftCard({group}) {
+  const [expanded, setExpanded] = useState(false);
+  const contentId = autosieveContentId(group.id);
+  const minimumTier = Math.min(...group.drops.map((drop) => drop.tier));
+  return (
+    <article className={styles.autosieveSiftCard} data-expanded={expanded || undefined}>
+      <header className={styles.autosieveSiftHeader}>
+        <SieveItemVisual ingredient={group.input} className={styles.autosieveInputVisual} />
+        <div className={styles.autosieveSiftCopy}>
+          <div className={styles.autosieveSiftTitleRow}>
+            <h4>{ingredientLabel(group.input)}</h4>
+            <button type="button" className={styles.autosieveToggle} aria-expanded={expanded} aria-controls={contentId} onClick={() => setExpanded((current) => !current)}>
+              <span>{expanded ? 'Hide drops' : 'Show drops'}</span><b aria-hidden="true">{expanded ? '−' : '+'}</b>
+            </button>
+          </div>
+          <p>Sieveable block <span aria-hidden="true">·</span> {group.drops.length} possible drop{group.drops.length === 1 ? '' : 's'}</p>
+          <div className={styles.autosieveMinTier}><small>Minimum mesh</small><SieveMeshBadge tier={minimumTier} /></div>
+        </div>
+      </header>
+      {expanded && <div id={contentId} className={styles.autosieveDropList}>
+        <div className={styles.autosieveDropHeader} aria-hidden="true"><span>Drop</span><span>Chance</span><span>Amount</span><span>Min. tier</span></div>
+        <AutoSieveDropRows drops={group.drops} />
+      </div>}
+    </article>
+  );
+}
+
+function AutoSieveRecipeCatalog({recipes}) {
+  const groups = autosieveRecipeGroups(recipes);
+  return (
+    <section className={`${styles.machineRecipeSubsection} ${styles.autosieveRecipeSection}`} aria-labelledby="machine-autosieve-recipes">
+      <div>
+        <p className={styles.eyebrow}>02 / Processing</p>
+        <h3 id="machine-autosieve-recipes">Sifting Results</h3>
+        <p className={styles.autosieveRecipeDescription}>The Autosieve rolls each sieveable block into its available drops. Results depend on the supplied block and the minimum mesh tier shown for each drop.</p>
+      </div>
+      <div className={styles.autosieveSiftGrid}>
+        {groups.map((group) => <AutoSieveSiftCard group={group} key={group.id} />)}
+      </div>
+      <p className={styles.autosieveRecipeNote}>Chances are evaluated independently for every Autosieve roll.</p>
+    </section>
+  );
+}
+
+function MachineRecipes({machine, recipes}) {
+  const usesSiftingCatalog = machine.id === 'autosieve';
+  return (
+    <div className={styles.machineRecipes}>
+      <section className={styles.machineRecipeSubsection} aria-labelledby="machine-obtain">
+        <div><p className={styles.eyebrow}>01 / Acquisition</p><h3 id="machine-obtain">How to Obtain</h3></div>
+        {recipes.obtain.length ? <div className={styles.machineObtainGrid}>{recipes.obtain.map((recipe) => <RecipeCard recipe={recipe} key={`obtain-${recipe.id}`} />)}</div>
+          : <p className={styles.machineRecipeEmpty}>No crafting recipe is indexed for this machine.</p>}
+      </section>
+      {recipes.catalog.length > 0 && usesSiftingCatalog ? <AutoSieveRecipeCatalog recipes={recipes.catalog} />
+        : recipes.catalog.length > 0 && <section className={styles.machineRecipeSubsection} aria-labelledby="machine-recipes-catalog">
+        <div><p className={styles.eyebrow}>02 / Processing</p><h3 id="machine-recipes-catalog">Recipes Catalog</h3></div>
+        <div className={styles.machineRecipeCatalog}>{recipes.catalog.map((recipe) => <ProcessingCatalogCard recipe={recipe} machine={machine} key={`process-${recipe.id}`} />)}</div>
+      </section>}
+    </div>
+  );
+}
+
+function MachineDocumentationTabs({machine, controller, blockDetails, specifications}) {
+  const project = useWikiProject();
+  const [activeTab, setActiveTab] = useState('block-details');
+  const recipes = machineRecipeSets(project, machine, controller);
+  const tabs = [
+    {
+      id: 'block-details',
+      label: 'Block Details',
+      content: <div className={styles.machineReferenceGrid}>
+        <MachineReferencePanel index={1} title="Block Details" copy="Minecraft block properties, mining requirements and applicable categories." items={blockDetails.items} tags={blockDetails.tags} />
+      </div>,
+    },
+    {
+      id: 'machine-specifications',
+      label: 'Machine Specifications',
+      content: <div className={styles.machineReferenceGrid}>
+        <MachineReferencePanel index={2} title="Machine Specifications" copy="Capacity, operating values, interfaces and machine-specific limits." items={specifications} />
+      </div>,
+    },
+    {
+      id: 'recipes',
+      label: 'Recipes',
+      content: <MachineRecipes machine={machine} recipes={recipes} />,
+    },
+  ];
+  return (
+    <section className={styles.machineReference} aria-labelledby="machine-reference">
+      <header>
+        <div>
+          <p className={styles.eyebrow}>Technical reference</p>
+          <h2 id="machine-reference">Built to be understood</h2>
+        </div>
+        <p>Choose a section to inspect block properties, technical capabilities, or the recipes this machine supports.</p>
+      </header>
+      <div className={styles.machineTabs} role="tablist" aria-label="Machine documentation sections">
+        {tabs.map((tab) => <button
+          key={tab.id}
+          id={`machine-tab-${tab.id}`}
+          type="button"
+          role="tab"
+          aria-selected={activeTab === tab.id}
+          aria-controls={`machine-panel-${tab.id}`}
+          className={activeTab === tab.id ? styles.activeMachineTab : undefined}
+          onClick={() => setActiveTab(tab.id)}
+        >{tab.label}</button>)}
+      </div>
+      {tabs.map((tab) => <div
+        key={tab.id}
+        id={`machine-panel-${tab.id}`}
+        role="tabpanel"
+        aria-labelledby={`machine-tab-${tab.id}`}
+        className={styles.machineTabPanel}
+        hidden={activeTab !== tab.id}
+      >{tab.content}</div>)}
+    </section>
+  );
+}
+
 function MachineDetail({entry, controller, sequence}) {
   const machine = documentedMachine(entry);
-  const directional = machine.machineData?.directional;
-  const referenceGroups = groupedMachineReferences(machine);
+  const blockDetails = machineBlockDetails(machine, controller);
+  const specifications = machineSpecificationFacts(machine);
   return (
     <>
       <article className={styles.machineDetailHero} data-category={machine.category.toLowerCase()}>
         <div className={styles.machineDetailVisual}>
-          {controller ? <BlockPreview entry={controller} size="min(100%, 20rem)" /> : <span className={styles.visualFallback} aria-hidden="true">▦</span>}
-          {directional && (
-            <div className={styles.orientationLegend} aria-label="Machine orientation">
-              <span><i aria-hidden="true" /> Front face</span>
-              <span>Side I/O is configurable</span>
-            </div>
-          )}
+          {controller ? <BlockPreview entry={controller} size="min(100%, 14rem)" /> : <span className={styles.visualFallback} aria-hidden="true">▦</span>}
         </div>
         <div className={styles.machineDetailHeading}>
           <p className={styles.eyebrow}>Machine {String(sequence).padStart(2, '0')} / {machine.category}</p>
@@ -1466,34 +1921,7 @@ function MachineDetail({entry, controller, sequence}) {
         </div>
       </article>
 
-      <section className={styles.machineReference} aria-labelledby="machine-reference">
-        <header>
-          <div>
-            <p className={styles.eyebrow}>Technical reference</p>
-            <h2 id="machine-reference">Built to be understood</h2>
-          </div>
-          <p>Configuration values are separated from interface and behavior, so the information needed for a build is easier to scan.</p>
-        </header>
-        <div className={styles.machineReferenceGrid}>
-          {referenceGroups.map((group, index) => (
-            <section className={styles.machineReferenceGroup} data-group={group.id} key={group.id}>
-              <div className={styles.machineReferenceHeading}>
-                <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-                <div><h3>{group.title}</h3><p>{group.copy}</p></div>
-              </div>
-              <MachinePropertyList items={group.items} />
-            </section>
-          ))}
-        </div>
-      </section>
-
-      <div className={styles.machineGuideGrid}>
-        <section className={styles.howItWorks} aria-labelledby="how-it-works">
-          <p className={styles.eyebrow}>Operation</p>
-          <h2 id="how-it-works">How it works</h2>
-          <ol>{machine.howItWorks.map((step, index) => <li key={step}><span>{index + 1}</span><p>{step}</p></li>)}</ol>
-        </section>
-      </div>
+      <MachineDocumentationTabs machine={machine} controller={controller} blockDetails={blockDetails} specifications={specifications} />
     </>
   );
 }
@@ -1615,12 +2043,12 @@ function AddonWikiEntryContent({entryType, slug}) {
   }
 
   if (entryType === 'blocks') {
-    visual = <div className={styles.detailCubeVisual}><BlockPreview entry={entry} size="min(100%, 17rem)" /></div>;
+    visual = <div className={styles.detailCubeVisual}><BlockPreview entry={entry} size="min(100%, 12.5rem)" /></div>;
     facts = blockDetailFacts(entry);
     referenceGroups = entryReferenceGroups(entryType, entry);
   } else if (entryType === 'generators') {
     visual = <div className={styles.detailGuideVisual}>{entry.faces
-      ? <BlockPreview entry={entry} size="min(100%, 17rem)" />
+      ? <BlockPreview entry={entry} size="min(100%, 12.5rem)" />
       : entry.image
         ? <img src={resolveAsset(project, entry.image)} alt="" />
         : <span className={styles.visualFallback} aria-hidden="true">◉</span>}</div>;

@@ -3,6 +3,33 @@ import {createGeneratedProject} from '../createGeneratedProject';
 import utilitycraft from '../utilitycraft';
 import machineProfiles from './machineProfiles';
 
+// Conveyor movement and bridge reach are implemented by the transportation
+// runtime, rather than by a Bedrock block component. Keep these player-facing
+// values with the project configuration so a remap cannot erase them.
+const conveyorTiers = {
+  copper: {label: 'Copper', speed: '1 block/s', bridgeRange: '8 blocks'},
+  titanium: {label: 'Titanium', speed: '2 blocks/s', bridgeRange: '16 blocks'},
+  aetherium: {label: 'Aetherium', speed: '5 blocks/s', bridgeRange: '32 blocks'},
+};
+
+const conveyorProfiles = Object.fromEntries(Object.entries(conveyorTiers).flatMap(([tierId, tier]) => [
+  ...['horizontal', 'inclined', 'declined', 'vertical'].map((shape) => [`${tierId}_conveyor_${shape}`, {
+    blockType: 'Conveyor',
+    tier: tier.label,
+    blockDetails: [
+      ['Conveyor speed', tier.speed],
+    ],
+  }]),
+  ...['bridge_transmitter', 'bridge_receiver', 'bridge_path'].map((part) => [`${tierId}_conveyor_${part}`, {
+    blockType: 'Conveyor bridge',
+    tier: tier.label,
+    blockDetails: [
+      ['Conveyor speed', tier.speed],
+      ['Bridge range', tier.bridgeRange],
+    ],
+  }]),
+]));
+
 const ascendantTechnology = createGeneratedProject({
   manifest,
   id: 'ascendant-technology',
@@ -10,6 +37,7 @@ const ascendantTechnology = createGeneratedProject({
   repository: 'https://github.com/DoriosStudios/Ascendant-Technology',
   dependencyProjects: [utilitycraft],
   machineProfiles,
+  blockProfiles: conveyorProfiles,
   machineCategoryOrder: [
     'Superior Machines',
     'Unique Machines',

@@ -37,10 +37,19 @@ function tierFor(name, category) {
   return tier ?? category ?? 'Standard';
 }
 
-function normalizeItem(entry) {
+function normalizeItem(entry, {itemProfiles = {}} = {}) {
   const identifier = entry.identifier ?? entry.id;
+  const profile = itemProfiles[entry.id] ?? itemProfiles[identifier] ?? {};
+  const profileDocumentation = profile.documentation ?? {};
   return {
     ...entry,
+    ...profile,
+    documentation: {
+      ...(entry.documentation ?? {}),
+      ...profileDocumentation,
+      basic: {...(entry.documentation?.basic ?? {}), ...(profileDocumentation.basic ?? {})},
+      capabilities: {...(entry.documentation?.capabilities ?? {}), ...(profileDocumentation.capabilities ?? {})},
+    },
     id: identifier,
     identifier,
     shortId: entry.id,
@@ -56,13 +65,17 @@ function normalizeItem(entry) {
   };
 }
 
-function normalizeBlock(entry, {generatedCompressedRenders = false} = {}) {
+function normalizeBlock(entry, {generatedCompressedRenders = false, blockProfiles = {}} = {}) {
   const identifier = entry.identifier ?? entry.id;
+  const profile = blockProfiles[entry.id] ?? blockProfiles[identifier] ?? {};
   const generatedCompressedRender = generatedCompressedRenders && entry.category === 'Compressed'
     ? `renders/compressed_blocks/${entry.id}.png`
     : undefined;
   return {
     ...entry,
+    ...profile,
+    blockData: {...entry.blockData, ...profile.blockData},
+    blockDetails: profile.blockDetails ?? entry.blockDetails,
     render: entry.render ?? generatedCompressedRender,
     id: identifier,
     identifier,
@@ -322,17 +335,21 @@ export function createGeneratedProject({
   generatorCategoryOrder = [],
   machineFilter = isMachineBlock,
   generatorFilter = isGeneratorBlock,
+  blockProfiles = {},
+  itemProfiles = {},
   includeBlockSection = true,
   includeEntitySection = false,
   itemCatalogColumns,
 }) {
   const basePath = `/wiki/${id}`;
   const assetRoot = `/img/wiki/${id}`;
-  const rawItems = manifest.content.items.map(normalizeItem);
-  const items = (manifest.catalog?.items ?? manifest.content.items).map(normalizeItem);
+  const itemProfileOptions = {itemProfiles};
+  const rawItems = manifest.content.items.map((entry) => normalizeItem(entry, itemProfileOptions));
+  const items = (manifest.catalog?.items ?? manifest.content.items).map((entry) => normalizeItem(entry, itemProfileOptions));
   const allBlocks = includeBlockSection
     ? manifest.content.blocks.map((entry) => normalizeBlock(entry, {
       generatedCompressedRenders: id === 'utilitycraft',
+      blockProfiles,
     }))
     : [];
   const entities = includeEntitySection
