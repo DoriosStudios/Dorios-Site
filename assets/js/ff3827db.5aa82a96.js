@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[15237],{88495:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-iron-chunk-9-0-25-mesh-tier-1"}')}}]);

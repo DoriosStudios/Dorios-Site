@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[36877],{41796:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-warped-wart-block-minecraft-netherrack-minecraft-warped-nylium-1-guaranteed"}')}}]);

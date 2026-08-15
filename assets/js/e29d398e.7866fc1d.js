@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[18340],{35777:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-autosieve-utilitycraft-crushed-netherrack-utilitycraft-nether-quartz-chunk-1-0-33-mesh-tier-1"}')}}]);

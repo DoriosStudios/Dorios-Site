@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[76424],{71622:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-moss-block-minecraft-stone-bricks-minecraft-mossy-stone-bricks-1-guaranteed"}')}}]);

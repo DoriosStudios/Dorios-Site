@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[12052],{99387:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-ae2be-silicon-ae2be-charged-certus-quartz-crystal-ae2be-calculation-processor-press-1-guaranteed"}')}}]);

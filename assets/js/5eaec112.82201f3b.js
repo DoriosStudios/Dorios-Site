@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[67730],{2881:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-crusher-ae2be-certus-quartz-crystal-ae2be-certus-quartz-dust-1-guaranteed"}')}}]);

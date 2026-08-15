@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[3810],{25400:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-incinerator-minecraft-polished-blackstone-bricks-minecraft-cracked-polished-blackstone-bricks-1-guaranteed"}')}}]);

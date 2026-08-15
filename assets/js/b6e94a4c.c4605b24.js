@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[51503],{67464:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-incinerator-utilitycraft-quadruple-compressed-cobblestone-utilitycraft-compressed-stone-4-1-guaranteed"}')}}]);

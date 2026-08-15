@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[97380],{71356:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-incinerator-auxillium-deepslate-amberine-ore-auxillium-amberine-1-guaranteed"}')}}]);

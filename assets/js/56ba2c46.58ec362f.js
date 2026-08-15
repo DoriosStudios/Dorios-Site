@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[62634],{20190:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-crusher-utilitycraft-compressed-cobbled-deepslate-4-utilitycraft-compressed-crushed-cobbled-deepslate-4-1-guaranteed"}')}}]);

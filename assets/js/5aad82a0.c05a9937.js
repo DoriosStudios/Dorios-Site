@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[17747],{49990:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-utilitycraft-energized-iron-dust-utilitycraft-basic-chip-utilitycraft-advanced-chip-1-guaranteed"}')}}]);

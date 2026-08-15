@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[71811],{92718:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-autosieve-utilitycraft-crushed-cobbled-deepslate-minecraft-sculk-catalyst-1-0-005-mesh-tier-5"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[88101],{45187:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-utilitycraft-gold-dust-minecraft-melon-slice-minecraft-glistering-melon-slice-1-guaranteed"}')}}]);

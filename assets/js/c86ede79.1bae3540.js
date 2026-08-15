@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[75024],{67889:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-utilitycraft-netherite-dust-utilitycraft-expert-chip-utilitycraft-ultimate-chip-1-guaranteed"}')}}]);

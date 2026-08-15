@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[66867],{22578:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-utilitycraft-ender-pearl-dust-minecraft-cobblestone-minecraft-end-stone-1-guaranteed"}')}}]);

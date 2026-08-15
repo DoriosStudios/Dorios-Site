@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[30226],{82842:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"blocks","slug":"basic-thermo-generator"}')}}]);

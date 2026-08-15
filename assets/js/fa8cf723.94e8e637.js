@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[10239],{90836:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-utilitycraft-coal-dust-minecraft-raw-iron-utilitycraft-raw-steel-1-guaranteed"}')}}]);

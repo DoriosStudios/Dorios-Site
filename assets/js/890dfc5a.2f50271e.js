@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[87381],{56023:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-blaze-powder-ae2be-certus-quartz-crystal-ae2be-charged-certus-quartz-crystal-1-guaranteed"}')}}]);
