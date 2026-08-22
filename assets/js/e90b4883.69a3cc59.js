@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[799276],{813570:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"crafting-basic_solar_panel"}')}}]);

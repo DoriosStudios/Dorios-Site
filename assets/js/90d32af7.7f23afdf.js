@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[927893],{515230:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"crafting-netherite_upgrade_smithing_template"}')}}]);

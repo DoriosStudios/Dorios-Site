@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[18768],{769257:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-compactor-utilitycraft-compressed-quartz-block-3-utilitycraft-compressed-quartz-block-4-9-1"}')}}]);

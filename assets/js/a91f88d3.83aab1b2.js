@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[71115],{26995:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-redstone-utilitycraft-steel-plate-utilitycraft-chip-1-guaranteed"}')}}]);

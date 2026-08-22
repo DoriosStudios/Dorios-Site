@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[70254],{32275:t=>{t.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-utilitycraft-amethyst-dust-utilitycraft-crying-obsidian-dust-utilitycraft-stabilized-obsidian-dust-1-guaranteed"}')}}]);

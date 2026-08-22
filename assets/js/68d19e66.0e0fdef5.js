@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[714718],{355986:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"blocks","slug":"nether-tungsten-ore"}')}}]);

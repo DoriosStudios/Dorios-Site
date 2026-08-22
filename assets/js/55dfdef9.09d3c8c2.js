@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[191213],{300655:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-genetic-seed-synthesizer-utilitycraft-netherite-seeds"}')}}]);

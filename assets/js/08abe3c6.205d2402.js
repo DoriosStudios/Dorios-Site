@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[824261],{852790:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-utilitycraft-catalyst-weaver-minecraft-charcoal-minecraft-iron-ingot-converted"}')}}]);

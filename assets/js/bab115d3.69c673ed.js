@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[754098],{66935:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-compactor-minecraft-blackstone-utilitycraft-compressed-blackstone-9-1"}')}}]);

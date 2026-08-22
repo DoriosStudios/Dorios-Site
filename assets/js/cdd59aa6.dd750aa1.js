@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[857356],{531702:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-utilitycraft-incinerator-minecraft-stripped-cherry-log-industrial-burner"}')}}]);

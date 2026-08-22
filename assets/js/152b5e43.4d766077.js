@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[131464],{320543:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-utilitycraft-autosieve-utilitycraft-compressed-dirt-minecraft-oak-sapling-any-9-0p1-13-dual-siever"}')}}]);

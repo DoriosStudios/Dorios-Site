@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[40516],{87581:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"crafting-item_exporter_green_to_purple_convert"}')}}]);

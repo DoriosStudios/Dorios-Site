@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[73949],{442747:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-utilitycraft-incinerator-minecraft-spruce-log"}')}}]);

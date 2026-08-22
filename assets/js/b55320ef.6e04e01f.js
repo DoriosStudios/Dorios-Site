@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[48407],{42684:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-redstone-block-minecraft-iron-block-utilitycraft-energized-iron-block-1-guaranteed"}')}}]);

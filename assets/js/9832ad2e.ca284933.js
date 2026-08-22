@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[970243],{203788:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-utilitycraft-autosieve-minecraft-dirt-minecraft-carrot-any-1-0p1-0-dual-siever"}')}}]);

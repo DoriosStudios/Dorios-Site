@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[60782],{20647:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-crusher-minecraft-deepslate-coal-ore-minecraft-coal-4-guaranteed"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[86478],{83676:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-crusher-minecraft-jungle-leaves-minecraft-string-2-guaranteed"}')}}]);

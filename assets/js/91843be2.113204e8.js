@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[39267],{847071:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-compactor-utilitycraft-compressed-charcoal-block-3-utilitycraft-compressed-charcoal-block-4-9-1"}')}}]);

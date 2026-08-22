@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[940254],{34195:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-utilitycraft-autosieve-utilitycraft-compressed-dirt-minecraft-mangrove-propagule-any-9-0p1-12"}')}}]);

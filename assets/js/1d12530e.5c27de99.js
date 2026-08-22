@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[139060],{457923:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-compactor-utilitycraft-compressed-gravel-3-utilitycraft-compressed-gravel-4-9-1"}')}}]);

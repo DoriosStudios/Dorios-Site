@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[927210],{176361:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-compactor-minecraft-light-blue-dye-utilitycraft-bag-of-light-blue-dye-9-1"}')}}]);

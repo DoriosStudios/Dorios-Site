@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[32024],{65790:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"recipes","slug":"crafting-advanced_power_condenser_unit"}')}}]);

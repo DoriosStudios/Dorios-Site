@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[896049],{516014:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-utilitycraft-autosieve-minecraft-gravel-minecraft-flint-0-1-0p2-0-centrifugal-siever"}')}}]);

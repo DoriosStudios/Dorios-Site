@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[66368],{53596:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-autosieve-minecraft-sand-minecraft-cocoa-beans-1-0-01"}')}}]);

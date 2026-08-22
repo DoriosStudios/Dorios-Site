@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[179577],{296675:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-utilitycraft-autosieve-minecraft-dirt-minecraft-potato-any-1-0p1-1-dual-siever"}')}}]);

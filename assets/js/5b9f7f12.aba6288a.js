@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[141],{40059:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-incinerator-minecraft-raw-iron-block-minecraft-iron-block-1-guaranteed"}')}}]);

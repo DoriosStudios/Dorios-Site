@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[632724],{216849:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-utilitycraft-autosieve-utilitycraft-compressed-gravel-utilitycraft-emerald-shard-4-9-0p02-6-dual-siever"}')}}]);

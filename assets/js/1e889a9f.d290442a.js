@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[599034],{190807:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-utilitycraft-autosieve-utilitycraft-crushed-netherrack-utilitycraft-ancient-debris-chunk-5-1-0p025-2-centrifugal-siever"}')}}]);

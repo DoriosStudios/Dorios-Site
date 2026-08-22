@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[500731],{542877:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-utilitycraft-autosieve-minecraft-grass-block-minecraft-yellow-flower-any-1-0p2-1-dual-siever"}')}}]);

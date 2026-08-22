@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[113030],{601076:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-utilitycraft-electro-press-utilitycraft-quadruple-compressed-cobblestone-arc-press-forge"}')}}]);

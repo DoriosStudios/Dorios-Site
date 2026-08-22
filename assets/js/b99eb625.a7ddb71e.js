@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[437961],{983542:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"recipes","slug":"processing-heavy-machinery-crafter-1-17-utilitycraft-basic-power-condenser-unit"}')}}]);

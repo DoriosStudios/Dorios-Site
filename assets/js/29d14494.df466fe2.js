@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[100362],{225292:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-heavy-machinery-crafter-0-2-utilitycraft-bronze-energy-port"}')}}]);

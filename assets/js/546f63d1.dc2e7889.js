@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[42764],{58006:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-electro-press-minecraft-bone-meal-minecraft-bone-block-1-guaranteed"}')}}]);

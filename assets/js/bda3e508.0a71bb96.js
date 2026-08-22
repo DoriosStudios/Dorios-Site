@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[337411],{800979:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"recipes","slug":"crafting-steel_hazard_block"}')}}]);

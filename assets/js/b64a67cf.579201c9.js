@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[48912],{97174:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-electro-press-utilitycraft-ancient-debris-chunk-minecraft-ancient-debris-1-guaranteed"}')}}]);

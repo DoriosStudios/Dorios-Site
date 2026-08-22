@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[82783],{51011:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-crusher-utilitycraft-netherite-plate-utilitycraft-netherite-dust-1-guaranteed"}')}}]);

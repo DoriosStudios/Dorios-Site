@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[23747],{95471:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-crusher-minecraft-raw-copper-utilitycraft-copper-dust-2-guaranteed"}')}}]);

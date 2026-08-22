@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[555153],{342450:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-utilitycraft-autosieve-utilitycraft-compressed-crushed-endstone-minecraft-chorus-fruit-4-9-0p8-1"}')}}]);

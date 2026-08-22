@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[855463],{63715:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-utilitycraft-autosieve-utilitycraft-compressed-dirt-minecraft-carrot-any-9-0p1-0-centrifugal-siever"}')}}]);

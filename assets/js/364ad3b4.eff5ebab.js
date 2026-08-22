@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[85292],{78281:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-crusher-minecraft-quartz-block-minecraft-quartz-4-guaranteed"}')}}]);

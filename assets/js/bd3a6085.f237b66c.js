@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[23562],{87812:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"blocks","slug":"compressed-raw-gold-block-3"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[638947],{256600:s=>{s.exports=JSON.parse('{"authors":[{"name":"Milo504","title":"Owner","url":"https://doriosstudios.com","page":{"permalink":"/blog/authors/authors/milo504"},"socials":{"website":"https://doriosstudios.com"},"imageURL":"/img/about/milo504.jpg","key":"milo504","count":3}]}')}}]);

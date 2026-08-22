@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[93065],{5566:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"aetherium-axe"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[70602],{3097:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-minecraft-echo-shard-9-0-025-mesh-tier-5"}')}}]);

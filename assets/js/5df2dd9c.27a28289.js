@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[15596],{23801:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-ae2be-silicon-utilitycraft-chip-ae2be-silicon-press-1-guaranteed"}')}}]);

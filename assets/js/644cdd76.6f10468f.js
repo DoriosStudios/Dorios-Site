@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[37717],{3046:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-electro-press-utilitycraft-wither-skull-shard-minecraft-wither-skeleton-skull-1-guaranteed"}')}}]);

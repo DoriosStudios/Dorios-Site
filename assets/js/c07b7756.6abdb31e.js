@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[72042],{80369:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-blaze-powder-minecraft-cobblestone-minecraft-netherrack-1-guaranteed"}')}}]);

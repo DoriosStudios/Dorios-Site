@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[374411],{472893:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"recipes","slug":"processing-heavy-machinery-crafter-1-11-utilitycraft-speed-module"}')}}]);

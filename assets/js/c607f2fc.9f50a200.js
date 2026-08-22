@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[86322],{9267:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-autosieve-utilitycraft-crushed-blackstone-minecraft-gold-nugget-1-0-2-mesh-tier-3"}')}}]);

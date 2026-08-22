@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[997741],{544532:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"recipes","slug":"processing-heavy-machinery-crafter-0-10-utilitycraft-steel-bricks"}')}}]);

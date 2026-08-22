@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[438862],{881986:e=>{e.exports=JSON.parse('{"projectId":"trinkets","entryType":"items","slug":"abyssal-sun-amulet"}')}}]);

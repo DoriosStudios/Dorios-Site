@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[875599],{541583:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"recipes","slug":"processing-heavy-machinery-infuser-utilitycraft-diamond-dust-utilitycraft-darloonite-crystal"}')}}]);

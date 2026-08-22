@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[344749],{52863:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-utilitycraft-autosieve-minecraft-grass-block-minecraft-double-plant-any-1-0p2-2-centrifugal-siever"}')}}]);

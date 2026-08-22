@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[241753],{489859:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"recipes","slug":"processing-heavy-machinery-crafter-0-14-utilitycraft-steel-hazard-block"}')}}]);

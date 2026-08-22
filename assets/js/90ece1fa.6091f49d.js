@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[74597],{91924:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-autosieve-minecraft-sand-minecraft-prismarine-shard-1-0-1-mesh-tier-2"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[117681],{405898:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-minecraft-sculk-catalyst-5-9-0p005-1-dual-siever"}')}}]);

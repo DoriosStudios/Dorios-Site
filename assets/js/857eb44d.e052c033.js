@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[16780],{29032:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"totem-shard"}')}}]);

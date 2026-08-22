@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[1264],{47603:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-incinerator-utilitycraft-raw-leather-minecraft-leather-1-guaranteed"}')}}]);

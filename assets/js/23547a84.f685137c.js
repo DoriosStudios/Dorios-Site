@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[134577],{902610:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"blocks","slug":"tempered_steel_glass"}')}}]);

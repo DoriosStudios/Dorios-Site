@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[741687],{739204:t=>{t.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-utilitycraft-infuser-utilitycraft-netherite-scrap-dust-utilitycraft-gold-dust"}')}}]);

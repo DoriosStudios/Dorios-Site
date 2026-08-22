@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[380518],{48313:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-utilitycraft-autosieve-utilitycraft-crushed-netherrack-minecraft-ender-pearl-5-1-0p005-3"}')}}]);

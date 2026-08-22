@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[89836],{5987:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-electro-press-minecraft-blaze-powder-minecraft-blaze-rod-1-guaranteed"}')}}]);

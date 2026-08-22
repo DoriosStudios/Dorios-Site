@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[45193],{62941:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-incinerator-minecraft-beef-minecraft-cooked-beef-1-guaranteed"}')}}]);

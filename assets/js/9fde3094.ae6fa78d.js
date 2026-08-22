@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[53989],{87927:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-incinerator-minecraft-spruce-log-minecraft-charcoal-1-guaranteed"}')}}]);

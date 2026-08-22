@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[99369],{45959:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-spruce-sapling-minecraft-grass-block-minecraft-podzol-1-guaranteed"}')}}]);

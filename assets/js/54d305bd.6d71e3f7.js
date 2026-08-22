@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[62276],{82102:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"diamond-paxel"}')}}]);

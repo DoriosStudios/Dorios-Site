@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[263460],{693795:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"blocks","slug":"aetherium-conveyor-bridge-receiver"}')}}]);

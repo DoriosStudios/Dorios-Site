@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[11590],{85025:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-charcoal-minecraft-iron-ingot-utilitycraft-steel-ingot-1-guaranteed"}')}}]);

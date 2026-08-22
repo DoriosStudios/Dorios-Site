@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[818498],{272865:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-autosieve-utilitycraft-crushed-endstone-utilitycraft-aetherium-shard-5-1-0p1-0"}')}}]);

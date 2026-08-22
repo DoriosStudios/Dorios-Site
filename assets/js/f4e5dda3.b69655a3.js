@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[71715],{58866:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"titanium-plate"}')}}]);

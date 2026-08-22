@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[31219],{58451:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-blaze-powder-minecraft-slime-ball-minecraft-magma-cream-1-guaranteed"}')}}]);

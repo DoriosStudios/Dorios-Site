@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[48791],{35463:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-moss-block-minecraft-cobblestone-minecraft-mossy-cobblestone-1-guaranteed"}')}}]);

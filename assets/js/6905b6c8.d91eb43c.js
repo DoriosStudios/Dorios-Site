@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[84120],{13355:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-electro-press-minecraft-ice-minecraft-packed-ice-1-guaranteed"}')}}]);

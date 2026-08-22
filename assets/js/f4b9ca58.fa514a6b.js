@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[58329],{44165:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-incinerator-utilitycraft-raw-steel-utilitycraft-steel-ingot-1-guaranteed"}')}}]);

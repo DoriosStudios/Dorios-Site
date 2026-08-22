@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[11809],{46579:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-crusher-utilitycraft-compressed-endstone-4-utilitycraft-compressed-crushed-endstone-4-1-guaranteed"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[15611],{81996:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-incinerator-utilitycraft-compressed-raw-iron-block-4-utilitycraft-compressed-iron-block-4-1-guaranteed"}')}}]);

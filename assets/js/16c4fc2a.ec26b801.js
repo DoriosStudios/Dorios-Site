@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[863825],{830957:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-compactor-utilitycraft-quadruple-compressed-cobblestone-utilitycraft-quintuple-compressed-cobblestone-9-1"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[38479],{7893:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"blocks","slug":"prismarine-shards-seeds"}')}}]);

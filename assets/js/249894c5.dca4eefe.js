@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[506425],{80710:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-emerald-shard-4-9-0p05-6"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[39408],{68052:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-crusher-utilitycraft-raw-steel-utilitycraft-steel-dust-2-guaranteed"}')}}]);

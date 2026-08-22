@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[2772],{71511:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-electro-press-utilitycraft-quadruple-compressed-cobblestone-utilitycraft-quintuple-compressed-cobblestone-1-guaranteed"}')}}]);

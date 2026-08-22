@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[11183],{10116:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"netherite-hammer"}')}}]);

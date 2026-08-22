@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[31342],{58737:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-autosieve-utilitycraft-compressed-crushed-blackstone-minecraft-sulfur-spike-9-0-12-mesh-tier-2"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[105388],{822647:e=>{e.exports=JSON.parse('{"projectSlug":"lucky-tools"}')}}]);

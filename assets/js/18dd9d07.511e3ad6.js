@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[880796],{890113:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-utilitycraft-autosieve-utilitycraft-crushed-netherrack-utilitycraft-nether-quartz-chunk-1-1-0p33-0-centrifugal-siever"}')}}]);

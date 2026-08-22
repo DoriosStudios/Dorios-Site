@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[608010],{255462:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-utilitycraft-catalyst-weaver-minecraft-brown-mushroom-minecraft-grass-block-converted"}')}}]);

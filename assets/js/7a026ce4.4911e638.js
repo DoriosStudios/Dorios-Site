@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[110787],{36480:e=>{e.exports=JSON.parse('{"projectId":"trinkets","entryType":"recipes","slug":"crafting-recover_scroll"}')}}]);

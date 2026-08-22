@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[36365],{16594:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-incinerator-utilitycraft-compressed-cobbled-deepslate-3-utilitycraft-compressed-deepslate-3-1-guaranteed"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[777130],{38676:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-catalyst-weaver-utilitycraft-aetherium-dust-utilitycraft-ultimate-chip-converted"}')}}]);

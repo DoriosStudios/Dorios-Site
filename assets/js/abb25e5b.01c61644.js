@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[33345],{33084:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-incinerator-auxillium-deepslate-cosmium-ore-auxillium-cosmium-1-guaranteed"}')}}]);

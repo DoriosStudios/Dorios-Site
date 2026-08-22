@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[600411],{506246:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"ascane-module-base"}')}}]);

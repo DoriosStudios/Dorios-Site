@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[71930],{28922:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-incinerator-utilitycraft-compressed-raw-copper-block-4-utilitycraft-compressed-copper-block-4-1-guaranteed"}')}}]);

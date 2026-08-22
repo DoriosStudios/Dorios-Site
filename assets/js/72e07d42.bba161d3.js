@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[4144],{27529:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-crusher-utilitycraft-compressed-netherrack-2-utilitycraft-compressed-crushed-netherrack-2-1-guaranteed"}')}}]);

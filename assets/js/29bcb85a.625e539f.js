@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[60357],{11577:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-electro-press-minecraft-coal-block-utilitycraft-compressed-coal-block-1-guaranteed"}')}}]);

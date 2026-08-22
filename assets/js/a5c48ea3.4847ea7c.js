@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[12189],{33049:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-coal-block-utilitycraft-compressed-cobblestone-utilitycraft-compressed-blackstone-1-guaranteed"}')}}]);

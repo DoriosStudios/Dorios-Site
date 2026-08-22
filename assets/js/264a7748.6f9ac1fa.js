@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[711868],{222630:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"vase-of-spider-eye"}')}}]);

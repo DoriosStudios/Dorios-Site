@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[9236],{77401:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-calcite-pebble-1-0-12-mesh-tier-2"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[31570],{80784:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-crusher-utilitycraft-compressed-blackstone-3-utilitycraft-compressed-crushed-blackstone-3-1-guaranteed"}')}}]);

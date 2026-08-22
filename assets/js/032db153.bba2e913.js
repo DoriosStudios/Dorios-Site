@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[665961],{133753:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-cryo-chamber-utilitycraft-titanium-minecraft-deepslate-lapis-ore"}')}}]);

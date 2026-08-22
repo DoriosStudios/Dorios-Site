@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[61359],{80524:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-redstone-minecraft-raw-iron-utilitycraft-raw-energized-iron-1-guaranteed"}')}}]);

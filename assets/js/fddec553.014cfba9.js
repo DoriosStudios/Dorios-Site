@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[62796],{26325:t=>{t.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-utilitycraft-coal-dust-utilitycraft-iron-dust-utilitycraft-steel-dust-1-guaranteed"}')}}]);

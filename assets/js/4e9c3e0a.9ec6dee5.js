@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[6819],{89778:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-mangrove-roots-minecraft-dirt-minecraft-rooted-dirt-1-guaranteed"}')}}]);

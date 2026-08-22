@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[49338],{13064:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-incinerator-utilitycraft-compressed-raw-gold-block-2-utilitycraft-compressed-gold-block-2-1-guaranteed"}')}}]);

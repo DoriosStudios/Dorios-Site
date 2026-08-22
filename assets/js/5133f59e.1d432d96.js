@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[975574],{695567:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-heavy-machinery-autosieve-minecraft-gravel-utilitycraft-tin-chunk-4-1-0p05-0-centrifugal-siever"}')}}]);

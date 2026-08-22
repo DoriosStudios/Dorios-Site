@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[90589],{21579:e=>{e.exports=JSON.parse('{"projectId":"trinkets","entryType":"items","slug":"abyssal-diver-helmet"}')}}]);

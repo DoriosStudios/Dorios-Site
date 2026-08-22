@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[18900],{25895:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"nether-quartz-chunk"}')}}]);

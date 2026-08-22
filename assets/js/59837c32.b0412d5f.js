@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[54139],{15536:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-utilitycraft-netherite-scrap-dust-minecraft-gold-ingot-minecraft-netherite-ingot-1-guaranteed"}')}}]);

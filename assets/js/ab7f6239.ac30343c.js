@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[122797],{340910:e=>{e.exports=JSON.parse('{"projectSlug":"paxels"}')}}]);

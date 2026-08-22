@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[43667],{992766:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-heavy-machinery-crusher-utilitycraft-uranium-block-impact-crusher"}')}}]);

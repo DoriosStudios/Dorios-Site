@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[108646],{435231:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-tungsten-chunk-5-1-0p075-2-dual-siever"}')}}]);

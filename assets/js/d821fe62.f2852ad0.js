@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[56187],{8966:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-gold-ingot-minecraft-blackstone-minecraft-gilded-blackstone-1-guaranteed"}')}}]);

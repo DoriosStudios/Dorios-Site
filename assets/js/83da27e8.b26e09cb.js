@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[871795],{369281:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-heavy-machinery-catalyst-weaver-utilitycraft-tin-dust-utilitycraft-copper-dust-converted"}')}}]);

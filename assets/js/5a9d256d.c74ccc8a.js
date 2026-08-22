@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[67411],{22132:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"blocks","slug":"crushed-netherrack"}')}}]);

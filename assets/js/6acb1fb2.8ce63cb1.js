@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[71898],{57505:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-blaze-powder-minecraft-ender-pearl-minecraft-ender-eye-1-guaranteed"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[785562],{641946:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"nether-star-accelerator-clock"}')}}]);

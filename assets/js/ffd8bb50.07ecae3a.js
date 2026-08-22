@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[21780],{10875:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-autosieve-minecraft-soul-sand-utilitycraft-nether-quartz-chunk-3-0-1-mesh-tier-1"}')}}]);

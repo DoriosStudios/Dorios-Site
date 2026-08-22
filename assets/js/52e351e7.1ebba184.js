@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[22424],{31985:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-ghast-tear-minecraft-obsidian-minecraft-crying-obsidian-8-guaranteed"}')}}]);

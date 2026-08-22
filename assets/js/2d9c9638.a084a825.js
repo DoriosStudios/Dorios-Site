@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[53237],{66787:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"bundle-of-breeze-rods"}')}}]);

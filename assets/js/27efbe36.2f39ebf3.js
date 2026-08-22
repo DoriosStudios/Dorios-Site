@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[66559],{52636:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"blocks","slug":"sextuple-compressed-cobblestone"}')}}]);

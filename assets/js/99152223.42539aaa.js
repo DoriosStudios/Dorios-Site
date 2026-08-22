@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[81574],{66325:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-utilitycraft-bag-of-blaze-powder-utilitycraft-compressed-cobblestone-utilitycraft-compressed-netherrack-1-guaranteed"}')}}]);

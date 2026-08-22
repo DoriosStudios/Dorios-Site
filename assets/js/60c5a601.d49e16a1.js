@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[38909],{40362:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-crusher-utilitycraft-quadruple-compressed-cobblestone-utilitycraft-compressed-gravel-4-1-guaranteed"}')}}]);

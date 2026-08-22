@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[77606],{56341:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-infuser-minecraft-brown-mushroom-minecraft-grass-block-minecraft-mycelium-1-guaranteed"}')}}]);
