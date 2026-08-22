@@ -15,7 +15,10 @@ const iconNames = [
 ];
 
 if (!fs.existsSync(sourceDirectory)) {
-  throw new Error(`Ascendant Technology glyph source was not found: ${sourceDirectory}`);
+  process.stdout.write(
+    `Ascendant Technology glyph source was not found at ${sourceDirectory}; preserving committed glyph icons.\n`,
+  );
+  process.exit(0);
 }
 
 fs.mkdirSync(destinationDirectory, {recursive: true});
