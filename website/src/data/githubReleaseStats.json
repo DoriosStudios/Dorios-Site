@@ -3,20 +3,20 @@
     "id": "ascendant-technology",
     "repository": "DoriosStudios/Ascendant-Technology",
     "endpoint": "https://api.github.com/repos/DoriosStudios/Ascendant-Technology/releases",
-    "downloads": 3755,
-    "display": "3.7K+",
+    "downloads": 4317,
+    "display": "4.3K+",
     "releases": 18,
     "assets": 24,
-    "updatedAt": "2026-08-15T06:57:31.062Z"
+    "updatedAt": "2026-08-22T06:55:20.916Z"
   },
   "heavy-machinery": {
     "id": "heavy-machinery",
     "repository": "DoriosStudios/UtilityCraft-Heavy-Machinery",
     "endpoint": "https://api.github.com/repos/DoriosStudios/UtilityCraft-Heavy-Machinery/releases",
-    "downloads": 2864,
-    "display": "2.8K+",
+    "downloads": 3461,
+    "display": "3.4K+",
     "releases": 7,
     "assets": 12,
-    "updatedAt": "2026-08-15T06:57:31.382Z"
+    "updatedAt": "2026-08-22T06:55:25.257Z"
   }
 }

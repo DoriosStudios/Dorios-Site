@@ -13,6 +13,7 @@ module.exports = function doriosGeneratedRoutesPlugin() {
       const pageComponent = path.join(__dirname, '..', '..', 'src', 'components', 'AddonWiki', 'page.js');
       const dataPath = path.join(projectRoot, 'heavy-machinery', 'data.js');
       const recipePath = path.join(projectRoot, 'heavy-machinery', 'recipeData.js');
+      const heavyProcessingRecipes = require(path.join(projectRoot, 'heavy-machinery', 'processingRecipes.json'));
       const data = await import(`${pathToFileURL(dataPath).href}?wiki-routes`);
       const recipeData = await import(`${pathToFileURL(recipePath).href}?wiki-routes`);
       const trinketCategorySections = require(path.join(projectRoot, 'trinkets', 'categorySections.json'));
@@ -56,7 +57,7 @@ module.exports = function doriosGeneratedRoutesPlugin() {
         mechanics: data.mechanics.map((entry) => slugify(entry.name)),
         recipes: [
           ...recipeData.craftingRecipeDetails.map((entry) => `crafting-${entry.id}`),
-          ...data.processingRecipes.map((entry) => `processing-${entry.id}`),
+          ...heavyProcessingRecipes.map((entry) => `processing-${entry.id}`),
         ],
       });
 
@@ -72,6 +73,7 @@ module.exports = function doriosGeneratedRoutesPlugin() {
         {
           id: 'ascendant-technology',
           manifest: require(path.join(projectRoot, 'ascendant-technology', 'manifest.json')),
+          processingRecipes: require(path.join(projectRoot, 'ascendant-technology', 'processingRecipes.json')),
           machineFilter: (block) => /\/blocks\/machinery\/machines\//i.test(`/${block.source}`),
           additionalMachineIds: ['mob_magnet'],
           generatorFilter: (block) => /\/blocks\/machinery\/generators\//i.test(`/${block.source}`) || block.id === 'cobble_gen_6',

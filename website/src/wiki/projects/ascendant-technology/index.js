@@ -1,7 +1,9 @@
 import manifest from './manifest.json';
+import processingRecipes from './processingRecipes.json';
 import {createGeneratedProject} from '../createGeneratedProject';
 import utilitycraft from '../utilitycraft';
 import machineProfiles from './machineProfiles';
+import documentationProfiles from './documentationProfiles.generated.json';
 
 // Conveyor movement and bridge reach are implemented by the transportation
 // runtime, rather than by a Bedrock block component. Keep these player-facing
@@ -36,8 +38,10 @@ const ascendantTechnology = createGeneratedProject({
   name: 'Ascendant Technology',
   repository: 'https://github.com/DoriosStudios/Ascendant-Technology',
   dependencyProjects: [utilitycraft],
+  processingRecipes,
   machineProfiles,
-  blockProfiles: conveyorProfiles,
+  blockProfiles: {...conveyorProfiles, ...documentationProfiles.blocks},
+  itemProfiles: documentationProfiles.items,
   machineCategoryOrder: [
     'Superior Machines',
     'Unique Machines',

@@ -1,0 +1,6121 @@
+[
+  {
+    "id": "heavy-machinery-autosieve-minecraft-gravel-utilitycraft-tin-chunk-4-1-0p05-0",
+    "identifier": "heavy-machinery:process/autosieve/minecraft-gravel-utilitycraft-tin-chunk-4-1-0p05-0",
+    "type": "machine",
+    "station": "autosieve",
+    "category": "Auto Sieve loot",
+    "recipeKind": "loot",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "minecraft:gravel",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "minecraft:gravel",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_chunk",
+      "count": 1,
+      "chance": 0.05
+    },
+    "results": [],
+    "drops": [
+      {
+        "id": "utilitycraft:tin_chunk",
+        "count": 1,
+        "chance": 0.05
+      }
+    ],
+    "conditions": [
+      {
+        "id": "mesh-tier",
+        "label": "Minimum mesh tier",
+        "value": 4
+      }
+    ],
+    "tier": 4,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "minecraft:gravel",
+    "output": "utilitycraft:tin_chunk (5%)"
+  },
+  {
+    "id": "heavy-machinery-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-tin-chunk-4-9-0p05-0",
+    "identifier": "heavy-machinery:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-tin-chunk-4-9-0p05-0",
+    "type": "machine",
+    "station": "autosieve",
+    "category": "Auto Sieve loot",
+    "recipeKind": "loot",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:compressed_crushed_cobbled_deepslate",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:compressed_crushed_cobbled_deepslate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:deepslate_tin_chunk",
+      "count": 9,
+      "chance": 0.05
+    },
+    "results": [],
+    "drops": [
+      {
+        "id": "utilitycraft:deepslate_tin_chunk",
+        "count": 9,
+        "chance": 0.05
+      }
+    ],
+    "conditions": [
+      {
+        "id": "mesh-tier",
+        "label": "Minimum mesh tier",
+        "value": 4
+      }
+    ],
+    "tier": 4,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:compressed_crushed_cobbled_deepslate",
+    "output": "9× utilitycraft:deepslate_tin_chunk (5%)"
+  },
+  {
+    "id": "heavy-machinery-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-uranium-chunk-4-9-0p01-1",
+    "identifier": "heavy-machinery:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-uranium-chunk-4-9-0p01-1",
+    "type": "machine",
+    "station": "autosieve",
+    "category": "Auto Sieve loot",
+    "recipeKind": "loot",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:compressed_crushed_cobbled_deepslate",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:compressed_crushed_cobbled_deepslate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:deepslate_uranium_chunk",
+      "count": 9,
+      "chance": 0.01
+    },
+    "results": [],
+    "drops": [
+      {
+        "id": "utilitycraft:deepslate_uranium_chunk",
+        "count": 9,
+        "chance": 0.01
+      }
+    ],
+    "conditions": [
+      {
+        "id": "mesh-tier",
+        "label": "Minimum mesh tier",
+        "value": 4
+      }
+    ],
+    "tier": 4,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:compressed_crushed_cobbled_deepslate",
+    "output": "9× utilitycraft:deepslate_uranium_chunk (1%)"
+  },
+  {
+    "id": "heavy-machinery-autosieve-utilitycraft-compressed-gravel-utilitycraft-tin-chunk-4-9-0p05-0",
+    "identifier": "heavy-machinery:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-tin-chunk-4-9-0p05-0",
+    "type": "machine",
+    "station": "autosieve",
+    "category": "Auto Sieve loot",
+    "recipeKind": "loot",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:compressed_gravel",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:compressed_gravel",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_chunk",
+      "count": 9,
+      "chance": 0.05
+    },
+    "results": [],
+    "drops": [
+      {
+        "id": "utilitycraft:tin_chunk",
+        "count": 9,
+        "chance": 0.05
+      }
+    ],
+    "conditions": [
+      {
+        "id": "mesh-tier",
+        "label": "Minimum mesh tier",
+        "value": 4
+      }
+    ],
+    "tier": 4,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:compressed_gravel",
+    "output": "9× utilitycraft:tin_chunk (5%)"
+  },
+  {
+    "id": "heavy-machinery-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-tin-chunk-4-1-0p05-0",
+    "identifier": "heavy-machinery:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-tin-chunk-4-1-0p05-0",
+    "type": "machine",
+    "station": "autosieve",
+    "category": "Auto Sieve loot",
+    "recipeKind": "loot",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:crushed_cobbled_deepslate",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:crushed_cobbled_deepslate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:deepslate_tin_chunk",
+      "count": 1,
+      "chance": 0.05
+    },
+    "results": [],
+    "drops": [
+      {
+        "id": "utilitycraft:deepslate_tin_chunk",
+        "count": 1,
+        "chance": 0.05
+      }
+    ],
+    "conditions": [
+      {
+        "id": "mesh-tier",
+        "label": "Minimum mesh tier",
+        "value": 4
+      }
+    ],
+    "tier": 4,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:crushed_cobbled_deepslate",
+    "output": "utilitycraft:deepslate_tin_chunk (5%)"
+  },
+  {
+    "id": "heavy-machinery-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-uranium-chunk-4-1-0p01-1",
+    "identifier": "heavy-machinery:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-uranium-chunk-4-1-0p01-1",
+    "type": "machine",
+    "station": "autosieve",
+    "category": "Auto Sieve loot",
+    "recipeKind": "loot",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:crushed_cobbled_deepslate",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:crushed_cobbled_deepslate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:deepslate_uranium_chunk",
+      "count": 1,
+      "chance": 0.01
+    },
+    "results": [],
+    "drops": [
+      {
+        "id": "utilitycraft:deepslate_uranium_chunk",
+        "count": 1,
+        "chance": 0.01
+      }
+    ],
+    "conditions": [
+      {
+        "id": "mesh-tier",
+        "label": "Minimum mesh tier",
+        "value": 4
+      }
+    ],
+    "tier": 4,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:crushed_cobbled_deepslate",
+    "output": "utilitycraft:deepslate_uranium_chunk (1%)"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-0-utilitycraft-bronze-bricks",
+    "identifier": "heavy-machinery:process/crafter/0-0-utilitycraft-bronze-bricks",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 4,
+    "slots": [
+      {
+        "id": "bronze_plated_block",
+        "count": 1
+      },
+      {
+        "id": "bronze_plated_block",
+        "count": 1
+      },
+      null,
+      {
+        "id": "bronze_plated_block",
+        "count": 1
+      },
+      {
+        "id": "bronze_plated_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "bronze_plated_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_bricks",
+      "count": 4
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_bricks",
+        "count": 4
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "bronze_plated_block",
+    "output": "4× utilitycraft:bronze_bricks"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-1-utilitycraft-bronze-case",
+    "identifier": "heavy-machinery:process/crafter/0-1-utilitycraft-bronze-case",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "diamond_dust",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "diamond_dust",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "diamond_dust",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "diamond_dust",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "diamond_dust",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_case",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_case",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "bronze_plate + diamond_dust + tin_ingot",
+    "output": "utilitycraft:bronze_case"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-10-utilitycraft-steel-bricks",
+    "identifier": "heavy-machinery:process/crafter/0-10-utilitycraft-steel-bricks",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 4,
+    "slots": [
+      {
+        "id": "steel_plated_block",
+        "count": 1
+      },
+      {
+        "id": "steel_plated_block",
+        "count": 1
+      },
+      null,
+      {
+        "id": "steel_plated_block",
+        "count": 1
+      },
+      {
+        "id": "steel_plated_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "steel_plated_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:steel_bricks",
+      "count": 4
+    },
+    "results": [
+      {
+        "id": "utilitycraft:steel_bricks",
+        "count": 4
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "steel_plated_block",
+    "output": "4× utilitycraft:steel_bricks"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-11-utilitycraft-steel-case",
+    "identifier": "heavy-machinery:process/crafter/0-11-utilitycraft-steel-case",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "diamond_dust",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "diamond_dust",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "diamond_dust",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "diamond_dust",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "diamond_dust",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:steel_case",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:steel_case",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "steel_plate + diamond_dust + tin_ingot",
+    "output": "utilitycraft:steel_case"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-12-utilitycraft-steel-energy-port",
+    "identifier": "heavy-machinery:process/crafter/0-12-utilitycraft-steel-energy-port",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:steel_energy_port",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:steel_energy_port",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "tin_plate + energy_cable + steel_case",
+    "output": "utilitycraft:steel_energy_port"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-13-utilitycraft-steel-fluid-port",
+    "identifier": "heavy-machinery:process/crafter/0-13-utilitycraft-steel-fluid-port",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:steel_fluid_port",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:steel_fluid_port",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "tin_plate + fluid_pipe + steel_case",
+    "output": "utilitycraft:steel_fluid_port"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-14-utilitycraft-steel-hazard-block",
+    "identifier": "heavy-machinery:process/crafter/0-14-utilitycraft-steel-hazard-block",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 3,
+    "slots": [
+      {
+        "id": "black_dye",
+        "count": 1
+      },
+      {
+        "id": "steel_plated_block",
+        "count": 1
+      },
+      {
+        "id": "yellow_dye",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "black_dye",
+        "count": 1
+      },
+      {
+        "id": "steel_plated_block",
+        "count": 1
+      },
+      {
+        "id": "yellow_dye",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:steel_hazard_block",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:steel_hazard_block",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "black_dye + steel_plated_block + yellow_dye",
+    "output": "utilitycraft:steel_hazard_block"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-15-utilitycraft-steel-item-port",
+    "identifier": "heavy-machinery:process/crafter/0-15-utilitycraft-steel-item-port",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "item_conduit",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "item_conduit",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      },
+      {
+        "id": "item_conduit",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "item_conduit",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "item_conduit",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:steel_item_port",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:steel_item_port",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "tin_plate + item_conduit + steel_case",
+    "output": "utilitycraft:steel_item_port"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-16-utilitycraft-steel-plated-block",
+    "identifier": "heavy-machinery:process/crafter/0-16-utilitycraft-steel-plated-block",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:steel_plated_block",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:steel_plated_block",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "steel_plate + tin_ingot",
+    "output": "utilitycraft:steel_plated_block"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-17-utilitycraft-steel-vent-panel",
+    "identifier": "heavy-machinery:process/crafter/0-17-utilitycraft-steel-vent-panel",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 8,
+    "slots": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      null,
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:steel_vent_panel",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:steel_vent_panel",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "steel_plate + tin_ingot",
+    "output": "utilitycraft:steel_vent_panel"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-18-utilitycraft-autosieve-controller",
+    "identifier": "heavy-machinery:process/crafter/0-18-utilitycraft-autosieve-controller",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "autosieve",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "autosieve",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:autosieve_controller",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:autosieve_controller",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "steel_plate + control_panel + charged_darloonite_crystal + controller_case + autosieve",
+    "output": "utilitycraft:autosieve_controller"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-19-utilitycraft-bronze-controller-case",
+    "identifier": "heavy-machinery:process/crafter/0-19-utilitycraft-bronze-controller-case",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "bronze_ingot",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "bronze_ingot",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "bronze_ingot",
+        "count": 1
+      },
+      {
+        "id": "diamond_dust",
+        "count": 1
+      },
+      {
+        "id": "bronze_ingot",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "bronze_ingot",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      },
+      {
+        "id": "diamond_dust",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_controller_case",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_controller_case",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "bronze_ingot + bronze_plate + steel_case + diamond_dust",
+    "output": "utilitycraft:bronze_controller_case"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-2-utilitycraft-bronze-energy-port",
+    "identifier": "heavy-machinery:process/crafter/0-2-utilitycraft-bronze-energy-port",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "bronze_case",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "bronze_case",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_energy_port",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_energy_port",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "tin_plate + energy_cable + bronze_case",
+    "output": "utilitycraft:bronze_energy_port"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-20-utilitycraft-control-panel",
+    "identifier": "heavy-machinery:process/crafter/0-20-utilitycraft-control-panel",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "gold_ingot",
+        "count": 1
+      },
+      {
+        "id": "redstone",
+        "count": 1
+      },
+      {
+        "id": "gold_ingot",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "basic_chip",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "redstone",
+        "count": 1
+      },
+      {
+        "id": "gold_ingot",
+        "count": 1
+      },
+      {
+        "id": "redstone",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "gold_ingot",
+        "count": 1
+      },
+      {
+        "id": "redstone",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "basic_chip",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:control_panel",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:control_panel",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "gold_ingot + redstone + steel_plate + basic_chip",
+    "output": "utilitycraft:control_panel"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-3-utilitycraft-bronze-fluid-port",
+    "identifier": "heavy-machinery:process/crafter/0-3-utilitycraft-bronze-fluid-port",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "bronze_case",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "bronze_case",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_fluid_port",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_fluid_port",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "tin_plate + fluid_pipe + bronze_case",
+    "output": "utilitycraft:bronze_fluid_port"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-4-utilitycraft-bronze-hazard-block",
+    "identifier": "heavy-machinery:process/crafter/0-4-utilitycraft-bronze-hazard-block",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 3,
+    "slots": [
+      {
+        "id": "black_dye",
+        "count": 1
+      },
+      {
+        "id": "bronze_plated_block",
+        "count": 1
+      },
+      {
+        "id": "yellow_dye",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "black_dye",
+        "count": 1
+      },
+      {
+        "id": "bronze_plated_block",
+        "count": 1
+      },
+      {
+        "id": "yellow_dye",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_hazard_block",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_hazard_block",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "black_dye + bronze_plated_block + yellow_dye",
+    "output": "utilitycraft:bronze_hazard_block"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-5-utilitycraft-bronze-item-port",
+    "identifier": "heavy-machinery:process/crafter/0-5-utilitycraft-bronze-item-port",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "item_conduit",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "item_conduit",
+        "count": 1
+      },
+      {
+        "id": "bronze_case",
+        "count": 1
+      },
+      {
+        "id": "item_conduit",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "item_conduit",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "item_conduit",
+        "count": 1
+      },
+      {
+        "id": "bronze_case",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_item_port",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_item_port",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "tin_plate + item_conduit + bronze_case",
+    "output": "utilitycraft:bronze_item_port"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-6-utilitycraft-bronze-plated-block",
+    "identifier": "heavy-machinery:process/crafter/0-6-utilitycraft-bronze-plated-block",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_plated_block",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_plated_block",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "bronze_plate + tin_ingot",
+    "output": "utilitycraft:bronze_plated_block"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-7-utilitycraft-bronze-vent-panel",
+    "identifier": "heavy-machinery:process/crafter/0-7-utilitycraft-bronze-vent-panel",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 8,
+    "slots": [
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      null,
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_vent_panel",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_vent_panel",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "bronze_plate + tin_ingot",
+    "output": "utilitycraft:bronze_vent_panel"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-8-utilitycraft-reinforced-bronze-glass",
+    "identifier": "heavy-machinery:process/crafter/0-8-utilitycraft-reinforced-bronze-glass",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "bronze_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "bronze_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "glass",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "bronze_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "bronze_ingot",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "bronze_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "glass",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:reinforced_bronze_glass",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:reinforced_bronze_glass",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "bronze_ingot + tin_ingot + glass",
+    "output": "utilitycraft:reinforced_bronze_glass"
+  },
+  {
+    "id": "heavy-machinery-crafter-0-9-utilitycraft-reinforced-steel-glass",
+    "identifier": "heavy-machinery:process/crafter/0-9-utilitycraft-reinforced-steel-glass",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "steel_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "steel_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "glass",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "steel_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "steel_ingot",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "steel_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "glass",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:reinforced_steel_glass",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:reinforced_steel_glass",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "steel_ingot + tin_ingot + glass",
+    "output": "utilitycraft:reinforced_steel_glass"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-0-utilitycraft-controller-case",
+    "identifier": "heavy-machinery:process/crafter/1-0-utilitycraft-controller-case",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "diamond_dust",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      },
+      {
+        "id": "diamond_dust",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:controller_case",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:controller_case",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "tin_ingot + tin_plate + steel_case + diamond_dust",
+    "output": "utilitycraft:controller_case"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-1-utilitycraft-crusher-controller",
+    "identifier": "heavy-machinery:process/crafter/1-1-utilitycraft-crusher-controller",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "crusher",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "crusher",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:crusher_controller",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:crusher_controller",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "steel_plate + control_panel + charged_darloonite_crystal + controller_case + crusher",
+    "output": "utilitycraft:crusher_controller"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-10-utilitycraft-processing-module",
+    "identifier": "heavy-machinery:process/crafter/1-10-utilitycraft-processing-module",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:processing_module",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:processing_module",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "tin_plate + expert_chip + charged_darloonite_crystal + controller_case",
+    "output": "utilitycraft:processing_module"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-11-utilitycraft-speed-module",
+    "identifier": "heavy-machinery:process/crafter/1-11-utilitycraft-speed-module",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "emerald_dust",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "speed_upgrade",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      },
+      {
+        "id": "speed_upgrade",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "emerald_dust",
+        "count": 1
+      },
+      {
+        "id": "speed_upgrade",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:speed_module",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:speed_module",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "tin_plate + emerald_dust + speed_upgrade + steel_case + charged_darloonite_crystal",
+    "output": "utilitycraft:speed_module"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-12-utilitycraft-thermo-core",
+    "identifier": "heavy-machinery:process/crafter/1-12-utilitycraft-thermo-core",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:thermo_core",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:thermo_core",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "tin_plate + control_panel + netherite_plate + steel_case",
+    "output": "utilitycraft:thermo_core"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-13-utilitycraft-power-condenser-controller",
+    "identifier": "heavy-machinery:process/crafter/1-13-utilitycraft-power-condenser-controller",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:power_condenser_controller",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:power_condenser_controller",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "steel_plate + control_panel + tin_ingot + controller_case + charged_darloonite_crystal",
+    "output": "utilitycraft:power_condenser_controller"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-14-utilitycraft-reaction-chamber-controller",
+    "identifier": "heavy-machinery:process/crafter/1-14-utilitycraft-reaction-chamber-controller",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:reaction_chamber_controller",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:reaction_chamber_controller",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "steel_plate + control_panel + stabilized_obsidian_dust + controller_case + charged_darloonite_crystal",
+    "output": "utilitycraft:reaction_chamber_controller"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-15-utilitycraft-thermo-reactor-controller",
+    "identifier": "heavy-machinery:process/crafter/1-15-utilitycraft-thermo-reactor-controller",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "bronze_controller_case",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "bronze_controller_case",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:thermo_reactor_controller",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:thermo_reactor_controller",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "ultimate_chip + control_panel + charged_darloonite_crystal + bronze_controller_case + tin_ingot",
+    "output": "utilitycraft:thermo_reactor_controller"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-16-utilitycraft-advanced-power-condenser-unit",
+    "identifier": "heavy-machinery:process/crafter/1-16-utilitycraft-advanced-power-condenser-unit",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "basic_power_condenser_unit",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "basic_power_condenser_unit",
+        "count": 1
+      },
+      {
+        "id": "advanced_chip",
+        "count": 1
+      },
+      {
+        "id": "basic_power_condenser_unit",
+        "count": 1
+      },
+      {
+        "id": "advanced_chip",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "advanced_chip",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "basic_power_condenser_unit",
+        "count": 1
+      },
+      {
+        "id": "advanced_chip",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:advanced_power_condenser_unit",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:advanced_power_condenser_unit",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "charged_darloonite_crystal + basic_power_condenser_unit + advanced_chip",
+    "output": "utilitycraft:advanced_power_condenser_unit"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-17-utilitycraft-basic-power-condenser-unit",
+    "identifier": "heavy-machinery:process/crafter/1-17-utilitycraft-basic-power-condenser-unit",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "energy_cell",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "energy_cell",
+        "count": 1
+      },
+      {
+        "id": "basic_chip",
+        "count": 1
+      },
+      {
+        "id": "energy_cell",
+        "count": 1
+      },
+      {
+        "id": "basic_chip",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "basic_chip",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "energy_cell",
+        "count": 1
+      },
+      {
+        "id": "basic_chip",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:basic_power_condenser_unit",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:basic_power_condenser_unit",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "charged_darloonite_crystal + energy_cell + basic_chip",
+    "output": "utilitycraft:basic_power_condenser_unit"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-18-utilitycraft-expert-power-condenser-unit",
+    "identifier": "heavy-machinery:process/crafter/1-18-utilitycraft-expert-power-condenser-unit",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "advanced_power_condenser_unit",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "advanced_power_condenser_unit",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "advanced_power_condenser_unit",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "advanced_power_condenser_unit",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:expert_power_condenser_unit",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:expert_power_condenser_unit",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "charged_darloonite_crystal + advanced_power_condenser_unit + expert_chip",
+    "output": "utilitycraft:expert_power_condenser_unit"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-19-utilitycraft-ultimate-power-condenser-unit",
+    "identifier": "heavy-machinery:process/crafter/1-19-utilitycraft-ultimate-power-condenser-unit",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "expert_power_condenser_unit",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "expert_power_condenser_unit",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "expert_power_condenser_unit",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "expert_power_condenser_unit",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:ultimate_power_condenser_unit",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:ultimate_power_condenser_unit",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "charged_darloonite_crystal + expert_power_condenser_unit + ultimate_chip",
+    "output": "utilitycraft:ultimate_power_condenser_unit"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-2-utilitycraft-electro-press-controller",
+    "identifier": "heavy-machinery:process/crafter/1-2-utilitycraft-electro-press-controller",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "electro_press",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "electro_press",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:electro_press_controller",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:electro_press_controller",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "steel_plate + control_panel + charged_darloonite_crystal + controller_case + electro_press",
+    "output": "utilitycraft:electro_press_controller"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-20-utilitycraft-tin-plated-block",
+    "identifier": "heavy-machinery:process/crafter/1-20-utilitycraft-tin-plated-block",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_plated_block",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_plated_block",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "tin_plate + tin_ingot",
+    "output": "utilitycraft:tin_plated_block"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-3-utilitycraft-energy-cell",
+    "identifier": "heavy-machinery:process/crafter/1-3-utilitycraft-energy-cell",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "expert_battery",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "expert_battery",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      },
+      {
+        "id": "expert_battery",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "expert_battery",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "expert_battery",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:energy_cell",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:energy_cell",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "charged_darloonite_crystal + expert_battery + steel_case",
+    "output": "utilitycraft:energy_cell"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-4-utilitycraft-incinerator-controller",
+    "identifier": "heavy-machinery:process/crafter/1-4-utilitycraft-incinerator-controller",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "incinerator",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "incinerator",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:incinerator_controller",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:incinerator_controller",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "steel_plate + control_panel + charged_darloonite_crystal + controller_case + incinerator",
+    "output": "utilitycraft:incinerator_controller"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-5-utilitycraft-infuser-controller",
+    "identifier": "heavy-machinery:process/crafter/1-5-utilitycraft-infuser-controller",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "infuser",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "infuser",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:infuser_controller",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:infuser_controller",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "steel_plate + control_panel + charged_darloonite_crystal + controller_case + infuser",
+    "output": "utilitycraft:infuser_controller"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-6-utilitycraft-magmatic-chamber-controller",
+    "identifier": "heavy-machinery:process/crafter/1-6-utilitycraft-magmatic-chamber-controller",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "bronze_controller_case",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "magmatic_chamber",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "bronze_controller_case",
+        "count": 1
+      },
+      {
+        "id": "magmatic_chamber",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:magmatic_chamber_controller",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:magmatic_chamber_controller",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "bronze_plate + control_panel + charged_darloonite_crystal + bronze_controller_case + magmatic_chamber",
+    "output": "utilitycraft:magmatic_chamber_controller"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-7-utilitycraft-efficiency-module",
+    "identifier": "heavy-machinery:process/crafter/1-7-utilitycraft-efficiency-module",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "emerald_dust",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "energy_upgrade",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      },
+      {
+        "id": "energy_upgrade",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "emerald_dust",
+        "count": 1
+      },
+      {
+        "id": "energy_upgrade",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:efficiency_module",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:efficiency_module",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "tin_plate + emerald_dust + energy_upgrade + steel_case + charged_darloonite_crystal",
+    "output": "utilitycraft:efficiency_module"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-8-utilitycraft-fluid-cell",
+    "identifier": "heavy-machinery:process/crafter/1-8-utilitycraft-fluid-cell",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "expert_fluid_tank",
+        "count": 1
+      },
+      {
+        "id": "steel_fluid_port",
+        "count": 1
+      },
+      {
+        "id": "expert_fluid_tank",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "expert_fluid_tank",
+        "count": 1
+      },
+      {
+        "id": "steel_fluid_port",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:fluid_cell",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:fluid_cell",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "tin_plate + fluid_pipe + expert_fluid_tank + steel_fluid_port",
+    "output": "utilitycraft:fluid_cell"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-9-utilitycraft-heat-conductor",
+    "identifier": "heavy-machinery:process/crafter/1-9-utilitycraft-heat-conductor",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:heat_conductor",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:heat_conductor",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "netherite_plate + tin_ingot + steel_case",
+    "output": "utilitycraft:heat_conductor"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-bronze-block",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-bronze-block",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:bronze_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:bronze_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_dust",
+      "count": 6
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_dust",
+        "count": 6
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:bronze_block",
+    "output": "6× utilitycraft:bronze_dust"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-bronze-ingot",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-bronze-ingot",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:bronze_ingot",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:bronze_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_dust",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_dust",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:bronze_ingot",
+    "output": "utilitycraft:bronze_dust"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-bronze-plate",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-bronze-plate",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:bronze_plate",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:bronze_plate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_dust",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_dust",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:bronze_plate",
+    "output": "utilitycraft:bronze_dust"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-brute-bronze",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-brute-bronze",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:brute_bronze",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:brute_bronze",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_dust",
+      "count": 2
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_dust",
+        "count": 2
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:brute_bronze",
+    "output": "2× utilitycraft:bronze_dust"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-brute-bronze-block",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-brute-bronze-block",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:brute_bronze_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:brute_bronze_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_dust",
+      "count": 12
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_dust",
+        "count": 12
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:brute_bronze_block",
+    "output": "12× utilitycraft:bronze_dust"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-deepslate-tin-chunk",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-tin-chunk",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_tin_chunk",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_tin_chunk",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:raw_tin",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:raw_tin",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:deepslate_tin_chunk",
+    "output": "utilitycraft:raw_tin"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-deepslate-uranium-chunk",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-uranium-chunk",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_uranium_chunk",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_uranium_chunk",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:raw_uranium",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:raw_uranium",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:deepslate_uranium_chunk",
+    "output": "utilitycraft:raw_uranium"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-raw-tin",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-raw-tin",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_tin",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_tin",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_dust",
+      "count": 2
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 2
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:raw_tin",
+    "output": "2× utilitycraft:tin_dust"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-raw-tin-block",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-raw-tin-block",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_tin_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_tin_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_dust",
+      "count": 12
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 12
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:raw_tin_block",
+    "output": "12× utilitycraft:tin_dust"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-raw-uranium",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-raw-uranium",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_uranium",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_uranium",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_dust",
+      "count": 2
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_dust",
+        "count": 2
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:raw_uranium",
+    "output": "2× utilitycraft:uranium_dust"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-raw-uranium-block",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-raw-uranium-block",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_uranium_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_uranium_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_dust",
+      "count": 12
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_dust",
+        "count": 12
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:raw_uranium_block",
+    "output": "12× utilitycraft:uranium_dust"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-tin-block",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-tin-block",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:tin_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_dust",
+      "count": 6
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 6
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:tin_block",
+    "output": "6× utilitycraft:tin_dust"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-tin-chunk",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-tin-chunk",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_chunk",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:tin_chunk",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:raw_tin",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:raw_tin",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:tin_chunk",
+    "output": "utilitycraft:raw_tin"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-tin-ingot",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-tin-ingot",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_ingot",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:tin_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_dust",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:tin_ingot",
+    "output": "utilitycraft:tin_dust"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-tin-plate",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-tin-plate",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_plate",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:tin_plate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_dust",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:tin_plate",
+    "output": "utilitycraft:tin_dust"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-uranium-block",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-uranium-block",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:uranium_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:uranium_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_dust",
+      "count": 6
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_dust",
+        "count": 6
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:uranium_block",
+    "output": "6× utilitycraft:uranium_dust"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-uranium-ingot",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-uranium-ingot",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:uranium_ingot",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:uranium_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_dust",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_dust",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:uranium_ingot",
+    "output": "utilitycraft:uranium_dust"
+  },
+  {
+    "id": "heavy-machinery-electro-press-utilitycraft-bronze-ingot",
+    "identifier": "heavy-machinery:process/electro-press/utilitycraft-bronze-ingot",
+    "type": "machine",
+    "station": "electro_press",
+    "category": "Electro Press recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:bronze_ingot",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:bronze_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_plate",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_plate",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:bronze_ingot",
+    "output": "utilitycraft:bronze_plate"
+  },
+  {
+    "id": "heavy-machinery-electro-press-utilitycraft-tin-ingot",
+    "identifier": "heavy-machinery:process/electro-press/utilitycraft-tin-ingot",
+    "type": "machine",
+    "station": "electro_press",
+    "category": "Electro Press recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_ingot",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:tin_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_plate",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_plate",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:tin_ingot",
+    "output": "utilitycraft:tin_plate"
+  },
+  {
+    "id": "heavy-machinery-electro-press-utilitycraft-uranium-ingot",
+    "identifier": "heavy-machinery:process/electro-press/utilitycraft-uranium-ingot",
+    "type": "machine",
+    "station": "electro_press",
+    "category": "Electro Press recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:uranium_ingot",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:uranium_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_rod",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_rod",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:uranium_ingot",
+    "output": "utilitycraft:uranium_rod"
+  },
+  {
+    "id": "heavy-machinery-incinerator-utilitycraft-bronze-dust",
+    "identifier": "heavy-machinery:process/incinerator/utilitycraft-bronze-dust",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:bronze_dust",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:bronze_dust",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:bronze_dust",
+    "output": "utilitycraft:bronze_ingot"
+  },
+  {
+    "id": "heavy-machinery-incinerator-utilitycraft-brute-bronze",
+    "identifier": "heavy-machinery:process/incinerator/utilitycraft-brute-bronze",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:brute_bronze",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:brute_bronze",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:brute_bronze",
+    "output": "utilitycraft:bronze_ingot"
+  },
+  {
+    "id": "heavy-machinery-incinerator-utilitycraft-brute-bronze-block",
+    "identifier": "heavy-machinery:process/incinerator/utilitycraft-brute-bronze-block",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:brute_bronze_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:brute_bronze_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:bronze_block",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:bronze_block",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:brute_bronze_block",
+    "output": "utilitycraft:bronze_block"
+  },
+  {
+    "id": "heavy-machinery-incinerator-utilitycraft-raw-tin",
+    "identifier": "heavy-machinery:process/incinerator/utilitycraft-raw-tin",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_tin",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_tin",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:raw_tin",
+    "output": "utilitycraft:tin_ingot"
+  },
+  {
+    "id": "heavy-machinery-incinerator-utilitycraft-raw-tin-block",
+    "identifier": "heavy-machinery:process/incinerator/utilitycraft-raw-tin-block",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_tin_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_tin_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_block",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_block",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:raw_tin_block",
+    "output": "utilitycraft:tin_block"
+  },
+  {
+    "id": "heavy-machinery-incinerator-utilitycraft-raw-uranium",
+    "identifier": "heavy-machinery:process/incinerator/utilitycraft-raw-uranium",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_uranium",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_uranium",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:raw_uranium",
+    "output": "utilitycraft:uranium_ingot"
+  },
+  {
+    "id": "heavy-machinery-incinerator-utilitycraft-raw-uranium-block",
+    "identifier": "heavy-machinery:process/incinerator/utilitycraft-raw-uranium-block",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_uranium_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_uranium_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_block",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_block",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:raw_uranium_block",
+    "output": "utilitycraft:uranium_block"
+  },
+  {
+    "id": "heavy-machinery-incinerator-utilitycraft-tin-dust",
+    "identifier": "heavy-machinery:process/incinerator/utilitycraft-tin-dust",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:tin_dust",
+    "output": "utilitycraft:tin_ingot"
+  },
+  {
+    "id": "heavy-machinery-incinerator-utilitycraft-uranium-dust",
+    "identifier": "heavy-machinery:process/incinerator/utilitycraft-uranium-dust",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:uranium_dust",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:uranium_dust",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:uranium_dust",
+    "output": "utilitycraft:uranium_ingot"
+  },
+  {
+    "id": "heavy-machinery-infuser-minecraft-echo-shard-minecraft-amethyst-shard",
+    "identifier": "heavy-machinery:process/infuser/minecraft-echo-shard-minecraft-amethyst-shard",
+    "type": "machine",
+    "station": "infuser",
+    "category": "Infuser recipe",
+    "recipeKind": "infusion",
+    "slotCount": 2,
+    "slots": [
+      {
+        "id": "minecraft:echo_shard",
+        "count": 1
+      },
+      {
+        "id": "minecraft:amethyst_shard",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "minecraft:amethyst_shard",
+        "count": 1
+      }
+    ],
+    "catalysts": [
+      {
+        "id": "minecraft:echo_shard",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:darloonite_crystal",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:darloonite_crystal",
+        "count": 1
+      }
+    ],
+    "cost": 6400,
+    "energyCost": 6400,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "minecraft:amethyst_shard + minecraft:echo_shard",
+    "output": "utilitycraft:darloonite_crystal"
+  },
+  {
+    "id": "heavy-machinery-infuser-utilitycraft-bronze-dust-minecraft-glass",
+    "identifier": "heavy-machinery:process/infuser/utilitycraft-bronze-dust-minecraft-glass",
+    "type": "machine",
+    "station": "infuser",
+    "category": "Infuser recipe",
+    "recipeKind": "infusion",
+    "slotCount": 2,
+    "slots": [
+      {
+        "id": "utilitycraft:bronze_dust",
+        "count": 8
+      },
+      {
+        "id": "minecraft:glass",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "minecraft:glass",
+        "count": 1
+      }
+    ],
+    "catalysts": [
+      {
+        "id": "utilitycraft:bronze_dust",
+        "count": 8
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tempered_bronze_glass",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tempered_bronze_glass",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "minecraft:glass + 8× utilitycraft:bronze_dust",
+    "output": "utilitycraft:tempered_bronze_glass"
+  },
+  {
+    "id": "heavy-machinery-infuser-utilitycraft-diamond-dust-utilitycraft-darloonite-crystal",
+    "identifier": "heavy-machinery:process/infuser/utilitycraft-diamond-dust-utilitycraft-darloonite-crystal",
+    "type": "machine",
+    "station": "infuser",
+    "category": "Infuser recipe",
+    "recipeKind": "infusion",
+    "slotCount": 2,
+    "slots": [
+      {
+        "id": "utilitycraft:diamond_dust",
+        "count": 8
+      },
+      {
+        "id": "utilitycraft:darloonite_crystal",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:darloonite_crystal",
+        "count": 1
+      }
+    ],
+    "catalysts": [
+      {
+        "id": "utilitycraft:diamond_dust",
+        "count": 8
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:charged_darloonite_crystal",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:charged_darloonite_crystal",
+        "count": 1
+      }
+    ],
+    "cost": 128000,
+    "energyCost": 128000,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:darloonite_crystal + 8× utilitycraft:diamond_dust",
+    "output": "utilitycraft:charged_darloonite_crystal"
+  },
+  {
+    "id": "heavy-machinery-infuser-utilitycraft-steel-dust-minecraft-glass",
+    "identifier": "heavy-machinery:process/infuser/utilitycraft-steel-dust-minecraft-glass",
+    "type": "machine",
+    "station": "infuser",
+    "category": "Infuser recipe",
+    "recipeKind": "infusion",
+    "slotCount": 2,
+    "slots": [
+      {
+        "id": "utilitycraft:steel_dust",
+        "count": 8
+      },
+      {
+        "id": "minecraft:glass",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "minecraft:glass",
+        "count": 1
+      }
+    ],
+    "catalysts": [
+      {
+        "id": "utilitycraft:steel_dust",
+        "count": 8
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tempered_steel_glass",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tempered_steel_glass",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "minecraft:glass + 8× utilitycraft:steel_dust",
+    "output": "utilitycraft:tempered_steel_glass"
+  },
+  {
+    "id": "heavy-machinery-infuser-utilitycraft-tin-dust-minecraft-copper-ingot",
+    "identifier": "heavy-machinery:process/infuser/utilitycraft-tin-dust-minecraft-copper-ingot",
+    "type": "machine",
+    "station": "infuser",
+    "category": "Infuser recipe",
+    "recipeKind": "infusion",
+    "slotCount": 2,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 5
+      },
+      {
+        "id": "minecraft:copper_ingot",
+        "count": 2
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "minecraft:copper_ingot",
+        "count": 2
+      }
+    ],
+    "catalysts": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 5
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:brute_bronze",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:brute_bronze",
+        "count": 1
+      }
+    ],
+    "cost": 6400,
+    "energyCost": 6400,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "2× minecraft:copper_ingot + 5× utilitycraft:tin_dust",
+    "output": "utilitycraft:brute_bronze"
+  },
+  {
+    "id": "heavy-machinery-infuser-utilitycraft-tin-dust-utilitycraft-copper-dust",
+    "identifier": "heavy-machinery:process/infuser/utilitycraft-tin-dust-utilitycraft-copper-dust",
+    "type": "machine",
+    "station": "infuser",
+    "category": "Infuser recipe",
+    "recipeKind": "infusion",
+    "slotCount": 2,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 5
+      },
+      {
+        "id": "utilitycraft:copper_dust",
+        "count": 2
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:copper_dust",
+        "count": 2
+      }
+    ],
+    "catalysts": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 5
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:brute_bronze",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:brute_bronze",
+        "count": 1
+      }
+    ],
+    "cost": 6400,
+    "energyCost": 6400,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "2× utilitycraft:copper_dust + 5× utilitycraft:tin_dust",
+    "output": "utilitycraft:brute_bronze"
+  },
+  {
+    "id": "utilitycraft-magmatic-chamber-minecraft-blackstone",
+    "identifier": "utilitycraft:process/magmatic-chamber/minecraft-blackstone",
+    "type": "machine",
+    "station": "magmatic-chamber",
+    "category": "Magmatic Chamber recipe",
+    "recipeKind": "fluid-output",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "minecraft:blackstone",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "minecraft:blackstone",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "fluid:lava",
+      "count": 250,
+      "label": "Lava",
+      "unit": "mB",
+      "resourceType": "fluid",
+      "resourceId": "lava"
+    },
+    "results": [
+      {
+        "id": "fluid:lava",
+        "count": 250,
+        "label": "Lava",
+        "unit": "mB",
+        "resourceType": "fluid",
+        "resourceId": "lava"
+      }
+    ],
+    "outputFluid": {
+      "type": "lava",
+      "amount": 250
+    },
+    "machineAddon": "heavy-machinery",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "minecraft:blackstone",
+    "output": "250× Lava"
+  },
+  {
+    "id": "utilitycraft-magmatic-chamber-minecraft-cobblestone",
+    "identifier": "utilitycraft:process/magmatic-chamber/minecraft-cobblestone",
+    "type": "machine",
+    "station": "magmatic-chamber",
+    "category": "Magmatic Chamber recipe",
+    "recipeKind": "fluid-output",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "minecraft:cobblestone",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "minecraft:cobblestone",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "fluid:lava",
+      "count": 250,
+      "label": "Lava",
+      "unit": "mB",
+      "resourceType": "fluid",
+      "resourceId": "lava"
+    },
+    "results": [
+      {
+        "id": "fluid:lava",
+        "count": 250,
+        "label": "Lava",
+        "unit": "mB",
+        "resourceType": "fluid",
+        "resourceId": "lava"
+      }
+    ],
+    "outputFluid": {
+      "type": "lava",
+      "amount": 250
+    },
+    "machineAddon": "heavy-machinery",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "minecraft:cobblestone",
+    "output": "250× Lava"
+  },
+  {
+    "id": "utilitycraft-magmatic-chamber-minecraft-diorite",
+    "identifier": "utilitycraft:process/magmatic-chamber/minecraft-diorite",
+    "type": "machine",
+    "station": "magmatic-chamber",
+    "category": "Magmatic Chamber recipe",
+    "recipeKind": "fluid-output",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "minecraft:diorite",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "minecraft:diorite",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "fluid:lava",
+      "count": 250,
+      "label": "Lava",
+      "unit": "mB",
+      "resourceType": "fluid",
+      "resourceId": "lava"
+    },
+    "results": [
+      {
+        "id": "fluid:lava",
+        "count": 250,
+        "label": "Lava",
+        "unit": "mB",
+        "resourceType": "fluid",
+        "resourceId": "lava"
+      }
+    ],
+    "outputFluid": {
+      "type": "lava",
+      "amount": 250
+    },
+    "machineAddon": "heavy-machinery",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "minecraft:diorite",
+    "output": "250× Lava"
+  },
+  {
+    "id": "utilitycraft-magmatic-chamber-minecraft-granite",
+    "identifier": "utilitycraft:process/magmatic-chamber/minecraft-granite",
+    "type": "machine",
+    "station": "magmatic-chamber",
+    "category": "Magmatic Chamber recipe",
+    "recipeKind": "fluid-output",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "minecraft:granite",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "minecraft:granite",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "fluid:lava",
+      "count": 250,
+      "label": "Lava",
+      "unit": "mB",
+      "resourceType": "fluid",
+      "resourceId": "lava"
+    },
+    "results": [
+      {
+        "id": "fluid:lava",
+        "count": 250,
+        "label": "Lava",
+        "unit": "mB",
+        "resourceType": "fluid",
+        "resourceId": "lava"
+      }
+    ],
+    "outputFluid": {
+      "type": "lava",
+      "amount": 250
+    },
+    "machineAddon": "heavy-machinery",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "minecraft:granite",
+    "output": "250× Lava"
+  },
+  {
+    "id": "utilitycraft-magmatic-chamber-minecraft-magma",
+    "identifier": "utilitycraft:process/magmatic-chamber/minecraft-magma",
+    "type": "machine",
+    "station": "magmatic-chamber",
+    "category": "Magmatic Chamber recipe",
+    "recipeKind": "fluid-output",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "minecraft:magma",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "minecraft:magma",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "fluid:lava",
+      "count": 1000,
+      "label": "Lava",
+      "unit": "mB",
+      "resourceType": "fluid",
+      "resourceId": "lava"
+    },
+    "results": [
+      {
+        "id": "fluid:lava",
+        "count": 1000,
+        "label": "Lava",
+        "unit": "mB",
+        "resourceType": "fluid",
+        "resourceId": "lava"
+      }
+    ],
+    "outputFluid": {
+      "type": "lava",
+      "amount": 1000
+    },
+    "machineAddon": "heavy-machinery",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "minecraft:magma",
+    "output": "1000× Lava"
+  },
+  {
+    "id": "utilitycraft-magmatic-chamber-minecraft-magma-cream",
+    "identifier": "utilitycraft:process/magmatic-chamber/minecraft-magma-cream",
+    "type": "machine",
+    "station": "magmatic-chamber",
+    "category": "Magmatic Chamber recipe",
+    "recipeKind": "fluid-output",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "minecraft:magma_cream",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "minecraft:magma_cream",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "fluid:lava",
+      "count": 250,
+      "label": "Lava",
+      "unit": "mB",
+      "resourceType": "fluid",
+      "resourceId": "lava"
+    },
+    "results": [
+      {
+        "id": "fluid:lava",
+        "count": 250,
+        "label": "Lava",
+        "unit": "mB",
+        "resourceType": "fluid",
+        "resourceId": "lava"
+      }
+    ],
+    "outputFluid": {
+      "type": "lava",
+      "amount": 250
+    },
+    "machineAddon": "heavy-machinery",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "minecraft:magma_cream",
+    "output": "250× Lava"
+  },
+  {
+    "id": "utilitycraft-magmatic-chamber-minecraft-netherrack",
+    "identifier": "utilitycraft:process/magmatic-chamber/minecraft-netherrack",
+    "type": "machine",
+    "station": "magmatic-chamber",
+    "category": "Magmatic Chamber recipe",
+    "recipeKind": "fluid-output",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "minecraft:netherrack",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "minecraft:netherrack",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "fluid:lava",
+      "count": 1000,
+      "label": "Lava",
+      "unit": "mB",
+      "resourceType": "fluid",
+      "resourceId": "lava"
+    },
+    "results": [
+      {
+        "id": "fluid:lava",
+        "count": 1000,
+        "label": "Lava",
+        "unit": "mB",
+        "resourceType": "fluid",
+        "resourceId": "lava"
+      }
+    ],
+    "outputFluid": {
+      "type": "lava",
+      "amount": 1000
+    },
+    "machineAddon": "heavy-machinery",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "minecraft:netherrack",
+    "output": "1000× Lava"
+  },
+  {
+    "id": "utilitycraft-magmatic-chamber-minecraft-stone",
+    "identifier": "utilitycraft:process/magmatic-chamber/minecraft-stone",
+    "type": "machine",
+    "station": "magmatic-chamber",
+    "category": "Magmatic Chamber recipe",
+    "recipeKind": "fluid-output",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "minecraft:stone",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "minecraft:stone",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "fluid:lava",
+      "count": 250,
+      "label": "Lava",
+      "unit": "mB",
+      "resourceType": "fluid",
+      "resourceId": "lava"
+    },
+    "results": [
+      {
+        "id": "fluid:lava",
+        "count": 250,
+        "label": "Lava",
+        "unit": "mB",
+        "resourceType": "fluid",
+        "resourceId": "lava"
+      }
+    ],
+    "outputFluid": {
+      "type": "lava",
+      "amount": 250
+    },
+    "machineAddon": "heavy-machinery",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "minecraft:stone",
+    "output": "250× Lava"
+  },
+  {
+    "id": "utilitycraft-magmatic-chamber-utilitycraft-lava-ball",
+    "identifier": "utilitycraft:process/magmatic-chamber/utilitycraft-lava-ball",
+    "type": "machine",
+    "station": "magmatic-chamber",
+    "category": "Magmatic Chamber recipe",
+    "recipeKind": "fluid-output",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:lava_ball",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:lava_ball",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "fluid:lava",
+      "count": 1000,
+      "label": "Lava",
+      "unit": "mB",
+      "resourceType": "fluid",
+      "resourceId": "lava"
+    },
+    "results": [
+      {
+        "id": "fluid:lava",
+        "count": 1000,
+        "label": "Lava",
+        "unit": "mB",
+        "resourceType": "fluid",
+        "resourceId": "lava"
+      }
+    ],
+    "outputFluid": {
+      "type": "lava",
+      "amount": 1000
+    },
+    "cost": 100,
+    "energyCost": 100,
+    "machineAddon": "heavy-machinery",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:lava_ball",
+    "output": "1000× Lava"
+  },
+  {
+    "id": "heavy-machinery-reaction-chamber-utilitycraft-calcite-pebble-water",
+    "identifier": "heavy-machinery:process/reaction-chamber/utilitycraft-calcite-pebble-water",
+    "type": "machine",
+    "station": "reaction-chamber",
+    "category": "Reaction Chamber recipe",
+    "recipeKind": "reaction",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:calcite_pebble",
+        "count": 2
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:calcite_pebble",
+        "count": 2
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:stone_pebble",
+      "count": 2
+    },
+    "results": [
+      {
+        "id": "utilitycraft:stone_pebble",
+        "count": 2
+      },
+      {
+        "id": "fluid:saline_coolant",
+        "count": 1000,
+        "label": "Saline Coolant",
+        "unit": "mB",
+        "resourceType": "fluid",
+        "resourceId": "saline_coolant"
+      }
+    ],
+    "fluid": {
+      "type": "water",
+      "amount": 1000
+    },
+    "outputFluid": {
+      "type": "saline_coolant",
+      "amount": 1000
+    },
+    "cost": 12800,
+    "energyCost": 12800,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "2× utilitycraft:calcite_pebble",
+    "output": "2× utilitycraft:stone_pebble + 1000× Saline Coolant"
+  }
+]

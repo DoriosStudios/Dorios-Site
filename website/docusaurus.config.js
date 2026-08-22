@@ -91,6 +91,22 @@ const config = {
   plugins: [
     require.resolve('./plugins/addon-wiki-routes'),
     [
+      // Keep the site search in the build so generated /wiki routes are
+      // indexed from the same source as the published pages. The previous
+      // hosted Algolia index only contained the retired MDX wiki routes.
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        indexPages: true,
+        docsRouteBasePath: ['docs', 'documentation'],
+        // These routes are retained for direct links, but duplicate the
+        // generated wiki and must not outrank its current entries in search.
+        ignoreFiles: [
+          /^docs\/utilitycraft\/wiki(?:\/|$)/i,
+          /^docs\/ascendant_technology\/wiki(?:\/|$)/i,
+        ],
+      },
+    ],
+    [
       '@docusaurus/plugin-content-docs',
       {
         id: 'documentation',
@@ -145,16 +161,6 @@ const config = {
       colorMode: {
         defaultMode: 'light',
         respectPrefersColorScheme: true,
-      },
-
-      algolia: {
-        appId: 'RKEKEVN76J',
-        apiKey: '10014418accac562deb948ebb31798a8',
-        indexName: 'Dorios Studios Documentation',
-
-        contextualSearch: true,
-        searchParameters: {},
-        searchPagePath: 'search',
       },
 
       navbar: {

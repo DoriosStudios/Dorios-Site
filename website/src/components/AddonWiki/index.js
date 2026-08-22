@@ -4,7 +4,9 @@ import Layout from '@theme/Layout';
 import '@fontsource-variable/space-grotesk';
 import DoriosMarketingShell from '../DoriosMarketingShell';
 import SocialMetadata from '../SocialMetadata';
-import {getWikiProject} from '../../wiki/projects';
+import {findGlobalCatalogEntry, getWikiProject} from '../../wiki/projects';
+import {RECIPE_ORIGINS, recipeOriginFor as resolveRecipeOrigin} from '../../wiki/recipeOrigins';
+import {fluidVisualFor, MACHINE_RESOURCE_ICONS} from '../../data/resourceVisuals';
 import {getProjectByWikiPath} from '../../data/projects';
 import {projectCardPalette} from '../../data/cardPalettes';
 import vanillaAssetIndex from '../../data/vanillaAssetIndex.json';
@@ -158,20 +160,25 @@ function PageIntro({section, count, countLabel, eyebrow}) {
   );
 }
 
-function FilterChips({categories, active, setActive}) {
+function FilterChips({categories, active, setActive, ariaLabel = 'Filter categories'}) {
   return (
-    <div className={styles.filterChips} aria-label="Filter categories">
-      {categories.map(({name, count}) => (
+    <div className={styles.filterChips} aria-label={ariaLabel}>
+      {categories.map(({id, name, count, origin}) => {
+        const value = id ?? name;
+        return (
         <button
           type="button"
-          key={name}
-          aria-pressed={active === name}
-          className={active === name ? styles.activeChip : undefined}
-          onClick={() => setActive(name)}
+          key={value}
+          aria-pressed={active === value}
+          className={active === value ? styles.activeChip : undefined}
+          onClick={() => setActive(value)}
+          data-origin={origin ? 'true' : undefined}
+          style={origin ? {'--filter-origin-accent': origin.accent} : undefined}
         >
           {name} <span>{count}</span>
         </button>
-      ))}
+        );
+      })}
     </div>
   );
 }
@@ -258,6 +265,20 @@ function TierFlipbook({entry, className}) {
   );
 }
 
+function FilterSelect({label, categories, active, setActive, ariaLabel = label}) {
+  return (
+    <label className={styles.filterSelect}>
+      <span>{label}</span>
+      <select value={active} onChange={(event) => setActive(event.target.value)} aria-label={ariaLabel}>
+        {categories.map(({id, name, count}) => {
+          const value = id ?? name;
+          return <option key={value} value={value}>{name} ({count})</option>;
+        })}
+      </select>
+    </label>
+  );
+}
+
 function ItemCard({entry}) {
   const project = useWikiProject();
   return (
@@ -313,8 +334,8 @@ function BlockCard({entry}) {
   );
 }
 
-function formatIdentifier(identifier) {
-  return identifier.replace(/^.*:/, '').replace(/[_/-]+/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
+function formatIdentifier(identifier = '') {
+  return String(identifier ?? '').replace(/^.*:/, '').replace(/[_/-]+/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
 function compactEnergy(value) {
@@ -341,8 +362,13 @@ function catalogEntryFor(project, value) {
     : value;
   const identifier = String(source).replace(/^\d+×\s*/, '').trim();
   const normalized = identifier.replace(/\s+\([^)]*\).*$/, '').trim().toLowerCase();
-  return [...(project.lookupItems ?? project.allItems ?? project.items), ...(project.lookupBlocks ?? project.blocks)]
-    .find((entry) => entry.id === identifier || entry.identifier === identifier || entry.shortId === identifier || entry.name.toLowerCase() === normalized);
+  const localEntries = [
+    ...(project.lookupItems ?? project.allItems ?? project.items),
+    ...(project.lookupBlocks ?? project.blocks),
+  ];
+  return localEntries.find((entry) => (
+    entry.id === identifier || entry.identifier === identifier || entry.shortId === identifier
+  )) ?? localEntries.find((entry) => entry.name?.toLowerCase() === normalized) ?? findGlobalCatalogEntry(identifier);
 }
 
 const VANILLA_ASSET_ALIASES = {
@@ -432,24 +458,193 @@ function detailLinkFor(project, value) {
 function RecipeSlot({ingredient, result = false}) {
   const project = useWikiProject();
   if (!ingredient) return <span className={styles.emptySlot} aria-hidden="true" />;
-  const image = visualFor(project, ingredient.id ?? ingredient.label);
+  const resourceKind = ingredient.kind ?? ingredient.resourceType;
+  const isFluid = resourceKind === 'fluid' || String(ingredient.id ?? '').startsWith('fluid:');
+  const isGas = resourceKind === 'gas' || String(ingredient.id ?? '').startsWith('gas:');
+  const fluidVisual = isFluid ? fluidVisualFor(ingredient.id ?? ingredient.resourceId ?? ingredient.label) : null;
+  const resourceIcon = fluidVisual?.icon ?? (isGas ? MACHINE_RESOURCE_ICONS.gas : null);
+  const image = resourceIcon ?? visualFor(project, ingredient.id ?? ingredient.label);
   const name = ingredient.label ?? formatIdentifier(ingredient.id);
+  const description = ingredient.description ?? fluidVisual?.description;
+  const tooltip = description ? `${name} — ${description}` : name;
   const link = detailLinkFor(project, ingredient.id ?? ingredient.label);
+  const style = fluidVisual ? {
+    '--fluid-primary': fluidVisual.palette.primary,
+    '--fluid-secondary': fluidVisual.palette.secondary,
+    '--fluid-glow': fluidVisual.palette.glow,
+  } : undefined;
   const content = (
     <>
-      {image ? <img src={image} alt="" loading="lazy" /> : <span className={styles.slotFallback}>{name}</span>}
+      {image ? <img className={isFluid || isGas ? styles.resourceSlotIcon : undefined} src={image} alt="" loading="lazy" />
+        : isFluid ? <span className={styles.fluidSlotGlyph} aria-hidden="true">≋</span>
+          : isGas ? <span className={styles.gasSlotGlyph} aria-hidden="true">◌</span>
+            : <span className={styles.slotFallback}>{name}</span>}
       {(ingredient.count ?? 1) > 1 && <b className={styles.slotCount}>{ingredient.count}</b>}
     </>
   );
-  const className = `${styles.recipeSlot} ${result ? styles.resultSlot : ''}`;
-  return link ? <Link className={className} to={link} aria-label={name} title={name} data-tooltip={name}>{content}</Link>
-    : <span className={className} role="img" aria-label={name} title={name} data-tooltip={name}>{content}</span>;
+  const className = `${styles.recipeSlot} ${result ? styles.resultSlot : ''} ${isFluid ? styles.fluidRecipeSlot : ''} ${isGas ? styles.gasRecipeSlot : ''}`;
+  return link ? <Link className={className} to={link} aria-label={tooltip} title={tooltip} data-tooltip={tooltip} style={style}>{content}</Link>
+    : <span className={className} role="img" aria-label={tooltip} title={tooltip} data-tooltip={tooltip} style={style}>{content}</span>;
+}
+
+// Processing recipes can be registered by a different add-on from the machine
+// that runs them. Keep the origin on the recipe rather than inferring it from
+// the current wiki, so a Crusher recipe added by an expansion stays visibly
+// attributed when it appears in the UtilityCraft catalog.
+function recipeOriginFor(recipe, project) {
+  const supplied = recipe?.origin && typeof recipe.origin === 'object' ? recipe.origin : {};
+  const inferredId = supplied.id ?? (typeof recipe?.origin === 'string' ? recipe.origin : null) ?? recipe?.originId ?? project.recipeOrigin?.id ?? project.id;
+  const resolved = resolveRecipeOrigin({...supplied, id: inferredId});
+  const fallback = RECIPE_ORIGINS[inferredId];
+  const label = supplied.label ?? supplied.category ?? fallback?.label ?? project.recipeOrigin?.label ?? project.name;
+  return {
+    ...resolved,
+    id: inferredId,
+    label,
+    category: supplied.category ?? fallback?.category ?? label,
+    addonLabel: supplied.addonLabel ?? (inferredId === 'utilitycraft' ? 'UtilityCraft' : label),
+    accent: supplied.accent ?? fallback?.accent ?? project.recipeOrigin?.accent ?? resolved.accent,
+  };
+}
+
+function RecipeOriginBadge({recipe, compact = false}) {
+  const project = useWikiProject();
+  const origin = recipeOriginFor(recipe, project);
+  return (
+    <span
+      className={`${styles.recipeOriginBadge} ${compact ? styles.compactRecipeOriginBadge : ''}`}
+      style={{'--recipe-origin-accent': origin.accent}}
+      title={`Recipe added by ${origin.addonLabel}`}
+    >
+      <i aria-hidden="true" />
+      <span>{origin.category}</span>
+    </span>
+  );
+}
+
+function normalizedResourceIngredient(resource, defaultResourceType = 'fluid') {
+  if (!resource) return null;
+  const type = resource.type ?? resource.id ?? resource.label;
+  if (!type) return null;
+  const amount = resource.amount ?? resource.count;
+  const resourceType = resource.resourceType ?? (type === 'xp' ? 'xp' : defaultResourceType);
+  const unit = resource.unit ?? (resourceType === 'xp' ? 'XP' : 'mB');
+  const id = String(type).includes(':') ? type : `${resourceType}:${type}`;
+  const fluidVisual = resourceType === 'fluid' ? fluidVisualFor(id) : null;
+  const baseLabel = resource.label ?? fluidVisual?.label ?? formatIdentifier(type);
+  const amountLabel = amount ? `${Number(amount).toLocaleString('en-US')} ${unit}` : null;
+  const label = amountLabel && !String(baseLabel).includes(amountLabel) ? `${baseLabel} · ${amountLabel}` : baseLabel;
+  return {id, label, count: 1, amount, unit, kind: resourceType, description: resource.description ?? fluidVisual?.description};
+}
+
+const normalizedFluidIngredient = (fluid) => normalizedResourceIngredient(fluid, 'fluid');
+
+function recipePrimaryInputs(recipe) {
+  return Array.isArray(recipe.inputs) && recipe.inputs.length
+    ? recipe.inputs.filter(Boolean)
+    : recipe.slots?.filter(Boolean) ?? [];
+}
+
+function recipeCatalysts(recipe) {
+  return Array.isArray(recipe.catalysts) ? recipe.catalysts.filter(Boolean) : [];
+}
+
+function recipeFluidInputs(recipe) {
+  return [recipe.fluid, recipe.inputFluid].map(normalizedFluidIngredient).filter(Boolean);
+}
+
+function recipeInputGroups(recipe) {
+  const inputs = recipePrimaryInputs(recipe);
+  const catalysts = recipeCatalysts(recipe);
+  const fluids = recipeFluidInputs(recipe);
+  return [
+    inputs.length && {label: 'Input', ingredients: inputs},
+    catalysts.length && {label: 'Catalysts', ingredients: catalysts},
+    fluids.length && {label: recipe.inputFluid ? 'Fluid input' : 'Fluid', ingredients: fluids},
+  ].filter(Boolean);
+}
+
+function recipeByproducts(recipe) {
+  return [
+    ...(Array.isArray(recipe.byproducts) ? recipe.byproducts : []),
+    ...(recipe.byproduct ? [recipe.byproduct] : []),
+  ].filter(Boolean);
+}
+
+function recipeDrops(recipe) {
+  return Array.isArray(recipe.drops) ? recipe.drops.filter(Boolean) : [];
+}
+
+function recipeConditionLabels(recipe) {
+  const source = Array.isArray(recipe.conditions) ? recipe.conditions : recipe.conditions ? [recipe.conditions] : [];
+  return source.map((condition) => {
+    if (typeof condition === 'string') return condition;
+    if (!condition || typeof condition !== 'object') return null;
+    if (condition.label && condition.value) return `${condition.label}: ${condition.value}`;
+    return condition.label ?? condition.value ?? null;
+  }).filter(Boolean);
+}
+
+function recipeSearchTerms(recipe) {
+  return [
+    ...(recipe.slots ?? []),
+    ...(recipe.inputs ?? []),
+    ...(recipe.catalysts ?? []),
+    ...(recipe.results ?? []),
+    ...(recipe.outputs ?? []),
+    ...recipeByproducts(recipe),
+    ...recipeDrops(recipe),
+    normalizedFluidIngredient(recipe.fluid),
+    normalizedFluidIngredient(recipe.inputFluid),
+    normalizedFluidIngredient(recipe.outputFluid),
+    normalizedResourceIngredient(recipe.outputGas, 'gas'),
+    recipe.result,
+  ].filter(Boolean).map((ingredient) => `${ingredient.id ?? ''} ${ingredient.label ?? ''}`).join(' ')
+    + ` ${(recipe.inputGroups ?? []).flatMap((group) => group.alternatives ?? []).map((entry) => entry.id ?? entry.label ?? '').join(' ')} ${recipeConditionLabels(recipe).join(' ')} ${recipe.note ?? ''}`;
+}
+
+function recipeOriginFilters(recipes, project) {
+  const origins = recipes.reduce((result, recipe) => {
+    const origin = recipeOriginFor(recipe, project);
+    const current = result.get(origin.id) ?? {id: origin.id, name: origin.category, count: 0, origin};
+    current.count += 1;
+    result.set(origin.id, current);
+    return result;
+  }, new Map());
+  const order = ['Base', 'Ascendant Technology', 'Heavy Machinery'];
+  return [
+    {id: 'All', name: 'All', count: recipes.length},
+    ...[...origins.values()].sort((left, right) => {
+      const leftOrder = order.indexOf(left.name);
+      const rightOrder = order.indexOf(right.name);
+      return (leftOrder < 0 ? Number.MAX_SAFE_INTEGER : leftOrder) - (rightOrder < 0 ? Number.MAX_SAFE_INTEGER : rightOrder)
+        || left.name.localeCompare(right.name);
+    }),
+  ];
+}
+
+function recipeMatchesOrigin(recipe, originFilter, project) {
+  return originFilter === 'All' || recipeOriginFor(recipe, project).id === originFilter;
+}
+
+function RecipeOriginFilters({recipes, active, setActive}) {
+  const project = useWikiProject();
+  const origins = useMemo(() => recipeOriginFilters(recipes, project), [recipes, project]);
+  if (origins.length <= 2) return null;
+  return <FilterChips categories={origins} active={active} setActive={setActive} ariaLabel="Filter recipes by add-on origin" />;
+}
+
+function processingInputSlots(recipe) {
+  const groups = recipeInputGroups(recipe);
+  return groups.flatMap(({ingredients}) => ingredients).slice(0, 9);
 }
 
 function normalizedProcessingRecipe(recipe) {
-  if (recipe.slots && recipe.result) {
+  const sourceSlots = recipe.slots ?? processingInputSlots(recipe);
+  const sourceResult = recipe.result ?? (typeof recipe.output === 'object' ? recipe.output : null);
+  if (sourceSlots.length && sourceResult) {
     const seenResults = new Set();
-    const results = [{...recipe.result}, ...[
+    const results = [{...sourceResult}, ...[
       ...(Array.isArray(recipe.results) ? recipe.results : []),
       ...(Array.isArray(recipe.outputs) ? recipe.outputs : []),
       ...(Array.isArray(recipe.secondaryOutputs) ? recipe.secondaryOutputs : []),
@@ -461,24 +656,26 @@ function normalizedProcessingRecipe(recipe) {
     });
     return {
       ...recipe,
-      slots: [...recipe.slots, ...Array(9)].slice(0, 9),
-      result: {...recipe.result},
+      slots: [...sourceSlots, ...Array(9)].slice(0, 9),
+      result: {...sourceResult},
       results,
     };
   }
   const slots = Array(9).fill(null);
-  recipe.input.split(' + ').forEach((raw, index) => {
+  const rawInputs = typeof recipe.input === 'string' ? recipe.input.split(' + ') : [];
+  rawInputs.forEach((raw, index) => {
     const match = raw.match(/^(\d+)×\s*(.*)$/);
     slots[index] = {label: match ? match[2] : raw, count: match ? Number(match[1]) : 1};
   });
-  const outputs = recipe.output.split(' + ').map((raw) => {
+  const rawOutputs = typeof recipe.output === 'string' ? recipe.output.split(' + ') : [];
+  const outputs = rawOutputs.map((raw) => {
     const outputMatch = raw.match(/^(\d+)×\s*(.*)$/);
     return {label: outputMatch ? outputMatch[2] : raw, count: outputMatch ? Number(outputMatch[1]) : 1};
   });
   return {
     ...recipe,
     slots,
-    result: outputs[0],
+    result: outputs[0] ?? {label: 'Unknown output', count: 1},
     results: outputs,
   };
 }
@@ -526,18 +723,20 @@ function RecipeCard({recipe}) {
   const type = recipe.type ? 'processing' : 'crafting';
   const detailHref = `${project.basePath}/recipes/${type}-${recipe.id}`;
   const linear = usesLinearRecipeFlow(recipe);
-  const inputs = recipe.slots?.filter(Boolean) ?? [];
+  const inputs = recipeInputGroups(recipe).flatMap(({ingredients}) => ingredients);
   const outputs = recipeOutputs(recipe);
   const inputName = inputs.map(ingredientLabel).join(' + ');
   const outputName = outputs.map(ingredientLabel).join(' + ');
+  const singleCrafting = !linear && recipe.slots.filter(Boolean).length === 1 && outputs.length === 1;
 
   return (
-    <article className={`${styles.recipeCard} ${linear ? styles.linearRecipeCard : ''}`}>
+    <article className={`${styles.recipeCard} ${linear ? styles.linearRecipeCard : ''} ${singleCrafting ? styles.singleCraftingRecipeCard : ''}`} style={{'--recipe-origin-accent': recipeOriginFor(recipe, project).accent}}>
       <header>
         {station.face
           ? <img src={resolveAsset(project, station.face)} alt="" />
           : <span className={styles.stationFallback} aria-hidden="true">▦</span>}
         <div><span>{station.label}</span><strong>{recipe.category}</strong></div>
+        <RecipeOriginBadge recipe={recipe} compact />
         <Link
           to={detailHref}
           aria-label={`Open recipe for ${recipe.result.label ?? formatIdentifier(recipe.result.id)}`}
@@ -566,6 +765,7 @@ function RecipeCard({recipe}) {
             </React.Fragment>)}
           </div>
           <strong title={outputName}>{outputName}</strong>
+          {recipeDrops(recipe).length > 0 && <small className={styles.recipeDropSummary}>{recipeDrops(recipe).length} possible drops</small>}
         </div>
       </div>
     </article>
@@ -575,7 +775,7 @@ function RecipeCard({recipe}) {
 function OverviewPage({query}) {
   const project = useWikiProject();
   const {
-    assetRoot, blocks, craftingRecipes, entities = [], generators, items, machines, mechanics,
+    assetRoot, blocks, craftingRecipeDetails = [], craftingRecipes, entities = [], generators, items, machines, mechanics,
     overview, processingRecipes, wikiSections,
   } = project;
   const normalized = query.trim().toLowerCase();
@@ -587,6 +787,23 @@ function OverviewPage({query}) {
       ...machines.map((entry) => ({...entry, section: 'Machines', href: `${project.basePath}/machines`})),
       ...generators.map((entry) => ({...entry, section: 'Generators', href: `${project.basePath}/generators`})),
       ...entities.map((entry) => ({...entry, section: 'Entities', href: `${project.basePath}/entities`})),
+      ...craftingRecipeDetails.map((recipe) => ({
+        name: formatIdentifier(recipe.result?.id ?? recipe.result?.label ?? recipe.identifier),
+        category: `${recipe.category ?? ''} ${recipe.station ?? ''}`,
+        description: 'Crafting recipe',
+        section: 'Recipes',
+        href: `${project.basePath}/recipes/crafting-${recipe.id}`,
+      })),
+      ...processingRecipes.map(normalizedProcessingRecipe).map((recipe) => {
+        const origin = recipeOriginFor(recipe, project);
+        return {
+          name: formatIdentifier(recipe.result?.id ?? recipe.result?.label ?? recipe.identifier),
+          category: `${recipe.category ?? ''} ${recipe.station ?? ''} ${origin.category} ${origin.addonLabel}`,
+          description: `Machine recipe ${recipeSearchTerms(recipe)}`,
+          section: 'Recipes',
+          href: `${project.basePath}/recipes/processing-${recipe.id}`,
+        };
+      }),
     ];
     return entries.filter((entry) => `${entry.name} ${entry.category ?? ''} ${entry.description}`.toLowerCase().includes(normalized)).slice(0, 8);
   }, [normalized]);
@@ -862,8 +1079,6 @@ function machineBlockDetails(machine, controller) {
   const breakTime = data.breakTime !== undefined ? `${compactNumber(data.breakTime)} s` : null;
   return {
     items: uniqueFacts([
-      ['Identifier', controller?.identifier ?? controller?.id ?? machine.identifier ?? machine.id],
-      ['Block type', 'Machine'],
       breakTime && ['Breaking time', breakTime],
       data.tool && ['Required tool', data.tool],
       data.toolTier && ['Required tool tier', data.toolTier],
@@ -885,6 +1100,7 @@ function machineSpecificationFacts(machine) {
   const configuredSpecifications = (machine.specifications ?? []).filter(([label]) => !generatedLabels.test(String(label)));
   const configuredIo = (machine.io ?? []).flatMap(([label, value]) => {
     if (/^energy$/i.test(String(label)) && (data.energyCapacity > 0 || data.energyCost > 0)) return [];
+    if (/^configured (?:item|fluid|gas|energy) sides$/i.test(String(value))) return [];
     if (/^items$/i.test(String(label))) {
       const itemLabel = /output|extract/i.test(String(value)) ? 'Item output' : /input|insert/i.test(String(value)) ? 'Item input' : 'Items';
       return [[itemLabel, value]];
@@ -896,14 +1112,10 @@ function machineSpecificationFacts(machine) {
     data.energyCost > 0 && ['Base energy consumption', `${compactNumber(data.energyCost)} DE/action`],
     data.baseRate > 0 && ['Base energy rate', `${compactNumber(data.baseRate)} DE/t`],
     processingTime && ['Base processing time', processingTime],
-    data.inventorySize > 0 && ['Interface container', `${compactNumber(data.inventorySize)} total UI slots`],
     data.fluidCapacity > 0 && ['Fluid capacity', `${compactNumber(data.fluidCapacity)} mB`],
     data.gasCapacity > 0 && ['Gas capacity', `${compactNumber(data.gasCapacity)} mB`],
     upgradeSlots > 0 && ['Upgrade slots', upgradeSlots],
     upgradeTypes?.length && ['Supported upgrades', upgradeTypes],
-    data.interfaces?.length && ['Interfaces', data.interfaces],
-    data.inputRange && ['Input slots', Array.isArray(data.inputRange) ? data.inputRange.join('–') : data.inputRange],
-    data.outputRange && ['Output slots', Array.isArray(data.outputRange) ? data.outputRange.join('–') : data.outputRange],
     machine.productionType && ['Production type', machine.productionType],
     ['Input', machine.input],
     ['Output', machine.output],
@@ -1104,8 +1316,9 @@ function EntitiesPage({query}) {
 
 function RecipesPage({query}) {
   const project = useWikiProject();
-  const {craftingRecipeDetails, craftingRecipes, processingRecipes, stationMeta} = project;
+  const {craftingRecipeDetails, processingRecipes, stationMeta} = project;
   const [stationFilter, setStationFilter] = useState('All');
+  const [originFilter, setOriginFilter] = useState('All');
   const normalized = query.trim().toLowerCase();
   const allRecipes = useMemo(() => [
     ...craftingRecipeDetails,
@@ -1119,16 +1332,21 @@ function RecipesPage({query}) {
     }, {});
     return [{name: 'All', count: allRecipes.length}, ...Object.entries(counts).map(([name, count]) => ({name, count}))];
   }, [allRecipes]);
+  const originFilters = useMemo(() => recipeOriginFilters(allRecipes, project), [allRecipes, project]);
   const visible = allRecipes.filter((recipe) => {
     const stationLabel = stationMeta[recipe.station]?.label ?? formatIdentifier(recipe.station);
     const matchesStation = stationFilter === 'All' || stationFilter === stationLabel;
-    const searchable = `${recipe.identifier} ${recipe.category} ${stationLabel} ${recipe.slots.map((slot) => slot?.id ?? slot?.label ?? '').join(' ')} ${recipe.result.id ?? recipe.result.label}`.toLowerCase();
-    return matchesStation && searchable.includes(normalized);
+    const origin = recipeOriginFor(recipe, project);
+    const searchable = `${recipe.identifier} ${recipe.category} ${stationLabel} ${origin.category} ${origin.addonLabel} ${recipeSearchTerms(recipe)}`.toLowerCase();
+    return matchesStation && recipeMatchesOrigin(recipe, originFilter, project) && searchable.includes(normalized);
   });
   return (
     <>
-      <PageIntro section="recipes" count={craftingRecipes.length + processingRecipes.length} countLabel="documented entries" />
-      <FilterChips categories={stationFilters} active={stationFilter} setActive={setStationFilter} />
+      <PageIntro section="recipes" count={allRecipes.length} countLabel="documented entries" />
+      <div className={styles.recipeFilters}>
+        <FilterSelect label="Recipe station" categories={stationFilters} active={stationFilter} setActive={setStationFilter} />
+        {originFilters.length > 2 && <FilterSelect label="Added by" categories={originFilters} active={originFilter} setActive={setOriginFilter} ariaLabel="Filter recipes by add-on origin" />}
+      </div>
       <p className={styles.resultCount}>{visible.length} individual recipes shown.</p>
       <section className={styles.recipeGrid}>
         {visible.map((recipe) => <RecipeCard key={`${recipe.station}-${recipe.id}`} recipe={recipe} />)}
@@ -1272,6 +1490,43 @@ function EntryReference({entryType, groups}) {
   );
 }
 
+function MiningReference({mining}) {
+  const [activeTab, setActiveTab] = useState('drops');
+  if (!mining) return null;
+  const tabs = [
+    {id: 'drops', label: 'Drops by Fortune'},
+    {id: 'locations', label: 'Where to find'},
+    {id: 'modifiers', label: 'Modifiers'},
+  ];
+  return (
+    <section className={styles.oreMiningReference} aria-labelledby="ore-mining-reference">
+      <header>
+        <div><p className={styles.eyebrow}>Resource reference</p><h2 id="ore-mining-reference">Mining &amp; drops</h2></div>
+        <p>The AT Core resolver is listed separately from optional StatsCore effects, so a tool change never looks like a base drop.</p>
+      </header>
+      <div className={styles.oreMiningFacts}>
+        <span><small>Required tool</small><strong>{mining.requiredTool}</strong></span>
+        {mining.silkDrop && <span><small>Silk Touch</small><strong>{formatIdentifier(mining.silkDrop.id)} {mining.silkDrop.amount}</strong></span>}
+      </div>
+      <div className={styles.oreMiningTabs} role="tablist" aria-label="Mining documentation sections">
+        {tabs.map((tab) => <button key={tab.id} type="button" role="tab" aria-selected={activeTab === tab.id} className={activeTab === tab.id ? styles.activeOreMiningTab : undefined} onClick={() => setActiveTab(tab.id)}>{tab.label}</button>)}
+      </div>
+      {activeTab === 'drops' && <div className={styles.oreDropTable} role="table" aria-label="Drops by Fortune level">
+        <div className={styles.oreDropHeader} role="row"><span>Fortune</span><span>Drop</span><span>Amount</span></div>
+        <div className={styles.oreDropRows}>{mining.drops.map((drop) => <div className={styles.oreDropRow} role="row" key={drop.fortune}>
+          <strong>Fortune {drop.fortune === 0 ? '0' : `I${'I'.repeat(Math.max(0, drop.fortune - 1))}`}</strong>
+          <span className={styles.oreDropItem}><RecipeSlot ingredient={{id: drop.id, label: formatIdentifier(drop.id)}} /><em>{formatIdentifier(drop.id)}</em></span>
+          <span>{drop.amount}</span>
+        </div>)}</div>
+      </div>}
+      {activeTab === 'locations' && <div className={styles.oreLocationList}>{mining.locations.map((location, index) => <article key={`${location.dimension}-${location.height}-${index}`}>
+        <strong>{location.dimension}</strong><span>{location.height}</span><small>Replaces {location.replace} · {location.detail}</small>
+      </article>)}</div>}
+      {activeTab === 'modifiers' && <div className={styles.oreModifierGrid}>{mining.modifiers.map((modifier) => <article key={modifier.title}><strong>{modifier.title}</strong><p>{modifier.copy}</p></article>)}</div>}
+    </section>
+  );
+}
+
 function DetailIcon({name}) {
   const paths = {
     info: <><circle cx="12" cy="12" r="9" /><path d="M12 10v6M12 7h.01" /></>,
@@ -1352,6 +1607,7 @@ function normalizedItemDocumentation(entry) {
     },
     statisticsTitle: source.statisticsTitle,
     statistics: meaningfulList(source.statistics),
+    sections: meaningfulList(source.sections),
     acquisition: {
       entityDrops: meaningfulList(source.acquisition?.entityDrops),
       structures: meaningfulList(source.acquisition?.structures),
@@ -1401,6 +1657,19 @@ function obtainingRecipes(project, entry) {
     .map(normalizedProcessingRecipe)
     .filter((recipe) => identifiers.has(recipe.result?.id));
   return {crafting, machine};
+}
+
+function DocumentationSection({section}) {
+  const facts = meaningfulList(section.facts).filter((fact) => Array.isArray(fact) && fact[1] !== undefined && fact[1] !== null && fact[1] !== '');
+  const entries = meaningfulList(section.entries);
+  return (
+    <section className={`${styles.itemEditorialSection} ${styles.documentationSection}`} aria-labelledby={`item-section-${section.id}`}>
+      <ItemSectionHeading id={`item-section-${section.id}`} icon="capabilities">{section.title ?? section.label}</ItemSectionHeading>
+      {section.copy && <p className={styles.documentationCopy}>{section.copy}</p>}
+      {facts.length > 0 && <dl className={styles.itemBasicList}>{facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{Array.isArray(value) ? value.join(', ') : value}</dd></div>)}</dl>}
+      {entries.length > 0 && <ul className={styles.documentationList}>{entries.map((entry, index) => <li key={`${entry}-${index}`}>{entry}</li>)}</ul>}
+    </section>
+  );
 }
 
 function itemIdentifiers(entry) {
@@ -1484,6 +1753,11 @@ function ItemDocumentationTabs({project, documentation, basics, groups, statisti
         </section>}
       </div>,
     },
+    ...documentation.sections.map((section) => ({
+      id: `item-section-${section.id}`,
+      label: section.label ?? section.title ?? 'Properties',
+      content: <DocumentationSection section={section} />,
+    })),
     ...(isTrinket ? [{
       id: 'trinket-capabilities',
       label: 'Trinket Capabilities',
@@ -1642,15 +1916,151 @@ function MachineReferencePanel({index, title, copy, items, tags}) {
   );
 }
 
+function dropQuantityLabel(drop) {
+  const minimum = drop.min ?? drop.minimum ?? drop.count ?? drop.amount ?? 1;
+  const maximum = drop.max ?? drop.maximum ?? drop.count ?? drop.amount ?? minimum;
+  return minimum === maximum ? `×${minimum}` : `×${minimum}–${maximum}`;
+}
+
+function RecipeDropTable({drops}) {
+  const [expanded, setExpanded] = useState(false);
+  const visible = expanded ? drops : drops.slice(0, 4);
+  return (
+    <div className={styles.machineProcessRequirement}>
+      <small>Possible drops</small>
+      <div className={styles.machineDropTable}>
+        {visible.map((drop, index) => <span className={styles.machineDropSlot} key={`${drop.id ?? drop.label}-${index}`}>
+          <RecipeSlot ingredient={drop} result />
+          <em>{dropQuantityLabel(drop)}{drop.chance !== undefined && Number(drop.chance) < 1 ? ` · ${formatChance(drop.chance)}` : ''}</em>
+        </span>)}
+        {drops.length > 4 && <button type="button" className={styles.machineDropToggle} onClick={() => setExpanded((current) => !current)} aria-expanded={expanded}>
+          {expanded ? 'Show less' : `+${drops.length - 4} more`}
+        </button>}
+      </div>
+    </div>
+  );
+}
+
+function RecipeValueInputGroups({groups}) {
+  return (
+    <div className={styles.machineProcessRequirement}>
+      <small>Value inputs</small>
+      <div className={styles.machineValueGroups}>{groups.map((group) => (
+        <section className={styles.machineValueGroup} key={group.id ?? group.label}>
+          <strong>{group.label ?? 'Input group'}{group.requiredValue ? ` · ${group.requiredValue} value` : ''}</strong>
+          <div>{(group.alternatives ?? []).map((alternative, index) => <span className={styles.machineValueAlternative} key={`${alternative.id ?? alternative.label}-${index}`}>
+            <RecipeSlot ingredient={{...alternative, count: 1}} />
+            {alternative.value !== undefined && <em>{alternative.value}</em>}
+            {alternative.value === undefined && alternative.power !== undefined && <em>×{alternative.power}</em>}
+          </span>)}</div>
+        </section>
+      ))}</div>
+    </div>
+  );
+}
+
+function RecipeProcessRequirements({recipe, embeddedCatalysts = false, embeddedFluids = false, embeddedByproducts = false}) {
+  const groups = recipeInputGroups(recipe).filter(({label}) => (
+    label !== 'Input'
+    && !(embeddedCatalysts && label === 'Catalysts')
+    && !(embeddedFluids && /fluid/i.test(label))
+  ));
+  const byproducts = recipeByproducts(recipe);
+  const visibleByproducts = embeddedByproducts ? [] : byproducts;
+  const drops = recipeDrops(recipe);
+  const conditions = recipeConditionLabels(recipe);
+  const inputGroups = Array.isArray(recipe.inputGroups) ? recipe.inputGroups.filter(Boolean) : [];
+  if (!groups.length && !visibleByproducts.length && !drops.length && !conditions.length && !inputGroups.length && !recipe.note) return null;
+  return (
+    <div className={styles.machineProcessRequirements}>
+      {groups.map(({label, ingredients}) => (
+        <div className={styles.machineProcessRequirement} key={label}>
+          <small>{label}</small>
+          <div>{ingredients.map((ingredient, index) => <React.Fragment key={`${ingredient.id ?? ingredient.label}-${index}`}>
+            <RecipeSlot ingredient={ingredient} />
+            {ingredient.kind === 'fluid' && <em className={styles.fluidRequirementLabel}>{ingredient.label}</em>}
+          </React.Fragment>)}</div>
+        </div>
+      ))}
+      {visibleByproducts.length > 0 && <div className={styles.machineProcessRequirement}>
+        <small>Byproducts</small>
+        <div>{visibleByproducts.map((ingredient, index) => <span className={styles.byproductSlot} key={`${ingredient.id ?? ingredient.label}-${index}`}>
+          <RecipeSlot ingredient={ingredient} result />
+          {ingredient.chance !== undefined && <em>{formatChance(ingredient.chance)}</em>}
+        </span>)}</div>
+      </div>}
+      {drops.length > 0 && <RecipeDropTable drops={drops} />}
+      {inputGroups.length > 0 && <RecipeValueInputGroups groups={inputGroups} />}
+      {conditions.length > 0 && <div className={styles.machineProcessRequirement}>
+        <small>Conditions</small>
+        <div className={styles.machineProcessConditions}>{conditions.map((condition) => <span key={condition}>{condition}</span>)}</div>
+      </div>}
+      {recipe.note && <p className={styles.machineProcessNote}>{recipe.note}</p>}
+    </div>
+  );
+}
+
+function isCatalystWeaverRecipe(recipe, machine) {
+  return [recipe.station, machine?.id, machine?.recipe, machine?.machineData?.recipeType]
+    .filter(Boolean)
+    .map(normalizedStationId)
+    .some((value) => value === 'catalyst_weaver' || value.includes('catalyst_weaver'));
+}
+
+function CatalystWeaverRecipeFlow({recipe, machine}) {
+  const inputs = recipePrimaryInputs(recipe);
+  const catalysts = recipeCatalysts(recipe);
+  const fluids = recipeFluidInputs(recipe);
+  const results = recipeOutputs(recipe);
+  const byproducts = recipeByproducts(recipe);
+  const metric = processingMetric(recipe, machine);
+  const primaryInput = inputs[0];
+  const primaryResult = results[0];
+  const secondaryResult = results.slice(1);
+  const fluid = fluids[0];
+  return (
+    <div className={styles.catalystWeaverRecipeFlow}>
+      <div className={styles.catalystWeaverInputMatrix} aria-label="Catalyst Weaver inputs">
+        {Array.from({length: 6}, (_, index) => <span className={styles.catalystWeaverCatalyst} key={`catalyst-${index}`}>
+          <RecipeSlot ingredient={catalysts[index]} />
+        </span>)}
+        <span className={styles.catalystWeaverPrimaryInput}>
+          <RecipeSlot ingredient={primaryInput} />
+        </span>
+      </div>
+      <div className={styles.catalystWeaverProcess}>
+        <span className={styles.machineProcessArrow} aria-hidden="true">→</span>
+        {metric && <small><img src={MACHINE_RESOURCE_ICONS.energy} alt="" />{metric}</small>}
+      </div>
+      <div className={styles.catalystWeaverOutputArea}>
+        <span className={styles.catalystWeaverMainOutput}><RecipeSlot ingredient={primaryResult} result /></span>
+        {byproducts.slice(0, 1).map((ingredient, index) => <span className={styles.catalystWeaverByproduct} key={`${ingredient.id ?? ingredient.label}-${index}`}>
+          <RecipeSlot ingredient={ingredient} result />
+          {ingredient.chance !== undefined && <em>{formatChance(ingredient.chance)}</em>}
+        </span>)}
+        {secondaryResult.map((ingredient, index) => <span className={styles.catalystWeaverByproduct} key={`${ingredient.id ?? ingredient.label}-${index}`}>
+          <RecipeSlot ingredient={ingredient} result />
+        </span>)}
+        {fluid && <span className={styles.catalystWeaverFluid}>
+          <RecipeSlot ingredient={fluid} />
+          <em>{fluid.amount ? `${Number(fluid.amount).toLocaleString('en-US')} ${fluid.unit ?? 'mB'}` : fluid.label}</em>
+        </span>}
+      </div>
+    </div>
+  );
+}
+
 function ProcessingCatalogCard({recipe, machine}) {
-  const inputs = recipe.slots.filter(Boolean);
+  const project = useWikiProject();
+  const inputs = recipePrimaryInputs(recipe);
   const results = recipeOutputs(recipe);
   const title = results.map(ingredientLabel).join(' + ');
   const metric = processingMetric(recipe, machine);
+  const catalystWeaver = isCatalystWeaverRecipe(recipe, machine);
   return (
-    <article className={styles.machineProcessCard}>
-      <h4 title={title}>{title}</h4>
-      <div className={styles.machineProcessFlow}>
+    <article className={`${styles.machineProcessCard} ${catalystWeaver ? styles.catalystWeaverProcessCard : ''}`} style={{'--recipe-origin-accent': recipeOriginFor(recipe, project).accent}}>
+      <header><h4 title={title}>{title}</h4><RecipeOriginBadge recipe={recipe} compact /></header>
+      {catalystWeaver ? <CatalystWeaverRecipeFlow recipe={recipe} machine={machine} /> : <div className={styles.machineProcessFlow}>
         <div className={styles.machineProcessInputs}>
           {inputs.map((ingredient, index) => <React.Fragment key={`${ingredient.id ?? ingredient.label}-${index}`}>
             {index > 0 && <span className={styles.machineProcessJoin} aria-hidden="true">+</span>}
@@ -1659,7 +2069,7 @@ function ProcessingCatalogCard({recipe, machine}) {
         </div>
         <div className={styles.machineProcessCenter}>
           <span className={styles.machineProcessArrow} aria-hidden="true">→</span>
-          {metric && <small>{metric}</small>}
+          {metric && <small><img className={styles.machineMetricIcon} src={MACHINE_RESOURCE_ICONS.energy} alt="" />{metric}</small>}
         </div>
         <div className={styles.machineProcessOutputs}>
           {results.map((ingredient, index) => <React.Fragment key={`${ingredient.id ?? ingredient.label}-${index}`}>
@@ -1667,7 +2077,8 @@ function ProcessingCatalogCard({recipe, machine}) {
             <RecipeSlot ingredient={ingredient} result />
           </React.Fragment>)}
         </div>
-      </div>
+      </div>}
+      <RecipeProcessRequirements recipe={recipe} embeddedCatalysts={catalystWeaver} embeddedFluids={catalystWeaver} embeddedByproducts={catalystWeaver} />
     </article>
   );
 }
@@ -1718,9 +2129,10 @@ function autosieveRecipeGroups(recipes) {
     grouped.get(id).drops.push({
       id: recipe.id,
       result,
-      chance: Number(recipe.chance ?? 0),
+      chance: Number(recipe.chance ?? result.chance ?? recipe.drops?.[0]?.chance ?? 0),
       amount: result.count ?? 1,
       tier: sieveTierForRecipe(recipe),
+      origin: recipeOriginFor(recipe, {id: recipe.origin?.id ?? recipe.originId ?? 'utilitycraft', name: 'UtilityCraft'}),
     });
   });
 
@@ -1769,8 +2181,8 @@ function AutoSieveDropRows({drops}) {
   return (
     <div className={styles.autosieveDropRows}>
       {drops.map((drop) => (
-        <div className={styles.autosieveDropRow} key={drop.id}>
-          <div className={styles.autosieveDropName}><SieveItemVisual ingredient={drop.result} className={styles.autosieveDropVisual} /><strong>{ingredientLabel(drop.result)}</strong></div>
+        <div className={styles.autosieveDropRow} key={drop.id} style={{'--recipe-origin-accent': drop.origin.accent}}>
+          <div className={styles.autosieveDropName}><SieveItemVisual ingredient={drop.result} className={styles.autosieveDropVisual} /><strong>{ingredientLabel(drop.result)}</strong><RecipeOriginBadge recipe={{origin: drop.origin}} compact /></div>
           <span>{formatSieveChance(drop.chance)}</span>
           <span>{formatSieveAmount(drop.amount)}</span>
           <SieveMeshBadge tier={drop.tier} />
@@ -1784,8 +2196,10 @@ function AutoSieveSiftCard({group}) {
   const [expanded, setExpanded] = useState(false);
   const contentId = autosieveContentId(group.id);
   const minimumTier = Math.min(...group.drops.map((drop) => drop.tier));
+  const origins = [...new Map(group.drops.map((drop) => [drop.origin.id, drop.origin])).values()];
+  const singleOrigin = origins.length === 1 ? origins[0] : null;
   return (
-    <article className={styles.autosieveSiftCard} data-expanded={expanded || undefined}>
+    <article className={styles.autosieveSiftCard} data-expanded={expanded || undefined} style={singleOrigin ? {'--recipe-origin-accent': singleOrigin.accent} : undefined}>
       <header className={styles.autosieveSiftHeader}>
         <SieveItemVisual ingredient={group.input} className={styles.autosieveInputVisual} />
         <div className={styles.autosieveSiftCopy}>
@@ -1797,6 +2211,7 @@ function AutoSieveSiftCard({group}) {
           </div>
           <p>Sieveable block <span aria-hidden="true">·</span> {group.drops.length} possible drop{group.drops.length === 1 ? '' : 's'}</p>
           <div className={styles.autosieveMinTier}><small>Minimum mesh</small><SieveMeshBadge tier={minimumTier} /></div>
+          {origins.length > 0 && <div className={styles.autosieveOriginBadges}>{origins.map((origin) => <RecipeOriginBadge key={origin.id} recipe={{origin}} compact />)}</div>}
         </div>
       </header>
       {expanded && <div id={contentId} className={styles.autosieveDropList}>
@@ -1826,6 +2241,9 @@ function AutoSieveRecipeCatalog({recipes}) {
 
 function MachineRecipes({machine, recipes}) {
   const usesSiftingCatalog = machine.id === 'autosieve';
+  const [originFilter, setOriginFilter] = useState('All');
+  const project = useWikiProject();
+  const visibleCatalog = recipes.catalog.filter((recipe) => recipeMatchesOrigin(recipe, originFilter, project));
   return (
     <div className={styles.machineRecipes}>
       <section className={styles.machineRecipeSubsection} aria-labelledby="machine-obtain">
@@ -1833,11 +2251,13 @@ function MachineRecipes({machine, recipes}) {
         {recipes.obtain.length ? <div className={styles.machineObtainGrid}>{recipes.obtain.map((recipe) => <RecipeCard recipe={recipe} key={`obtain-${recipe.id}`} />)}</div>
           : <p className={styles.machineRecipeEmpty}>No crafting recipe is indexed for this machine.</p>}
       </section>
-      {recipes.catalog.length > 0 && usesSiftingCatalog ? <AutoSieveRecipeCatalog recipes={recipes.catalog} />
-        : recipes.catalog.length > 0 && <section className={styles.machineRecipeSubsection} aria-labelledby="machine-recipes-catalog">
+      {recipes.catalog.length > 0 && <RecipeOriginFilters recipes={recipes.catalog} active={originFilter} setActive={setOriginFilter} />}
+      {visibleCatalog.length > 0 && usesSiftingCatalog ? <AutoSieveRecipeCatalog recipes={visibleCatalog} />
+        : visibleCatalog.length > 0 && <section className={styles.machineRecipeSubsection} aria-labelledby="machine-recipes-catalog">
         <div><p className={styles.eyebrow}>02 / Processing</p><h3 id="machine-recipes-catalog">Recipes Catalog</h3></div>
-        <div className={styles.machineRecipeCatalog}>{recipes.catalog.map((recipe) => <ProcessingCatalogCard recipe={recipe} machine={machine} key={`process-${recipe.id}`} />)}</div>
+        <div className={styles.machineRecipeCatalog}>{visibleCatalog.map((recipe) => <ProcessingCatalogCard recipe={recipe} machine={machine} key={`process-${recipe.id}`} />)}</div>
       </section>}
+      {recipes.catalog.length > 0 && !visibleCatalog.length && <p className={styles.machineRecipeEmpty}>No recipes match the selected add-on origin.</p>}
     </div>
   );
 }
@@ -1934,7 +2354,12 @@ function recipesRelatedTo(project, entry) {
   ].filter(Boolean));
   const relatedCrafting = project.craftingRecipeDetails.filter((recipe) => identifiers.has(recipe.result.id)
     || recipe.slots.some((slot) => identifiers.has(slot?.id)));
-  const relatedProcessing = project.processingRecipes.filter((recipe) => `${recipe.input} ${recipe.output}`.toLowerCase().includes(entry.name.toLowerCase()));
+  const relatedProcessing = project.processingRecipes
+    .map(normalizedProcessingRecipe)
+    .filter((recipe) => identifiers.has(recipe.result?.id)
+      || recipe.results?.some((result) => identifiers.has(result?.id))
+      || recipeInputGroups(recipe).some(({ingredients}) => ingredients.some((ingredient) => identifiers.has(ingredient?.id)))
+      || recipeByproducts(recipe).some((byproduct) => identifiers.has(byproduct?.id)));
   return [
     ...relatedCrafting.map((recipe) => ({...recipe, href: `${project.basePath}/recipes/crafting-${recipe.id}`})),
     ...relatedProcessing.map((recipe) => ({...recipe, href: `${project.basePath}/recipes/processing-${recipe.id}`})),
@@ -2093,10 +2518,19 @@ function AddonWikiEntryContent({entryType, slug}) {
             <RecipeCard recipe={recipe} />
             <DetailFacts facts={[
               ['Station', stationMeta[recipe.station]?.label ?? formatIdentifier(recipe.station)],
+              ['Added by', <RecipeOriginBadge recipe={recipe} />],
               ['Category', recipe.category],
               ['Used slots', recipe.slotCount],
-              ['Recipe type', recipe.kind ?? 'Processing'],
+              ['Recipe type', recipe.recipeKind ?? recipe.kind ?? 'Processing'],
               ['Energy', recipe.cost],
+              ['Duration', recipe.duration ?? (recipe.ticks ? `${recipe.ticks} ticks` : null)],
+              ['Fluid', normalizedFluidIngredient(recipe.fluid)?.label],
+              ['Input fluid', normalizedFluidIngredient(recipe.inputFluid)?.label],
+              ['Output fluid', normalizedFluidIngredient(recipe.outputFluid)?.label],
+              ['Output gas', normalizedResourceIngredient(recipe.outputGas, 'gas')?.label],
+              ['Tier requirement', recipe.tier],
+              ['Conditions', recipeConditionLabels(recipe).join(', ')],
+              ['Notes', recipe.note],
             ]} />
           </section>
         ) : (
@@ -2106,6 +2540,7 @@ function AddonWikiEntryContent({entryType, slug}) {
               <div className={styles.detailHeading}><p className={styles.eyebrow}>{entryTypeLabel} entry</p><h1>{entry.name}</h1>{entry.description && <p>{entry.description}</p>}</div>
             </article>
             {referenceGroups?.length ? <EntryReference entryType={entryType} groups={referenceGroups} /> : <DetailFacts facts={facts} />}
+            {entryType === 'blocks' && <MiningReference mining={entry.mining} />}
             {entryType === 'blocks' && <RelatedRecipes entry={entry} />}
           </>
         )}

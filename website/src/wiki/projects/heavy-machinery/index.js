@@ -1,5 +1,6 @@
 import * as data from './data.js';
 import {craftingRecipeDetails} from './recipeData.js';
+import processingRecipes from './processingRecipes.json';
 import {vanillaStationMeta} from '../vanillaStationMeta.js';
 
 const pageMeta = {
@@ -26,9 +27,12 @@ const stationMeta = {
   utilitycraft_workbench: {label: 'UtilityCraft Workbench', face: 'recipe-faces/utilitycraft_workbench.png'},
   crusher: {label: 'Crusher', face: 'blocks/multiblock/crusher_controller_north.png'},
   'electro-press': {label: 'Electro Press', face: 'blocks/multiblock/electro_press_controller_north.png'},
+  electro_press: {label: 'Electro Press', face: 'blocks/multiblock/electro_press_controller_north.png'},
   infuser: {label: 'Infuser', face: 'blocks/multiblock/infuser_controller_north.png'},
   incinerator: {label: 'Incinerator', face: 'blocks/multiblock/incinerator_controller_north.png'},
   autosieve: {label: 'Autosieve', face: 'blocks/multiblock/autosieve_controller_north.png'},
+  'reaction-chamber': {label: 'Reaction Chamber', face: 'blocks/multiblock/matter_condenser_controller_north.png'},
+  'magmatic-chamber': {label: 'Magmatic Chamber', face: 'blocks/multiblock/magmatic_chamber_controller_north.png'},
 };
 
 const machineControllerIds = {
@@ -62,7 +66,7 @@ const heavyMachineryProject = {
   mechanics: data.mechanics,
   craftingRecipes: data.craftingRecipes,
   craftingRecipeDetails,
-  processingRecipes: data.processingRecipes,
+  processingRecipes,
   groupItemsByCategory: true,
   recipeFallbackFace: 'recipe-faces/utilitycraft_workbench.png',
   fallbackImage: 'items/control_panel.png',

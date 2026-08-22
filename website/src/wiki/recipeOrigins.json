@@ -1,0 +1,20 @@
+{
+  "utilitycraft": {
+    "id": "utilitycraft",
+    "label": "Base",
+    "accent": "#38bdf8",
+    "category": "Base"
+  },
+  "ascendant-technology": {
+    "id": "ascendant-technology",
+    "label": "Ascendant Technology",
+    "accent": "#a78bfa",
+    "category": "Ascendant Technology"
+  },
+  "heavy-machinery": {
+    "id": "heavy-machinery",
+    "label": "Heavy Machinery",
+    "accent": "#f59e0b",
+    "category": "Heavy Machinery"
+  }
+}

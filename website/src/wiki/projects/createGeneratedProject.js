@@ -166,12 +166,10 @@ function machineSpecifications(machineData, profile, summary) {
     machineData.energyCost > 0 && machineData.energyCapacity > 0 && ['Energy capacity', `${formatMachineNumber(machineData.energyCapacity)} DE`],
     machineData.baseRate > 0 && ['Base energy rate', `${formatMachineNumber(machineData.baseRate)} DE/t`],
     !profile.omitConfiguredEnergy && baseDuration && ['Nominal base cycle', `${formatMachineNumber(baseDuration)} ticks · ${(baseDuration / 20).toLocaleString('en-US')} s`],
-    machineData.inventorySize !== undefined && ['Interface container', `${formatMachineNumber(machineData.inventorySize)} total UI slots`],
     machineData.fluidCapacity !== undefined && ['Fluid capacity', `${formatMachineNumber(machineData.fluidCapacity)} mB`],
     machineData.gasCapacity !== undefined && ['Gas capacity', `${formatMachineNumber(machineData.gasCapacity)} mB`],
     !hasProductionType && ['Production type', summary.productionType],
     upgrades.length > 0 && ['Upgrade support', upgrades.join(', ')],
-    machineData.directional && !hasDirectionalSpecification && ['Orientation', 'Front-facing'],
     ...(profile.specifications ?? []),
   ];
   return specifications.filter(Boolean);
