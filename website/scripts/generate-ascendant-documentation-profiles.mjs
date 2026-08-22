@@ -369,7 +369,10 @@ function blockProfile(identifier, block, generation) {
 }
 
 if (!fs.existsSync(addonRoot)) {
-  throw new Error(`Ascendant Technology project was not found at ${addonRoot}. Set ASCENDANT_TECHNOLOGY_PROJECT_PATH to its root.`);
+  process.stdout.write(
+    `Ascendant Technology project was not found at ${addonRoot}; preserving generated documentation profiles.\n`,
+  );
+  process.exit(0);
 }
 
 const manifest = readJson(manifestPath).content ?? {};
