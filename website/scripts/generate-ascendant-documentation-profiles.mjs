@@ -13,12 +13,11 @@ const outputPath = path.join(siteRoot, 'src', 'wiki', 'projects', 'ascendant-tec
 const manifestPath = path.join(siteRoot, 'src', 'wiki', 'projects', 'ascendant-technology', 'manifest.json');
 
 function walk(directory) {
-  if (!fs.existsSync(sourceDirectory)) {
-  process.stdout.write(
-    `Ascendant Technology glyph source was not found at ${sourceDirectory}; preserving committed glyph icons.\n`,
-  );
-  process.exit(0);
-}
+  if (!fs.existsSync(directory)) return [];
+  return fs.readdirSync(directory, {withFileTypes: true}).flatMap((entry) => {
+    const target = path.join(directory, entry.name);
+    return entry.isDirectory() ? walk(target) : [target];
+  });
 }
 
 function stripJsonComments(source) {

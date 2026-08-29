@@ -4000,8 +4000,8 @@
     "output": "12× utilitycraft:bronze_dust"
   },
   {
-    "id": "heavy-machinery-crusher-utilitycraft-deepslate-tin-chunk",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-tin-chunk",
+    "id": "heavy-machinery-crusher-utilitycraft-deepslate-tin-ore",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-tin-ore",
     "type": "machine",
     "station": "crusher",
     "category": "Crusher recipe",
@@ -4009,7 +4009,7 @@
     "slotCount": 1,
     "slots": [
       {
-        "id": "utilitycraft:deepslate_tin_chunk",
+        "id": "utilitycraft:deepslate_tin_ore",
         "count": 1
       },
       null,
@@ -4023,18 +4023,18 @@
     ],
     "inputs": [
       {
-        "id": "utilitycraft:deepslate_tin_chunk",
+        "id": "utilitycraft:deepslate_tin_ore",
         "count": 1
       }
     ],
     "result": {
-      "id": "utilitycraft:raw_tin",
-      "count": 1
+      "id": "utilitycraft:tin_dust",
+      "count": 2
     },
     "results": [
       {
-        "id": "utilitycraft:raw_tin",
-        "count": 1
+        "id": "utilitycraft:tin_dust",
+        "count": 2
       }
     ],
     "origin": {
@@ -4044,12 +4044,12 @@
       "category": "Heavy Machinery"
     },
     "originId": "heavy-machinery",
-    "input": "utilitycraft:deepslate_tin_chunk",
-    "output": "utilitycraft:raw_tin"
+    "input": "utilitycraft:deepslate_tin_ore",
+    "output": "2× utilitycraft:tin_dust"
   },
   {
-    "id": "heavy-machinery-crusher-utilitycraft-deepslate-uranium-chunk",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-uranium-chunk",
+    "id": "heavy-machinery-crusher-utilitycraft-deepslate-uranium-ore",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-uranium-ore",
     "type": "machine",
     "station": "crusher",
     "category": "Crusher recipe",
@@ -4057,7 +4057,7 @@
     "slotCount": 1,
     "slots": [
       {
-        "id": "utilitycraft:deepslate_uranium_chunk",
+        "id": "utilitycraft:deepslate_uranium_ore",
         "count": 1
       },
       null,
@@ -4071,18 +4071,18 @@
     ],
     "inputs": [
       {
-        "id": "utilitycraft:deepslate_uranium_chunk",
+        "id": "utilitycraft:deepslate_uranium_ore",
         "count": 1
       }
     ],
     "result": {
-      "id": "utilitycraft:raw_uranium",
-      "count": 1
+      "id": "utilitycraft:uranium_dust",
+      "count": 2
     },
     "results": [
       {
-        "id": "utilitycraft:raw_uranium",
-        "count": 1
+        "id": "utilitycraft:uranium_dust",
+        "count": 2
       }
     ],
     "origin": {
@@ -4092,8 +4092,8 @@
       "category": "Heavy Machinery"
     },
     "originId": "heavy-machinery",
-    "input": "utilitycraft:deepslate_uranium_chunk",
-    "output": "utilitycraft:raw_uranium"
+    "input": "utilitycraft:deepslate_uranium_ore",
+    "output": "2× utilitycraft:uranium_dust"
   },
   {
     "id": "heavy-machinery-crusher-utilitycraft-raw-tin",
@@ -4336,54 +4336,6 @@
     "output": "6× utilitycraft:tin_dust"
   },
   {
-    "id": "heavy-machinery-crusher-utilitycraft-tin-chunk",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-tin-chunk",
-    "type": "machine",
-    "station": "crusher",
-    "category": "Crusher recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:tin_chunk",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:tin_chunk",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:raw_tin",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:raw_tin",
-        "count": 1
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:tin_chunk",
-    "output": "utilitycraft:raw_tin"
-  },
-  {
     "id": "heavy-machinery-crusher-utilitycraft-tin-ingot",
     "identifier": "heavy-machinery:process/crusher/utilitycraft-tin-ingot",
     "type": "machine",
@@ -4430,6 +4382,54 @@
     "originId": "heavy-machinery",
     "input": "utilitycraft:tin_ingot",
     "output": "utilitycraft:tin_dust"
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-tin-ore",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-tin-ore",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:tin_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_dust",
+      "count": 2
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 2
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:tin_ore",
+    "output": "2× utilitycraft:tin_dust"
   },
   {
     "id": "heavy-machinery-crusher-utilitycraft-tin-plate",
@@ -4622,6 +4622,150 @@
     "originId": "heavy-machinery",
     "input": "utilitycraft:bronze_ingot",
     "output": "utilitycraft:bronze_plate"
+  },
+  {
+    "id": "heavy-machinery-electro-press-utilitycraft-deepslate-tin-chunk",
+    "identifier": "heavy-machinery:process/electro-press/utilitycraft-deepslate-tin-chunk",
+    "type": "machine",
+    "station": "electro_press",
+    "category": "Electro Press recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_tin_chunk",
+        "count": 4
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_tin_chunk",
+        "count": 4
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:deepslate_tin_ore",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:deepslate_tin_ore",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "4× utilitycraft:deepslate_tin_chunk",
+    "output": "utilitycraft:deepslate_tin_ore"
+  },
+  {
+    "id": "heavy-machinery-electro-press-utilitycraft-deepslate-uranium-chunk",
+    "identifier": "heavy-machinery:process/electro-press/utilitycraft-deepslate-uranium-chunk",
+    "type": "machine",
+    "station": "electro_press",
+    "category": "Electro Press recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_uranium_chunk",
+        "count": 4
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_uranium_chunk",
+        "count": 4
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:deepslate_uranium_ore",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:deepslate_uranium_ore",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "4× utilitycraft:deepslate_uranium_chunk",
+    "output": "utilitycraft:deepslate_uranium_ore"
+  },
+  {
+    "id": "heavy-machinery-electro-press-utilitycraft-tin-chunk",
+    "identifier": "heavy-machinery:process/electro-press/utilitycraft-tin-chunk",
+    "type": "machine",
+    "station": "electro_press",
+    "category": "Electro Press recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_chunk",
+        "count": 4
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:tin_chunk",
+        "count": 4
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_ore",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_ore",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "4× utilitycraft:tin_chunk",
+    "output": "utilitycraft:tin_ore"
   },
   {
     "id": "heavy-machinery-electro-press-utilitycraft-tin-ingot",
@@ -4864,6 +5008,102 @@
     "output": "utilitycraft:bronze_block"
   },
   {
+    "id": "heavy-machinery-incinerator-utilitycraft-deepslate-tin-ore",
+    "identifier": "heavy-machinery:process/incinerator/utilitycraft-deepslate-tin-ore",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_tin_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_tin_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:deepslate_tin_ore",
+    "output": "utilitycraft:tin_ingot"
+  },
+  {
+    "id": "heavy-machinery-incinerator-utilitycraft-deepslate-uranium-ore",
+    "identifier": "heavy-machinery:process/incinerator/utilitycraft-deepslate-uranium-ore",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_uranium_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_uranium_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:deepslate_uranium_ore",
+    "output": "utilitycraft:uranium_ingot"
+  },
+  {
     "id": "heavy-machinery-incinerator-utilitycraft-raw-tin",
     "identifier": "heavy-machinery:process/incinerator/utilitycraft-raw-tin",
     "type": "machine",
@@ -5101,6 +5341,54 @@
     },
     "originId": "heavy-machinery",
     "input": "utilitycraft:tin_dust",
+    "output": "utilitycraft:tin_ingot"
+  },
+  {
+    "id": "heavy-machinery-incinerator-utilitycraft-tin-ore",
+    "identifier": "heavy-machinery:process/incinerator/utilitycraft-tin-ore",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:tin_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:tin_ore",
     "output": "utilitycraft:tin_ingot"
   },
   {

@@ -1,0 +1,4081 @@
+{
+  "items": {
+    "utilitycraft:blaze_block": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:charcoal_block": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:compressed_charcoal_block": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:compressed_charcoal_block_2": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:compressed_charcoal_block_3": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:compressed_charcoal_block_4": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:compressed_coal_block": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:compressed_coal_block_2": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:compressed_coal_block_3": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:compressed_coal_block_4": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_beetroot_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_black_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_blaze_powder": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_blue_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_brown_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_cocoa_beans": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_cyan_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_feathers": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_glowstone_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_gray_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_green_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_gunpowder": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_light_blue_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_light_gray_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_lime_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_magenta_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_melon_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_orange_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_pink_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_pitcher_pod": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_pumpkin_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_purple_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_red_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_sugar": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_torchflower_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_wheat_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_white_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bag_of_yellow_dye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bundle_of_blaze_rods": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bundle_of_breeze_rods": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bundle_of_sticks": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:jar_of_cookies": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:jar_of_ghast_tears": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:jar_of_glow_ink": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:jar_of_ink": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:ream_of_paper": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:spool_of_strings": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:vase_of_fermented_spider_eyes": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:vase_of_spider_eye": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:amethyst_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:charcoal_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:coal_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:copper_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:crying_obsidian_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:diamond_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:emerald_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:ender_pearl_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:energized_iron_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:gold_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:iron_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:netherite_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:netherite_scrap_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:obsidian_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:quartz_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:stabilized_obsidian_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:steel_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:copper_plate": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:energized_iron_plate": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:gold_plate": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:iron_plate": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:netherite_plate": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:steel_plate": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:silicon": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:crushed_kelp": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:blaze_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:chicken_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:cow_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:creeper_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:enderman_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:essence_vessel": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:guardian_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:hoglin_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:illager_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:magma_cube_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:mooshroom_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:piglin_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:pig_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:sheep_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:skeleton_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:slime_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:spider_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:wither_skeleton_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:zombie_essence": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:blueprint": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:blueprint_paper": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:advanced_chip": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:basic_chip": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:chip": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:expert_chip": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:ultimate_chip": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:way_chip": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:base_upgrade": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:damage_upgrade": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:energy_upgrade": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 8
+        }
+      }
+    },
+    "utilitycraft:filter_upgrade": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:quantity_upgrade": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:range_upgrade": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 8
+        }
+      }
+    },
+    "utilitycraft:speed_upgrade": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 8
+        }
+      }
+    },
+    "utilitycraft:ultimate_upgrade": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:energized_iron_ingot": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:energized_iron_nugget": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:raw_energized_iron": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:netherite_nugget": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:raw_steel": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:steel_ingot": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:steel_nugget": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:ancient_debris_chunk": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:andesite_pebble": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:basalt_pebble": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:blackstone_pebble": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:calcite_pebble": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:coal_chunk": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:copper_chunk": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:deepslate_coal_chunk": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:deepslate_gold_chunk": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:deepslate_iron_chunk": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:diamond_shard": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:diorite_pebble": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:dirt_handful": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:dripstone_pebble": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:emerald_shard": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:geode": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:gilded_blackstone_pebble": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:gold_chunk": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:granite_pebble": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:gravel_fragments": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:iron_chunk": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:mud_ball": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:nether_gold_chunk": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:nether_quartz_chunk": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:nether_star_fragment": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:red_sand_handful": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:sand_handful": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:shulker_shell_shard": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:stone_pebble": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:totem_shard": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:tuff_pebble": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:wither_skull_shard": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:copper_mesh": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:diamond_mesh": {
+      "documentation": {
+        "description": "Diamond Mesh has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Durable equipment",
+          "maximumStack": 64
+        },
+        "statisticsTitle": "Item statistics",
+        "statistics": [
+          [
+            "Durability",
+            "1,561"
+          ]
+        ],
+        "sections": []
+      }
+    },
+    "utilitycraft:emerald_mesh": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:flint_mesh": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:golden_mesh": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:iron_mesh": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:netherite_mesh": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:string_mesh": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:copper_fishing_net": {
+      "documentation": {
+        "description": "Copper Fishing Net has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Durable equipment",
+          "maximumStack": 64
+        },
+        "statisticsTitle": "Item statistics",
+        "statistics": [
+          [
+            "Durability",
+            "573"
+          ]
+        ],
+        "sections": []
+      }
+    },
+    "utilitycraft:diamond_fishing_net": {
+      "documentation": {
+        "description": "Diamond Fishing Net has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Durable equipment",
+          "maximumStack": 64
+        },
+        "statisticsTitle": "Item statistics",
+        "statistics": [
+          [
+            "Durability",
+            "1,561"
+          ]
+        ],
+        "sections": []
+      }
+    },
+    "utilitycraft:emerald_fishing_net": {
+      "documentation": {
+        "description": "Emerald Fishing Net has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Durable equipment",
+          "maximumStack": 64
+        },
+        "statisticsTitle": "Item statistics",
+        "statistics": [
+          [
+            "Durability",
+            "1,561"
+          ]
+        ],
+        "sections": []
+      }
+    },
+    "utilitycraft:golden_fishing_net": {
+      "documentation": {
+        "description": "Golden Fishing Net has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Durable equipment",
+          "maximumStack": 64
+        },
+        "statisticsTitle": "Item statistics",
+        "statistics": [
+          [
+            "Durability",
+            "32"
+          ]
+        ],
+        "sections": []
+      }
+    },
+    "utilitycraft:iron_fishing_net": {
+      "documentation": {
+        "description": "Iron Fishing Net has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Durable equipment",
+          "maximumStack": 64
+        },
+        "statisticsTitle": "Item statistics",
+        "statistics": [
+          [
+            "Durability",
+            "753"
+          ]
+        ],
+        "sections": []
+      }
+    },
+    "utilitycraft:netherite_fishing_net": {
+      "documentation": {
+        "description": "Netherite Fishing Net has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Durable equipment",
+          "maximumStack": 64
+        },
+        "statisticsTitle": "Item statistics",
+        "statistics": [
+          [
+            "Durability",
+            "2,031"
+          ]
+        ],
+        "sections": []
+      }
+    },
+    "utilitycraft:string_fishing_net": {
+      "documentation": {
+        "description": "String Fishing Net has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Durable equipment",
+          "maximumStack": 64
+        },
+        "statisticsTitle": "Item statistics",
+        "statistics": [
+          [
+            "Durability",
+            "59"
+          ]
+        ],
+        "sections": []
+      }
+    },
+    "utilitycraft:base_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:coal_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:copper_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:dyes_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:glass_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:gunpowder_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:iron_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:leather_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:prismarine_crystals_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:prismarine_shards_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:water_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:wool_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:ghast_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:glowstone_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:gold_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:honey_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:lapis_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:lava_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:quartz_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:redstone_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:resin_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:slime_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:amethyst_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:blaze_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:diamond_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:emerald_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:enderpearl_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:obsidian_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:netherite_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:nether_star_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:shulker_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:totem_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:wither_seeds": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:settings": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:copper_aiot": {
+      "documentation": {
+        "description": "Copper Aiot has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "955"
+          ],
+          [
+            "Attack damage",
+            6
+          ],
+          [
+            "Enchantability",
+            "16 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Sword · AiOT"
+              ],
+              [
+                "Mining speed",
+                "13× — Configured block tags; 26× — Web"
+              ],
+              [
+                "Repair with",
+                "Copper Ingot — 95; Copper Paxel — 955"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 16.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:diamond_aiot": {
+      "documentation": {
+        "description": "Diamond Aiot has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "7,805"
+          ],
+          [
+            "Attack damage",
+            8
+          ],
+          [
+            "Enchantability",
+            "13 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Sword · AiOT"
+              ],
+              [
+                "Mining tier",
+                "Diamond"
+              ],
+              [
+                "Mining speed",
+                "20× — Configured block tags; 30× — Web"
+              ],
+              [
+                "Repair with",
+                "Diamond — 550; Diamond Aiot — 1561"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 13.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:golden_aiot": {
+      "documentation": {
+        "description": "Golden Aiot has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "480"
+          ],
+          [
+            "Attack damage",
+            5
+          ],
+          [
+            "Enchantability",
+            "40 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Sword · AiOT"
+              ],
+              [
+                "Mining speed",
+                "30× — Configured block tags; 30× — Web"
+              ],
+              [
+                "Repair with",
+                "Gold Ingot — 16; Golden Aiot — 48"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 40.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:iron_aiot": {
+      "documentation": {
+        "description": "Iron Aiot has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "1,255"
+          ],
+          [
+            "Attack damage",
+            7
+          ],
+          [
+            "Enchantability",
+            "17 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Sword · AiOT"
+              ],
+              [
+                "Mining tier",
+                "Iron"
+              ],
+              [
+                "Mining speed",
+                "18× — Configured block tags; 30× — Web"
+              ],
+              [
+                "Repair with",
+                "Iron Ingot — 83; Iron Aiot — 251"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 17.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:netherite_aiot": {
+      "documentation": {
+        "description": "Netherite Aiot has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "12,155"
+          ],
+          [
+            "Attack damage",
+            9
+          ],
+          [
+            "Enchantability",
+            "18 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Sword · AiOT"
+              ],
+              [
+                "Mining tier",
+                "Netherite"
+              ],
+              [
+                "Mining speed",
+                "24× — Configured block tags; 30× — Web"
+              ],
+              [
+                "Repair with",
+                "Netherite Ingot — 800; Netherite Aiot — 2431"
+              ],
+              [
+                "Fire resistant",
+                "Yes"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 18.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:steel_aiot": {
+      "documentation": {
+        "description": "Steel Aiot has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "3,750"
+          ],
+          [
+            "Attack damage",
+            7
+          ],
+          [
+            "Enchantability",
+            "14 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Sword · AiOT"
+              ],
+              [
+                "Mining tier",
+                "Iron"
+              ],
+              [
+                "Mining speed",
+                "20× — Configured block tags; 30× — Web"
+              ],
+              [
+                "Repair with",
+                "Steel Ingot — 500; Steel Aiot — 3750"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 14.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:stone_aiot": {
+      "documentation": {
+        "description": "Stone Aiot has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "655"
+          ],
+          [
+            "Attack damage",
+            6
+          ],
+          [
+            "Enchantability",
+            "8 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Sword · AiOT"
+              ],
+              [
+                "Mining tier",
+                "Stone"
+              ],
+              [
+                "Mining speed",
+                "12× — Configured block tags; 24× — Web"
+              ],
+              [
+                "Repair with",
+                "Cobblestone — 44; Stone Paxel — 131"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 8.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:wooden_aiot": {
+      "documentation": {
+        "description": "Wooden Aiot has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "300"
+          ],
+          [
+            "Attack damage",
+            5
+          ],
+          [
+            "Enchantability",
+            "18 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Sword · AiOT"
+              ],
+              [
+                "Mining speed",
+                "10× — Configured block tags; 20× — Web"
+              ],
+              [
+                "Repair with",
+                "Planks — 550; Wooden Aiot — 1561"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 18.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:drill": {
+      "documentation": {
+        "description": "Drill has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "2,031"
+          ],
+          [
+            "Attack damage",
+            5
+          ],
+          [
+            "Enchantability",
+            "15 · Pickaxe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Mining tier",
+                "Iron"
+              ],
+              [
+                "Mining speed",
+                "14× — Configured block tags"
+              ],
+              [
+                "Repair with",
+                "Iron Block — 800; Drill — 2031"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Pickaxe · enchantability 15.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:heavy_drill": {
+      "documentation": {
+        "description": "Heavy Drill has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "4,062"
+          ],
+          [
+            "Attack damage",
+            5
+          ],
+          [
+            "Enchantability",
+            "15 · Pickaxe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Mining tier",
+                "Diamond"
+              ],
+              [
+                "Mining speed",
+                "20× — Configured block tags"
+              ],
+              [
+                "Repair with",
+                "Diamond — 1600; Drill — 4062"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Pickaxe · enchantability 15.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:copper_hammer": {
+      "documentation": {
+        "description": "Copper Hammer has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "190"
+          ],
+          [
+            "Attack damage",
+            4
+          ],
+          [
+            "Enchantability",
+            "15 · Pickaxe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe"
+              ],
+              [
+                "Mining speed",
+                "12× — Configured block tags; 7× — Dirt; 7× — Gravel; 7× — Sand"
+              ],
+              [
+                "Repair with",
+                "Copper Ingot — 47; Copper Hammer — 190"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Pickaxe · enchantability 15.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:diamond_hammer": {
+      "documentation": {
+        "description": "Diamond Hammer has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "1,561"
+          ],
+          [
+            "Attack damage",
+            6
+          ],
+          [
+            "Enchantability",
+            "12 · Pickaxe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe"
+              ],
+              [
+                "Mining tier",
+                "Diamond"
+              ],
+              [
+                "Mining speed",
+                "18× — Configured block tags; 11× — Dirt; 11× — Gravel; 11× — Sand"
+              ],
+              [
+                "Repair with",
+                "Diamond — 550; Diamond Hammer — 1561"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Pickaxe · enchantability 12.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:golden_hammer": {
+      "documentation": {
+        "description": "Golden Hammer has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "102"
+          ],
+          [
+            "Attack damage",
+            3
+          ],
+          [
+            "Enchantability",
+            "16 · Pickaxe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe"
+              ],
+              [
+                "Mining speed",
+                "40× — Configured block tags; 24× — Dirt; 24× — Gravel; 24× — Sand"
+              ],
+              [
+                "Repair with",
+                "Gold Ingot — 26; Golden Hammer — 102"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Pickaxe · enchantability 16.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:iron_hammer": {
+      "documentation": {
+        "description": "Iron Hammer has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "251"
+          ],
+          [
+            "Attack damage",
+            5
+          ],
+          [
+            "Enchantability",
+            "16 · Pickaxe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe"
+              ],
+              [
+                "Mining tier",
+                "Iron"
+              ],
+              [
+                "Mining speed",
+                "14× — Configured block tags; 8× — Dirt; 8× — Gravel; 8× — Sand"
+              ],
+              [
+                "Repair with",
+                "Iron Ingot — 83; Iron Hammer — 251"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Pickaxe · enchantability 16.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:netherite_hammer": {
+      "documentation": {
+        "description": "Netherite Hammer has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "2,031"
+          ],
+          [
+            "Attack damage",
+            7
+          ],
+          [
+            "Enchantability",
+            "17 · Pickaxe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe"
+              ],
+              [
+                "Mining tier",
+                "Netherite"
+              ],
+              [
+                "Mining speed",
+                "20× — Configured block tags; 12× — Dirt; 12× — Gravel; 12× — Sand"
+              ],
+              [
+                "Repair with",
+                "Netherite Ingot — 800; Netherite Hammer — 2031"
+              ],
+              [
+                "Fire resistant",
+                "Yes"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Pickaxe · enchantability 17.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:steel_hammer": {
+      "documentation": {
+        "description": "Steel Hammer has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "750"
+          ],
+          [
+            "Attack damage",
+            5
+          ],
+          [
+            "Enchantability",
+            "13 · Pickaxe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe"
+              ],
+              [
+                "Mining tier",
+                "Iron"
+              ],
+              [
+                "Mining speed",
+                "16× — Configured block tags; 10× — Dirt; 10× — Gravel; 10× — Sand"
+              ],
+              [
+                "Repair with",
+                "Steel Ingot — 188; Steel Hammer — 750"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Pickaxe · enchantability 13.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:stone_hammer": {
+      "documentation": {
+        "description": "Stone Hammer has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "131"
+          ],
+          [
+            "Attack damage",
+            4
+          ],
+          [
+            "Enchantability",
+            "7 · Pickaxe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe"
+              ],
+              [
+                "Mining tier",
+                "Stone"
+              ],
+              [
+                "Mining speed",
+                "10× — Configured block tags; 6× — Dirt; 6× — Gravel; 6× — Sand"
+              ],
+              [
+                "Repair with",
+                "Cobblestone — 33; Stone Hammer — 131"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Pickaxe · enchantability 7.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:wooden_hammer": {
+      "documentation": {
+        "description": "Wooden Hammer has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "59"
+          ],
+          [
+            "Attack damage",
+            3
+          ],
+          [
+            "Enchantability",
+            "17 · Pickaxe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe"
+              ],
+              [
+                "Mining speed",
+                "6× — Configured block tags; 4× — Dirt; 4× — Gravel; 4× — Sand"
+              ],
+              [
+                "Repair with",
+                "Planks — 15; Wooden Hammer — 59"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Pickaxe · enchantability 17.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:copper_paxel": {
+      "documentation": {
+        "description": "Copper Paxel has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "573"
+          ],
+          [
+            "Attack damage",
+            4
+          ],
+          [
+            "Enchantability",
+            "14 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Paxel"
+              ],
+              [
+                "Mining speed",
+                "13× — Configured block tags"
+              ],
+              [
+                "Repair with",
+                "Copper Ingot — 89; Copper Paxel — 191"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 14.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:diamond_paxel": {
+      "documentation": {
+        "description": "Diamond Paxel has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "4,683"
+          ],
+          [
+            "Attack damage",
+            6
+          ],
+          [
+            "Enchantability",
+            "11 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Paxel"
+              ],
+              [
+                "Mining tier",
+                "Diamond"
+              ],
+              [
+                "Mining speed",
+                "16× — Configured block tags"
+              ],
+              [
+                "Repair with",
+                "Diamond — 550; Diamond Paxel — 1561"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 11.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:golden_paxel": {
+      "documentation": {
+        "description": "Golden Paxel has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "288"
+          ],
+          [
+            "Attack damage",
+            3
+          ],
+          [
+            "Enchantability",
+            "30 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Paxel"
+              ],
+              [
+                "Mining speed",
+                "30× — Configured block tags"
+              ],
+              [
+                "Repair with",
+                "Gold Ingot — 16; Golden Paxel — 48"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 30.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:iron_paxel": {
+      "documentation": {
+        "description": "Iron Paxel has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "753"
+          ],
+          [
+            "Attack damage",
+            5
+          ],
+          [
+            "Enchantability",
+            "15 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Paxel"
+              ],
+              [
+                "Mining tier",
+                "Iron"
+              ],
+              [
+                "Mining speed",
+                "14× — Configured block tags"
+              ],
+              [
+                "Repair with",
+                "Iron Ingot — 83; Iron Paxel — 251"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 15.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:netherite_paxel": {
+      "documentation": {
+        "description": "Netherite Paxel has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "6,093"
+          ],
+          [
+            "Attack damage",
+            7
+          ],
+          [
+            "Enchantability",
+            "16 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Paxel"
+              ],
+              [
+                "Mining tier",
+                "Netherite"
+              ],
+              [
+                "Mining speed",
+                "24× — Configured block tags"
+              ],
+              [
+                "Repair with",
+                "Netherite Ingot — 800; Netherite Paxel — 2031"
+              ],
+              [
+                "Fire resistant",
+                "Yes"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 16.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:steel_paxel": {
+      "documentation": {
+        "description": "Steel Paxel has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "2,250"
+          ],
+          [
+            "Attack damage",
+            5
+          ],
+          [
+            "Enchantability",
+            "12 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Paxel"
+              ],
+              [
+                "Mining tier",
+                "Iron"
+              ],
+              [
+                "Mining speed",
+                "15× — Configured block tags"
+              ],
+              [
+                "Repair with",
+                "Iron Ingot — 188; Iron Paxel — 750"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 12.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:stone_paxel": {
+      "documentation": {
+        "description": "Stone Paxel has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "249"
+          ],
+          [
+            "Attack damage",
+            4
+          ],
+          [
+            "Enchantability",
+            "6 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Paxel"
+              ],
+              [
+                "Mining tier",
+                "Stone"
+              ],
+              [
+                "Mining speed",
+                "12× — Configured block tags"
+              ],
+              [
+                "Repair with",
+                "Cobblestone — 83; Stone Paxel — 131"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 6.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:wooden_paxel": {
+      "documentation": {
+        "description": "Wooden Paxel has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "180"
+          ],
+          [
+            "Attack damage",
+            3
+          ],
+          [
+            "Enchantability",
+            "16 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe · Axe · Paxel"
+              ],
+              [
+                "Mining speed",
+                "10× — Configured block tags"
+              ],
+              [
+                "Repair with",
+                "Planks — 20; Wooden Paxel — 60"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 16.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:bionic_arm": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:flint_knife": {
+      "documentation": {
+        "description": "Flint Knife has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "128"
+          ],
+          [
+            "Enchantability",
+            "10 · Shears preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Mining speed",
+                "10× — Oak Leaves; 10× — Birch Leaves; 10× — Acacia Leaves; 10× — Azalea Leaves; 10× — Azalea Leaves Flowered; 10× — Cherry Leaves; 10× — Jungle Leaves; 10× — Spruce Leaves; 10× — Dark Oak Leaves; 10× — Mangrove Leaves; 10× — Pale Oak Leaves"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Shears · enchantability 10.",
+            "entries": [
+              "All compatible enchantments in the configured Bedrock slot preset."
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:lucky_fishing_rod_item": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:lucky_pickaxe": {
+      "documentation": {
+        "description": "Lucky Pickaxe has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "1,561"
+          ],
+          [
+            "Attack damage",
+            6
+          ],
+          [
+            "Enchantability",
+            "15 · Pickaxe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Mining tier",
+                "Diamond"
+              ],
+              [
+                "Mining speed",
+                "16× — Configured block tags"
+              ],
+              [
+                "Repair with",
+                "Emerald — 550; Lucky Pickaxe — 1561"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Pickaxe · enchantability 15.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:lucky_pickaxe_item": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:lucky_sword": {
+      "documentation": {
+        "description": "Lucky Sword has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "1,125"
+          ],
+          [
+            "Attack damage",
+            8
+          ],
+          [
+            "Enchantability",
+            "14 · Sword preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Mining speed",
+                "16× — Configured block tags; 60× — Bamboo"
+              ],
+              [
+                "Repair with",
+                "Emerald — 25% of maximum durability; Lucky Sword — context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Sword · enchantability 14.",
+            "entries": [
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Fire Aspect",
+              "Looting",
+              "Knockback",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:lucky_sword_item": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:smelting_pickaxe": {
+      "documentation": {
+        "description": "Smelting Pickaxe has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "3,031"
+          ],
+          [
+            "Attack damage",
+            7
+          ],
+          [
+            "Enchantability",
+            "15 · Pickaxe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Mining tier",
+                "Netherite"
+              ],
+              [
+                "Mining speed",
+                "16× — Configured block tags"
+              ],
+              [
+                "Repair with",
+                "Iron Ingot — 301; Smelting Pickaxe — 3031"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Pickaxe · enchantability 15.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:steel_axe": {
+      "documentation": {
+        "description": "Steel Axe has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "750"
+          ],
+          [
+            "Attack damage",
+            5
+          ],
+          [
+            "Enchantability",
+            "10 · Axe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Axe"
+              ],
+              [
+                "Mining tier",
+                "Iron"
+              ],
+              [
+                "Mining speed",
+                "7× — Configured block tags"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Axe · enchantability 10.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:steel_hoe": {
+      "documentation": {
+        "description": "Steel Hoe has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "750"
+          ],
+          [
+            "Attack damage",
+            4
+          ],
+          [
+            "Enchantability",
+            "10 · Hoe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Hoe"
+              ],
+              [
+                "Mining tier",
+                "Iron"
+              ],
+              [
+                "Mining speed",
+                "15× — Configured block tags"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Hoe · enchantability 10.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:steel_pickaxe": {
+      "documentation": {
+        "description": "Steel Pickaxe has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "750"
+          ],
+          [
+            "Attack damage",
+            4
+          ],
+          [
+            "Enchantability",
+            "10 · Pickaxe preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Pickaxe"
+              ],
+              [
+                "Mining tier",
+                "Iron"
+              ],
+              [
+                "Mining speed",
+                "7× — Configured block tags"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Pickaxe · enchantability 10.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:steel_shovel": {
+      "documentation": {
+        "description": "Steel Shovel has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "750"
+          ],
+          [
+            "Attack damage",
+            3
+          ],
+          [
+            "Enchantability",
+            "10 · Shovel preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Shovel"
+              ],
+              [
+                "Mining tier",
+                "Iron"
+              ],
+              [
+                "Mining speed",
+                "7× — Configured block tags"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Shovel · enchantability 10.",
+            "entries": [
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:steel_sword": {
+      "documentation": {
+        "description": "Steel Sword has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Tool",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Tool statistics",
+        "statistics": [
+          [
+            "Durability",
+            "750"
+          ],
+          [
+            "Attack damage",
+            6
+          ],
+          [
+            "Enchantability",
+            "10 · Sword preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "tool-properties",
+            "label": "Tool Properties",
+            "title": "Tool properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Tool roles",
+                "Sword"
+              ],
+              [
+                "Mining tier",
+                "Iron"
+              ],
+              [
+                "Mining speed",
+                "15× — Bamboo; 15× — Web"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Sword · enchantability 10.",
+            "entries": [
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Fire Aspect",
+              "Looting",
+              "Knockback",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:accelerator_clock": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:antidote_potion": {
+      "documentation": {
+        "description": "Antidote Potion has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Food",
+          "maximumStack": 16
+        },
+        "statisticsTitle": "Item statistics",
+        "statistics": [],
+        "sections": [
+          {
+            "id": "properties",
+            "label": "Properties",
+            "title": "Item properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Can always eat",
+                "Yes"
+              ],
+              [
+                "Used item becomes",
+                "Glass Bottle"
+              ],
+              [
+                "Use duration",
+                "1.5 seconds"
+              ],
+              [
+                "Use animation",
+                "Drink"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:apple_sapling": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:copy_paste_tool": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:diamond_accelerator_clock": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:fiber": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:honey_ball": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:lava_ball": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:mortar": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:nether_star_accelerator_clock": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:raw_leather": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:smeltflare": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:bomb": {
+      "documentation": {
+        "basic": {
+          "itemType": "Ranged equipment",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:dynamite": {
+      "documentation": {
+        "basic": {
+          "itemType": "Ranged equipment",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:grenade": {
+      "documentation": {
+        "basic": {
+          "itemType": "Ranged equipment",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:water_ball": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "utilitycraft:wrench": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "minecraft:lingering_potion": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "minecraft:potion": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    },
+    "minecraft:splash_potion": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 16
+        }
+      }
+    }
+  }
+}

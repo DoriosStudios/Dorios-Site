@@ -2712,6 +2712,101 @@
 	font-size: 0.7rem;
 }
 .autosieveRecipeNote::before { content: 'ⓘ'; margin-right: 0.35rem; color: var(--wiki-project-accent); }
+.abyssalLootGrid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.7rem;
+}
+.abyssalLootCard:last-child:nth-child(odd) { grid-column: span 2; }
+.abyssalLootCard {
+	min-width: 0;
+	padding: 0.75rem 0.9rem;
+	border: 1px solid color-mix(in srgb, var(--wiki-project-accent) 43%, var(--ds-border));
+	border-radius: 15px;
+	background:
+		linear-gradient(135deg, color-mix(in srgb, var(--wiki-project-accent) 11%, transparent), transparent 52%),
+		color-mix(in srgb, var(--ds-surface-raised) 65%, transparent);
+	box-shadow: inset 3px 0 var(--wiki-project-accent);
+}
+.abyssalLootCard[data-expanded] { border-color: color-mix(in srgb, var(--wiki-project-accent) 70%, var(--ds-border)); }
+.abyssalLootHeader {
+	display: grid;
+	grid-template-columns: 64px minmax(0, 1fr);
+	align-items: center;
+	gap: 0.8rem;
+}
+.abyssalCategoryMeta {
+	display: grid;
+	gap: 0.16rem;
+	margin-top: 0.35rem;
+	color: var(--ds-muted);
+	font-family: var(--wiki-ui-font);
+	font-size: 0.62rem;
+	line-height: 1.35;
+}
+.abyssalCategoryMeta span:first-child { color: color-mix(in srgb, var(--wiki-project-accent) 66%, var(--ds-text)); font-weight: 800; }
+.abyssalCategoryMeta b { color: var(--ds-text); }
+.abyssalDropList { margin-top: 0.75rem; padding-top: 0.65rem; border-top: 1px solid var(--ds-border); }
+.abyssalDropHeader,
+.abyssalDropRow {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 46px 52px 58px minmax(78px, 0.9fr);
+	align-items: center;
+	gap: 0.45rem;
+}
+.abyssalDropHeader {
+	padding: 0.45rem 0.35rem 0.35rem;
+	border-top: 1px solid var(--ds-border);
+	color: var(--ds-muted);
+	font-family: var(--wiki-ui-font);
+	font-size: 0.53rem;
+	font-weight: 800;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+}
+.abyssalDropHeader span:not(:first-child) { text-align: right; }
+.abyssalDropRows { display: grid; gap: 0.28rem; }
+.abyssalDropRow {
+	min-height: 47px;
+	padding: 0.25rem 0.35rem;
+	border-bottom: 1px solid color-mix(in srgb, var(--wiki-project-accent) 10%, var(--ds-border));
+	color: var(--ds-text);
+	font-family: var(--wiki-ui-font);
+	font-size: 0.69rem;
+	font-weight: 700;
+}
+.abyssalDropRow > span { color: color-mix(in srgb, var(--wiki-project-accent) 62%, var(--ds-text)); text-align: right; }
+.abyssalDropRow > small { color: var(--ds-muted); font-size: 0.58rem; line-height: 1.25; }
+.abyssalDropName { display: flex; align-items: center; gap: 0.5rem; min-width: 0; }
+.abyssalDropName strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dynamicOperationList {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.55rem;
+	margin: 1rem 0 0;
+}
+.dynamicOperationList > div {
+	padding: 0.7rem 0.8rem;
+	border: 1px solid color-mix(in srgb, var(--wiki-project-accent) 22%, var(--ds-border));
+	border-radius: 12px;
+	background: color-mix(in srgb, var(--ds-surface-raised) 58%, transparent);
+}
+.dynamicOperationList dt {
+	color: color-mix(in srgb, var(--wiki-project-accent) 72%, var(--ds-text));
+	font-family: var(--wiki-ui-font);
+	font-size: 0.59rem;
+	font-weight: 900;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+.dynamicOperationList dd {
+	margin: 0.3rem 0 0;
+	color: var(--ds-text);
+	font-family: var(--wiki-ui-font);
+	font-size: 0.75rem;
+	font-weight: 650;
+	line-height: 1.4;
+}
 .oreMiningReference {
 	margin-top: 1rem;
 	padding: clamp(1rem, 1.8vw, 1.45rem);
@@ -3523,10 +3618,13 @@
 
 @media (max-width: 560px) {
 	.autosieveSiftCard { padding: 0.65rem; border-radius: 13px; }
+	.abyssalLootCard { padding: 0.65rem; border-radius: 13px; }
 	.autosieveSiftHeader {
 		grid-template-columns: 54px minmax(0, 1fr);
 		gap: 0.55rem;
 	}
+	.abyssalLootHeader { grid-template-columns: 54px minmax(0, 1fr); gap: 0.55rem; }
+	.abyssalLootGrid { grid-template-columns: 1fr; }
 	.autosieveInputVisual { width: 54px; height: 54px; }
 	.autosieveInputVisual img { width: 52px; height: 52px; }
 	.autosieveSiftHeader h4 { font-size: 1.25rem; }
@@ -3540,6 +3638,13 @@
 	.autosieveDropRow .sieveMeshBadge { width: 30px; height: 30px; justify-content: center; padding: 0; }
 	.autosieveDropRow .sieveMeshBadge > span:last-child { display: none; }
 	.autosieveDropRow .sieveMeshBadge img { width: 16px; height: 16px; }
+	.abyssalDropHeader,
+	.abyssalDropRow { grid-template-columns: minmax(0, 1fr) 43px 44px 50px; gap: 0.28rem; }
+	.abyssalDropHeader span:last-child,
+	.abyssalDropRow > small { display: none; }
+	.abyssalDropHeader { padding-inline: 0.25rem; font-size: 0.47rem; }
+	.abyssalDropRow { padding-inline: 0.25rem; font-size: 0.64rem; }
+	.dynamicOperationList { grid-template-columns: 1fr; gap: 0.4rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

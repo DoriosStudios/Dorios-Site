@@ -1116,7 +1116,7 @@ function abyssalFisherRecipes(root) {
     if (!output) return [];
     // `chance` in this registry is a category weight, not final probability.
     delete output.chance;
-    return [machineRecipe({
+    const recipe = machineRecipe({
       originId: 'ascendant-technology',
       station: 'abyssal_fisher',
       category: 'Abyssal Fisher loot',
@@ -1131,7 +1131,22 @@ function abyssalFisherRecipes(root) {
         {id: 'weight', label: 'Relative weight', value: drop.chance},
       ],
       note: 'Relative weight inside its category and tier; it is not a final drop percentage.',
-    })];
+    });
+
+    // Keep the original registry values alongside the normalized recipe. The
+    // Fisher rolls a category first, then a weighted entry inside that
+    // category, so exposing this data as a normal recipe chance would be
+    // misleading. The wiki uses these fields for its dedicated loot-table UI.
+    return [{
+      ...recipe,
+      lootCategory: drop.category,
+      minimumTier: numberOr(drop.tier, 0),
+      relativeWeight: numberOr(drop.chance, 0),
+      categoryBaseWeight: numberOr(config?.fishingCategories?.baseWeights?.[drop.category], 0),
+      ...(drop.durabilityDamageRange ? {durabilityDamageRange: drop.durabilityDamageRange} : {}),
+      ...(drop.randomEnchant ? {randomEnchant: drop.randomEnchant} : {}),
+      ...(drop.item === 'minecraft:book' && config?.bookEnchant ? {bookEnchant: config.bookEnchant} : {}),
+    }];
   });
 }
 

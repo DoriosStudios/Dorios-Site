@@ -603,8 +603,8 @@ def build_manifest(
     project_root = project_root.resolve()
     behavior_pack = project_root / "BP"
     resource_pack = project_root / "RP"
-    if not behavior_pack.is_dir() or not resource_pack.is_dir():
-        raise ValueError(f"{project_root} must contain BP and RP directories")
+    if not behavior_pack.is_dir():
+        raise ValueError(f"{project_root} must contain a BP directory")
     config = config or {}
     dependency_resource_packs = [(project.resolve() / "RP") for project in (dependency_projects or [])]
     lang = _lang_index(resource_pack)

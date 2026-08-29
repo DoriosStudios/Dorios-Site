@@ -60,7 +60,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "1–3× minecraft:cod"
+    "output": "1–3× minecraft:cod",
+    "lootCategory": "fish",
+    "minimumTier": 0,
+    "relativeWeight": 0.45,
+    "categoryBaseWeight": 0.85
   },
   {
     "id": "ascendant-technology-abyssal-fisher-fish-0-minecraft-salmon-1",
@@ -123,7 +127,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "1–2× minecraft:salmon"
+    "output": "1–2× minecraft:salmon",
+    "lootCategory": "fish",
+    "minimumTier": 0,
+    "relativeWeight": 0.25,
+    "categoryBaseWeight": 0.85
   },
   {
     "id": "ascendant-technology-abyssal-fisher-fish-1-minecraft-pufferfish-3",
@@ -182,7 +190,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "minecraft:pufferfish"
+    "output": "minecraft:pufferfish",
+    "lootCategory": "fish",
+    "minimumTier": 1,
+    "relativeWeight": 0.08,
+    "categoryBaseWeight": 0.85
   },
   {
     "id": "ascendant-technology-abyssal-fisher-fish-1-minecraft-tropical-fish-2",
@@ -241,7 +253,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "minecraft:tropical_fish"
+    "output": "minecraft:tropical_fish",
+    "lootCategory": "fish",
+    "minimumTier": 1,
+    "relativeWeight": 0.1,
+    "categoryBaseWeight": 0.85
   },
   {
     "id": "ascendant-technology-abyssal-fisher-junk-0-minecraft-bone-5",
@@ -304,7 +320,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "1–3× minecraft:bone"
+    "output": "1–3× minecraft:bone",
+    "lootCategory": "junk",
+    "minimumTier": 0,
+    "relativeWeight": 0.1,
+    "categoryBaseWeight": 0.1
   },
   {
     "id": "ascendant-technology-abyssal-fisher-junk-0-minecraft-stick-22",
@@ -367,7 +387,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "0–2× minecraft:stick"
+    "output": "0–2× minecraft:stick",
+    "lootCategory": "junk",
+    "minimumTier": 0,
+    "relativeWeight": 0.1,
+    "categoryBaseWeight": 0.1
   },
   {
     "id": "ascendant-technology-abyssal-fisher-junk-0-minecraft-string-4",
@@ -430,7 +454,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "1–4× minecraft:string"
+    "output": "1–4× minecraft:string",
+    "lootCategory": "junk",
+    "minimumTier": 0,
+    "relativeWeight": 0.12,
+    "categoryBaseWeight": 0.1
   },
   {
     "id": "ascendant-technology-abyssal-fisher-junk-0-minecraft-waterlily-6",
@@ -489,7 +517,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "minecraft:waterlily"
+    "output": "minecraft:waterlily",
+    "lootCategory": "junk",
+    "minimumTier": 0,
+    "relativeWeight": 0.08,
+    "categoryBaseWeight": 0.1
   },
   {
     "id": "ascendant-technology-abyssal-fisher-junk-0-utilitycraft-sand-handful-26",
@@ -552,7 +584,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "1–6× utilitycraft:sand_handful"
+    "output": "1–6× utilitycraft:sand_handful",
+    "lootCategory": "junk",
+    "minimumTier": 0,
+    "relativeWeight": 0.02,
+    "categoryBaseWeight": 0.1
   },
   {
     "id": "ascendant-technology-abyssal-fisher-junk-1-minecraft-ink-sac-7",
@@ -615,7 +651,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "1–3× minecraft:ink_sac"
+    "output": "1–3× minecraft:ink_sac",
+    "lootCategory": "junk",
+    "minimumTier": 1,
+    "relativeWeight": 0.06,
+    "categoryBaseWeight": 0.1
   },
   {
     "id": "ascendant-technology-abyssal-fisher-junk-2-minecraft-glow-ink-sac-8",
@@ -678,7 +718,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "1–2× minecraft:glow_ink_sac"
+    "output": "1–2× minecraft:glow_ink_sac",
+    "lootCategory": "junk",
+    "minimumTier": 2,
+    "relativeWeight": 0.05,
+    "categoryBaseWeight": 0.1
   },
   {
     "id": "ascendant-technology-abyssal-fisher-junk-2-minecraft-leather-boots-23",
@@ -737,7 +781,22 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "minecraft:leather_boots"
+    "output": "minecraft:leather_boots",
+    "lootCategory": "junk",
+    "minimumTier": 2,
+    "relativeWeight": 0.0008,
+    "categoryBaseWeight": 0.1,
+    "durabilityDamageRange": [
+      0.6,
+      0.95
+    ],
+    "randomEnchant": {
+      "chance": 0.12,
+      "count": [
+        1,
+        2
+      ]
+    }
   },
   {
     "id": "ascendant-technology-abyssal-fisher-junk-2-minecraft-potion-16",
@@ -796,7 +855,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "minecraft:potion"
+    "output": "minecraft:potion",
+    "lootCategory": "junk",
+    "minimumTier": 2,
+    "relativeWeight": 0.005,
+    "categoryBaseWeight": 0.1
   },
   {
     "id": "ascendant-technology-abyssal-fisher-treasure-2-minecraft-fishing-rod-18",
@@ -855,7 +918,22 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "minecraft:fishing_rod"
+    "output": "minecraft:fishing_rod",
+    "lootCategory": "treasure",
+    "minimumTier": 2,
+    "relativeWeight": 0.004,
+    "categoryBaseWeight": 0.05,
+    "durabilityDamageRange": [
+      0.6,
+      0.95
+    ],
+    "randomEnchant": {
+      "chance": 0.12,
+      "count": [
+        1,
+        2
+      ]
+    }
   },
   {
     "id": "ascendant-technology-abyssal-fisher-treasure-2-minecraft-prismarine-crystals-10",
@@ -918,7 +996,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "1–3× minecraft:prismarine_crystals"
+    "output": "1–3× minecraft:prismarine_crystals",
+    "lootCategory": "treasure",
+    "minimumTier": 2,
+    "relativeWeight": 0.03,
+    "categoryBaseWeight": 0.05
   },
   {
     "id": "ascendant-technology-abyssal-fisher-treasure-2-minecraft-prismarine-shard-9",
@@ -981,7 +1063,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "1–3× minecraft:prismarine_shard"
+    "output": "1–3× minecraft:prismarine_shard",
+    "lootCategory": "treasure",
+    "minimumTier": 2,
+    "relativeWeight": 0.04,
+    "categoryBaseWeight": 0.05
   },
   {
     "id": "ascendant-technology-abyssal-fisher-treasure-3-minecraft-bow-19",
@@ -1040,7 +1126,22 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "minecraft:bow"
+    "output": "minecraft:bow",
+    "lootCategory": "treasure",
+    "minimumTier": 3,
+    "relativeWeight": 0.0008,
+    "categoryBaseWeight": 0.05,
+    "durabilityDamageRange": [
+      0.6,
+      0.95
+    ],
+    "randomEnchant": {
+      "chance": 0.12,
+      "count": [
+        1,
+        2
+      ]
+    }
   },
   {
     "id": "ascendant-technology-abyssal-fisher-treasure-3-minecraft-nautilus-shell-11",
@@ -1099,7 +1200,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "minecraft:nautilus_shell"
+    "output": "minecraft:nautilus_shell",
+    "lootCategory": "treasure",
+    "minimumTier": 3,
+    "relativeWeight": 0.025,
+    "categoryBaseWeight": 0.05
   },
   {
     "id": "ascendant-technology-abyssal-fisher-treasure-4-minecraft-book-17",
@@ -1158,7 +1263,24 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "minecraft:book"
+    "output": "minecraft:book",
+    "lootCategory": "treasure",
+    "minimumTier": 4,
+    "relativeWeight": 0.005,
+    "categoryBaseWeight": 0.05,
+    "bookEnchant": {
+      "baseChance": 0.2,
+      "chancePerTier": 0.025,
+      "chancePerLuck": 0.018,
+      "maxChance": 0.92,
+      "guaranteedLuckThreshold": 24,
+      "guaranteedTierThreshold": 7,
+      "minCount": 1,
+      "maxCount": 3,
+      "countPerLuck": 0.08,
+      "minQuality": 0.18,
+      "qualityPerLuck": 0.03
+    }
   },
   {
     "id": "ascendant-technology-abyssal-fisher-treasure-4-minecraft-experience-bottle-12",
@@ -1217,7 +1339,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "minecraft:experience_bottle"
+    "output": "minecraft:experience_bottle",
+    "lootCategory": "treasure",
+    "minimumTier": 4,
+    "relativeWeight": 0.02,
+    "categoryBaseWeight": 0.05
   },
   {
     "id": "ascendant-technology-abyssal-fisher-treasure-4-minecraft-name-tag-13",
@@ -1276,7 +1402,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "minecraft:name_tag"
+    "output": "minecraft:name_tag",
+    "lootCategory": "treasure",
+    "minimumTier": 4,
+    "relativeWeight": 0.02,
+    "categoryBaseWeight": 0.05
   },
   {
     "id": "ascendant-technology-abyssal-fisher-treasure-4-minecraft-saddle-14",
@@ -1335,7 +1465,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "minecraft:saddle"
+    "output": "minecraft:saddle",
+    "lootCategory": "treasure",
+    "minimumTier": 4,
+    "relativeWeight": 0.02,
+    "categoryBaseWeight": 0.05
   },
   {
     "id": "ascendant-technology-abyssal-fisher-treasure-5-minecraft-emerald-15",
@@ -1398,7 +1532,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "1–2× minecraft:emerald"
+    "output": "1–2× minecraft:emerald",
+    "lootCategory": "treasure",
+    "minimumTier": 5,
+    "relativeWeight": 0.015,
+    "categoryBaseWeight": 0.05
   },
   {
     "id": "ascendant-technology-abyssal-fisher-treasure-5-utilitycraft-empty-liquid-capsule-24",
@@ -1457,7 +1595,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "utilitycraft:empty_liquid_capsule"
+    "output": "utilitycraft:empty_liquid_capsule",
+    "lootCategory": "treasure",
+    "minimumTier": 5,
+    "relativeWeight": 0.004,
+    "categoryBaseWeight": 0.05
   },
   {
     "id": "ascendant-technology-abyssal-fisher-treasure-6-minecraft-heart-of-the-sea-21",
@@ -1516,7 +1658,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "minecraft:heart_of_the_sea"
+    "output": "minecraft:heart_of_the_sea",
+    "lootCategory": "treasure",
+    "minimumTier": 6,
+    "relativeWeight": 0.001,
+    "categoryBaseWeight": 0.05
   },
   {
     "id": "ascendant-technology-abyssal-fisher-treasure-6-minecraft-trident-20",
@@ -1575,7 +1721,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "minecraft:trident"
+    "output": "minecraft:trident",
+    "lootCategory": "treasure",
+    "minimumTier": 6,
+    "relativeWeight": 0.0005,
+    "categoryBaseWeight": 0.05
   },
   {
     "id": "ascendant-technology-abyssal-fisher-treasure-7-utilitycraft-totem-shard-25",
@@ -1634,7 +1784,11 @@
     },
     "originId": "ascendant-technology",
     "input": "",
-    "output": "utilitycraft:totem_shard"
+    "output": "utilitycraft:totem_shard",
+    "lootCategory": "treasure",
+    "minimumTier": 7,
+    "relativeWeight": 0.0002,
+    "categoryBaseWeight": 0.05
   },
   {
     "id": "ascendant-technology-electro-press-utilitycraft-deepslate-tungsten-chunk-arc-press-forge",
@@ -1933,6 +2087,156 @@
     "originId": "heavy-machinery",
     "input": "utilitycraft:bronze_ingot",
     "output": "utilitycraft:bronze_plate",
+    "machineAddon": "ascendant-technology",
+    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
+  },
+  {
+    "id": "heavy-machinery-electro-press-utilitycraft-deepslate-tin-chunk-arc-press-forge",
+    "identifier": "heavy-machinery:process/electro-press/utilitycraft-deepslate-tin-chunk-arc-press-forge",
+    "type": "machine",
+    "station": "arc_press_forge",
+    "category": "Arc Press Forge recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_tin_chunk",
+        "count": 4
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_tin_chunk",
+        "count": 4
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:deepslate_tin_ore",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:deepslate_tin_ore",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "4× utilitycraft:deepslate_tin_chunk",
+    "output": "utilitycraft:deepslate_tin_ore",
+    "machineAddon": "ascendant-technology",
+    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
+  },
+  {
+    "id": "heavy-machinery-electro-press-utilitycraft-deepslate-uranium-chunk-arc-press-forge",
+    "identifier": "heavy-machinery:process/electro-press/utilitycraft-deepslate-uranium-chunk-arc-press-forge",
+    "type": "machine",
+    "station": "arc_press_forge",
+    "category": "Arc Press Forge recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_uranium_chunk",
+        "count": 4
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_uranium_chunk",
+        "count": 4
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:deepslate_uranium_ore",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:deepslate_uranium_ore",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "4× utilitycraft:deepslate_uranium_chunk",
+    "output": "utilitycraft:deepslate_uranium_ore",
+    "machineAddon": "ascendant-technology",
+    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
+  },
+  {
+    "id": "heavy-machinery-electro-press-utilitycraft-tin-chunk-arc-press-forge",
+    "identifier": "heavy-machinery:process/electro-press/utilitycraft-tin-chunk-arc-press-forge",
+    "type": "machine",
+    "station": "arc_press_forge",
+    "category": "Arc Press Forge recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_chunk",
+        "count": 4
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:tin_chunk",
+        "count": 4
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_ore",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_ore",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "4× utilitycraft:tin_chunk",
+    "output": "utilitycraft:tin_ore",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
@@ -68753,8 +69057,8 @@
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
   {
-    "id": "heavy-machinery-crusher-utilitycraft-deepslate-tin-chunk-impact-crusher",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-tin-chunk-impact-crusher",
+    "id": "heavy-machinery-crusher-utilitycraft-deepslate-tin-ore-impact-crusher",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-tin-ore-impact-crusher",
     "type": "machine",
     "station": "impact_crusher",
     "category": "Impact Crusher recipe",
@@ -68762,7 +69066,7 @@
     "slotCount": 1,
     "slots": [
       {
-        "id": "utilitycraft:deepslate_tin_chunk",
+        "id": "utilitycraft:deepslate_tin_ore",
         "count": 1
       },
       null,
@@ -68776,18 +69080,18 @@
     ],
     "inputs": [
       {
-        "id": "utilitycraft:deepslate_tin_chunk",
+        "id": "utilitycraft:deepslate_tin_ore",
         "count": 1
       }
     ],
     "result": {
-      "id": "utilitycraft:raw_tin",
-      "count": 1
+      "id": "utilitycraft:tin_dust",
+      "count": 2
     },
     "results": [
       {
-        "id": "utilitycraft:raw_tin",
-        "count": 1
+        "id": "utilitycraft:tin_dust",
+        "count": 2
       }
     ],
     "origin": {
@@ -68797,14 +69101,14 @@
       "category": "Heavy Machinery"
     },
     "originId": "heavy-machinery",
-    "input": "utilitycraft:deepslate_tin_chunk",
-    "output": "utilitycraft:raw_tin",
+    "input": "utilitycraft:deepslate_tin_ore",
+    "output": "2× utilitycraft:tin_dust",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
   {
-    "id": "heavy-machinery-crusher-utilitycraft-deepslate-uranium-chunk-impact-crusher",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-uranium-chunk-impact-crusher",
+    "id": "heavy-machinery-crusher-utilitycraft-deepslate-uranium-ore-impact-crusher",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-uranium-ore-impact-crusher",
     "type": "machine",
     "station": "impact_crusher",
     "category": "Impact Crusher recipe",
@@ -68812,7 +69116,7 @@
     "slotCount": 1,
     "slots": [
       {
-        "id": "utilitycraft:deepslate_uranium_chunk",
+        "id": "utilitycraft:deepslate_uranium_ore",
         "count": 1
       },
       null,
@@ -68826,18 +69130,18 @@
     ],
     "inputs": [
       {
-        "id": "utilitycraft:deepslate_uranium_chunk",
+        "id": "utilitycraft:deepslate_uranium_ore",
         "count": 1
       }
     ],
     "result": {
-      "id": "utilitycraft:raw_uranium",
-      "count": 1
+      "id": "utilitycraft:uranium_dust",
+      "count": 2
     },
     "results": [
       {
-        "id": "utilitycraft:raw_uranium",
-        "count": 1
+        "id": "utilitycraft:uranium_dust",
+        "count": 2
       }
     ],
     "origin": {
@@ -68847,8 +69151,8 @@
       "category": "Heavy Machinery"
     },
     "originId": "heavy-machinery",
-    "input": "utilitycraft:deepslate_uranium_chunk",
-    "output": "utilitycraft:raw_uranium",
+    "input": "utilitycraft:deepslate_uranium_ore",
+    "output": "2× utilitycraft:uranium_dust",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
@@ -69103,56 +69407,6 @@
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
   {
-    "id": "heavy-machinery-crusher-utilitycraft-tin-chunk-impact-crusher",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-tin-chunk-impact-crusher",
-    "type": "machine",
-    "station": "impact_crusher",
-    "category": "Impact Crusher recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:tin_chunk",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:tin_chunk",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:raw_tin",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:raw_tin",
-        "count": 1
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:tin_chunk",
-    "output": "utilitycraft:raw_tin",
-    "machineAddon": "ascendant-technology",
-    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
-  },
-  {
     "id": "heavy-machinery-crusher-utilitycraft-tin-ingot-impact-crusher",
     "identifier": "heavy-machinery:process/crusher/utilitycraft-tin-ingot-impact-crusher",
     "type": "machine",
@@ -69199,6 +69453,56 @@
     "originId": "heavy-machinery",
     "input": "utilitycraft:tin_ingot",
     "output": "utilitycraft:tin_dust",
+    "machineAddon": "ascendant-technology",
+    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-tin-ore-impact-crusher",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-tin-ore-impact-crusher",
+    "type": "machine",
+    "station": "impact_crusher",
+    "category": "Impact Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:tin_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_dust",
+      "count": 2
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 2
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:tin_ore",
+    "output": "2× utilitycraft:tin_dust",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
@@ -78447,6 +78751,106 @@
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
   {
+    "id": "heavy-machinery-incinerator-utilitycraft-deepslate-tin-ore-industrial-burner",
+    "identifier": "heavy-machinery:process/incinerator/utilitycraft-deepslate-tin-ore-industrial-burner",
+    "type": "machine",
+    "station": "industrial_burner",
+    "category": "Industrial Burner recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_tin_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_tin_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:deepslate_tin_ore",
+    "output": "utilitycraft:tin_ingot",
+    "machineAddon": "ascendant-technology",
+    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
+  },
+  {
+    "id": "heavy-machinery-incinerator-utilitycraft-deepslate-uranium-ore-industrial-burner",
+    "identifier": "heavy-machinery:process/incinerator/utilitycraft-deepslate-uranium-ore-industrial-burner",
+    "type": "machine",
+    "station": "industrial_burner",
+    "category": "Industrial Burner recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_uranium_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_uranium_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:deepslate_uranium_ore",
+    "output": "utilitycraft:uranium_ingot",
+    "machineAddon": "ascendant-technology",
+    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
+  },
+  {
     "id": "heavy-machinery-incinerator-utilitycraft-raw-tin-block-industrial-burner",
     "identifier": "heavy-machinery:process/incinerator/utilitycraft-raw-tin-block-industrial-burner",
     "type": "machine",
@@ -78692,6 +79096,56 @@
     },
     "originId": "heavy-machinery",
     "input": "utilitycraft:tin_dust",
+    "output": "utilitycraft:tin_ingot",
+    "machineAddon": "ascendant-technology",
+    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
+  },
+  {
+    "id": "heavy-machinery-incinerator-utilitycraft-tin-ore-industrial-burner",
+    "identifier": "heavy-machinery:process/incinerator/utilitycraft-tin-ore-industrial-burner",
+    "type": "machine",
+    "station": "industrial_burner",
+    "category": "Industrial Burner recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:tin_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:tin_ore",
     "output": "utilitycraft:tin_ingot",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
@@ -88123,8 +88577,8 @@
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
   {
-    "id": "heavy-machinery-crusher-utilitycraft-deepslate-tin-chunk-pulverizer",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-tin-chunk-pulverizer",
+    "id": "heavy-machinery-crusher-utilitycraft-deepslate-tin-ore-pulverizer",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-tin-ore-pulverizer",
     "type": "machine",
     "station": "pulverizer",
     "category": "Pulverizer recipe",
@@ -88132,7 +88586,7 @@
     "slotCount": 1,
     "slots": [
       {
-        "id": "utilitycraft:deepslate_tin_chunk",
+        "id": "utilitycraft:deepslate_tin_ore",
         "count": 1
       },
       null,
@@ -88146,18 +88600,18 @@
     ],
     "inputs": [
       {
-        "id": "utilitycraft:deepslate_tin_chunk",
+        "id": "utilitycraft:deepslate_tin_ore",
         "count": 1
       }
     ],
     "result": {
-      "id": "utilitycraft:raw_tin",
-      "count": 1
+      "id": "utilitycraft:tin_dust",
+      "count": 2
     },
     "results": [
       {
-        "id": "utilitycraft:raw_tin",
-        "count": 1
+        "id": "utilitycraft:tin_dust",
+        "count": 2
       }
     ],
     "origin": {
@@ -88167,14 +88621,14 @@
       "category": "Heavy Machinery"
     },
     "originId": "heavy-machinery",
-    "input": "utilitycraft:deepslate_tin_chunk",
-    "output": "utilitycraft:raw_tin",
+    "input": "utilitycraft:deepslate_tin_ore",
+    "output": "2× utilitycraft:tin_dust",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
   {
-    "id": "heavy-machinery-crusher-utilitycraft-deepslate-uranium-chunk-pulverizer",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-uranium-chunk-pulverizer",
+    "id": "heavy-machinery-crusher-utilitycraft-deepslate-uranium-ore-pulverizer",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-uranium-ore-pulverizer",
     "type": "machine",
     "station": "pulverizer",
     "category": "Pulverizer recipe",
@@ -88182,7 +88636,7 @@
     "slotCount": 1,
     "slots": [
       {
-        "id": "utilitycraft:deepslate_uranium_chunk",
+        "id": "utilitycraft:deepslate_uranium_ore",
         "count": 1
       },
       null,
@@ -88196,18 +88650,18 @@
     ],
     "inputs": [
       {
-        "id": "utilitycraft:deepslate_uranium_chunk",
+        "id": "utilitycraft:deepslate_uranium_ore",
         "count": 1
       }
     ],
     "result": {
-      "id": "utilitycraft:raw_uranium",
-      "count": 1
+      "id": "utilitycraft:uranium_dust",
+      "count": 2
     },
     "results": [
       {
-        "id": "utilitycraft:raw_uranium",
-        "count": 1
+        "id": "utilitycraft:uranium_dust",
+        "count": 2
       }
     ],
     "origin": {
@@ -88217,8 +88671,8 @@
       "category": "Heavy Machinery"
     },
     "originId": "heavy-machinery",
-    "input": "utilitycraft:deepslate_uranium_chunk",
-    "output": "utilitycraft:raw_uranium",
+    "input": "utilitycraft:deepslate_uranium_ore",
+    "output": "2× utilitycraft:uranium_dust",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
@@ -88473,56 +88927,6 @@
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
   {
-    "id": "heavy-machinery-crusher-utilitycraft-tin-chunk-pulverizer",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-tin-chunk-pulverizer",
-    "type": "machine",
-    "station": "pulverizer",
-    "category": "Pulverizer recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:tin_chunk",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:tin_chunk",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:raw_tin",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:raw_tin",
-        "count": 1
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:tin_chunk",
-    "output": "utilitycraft:raw_tin",
-    "machineAddon": "ascendant-technology",
-    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
-  },
-  {
     "id": "heavy-machinery-crusher-utilitycraft-tin-ingot-pulverizer",
     "identifier": "heavy-machinery:process/crusher/utilitycraft-tin-ingot-pulverizer",
     "type": "machine",
@@ -88569,6 +88973,56 @@
     "originId": "heavy-machinery",
     "input": "utilitycraft:tin_ingot",
     "output": "utilitycraft:tin_dust",
+    "machineAddon": "ascendant-technology",
+    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
+  },
+  {
+    "id": "heavy-machinery-crusher-utilitycraft-tin-ore-pulverizer",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-tin-ore-pulverizer",
+    "type": "machine",
+    "station": "pulverizer",
+    "category": "Pulverizer recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:tin_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_dust",
+      "count": 2
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 2
+      }
+    ],
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:tin_ore",
+    "output": "2× utilitycraft:tin_dust",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },

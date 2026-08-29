@@ -2239,8 +2239,225 @@ function AutoSieveRecipeCatalog({recipes}) {
   );
 }
 
+const ABYSSAL_LOOT_CATEGORIES = {
+  fish: {label: 'Fish', description: 'Common catches from the abyssal waters', icon: 'minecraft:cod'},
+  junk: {label: 'Junk', description: 'Utility finds and worn equipment', icon: 'minecraft:string'},
+  treasure: {label: 'Treasure', description: 'Rare valuables and special rewards', icon: 'minecraft:heart_of_the_sea'},
+};
+
+function abyssalContentId(value) {
+  return `abyssal-fisher-${String(value).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
+}
+
+function abyssalFisherGroups(recipes) {
+  const groups = new Map();
+  recipes.forEach((recipe) => {
+    const category = recipe.lootCategory ?? recipe.conditions?.find((condition) => condition.id === 'loot-category')?.value;
+    const result = recipe.result ?? recipe.drops?.[0];
+    if (!category || !result) return;
+    const definition = ABYSSAL_LOOT_CATEGORIES[category] ?? {label: titleize(category), description: 'Abyssal fishing loot', icon: result.id};
+    if (!groups.has(category)) groups.set(category, {...definition, id: category, drops: []});
+    groups.get(category).drops.push({
+      id: recipe.id,
+      result,
+      tier: Number(recipe.minimumTier ?? recipe.conditions?.find((condition) => condition.id === 'tier')?.value ?? 0),
+      amount: result.max ?? result.count ?? 1,
+      minimumAmount: result.min ?? result.count ?? 1,
+      weight: Number(recipe.relativeWeight ?? recipe.conditions?.find((condition) => condition.id === 'weight')?.value ?? 0),
+      categoryWeight: Number(recipe.categoryBaseWeight ?? 0),
+      durabilityDamageRange: recipe.durabilityDamageRange,
+      randomEnchant: recipe.randomEnchant,
+      bookEnchant: recipe.bookEnchant,
+    });
+  });
+  const order = ['fish', 'junk', 'treasure'];
+  return [...groups.values()]
+    .map((group) => ({...group, drops: group.drops.sort((left, right) => left.tier - right.tier || right.weight - left.weight || ingredientLabel(left.result).localeCompare(ingredientLabel(right.result)))}))
+    .sort((left, right) => (order.indexOf(left.id) === -1 ? order.length : order.indexOf(left.id)) - (order.indexOf(right.id) === -1 ? order.length : order.indexOf(right.id)));
+}
+
+function formatAbyssalAmount(drop) {
+  return drop.minimumAmount !== drop.amount ? `${drop.minimumAmount}–${drop.amount}` : String(drop.amount);
+}
+
+function formatAbyssalWeight(weight) {
+  const display = Math.round(weight * 10000) / 100;
+  return `${display}%`;
+}
+
+function formatAbyssalRelativeWeight(weight) {
+  return String(Math.round(weight * 100000) / 100000);
+}
+
+function abyssalDropSpecial(drop) {
+  const special = [];
+  if (drop.randomEnchant) special.push('May be enchanted');
+  if (drop.bookEnchant) special.push('May become enchanted');
+  if (drop.durabilityDamageRange) {
+    const [minimum, maximum] = drop.durabilityDamageRange;
+    special.push(`Worn: ${Math.round(minimum * 100)}–${Math.round(maximum * 100)}% damage`);
+  }
+  return special.join(' · ');
+}
+
+function AbyssalFisherDropRows({drops}) {
+  return (
+    <div className={styles.abyssalDropRows}>
+      {drops.map((drop) => (
+        <div className={styles.abyssalDropRow} key={drop.id}>
+          <div className={styles.abyssalDropName}><SieveItemVisual ingredient={drop.result} className={styles.autosieveDropVisual} /><strong>{ingredientLabel(drop.result)}</strong></div>
+          <span>Tier {drop.tier}</span>
+          <span>{formatAbyssalAmount(drop)}</span>
+          <span title="Relative weight within this category">{formatAbyssalRelativeWeight(drop.weight)}</span>
+          <small>{abyssalDropSpecial(drop) || '—'}</small>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function AbyssalFisherLootCard({group}) {
+  const [expanded, setExpanded] = useState(false);
+  const contentId = abyssalContentId(group.id);
+  const minimumTier = Math.min(...group.drops.map((drop) => drop.tier));
+  const categoryWeight = group.drops[0]?.categoryWeight ?? 0;
+  return (
+    <article className={styles.abyssalLootCard} data-expanded={expanded || undefined}>
+      <header className={styles.abyssalLootHeader}>
+        <SieveItemVisual ingredient={{id: group.icon, label: group.label}} className={styles.autosieveInputVisual} />
+        <div className={styles.autosieveSiftCopy}>
+          <div className={styles.autosieveSiftTitleRow}>
+            <h4>{group.label}</h4>
+            <button type="button" className={styles.autosieveToggle} aria-expanded={expanded} aria-controls={contentId} onClick={() => setExpanded((current) => !current)}>
+              <span>{expanded ? 'Hide loot' : 'Show loot'}</span><b aria-hidden="true">{expanded ? '−' : '+'}</b>
+            </button>
+          </div>
+          <p>{group.drops.length} possible catch{group.drops.length === 1 ? '' : 'es'} <span aria-hidden="true">·</span> tier {minimumTier}+</p>
+          <div className={styles.abyssalCategoryMeta}><span>Base category roll <b>{formatAbyssalWeight(categoryWeight)}</b></span><span>{group.description}</span></div>
+        </div>
+      </header>
+      {expanded && <div id={contentId} className={styles.abyssalDropList}>
+        <div className={styles.abyssalDropHeader} aria-hidden="true"><span>Catch</span><span>Tier</span><span>Amount</span><span>Weight</span><span>Variant</span></div>
+        <AbyssalFisherDropRows drops={group.drops} />
+      </div>}
+    </article>
+  );
+}
+
+function AbyssalFisherRecipeCatalog({recipes}) {
+  const groups = abyssalFisherGroups(recipes);
+  return (
+    <section className={`${styles.machineRecipeSubsection} ${styles.abyssalRecipeSection}`} aria-labelledby="machine-abyssal-fisher-recipes">
+      <div>
+        <p className={styles.eyebrow}>02 / Abyssal fishing</p>
+        <h3 id="machine-abyssal-fisher-recipes">Fishing Loot</h3>
+        <p className={styles.autosieveRecipeDescription}>Each attempt rolls a loot category first, then picks a weighted catch that is available at the machine tier. The weights below only compare catches inside their own category.</p>
+      </div>
+      <div className={styles.abyssalLootGrid}>{groups.map((group) => <AbyssalFisherLootCard group={group} key={group.id} />)}</div>
+      <p className={styles.autosieveRecipeNote}>Base category rolls are Fish 85%, Junk 10%, and Treasure 5%. Luck of the Sea and machine upgrades can change category weights and the number of attempts.</p>
+    </section>
+  );
+}
+
+const DYNAMIC_MACHINE_OPERATIONS = {
+  arcane_enchanter: {
+    title: 'Dynamic Enchantment',
+    description: 'The result depends on the item and its compatible enchantments, so it has no finite recipe list.',
+    steps: [
+      ['Input', 'One enchantable item'],
+      ['Required', 'Enchantability Module, Lapis Lazuli, XP fluid and energy'],
+      ['Optional', 'Curse Protection Module to prevent curse enchantments'],
+      ['Result', 'The same item with a compatible enchantment plan applied'],
+      ['Costs', '6 seconds; 300 XP and 12 lapis per enchantment, plus energy scaled by the plan and module'],
+    ],
+  },
+  disenchanter: {
+    title: 'Dynamic Disenchantment',
+    description: 'Choose a mode in the machine UI. The source must be a single enchanted item.',
+    steps: [
+      ['Extraction', 'Enchanted item + Book → item with one enchantment removed + Enchanted Book'],
+      ['Absorption', 'Enchanted item → fully disenchanted item + recovered XP fluid'],
+      ['Energy', '10,000 DE per extraction or 7,000 DE per absorption'],
+      ['Output rule', 'Extraction needs an empty book-output slot; absorption needs free XP-tank capacity'],
+    ],
+  },
+  duplicator: {
+    title: 'Template Duplication',
+    description: 'The machine creates a recipe at runtime for every eligible template; rarity determines the time and energy cost.',
+    steps: [
+      ['Input', 'One eligible item or block template'],
+      ['Fluid', '1,000 mB Liquified Aetherium per copy'],
+      ['Result', 'The original template is returned and one identical copy is produced'],
+      ['Base cost', '1,600,000 DE and 30 minutes before rarity multipliers'],
+      ['Restrictions', 'Unclonnable-tagged templates and configured exclusions cannot be duplicated'],
+    ],
+  },
+  enchantment_station: {
+    title: 'Multi-lane Enchantment Station',
+    description: 'This station evaluates the items and installed modules at runtime, so compatible outcomes cannot be represented by a fixed recipe table.',
+    steps: [
+      ['Processing', 'Repairs, reinforces and applies compatible enchantment plans to single items'],
+      ['XP', 'Enchanting plans consume XP fluid; an empty or incompatible tank pauses that lane'],
+      ['Disenchantment', 'With the station catalyst and Books, extracts enchantments; without them, absorbs enchantments into XP'],
+      ['Energy', 'Main operations start at 64,000 DE; extraction scales with the number of enchantments'],
+    ],
+  },
+  reinforcement_anvil: {
+    title: 'Repair & Reinforcement',
+    description: 'The operation is determined by the inserted tool or armor and, when present, its reinforcement module.',
+    steps: [
+      ['Repair', 'Restores durability on a damaged compatible item'],
+      ['Reinforce', 'A Reinforcement Module raises the item’s reinforcement target when it has remaining capacity'],
+      ['Combined result', 'The same item is repaired and/or reinforced in place'],
+      ['Energy', '8,000 DE for repair plus 14,000 DE when reinforcement is applied'],
+    ],
+  },
+  pattern_placer: {
+    title: 'World Placement Pattern',
+    description: 'This machine consumes valid block items and places them in the selected world pattern; the target positions make every operation contextual.',
+    steps: [
+      ['Input', 'Placeable blocks from the machine inventory'],
+      ['Mode', 'Select the placement pattern in the machine UI'],
+      ['Result', 'Blocks are placed into free target positions in front of the machine'],
+      ['Energy', 'Base energy cost is multiplied by the number of blocks placed'],
+    ],
+  },
+  seismic_breaker: {
+    title: 'World Breaking Pattern',
+    description: 'Drops are determined by the targeted blocks, the installed tool and the selected breaking pattern rather than by a static recipe registry.',
+    steps: [
+      ['Input', 'A valid mining tool'],
+      ['Mode', 'Select the breaking pattern in the machine UI'],
+      ['Result', 'Mines eligible world blocks and sends their real drops to the output'],
+      ['Energy', 'Base energy cost is multiplied by the number of blocks broken'],
+    ],
+  },
+  laser_barrier: {
+    title: 'Laser Field Projection',
+    description: 'The barrier is a continuous world effect, not a processing recipe.',
+    steps: [
+      ['Activation', 'Enable the projector and provide energy'],
+      ['Field', 'Projects in the facing direction until blocked; contacts are damaged'],
+      ['Upgrades', 'Length and Height upgrades expand the field; energy upgrades reduce its consumption'],
+      ['Cost', 'Consumes energy continuously while the field is active'],
+    ],
+  },
+};
+
+function DynamicMachineOperation({machine}) {
+  const operation = DYNAMIC_MACHINE_OPERATIONS[machine.id];
+  if (!operation) return null;
+  return (
+    <section className={styles.machineRecipeSubsection} aria-labelledby="machine-dynamic-operation">
+      <div><p className={styles.eyebrow}>02 / Dynamic operation</p><h3 id="machine-dynamic-operation">{operation.title}</h3><p className={styles.autosieveRecipeDescription}>{operation.description}</p></div>
+      <dl className={styles.dynamicOperationList}>{operation.steps.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+    </section>
+  );
+}
+
 function MachineRecipes({machine, recipes}) {
   const usesSiftingCatalog = machine.id === 'autosieve';
+  const usesAbyssalFisherCatalog = machine.id === 'abyssal_fisher';
   const [originFilter, setOriginFilter] = useState('All');
   const project = useWikiProject();
   const visibleCatalog = recipes.catalog.filter((recipe) => recipeMatchesOrigin(recipe, originFilter, project));
@@ -2253,10 +2470,12 @@ function MachineRecipes({machine, recipes}) {
       </section>
       {recipes.catalog.length > 0 && <RecipeOriginFilters recipes={recipes.catalog} active={originFilter} setActive={setOriginFilter} />}
       {visibleCatalog.length > 0 && usesSiftingCatalog ? <AutoSieveRecipeCatalog recipes={visibleCatalog} />
+        : visibleCatalog.length > 0 && usesAbyssalFisherCatalog ? <AbyssalFisherRecipeCatalog recipes={visibleCatalog} />
         : visibleCatalog.length > 0 && <section className={styles.machineRecipeSubsection} aria-labelledby="machine-recipes-catalog">
         <div><p className={styles.eyebrow}>02 / Processing</p><h3 id="machine-recipes-catalog">Recipes Catalog</h3></div>
         <div className={styles.machineRecipeCatalog}>{visibleCatalog.map((recipe) => <ProcessingCatalogCard recipe={recipe} machine={machine} key={`process-${recipe.id}`} />)}</div>
       </section>}
+      {!recipes.catalog.length && <DynamicMachineOperation machine={machine} />}
       {recipes.catalog.length > 0 && !visibleCatalog.length && <p className={styles.machineRecipeEmpty}>No recipes match the selected add-on origin.</p>}
     </div>
   );

@@ -1,0 +1,1456 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-22T20:56:09.145793+00:00",
+  "project": {
+    "id": "tiered-machinery",
+    "name": "Tiered Machinery"
+  },
+  "counts": {
+    "items": 0,
+    "catalogItems": 0,
+    "blocks": 12,
+    "entities": 0,
+    "recipes": 12,
+    "variantGroups": 0
+  },
+  "content": {
+    "items": [],
+    "blocks": [
+      {
+        "id": "advanced_crusher",
+        "slug": "advanced-crusher",
+        "identifier": "utilitycraft:advanced_crusher",
+        "name": "Advanced Crusher",
+        "category": "Crusher",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/crusher/advanced_crusher_off_up.png",
+          "left": "textures/blocks/crusher/advanced_crusher_off_west.png",
+          "right": "textures/blocks/crusher/advanced_crusher_off_north.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:energy",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:complex_machine",
+          "utilitycraft:machine_recipes",
+          "utilitycraft:machine_upgrades"
+        ],
+        "machineData": {
+          "component": "utilitycraft:complex_machine",
+          "entityType": "machine",
+          "inventorySize": 26,
+          "systemKind": "machine",
+          "energyCapacity": 320000,
+          "energyCost": 800,
+          "baseRate": 20,
+          "recipeType": "crusher",
+          "upgradeSlots": [
+            8,
+            9
+          ],
+          "upgrades": [
+            {
+              "type": "speed",
+              "slot": 8
+            },
+            {
+              "type": "energy",
+              "slot": 9
+            }
+          ],
+          "interfaces": [
+            "Energy",
+            "Items"
+          ],
+          "tickInterval": [
+            4,
+            4
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/crusher/advanced_crusher.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "advanced_electro_press",
+        "slug": "advanced-electro-press",
+        "identifier": "utilitycraft:advanced_electro_press",
+        "name": "Advanced Electro Press",
+        "category": "Electro Press",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/electro_press/advanced_electro_press_off_up.png",
+          "left": "textures/blocks/electro_press/advanced_electro_press_off_west.png",
+          "right": "textures/blocks/electro_press/advanced_electro_press_off_north.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:energy",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:complex_machine",
+          "utilitycraft:machine_recipes",
+          "utilitycraft:machine_upgrades"
+        ],
+        "machineData": {
+          "component": "utilitycraft:complex_machine",
+          "entityType": "machine",
+          "inventorySize": 26,
+          "systemKind": "machine",
+          "energyCapacity": 320000,
+          "energyCost": 800,
+          "baseRate": 20,
+          "recipeType": "presser",
+          "upgradeSlots": [
+            8,
+            9
+          ],
+          "upgrades": [
+            {
+              "type": "speed",
+              "slot": 8
+            },
+            {
+              "type": "energy",
+              "slot": 9
+            }
+          ],
+          "interfaces": [
+            "Energy",
+            "Items"
+          ],
+          "tickInterval": [
+            4,
+            4
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/electro_press/advanced_electro_press.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "advanced_incinerator",
+        "slug": "advanced-incinerator",
+        "identifier": "utilitycraft:advanced_incinerator",
+        "name": "Advanced Incinerator",
+        "category": "Incinerator",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/incinerator/advanced_incinerator_off_up.png",
+          "left": "textures/blocks/incinerator/advanced_incinerator_off_west.png",
+          "right": "textures/blocks/incinerator/advanced_incinerator_off_north.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:energy",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:complex_machine",
+          "utilitycraft:machine_recipes",
+          "utilitycraft:machine_upgrades"
+        ],
+        "machineData": {
+          "component": "utilitycraft:complex_machine",
+          "entityType": "machine",
+          "inventorySize": 26,
+          "systemKind": "machine",
+          "energyCapacity": 320000,
+          "energyCost": 800,
+          "baseRate": 20,
+          "recipeType": "furnace",
+          "upgradeSlots": [
+            8,
+            9
+          ],
+          "upgrades": [
+            {
+              "type": "speed",
+              "slot": 8
+            },
+            {
+              "type": "energy",
+              "slot": 9
+            }
+          ],
+          "interfaces": [
+            "Energy",
+            "Items"
+          ],
+          "tickInterval": [
+            4,
+            4
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/incinerator/advanced_incinerator.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "basic_crusher",
+        "slug": "basic-crusher",
+        "identifier": "utilitycraft:basic_crusher",
+        "name": "Basic Crusher",
+        "category": "Crusher",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/crusher/basic_crusher_off_up.png",
+          "left": "textures/blocks/crusher/basic_crusher_off_west.png",
+          "right": "textures/blocks/crusher/basic_crusher_off_north.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:energy",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:complex_machine",
+          "utilitycraft:machine_recipes",
+          "utilitycraft:machine_upgrades"
+        ],
+        "machineData": {
+          "component": "utilitycraft:complex_machine",
+          "entityType": "machine",
+          "inventorySize": 20,
+          "systemKind": "machine",
+          "energyCapacity": 192000,
+          "energyCost": 800,
+          "baseRate": 20,
+          "recipeType": "crusher",
+          "upgradeSlots": [
+            6,
+            7
+          ],
+          "upgrades": [
+            {
+              "type": "speed",
+              "slot": 6
+            },
+            {
+              "type": "energy",
+              "slot": 7
+            }
+          ],
+          "interfaces": [
+            "Energy",
+            "Items"
+          ],
+          "tickInterval": [
+            4,
+            4
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/crusher/basic_crusher.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "basic_electro_press",
+        "slug": "basic-electro-press",
+        "identifier": "utilitycraft:basic_electro_press",
+        "name": "Basic Electro Press",
+        "category": "Electro Press",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/electro_press/basic_electro_press_off_up.png",
+          "left": "textures/blocks/electro_press/basic_electro_press_off_west.png",
+          "right": "textures/blocks/electro_press/basic_electro_press_off_north.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:energy",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:complex_machine",
+          "utilitycraft:machine_recipes",
+          "utilitycraft:machine_upgrades"
+        ],
+        "machineData": {
+          "component": "utilitycraft:complex_machine",
+          "entityType": "machine",
+          "inventorySize": 20,
+          "systemKind": "machine",
+          "energyCapacity": 192000,
+          "energyCost": 800,
+          "baseRate": 20,
+          "recipeType": "presser",
+          "upgradeSlots": [
+            6,
+            7
+          ],
+          "upgrades": [
+            {
+              "type": "speed",
+              "slot": 6
+            },
+            {
+              "type": "energy",
+              "slot": 7
+            }
+          ],
+          "interfaces": [
+            "Energy",
+            "Items"
+          ],
+          "tickInterval": [
+            4,
+            4
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/electro_press/basic_electro_press.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "basic_incinerator",
+        "slug": "basic-incinerator",
+        "identifier": "utilitycraft:basic_incinerator",
+        "name": "Basic Incinerator",
+        "category": "Incinerator",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/incinerator/basic_incinerator_off_up.png",
+          "left": "textures/blocks/incinerator/basic_incinerator_off_west.png",
+          "right": "textures/blocks/incinerator/basic_incinerator_off_north.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:energy",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:complex_machine",
+          "utilitycraft:machine_recipes",
+          "utilitycraft:machine_upgrades"
+        ],
+        "machineData": {
+          "component": "utilitycraft:complex_machine",
+          "entityType": "machine",
+          "inventorySize": 20,
+          "systemKind": "machine",
+          "energyCapacity": 192000,
+          "energyCost": 800,
+          "baseRate": 20,
+          "recipeType": "furnace",
+          "upgradeSlots": [
+            6,
+            7
+          ],
+          "upgrades": [
+            {
+              "type": "speed",
+              "slot": 6
+            },
+            {
+              "type": "energy",
+              "slot": 7
+            }
+          ],
+          "interfaces": [
+            "Energy",
+            "Items"
+          ],
+          "tickInterval": [
+            4,
+            4
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/incinerator/basic_incinerator.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "expert_crusher",
+        "slug": "expert-crusher",
+        "identifier": "utilitycraft:expert_crusher",
+        "name": "Expert Crusher",
+        "category": "Crusher",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/crusher/expert_crusher_off_up.png",
+          "left": "textures/blocks/crusher/expert_crusher_off_west.png",
+          "right": "textures/blocks/crusher/expert_crusher_off_north.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:energy",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:complex_machine",
+          "utilitycraft:machine_recipes",
+          "utilitycraft:machine_upgrades"
+        ],
+        "machineData": {
+          "component": "utilitycraft:complex_machine",
+          "entityType": "machine",
+          "inventorySize": 32,
+          "systemKind": "machine",
+          "energyCapacity": 448000,
+          "energyCost": 800,
+          "baseRate": 20,
+          "recipeType": "crusher",
+          "upgradeSlots": [
+            10,
+            11
+          ],
+          "upgrades": [
+            {
+              "type": "speed",
+              "slot": 10
+            },
+            {
+              "type": "energy",
+              "slot": 11
+            }
+          ],
+          "interfaces": [
+            "Energy",
+            "Items"
+          ],
+          "tickInterval": [
+            4,
+            4
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/crusher/expert_crusher.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "expert_electro_press",
+        "slug": "expert-electro-press",
+        "identifier": "utilitycraft:expert_electro_press",
+        "name": "Expert Electro Press",
+        "category": "Electro Press",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/electro_press/expert_electro_press_off_up.png",
+          "left": "textures/blocks/electro_press/expert_electro_press_off_west.png",
+          "right": "textures/blocks/electro_press/expert_electro_press_off_north.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:energy",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:complex_machine",
+          "utilitycraft:machine_recipes",
+          "utilitycraft:machine_upgrades"
+        ],
+        "machineData": {
+          "component": "utilitycraft:complex_machine",
+          "entityType": "machine",
+          "inventorySize": 32,
+          "systemKind": "machine",
+          "energyCapacity": 448000,
+          "energyCost": 800,
+          "baseRate": 20,
+          "recipeType": "presser",
+          "upgradeSlots": [
+            10,
+            11
+          ],
+          "upgrades": [
+            {
+              "type": "speed",
+              "slot": 10
+            },
+            {
+              "type": "energy",
+              "slot": 11
+            }
+          ],
+          "interfaces": [
+            "Energy",
+            "Items"
+          ],
+          "tickInterval": [
+            4,
+            4
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/electro_press/expert_electro_press.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "expert_incinerator",
+        "slug": "expert-incinerator",
+        "identifier": "utilitycraft:expert_incinerator",
+        "name": "Expert Incinerator",
+        "category": "Incinerator",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/incinerator/expert_incinerator_off_up.png",
+          "left": "textures/blocks/incinerator/expert_incinerator_off_west.png",
+          "right": "textures/blocks/incinerator/expert_incinerator_off_north.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:energy",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:complex_machine",
+          "utilitycraft:machine_recipes",
+          "utilitycraft:machine_upgrades"
+        ],
+        "machineData": {
+          "component": "utilitycraft:complex_machine",
+          "entityType": "machine",
+          "inventorySize": 32,
+          "systemKind": "machine",
+          "energyCapacity": 448000,
+          "energyCost": 800,
+          "baseRate": 20,
+          "recipeType": "furnace",
+          "upgradeSlots": [
+            10,
+            11
+          ],
+          "upgrades": [
+            {
+              "type": "speed",
+              "slot": 10
+            },
+            {
+              "type": "energy",
+              "slot": 11
+            }
+          ],
+          "interfaces": [
+            "Energy",
+            "Items"
+          ],
+          "tickInterval": [
+            4,
+            4
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/incinerator/expert_incinerator.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "ultimate_crusher",
+        "slug": "ultimate-crusher",
+        "identifier": "utilitycraft:ultimate_crusher",
+        "name": "Ultimate Crusher",
+        "category": "Crusher",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/crusher/ultimate_crusher_off_up.png",
+          "left": "textures/blocks/crusher/ultimate_crusher_off_west.png",
+          "right": "textures/blocks/crusher/ultimate_crusher_off_north.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:energy",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:complex_machine",
+          "utilitycraft:machine_recipes",
+          "utilitycraft:machine_upgrades"
+        ],
+        "machineData": {
+          "component": "utilitycraft:complex_machine",
+          "entityType": "machine",
+          "inventorySize": 38,
+          "systemKind": "machine",
+          "energyCapacity": 576000,
+          "energyCost": 800,
+          "baseRate": 20,
+          "recipeType": "crusher",
+          "upgradeSlots": [
+            12,
+            13
+          ],
+          "upgrades": [
+            {
+              "type": "speed",
+              "slot": 12
+            },
+            {
+              "type": "energy",
+              "slot": 13
+            }
+          ],
+          "interfaces": [
+            "Energy",
+            "Items"
+          ],
+          "tickInterval": [
+            4,
+            4
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/crusher/ultimate_crusher.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "ultimate_electro_press",
+        "slug": "ultimate-electro-press",
+        "identifier": "utilitycraft:ultimate_electro_press",
+        "name": "Ultimate Electro Press",
+        "category": "Electro Press",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/electro_press/ultimate_electro_press_off_up.png",
+          "left": "textures/blocks/electro_press/ultimate_electro_press_off_west.png",
+          "right": "textures/blocks/electro_press/ultimate_electro_press_off_north.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:energy",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:complex_machine",
+          "utilitycraft:machine_recipes",
+          "utilitycraft:machine_upgrades"
+        ],
+        "machineData": {
+          "component": "utilitycraft:complex_machine",
+          "entityType": "machine",
+          "inventorySize": 38,
+          "systemKind": "machine",
+          "energyCapacity": 576000,
+          "energyCost": 800,
+          "baseRate": 20,
+          "recipeType": "presser",
+          "upgradeSlots": [
+            12,
+            13
+          ],
+          "upgrades": [
+            {
+              "type": "speed",
+              "slot": 12
+            },
+            {
+              "type": "energy",
+              "slot": 13
+            }
+          ],
+          "interfaces": [
+            "Energy",
+            "Items"
+          ],
+          "tickInterval": [
+            4,
+            4
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/electro_press/ultimate_electro_press.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "ultimate_incinerator",
+        "slug": "ultimate-incinerator",
+        "identifier": "utilitycraft:ultimate_incinerator",
+        "name": "Ultimate Incinerator",
+        "category": "Incinerator",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/incinerator/ultimate_incinerator_off_up.png",
+          "left": "textures/blocks/incinerator/ultimate_incinerator_off_west.png",
+          "right": "textures/blocks/incinerator/ultimate_incinerator_off_north.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:energy",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:complex_machine",
+          "utilitycraft:machine_recipes",
+          "utilitycraft:machine_upgrades"
+        ],
+        "machineData": {
+          "component": "utilitycraft:complex_machine",
+          "entityType": "machine",
+          "inventorySize": 38,
+          "systemKind": "machine",
+          "energyCapacity": 576000,
+          "energyCost": 800,
+          "baseRate": 20,
+          "recipeType": "furnace",
+          "upgradeSlots": [
+            12,
+            13
+          ],
+          "upgrades": [
+            {
+              "type": "speed",
+              "slot": 12
+            },
+            {
+              "type": "energy",
+              "slot": 13
+            }
+          ],
+          "interfaces": [
+            "Energy",
+            "Items"
+          ],
+          "tickInterval": [
+            4,
+            4
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/incinerator/ultimate_incinerator.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      }
+    ],
+    "entities": [],
+    "recipes": [
+      {
+        "id": "advanced_crusher",
+        "identifier": "utilitycraft:advanced_crusher",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_crusher",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:energized_iron_plate",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:energized_iron_plate",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:advanced_crusher",
+          "count": 1
+        },
+        "source": "BP/recipes/crusher/advanced_crusher.json"
+      },
+      {
+        "id": "advanced_electro_press",
+        "identifier": "utilitycraft:advanced_electro_press",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_electro_press",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:energized_iron_plate",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:energized_iron_plate",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:advanced_electro_press",
+          "count": 1
+        },
+        "source": "BP/recipes/electro_press/advanced_electro_press.json"
+      },
+      {
+        "id": "advanced_incinerator",
+        "identifier": "utilitycraft:advanced_incinerator",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_incinerator",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:energized_iron_plate",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:energized_iron_plate",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:advanced_incinerator",
+          "count": 1
+        },
+        "source": "BP/recipes/incinerator/advanced_incinerator.json"
+      },
+      {
+        "id": "basic_crusher",
+        "identifier": "utilitycraft:basic_crusher",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:steel_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:crusher",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_chip",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:basic_crusher",
+          "count": 1
+        },
+        "source": "BP/recipes/crusher/basic_crusher.json"
+      },
+      {
+        "id": "basic_electro_press",
+        "identifier": "utilitycraft:basic_electro_press",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:steel_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:electro_press",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_chip",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:basic_electro_press",
+          "count": 1
+        },
+        "source": "BP/recipes/electro_press/basic_electro_press.json"
+      },
+      {
+        "id": "basic_incinerator",
+        "identifier": "utilitycraft:basic_incinerator",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:steel_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:incinerator",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_chip",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:basic_incinerator",
+          "count": 1
+        },
+        "source": "BP/recipes/incinerator/basic_incinerator.json"
+      },
+      {
+        "id": "expert_crusher",
+        "identifier": "utilitycraft:expert_crusher",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_crusher",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_dust",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_dust",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:expert_crusher",
+          "count": 1
+        },
+        "source": "BP/recipes/crusher/expert_crusher.json"
+      },
+      {
+        "id": "expert_electro_press",
+        "identifier": "utilitycraft:expert_electro_press",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_electro_press",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_dust",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_dust",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:expert_electro_press",
+          "count": 1
+        },
+        "source": "BP/recipes/electro_press/expert_electro_press.json"
+      },
+      {
+        "id": "expert_incinerator",
+        "identifier": "utilitycraft:expert_incinerator",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_incinerator",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_dust",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_dust",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:expert_incinerator",
+          "count": 1
+        },
+        "source": "BP/recipes/incinerator/expert_incinerator.json"
+      },
+      {
+        "id": "ultimate_crusher",
+        "identifier": "utilitycraft:ultimate_crusher",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:ultimate_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:ultimate_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_crusher",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:ultimate_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:netherite_plate",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:netherite_plate",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:ultimate_crusher",
+          "count": 1
+        },
+        "source": "BP/recipes/crusher/ultimate_crusher.json"
+      },
+      {
+        "id": "ultimate_electro_press",
+        "identifier": "utilitycraft:ultimate_electro_press",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:ultimate_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:ultimate_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_electro_press",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:ultimate_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:netherite_plate",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:netherite_plate",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:ultimate_electro_press",
+          "count": 1
+        },
+        "source": "BP/recipes/electro_press/ultimate_electro_press.json"
+      },
+      {
+        "id": "ultimate_incinerator",
+        "identifier": "utilitycraft:ultimate_incinerator",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:ultimate_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:ultimate_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_incinerator",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:ultimate_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:netherite_plate",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:netherite_plate",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:ultimate_incinerator",
+          "count": 1
+        },
+        "source": "BP/recipes/incinerator/ultimate_incinerator.json"
+      }
+    ]
+  },
+  "catalog": {
+    "items": []
+  },
+  "variantGroups": []
+}

@@ -1,0 +1,2320 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-22T20:55:32.214018+00:00",
+  "project": {
+    "id": "digital-storage",
+    "name": "Digital Storage"
+  },
+  "counts": {
+    "items": 18,
+    "catalogItems": 10,
+    "blocks": 10,
+    "entities": 10,
+    "recipes": 30,
+    "variantGroups": 2
+  },
+  "content": {
+    "items": [
+      {
+        "id": "advanced_storage_cell",
+        "slug": "advanced-storage-cell",
+        "identifier": "utilitycraft:advanced_storage_cell",
+        "name": "Advanced Storage Cell",
+        "category": "Cells",
+        "image": "textures/items/cells/advanced_storage_cell.png",
+        "source": "BP/items/cells/advanced_cell.json"
+      },
+      {
+        "id": "advanced_storage_part",
+        "slug": "advanced-storage-part",
+        "identifier": "utilitycraft:advanced_storage_part",
+        "name": "Advanced Storage Part",
+        "category": "Parts",
+        "image": "textures/items/parts/advanced_storage_part.png",
+        "source": "BP/items/parts/advanced_storage_part.json"
+      },
+      {
+        "id": "basic_storage_cell",
+        "slug": "basic-storage-cell",
+        "identifier": "utilitycraft:basic_storage_cell",
+        "name": "Basic Storage Cell",
+        "category": "Cells",
+        "image": "textures/items/cells/basic_storage_cell.png",
+        "source": "BP/items/cells/basic_cell.json"
+      },
+      {
+        "id": "basic_storage_part",
+        "slug": "basic-storage-part",
+        "identifier": "utilitycraft:basic_storage_part",
+        "name": "Basic Storage Part",
+        "category": "Parts",
+        "image": "textures/items/parts/basic_storage_part.png",
+        "source": "BP/items/parts/basic_storage_part.json"
+      },
+      {
+        "id": "cell_casing",
+        "slug": "cell-casing",
+        "identifier": "utilitycraft:cell_casing",
+        "name": "Cell Casing",
+        "category": "Cells",
+        "image": "textures/items/cells/cell_casing.png",
+        "source": "BP/items/cells/cell_casing.json"
+      },
+      {
+        "id": "expert_storage_cell",
+        "slug": "expert-storage-cell",
+        "identifier": "utilitycraft:expert_storage_cell",
+        "name": "Expert Storage Cell",
+        "category": "Cells",
+        "image": "textures/items/cells/expert_storage_cell.png",
+        "source": "BP/items/cells/expert_cell.json"
+      },
+      {
+        "id": "expert_storage_part",
+        "slug": "expert-storage-part",
+        "identifier": "utilitycraft:expert_storage_part",
+        "name": "Expert Storage Part",
+        "category": "Parts",
+        "image": "textures/items/parts/expert_storage_part.png",
+        "source": "BP/items/parts/expert_storage_part.json"
+      },
+      {
+        "id": "fluxite",
+        "slug": "fluxite",
+        "identifier": "utilitycraft:fluxite",
+        "name": "Fluxite",
+        "category": "General",
+        "image": "textures/items/fluxite.png",
+        "source": "BP/items/fluxite.json"
+      },
+      {
+        "id": "storage_cell",
+        "slug": "storage-cell",
+        "identifier": "utilitycraft:storage_cell",
+        "name": "Storage Cell",
+        "category": "Cells",
+        "image": "textures/items/cells/storage_cell.png",
+        "source": "BP/items/cells/storage_cell.json"
+      },
+      {
+        "id": "storage_core",
+        "slug": "storage-core",
+        "identifier": "utilitycraft:storage_core",
+        "name": "Storage Core",
+        "category": "Parts",
+        "image": "textures/items/storage_core.png",
+        "source": "BP/items/parts/storage_core.json"
+      },
+      {
+        "id": "storage_filler",
+        "slug": "storage-filler",
+        "identifier": "utilitycraft:storage_filler",
+        "name": "Storage Filler",
+        "category": "General",
+        "image": "textures/ui/empty_cell.png",
+        "source": "BP/items/storage_filler.json"
+      },
+      {
+        "id": "storage_part",
+        "slug": "storage-part",
+        "identifier": "utilitycraft:storage_part",
+        "name": "Storage Part",
+        "category": "Parts",
+        "image": "textures/items/parts/storage_part.png",
+        "source": "BP/items/parts/storage_part.json"
+      },
+      {
+        "id": "ultimate_storage_cell",
+        "slug": "ultimate-storage-cell",
+        "identifier": "utilitycraft:ultimate_storage_cell",
+        "name": "Ultimate Storage Cell",
+        "category": "Cells",
+        "image": "textures/items/cells/ultimate_storage_cell.png",
+        "source": "BP/items/cells/ultimate_cell.json"
+      },
+      {
+        "id": "ultimate_storage_part",
+        "slug": "ultimate-storage-part",
+        "identifier": "utilitycraft:ultimate_storage_part",
+        "name": "Ultimate Storage Part",
+        "category": "Parts",
+        "image": "textures/items/parts/ultimate_storage_part.png",
+        "source": "BP/items/parts/ultimate_storage_part.json"
+      },
+      {
+        "id": "wireless_crafting_panel_off",
+        "slug": "wireless-crafting-panel-off",
+        "identifier": "utilitycraft:wireless_crafting_panel_off",
+        "name": "Wireless Crafting Panel-Off",
+        "category": "Wireless",
+        "image": "textures/items/wireless/wireless_crafting_panel_off.png",
+        "source": "BP/items/wireless/wireless_crafting_panel_off.json"
+      },
+      {
+        "id": "wireless_crafting_panel_on",
+        "slug": "wireless-crafting-panel-on",
+        "identifier": "utilitycraft:wireless_crafting_panel_on",
+        "name": "Wireless Crafting Panel-On",
+        "category": "Wireless",
+        "image": "textures/items/wireless/wireless_crafting_panel_on.png",
+        "source": "BP/items/wireless/wireless_crafting_panel_on.json"
+      },
+      {
+        "id": "wireless_panel_off",
+        "slug": "wireless-panel-off",
+        "identifier": "utilitycraft:wireless_panel_off",
+        "name": "Wireless Panel-Off",
+        "category": "Wireless",
+        "image": "textures/items/wireless/wireless_panel_off.png",
+        "source": "BP/items/wireless/wireless_panel_off.json"
+      },
+      {
+        "id": "wireless_panel_on",
+        "slug": "wireless-panel-on",
+        "identifier": "utilitycraft:wireless_panel_on",
+        "name": "Wireless Panel-On",
+        "category": "Wireless",
+        "image": "textures/items/wireless/wireless_panel_on.png",
+        "source": "BP/items/wireless/wireless_panel_on.json"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "fluxite_block",
+        "slug": "fluxite-block",
+        "identifier": "utilitycraft:fluxite_block",
+        "name": "Block of Fluxite",
+        "category": "General",
+        "render": "renders/fluxite_block.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/fluxite_block.png",
+          "left": "textures/blocks/fluxite_block.png",
+          "right": "textures/blocks/fluxite_block.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/fluxite_block.json",
+        "blockData": {
+          "breakTime": 2.5,
+          "mineable": true,
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "blueprint_terminal",
+        "slug": "blueprint-terminal",
+        "identifier": "utilitycraft:blueprint_terminal",
+        "name": "Blueprint Terminal",
+        "category": "General",
+        "render": "renders/blueprint_terminal.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/storage_port.png",
+          "left": "textures/blocks/storage_port.png",
+          "right": "textures/blocks/blueprint_terminal_front.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_emission",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "tag:ucds:network",
+          "tag:ucds:network_machine"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/blueprint_terminal.json",
+        "blockData": {
+          "breakTime": 12,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "lightEmission": 2,
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "crafting_terminal",
+        "slug": "crafting-terminal",
+        "identifier": "utilitycraft:crafting_terminal",
+        "name": "Crafting Terminal",
+        "category": "General",
+        "render": "renders/crafting_terminal.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/storage_port.png",
+          "left": "textures/blocks/storage_port.png",
+          "right": "textures/blocks/crafting_terminal_front.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_emission",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "tag:ucds:network",
+          "tag:ucds:network_machine",
+          "utilitycraft:crafting_terminal"
+        ],
+        "machineData": {
+          "component": "utilitycraft:crafting_terminal",
+          "inventorySize": 192,
+          "systemKind": "machine",
+          "energyCapacity": 0,
+          "baseRate": 0,
+          "interfaces": [
+            "Items"
+          ],
+          "tickInterval": [
+            4,
+            4
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/crafting_terminal.json",
+        "blockData": {
+          "breakTime": 12,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "lightEmission": 2,
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "export_buffer",
+        "slug": "export-buffer",
+        "identifier": "utilitycraft:export_buffer",
+        "name": "Export Buffer",
+        "category": "General",
+        "render": "renders/export_buffer.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/storage_port.png",
+          "left": "textures/blocks/export_buffer_front.png",
+          "right": "textures/blocks/export_buffer_front.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "tag:ucds:network",
+          "tag:ucds:network_machine",
+          "utilitycraft:export_buffer",
+          "utilitycraft:machine_upgrades"
+        ],
+        "machineData": {
+          "component": "utilitycraft:export_buffer",
+          "inventorySize": 37,
+          "systemKind": "machine",
+          "energyCapacity": 0,
+          "baseRate": 0,
+          "upgradeSlots": [
+            36
+          ],
+          "upgrades": [
+            {
+              "type": "speed",
+              "slot": 36
+            }
+          ],
+          "interfaces": [
+            "Items"
+          ],
+          "tickInterval": [
+            10,
+            10
+          ],
+          "directional": false
+        },
+        "source": "BP/blocks/export_buffer.json",
+        "blockData": {
+          "breakTime": 4,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "import_buffer",
+        "slug": "import-buffer",
+        "identifier": "utilitycraft:import_buffer",
+        "name": "Import Buffer",
+        "category": "General",
+        "render": "renders/import_buffer.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/storage_port.png",
+          "left": "textures/blocks/import_buffer_front.png",
+          "right": "textures/blocks/import_buffer_front.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "tag:ucds:network",
+          "tag:ucds:network_machine",
+          "utilitycraft:import_buffer",
+          "utilitycraft:machine_upgrades"
+        ],
+        "machineData": {
+          "component": "utilitycraft:import_buffer",
+          "inventorySize": 19,
+          "systemKind": "machine",
+          "energyCapacity": 0,
+          "baseRate": 0,
+          "upgradeSlots": [
+            18
+          ],
+          "upgrades": [
+            {
+              "type": "speed",
+              "slot": 18
+            }
+          ],
+          "interfaces": [
+            "Items"
+          ],
+          "tickInterval": [
+            10,
+            10
+          ],
+          "directional": false
+        },
+        "source": "BP/blocks/import_buffer.json",
+        "blockData": {
+          "breakTime": 4,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "network_cable",
+        "slug": "network-cable",
+        "identifier": "utilitycraft:network_cable",
+        "name": "Network Cable",
+        "category": "Conduits",
+        "render": "renders/network_cable.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/network_cable.png",
+          "left": "textures/blocks/network_cable.png",
+          "right": "textures/blocks/network_cable.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:selection_box",
+          "tag:ucds:network",
+          "tag:ucds:network_cable"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/conduits/network_cable.json",
+        "blockData": {
+          "explosionResistance": "Immune",
+          "directional": false
+        }
+      },
+      {
+        "id": "storage_cell_drive",
+        "slug": "storage-cell-drive",
+        "identifier": "utilitycraft:storage_cell_drive",
+        "name": "Storage Cell Drive",
+        "category": "General",
+        "render": "renders/storage_cell_drive.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/storage_port.png",
+          "left": "textures/blocks/storage_port.png",
+          "right": "textures/blocks/storage_cell_drive_front.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "tag:ucds:network",
+          "tag:ucds:network_machine",
+          "utilitycraft:storage_cell_drive"
+        ],
+        "machineData": {
+          "component": "utilitycraft:storage_cell_drive",
+          "inventorySize": 16,
+          "systemKind": "machine",
+          "energyCapacity": 0,
+          "baseRate": 0,
+          "tickInterval": [
+            20,
+            20
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/storage_cell_drive.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "storage_center",
+        "slug": "storage-center",
+        "identifier": "utilitycraft:storage_center",
+        "name": "Storage Center",
+        "category": "General",
+        "render": "renders/storage_center.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/storage_port.png",
+          "left": "textures/blocks/storage_center_front.png",
+          "right": "textures/blocks/storage_center_front.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:energy",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "tag:ucds:network",
+          "tag:ucds:network_machine",
+          "utilitycraft:storage_center"
+        ],
+        "machineData": {
+          "component": "utilitycraft:storage_center",
+          "inventorySize": 2,
+          "systemKind": "machine",
+          "energyCapacity": 512000,
+          "baseRate": 0,
+          "tickInterval": [
+            4,
+            4
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/storage_center.json",
+        "blockData": {
+          "breakTime": 4,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "storage_terminal",
+        "slug": "storage-terminal",
+        "identifier": "utilitycraft:storage_terminal",
+        "name": "Storage Terminal",
+        "category": "General",
+        "render": "renders/storage_terminal.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/storage_port.png",
+          "left": "textures/blocks/storage_port.png",
+          "right": "textures/blocks/storage_terminal_front.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_emission",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:item",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "tag:ucds:network",
+          "tag:ucds:network_machine",
+          "utilitycraft:storage_terminal"
+        ],
+        "machineData": {
+          "component": "utilitycraft:storage_terminal",
+          "inventorySize": 178,
+          "systemKind": "machine",
+          "energyCapacity": 0,
+          "baseRate": 0,
+          "interfaces": [
+            "Items"
+          ],
+          "tickInterval": [
+            4,
+            4
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/storage_terminal.json",
+        "blockData": {
+          "breakTime": 12,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "lightEmission": 2,
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "storage_transfer_station",
+        "slug": "storage-transfer-station",
+        "identifier": "utilitycraft:storage_transfer_station",
+        "name": "Storage Transfer Station",
+        "category": "General",
+        "render": "renders/storage_transfer_station.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/storage_port.png",
+          "left": "textures/blocks/storage_port.png",
+          "right": "textures/blocks/storage_transfer_station_front.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:machine",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:machine_upgrades",
+          "utilitycraft:storage_transfer_station"
+        ],
+        "machineData": {
+          "component": "utilitycraft:storage_transfer_station",
+          "inventorySize": 3,
+          "systemKind": "machine",
+          "energyCapacity": 0,
+          "baseRate": 0,
+          "upgradeSlots": [
+            2
+          ],
+          "upgrades": [
+            {
+              "type": "speed",
+              "slot": 2
+            }
+          ],
+          "tickInterval": [
+            10,
+            10
+          ],
+          "directional": true
+        },
+        "source": "BP/blocks/storage_transfer_station.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      }
+    ],
+    "entities": [
+      {
+        "id": "blueprint_terminal",
+        "slug": "blueprint-terminal",
+        "identifier": "utilitycraft:blueprint_terminal",
+        "name": "Blueprint Terminal",
+        "category": "General",
+        "image": null,
+        "source": "BP/entities/blueprint_terminal.json"
+      },
+      {
+        "id": "crafting_terminal",
+        "slug": "crafting-terminal",
+        "identifier": "utilitycraft:crafting_terminal",
+        "name": "Crafting Terminal",
+        "category": "General",
+        "image": null,
+        "source": "BP/entities/crafting_terminal.json"
+      },
+      {
+        "id": "export_buffer",
+        "slug": "export-buffer",
+        "identifier": "utilitycraft:export_buffer",
+        "name": "Export Buffer",
+        "category": "General",
+        "image": null,
+        "source": "BP/entities/export_buffer.json"
+      },
+      {
+        "id": "import_buffer",
+        "slug": "import-buffer",
+        "identifier": "utilitycraft:import_buffer",
+        "name": "Import Buffer",
+        "category": "General",
+        "image": null,
+        "source": "BP/entities/import_buffer.json"
+      },
+      {
+        "id": "storage_cell_drive",
+        "slug": "storage-cell-drive",
+        "identifier": "utilitycraft:storage_cell_drive",
+        "name": "Storage Cell Drive",
+        "category": "General",
+        "image": null,
+        "source": "BP/entities/storage_cell_drive.json"
+      },
+      {
+        "id": "storage_center",
+        "slug": "storage-center",
+        "identifier": "utilitycraft:storage_center",
+        "name": "Storage Center",
+        "category": "General",
+        "image": null,
+        "source": "BP/entities/storage_center.json"
+      },
+      {
+        "id": "storage_terminal",
+        "slug": "storage-terminal",
+        "identifier": "utilitycraft:storage_terminal",
+        "name": "Storage Terminal",
+        "category": "General",
+        "image": null,
+        "source": "BP/entities/storage_terminal.json"
+      },
+      {
+        "id": "storage_transfer_station",
+        "slug": "storage-transfer-station",
+        "identifier": "utilitycraft:storage_transfer_station",
+        "name": "Storage Transfer Station",
+        "category": "General",
+        "image": null,
+        "source": "BP/entities/storage_transfer_station.json"
+      },
+      {
+        "id": "storage_vault",
+        "slug": "storage-vault",
+        "identifier": "utilitycraft:storage_vault",
+        "name": "Storage Vault",
+        "category": "General",
+        "image": null,
+        "source": "BP/entities/storage_vault.json"
+      },
+      {
+        "id": "wireless_storage_terminal",
+        "slug": "wireless-storage-terminal",
+        "identifier": "utilitycraft:wireless_storage_terminal",
+        "name": "Wireless Storage Terminal",
+        "category": "General",
+        "image": null,
+        "source": "BP/entities/wireless_storage_terminal.json"
+      }
+    ],
+    "recipes": [
+      {
+        "id": "advanced_storage_cell",
+        "identifier": "utilitycraft:advanced_storage_cell",
+        "kind": "shapeless",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:cell_casing",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_storage_part",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "utilitycraft:advanced_storage_cell",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/advanced_storage_cell.json"
+      },
+      {
+        "id": "advanced_storage_part",
+        "identifier": "utilitycraft:advanced_storage_part",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:tinted_glass",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_storage_part",
+            "count": 1
+          },
+          {
+            "id": "minecraft:tinted_glass",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_storage_part",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_storage_part",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_chip",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:advanced_storage_part",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/advanced_storage_part.json"
+      },
+      {
+        "id": "basic_storage_cell",
+        "identifier": "utilitycraft:basic_storage_cell",
+        "kind": "shapeless",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:cell_casing",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_storage_part",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "utilitycraft:basic_storage_cell",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/basic_storage_cell.json"
+      },
+      {
+        "id": "basic_storage_part",
+        "identifier": "utilitycraft:basic_storage_part",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:tinted_glass",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_part",
+            "count": 1
+          },
+          {
+            "id": "minecraft:tinted_glass",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_part",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_part",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basic_chip",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:basic_storage_part",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/basic_storage_part.json"
+      },
+      {
+        "id": "cell_casing",
+        "identifier": "utilitycraft:cell_casing",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:steel_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:tinted_glass",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:tinted_glass",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:tinted_glass",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 8,
+        "result": {
+          "id": "utilitycraft:cell_casing",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/cell_casing.json"
+      },
+      {
+        "id": "crafting_terminal",
+        "identifier": "utilitycraft:crafting_terminal",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:crafter",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:gold_dust",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_terminal",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:gold_dust",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:crafting_terminal",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/crafting_terminal.json"
+      },
+      {
+        "id": "expert_storage_cell",
+        "identifier": "utilitycraft:expert_storage_cell",
+        "kind": "shapeless",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:cell_casing",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_storage_part",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "utilitycraft:expert_storage_cell",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/expert_storage_cell.json"
+      },
+      {
+        "id": "expert_storage_part",
+        "identifier": "utilitycraft:expert_storage_part",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:tinted_glass",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_storage_part",
+            "count": 1
+          },
+          {
+            "id": "minecraft:tinted_glass",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_storage_part",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:advanced_storage_part",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_chip",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:expert_storage_part",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/expert_storage_part.json"
+      },
+      {
+        "id": "export_buffer_from_item_exporter",
+        "identifier": "utilitycraft:export_buffer_from_item_exporter",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:item_exporter",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:export_buffer",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/export_buffer_from_item_exporter.json"
+      },
+      {
+        "id": "export_buffer_from_item_exporter_blue",
+        "identifier": "utilitycraft:export_buffer_from_item_exporter_blue",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:item_exporter_blue",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:export_buffer",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/export_buffer_from_item_exporter_blue.json"
+      },
+      {
+        "id": "export_buffer_from_item_exporter_purple",
+        "identifier": "utilitycraft:export_buffer_from_item_exporter_purple",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:item_exporter_purple",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:export_buffer",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/export_buffer_from_item_exporter_purple.json"
+      },
+      {
+        "id": "export_buffer_from_item_exporter_red",
+        "identifier": "utilitycraft:export_buffer_from_item_exporter_red",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:item_exporter_red",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:export_buffer",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/export_buffer_from_item_exporter_red.json"
+      },
+      {
+        "id": "export_buffer_from_item_exporter_yellow",
+        "identifier": "utilitycraft:export_buffer_from_item_exporter_yellow",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:item_exporter_yellow",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:export_buffer",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/export_buffer_from_item_exporter_yellow.json"
+      },
+      {
+        "id": "fluxite_block_to_fluxite",
+        "identifier": "utilitycraft:fluxite_block_to_fluxite",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:fluxite_block",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "utilitycraft:fluxite",
+          "count": 9
+        },
+        "source": "BP/recipes/items/digital_storage/fluxite_block_to_fluxite.json"
+      },
+      {
+        "id": "fluxite_to_block",
+        "identifier": "utilitycraft:fluxite_to_block",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 9
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "utilitycraft:fluxite_block",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/fluxite_to_block.json"
+      },
+      {
+        "id": "import_buffer_from_item_importer",
+        "identifier": "utilitycraft:import_buffer_from_item_importer",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:item_importer",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:import_buffer",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/import_buffer_from_item_importer.json"
+      },
+      {
+        "id": "import_buffer_from_item_importer_blue",
+        "identifier": "utilitycraft:import_buffer_from_item_importer_blue",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:item_importer_blue",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:import_buffer",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/import_buffer_from_item_importer_blue.json"
+      },
+      {
+        "id": "import_buffer_from_item_importer_purple",
+        "identifier": "utilitycraft:import_buffer_from_item_importer_purple",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:item_importer_purple",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:import_buffer",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/import_buffer_from_item_importer_purple.json"
+      },
+      {
+        "id": "import_buffer_from_item_importer_red",
+        "identifier": "utilitycraft:import_buffer_from_item_importer_red",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:item_importer_red",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:import_buffer",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/import_buffer_from_item_importer_red.json"
+      },
+      {
+        "id": "import_buffer_from_item_importer_yellow",
+        "identifier": "utilitycraft:import_buffer_from_item_importer_yellow",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:item_importer_yellow",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:import_buffer",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/import_buffer_from_item_importer_yellow.json"
+      },
+      {
+        "id": "network_cable",
+        "identifier": "utilitycraft:network_cable",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 3,
+        "result": {
+          "id": "utilitycraft:network_cable",
+          "count": 8
+        },
+        "source": "BP/recipes/items/digital_storage/network_cable.json"
+      },
+      {
+        "id": "storage_cell",
+        "identifier": "utilitycraft:storage_cell",
+        "kind": "shapeless",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:cell_casing",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_part",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "utilitycraft:storage_cell",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/storage_cell.json"
+      },
+      {
+        "id": "storage_cell_drive",
+        "identifier": "utilitycraft:storage_cell_drive",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:chest",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:storage_cell_drive",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/storage_cell_drive.json"
+      },
+      {
+        "id": "storage_center",
+        "identifier": "utilitycraft:storage_center",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite_block",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:storage_center",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/storage_center.json"
+      },
+      {
+        "id": "storage_core",
+        "identifier": "utilitycraft:storage_core",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:gold_dust",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:gold_dust",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:steel_plate",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:storage_core",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/storage_core.json"
+      },
+      {
+        "id": "storage_part",
+        "identifier": "utilitycraft:storage_part",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:tinted_glass",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "minecraft:tinted_glass",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:silicon",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:chip",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:storage_part",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/storage_part.json"
+      },
+      {
+        "id": "storage_terminal",
+        "identifier": "utilitycraft:storage_terminal",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:tinted_glass",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:storage_terminal",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/storage_terminal.json"
+      },
+      {
+        "id": "storage_transfer_station",
+        "identifier": "utilitycraft:storage_transfer_station",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:gold_dust",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_cell_drive",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:gold_dust",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:storage_transfer_station",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/storage_transfer_station.json"
+      },
+      {
+        "id": "ultimate_storage_cell",
+        "identifier": "utilitycraft:ultimate_storage_cell",
+        "kind": "shapeless",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:cell_casing",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:ultimate_storage_part",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "utilitycraft:ultimate_storage_cell",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/ultimate_storage_cell.json"
+      },
+      {
+        "id": "ultimate_storage_part",
+        "identifier": "utilitycraft:ultimate_storage_part",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:tinted_glass",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_storage_part",
+            "count": 1
+          },
+          {
+            "id": "minecraft:tinted_glass",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_storage_part",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_core",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:expert_storage_part",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:ultimate_chip",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:ultimate_storage_part",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/ultimate_storage_part.json"
+      }
+    ]
+  },
+  "catalog": {
+    "items": [
+      {
+        "id": "cell_casing",
+        "slug": "cell-casing",
+        "identifier": "utilitycraft:cell_casing",
+        "name": "Cell Casing",
+        "category": "Cells",
+        "image": "textures/items/cells/cell_casing.png",
+        "source": "BP/items/cells/cell_casing.json"
+      },
+      {
+        "id": "fluxite",
+        "slug": "fluxite",
+        "identifier": "utilitycraft:fluxite",
+        "name": "Fluxite",
+        "category": "General",
+        "image": "textures/items/fluxite.png",
+        "source": "BP/items/fluxite.json"
+      },
+      {
+        "id": "storage_cell",
+        "slug": "storage-cell",
+        "identifier": "utilitycraft:storage_cell",
+        "name": "Storage Cell",
+        "category": "Cells",
+        "image": "textures/items/cells/storage_cell.png",
+        "source": "BP/items/cells/storage_cell.json",
+        "variants": [
+          {
+            "id": "storage_cell",
+            "identifier": "utilitycraft:storage_cell",
+            "name": "Storage Cell",
+            "tier": "base",
+            "image": "textures/items/cells/storage_cell.png"
+          },
+          {
+            "id": "basic_storage_cell",
+            "identifier": "utilitycraft:basic_storage_cell",
+            "name": "Basic Storage Cell",
+            "tier": "basic",
+            "image": "textures/items/cells/basic_storage_cell.png"
+          },
+          {
+            "id": "advanced_storage_cell",
+            "identifier": "utilitycraft:advanced_storage_cell",
+            "name": "Advanced Storage Cell",
+            "tier": "advanced",
+            "image": "textures/items/cells/advanced_storage_cell.png"
+          },
+          {
+            "id": "expert_storage_cell",
+            "identifier": "utilitycraft:expert_storage_cell",
+            "name": "Expert Storage Cell",
+            "tier": "expert",
+            "image": "textures/items/cells/expert_storage_cell.png"
+          },
+          {
+            "id": "ultimate_storage_cell",
+            "identifier": "utilitycraft:ultimate_storage_cell",
+            "name": "Ultimate Storage Cell",
+            "tier": "ultimate",
+            "image": "textures/items/cells/ultimate_storage_cell.png"
+          }
+        ]
+      },
+      {
+        "id": "storage_core",
+        "slug": "storage-core",
+        "identifier": "utilitycraft:storage_core",
+        "name": "Storage Core",
+        "category": "Parts",
+        "image": "textures/items/storage_core.png",
+        "source": "BP/items/parts/storage_core.json"
+      },
+      {
+        "id": "storage_filler",
+        "slug": "storage-filler",
+        "identifier": "utilitycraft:storage_filler",
+        "name": "Storage Filler",
+        "category": "General",
+        "image": "textures/ui/empty_cell.png",
+        "source": "BP/items/storage_filler.json"
+      },
+      {
+        "id": "storage_part",
+        "slug": "storage-part",
+        "identifier": "utilitycraft:storage_part",
+        "name": "Storage Part",
+        "category": "Parts",
+        "image": "textures/items/parts/storage_part.png",
+        "source": "BP/items/parts/storage_part.json",
+        "variants": [
+          {
+            "id": "storage_part",
+            "identifier": "utilitycraft:storage_part",
+            "name": "Storage Part",
+            "tier": "base",
+            "image": "textures/items/parts/storage_part.png"
+          },
+          {
+            "id": "basic_storage_part",
+            "identifier": "utilitycraft:basic_storage_part",
+            "name": "Basic Storage Part",
+            "tier": "basic",
+            "image": "textures/items/parts/basic_storage_part.png"
+          },
+          {
+            "id": "advanced_storage_part",
+            "identifier": "utilitycraft:advanced_storage_part",
+            "name": "Advanced Storage Part",
+            "tier": "advanced",
+            "image": "textures/items/parts/advanced_storage_part.png"
+          },
+          {
+            "id": "expert_storage_part",
+            "identifier": "utilitycraft:expert_storage_part",
+            "name": "Expert Storage Part",
+            "tier": "expert",
+            "image": "textures/items/parts/expert_storage_part.png"
+          },
+          {
+            "id": "ultimate_storage_part",
+            "identifier": "utilitycraft:ultimate_storage_part",
+            "name": "Ultimate Storage Part",
+            "tier": "ultimate",
+            "image": "textures/items/parts/ultimate_storage_part.png"
+          }
+        ]
+      },
+      {
+        "id": "wireless_crafting_panel_off",
+        "slug": "wireless-crafting-panel-off",
+        "identifier": "utilitycraft:wireless_crafting_panel_off",
+        "name": "Wireless Crafting Panel-Off",
+        "category": "Wireless",
+        "image": "textures/items/wireless/wireless_crafting_panel_off.png",
+        "source": "BP/items/wireless/wireless_crafting_panel_off.json"
+      },
+      {
+        "id": "wireless_crafting_panel_on",
+        "slug": "wireless-crafting-panel-on",
+        "identifier": "utilitycraft:wireless_crafting_panel_on",
+        "name": "Wireless Crafting Panel-On",
+        "category": "Wireless",
+        "image": "textures/items/wireless/wireless_crafting_panel_on.png",
+        "source": "BP/items/wireless/wireless_crafting_panel_on.json"
+      },
+      {
+        "id": "wireless_panel_off",
+        "slug": "wireless-panel-off",
+        "identifier": "utilitycraft:wireless_panel_off",
+        "name": "Wireless Panel-Off",
+        "category": "Wireless",
+        "image": "textures/items/wireless/wireless_panel_off.png",
+        "source": "BP/items/wireless/wireless_panel_off.json"
+      },
+      {
+        "id": "wireless_panel_on",
+        "slug": "wireless-panel-on",
+        "identifier": "utilitycraft:wireless_panel_on",
+        "name": "Wireless Panel-On",
+        "category": "Wireless",
+        "image": "textures/items/wireless/wireless_panel_on.png",
+        "source": "BP/items/wireless/wireless_panel_on.json"
+      }
+    ]
+  },
+  "variantGroups": [
+    {
+      "id": "storage_cell",
+      "identifier": "utilitycraft:storage_cell",
+      "variants": [
+        {
+          "id": "storage_cell",
+          "identifier": "utilitycraft:storage_cell",
+          "name": "Storage Cell",
+          "tier": "base",
+          "image": "textures/items/cells/storage_cell.png"
+        },
+        {
+          "id": "basic_storage_cell",
+          "identifier": "utilitycraft:basic_storage_cell",
+          "name": "Basic Storage Cell",
+          "tier": "basic",
+          "image": "textures/items/cells/basic_storage_cell.png"
+        },
+        {
+          "id": "advanced_storage_cell",
+          "identifier": "utilitycraft:advanced_storage_cell",
+          "name": "Advanced Storage Cell",
+          "tier": "advanced",
+          "image": "textures/items/cells/advanced_storage_cell.png"
+        },
+        {
+          "id": "expert_storage_cell",
+          "identifier": "utilitycraft:expert_storage_cell",
+          "name": "Expert Storage Cell",
+          "tier": "expert",
+          "image": "textures/items/cells/expert_storage_cell.png"
+        },
+        {
+          "id": "ultimate_storage_cell",
+          "identifier": "utilitycraft:ultimate_storage_cell",
+          "name": "Ultimate Storage Cell",
+          "tier": "ultimate",
+          "image": "textures/items/cells/ultimate_storage_cell.png"
+        }
+      ]
+    },
+    {
+      "id": "storage_part",
+      "identifier": "utilitycraft:storage_part",
+      "variants": [
+        {
+          "id": "storage_part",
+          "identifier": "utilitycraft:storage_part",
+          "name": "Storage Part",
+          "tier": "base",
+          "image": "textures/items/parts/storage_part.png"
+        },
+        {
+          "id": "basic_storage_part",
+          "identifier": "utilitycraft:basic_storage_part",
+          "name": "Basic Storage Part",
+          "tier": "basic",
+          "image": "textures/items/parts/basic_storage_part.png"
+        },
+        {
+          "id": "advanced_storage_part",
+          "identifier": "utilitycraft:advanced_storage_part",
+          "name": "Advanced Storage Part",
+          "tier": "advanced",
+          "image": "textures/items/parts/advanced_storage_part.png"
+        },
+        {
+          "id": "expert_storage_part",
+          "identifier": "utilitycraft:expert_storage_part",
+          "name": "Expert Storage Part",
+          "tier": "expert",
+          "image": "textures/items/parts/expert_storage_part.png"
+        },
+        {
+          "id": "ultimate_storage_part",
+          "identifier": "utilitycraft:ultimate_storage_part",
+          "name": "Ultimate Storage Part",
+          "tier": "ultimate",
+          "image": "textures/items/parts/ultimate_storage_part.png"
+        }
+      ]
+    }
+  ]
+}

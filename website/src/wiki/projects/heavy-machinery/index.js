@@ -2,6 +2,7 @@ import * as data from './data.js';
 import {craftingRecipeDetails} from './recipeData.js';
 import processingRecipes from './processingRecipes.json';
 import {vanillaStationMeta} from '../vanillaStationMeta.js';
+import documentationProfiles from './documentationProfiles.generated.json';
 
 const pageMeta = {
   overview: ['Heavy Machinery Wiki', 'Technical reference for UtilityCraft: Heavy Machinery.'],
@@ -57,8 +58,8 @@ const heavyMachineryProject = {
   sectionDescriptions,
   stationMeta,
   machineControllerIds,
-  items: data.items,
-  allItems: data.items,
+  items: data.items.map((item) => ({...item, ...(documentationProfiles.items[item.id] ?? {})})),
+  allItems: data.items.map((item) => ({...item, ...(documentationProfiles.items[item.id] ?? {})})),
   blocks: data.blocks,
   allBlocks: data.blocks,
   machines: data.machines,

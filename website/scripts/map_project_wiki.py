@@ -156,8 +156,8 @@ def write_registry(project_ids: list[str]) -> None:
 def main() -> None:
     args = parse_args()
     project_root = args.project.resolve()
-    if not (project_root / "BP").is_dir() or not (project_root / "RP").is_dir():
-        raise SystemExit(f"Project must contain BP and RP directories: {project_root}")
+    if not (project_root / "BP").is_dir():
+        raise SystemExit(f"Project must contain a BP directory: {project_root}")
 
     catalog = read_catalog()
     record = catalog_record(project_root, args.project_id, catalog)

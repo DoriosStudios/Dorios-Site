@@ -504,7 +504,7 @@
       ],
       "routes": {
         "project": "/projects/digital-storage",
-        "wiki": null
+        "wiki": "/wiki/digital-storage"
       },
       "links": {
         "repository": "https://github.com/DoriosStudios/UtilityCraft-Digital-Storage",
@@ -913,7 +913,7 @@
       ],
       "routes": {
         "project": "/projects/tiered-machinery",
-        "wiki": null
+        "wiki": "/wiki/tiered-machinery"
       },
       "links": {
         "repository": "https://github.com/DoriosStudios/UtilityCraft-Tiered-Machinery",

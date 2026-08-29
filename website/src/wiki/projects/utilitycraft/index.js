@@ -2,6 +2,7 @@ import manifest from './manifest.json';
 import processingRecipes from './processingRecipes.json';
 import {createGeneratedProject} from '../createGeneratedProject';
 import machineProfiles from './machineProfiles';
+import documentationProfiles from './documentationProfiles.generated.json';
 
 const GENERATOR_TIERS = [
   ['basic', 'Basic'],
@@ -75,7 +76,7 @@ const utilitycraft = createGeneratedProject({
   repository: 'https://github.com/DoriosStudios/UtilityCraft',
   machineProfiles,
   blockProfiles,
-  itemProfiles: meshProfiles,
+  itemProfiles: {...documentationProfiles.items, ...meshProfiles},
   processingRecipes,
   generatorProfiles,
   generatorCategoryOrder: [...generatorFamilies.map(({family}) => family), 'Energy Storage', 'Energy Distribution'],

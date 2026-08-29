@@ -1,0 +1,322 @@
+{
+  "items": {
+    "utilitycraft:advanced_storage_cell": {
+      "documentation": {
+        "description": "Advanced Storage Cell is a Digital Storage cell with a fixed item capacity documented from the runtime registry.",
+        "basic": {
+          "itemType": "Digital storage cell",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Item statistics",
+        "statistics": [
+          [
+            "Durability",
+            "1,000"
+          ],
+          [
+            "Item capacity",
+            "16,384 stored items"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "storage-cell",
+            "label": "Storage Cell",
+            "title": "Digital storage cell",
+            "copy": "Capacity is read from Digital Storage’s runtime cell registry.",
+            "facts": [
+              [
+                "Network behavior",
+                "Stores one item type per cell; capacity is shared when the cell is installed in a Storage Cell Drive."
+              ]
+            ],
+            "entries": [
+              "Storage Cell — 1,024 items",
+              "Basic Storage Cell — 4,096 items",
+              "Advanced Storage Cell — 16,384 items",
+              "Expert Storage Cell — 65,536 items",
+              "Ultimate Storage Cell — 409,600 items"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:basic_storage_cell": {
+      "documentation": {
+        "description": "Basic Storage Cell is a Digital Storage cell with a fixed item capacity documented from the runtime registry.",
+        "basic": {
+          "itemType": "Digital storage cell",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Item statistics",
+        "statistics": [
+          [
+            "Durability",
+            "1,000"
+          ],
+          [
+            "Item capacity",
+            "4,096 stored items"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "storage-cell",
+            "label": "Storage Cell",
+            "title": "Digital storage cell",
+            "copy": "Capacity is read from Digital Storage’s runtime cell registry.",
+            "facts": [
+              [
+                "Network behavior",
+                "Stores one item type per cell; capacity is shared when the cell is installed in a Storage Cell Drive."
+              ]
+            ],
+            "entries": [
+              "Storage Cell — 1,024 items",
+              "Basic Storage Cell — 4,096 items",
+              "Advanced Storage Cell — 16,384 items",
+              "Expert Storage Cell — 65,536 items",
+              "Ultimate Storage Cell — 409,600 items"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:cell_casing": {
+      "documentation": {
+        "description": "Cell Casing has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Durable equipment",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Item statistics",
+        "statistics": [
+          [
+            "Durability",
+            "1,000"
+          ]
+        ],
+        "sections": []
+      }
+    },
+    "utilitycraft:expert_storage_cell": {
+      "documentation": {
+        "description": "Expert Storage Cell is a Digital Storage cell with a fixed item capacity documented from the runtime registry.",
+        "basic": {
+          "itemType": "Digital storage cell",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Item statistics",
+        "statistics": [
+          [
+            "Durability",
+            "1,000"
+          ],
+          [
+            "Item capacity",
+            "65,536 stored items"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "storage-cell",
+            "label": "Storage Cell",
+            "title": "Digital storage cell",
+            "copy": "Capacity is read from Digital Storage’s runtime cell registry.",
+            "facts": [
+              [
+                "Network behavior",
+                "Stores one item type per cell; capacity is shared when the cell is installed in a Storage Cell Drive."
+              ]
+            ],
+            "entries": [
+              "Storage Cell — 1,024 items",
+              "Basic Storage Cell — 4,096 items",
+              "Advanced Storage Cell — 16,384 items",
+              "Expert Storage Cell — 65,536 items",
+              "Ultimate Storage Cell — 409,600 items"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:storage_cell": {
+      "documentation": {
+        "description": "Storage Cell is a Digital Storage cell with a fixed item capacity documented from the runtime registry.",
+        "basic": {
+          "itemType": "Digital storage cell",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Item statistics",
+        "statistics": [
+          [
+            "Durability",
+            "1,000"
+          ],
+          [
+            "Item capacity",
+            "1,024 stored items"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "storage-cell",
+            "label": "Storage Cell",
+            "title": "Digital storage cell",
+            "copy": "Capacity is read from Digital Storage’s runtime cell registry.",
+            "facts": [
+              [
+                "Network behavior",
+                "Stores one item type per cell; capacity is shared when the cell is installed in a Storage Cell Drive."
+              ]
+            ],
+            "entries": [
+              "Storage Cell — 1,024 items",
+              "Basic Storage Cell — 4,096 items",
+              "Advanced Storage Cell — 16,384 items",
+              "Expert Storage Cell — 65,536 items",
+              "Ultimate Storage Cell — 409,600 items"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:ultimate_storage_cell": {
+      "documentation": {
+        "description": "Ultimate Storage Cell is a Digital Storage cell with a fixed item capacity documented from the runtime registry.",
+        "basic": {
+          "itemType": "Digital storage cell",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Item statistics",
+        "statistics": [
+          [
+            "Durability",
+            "1,000"
+          ],
+          [
+            "Item capacity",
+            "409,600 stored items"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "storage-cell",
+            "label": "Storage Cell",
+            "title": "Digital storage cell",
+            "copy": "Capacity is read from Digital Storage’s runtime cell registry.",
+            "facts": [
+              [
+                "Network behavior",
+                "Stores one item type per cell; capacity is shared when the cell is installed in a Storage Cell Drive."
+              ]
+            ],
+            "entries": [
+              "Storage Cell — 1,024 items",
+              "Basic Storage Cell — 4,096 items",
+              "Advanced Storage Cell — 16,384 items",
+              "Expert Storage Cell — 65,536 items",
+              "Ultimate Storage Cell — 409,600 items"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:fluxite": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:advanced_storage_part": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:basic_storage_part": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:expert_storage_part": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:storage_core": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:storage_part": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:ultimate_storage_part": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:storage_filler": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:wireless_crafting_panel_off": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:wireless_crafting_panel_on": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:wireless_panel_off": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:wireless_panel_on": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    }
+  }
+}
