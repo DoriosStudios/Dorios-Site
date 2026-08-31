@@ -159,6 +159,9 @@
 	border-color: color-mix(in srgb, var(--card-primary) 65%, var(--ds-border));
 	color: color-mix(in srgb, var(--card-primary) 52%, var(--ds-text));
 }
+.downloadBadge { width: max-content; display: inline-flex; align-items: center; gap: .34rem; margin-top: .65rem; padding: .38rem .55rem; border: 1px solid color-mix(in srgb, var(--card-primary) 34%, var(--ds-border)); border-radius: 999px; background: color-mix(in srgb, var(--card-primary) 8%, var(--ds-surface-raised)); color: color-mix(in srgb, var(--card-primary) 66%, var(--ds-text)); font-size: .68rem; line-height: 1; }
+.downloadBadge strong { color: var(--ds-text); font-size: .75rem; font-weight: 850; }
+.downloadBadge span { color: var(--ds-muted); font-weight: 700; }
 .overline {
 	margin-top: 0.9rem;
 }

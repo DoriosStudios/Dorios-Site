@@ -15,7 +15,7 @@
   },
   "bonsais": {
     "modId": 1087426,
-    "downloads": 81172,
+    "downloads": 81182,
     "display": "81.1K+",
     "source": "curseforge",
     "updatedAt": "2026-08-31T01:03:46.839Z"
@@ -50,7 +50,7 @@
   },
   "cobblestone-generators": {
     "modId": 1086676,
-    "downloads": 48937,
+    "downloads": 48961,
     "display": "48.9K+",
     "source": "curseforge",
     "updatedAt": "2026-08-31T01:03:46.839Z"
@@ -62,9 +62,16 @@
     "source": "curseforge",
     "updatedAt": "2026-08-31T01:03:46.839Z"
   },
+  "digital-storage": {
+    "modId": 1650570,
+    "downloads": 9260,
+    "display": "9.2K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-31T01:43:35.532Z"
+  },
   "crops": {
     "modId": 1097197,
-    "downloads": 25069,
+    "downloads": 25112,
     "display": "25K+",
     "source": "curseforge",
     "updatedAt": "2026-08-31T01:03:46.839Z"
@@ -96,6 +103,13 @@
     "display": "11.9K+",
     "source": "curseforge",
     "updatedAt": "2026-08-31T01:03:46.839Z"
+  },
+  "tiered-machinery": {
+    "modId": 1469691,
+    "downloads": 29820,
+    "display": "29.8K+",
+    "source": "curseforge",
+    "updatedAt": "2026-08-31T01:43:35.532Z"
   },
   "trees": {
     "modId": 1310972,

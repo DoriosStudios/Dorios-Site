@@ -5,9 +5,7 @@ import Layout from '@theme/Layout';
 import DoriosMarketingShell from '../DoriosMarketingShell';
 import SocialMetadata from '../SocialMetadata';
 import {projectCardPalette} from '../../data/cardPalettes';
-import githubReleaseStats from '../../data/githubReleaseStats.json';
-import curseForgeStats from '../../data/curseForgeStats.json';
-import {projectCatalog, relatedProjects} from '../../data/projects';
+import {formatDownloadCount, projectCatalog, relatedProjects} from '../../data/projects';
 import styles from './styles.module.css';
 
 const metricLabels = {
@@ -24,27 +22,13 @@ const metricLabels = {
 
 const primaryMetricKeys = ['downloads', 'items', 'blocks', 'machines', 'recipes'];
 
-function abbreviatedDownloadCount(value) {
-  const count = Math.max(0, Math.floor(Number(value) || 0));
-  if (count < 100) return '<100';
-  if (count < 1000) return `${Math.floor(count / 100) * 100}+`;
-  const units = [[1_000_000_000, 'B'], [1_000_000, 'M'], [1_000, 'K']];
-  const [size, suffix] = units.find(([unitSize]) => count >= unitSize);
-  const truncated = Math.floor((count / size) * 10) / 10;
-  return `${Number.isInteger(truncated) ? truncated.toFixed(0) : truncated.toFixed(1)}${suffix}+`;
-}
-
 function availableMetrics(project) {
-  const releaseDownloads = curseForgeStats[project.id]?.downloads ?? githubReleaseStats[project.id]?.downloads;
-  const metrics = releaseDownloads === undefined
-    ? project.metrics
-    : {downloads: releaseDownloads, ...project.metrics};
-  return Object.entries(metrics ?? {})
+  return Object.entries(project.metrics ?? {})
     .filter(([, value]) => value !== null && value !== undefined)
     .map(([key, value]) => ({
       key,
       label: metricLabels[key] ?? key,
-      value: key === 'downloads' ? abbreviatedDownloadCount(value) : value.toLocaleString('en-US'),
+      value: key === 'downloads' ? formatDownloadCount(value) : value.toLocaleString('en-US'),
     }));
 }
 
@@ -131,7 +115,15 @@ function PrimaryMetrics({project}) {
 
   return (
     <dl className={styles.heroStats} aria-label="Primary project metrics" style={projectCardPalette(project)}>
-      {metrics.map((metric) => <div key={metric.key}><dt>{metric.label}</dt><dd>{metric.value}</dd></div>)}
+      {metrics.map((metric) => <div key={metric.key}>
+        <dt>{metric.label}</dt>
+        <dd>{metric.value}</dd>
+        {metric.key === 'downloads' && <small className={styles.downloadSources}>
+          {project.downloadStats.hasCurseForge ? `CurseForge ${project.downloadStats.curseForge.toLocaleString('en-US')}` : 'CurseForge 0'}
+          <span>+</span>
+          {project.downloadStats.hasGitHub ? `GitHub ${project.downloadStats.github.toLocaleString('en-US')}` : 'GitHub 0'}
+        </small>}
+      </div>)}
     </dl>
   );
 }

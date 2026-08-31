@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import {IconDownload} from '@tabler/icons-react';
 import DoriosMarketingShell from '../../components/DoriosMarketingShell';
 import {projectCardPalette} from '../../data/cardPalettes';
 import {featuredProjects, getProject, listedProjects} from '../../data/projects';
@@ -17,6 +18,15 @@ const primaryCarouselProjects = ['utilitycraft', 'trinkets']
 
 function Tags({project}) {
   return <div className={styles.tags}><span>{project.kind}</span><span>{project.category}</span>{project.ownership === 'community' && <span>Community</span>}</div>;
+}
+
+function DownloadBadge({project}) {
+  const {downloadStats} = project;
+  return <span className={styles.downloadBadge} title={`${downloadStats.total.toLocaleString('en-US')} combined CurseForge and GitHub downloads`}>
+    <IconDownload aria-hidden="true" size={15} stroke={2} />
+    <strong>{downloadStats.display}</strong>
+    <span>downloads</span>
+  </span>;
 }
 
 function ProjectImage({project, eager = false}) {
@@ -39,7 +49,7 @@ function FeaturedCard({project, primary = false, carousel = false}) {
       <Link className={`${styles.featureCard} ${styles.utilityCard} ${carousel ? styles.carouselCard : ''}`} to={project.routes.project} style={projectCardPalette(project)}>
         <ProjectImage project={project} eager />
         <div className={styles.featureCopy}>
-          <div><p className={styles.overline}>Featured project</p><Tags project={project} /></div>
+          <div><p className={styles.overline}>Featured project</p><Tags project={project} /><DownloadBadge project={project} /></div>
           <h2>{project.name}</h2>
           <p className={styles.description}>{project.summary}</p>
           <i className={styles.featureArrow} aria-hidden="true">↗</i>
@@ -52,6 +62,7 @@ function FeaturedCard({project, primary = false, carousel = false}) {
       <ProjectImage project={project} eager />
       <div className={styles.compactCopy}>
         <Tags project={project} />
+        <DownloadBadge project={project} />
         <p className={styles.overline}>{project.lifecycle}</p>
         <h2>{project.name}</h2>
         <p>{compactFeaturedSummaries[project.id] ?? project.summary}</p>
@@ -124,7 +135,7 @@ export default function ProjectsPage() {
                   <div className={`${styles.catalogImage} ${!project.media.cover ? styles.iconFrame : ''}`}>
                     <img src={project.media.cover ?? project.media.icon} alt={project.media.alt} loading="lazy" style={{objectFit: project.media.cover ? project.media.coverFit : 'contain'}} />
                   </div>
-                  <div className={styles.catalogCopy}><Tags project={project} /><h3>{project.name}</h3><span aria-hidden="true">↗</span></div>
+                  <div className={styles.catalogCopy}><Tags project={project} /><DownloadBadge project={project} /><h3>{project.name}</h3><span aria-hidden="true">↗</span></div>
                 </Link>
               ))}
             </div>

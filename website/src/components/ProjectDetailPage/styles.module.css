@@ -78,6 +78,8 @@
 .heroStats > div::before { content: ''; position: absolute; top: .15rem; bottom: .1rem; left: 0; width: 2px; background: color-mix(in srgb, var(--card-primary) 68%, var(--ds-text)); }
 .heroStats dt { color: var(--ds-muted); font-family: var(--project-ui-font); font-size: .75rem; font-weight: 800; letter-spacing: .085em; text-transform: uppercase; }
 .heroStats dd { margin: .28rem 0 0; color: var(--ds-text); font-family: var(--project-display-font); font-size: clamp(1.45rem, 2.4vw, 2.35rem); font-weight: 800; letter-spacing: -.05em; line-height: 1; overflow-wrap: anywhere; }
+.downloadSources { display: flex; flex-wrap: wrap; gap: .28rem .42rem; margin-top: .45rem; color: var(--ds-muted); font-family: var(--project-ui-font); font-size: .68rem; font-weight: 700; line-height: 1.25; }
+.downloadSources span { color: color-mix(in srgb, var(--card-primary) 62%, var(--ds-text)); }
 
 .about { display: grid; grid-template-columns: minmax(280px, .82fr) minmax(0, 1.18fr); gap: clamp(1.5rem, 3vw, 3rem); padding-top: var(--ds-section-space); }
 .linkSection,

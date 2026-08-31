@@ -3,19 +3,16 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import catalog from '../src/data/projectCatalog.json' with {type: 'json'};
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const outputPath = path.join(scriptDirectory, '..', 'src', 'data', 'githubReleaseStats.json');
-const projects = [
-  {
-    id: 'ascendant-technology',
-    repository: 'DoriosStudios/Ascendant-Technology',
-  },
-  {
-    id: 'heavy-machinery',
-    repository: 'DoriosStudios/UtilityCraft-Heavy-Machinery',
-  },
-];
+const projects = catalog.projects
+  .filter((project) => project.links?.repository)
+  .map((project) => ({
+    id: project.id,
+    repository: new URL(project.links.repository).pathname.replace(/^\/+|\/+$/g, ''),
+  }));
 
 function abbreviatedDownloadCount(value) {
   const count = Math.max(0, Math.floor(Number(value) || 0));
@@ -93,8 +90,24 @@ for (const project of projects) {
     next[project.id] = await fetchReleaseStats(project);
     refreshed += 1;
   } catch (error) {
-    if (!previous[project.id]) throw error;
-    console.warn(`[github-stats] ${error.message}; keeping cached data for ${project.id}.`);
+    if (previous[project.id]) {
+      console.warn(`[github-stats] ${error.message}; keeping cached data for ${project.id}.`);
+      continue;
+    }
+    next[project.id] = {
+      id: project.id,
+      repository: project.repository,
+      endpoint: `https://api.github.com/repos/${project.repository}/releases`,
+      downloads: 0,
+      display: '0',
+      releases: 0,
+      assets: 0,
+      version: null,
+      available: false,
+      error: error.message,
+      updatedAt: new Date().toISOString(),
+    };
+    console.warn(`[github-stats] ${error.message}; recording zero public release downloads for ${project.id}.`);
   }
 }
 

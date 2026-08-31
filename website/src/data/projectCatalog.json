@@ -917,7 +917,8 @@
       },
       "links": {
         "repository": "https://github.com/DoriosStudios/UtilityCraft-Tiered-Machinery",
-        "releases": "https://github.com/DoriosStudios/UtilityCraft-Tiered-Machinery/releases"
+        "releases": "https://github.com/DoriosStudios/UtilityCraft-Tiered-Machinery/releases",
+        "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/utilitycraft-tiered-machinery"
       },
       "media": {
         "cover": null,

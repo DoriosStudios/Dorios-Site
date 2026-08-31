@@ -113,6 +113,7 @@
       "category": "Technology",
       "lifecycle": "Released",
       "summary": "A UtilityCraft extension that adds tiered machine progression and higher-throughput industrial systems.",
+      "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/utilitycraft-tiered-machinery",
       "requires": ["UtilityCraft 3.5+"],
       "tags": ["Machines", "Progression", "Automation"]
     },
