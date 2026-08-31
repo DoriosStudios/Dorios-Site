@@ -55,6 +55,32 @@ function WikiIcon({name, size = 20, stroke = 1.8}) {
   return <Icon aria-hidden="true" size={size} stroke={stroke} />;
 }
 
+const WIKI_SECTION_GROUPS = [
+  {id: 'overview', label: 'Overview', sections: ['overview', 'how-to-play']},
+  {id: 'content', label: 'Content', sections: ['items', 'blocks', 'entities']},
+  {id: 'systems', label: 'Systems', sections: ['machines', 'generators']},
+  {id: 'reference', label: 'Reference', sections: ['recipes', 'mechanics']},
+];
+const TRINKET_TYPE_SECTION_IDS = new Set(['hearty-charms', 'feet', 'rings', 'head', 'body', 'necklaces', 'charms', 'talismans', 'gauntlets', 'dolls', 'archaic-charms', 'amulets']);
+const EQUIPMENT_SECTION_IDS = new Set(['armor-sets', 'ring-materials', 'utility-items']);
+
+function groupedWikiSections(sections) {
+  const assigned = new Set();
+  const groups = WIKI_SECTION_GROUPS.map((group) => {
+    const matches = group.sections.map((id) => sections.find((section) => section.id === id)).filter(Boolean);
+    matches.forEach((section) => assigned.add(section.id));
+    return {...group, sections: matches};
+  }).filter((group) => group.sections.length);
+  const remaining = sections.filter((section) => !assigned.has(section.id));
+  const trinketTypes = remaining.filter((section) => TRINKET_TYPE_SECTION_IDS.has(section.id));
+  const equipment = remaining.filter((section) => EQUIPMENT_SECTION_IDS.has(section.id));
+  if (trinketTypes.length) groups.splice(Math.min(1, groups.length), 0, {id: 'trinket-types', label: 'Trinket Types', sections: trinketTypes});
+  if (equipment.length) groups.splice(Math.min(2, groups.length), 0, {id: 'equipment', label: 'Equipment', sections: equipment});
+  const ungrouped = remaining.filter((section) => !TRINKET_TYPE_SECTION_IDS.has(section.id) && !EQUIPMENT_SECTION_IDS.has(section.id));
+  if (ungrouped.length) groups.push({id: 'more', label: 'More', sections: ungrouped});
+  return groups;
+}
+
 function useWikiProject() {
   const project = useContext(WikiProjectContext);
   if (!project) throw new Error('AddonWiki must be rendered inside a WikiProjectContext provider.');
@@ -169,6 +195,59 @@ function WikiFrame({active, query, setQuery, children}) {
     return next;
   });
 
+  const renderWikiSection = (section) => {
+    const isActive = active === section.id || (section.children?.length && active.startsWith(`${section.id}/`));
+    if (!section.children?.length) return (
+      <Link
+        key={section.id}
+        to={section.href}
+        aria-current={active === section.id ? 'page' : undefined}
+        className={isActive ? styles.activeNav : undefined}
+        ref={isActive ? activeSectionRef : undefined}
+        title={section.label}
+      >
+        <span className={styles.navIcon}><WikiIcon name={section.icon} /></span>
+        <span className={styles.navLabel}>{section.label}</span>
+      </Link>
+    );
+
+    const expanded = expandedSections.has(section.id);
+    return (
+      <div className={styles.navGroup} key={section.id}>
+        <div className={styles.navGroupHeader}>
+          <Link
+            to={section.href}
+            aria-current={active === section.id ? 'page' : undefined}
+            className={isActive ? styles.activeNav : undefined}
+            ref={isActive ? activeSectionRef : undefined}
+            title={section.label}
+          >
+            <span className={styles.navIcon}><WikiIcon name={section.icon} /></span>
+            <span className={styles.navLabel}>{section.label}</span>
+          </Link>
+          <button
+            type="button"
+            aria-label={`${expanded ? 'Collapse' : 'Expand'} ${section.label} pages`}
+            aria-expanded={expanded}
+            aria-controls={`wiki-nav-${section.id}`}
+            onClick={() => toggleSection(section.id)}
+          >
+            <IconChevronDown aria-hidden="true" size={17} stroke={1.9} />
+          </button>
+        </div>
+        {expanded && (
+          <div className={styles.navSubmenu} id={`wiki-nav-${section.id}`}>
+            {section.children.map((child) => {
+              const childSection = child.id === 'introduction' ? section.id : `${section.id}/${child.id}`;
+              const childActive = active === childSection;
+              return <Link key={child.id} to={child.href} className={childActive ? styles.activeSubNav : undefined}>{child.label}</Link>;
+            })}
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
     <DoriosMarketingShell activePage="wiki" project={catalogProject}>
       <main className={styles.wikiPage} style={projectCardPalette(project.id)}>
@@ -200,58 +279,12 @@ function WikiFrame({active, query, setQuery, children}) {
               </button>
             </div>
             <nav>
-              {project.wikiSections.map((section) => {
-                const isActive = active === section.id || (section.children?.length && active.startsWith(`${section.id}/`));
-                if (!section.children?.length) return (
-                  <Link
-                    key={section.id}
-                    to={section.href}
-                    aria-current={active === section.id ? 'page' : undefined}
-                    className={isActive ? styles.activeNav : undefined}
-                    ref={isActive ? activeSectionRef : undefined}
-                    title={section.label}
-                  >
-                    <span className={styles.navIcon}><WikiIcon name={section.icon} /></span>
-                    <span className={styles.navLabel}>{section.label}</span>
-                  </Link>
-                );
-
-                const expanded = expandedSections.has(section.id);
-                return (
-                  <div className={styles.navGroup} key={section.id}>
-                    <div className={styles.navGroupHeader}>
-                      <Link
-                        to={section.href}
-                        aria-current={active === section.id ? 'page' : undefined}
-                        className={isActive ? styles.activeNav : undefined}
-                        ref={isActive ? activeSectionRef : undefined}
-                        title={section.label}
-                      >
-                        <span className={styles.navIcon}><WikiIcon name={section.icon} /></span>
-                        <span className={styles.navLabel}>{section.label}</span>
-                      </Link>
-                      <button
-                        type="button"
-                        aria-label={`${expanded ? 'Collapse' : 'Expand'} ${section.label} pages`}
-                        aria-expanded={expanded}
-                        aria-controls={`wiki-nav-${section.id}`}
-                        onClick={() => toggleSection(section.id)}
-                      >
-                        <IconChevronDown aria-hidden="true" size={17} stroke={1.9} />
-                      </button>
-                    </div>
-                    {expanded && (
-                      <div className={styles.navSubmenu} id={`wiki-nav-${section.id}`}>
-                        {section.children.map((child) => {
-                          const childSection = child.id === 'introduction' ? section.id : `${section.id}/${child.id}`;
-                          const childActive = active === childSection;
-                          return <Link key={child.id} to={child.href} className={childActive ? styles.activeSubNav : undefined}>{child.label}</Link>;
-                        })}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+              {groupedWikiSections(project.wikiSections).map((group) => (
+                <section className={styles.navSection} key={group.id} aria-label={group.label}>
+                  <p className={styles.navSectionLabel}>{group.label}</p>
+                  <div>{group.sections.map(renderWikiSection)}</div>
+                </section>
+              ))}
             </nav>
             {project.repository && (
               <a className={styles.repoSideLink} href={project.repository} target="_blank" rel="noreferrer">
@@ -1877,6 +1910,19 @@ function normalizedItemDocumentation(entry) {
   };
 }
 
+function compactItemDescription(entry, documentation) {
+  const description = String(documentation.description ?? '').trim();
+  const slot = documentation.basic.equipSlot;
+  const behavior = description.match(/\b(grants?|provides?|applies?|prevents?|increases?|reduces?)\b.+$/i)?.[0];
+  if (slot && slot !== 'Not a trinket slot' && behavior) {
+    return `${slot}-slot trinket that ${behavior.charAt(0).toLowerCase()}${behavior.slice(1)}`;
+  }
+  const escapedName = entry.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const withoutRepeatedName = description.replace(new RegExp(`^${escapedName}\\s+is\\s+(?:an?|the)\\s+`, 'i'), '');
+  if (withoutRepeatedName !== description) return `${withoutRepeatedName.charAt(0).toUpperCase()}${withoutRepeatedName.slice(1)}`;
+  return description;
+}
+
 function formatChance(chance) {
   if (chance === undefined || chance === null || Number.isNaN(Number(chance))) return null;
   return `${(Number(chance) * 100).toLocaleString('en-US', {maximumFractionDigits: 2})}% chance`;
@@ -1988,11 +2034,21 @@ function RelatedItemCard({project, item}) {
   return href ? <Link className={styles.relatedItemCard} to={href}>{content}</Link> : <div className={styles.relatedItemCard}>{content}</div>;
 }
 
+function SourceGroup({icon, title, children}) {
+  return (
+    <section className={styles.sourceGroup}>
+      <header><DetailIcon name={icon} /><h3>{title}</h3></header>
+      <div className={styles.acquisitionGrid}>{children}</div>
+    </section>
+  );
+}
+
 function ItemDocumentationTabs({project, documentation, basics, groups, statistics, recipes, usedIn, relatedItems, compactProcessingRecipes}) {
   const [activeTab, setActiveTab] = useState('item-details');
   const recipeCount = recipes.crafting.length + recipes.machine.length;
   const hasSources = documentation.acquisition.entityDrops.length > 0
-    || documentation.acquisition.structures.length > 0 || documentation.acquisition.biomes.length > 0;
+    || documentation.acquisition.structures.length > 0
+    || documentation.acquisition.biomes.length > 0;
   const isTrinket = groups.length > 0 || Boolean(documentation.basic.equipSlot && documentation.basic.equipSlot !== 'Not a trinket slot');
   const tabs = [
     {
@@ -2011,43 +2067,7 @@ function ItemDocumentationTabs({project, documentation, basics, groups, statisti
           <ItemSectionHeading id="item-related-items" icon="related">Related Items</ItemSectionHeading>
           <div className={styles.relatedItemGrid}>{relatedItems.map((item) => <RelatedItemCard project={project} item={item} key={item.identifier ?? item.id} />)}</div>
         </section>}
-      </div>,
-    },
-    ...documentation.sections.map((section) => ({
-      id: `item-section-${section.id}`,
-      label: section.label ?? section.title ?? 'Properties',
-      content: <DocumentationSection section={section} />,
-    })),
-    ...(isTrinket ? [{
-      id: 'trinket-capabilities',
-      label: 'Trinket Capabilities',
-      content: <section className={`${styles.itemEditorialSection} ${styles.itemCapabilitiesSection}`} aria-labelledby="item-capabilities">
-        <ItemSectionHeading id="item-capabilities" icon="capabilities">Trinket Capabilities</ItemSectionHeading>
-        {groups.length > 0
-          ? <div className={styles.capabilityGrid}>{groups.map((group) => <CapabilityGroup key={group.id} group={group} />)}</div>
-          : <p className={styles.capabilityEmpty}>No attribute modifiers, effects, abilities, or immunities are documented for this trinket.</p>}
-      </section>,
-    }] : []),
-    ...(hasSources ? [{
-      id: 'sources',
-      label: 'Sources',
-      content: <section className={`${styles.itemEditorialSection} ${styles.itemSourcesSection}`} aria-labelledby="item-sources">
-        <ItemSectionHeading id="item-sources" icon="obtain">Sources</ItemSectionHeading>
-        <div className={styles.acquisitionGrid}>
-          {documentation.acquisition.entityDrops.map((drop, index) => <AcquisitionCard key={`${drop.entity}-${index}`} icon="entity" eyebrow="Entity Drop" title={formatIdentifier(drop.entity)} chance={formatChance(drop.chance)} quantity={quantityLabel(drop)} />)}
-          {documentation.acquisition.structures.map((loot, index) => {
-            const dimension = loot.conditions?.dimension ? formatIdentifier(loot.conditions.dimension) : null;
-            const structure = loot.structure === 'default' ? (dimension ? `${dimension} Loot` : 'World Loot') : formatIdentifier(loot.structure);
-            return <AcquisitionCard key={`${loot.structure}-${index}`} icon="structure" eyebrow="Structure Loot" title={structure} chance={formatChance(loot.chance)} note={loot.table ?? loot.category} />;
-          })}
-          {documentation.acquisition.biomes.map((loot, index) => <AcquisitionCard key={`${loot.biome}-${index}`} icon="biome" eyebrow="Biome Loot" title={formatIdentifier(loot.biome)} chance={formatChance(loot.chance)} />)}
-        </div>
-      </section>,
-    }] : []),
-    ...(recipeCount > 0 || usedIn.length > 0 ? [{
-      id: 'recipes',
-      label: 'Recipes',
-      content: <div className={styles.itemTabLayout}>
+        {documentation.sections.map((section) => <DocumentationSection section={section} key={section.id} />)}
         {recipeCount > 0 && <section className={`${styles.itemEditorialSection} ${styles.itemRecipeSection}`} aria-labelledby="item-recipes">
           <ItemSectionHeading id="item-recipes" icon="recipe">How to Obtain</ItemSectionHeading>
           <div className={`${styles.recipeAcquisition} ${compactProcessingRecipes ? styles.compactRecipeAcquisition : ''}`}>
@@ -2059,27 +2079,47 @@ function ItemDocumentationTabs({project, documentation, basics, groups, statisti
           <ItemSectionHeading id="item-used-in" icon="used">Used In</ItemSectionHeading>
           <div className={styles.usedInGrid}>{usedIn.map((recipe) => <RecipeResultLink project={project} recipe={recipe} key={`${recipe.type ?? 'recipe'}-${recipe.id}`} />)}</div>
         </section>}
+        {documentation.usage && <section className={`${styles.itemEditorialSection} ${styles.itemUsageSection}`} aria-labelledby="item-usage">
+          <ItemSectionHeading id="item-usage" icon="usage">Usage</ItemSectionHeading>
+          <div className={styles.itemUsage}><DetailIcon name="usage" /><p>{documentation.usage}</p></div>
+        </section>}
       </div>,
+    },
+    ...(groups.length > 0 ? [{
+      id: 'trinket-capabilities',
+      label: 'Trinket Capabilities',
+      content: <section className={`${styles.itemEditorialSection} ${styles.itemCapabilitiesSection}`} aria-labelledby="item-capabilities">
+        <ItemSectionHeading id="item-capabilities" icon="capabilities">Trinket Capabilities</ItemSectionHeading>
+        <div className={styles.capabilityGrid}>{groups.map((group) => <CapabilityGroup key={group.id} group={group} />)}</div>
+      </section>,
     }] : []),
-    ...(documentation.usage ? [{
-      id: 'usage',
-      label: 'Usage',
-      content: <section className={`${styles.itemEditorialSection} ${styles.itemUsageSection}`} aria-labelledby="item-usage">
-        <ItemSectionHeading id="item-usage" icon="usage">Usage</ItemSectionHeading>
-        <div className={styles.itemUsage}><DetailIcon name="usage" /><p>{documentation.usage}</p></div>
+    ...(hasSources ? [{
+      id: 'sources',
+      label: 'Sources',
+      content: <section className={`${styles.itemEditorialSection} ${styles.itemSourcesSection}`} aria-labelledby="item-sources">
+        <ItemSectionHeading id="item-sources" icon="obtain">Sources</ItemSectionHeading>
+        <div className={styles.sourceGroups}>
+          {documentation.acquisition.entityDrops.length > 0 && <SourceGroup icon="entity" title="Entity Drops">
+            {documentation.acquisition.entityDrops.map((drop, index) => <AcquisitionCard key={`${drop.entity}-${index}`} icon="entity" eyebrow="Entity Drop" title={formatIdentifier(drop.entity)} chance={formatChance(drop.chance)} quantity={quantityLabel(drop)} />)}
+          </SourceGroup>}
+          {documentation.acquisition.structures.length > 0 && <SourceGroup icon="structure" title="Structure Loot">
+            {documentation.acquisition.structures.map((loot, index) => {
+              const dimension = loot.conditions?.dimension ? formatIdentifier(loot.conditions.dimension) : null;
+              const structure = loot.structure === 'default' ? (dimension ? `${dimension} Loot` : 'World Loot') : formatIdentifier(loot.structure);
+              return <AcquisitionCard key={`${loot.structure}-${index}`} icon="structure" eyebrow="Structure Loot" title={structure} chance={formatChance(loot.chance)} note={loot.table ?? loot.category} />;
+            })}
+          </SourceGroup>}
+          {documentation.acquisition.biomes.length > 0 && <SourceGroup icon="biome" title="Biome Loot">
+            {documentation.acquisition.biomes.map((loot, index) => <AcquisitionCard key={`${loot.biome}-${index}`} icon="biome" eyebrow="Biome Loot" title={formatIdentifier(loot.biome)} chance={formatChance(loot.chance)} />)}
+          </SourceGroup>}
+        </div>
       </section>,
     }] : []),
   ];
 
   return (
-    <section className={styles.machineReference} aria-labelledby="item-reference">
-      <header>
-        <div>
-          <p className={styles.eyebrow}>{isTrinket ? 'Trinket reference' : 'Item reference'}</p>
-          <h2 id="item-reference">Built to be understood</h2>
-        </div>
-        <p>Choose a section to inspect item properties, capabilities, sources, and recipes without mixing unrelated data.</p>
-      </header>
+    <section className={`${styles.machineReference} ${styles.itemReference}`} aria-labelledby="item-reference">
+      <p className={styles.itemReferenceLabel} id="item-reference">{isTrinket ? 'Trinket reference' : 'Item reference'}</p>
       <div className={styles.itemTabs} role="tablist" aria-label="Item documentation sections">
         {tabs.map((tab) => <button
           key={tab.id}
@@ -2128,7 +2168,7 @@ function ItemDetail({entry, visual}) {
       <header className={styles.itemDetailHero}>
         <div className={styles.itemDetailVisual}>{visual}</div>
         <div className={styles.itemDetailHeading}>
-          <p className={styles.eyebrow}>Item · {typeLabel}</p><h1>{entry.name}</h1><p>{documentation.description}</p>
+          <p className={styles.eyebrow}>Item · {typeLabel}</p><h1>{entry.name}</h1><p>{compactItemDescription(entry, documentation)}</p>
           {documentation.basic.identifier && <div className={styles.itemIdentifier}><span>Identifier</span><code>{documentation.basic.identifier}</code><CopyIdentifierButton identifier={documentation.basic.identifier} /></div>}
         </div>
       </header>

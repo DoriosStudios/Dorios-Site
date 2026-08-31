@@ -1,38 +1,60 @@
 import React, {useEffect, useState} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
-import {IconDownload} from '@tabler/icons-react';
+import {IconArrowUpRight, IconDownload, IconSortAscendingLetters, IconTrendingUp} from '@tabler/icons-react';
 import DoriosMarketingShell from '../../components/DoriosMarketingShell';
 import {projectCardPalette} from '../../data/cardPalettes';
-import {featuredProjects, getProject, listedProjects} from '../../data/projects';
+import {getProject, listedProjects} from '../../data/projects';
 import styles from './projects.module.css';
 
-const compactFeaturedSummaries = {
+const catalogPreviewSize = 8;
+
+const featuredSummaries = {
+  utilitycraft: 'A complete Bedrock automation foundation built around machines, energy, fluids, transport, resources, and deliberate survival progression.',
+  trinkets: 'Dedicated equipment slots, collectible accessories, combat effects, mobility tools, and exploration-driven progression.',
   'heavy-machinery': 'Large-scale multiblocks and late-game industrial processing for UtilityCraft.',
   'ascendant-technology': 'Superior machines and advanced materials for UtilityCraft’s end game.',
 };
 
 const primaryCarouselProjects = ['utilitycraft', 'trinkets']
-  .map((projectSlug) => getProject(projectSlug))
+  .map((projectId) => getProject(projectId))
   .filter(Boolean);
 
 function Tags({project}) {
-  return <div className={styles.tags}><span>{project.kind}</span><span>{project.category}</span>{project.ownership === 'community' && <span>Community</span>}</div>;
+  return (
+    <div className={styles.tags}>
+      <span>{project.kind}</span>
+      <span>{project.category}</span>
+      {project.ownership === 'community' && <span>Community</span>}
+    </div>
+  );
 }
 
 function DownloadBadge({project}) {
   const {downloadStats} = project;
-  return <span className={styles.downloadBadge} title={`${downloadStats.total.toLocaleString('en-US')} combined CurseForge and GitHub downloads`}>
-    <IconDownload aria-hidden="true" size={15} stroke={2} />
-    <strong>{downloadStats.display}</strong>
-    <span>downloads</span>
-  </span>;
+  return (
+    <span
+      className={styles.downloadBadge}
+      title={`${downloadStats.total.toLocaleString('en-US')} combined CurseForge and GitHub downloads`}>
+      <IconDownload aria-hidden="true" size={14} stroke={2} />
+      <strong>{downloadStats.display}</strong>
+      <span>downloads</span>
+    </span>
+  );
 }
 
-function ProjectImage({project, eager = false}) {
+function CardArrow() {
+  return (
+    <span className={styles.cardArrow} aria-hidden="true">
+      <IconArrowUpRight size={20} stroke={1.8} />
+    </span>
+  );
+}
+
+function ProjectArtwork({project, eager = false, className = ''}) {
   const usesCover = Boolean(project.media.cover);
   return (
-    <div className={`${styles.visualFrame} ${!usesCover ? styles.iconFrame : ''}`}>
+    <div className={`${styles.artwork} ${!usesCover ? styles.iconArtwork : ''} ${className}`}>
       <img
         src={project.media.cover ?? project.media.icon}
         alt={project.media.alt}
@@ -43,102 +65,165 @@ function ProjectImage({project, eager = false}) {
   );
 }
 
-function FeaturedCard({project, primary = false, carousel = false}) {
-  if (primary) {
-    return (
-      <Link className={`${styles.featureCard} ${styles.utilityCard} ${carousel ? styles.carouselCard : ''}`} to={project.routes.project} style={projectCardPalette(project)}>
-        <ProjectImage project={project} eager />
-        <div className={styles.featureCopy}>
-          <div><p className={styles.overline}>Featured project</p><Tags project={project} /><DownloadBadge project={project} /></div>
-          <h2>{project.name}</h2>
-          <p className={styles.description}>{project.summary}</p>
-          <i className={styles.featureArrow} aria-hidden="true">↗</i>
-        </div>
-      </Link>
-    );
-  }
+function UtilityFeaturedCard({project}) {
+  if (!project) return null;
   return (
-    <Link className={`${styles.featureCard} ${styles.sideCard}`} to={project.routes.project} style={projectCardPalette(project)}>
-      <ProjectImage project={project} eager />
-      <div className={styles.compactCopy}>
-        <Tags project={project} />
-        <DownloadBadge project={project} />
-        <p className={styles.overline}>{project.lifecycle}</p>
+    <Link
+      className={`${styles.featureCard} ${styles.utilityCard}`}
+      to={project.routes.project}
+      style={projectCardPalette(project)}>
+      <ProjectArtwork project={project} eager className={styles.utilityArtwork} />
+      <div className={styles.utilityContent}>
+        <div className={styles.utilityMetadata}>
+          <p className={styles.overline}>Featured project</p>
+          <Tags project={project} />
+        </div>
         <h2>{project.name}</h2>
-        <p>{compactFeaturedSummaries[project.id] ?? project.summary}</p>
-        <i className={styles.cardArrow} aria-hidden="true">↗</i>
+        <p className={styles.description}>{featuredSummaries[project.id]}</p>
+        <DownloadBadge project={project} />
+        <CardArrow />
       </div>
     </Link>
   );
 }
 
 function FeaturedCarousel() {
-  const [index, setIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+
   useEffect(() => {
     if (paused || primaryCarouselProjects.length < 2) return undefined;
-    const timer = window.setInterval(() => setIndex((current) => (current + 1) % primaryCarouselProjects.length), 5200);
+    const timer = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % primaryCarouselProjects.length);
+    }, 5200);
     return () => window.clearInterval(timer);
   }, [paused]);
+
   if (!primaryCarouselProjects.length) return null;
+  const activeProject = primaryCarouselProjects[activeIndex];
   return (
-    <section className={styles.primaryCarousel} aria-label="Featured projects" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocusCapture={() => setPaused(true)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false); }}>
-      <FeaturedCard key={primaryCarouselProjects[index].id} project={primaryCarouselProjects[index]} primary carousel />
-      {primaryCarouselProjects.length > 1 && <div className={styles.carouselPager} aria-label="Featured project carousel">
-        {primaryCarouselProjects.map((project, projectIndex) => <button type="button" key={project.id} className={projectIndex === index ? styles.carouselPagerActive : ''} onClick={() => setIndex(projectIndex)} aria-label={`Show ${project.name}`} aria-current={projectIndex === index ? 'true' : undefined} />)}
-      </div>}
-    </section>
+    <div
+      className={styles.primaryCarousel}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false); }}>
+      <UtilityFeaturedCard key={activeProject.id} project={activeProject} />
+      <div className={styles.carouselPager} aria-label="Featured project carousel">
+        {primaryCarouselProjects.map((project, index) => <button
+          type="button"
+          key={project.id}
+          className={index === activeIndex ? styles.carouselPagerActive : undefined}
+          aria-label={`Show ${project.name}`}
+          aria-current={index === activeIndex ? 'true' : undefined}
+          onClick={() => setActiveIndex(index)}
+        />)}
+      </div>
+    </div>
   );
 }
 
-function HowToPlayShortcut() {
+function BannerFeaturedCard({project}) {
+  if (!project) return null;
   return (
-    <Link className={styles.howToPlayCard} to="/wiki/utilitycraft/how-to-play" style={projectCardPalette('how-to-play')}>
-      <div className={styles.howToPlayVisual} aria-hidden="true">
-        <img src="/img/wiki/utilitycraft/how-to-play/title.png" alt="" loading="lazy" />
+    <Link
+      className={`${styles.featureCard} ${styles.bannerCard}`}
+      to={project.routes.project}
+      style={projectCardPalette(project)}>
+      <ProjectArtwork project={project} eager className={styles.bannerArtwork} />
+      <div className={styles.bannerOverlay} aria-hidden="true" />
+      <div className={styles.bannerContent}>
+        <Tags project={project} />
+        <p className={styles.overline}>{project.lifecycle}</p>
+        <h2>{project.name}</h2>
+        <p className={styles.bannerDescription}>{featuredSummaries[project.id] ?? project.summary}</p>
+        <DownloadBadge project={project} />
       </div>
-      <div className={styles.howToPlayCopy}>
-        <p className={styles.overline}>UtilityCraft player guide · 8 steps</p>
-        <h2>How To Play</h2>
-        <p>Follow the complete progression from your first Hammer and Sieve to Steel, Dorios Energy, machines, generators, and automation.</p>
+      <CardArrow />
+    </Link>
+  );
+}
+
+function CatalogCard({project}) {
+  return (
+    <Link
+      className={styles.catalogCard}
+      to={project.routes.project}
+      style={projectCardPalette(project)}>
+      <ProjectArtwork project={project} className={styles.catalogArtwork} />
+      <div className={styles.catalogContent}>
+        <h3>{project.name}</h3>
+        <Tags project={project} />
+        <p>{project.summary}</p>
+        <DownloadBadge project={project} />
+        <CardArrow />
       </div>
-      <span className={styles.howToPlayAction}>Start the guide <i aria-hidden="true">→</i></span>
     </Link>
   );
 }
 
 export default function ProjectsPage() {
-  const featuredIds = new Set([...featuredProjects, ...primaryCarouselProjects].map((project) => project.id));
-  const catalogProjects = listedProjects.filter((project) => !featuredIds.has(project.id));
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const [sortMode, setSortMode] = useState('downloads');
+  const heavyMachinery = getProject('heavy-machinery');
+  const ascendantTechnology = getProject('ascendant-technology');
+  const featuredIds = new Set(['utilitycraft', 'trinkets', 'heavy-machinery', 'ascendant-technology']);
+  const catalogProjects = listedProjects
+    .filter((project) => !featuredIds.has(project.id))
+    .sort((left, right) => sortMode === 'alphabetical'
+      ? left.name.localeCompare(right.name, 'en', {sensitivity: 'base'})
+      : right.downloadStats.total - left.downloadStats.total || left.name.localeCompare(right.name));
+  const visibleCatalogProjects = showAllProjects
+    ? catalogProjects
+    : catalogProjects.slice(0, catalogPreviewSize);
+
   return (
     <Layout title="Projects" description="Minecraft Bedrock projects by Dorios Studios." noFooter>
       <DoriosMarketingShell activePage="projects">
         <main className={styles.projectsPage}>
-          <section className={styles.intro} aria-labelledby="projects-title">
+          <header className={styles.hero} aria-labelledby="projects-title">
             <p className={styles.kicker}>The work · {listedProjects.length} listed projects</p>
             <h1 id="projects-title">Built for more ways <span>to play.</span></h1>
-            <p>From essential utilities to new adventures, explore a growing catalog of active projects and established studio releases.</p>
-          </section>
+            <p className={styles.heroDescription}>From essential utilities to new adventures, explore a growing catalog of active projects and established studio releases.</p>
+          </header>
 
-          <section className={styles.spotlightGrid} aria-label="Featured projects">
-            <FeaturedCarousel />
-            {featuredProjects.filter((project) => project.id !== 'utilitycraft').slice(0, 2).map((project) => <FeaturedCard project={project} key={project.id} />)}
+          <section className={styles.featuredSection} aria-label="Featured projects">
+            <div className={styles.featuredGrid}>
+              <FeaturedCarousel />
+              <div className={styles.bannerStack}>
+                <BannerFeaturedCard project={heavyMachinery} />
+                <BannerFeaturedCard project={ascendantTechnology} />
+              </div>
+            </div>
           </section>
-
-          <HowToPlayShortcut />
 
           <section className={styles.catalog} aria-labelledby="catalog-title">
-            <div className={styles.catalogHeader}><p className={styles.kicker}>More from Dorios</p><h2 id="catalog-title">Find your next project.</h2></div>
-            <div className={styles.catalogGrid}>
-              {catalogProjects.map((project) => (
-                <Link className={styles.catalogCard} key={project.id} to={project.routes.project} style={projectCardPalette(project)}>
-                  <div className={`${styles.catalogImage} ${!project.media.cover ? styles.iconFrame : ''}`}>
-                    <img src={project.media.cover ?? project.media.icon} alt={project.media.alt} loading="lazy" style={{objectFit: project.media.cover ? project.media.coverFit : 'contain'}} />
-                  </div>
-                  <div className={styles.catalogCopy}><Tags project={project} /><DownloadBadge project={project} /><h3>{project.name}</h3><span aria-hidden="true">↗</span></div>
-                </Link>
-              ))}
+            <div className={styles.catalogHeader}>
+              <div><p className={styles.kicker}>More from Dorios</p><h2 id="catalog-title">Find your next project.</h2></div>
+              <div className={styles.sortControl} role="group" aria-label="Sort projects">
+                <span>Sort by</span>
+                <button type="button" aria-pressed={sortMode === 'downloads'} onClick={() => setSortMode('downloads')}>
+                  <IconTrendingUp aria-hidden="true" size={16} stroke={1.9} /> Downloads
+                </button>
+                <button type="button" aria-pressed={sortMode === 'alphabetical'} onClick={() => setSortMode('alphabetical')}>
+                  <IconSortAscendingLetters aria-hidden="true" size={16} stroke={1.9} /> Alphabetical
+                </button>
+              </div>
             </div>
+            <div className={styles.catalogGrid} id="project-catalog">
+              {visibleCatalogProjects.map((project) => <CatalogCard project={project} key={project.id} />)}
+            </div>
+            {catalogProjects.length > catalogPreviewSize && (
+              <button
+                className={styles.viewAllButton}
+                type="button"
+                aria-expanded={showAllProjects}
+                aria-controls="project-catalog"
+                onClick={() => setShowAllProjects((current) => !current)}>
+                {showAllProjects ? 'Show Fewer Projects' : 'View All Projects'}
+                <IconArrowUpRight aria-hidden="true" size={18} stroke={1.9} />
+              </button>
+            )}
           </section>
         </main>
       </DoriosMarketingShell>

@@ -41,6 +41,34 @@ function primaryMetrics(project) {
   return [...preferred, ...fallback].slice(0, 4);
 }
 
+const highlightCopy = {
+  Automation: 'Connected systems designed for repeatable, scalable production.',
+  Energy: 'Power generation, storage, and distribution for technical builds.',
+  Utility: 'Practical tools and systems that improve everyday survival play.',
+  Multiblock: 'Large structures with purpose-built industrial behavior.',
+  Industry: 'Processing chains focused on throughput and factory planning.',
+  'End Game': 'Advanced materials and goals for established worlds.',
+  Machines: 'Dedicated machinery for specialized production workflows.',
+  Optimization: 'Systems that reward compact layouts and deliberate upgrades.',
+  Equipment: 'Purpose-built gear that expands how players approach progression.',
+  Adventure: 'Discoverable rewards and mechanics beyond base building.',
+  Progression: 'A structured path from early access to stronger capabilities.',
+  Storage: 'Organized inventory solutions for growing bases and networks.',
+  Building: 'Blocks and systems designed to support expressive construction.',
+};
+
+function projectHighlights(project) {
+  const tagHighlights = (project.tags ?? []).slice(0, 3).map((tag) => ({
+    title: tag,
+    copy: highlightCopy[tag] ?? `${tag} is one of the project’s core gameplay focuses.`,
+  }));
+  if (tagHighlights.length) return tagHighlights;
+  return availableMetrics(project)
+    .filter((metric) => metric.key !== 'downloads')
+    .slice(0, 3)
+    .map((metric) => ({title: `${metric.value} ${metric.label}`, copy: `Documented ${metric.label.toLowerCase()} included in the current project catalog.`}));
+}
+
 function Tags({project}) {
   return (
     <div className={styles.tags} aria-label="Project classification">
@@ -79,10 +107,14 @@ function ProjectArtwork({project}) {
 }
 
 function PrimaryActions({project}) {
+  const howToPlayHref = project.id === 'utilitycraft' && project.routes.wiki
+    ? `${project.routes.wiki}/how-to-play`
+    : null;
   const actions = [
     project.links.curseforge && {href: project.links.curseforge, label: 'CurseForge', variant: 'curseforge'},
     project.links.mcpedl && {href: project.links.mcpedl, label: 'MCPEDL', variant: 'mcpedl'},
     project.routes.wiki && {href: project.routes.wiki, label: 'Wiki', variant: 'neutral', internal: true},
+    howToPlayHref && {href: howToPlayHref, label: 'How To Play', variant: 'guide', internal: true},
     project.links.repository && {href: project.links.repository, label: 'GitHub', variant: 'neutral'},
     !project.links.repository && project.links.releases && {href: project.links.releases, label: 'GitHub releases', variant: 'neutral'},
   ].filter(Boolean);
@@ -168,30 +200,21 @@ function DependencyCards({project}) {
 }
 
 function ProjectFacts({project}) {
-  const highlightedKeys = new Set(primaryMetrics(project).map((metric) => metric.key));
-  const additionalMetrics = availableMetrics(project).filter((metric) => !highlightedKeys.has(metric.key));
   const metadata = [
-    ['Ownership', project.ownership === 'community' ? 'Community extension' : 'Dorios Studios'],
-    ['Minecraft version', project.minecraftVersion ? `${project.minecraftVersion}+` : 'Bedrock Edition'],
+    ['Owner', project.ownership === 'community' ? 'Community extension' : 'Dorios Studios'],
+    ['Version', project.version ? `v${project.version}` : 'In development'],
+    ['Minecraft', project.minecraftVersion ? `${project.minecraftVersion}+` : 'Bedrock Edition'],
+    ['Status', project.lifecycle],
+    ['Access', 'Free'],
+    ['Project type', project.kind],
   ];
 
   return (
     <section className={styles.projectDetails} aria-labelledby="project-details-title">
-      {additionalMetrics.length > 0 && (
-        <article className={`${styles.detailsPanel} ${styles.metricsPanel}`}>
-          <div className={styles.detailsHeading}>
-            <p className={styles.eyebrow}>Beyond the essentials</p>
-            <h2 id="project-details-title">Additional metrics.</h2>
-          </div>
-          <dl className={styles.additionalMetrics}>
-            {additionalMetrics.map((metric) => <div key={metric.key}><dt>{metric.label}</dt><dd>{metric.value}</dd></div>)}
-          </dl>
-        </article>
-      )}
       <article className={`${styles.detailsPanel} ${styles.metadataPanel}`}>
         <div className={styles.detailsHeading}>
           <p className={styles.eyebrow}>Project details</p>
-          <h2 id={additionalMetrics.length ? undefined : 'project-details-title'}>At a glance.</h2>
+          <h2 id="project-details-title">At a glance.</h2>
         </div>
         <dl className={styles.metadataList}>
           {metadata.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
@@ -201,38 +224,21 @@ function ProjectFacts({project}) {
   );
 }
 
-function ProjectLinkIcon({type}) {
-  if (type === 'wiki') return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5.5c3.2-.8 5.7-.2 7.5 1.5v12c-1.8-1.7-4.3-2.2-7.5-1.5zM19.5 5.5c-3.2-.8-5.7-.2-7.5 1.5v12c1.8-1.7 4.3-2.2 7.5-1.5z" /></svg>;
-  if (type === 'repository') return <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="2" /><circle cx="18" cy="7" r="2" /><circle cx="6" cy="19" r="2" /><path d="M6 7v10M8 9c5 0 4-2 8-2" /></svg>;
-  if (type === 'curseforge') return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 7 4v10l-7 4-7-4V7zM5 7l7 4 7-4M12 11v10" /></svg>;
-  return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 10.5 12 15l4.5-4.5M5 20h14" /></svg>;
-}
-
-function ProjectLinkCard({link}) {
-  const content = <>
-    <span className={styles.linkIcon}><ProjectLinkIcon type={link.type} /></span>
-    <span className={styles.linkCopy}><small>Project resource</small><strong>{link.label}</strong><span>{link.copy}</span></span>
-    <b aria-hidden="true">{link.internal ? '→' : '↗'}</b>
-  </>;
-  return link.internal
-    ? <Link to={link.href} data-resource={link.type}>{content}</Link>
-    : <a href={link.href} target="_blank" rel="noreferrer" data-resource={link.type}>{content}</a>;
-}
-
-function ProjectLinks({project}) {
-  const links = [
-    project.links.curseforge && {type: 'curseforge', href: project.links.curseforge, label: 'CurseForge', copy: 'Download the public release and follow version updates.'},
-    project.links.mcpedl && {type: 'mcpedl', href: project.links.mcpedl, label: 'MCPEDL', copy: 'View the community listing and Bedrock download information.'},
-    project.routes.wiki && {type: 'wiki', href: project.routes.wiki, label: 'Wiki', copy: 'Browse guides, content indexes, recipes, and technical references.', internal: true},
-    project.links.repository && {type: 'repository', href: project.links.repository, label: 'GitHub', copy: 'Inspect source, releases, issues, and current development.'},
-  ].filter(Boolean);
-  if (!links.length) return null;
+function ProjectHighlights({project}) {
+  const highlights = projectHighlights(project);
+  if (!highlights.length) return null;
   return (
-    <section className={styles.linkSection} aria-labelledby="project-links-title">
-      <div><p className={styles.eyebrow}>Continue exploring</p><h2 id="project-links-title">Project links.</h2></div>
-      <div className={styles.linkGrid}>
-        {links.map((link) => <ProjectLinkCard key={link.label} link={link} />)}
+    <section className={styles.highlights} aria-labelledby="project-highlights-title">
+      <div><p className={styles.eyebrow}>Project highlights</p><h2 id="project-highlights-title">What it adds.</h2></div>
+      <div className={styles.highlightGrid}>
+        {highlights.map((highlight, index) => <article key={highlight.title}>
+          <span>{String(index + 1).padStart(2, '0')}</span>
+          <strong>{highlight.title}</strong>
+          <p>{highlight.copy}</p>
+        </article>)}
       </div>
+      <DependencyCards project={project} />
+      {project.kind !== 'Extension' && project.requires.length > 0 && <div className={styles.requirements}><span>Requires</span>{project.requires.map((requirement) => <strong key={requirement}>{requirement}</strong>)}</div>}
     </section>
   );
 }
@@ -262,31 +268,21 @@ export default function ProjectDetailPage({project}) {
             <Link to="/projects">Projects</Link><span aria-hidden="true">/</span><strong>{project.name}</strong>{project.routes.wiki && <><span aria-hidden="true">/</span><Link to={project.routes.wiki}>Wiki</Link></>}
           </nav>
 
-          <section className={`${styles.hero} ${!hasPrimaryMetrics ? styles.heroStandalone : ''}`} aria-labelledby="project-title" style={projectCardPalette(project)}>
+          <section className={styles.hero} aria-labelledby="project-title" style={projectCardPalette(project)}>
             <div className={styles.heroCopy}>
               <Link className={styles.backLink} to="/projects"><span aria-hidden="true">←</span> Back to projects</Link>
               <Tags project={project} />
               <h1 id="project-title" className={singleWordTitle ? styles.singleWordTitle : undefined}>{project.name}</h1>
               <p>{project.summary}</p>
               <HeroMetadata project={project} />
+              {hasPrimaryMetrics && <PrimaryMetrics project={project} />}
               <PrimaryActions project={project} />
             </div>
             <ProjectArtwork project={project} />
           </section>
 
-          {hasPrimaryMetrics && <PrimaryMetrics project={project} />}
-
-          <section className={styles.about} aria-labelledby="about-project-title">
-            <div><p className={styles.eyebrow}>About the project</p><h2 id="about-project-title">Built with a clear purpose.</h2></div>
-            <div className={styles.aboutCopy}>
-              <p>{project.description}</p>
-              <DependencyCards project={project} />
-              {project.kind !== 'Extension' && project.requires.length > 0 && <div className={styles.requirements}><span>Requires</span>{project.requires.map((requirement) => <strong key={requirement}>{requirement}</strong>)}</div>}
-            </div>
-          </section>
-
+          <ProjectHighlights project={project} />
           <ProjectFacts project={project} />
-          <ProjectLinks project={project} />
 
           <section className={styles.relatedSection} aria-labelledby="related-projects-title">
             <div><p className={styles.eyebrow}>More from Dorios</p><h2 id="related-projects-title">Related projects.</h2></div>
