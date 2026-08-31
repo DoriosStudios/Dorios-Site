@@ -235,6 +235,35 @@
 	font-style: normal;
 }
 
+.howToPlayCard {
+	min-width: 0;
+	position: relative;
+	display: grid;
+	grid-template-columns: minmax(190px, 0.72fr) minmax(0, 1.6fr) auto;
+	align-items: center;
+	gap: clamp(1rem, 3vw, 2.5rem);
+	overflow: hidden;
+	margin-top: var(--ds-grid-gap);
+	padding: clamp(0.8rem, 1.8vw, 1.25rem);
+	border: 1px solid color-mix(in srgb, var(--card-primary) 58%, var(--ds-border));
+	border-radius: 20px;
+	background: radial-gradient(circle at 10% 50%, color-mix(in srgb, var(--card-secondary) 24%, transparent), transparent 32%), linear-gradient(105deg, color-mix(in srgb, var(--card-primary) 13%, var(--ds-surface)), var(--ds-surface) 62%);
+	color: var(--ds-text);
+	transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+.howToPlayCard::after { content: "PLAY"; position: absolute; right: 4rem; bottom: -3.2rem; color: var(--card-primary); opacity: 0.045; font-size: clamp(6rem, 14vw, 11rem); font-weight: 900; letter-spacing: -0.1em; line-height: 1; pointer-events: none; }
+.howToPlayCard:hover,
+.howToPlayCard:focus-visible { border-color: color-mix(in srgb, var(--card-primary) 82%, var(--ds-text)); box-shadow: 0 18px 42px color-mix(in srgb, var(--card-primary) 17%, transparent); transform: translateY(-3px); }
+.howToPlayVisual { min-height: 108px; display: grid; place-items: center; overflow: hidden; border-radius: 14px; background: color-mix(in srgb, var(--card-secondary) 13%, var(--ds-surface-raised)); }
+.howToPlayVisual img { width: 100%; max-height: 112px; object-fit: contain; image-rendering: pixelated; filter: drop-shadow(0 12px 16px rgba(0, 0, 0, 0.22)); }
+.howToPlayCopy { position: relative; z-index: 1; }
+.howToPlayCopy h2 { margin: 0.25rem 0 0.45rem; font-size: clamp(2rem, 3.5vw, 3.5rem); font-weight: 800; letter-spacing: -0.075em; line-height: 0.86; }
+.howToPlayCopy > p:last-child { max-width: 650px; margin: 0; color: var(--ds-muted); font-size: 0.9rem; line-height: 1.5; }
+.howToPlayAction { position: relative; z-index: 1; display: flex; align-items: center; gap: 0.7rem; color: color-mix(in srgb, var(--card-primary) 72%, var(--ds-text)); font-size: 0.78rem; font-weight: 850; white-space: nowrap; }
+.howToPlayAction i { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 10px; background: color-mix(in srgb, var(--card-primary) 18%, var(--ds-surface-raised)); font-size: 1.1rem; font-style: normal; transition: transform 180ms ease; }
+.howToPlayCard:hover .howToPlayAction i,
+.howToPlayCard:focus-visible .howToPlayAction i { transform: translateX(4px); }
+
 .catalog {
 	margin-top: var(--ds-section-space);
 }
@@ -334,6 +363,8 @@
 	.sideCard {
 		min-height: 180px;
 	}
+	.howToPlayCard { grid-template-columns: minmax(170px, 0.7fr) minmax(0, 1.3fr); }
+	.howToPlayAction { grid-column: 2; }
 	.catalogGrid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
@@ -373,6 +404,10 @@
 	.catalogGrid {
 		grid-template-columns: 1fr;
 	}
+	.howToPlayCard { grid-template-columns: 1fr; padding: 0.75rem; border-radius: 17px; }
+	.howToPlayVisual { min-height: 115px; }
+	.howToPlayCopy { padding: 0.25rem 0.35rem 0; }
+	.howToPlayAction { grid-column: 1; justify-content: space-between; padding: 0 0.35rem 0.35rem; }
 }
 @media (max-width: 460px) {
 	.sideCard {

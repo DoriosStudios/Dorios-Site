@@ -3,6 +3,7 @@ import processingRecipes from './processingRecipes.json';
 import {createGeneratedProject} from '../createGeneratedProject';
 import machineProfiles from './machineProfiles';
 import documentationProfiles from './documentationProfiles.generated.json';
+import {howToPlayGuide} from './howToPlayGuide';
 
 const GENERATOR_TIERS = [
   ['basic', 'Basic'],
@@ -77,6 +78,7 @@ const utilitycraft = createGeneratedProject({
   machineProfiles,
   blockProfiles,
   itemProfiles: {...documentationProfiles.items, ...meshProfiles},
+  howToPlay: howToPlayGuide,
   processingRecipes,
   generatorProfiles,
   generatorCategoryOrder: [...generatorFamilies.map(({family}) => family), 'Energy Storage', 'Energy Distribution'],
@@ -95,23 +97,14 @@ const utilitycraft = createGeneratedProject({
     ],
   },
   mechanics: [
-    {name: 'Dorios Energy', icon: 'E', description: 'Shared energy production, storage, transfer, and consumption.'},
-    {name: 'Machine tiers', icon: 'T', description: 'Basic, Advanced, Expert, Ultimate, and Creative progression.'},
-    {name: 'Energy networks', icon: 'N', description: 'Transmitters, receivers, batteries, and linked machine infrastructure.'},
-    {name: 'Item and fluid transport', icon: '⇄', description: 'Pipes, tanks, filters, imports, exports, and automation.'},
-    {name: 'Machine upgrades', icon: '↑', description: 'Speed, energy, capacity, range, and behavior upgrades.'},
-    {name: 'Bonsai automation', icon: '♣', description: 'Automated renewable resources and specialized production trees.'},
+    {name: 'Dorios Energy', icon: 'bolt', description: 'The shared power system used to generate, store, transfer, and consume Dorios Energy across UtilityCraft networks.'},
+    {name: 'Gas Management', icon: 'wind', description: 'The indexed gas-storage and transfer system, with configurable input and output modes for each supported machine side.'},
+    {name: 'Machines', icon: 'tool', description: 'Powered processing blocks that run registered recipes and can handle configured item, liquid, gas, and upgrade slots.'},
+    {name: 'Generators', icon: 'battery', description: 'Power-producing systems that convert fuels or environmental conditions into Dorios Energy and distribute it to nearby infrastructure.'},
   ],
   machineNotice: {
     title: 'Single-block industrial systems',
     copy: 'UtilityCraft machines use registered recipes and Dorios Energy. Their available upgrades, inventories, and throughput depend on the machine type and tier.',
-  },
-  mechanicsGuide: {
-    eyebrow: 'Shared foundation',
-    title: 'One core for machines, energy, fluids, and automation.',
-    copy: 'UtilityCraft exposes the systems used by its own content and by official extensions such as Heavy Machinery and Ascendant Technology.',
-    image: 'showcase/generators_render.png',
-    imageAlt: 'UtilityCraft generators',
   },
 });
 

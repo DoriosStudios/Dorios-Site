@@ -55289,12 +55289,12 @@
       }
     ],
     "result": {
-      "id": "minecraft:rooted_dirt",
+      "id": "minecraft:dirt_with_roots",
       "count": 1
     },
     "results": [
       {
-        "id": "minecraft:rooted_dirt",
+        "id": "minecraft:dirt_with_roots",
         "count": 1
       }
     ],
@@ -55306,7 +55306,7 @@
     },
     "originId": "utilitycraft",
     "input": "minecraft:dirt + minecraft:mangrove_roots",
-    "output": "minecraft:rooted_dirt"
+    "output": "minecraft:dirt_with_roots"
   },
   {
     "id": "utilitycraft-infuser-minecraft-moss-block-minecraft-cobblestone",
@@ -56107,8 +56107,8 @@
     "output": "minecraft:podzol"
   },
   {
-    "id": "utilitycraft-infuser-minecraft-vine-minecraft-rooted-dirt",
-    "identifier": "utilitycraft:process/infuser/minecraft-vine-minecraft-rooted-dirt",
+    "id": "utilitycraft-infuser-minecraft-vine-minecraft-dirt-with-roots",
+    "identifier": "utilitycraft:process/infuser/minecraft-vine-minecraft-dirt-with-roots",
     "type": "machine",
     "station": "infuser",
     "category": "Infuser recipe",
@@ -56120,7 +56120,7 @@
         "count": 4
       },
       {
-        "id": "minecraft:rooted_dirt",
+        "id": "minecraft:dirt_with_roots",
         "count": 1
       },
       null,
@@ -56133,7 +56133,7 @@
     ],
     "inputs": [
       {
-        "id": "minecraft:rooted_dirt",
+        "id": "minecraft:dirt_with_roots",
         "count": 1
       }
     ],
@@ -56160,7 +56160,7 @@
       "category": "Base"
     },
     "originId": "utilitycraft",
-    "input": "minecraft:rooted_dirt + 4× minecraft:vine",
+    "input": "minecraft:dirt_with_roots + 4× minecraft:vine",
     "output": "minecraft:moss_block"
   },
   {

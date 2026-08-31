@@ -635,7 +635,7 @@
           ],
           [
             "Enchantability",
-            "40 · All preset"
+            "40 · Axe preset"
           ],
           [
             "Fire resistant",
@@ -676,9 +676,17 @@
             "id": "enchantments",
             "label": "Enchantments",
             "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: All · enchantability 40.",
+            "copy": "Bedrock slot preset: Axe · enchantability 40.",
             "entries": [
-              "Uses the all-slot preset: every compatible category is considered by the item component."
+              "Efficiency",
+              "Fortune",
+              "Silk Touch",
+              "Sharpness",
+              "Smite",
+              "Bane of Arthropods",
+              "Unbreaking",
+              "Mending",
+              "Curse of Vanishing"
             ]
           }
         ]

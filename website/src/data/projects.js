@@ -1,6 +1,10 @@
 import catalog from './projectCatalog.json';
+import githubReleaseStats from './githubReleaseStats.json';
 
-export const projectCatalog = catalog.projects;
+export const projectCatalog = catalog.projects.map((project) => ({
+  ...project,
+  version: githubReleaseStats[project.id]?.version ?? project.version,
+}));
 export const listedProjects = projectCatalog.filter((project) => project.visibility !== 'unlisted');
 export const featuredProjects = listedProjects
   .filter((project) => Number.isInteger(project.featuredRank))

@@ -53,8 +53,8 @@ const ascendantTechnology = createGeneratedProject({
   overview: {
     eyebrow: 'Official UtilityCraft end-game expansion',
     description: 'Ascendant Technology extends UtilityCraft with absolute-tier infrastructure, superior machines, advanced materials, fluid capsules, overclock networks, and deliberate late-game optimization.',
-    heroImage: 'showcase/singularity_fabricator.png',
-    heroImageAlt: 'Ascendant Technology Singularity Fabricator',
+    heroImage: 'showcase/machines_render.png',
+    heroImageAlt: 'Complete Ascendant Technology machine lineup',
     dependencyName: 'UtilityCraft base add-on',
     dependencyCopy: 'Ascendant Technology is not standalone. It shares the UtilityCraft namespace, Dorios Energy core, machine framework, fluids, recipes, and network systems.',
     stepsTitle: 'Progress beyond the UtilityCraft end game.',
@@ -65,11 +65,10 @@ const ascendantTechnology = createGeneratedProject({
     ],
   },
   mechanics: [
-    {name: 'Absolute Tier', icon: 'V', description: 'The fifth tier of Generators, with 8 times more power.'},
-    {name: 'Superior Machines', icon: 'S', description: 'Upgraded machines with advanced inputs, outputs, fluids, and gases.'},
-    {name: 'Overclocking', icon: 'O', description: 'Towers and relays that coordinate late-game machine optimization and boosts everything.'},
-    {name: 'Refinement', icon: 'R', description: 'Refine your weapon, tool or armor to unlock its full potential and evolve it.'},
-    {name: 'Power Beacons (WIP)', icon: 'P', description: 'Tiered energy infrastructure shared with the UtilityCraft network.'},
+    {name: 'Dorios Energy', icon: 'bolt', description: 'The shared power network used by Ascendant machines, storage, relays, Power Beacons, and absolute-tier infrastructure.'},
+    {name: 'Gas Management', icon: 'wind', description: 'The gas input, storage, processing, and output system used by supported superior machines and recipes.'},
+    {name: 'Superior Machines', icon: 'tool', description: 'Advanced processors with specialized item, liquid, gas, catalyst, and upgrade slots for late-game production.'},
+    {name: 'Absolute Generators', icon: 'battery', description: 'The fifth generator tier, built to supply high-output Dorios Energy for Ascendant industrial networks.'},
   ],
   machineNotice: {
     title: 'Superior machine rule',

@@ -9685,12 +9685,12 @@
       }
     ],
     "result": {
-      "id": "minecraft:rooted_dirt",
+      "id": "minecraft:dirt_with_roots",
       "count": 1
     },
     "results": [
       {
-        "id": "minecraft:rooted_dirt",
+        "id": "minecraft:dirt_with_roots",
         "count": 1
       }
     ],
@@ -9703,7 +9703,7 @@
     },
     "originId": "utilitycraft",
     "input": "minecraft:dirt + minecraft:mangrove_roots",
-    "output": "minecraft:rooted_dirt",
+    "output": "minecraft:dirt_with_roots",
     "cost": 1280,
     "energyCost": 1280,
     "machineAddon": "ascendant-technology"
@@ -10563,8 +10563,8 @@
     "machineAddon": "ascendant-technology"
   },
   {
-    "id": "utilitycraft-catalyst-weaver-minecraft-vine-minecraft-rooted-dirt-converted",
-    "identifier": "utilitycraft:process/catalyst-weaver/minecraft-vine-minecraft-rooted-dirt-converted",
+    "id": "utilitycraft-catalyst-weaver-minecraft-vine-minecraft-dirt-with-roots-converted",
+    "identifier": "utilitycraft:process/catalyst-weaver/minecraft-vine-minecraft-dirt-with-roots-converted",
     "type": "machine",
     "station": "catalyst_weaver",
     "category": "Catalyst Weaver · Infuser conversion",
@@ -10576,7 +10576,7 @@
         "count": 4
       },
       {
-        "id": "minecraft:rooted_dirt",
+        "id": "minecraft:dirt_with_roots",
         "count": 1
       },
       null,
@@ -10589,7 +10589,7 @@
     ],
     "inputs": [
       {
-        "id": "minecraft:rooted_dirt",
+        "id": "minecraft:dirt_with_roots",
         "count": 1
       }
     ],
@@ -10617,7 +10617,7 @@
       "category": "Base"
     },
     "originId": "utilitycraft",
-    "input": "minecraft:rooted_dirt + 4× minecraft:vine",
+    "input": "minecraft:dirt_with_roots + 4× minecraft:vine",
     "output": "minecraft:moss_block",
     "cost": 1280,
     "energyCost": 1280,

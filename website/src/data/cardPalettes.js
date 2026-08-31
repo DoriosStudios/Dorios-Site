@@ -30,6 +30,7 @@ export const projectCardPalettes = {
   'too-many-trinkets': ['#732f11', '#b27747'],
   'utilitycraft-quarry': ['#575859', '#1d2324'],
   utilitysky: ['#c7c7c7', '#f3f3f3'],
+  'how-to-play': ['#c8a75b', '#ead69f'],
 };
 
 export const memberCardPalettes = {

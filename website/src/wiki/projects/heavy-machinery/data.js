@@ -2,13 +2,13 @@
 export const assetRoot = '/img/wiki/heavy-machinery';
 
 export const wikiSections = [
-  {id: 'overview', label: 'Overview', icon: '⌂', href: '/wiki/heavy-machinery'},
-  {id: 'items', label: 'Items', icon: '◇', href: '/wiki/heavy-machinery/items'},
-  {id: 'blocks', label: 'Blocks', icon: '◆', href: '/wiki/heavy-machinery/blocks'},
-  {id: 'machines', label: 'Machines', icon: '▦', href: '/wiki/heavy-machinery/machines'},
-  {id: 'generators', label: 'Generators', icon: '◉', href: '/wiki/heavy-machinery/generators'},
-  {id: 'recipes', label: 'Recipes', icon: '▤', href: '/wiki/heavy-machinery/recipes'},
-  {id: 'mechanics', label: 'Mechanics', icon: '⚙', href: '/wiki/heavy-machinery/mechanics'},
+  {id: 'overview', label: 'Overview', icon: 'book', href: '/wiki/heavy-machinery'},
+  {id: 'items', label: 'Items', icon: 'sword', href: '/wiki/heavy-machinery/items'},
+  {id: 'blocks', label: 'Blocks', icon: 'cube', href: '/wiki/heavy-machinery/blocks'},
+  {id: 'machines', label: 'Machines', icon: 'tool', href: '/wiki/heavy-machinery/machines'},
+  {id: 'generators', label: 'Generators', icon: 'bolt', href: '/wiki/heavy-machinery/generators'},
+  {id: 'recipes', label: 'Recipes', icon: 'file-text', href: '/wiki/heavy-machinery/recipes'},
+  {id: 'mechanics', label: 'Mechanics', icon: 'settings', href: '/wiki/heavy-machinery/mechanics'},
 ];
 
 const item = (id, name, category, description, imageId = id) => ({
@@ -274,5 +274,8 @@ export const craftingRecipes = Object.entries(craftingGroups).flatMap(([category
 );
 
 export const mechanics = [
-  {name: 'Modular multiblocks', icon: '▦', description: 'Build expandable industrial structures from a controller, tier-compatible casing, ports, and internal components.'}
+  {name: 'Dorios Energy', icon: 'bolt', description: 'The UtilityCraft power system used by multiblock controllers, energy ports, storage components, factories, and generators.'},
+  {name: 'Fluid Management', icon: 'droplet', description: 'The liquid input, storage, transfer, and output system used by chambers, reactors, tanks, and multiblock ports.'},
+  {name: 'Multiblock Machines', icon: 'tool', description: 'Expandable processing factories assembled from one controller, compatible casings, ports, and internal modules.'},
+  {name: 'Multiblock Generators', icon: 'battery', description: 'Large structures that generate, buffer, and distribute Dorios Energy through configurable internal components.'},
 ];

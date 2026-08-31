@@ -75,10 +75,10 @@
       ],
       "ownership": "official",
       "visibility": "public",
-      "lifecycle": "Development",
+      "lifecycle": "Beta",
       "featuredRank": 2,
       "free": true,
-      "version": "0.5.0",
+      "version": "0.5.2",
       "minecraftVersion": "1.26.30",
       "requires": [
         "UtilityCraft"
@@ -92,9 +92,9 @@
         "releases": "https://github.com/DoriosStudios/UtilityCraft-Heavy-Machinery/releases"
       },
       "media": {
-        "cover": null,
+        "cover": "/img/addons/heavy/MCPEDL.png",
         "icon": "/img/projects/heavy-machinery/icon.png",
-        "coverFit": "contain",
+        "coverFit": "cover",
         "alt": "Heavy Machinery pack icon"
       },
       "metrics": {
@@ -131,7 +131,7 @@
       "lifecycle": "Beta",
       "featuredRank": 3,
       "free": true,
-      "version": "0.9.0",
+      "version": "0.9.1",
       "minecraftVersion": "1.21.130",
       "requires": [
         "UtilityCraft 3.5+"
@@ -154,7 +154,7 @@
         "items": 68,
         "blocks": 89,
         "recipes": 133,
-        "machines": 29
+        "machines": 30
       },
       "source": {
         "kind": "bridge",

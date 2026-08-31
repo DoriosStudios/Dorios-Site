@@ -2,8 +2,29 @@ import React, {createContext, useContext, useEffect, useMemo, useRef, useState} 
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import '@fontsource-variable/space-grotesk';
+import {
+  IconBattery,
+  IconBolt,
+  IconBook,
+  IconBrandGithub,
+  IconChevronDown,
+  IconChevronLeft,
+  IconChevronRight,
+  IconCube,
+  IconDroplet,
+  IconExternalLink,
+  IconFileText,
+  IconHelpCircle,
+  IconSearch,
+  IconSettings,
+  IconSword,
+  IconTool,
+  IconUsers,
+  IconWind,
+} from '@tabler/icons-react';
 import DoriosMarketingShell from '../DoriosMarketingShell';
 import SocialMetadata from '../SocialMetadata';
+import {StepAccordionList, StepCardList, StepCompactList, StepTimelineList} from './stepLists';
 import {findGlobalCatalogEntry, getWikiProject} from '../../wiki/projects';
 import {RECIPE_ORIGINS, recipeOriginFor as resolveRecipeOrigin} from '../../wiki/recipeOrigins';
 import {fluidVisualFor, MACHINE_RESOURCE_ICONS} from '../../data/resourceVisuals';
@@ -13,6 +34,26 @@ import vanillaAssetIndex from '../../data/vanillaAssetIndex.json';
 import styles from './styles.module.css';
 
 const WikiProjectContext = createContext(null);
+
+const WIKI_ICONS = {
+  battery: IconBattery,
+  bolt: IconBolt,
+  book: IconBook,
+  cube: IconCube,
+  droplet: IconDroplet,
+  'file-text': IconFileText,
+  'help-circle': IconHelpCircle,
+  settings: IconSettings,
+  sword: IconSword,
+  tool: IconTool,
+  users: IconUsers,
+  wind: IconWind,
+};
+
+function WikiIcon({name, size = 20, stroke = 1.8}) {
+  const Icon = WIKI_ICONS[name] ?? IconHelpCircle;
+  return <Icon aria-hidden="true" size={size} stroke={stroke} />;
+}
 
 function useWikiProject() {
   const project = useContext(WikiProjectContext);
@@ -44,6 +85,11 @@ function entrySocialImage(project, entryType, entry, controller, recipe) {
 
 function sectionSocialImage(project, section, itemCategory) {
   if (itemCategory) return resolveAsset(project, project.items.find(({category}) => categoriesInSection(itemCategory).includes(category))?.image ?? project.fallbackImage);
+  if (section.startsWith('how-to-play')) {
+    const pageId = section.split('/')[1] ?? 'introduction';
+    const page = project.howToPlay?.pages?.find(({id}) => id === pageId) ?? project.howToPlay?.pages?.[0];
+    return resolveAsset(project, page?.hero ?? project.overview.heroImage);
+  }
   if (section === 'items') return resolveAsset(project, project.items.find(({image}) => image)?.image ?? project.fallbackImage);
   if (section === 'blocks') {
     const block = (project.allBlocks ?? project.blocks)[0];
@@ -76,7 +122,7 @@ function WikiSearch({query, setQuery, placeholder}) {
 
   return (
     <label className={styles.search}>
-      <span aria-hidden="true">⌕</span>
+      <IconSearch aria-hidden="true" size={18} stroke={1.8} />
       <span className={styles.srOnly}>Search this wiki section</span>
       <input
         ref={inputRef}
@@ -94,10 +140,34 @@ function WikiFrame({active, query, setQuery, children}) {
   const project = useWikiProject();
   const catalogProject = getProjectByWikiPath(project.basePath);
   const activeSectionRef = useRef(null);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [expandedSections, setExpandedSections] = useState(() => new Set(active.startsWith('how-to-play') ? ['how-to-play'] : []));
+
+  useEffect(() => {
+    setSidebarCollapsed(window.localStorage.getItem('dorios-wiki-sidebar-collapsed') === 'true');
+  }, []);
 
   useEffect(() => {
     activeSectionRef.current?.scrollIntoView({block: 'nearest', inline: 'center'});
   }, [active]);
+
+  useEffect(() => {
+    if (!active.startsWith('how-to-play')) return;
+    setExpandedSections((current) => new Set([...current, 'how-to-play']));
+  }, [active]);
+
+  const toggleSection = (sectionId) => setExpandedSections((current) => {
+    const next = new Set(current);
+    if (next.has(sectionId)) next.delete(sectionId);
+    else next.add(sectionId);
+    return next;
+  });
+
+  const toggleSidebar = () => setSidebarCollapsed((current) => {
+    const next = !current;
+    window.localStorage.setItem('dorios-wiki-sidebar-collapsed', String(next));
+    return next;
+  });
 
   return (
     <DoriosMarketingShell activePage="wiki" project={catalogProject}>
@@ -112,30 +182,82 @@ function WikiFrame({active, query, setQuery, children}) {
           <WikiSearch query={query} setQuery={setQuery} />
         </div>
 
-        <div className={styles.wikiLayout}>
+        <div className={`${styles.wikiLayout} ${sidebarCollapsed ? styles.sidebarCollapsed : ''}`}>
           <aside className={styles.sidebar} aria-label={`${project.name} wiki sections`}>
-            <p>{project.name}</p>
+            <div className={styles.sidebarHeader}>
+              <p>{project.name}</p>
+              <button
+                type="button"
+                className={styles.sidebarToggle}
+                onClick={toggleSidebar}
+                aria-label={sidebarCollapsed ? 'Expand wiki sidebar' : 'Collapse wiki sidebar'}
+                aria-expanded={!sidebarCollapsed}
+                title={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+              >
+                {sidebarCollapsed
+                  ? <IconChevronRight aria-hidden="true" size={18} stroke={1.9} />
+                  : <IconChevronLeft aria-hidden="true" size={18} stroke={1.9} />}
+              </button>
+            </div>
             <nav>
-              {project.wikiSections.map((section) => (
-                <Link
-                  key={section.id}
-                  to={section.href}
-                  aria-current={active === section.id ? 'page' : undefined}
-                  className={active === section.id ? styles.activeNav : undefined}
-                  ref={active === section.id ? activeSectionRef : undefined}
-                >
-                  <span aria-hidden="true">{section.icon}</span>{section.label}
-                </Link>
-              ))}
+              {project.wikiSections.map((section) => {
+                const isActive = active === section.id || (section.children?.length && active.startsWith(`${section.id}/`));
+                if (!section.children?.length) return (
+                  <Link
+                    key={section.id}
+                    to={section.href}
+                    aria-current={active === section.id ? 'page' : undefined}
+                    className={isActive ? styles.activeNav : undefined}
+                    ref={isActive ? activeSectionRef : undefined}
+                    title={section.label}
+                  >
+                    <span className={styles.navIcon}><WikiIcon name={section.icon} /></span>
+                    <span className={styles.navLabel}>{section.label}</span>
+                  </Link>
+                );
+
+                const expanded = expandedSections.has(section.id);
+                return (
+                  <div className={styles.navGroup} key={section.id}>
+                    <div className={styles.navGroupHeader}>
+                      <Link
+                        to={section.href}
+                        aria-current={active === section.id ? 'page' : undefined}
+                        className={isActive ? styles.activeNav : undefined}
+                        ref={isActive ? activeSectionRef : undefined}
+                        title={section.label}
+                      >
+                        <span className={styles.navIcon}><WikiIcon name={section.icon} /></span>
+                        <span className={styles.navLabel}>{section.label}</span>
+                      </Link>
+                      <button
+                        type="button"
+                        aria-label={`${expanded ? 'Collapse' : 'Expand'} ${section.label} pages`}
+                        aria-expanded={expanded}
+                        aria-controls={`wiki-nav-${section.id}`}
+                        onClick={() => toggleSection(section.id)}
+                      >
+                        <IconChevronDown aria-hidden="true" size={17} stroke={1.9} />
+                      </button>
+                    </div>
+                    {expanded && (
+                      <div className={styles.navSubmenu} id={`wiki-nav-${section.id}`}>
+                        {section.children.map((child) => {
+                          const childSection = child.id === 'introduction' ? section.id : `${section.id}/${child.id}`;
+                          const childActive = active === childSection;
+                          return <Link key={child.id} to={child.href} className={childActive ? styles.activeSubNav : undefined}>{child.label}</Link>;
+                        })}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </nav>
             {project.repository && (
               <a className={styles.repoSideLink} href={project.repository} target="_blank" rel="noreferrer">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M8.7 17.3 15.9 10M10.2 7.8h7v7" />
-                  <path d="M17.2 12.8v5.4a2 2 0 0 1-2 2H5.8a2 2 0 0 1-2-2V8.8a2 2 0 0 1 2-2h5.4" />
-                </svg>
+                <IconBrandGithub aria-hidden="true" size={18} stroke={1.8} />
                 <span>GitHub repository</span>
-                <b aria-hidden="true">↗</b>
+                <IconExternalLink className={styles.repoExternalIcon} aria-hidden="true" size={16} stroke={1.8} />
               </a>
             )}
           </aside>
@@ -809,6 +931,7 @@ function OverviewPage({query}) {
   }, [normalized]);
 
   const categoryCards = [
+    {id: 'how-to-play', count: `${project.howToPlay?.pages?.length ?? 0} guided steps`, image: project.howToPlay?.pages?.[0]?.hero},
     {id: 'items', count: `${items.length} entries`, image: items.find((entry) => entry.image)?.image},
     {id: 'blocks', count: `${blocks.length} entries`, image: blocks.map((entry) => entry.itemImage ?? entry.render ?? entry.faces?.right).find(Boolean)},
     {
@@ -879,7 +1002,7 @@ function OverviewPage({query}) {
             <Link key={card.id} to={section.href} className={styles.categoryCard} data-category={card.id}>
               {card.image
                 ? <img src={resolveAsset(project, card.image)} alt="" />
-                : <span className={styles.categoryFallback} aria-hidden="true">{section.icon}</span>}
+                : <span className={styles.categoryFallback}><WikiIcon name={section.icon} size={30} stroke={1.6} /></span>}
               <div><strong>{section.label}</strong><span>{card.count}</span></div>
               <p>{card.copy}</p><b aria-hidden="true">→</b>
             </Link>
@@ -922,6 +1045,143 @@ function OverviewPage({query}) {
         </section>
       )}
     </>
+  );
+}
+
+function GuideTable({table}) {
+  if (!table?.headers?.length || !table?.rows?.length) return null;
+  return (
+    <div className={styles.guideTableWrap}>
+      <table className={styles.guideTable}>
+        <thead><tr>{table.headers.map((header) => <th key={header} scope="col">{header}</th>)}</tr></thead>
+        <tbody>{table.rows.map((row, rowIndex) => (
+          <tr key={`${row[0]}-${rowIndex}`}>{row.map((cell, cellIndex) => <td key={`${cell}-${cellIndex}`}>{cell}</td>)}</tr>
+        ))}</tbody>
+      </table>
+    </div>
+  );
+}
+
+function GuideImages({images, title}) {
+  if (!images?.length) return null;
+  const project = useWikiProject();
+  return (
+    <div className={styles.guideImages} data-count={Math.min(images.length, 5)}>
+      {images.map((source, index) => <figure
+        key={source}
+        data-shape={/(?:basics_render|meshes_flipbook|tools_render|cobble_gens_render|machines_render|batteries_render|fluid_tanks_render|mob_grinding_render|hammers_render|flint_knife_render|sieve_scaling_render|breaking_blocks(?:_comp)?_render|getting_mud_render|crucible_obsidian_process_render)/.test(source) ? 'wide' : 'standard'}
+      >
+        <img
+          src={resolveAsset(project, source)}
+          alt={`${title} visual ${index + 1}`}
+          loading="lazy"
+        />
+      </figure>)}
+    </div>
+  );
+}
+
+function GuideCards({cards}) {
+  const project = useWikiProject();
+  if (!cards?.length) return null;
+  return (
+    <div className={styles.guideCardGrid}>
+      {cards.map((card) => <article className={styles.guideCard} key={card.title}>
+        {card.image && <div className={styles.guideCardImage}><img src={resolveAsset(project, card.image)} alt="" loading="lazy" /></div>}
+        <div>
+          <h3>{card.title}</h3>
+          <p>{card.copy}</p>
+          {card.stats?.length > 0 && <dl>{card.stats.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}
+        </div>
+      </article>)}
+    </div>
+  );
+}
+
+const STEP_LIST_COMPONENTS = {
+  step_card_list: StepCardList,
+  step_timeline_list: StepTimelineList,
+  step_compact_list: StepCompactList,
+  step_accordion_list: StepAccordionList,
+};
+
+function StepListForSection({section, sectionNumber, embedded = false}) {
+  if (!section.steps?.length) return null;
+  const variant = section.stepVariant ?? (section.steps.length >= 4 ? 'step_timeline_list' : 'step_card_list');
+  const StepList = STEP_LIST_COMPONENTS[variant] ?? StepCardList;
+  return <StepList title={section.title} sectionNumber={sectionNumber} steps={section.steps} embedded={embedded} />;
+}
+
+function GuideSection({section, index}) {
+  const images = section.images ?? (section.image ? [section.image] : []);
+  const hasSupportingContent = Boolean(section.paragraphs?.length || images.length || section.table || section.tables?.length || section.cards?.length || section.links?.length);
+  if (section.steps?.length && !hasSupportingContent) {
+    return <StepListForSection section={section} sectionNumber={index + 1} />;
+  }
+  return (
+    <section className={styles.guideSection} aria-labelledby={`guide-section-${index}`}>
+      <header>
+        <span>{String(index + 1).padStart(2, '0')}</span>
+        <h2 id={`guide-section-${index}`}>{section.title}</h2>
+      </header>
+      {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+      <StepListForSection section={section} sectionNumber={index + 1} embedded />
+      <GuideImages images={images} title={section.title} />
+      <GuideTable table={section.table} />
+      {section.tables?.length > 0 && <div className={styles.guideTableGrid}>{section.tables.map((table) => <div key={table.label}><h3>{table.label}</h3><GuideTable table={table} /></div>)}</div>}
+      <GuideCards cards={section.cards} />
+      {section.links?.length > 0 && <div className={styles.guideLinks}>{section.links.map((link) => <Link key={link.href} to={link.href}>{link.label}<span aria-hidden="true">→</span></Link>)}</div>}
+    </section>
+  );
+}
+
+function HowToPlayPage({section, query}) {
+  const project = useWikiProject();
+  const guide = project.howToPlay;
+  const requestedId = section.split('/')[1] ?? 'introduction';
+  const pageIndex = Math.max(0, guide.pages.findIndex(({id}) => id === requestedId));
+  const page = guide.pages[pageIndex] ?? guide.pages[0];
+  const previous = guide.pages[pageIndex - 1];
+  const next = guide.pages[pageIndex + 1];
+  const normalizedQuery = query.trim().toLowerCase();
+  const visibleSections = normalizedQuery
+    ? page.sections.filter((entry) => JSON.stringify(entry).toLowerCase().includes(normalizedQuery))
+    : page.sections;
+  const pageHref = (candidate, index) => index === 0
+    ? `${project.basePath}/how-to-play`
+    : `${project.basePath}/how-to-play/${candidate.id}`;
+
+  return (
+    <article className={styles.guidePage}>
+      <header className={styles.guideHero}>
+        <div>
+          <p className={styles.eyebrow}>{page.eyebrow}</p>
+          <span>Step {String(pageIndex + 1).padStart(2, '0')} of {String(guide.pages.length).padStart(2, '0')}</span>
+          <h1>{page.title}</h1>
+          <p>{page.intro}</p>
+        </div>
+        {page.hero && <img src={resolveAsset(project, page.hero)} alt={`${page.label} guide`} />}
+      </header>
+
+      <nav className={styles.guideProgress} aria-label="How To Play progression">
+        {guide.pages.map((entry, index) => <Link
+          key={entry.id}
+          to={pageHref(entry, index)}
+          aria-current={index === pageIndex ? 'step' : undefined}
+          className={index === pageIndex ? styles.guideProgressActive : undefined}
+        ><span>{String(index + 1).padStart(2, '0')}</span>{entry.label}</Link>)}
+      </nav>
+
+      <div className={styles.guideSections}>
+        {visibleSections.map((entry, index) => <GuideSection key={entry.title} section={entry} index={index} />)}
+        {normalizedQuery && visibleSections.length === 0 && <p className={styles.empty}>No tutorial sections match “{query}”.</p>}
+      </div>
+
+      <nav className={styles.guidePager} aria-label="Tutorial pages">
+        {previous ? <Link to={pageHref(previous, pageIndex - 1)}><span>Previous</span><strong>← {previous.label}</strong></Link> : <span />}
+        {next ? <Link to={pageHref(next, pageIndex + 1)}><span>Next step</span><strong>{next.label} →</strong></Link> : <Link to={`${project.basePath}/machines`}><span>Continue exploring</span><strong>Machine catalog →</strong></Link>}
+      </nav>
+    </article>
   );
 }
 
@@ -1367,7 +1627,7 @@ function MechanicsPage({query}) {
       <section className={styles.mechanicsGrid}>
         {visible.map((mechanic) => {
           const slug = mechanic.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-          return <Link className={styles.selectableCard} to={`${project.basePath}/mechanics/${slug}`} key={mechanic.name}><article><span aria-hidden="true">{mechanic.icon}</span><div><h2>{mechanic.name}</h2></div></article></Link>;
+          return <Link className={styles.selectableCard} to={`${project.basePath}/mechanics/${slug}`} key={mechanic.name}><article><span><WikiIcon name={mechanic.icon} size={21} /></span><div><h2>{mechanic.name}</h2><p>{mechanic.description}</p></div></article></Link>;
         })}
       </section>
       {project.mechanicsGuide && (
@@ -2714,7 +2974,7 @@ function AddonWikiEntryContent({entryType, slug}) {
       : <span className={styles.visualFallback} aria-hidden="true">⊙</span>}</div>;
     facts = [['Category', entry.category], ['Identifier', entry.identifier], ['Entry type', 'Runtime entity']];
   } else if (entryType === 'mechanics') {
-    visual = <div className={styles.detailMechanicVisual} aria-hidden="true">{entry.icon}</div>;
+    visual = <div className={styles.detailMechanicVisual}><WikiIcon name={entry.icon} size={70} stroke={1.35} /></div>;
     facts = [['Entry type', 'Mechanic'], ['System', entry.name]];
   }
 
@@ -2786,18 +3046,20 @@ const pageComponents = {
   entities: EntitiesPage,
   recipes: RecipesPage,
   mechanics: MechanicsPage,
+  'how-to-play': HowToPlayPage,
 };
 
 function AddonWikiContent({section}) {
   const project = useWikiProject();
   const [query, setQuery] = useState('');
   const itemCategory = project.itemCategorySections?.find(({id}) => id === section);
-  const Page = itemCategory ? ItemsPage : (pageComponents[section] ?? OverviewPage);
+  const isHowToPlay = section.startsWith('how-to-play');
+  const Page = itemCategory ? ItemsPage : (isHowToPlay ? HowToPlayPage : (pageComponents[section] ?? OverviewPage));
   const [title, description] = project.pageMeta[section] ?? project.pageMeta.overview;
-  const sectionNavigation = project.wikiSections.find(({id}) => id === section);
-  const previewTitle = section === 'overview' ? project.wikiName : (sectionNavigation?.label ?? title.replace(`${project.name} `, ''));
+  const sectionNavigation = project.wikiSections.find(({id}) => id === section || (id === 'how-to-play' && isHowToPlay));
+  const previewTitle = section === 'overview' ? project.wikiName : (isHowToPlay ? title.replace(`${project.name} `, '') : (sectionNavigation?.label ?? title.replace(`${project.name} `, '')));
   const previewType = section === 'overview' ? 'Wiki' : 'Wiki section';
-  const previewPath = section === 'overview' ? project.basePath : (sectionNavigation?.href ?? `${project.basePath}/${section}`);
+  const previewPath = section === 'overview' ? project.basePath : `${project.basePath}/${section}`;
 
   return (
     <Layout title={title} description={description} noFooter>
@@ -2811,7 +3073,7 @@ function AddonWikiContent({section}) {
         imageAlt={`${previewTitle} from ${project.name}`}
       />
       <WikiFrame active={section} query={query} setQuery={setQuery}>
-        <Page query={query} categorySection={itemCategory} />
+        <Page query={query} categorySection={itemCategory} section={section} />
       </WikiFrame>
     </Layout>
   );

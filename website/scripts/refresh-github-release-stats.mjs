@@ -32,6 +32,12 @@ function abbreviatedDownloadCount(value) {
   return `${compact}${unit.suffix}+`;
 }
 
+function releaseVersion(release) {
+  const source = String(release?.tag_name || release?.name || '').trim();
+  const semanticVersion = source.match(/v?(\d+\.\d+\.\d+)/i);
+  return semanticVersion?.[1] ?? null;
+}
+
 async function cachedStats() {
   try {
     return JSON.parse(await fs.readFile(outputPath, 'utf8'));
@@ -60,6 +66,7 @@ async function fetchReleaseStats({id, repository}) {
 
   const assets = releases.flatMap((release) => release.assets ?? []);
   const downloads = assets.reduce((total, asset) => total + (Number(asset.download_count) || 0), 0);
+  const latestRelease = releases.find((release) => !release.draft) ?? null;
   return {
     id,
     repository,
@@ -68,6 +75,11 @@ async function fetchReleaseStats({id, repository}) {
     display: abbreviatedDownloadCount(downloads),
     releases: releases.length,
     assets: assets.length,
+    version: releaseVersion(latestRelease),
+    latestReleaseTag: latestRelease?.tag_name ?? null,
+    latestReleaseName: latestRelease?.name ?? null,
+    latestReleaseUrl: latestRelease?.html_url ?? null,
+    latestReleasePublishedAt: latestRelease?.published_at ?? null,
     updatedAt: new Date().toISOString(),
   };
 }

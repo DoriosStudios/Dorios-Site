@@ -3,20 +3,30 @@
     "id": "ascendant-technology",
     "repository": "DoriosStudios/Ascendant-Technology",
     "endpoint": "https://api.github.com/repos/DoriosStudios/Ascendant-Technology/releases",
-    "downloads": 4317,
-    "display": "4.3K+",
+    "downloads": 4905,
+    "display": "4.9K+",
     "releases": 18,
     "assets": 24,
-    "updatedAt": "2026-08-22T06:55:20.916Z"
+    "version": "0.9.1",
+    "latestReleaseTag": "v0.9.1-beta",
+    "latestReleaseName": "v0.9.1",
+    "latestReleaseUrl": "https://github.com/DoriosStudios/Ascendant-Technology/releases/tag/v0.9.1-beta",
+    "latestReleasePublishedAt": "2026-08-11T23:56:38Z",
+    "updatedAt": "2026-08-31T01:04:25.990Z"
   },
   "heavy-machinery": {
     "id": "heavy-machinery",
     "repository": "DoriosStudios/UtilityCraft-Heavy-Machinery",
     "endpoint": "https://api.github.com/repos/DoriosStudios/UtilityCraft-Heavy-Machinery/releases",
-    "downloads": 3461,
-    "display": "3.4K+",
-    "releases": 7,
-    "assets": 12,
-    "updatedAt": "2026-08-22T06:55:25.257Z"
+    "downloads": 4157,
+    "display": "4.1K+",
+    "releases": 8,
+    "assets": 14,
+    "version": "0.5.2",
+    "latestReleaseTag": "v0.5.2",
+    "latestReleaseName": "UtilityCraft: Heavy Machinery v0.5.2",
+    "latestReleaseUrl": "https://github.com/DoriosStudios/UtilityCraft-Heavy-Machinery/releases/tag/v0.5.2",
+    "latestReleasePublishedAt": "2026-08-22T07:33:32Z",
+    "updatedAt": "2026-08-31T01:04:26.371Z"
   }
 }

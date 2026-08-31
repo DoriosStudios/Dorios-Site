@@ -80,6 +80,22 @@ function FeaturedCarousel() {
   );
 }
 
+function HowToPlayShortcut() {
+  return (
+    <Link className={styles.howToPlayCard} to="/wiki/utilitycraft/how-to-play" style={projectCardPalette('how-to-play')}>
+      <div className={styles.howToPlayVisual} aria-hidden="true">
+        <img src="/img/wiki/utilitycraft/how-to-play/title.png" alt="" loading="lazy" />
+      </div>
+      <div className={styles.howToPlayCopy}>
+        <p className={styles.overline}>UtilityCraft player guide · 8 steps</p>
+        <h2>How To Play</h2>
+        <p>Follow the complete progression from your first Hammer and Sieve to Steel, Dorios Energy, machines, generators, and automation.</p>
+      </div>
+      <span className={styles.howToPlayAction}>Start the guide <i aria-hidden="true">→</i></span>
+    </Link>
+  );
+}
+
 export default function ProjectsPage() {
   const featuredIds = new Set([...featuredProjects, ...primaryCarouselProjects].map((project) => project.id));
   const catalogProjects = listedProjects.filter((project) => !featuredIds.has(project.id));
@@ -97,6 +113,8 @@ export default function ProjectsPage() {
             <FeaturedCarousel />
             {featuredProjects.filter((project) => project.id !== 'utilitycraft').slice(0, 2).map((project) => <FeaturedCard project={project} key={project.id} />)}
           </section>
+
+          <HowToPlayShortcut />
 
           <section className={styles.catalog} aria-labelledby="catalog-title">
             <div className={styles.catalogHeader}><p className={styles.kicker}>More from Dorios</p><h2 id="catalog-title">Find your next project.</h2></div>

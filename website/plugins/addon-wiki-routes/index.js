@@ -17,6 +17,16 @@ module.exports = function doriosGeneratedRoutesPlugin() {
       const data = await import(`${pathToFileURL(dataPath).href}?wiki-routes`);
       const recipeData = await import(`${pathToFileURL(recipePath).href}?wiki-routes`);
       const trinketCategorySections = require(path.join(projectRoot, 'trinkets', 'categorySections.json'));
+      const utilityHowToPlaySections = [
+        'how-to-play',
+        'how-to-play/getting-started',
+        'how-to-play/expanding-resources',
+        'how-to-play/water-and-lava',
+        'how-to-play/first-steps-to-steel',
+        'how-to-play/machines',
+        'how-to-play/generators',
+        'how-to-play/drop-tables',
+      ];
       const slugify = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
       const addEntryRoutes = (projectId, routeGroups) => {
         Object.entries(routeGroups).forEach(([entryType, slugs]) => {
@@ -68,7 +78,8 @@ module.exports = function doriosGeneratedRoutesPlugin() {
           processingRecipes: require(path.join(projectRoot, 'utilitycraft', 'processingRecipes.json')),
           machineFilter: (block) => block.componentKeys?.includes('tag:dorios:machine'),
           generatorFilter: (block) => block.componentKeys?.includes('tag:dorios:generator'),
-          mechanics: ['dorios-energy', 'machine-tiers', 'energy-networks', 'item-and-fluid-transport', 'machine-upgrades', 'bonsai-automation'],
+          mechanics: ['dorios-energy', 'gas-management', 'machines', 'generators'],
+          extraSections: utilityHowToPlaySections,
         },
         {
           id: 'ascendant-technology',
@@ -77,7 +88,7 @@ module.exports = function doriosGeneratedRoutesPlugin() {
           machineFilter: (block) => /\/blocks\/machinery\/machines\//i.test(`/${block.source}`),
           additionalMachineIds: ['mob_magnet'],
           generatorFilter: (block) => /\/blocks\/machinery\/generators\//i.test(`/${block.source}`) || block.id === 'cobble_gen_6',
-          mechanics: ['absolute-tier', 'superior-machines', 'overclocking', 'refinement', 'power-beacons-wip'],
+          mechanics: ['dorios-energy', 'gas-management', 'superior-machines', 'absolute-generators'],
         },
         ...genericProjectIds
           .filter((id) => !['utilitycraft', 'ascendant-technology'].includes(id))
@@ -115,6 +126,7 @@ module.exports = function doriosGeneratedRoutesPlugin() {
           generators.length && 'generators',
           (project.manifest.content.recipes.length || project.processingRecipes?.length) && 'recipes',
           project.mechanics.length && 'mechanics',
+          ...(project.extraSections ?? []),
         ].filter(Boolean);
         addSectionRoutes(project.id, sections);
         if (project.id === 'trinkets') {

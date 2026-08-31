@@ -1,0 +1,196 @@
+.stepList {
+	--step-accent: var(--guide-accent, var(--wiki-project-accent));
+	min-width: 0;
+	padding: clamp(1rem, 2.5vw, 1.7rem);
+	border: 1px solid color-mix(in srgb, var(--step-accent) 25%, var(--ds-border));
+	border-radius: 18px;
+	background: linear-gradient(145deg, color-mix(in srgb, var(--step-accent) 4%, var(--ds-surface)), var(--ds-surface) 62%);
+	font-family: var(--wiki-ui-font);
+}
+
+.embedded {
+	margin-top: 1rem;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+}
+
+.stepHeader {
+	display: flex;
+	align-items: center;
+	gap: 0.9rem;
+	margin-bottom: 1rem;
+}
+
+.stepHeader > span {
+	width: 38px;
+	height: 38px;
+	flex: 0 0 38px;
+	display: grid;
+	place-items: center;
+	border: 1px solid color-mix(in srgb, var(--step-accent) 26%, var(--ds-border));
+	border-radius: 10px;
+	background: color-mix(in srgb, var(--step-accent) 14%, var(--ds-surface-raised));
+	color: color-mix(in srgb, var(--step-accent) 82%, var(--ds-text));
+	font-size: 0.68rem;
+	font-weight: 900;
+}
+
+.stepHeader h2 {
+	margin: 0;
+	color: var(--ds-text);
+	font-family: var(--wiki-display-font);
+	font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+	font-weight: 800;
+	letter-spacing: -0.055em;
+	line-height: 0.95;
+}
+
+.cardItems,
+.timelineItems,
+.compactItems,
+.accordionItems {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.cardItems { display: grid; gap: 0.55rem; }
+.cardItems li {
+	display: grid;
+	grid-template-columns: 46px minmax(0, 1fr);
+	align-items: center;
+	min-height: 68px;
+	overflow: hidden;
+	border: 1px solid color-mix(in srgb, var(--step-accent) 18%, var(--ds-border));
+	border-radius: 12px;
+	background: color-mix(in srgb, var(--step-accent) 3%, var(--ds-surface-raised));
+	box-shadow: inset 3px 0 color-mix(in srgb, var(--step-accent) 82%, transparent);
+}
+.cardItems li > span {
+	display: grid;
+	place-items: center;
+	align-self: stretch;
+	border-right: 1px solid color-mix(in srgb, var(--step-accent) 16%, var(--ds-border));
+	color: var(--step-accent);
+	font-size: 0.75rem;
+	font-weight: 900;
+}
+.cardItems p,
+.timelineItems p,
+.compactItems p,
+.accordionItems p { margin: 0; color: var(--ds-text); font-size: 0.84rem; line-height: 1.48; }
+.cardItems p { padding: 0.85rem 1rem; }
+
+.timelineItems { position: relative; display: grid; }
+.timelineItems::before {
+	content: "";
+	position: absolute;
+	top: 21px;
+	bottom: 21px;
+	left: 12px;
+	width: 1px;
+	background: linear-gradient(var(--step-accent), color-mix(in srgb, var(--step-accent) 35%, transparent));
+}
+.timelineItems li {
+	position: relative;
+	display: grid;
+	grid-template-columns: 25px 42px minmax(0, 1fr);
+	align-items: center;
+	gap: 0.65rem;
+	min-height: 72px;
+}
+.timelineItems li > i {
+	width: 15px;
+	height: 15px;
+	position: relative;
+	z-index: 1;
+	display: grid;
+	place-items: center;
+	justify-self: center;
+	border: 2px solid var(--step-accent);
+	border-radius: 50%;
+	background: var(--ds-surface);
+	box-shadow: 0 0 0 4px color-mix(in srgb, var(--step-accent) 7%, var(--ds-surface));
+}
+.timelineItems li > i::after {
+	content: "";
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background: var(--step-accent);
+}
+.timelineItems li > span {
+	color: var(--step-accent);
+	font-size: 0.78rem;
+	font-weight: 900;
+}
+.timelineItems p {
+	align-self: stretch;
+	display: flex;
+	align-items: center;
+	padding: 0.9rem 0;
+	border-bottom: 1px dashed color-mix(in srgb, var(--step-accent) 16%, var(--ds-border));
+}
+.timelineItems li:last-child p { border-bottom: 0; }
+
+.compactItems li {
+	display: grid;
+	grid-template-columns: 42px minmax(0, 1fr) 20px;
+	align-items: center;
+	gap: 0.7rem;
+	min-height: 52px;
+	border-bottom: 1px solid color-mix(in srgb, var(--step-accent) 14%, var(--ds-border));
+}
+.compactItems li:last-child { border-bottom: 0; }
+.compactItems li > span { color: var(--step-accent); font-size: 0.76rem; font-weight: 900; text-align: center; }
+.compactItems p { padding: 0.65rem 0 0.65rem 0.8rem; border-left: 1px solid color-mix(in srgb, var(--step-accent) 20%, var(--ds-border)); }
+.compactItems svg { color: color-mix(in srgb, var(--step-accent) 55%, var(--ds-muted)); }
+
+.accordionItems { display: grid; gap: 0.55rem; }
+.accordionItems li {
+	display: grid;
+	grid-template-columns: 74px minmax(0, 1fr) 42px;
+	align-items: center;
+	min-height: 76px;
+	overflow: hidden;
+	border: 1px solid color-mix(in srgb, var(--step-accent) 22%, var(--ds-border));
+	border-radius: 12px;
+	background: color-mix(in srgb, var(--step-accent) 3%, var(--ds-surface-raised));
+}
+.accordionItems li > span {
+	align-self: stretch;
+	display: grid;
+	place-items: center;
+	border-right: 1px solid color-mix(in srgb, var(--step-accent) 24%, var(--ds-border));
+	background: linear-gradient(90deg, color-mix(in srgb, var(--step-accent) 9%, transparent), transparent);
+	box-shadow: inset -5px 0 10px color-mix(in srgb, var(--step-accent) 9%, transparent);
+	color: var(--step-accent);
+	font-size: 1.4rem;
+	font-weight: 850;
+}
+.accordionItems p { padding: 0.85rem 1rem; }
+.accordionItems li > i {
+	width: 28px;
+	height: 28px;
+	display: grid;
+	place-items: center;
+	border: 1px solid color-mix(in srgb, var(--step-accent) 35%, var(--ds-border));
+	border-radius: 50%;
+	color: var(--step-accent);
+}
+
+@media (max-width: 560px) {
+	.stepList { padding: 1rem; border-radius: 15px; }
+	.embedded { padding: 0; }
+	.stepHeader { align-items: flex-start; gap: 0.7rem; }
+	.stepHeader h2 { font-size: clamp(1.6rem, 9vw, 2.35rem); }
+	.timelineItems li { grid-template-columns: 25px 34px minmax(0, 1fr); gap: 0.45rem; min-height: 66px; }
+	.cardItems p,
+	.timelineItems p,
+	.compactItems p,
+	.accordionItems p { font-size: 0.78rem; }
+	.accordionItems li { grid-template-columns: 54px minmax(0, 1fr) 36px; }
+	.accordionItems li > span { font-size: 1rem; }
+}

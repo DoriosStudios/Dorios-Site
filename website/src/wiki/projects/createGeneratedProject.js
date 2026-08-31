@@ -1,14 +1,14 @@
 import {vanillaStationFor} from './vanillaStationMeta.js';
 
 const SECTION_DEFINITIONS = [
-  {id: 'overview', label: 'Overview', icon: '⌂'},
-  {id: 'items', label: 'Items', icon: '◇'},
-  {id: 'blocks', label: 'Blocks', icon: '◆'},
-  {id: 'machines', label: 'Machines', icon: '▦'},
-  {id: 'generators', label: 'Generators', icon: '◉'},
-  {id: 'entities', label: 'Entities', icon: '⊙'},
-  {id: 'recipes', label: 'Recipes', icon: '▤'},
-  {id: 'mechanics', label: 'Mechanics', icon: '⚙'},
+  {id: 'overview', label: 'Overview', icon: 'book'},
+  {id: 'items', label: 'Items', icon: 'sword'},
+  {id: 'blocks', label: 'Blocks', icon: 'cube'},
+  {id: 'machines', label: 'Machines', icon: 'tool'},
+  {id: 'generators', label: 'Generators', icon: 'bolt'},
+  {id: 'entities', label: 'Entities', icon: 'users'},
+  {id: 'recipes', label: 'Recipes', icon: 'file-text'},
+  {id: 'mechanics', label: 'Mechanics', icon: 'settings'},
 ];
 
 const SECTION_COPY = {
@@ -18,7 +18,8 @@ const SECTION_COPY = {
   generators: 'Energy generation, storage, transmission, and receiving systems.',
   entities: 'Runtime and gameplay entities registered by the add-on.',
   recipes: 'Every discoverable Bedrock recipe normalized into individual entries.',
-  mechanics: 'The main progression, energy, automation, storage, and processing systems.',
+  mechanics: 'The current energy, gas, machine, and generator systems.',
+  'how-to-play': 'A guided survival progression from first tools to powered automation.',
 };
 
 const titleize = (value) => value
@@ -338,6 +339,7 @@ export function createGeneratedProject({
   includeBlockSection = true,
   includeEntitySection = false,
   itemCatalogColumns,
+  howToPlay,
 }) {
   const basePath = `/wiki/${id}`;
   const assetRoot = `/img/wiki/${id}`;
@@ -432,6 +434,20 @@ export function createGeneratedProject({
       href: section.id === 'overview' ? basePath : `${basePath}/${section.id}`,
     }));
 
+  if (howToPlay?.pages?.length) {
+    wikiSections.splice(1, 0, {
+      id: 'how-to-play',
+      label: howToPlay.title ?? 'How To Play',
+      icon: 'help-circle',
+      href: `${basePath}/how-to-play`,
+      children: howToPlay.pages.map((page, index) => ({
+        id: page.id,
+        label: page.label,
+        href: index === 0 ? `${basePath}/how-to-play` : `${basePath}/how-to-play/${page.id}`,
+      })),
+    });
+  }
+
   const pageMeta = wikiSections.reduce((result, section) => {
     const pageName = section.id === 'overview' ? `${name} Wiki` : `${name} ${section.label}`;
     result[section.id] = [pageName, section.id === 'overview'
@@ -439,6 +455,11 @@ export function createGeneratedProject({
       : (sectionDescriptions[section.id] ?? SECTION_COPY[section.id])];
     return result;
   }, {});
+
+  howToPlay?.pages?.forEach((page, index) => {
+    const sectionId = index === 0 ? 'how-to-play' : `how-to-play/${page.id}`;
+    pageMeta[sectionId] = [`${name} How To Play: ${page.label}`, page.intro ?? howToPlay.description];
+  });
 
   return {
     id,
@@ -480,5 +501,6 @@ export function createGeneratedProject({
     },
     machineNotice,
     mechanicsGuide,
+    howToPlay,
   };
 }
