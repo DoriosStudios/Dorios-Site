@@ -894,7 +894,35 @@
 	margin: 0 0 1rem;
 	color: var(--ds-muted);
 	font-size: 0.8125rem;
+	scroll-margin-top: 5.5rem;
 }
+.catalogPagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.38rem;
+	margin: 1rem 0 0;
+	font-family: var(--wiki-ui-font);
+}
+.catalogPagination > div { display: flex; align-items: center; justify-content: center; gap: 0.28rem; }
+.catalogPagination button {
+	min-width: 34px;
+	height: 34px;
+	display: grid;
+	place-items: center;
+	padding: 0 0.45rem;
+	border: 1px solid var(--ds-border);
+	border-radius: 8px;
+	background: var(--ds-surface);
+	color: var(--ds-text);
+	font: 800 0.72rem var(--wiki-ui-font);
+	cursor: pointer;
+}
+.catalogPagination button:hover,
+.catalogPagination button:focus-visible { border-color: var(--wiki-project-accent); color: var(--wiki-project-accent); }
+.catalogPagination button:disabled { opacity: 0.32; cursor: default; }
+.catalogPagination .activeCatalogPage { border-color: var(--wiki-project-accent); background: var(--wiki-project-accent); color: var(--ds-accent-ink); }
+.catalogPagination > div > span { width: 20px; color: var(--ds-muted); text-align: center; }
 .empty {
 	margin: 1rem 0 0;
 	padding: 2rem;
@@ -1638,6 +1666,8 @@
 }
 .recipeOriginBadge {
 	min-width: 0;
+	position: relative;
+	z-index: 2;
 	display: inline-flex;
 	align-items: center;
 	gap: 0.34rem;
@@ -1651,8 +1681,11 @@
 	font-weight: 800;
 	letter-spacing: 0.035em;
 	line-height: 1;
+	text-decoration: none;
 	white-space: nowrap;
 }
+.recipeOriginBadge:hover,
+.recipeOriginBadge:focus-visible { color: var(--ds-text); text-decoration: underline; text-decoration-color: var(--recipe-origin-accent); text-underline-offset: 0.18rem; }
 .recipeOriginBadge i {
 	width: 0.45rem;
 	height: 0.45rem;
@@ -1676,7 +1709,7 @@
 	display: grid;
 	grid-template-columns: 116px auto minmax(74px, 116px);
 	align-items: center;
-	justify-content: start;
+	justify-content: center;
 	gap: clamp(0.45rem, 1.2vw, 0.8rem);
 	padding: 0.55rem 0.65rem;
 }
@@ -2542,16 +2575,20 @@
 .catalystWeaverRecipeFlow {
 	min-width: 0;
 	display: grid;
-	grid-template-columns: 102px 44px minmax(78px, 1fr);
+	grid-template-columns: 130px 42px 104px;
+	grid-template-rows: auto auto;
 	align-items: center;
-	gap: 0.45rem;
-	padding: 0.15rem 0.1rem 0.25rem;
+	justify-content: center;
+	gap: 0.5rem 0.6rem;
+	padding: 0.65rem;
 }
 .catalystWeaverInputMatrix {
 	display: grid;
-	grid-template-columns: repeat(3, 30px);
-	grid-template-rows: repeat(3, 30px);
-	gap: 4px;
+	grid-column: 1;
+	grid-row: 1;
+	grid-template-columns: 34px 52px 34px;
+	grid-template-rows: 34px 52px 34px;
+	gap: 5px;
 	align-items: center;
 	justify-content: center;
 }
@@ -2568,14 +2605,22 @@
 .catalystWeaverCatalyst:nth-child(6) { grid-column: 3; grid-row: 3; }
 .catalystWeaverPrimaryInput { grid-column: 2; grid-row: 2; }
 .catalystWeaverCatalyst :is(.recipeSlot, .emptySlot) {
+	width: 34px;
+	height: 34px;
 	border-color: color-mix(in srgb, #a78bfa 65%, var(--ds-border));
 	background: color-mix(in srgb, #a78bfa 9%, var(--ds-surface-raised));
 }
+.catalystWeaverCatalyst .recipeSlot img { width: 27px; height: 27px; }
 .catalystWeaverPrimaryInput :is(.recipeSlot, .emptySlot) {
+	width: 52px;
+	height: 52px;
 	border-color: color-mix(in srgb, #38bdf8 70%, var(--ds-border));
 	background: color-mix(in srgb, #38bdf8 9%, var(--ds-surface-raised));
 }
+.catalystWeaverPrimaryInput .recipeSlot img { width: 42px; height: 42px; }
 .catalystWeaverProcess {
+	grid-column: 2;
+	grid-row: 1;
 	display: grid;
 	justify-items: center;
 	gap: 0.2rem;
@@ -2594,33 +2639,37 @@
 .catalystWeaverProcess small img { width: 14px; height: 14px; image-rendering: pixelated; object-fit: contain; }
 .catalystWeaverOutputArea {
 	min-width: 0;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
+	grid-column: 3;
+	grid-row: 1;
+	display: grid;
+	grid-template-rows: auto 58px;
+	align-items: end;
 	justify-content: center;
-	gap: 0.35rem;
+	gap: 0.28rem;
 }
+.catalystWeaverMainOutput { grid-row: 2; }
 .catalystWeaverMainOutput .resultSlot {
-	width: 42px;
-	height: 42px;
+	width: 58px;
+	height: 58px;
 	border-color: color-mix(in srgb, #f87171 70%, var(--ds-border));
 	background: color-mix(in srgb, #f87171 8%, var(--ds-surface-raised));
 }
-.catalystWeaverMainOutput .resultSlot img { width: 32px; height: 32px; }
-.catalystWeaverByproduct { gap: 0.08rem; }
+.catalystWeaverMainOutput .resultSlot img { width: 48px; height: 48px; }
+.catalystWeaverSecondaryOutputs { min-height: 34px; display: flex; align-items: center; justify-content: center; gap: 0.25rem; }
+.catalystWeaverByproduct { grid-template-columns: 34px minmax(0, 1fr); gap: 0.28rem; }
 .catalystWeaverByproduct .resultSlot {
-	width: 30px;
-	height: 30px;
+	width: 34px;
+	height: 34px;
 	border-color: color-mix(in srgb, #fb7185 55%, var(--ds-border));
 }
-.catalystWeaverByproduct .resultSlot img { width: 23px; height: 23px; }
+.catalystWeaverByproduct .resultSlot img { width: 27px; height: 27px; }
 .catalystWeaverByproduct em,
 .catalystWeaverFluid em {
-	max-width: 58px;
+	max-width: 70px;
 	overflow: hidden;
 	color: var(--ds-muted);
 	font-family: var(--wiki-ui-font);
-	font-size: 0.5rem;
+	font-size: 0.53rem;
 	font-style: normal;
 	font-weight: 800;
 	line-height: 1.1;
@@ -2628,13 +2677,26 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-.catalystWeaverFluid { gap: 0.08rem; }
+.catalystWeaverFluid {
+	grid-column: 1 / 3;
+	grid-row: 2;
+	grid-template-columns: 34px minmax(0, 1fr);
+	justify-self: stretch;
+	gap: 0.48rem;
+	min-height: 42px;
+	padding: 0.3rem 0.48rem;
+	border: 1px solid color-mix(in srgb, #38bdf8 48%, var(--ds-border));
+	border-radius: 8px;
+	background: color-mix(in srgb, #38bdf8 7%, var(--ds-surface-raised));
+}
+.catalystWeaverFluid > span:last-child { min-width: 0; display: grid; align-content: center; justify-items: start; }
+.catalystWeaverFluid strong { overflow: hidden; color: var(--ds-text); font: 800 0.62rem var(--wiki-ui-font); text-overflow: ellipsis; white-space: nowrap; }
 .catalystWeaverFluid .fluidRecipeSlot {
-	width: 23px;
-	height: 42px;
+	width: 32px;
+	height: 32px;
 	border-radius: 5px;
 }
-.catalystWeaverFluid .fluidSlotGlyph { font-size: 1.05rem; }
+.catalystWeaverFluid .fluidSlotGlyph { font-size: 1.2rem; }
 .catalystWeaverProcessCard .machineProcessRequirements:empty { display: none; }
 .machineProcessRequirements {
 	display: grid;
@@ -2911,7 +2973,7 @@
 }
 .sieveMeshBadge:hover,
 .sieveMeshBadge:focus-visible { color: var(--ds-text); text-decoration: underline; text-decoration-color: var(--wiki-project-accent); text-underline-offset: 0.2rem; }
-.sieveMeshBadge img { width: 18px; height: 18px; image-rendering: pixelated; object-fit: contain; }
+.sieveMeshBadge img { width: 20px; height: 20px; image-rendering: pixelated; object-fit: contain; }
 .autosieveDropList { margin-top: 0.75rem; padding-top: 0.65rem; border-top: 1px solid var(--ds-border); }
 .autosieveDropHeader,
 .autosieveDropRow {
@@ -3839,10 +3901,14 @@
 	.relatedItemGrid { grid-template-columns: 1fr; }
 	.itemUsage { grid-template-columns: 1fr; }
 	.recipeFlow {
-		grid-template-columns: 116px auto minmax(48px, 1fr);
+		grid-template-columns: 116px auto 116px;
 		gap: 0.35rem;
 		padding: 0.55rem;
 	}
+	.catalogPagination { gap: 0.25rem; }
+	.catalogPagination > div { gap: 0.2rem; }
+	.catalogPagination button { min-width: 30px; height: 32px; padding-inline: 0.35rem; }
+	.catalogPagination > div > span { width: 14px; }
 	.craftingSlots {
 		grid-template-columns: repeat(3, 38px);
 		grid-template-rows: repeat(3, 38px);
@@ -3932,9 +3998,9 @@
 	.autosieveDropName { gap: 0.3rem; }
 	.autosieveDropVisual { width: 32px; height: 32px; flex-basis: 32px; }
 	.autosieveDropVisual img { width: 31px; height: 31px; }
-	.autosieveDropRow .sieveMeshBadge { width: 30px; height: 30px; justify-content: center; padding: 0; }
+	.autosieveDropRow .sieveMeshBadge { width: 32px; height: 32px; justify-content: center; padding: 0; }
 	.autosieveDropRow .sieveMeshBadge > span:last-child { display: none; }
-	.autosieveDropRow .sieveMeshBadge img { width: 16px; height: 16px; }
+	.autosieveDropRow .sieveMeshBadge img { width: 18px; height: 18px; }
 	.abyssalDropHeader,
 	.abyssalDropRow { grid-template-columns: minmax(0, 1fr) 43px 44px 50px; gap: 0.28rem; }
 	.abyssalDropHeader span:last-child,
@@ -4216,11 +4282,19 @@
 .siftableBlockFacts strong { margin-top: .18rem; color: var(--ds-text); font-size: .78rem; }
 .siftableBlockFacts em { margin-top: .12rem; color: var(--ds-muted); font: normal .65rem var(--wiki-ui-font); }
 .siftableBlockFacts .sieveMeshBadge { width: fit-content; margin-top: .24rem; }
+.siftableBlockFacts .sieveMeshBadge img { width: 22px; height: 22px; }
 .siftableBlockFacts > button { min-height: 38px; display: inline-flex; align-items: center; justify-content: space-between; gap: .65rem; padding: .45rem .65rem; border: 1px solid color-mix(in srgb, var(--wiki-project-accent) 42%, var(--ds-border)); border-radius: 9px; background: transparent; color: var(--ds-text); font: 800 .68rem var(--wiki-ui-font); cursor: pointer; }
 .siftableBlockFacts > button:hover { background: var(--wiki-project-accent); color: #fff; }
 .siftableBlockFacts > button b { font-size: 1rem; }
 
 @media (max-width: 760px) {
+	.blockDetailHero { grid-template-columns: 98px minmax(0, 1fr); align-items: center; gap: .85rem; padding: .75rem; border-radius: 15px; }
+	.blockDetailHero .detailCubeVisual { width: 98px; height: 98px; min-height: 98px; border-radius: 12px; }
+	.blockDetailHero .detailCubeVisual .blockPreview { --block-preview-size: 86px !important; }
+	.blockDetailHero .detailHeading h1 { font-size: clamp(1.85rem, 7.6vw, 2.8rem); line-height: .92; }
+	.blockDetailHero .detailHeading > p:last-child { display: -webkit-box; margin-top: .42rem; overflow: hidden; font-size: .76rem; line-height: 1.4; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+	.blockDetailHero .detailBlockTags { gap: .24rem; margin-top: .5rem; }
+	.blockDetailHero .detailBlockTags span { padding: .18rem .38rem; font-size: .57rem; }
 	.itemDetailHero { grid-template-columns: 88px minmax(0, 1fr); gap: .9rem; padding-top: .6rem; }
 	.itemDetailVisual { width: 88px; height: 88px; min-height: 88px; border-radius: 12px; }
 	.itemDetailVisual > .detailItemVisual { min-height: 88px; }
@@ -4245,6 +4319,10 @@
 }
 
 @media (max-width: 420px) {
+	.blockDetailHero { grid-template-columns: 84px minmax(0, 1fr); gap: .7rem; padding: .65rem; }
+	.blockDetailHero .detailCubeVisual { width: 84px; height: 84px; min-height: 84px; }
+	.blockDetailHero .detailCubeVisual .blockPreview { --block-preview-size: 76px !important; }
+	.blockDetailHero .detailHeading h1 { font-size: clamp(1.55rem, 7.2vw, 2.2rem); letter-spacing: -.055em; }
 	.itemDetailHero { grid-template-columns: 94px minmax(0, 1fr); gap: .8rem; padding: .45rem 0 1rem; }
 	.itemDetailVisual { width: 94px; height: 94px; min-height: 94px; }
 	.itemDetailVisual > .detailItemVisual { min-height: 94px; }

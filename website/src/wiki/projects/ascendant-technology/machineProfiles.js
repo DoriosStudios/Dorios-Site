@@ -66,4 +66,83 @@ const machineProfiles = {
   },
 };
 
+Object.assign(machineProfiles, {
+  catalyst_weaver: {
+    ...machineProfiles.catalyst_weaver,
+    description: 'Fuses one primary material with up to six catalysts and a registered fluid. Recipes may also produce an independently rolled byproduct.',
+    input: 'Primary material + up to 6 catalysts + recipe fluid',
+    output: 'Main result + optional byproduct',
+    primaryResource: 'Dorios Energy + registered fluid',
+    howItWorks: [
+      'Place the primary material in the central input and supply every catalyst required by the selected recipe.',
+      'Fill the internal tank with the registered fluid and supply Dorios Energy.',
+      'Collect the main output and any byproduct that succeeds its independent chance roll.',
+    ],
+    specifications: [['Catalyst slots', 'Up to 6'], ['Fluid capacity', '512,000 mB'], ['Secondary output', 'Recipe-defined amount and chance']],
+  },
+  cryo_chamber: {
+    ...machineProfiles.cryo_chamber,
+    description: 'The original combined cryogenic workstation. Its responsibilities are now represented by the dedicated Freezer, Cryofluid Synthesizer, and Stabilizer branches.',
+    input: 'Legacy cryogenic recipes',
+    output: 'Cooling, Cryofluid, or stabilized products',
+    specifications: [['Role', 'Combined legacy cryogenic system'], ['Successors', 'Cryo Freezer, Cryofluid Synthesizer, Cryo Stabilizer']],
+  },
+  cryo_freezer: {
+    ...machineProfiles.cryo_freezer,
+    description: 'Runs the dedicated freezing and cold-crafting branch without sharing processing space with Cryofluid generation or stabilization.',
+    input: 'Freezing-grid materials + registered cooling fluid',
+    output: 'Frozen food, reversed cooking products, and cold-crafted materials',
+    primaryResource: 'Dorios Energy + cooling fluid',
+    specifications: [['Branch', 'Freezing'], ['Fluid capacity', '128,000 mB']],
+  },
+  cryofluid_synthesizer: {
+    ...machineProfiles.cryofluid_synthesizer,
+    description: 'Produces Cryofluid continuously for industrial bases, allowing the generation lane to scale independently from other cryogenic work.',
+    input: 'Registered synthesis inputs',
+    output: 'Cryofluid',
+    primaryResource: 'Dorios Energy + synthesis fluid',
+    specifications: [['Branch', 'Cryofluid generation'], ['Fluid capacity', '128,000 mB']],
+  },
+  cryo_stabilizer: {
+    ...machineProfiles.cryo_stabilizer,
+    description: 'Handles volatile materials in a dedicated stabilization process separated from freezing and Cryofluid production.',
+    input: 'Volatile material + Cryofluid',
+    output: 'Stabilized material',
+    primaryResource: 'Dorios Energy + Cryofluid',
+    specifications: [['Branch', 'Material stabilization'], ['Fluid capacity', '128,000 mB']],
+  },
+  duplicator: {
+    ...machineProfiles.duplicator,
+    description: 'Reads an eligible template and reproduces it through a continuous energy-and-fluid process. Rarity controls the generated cost, and explicit exclusions prevent duplication of restricted items.',
+    input: 'Eligible template + replication fluid',
+    output: 'Duplicate of the template item',
+    primaryResource: 'Dorios Energy + replication fluid',
+    specifications: [['Recipe model', 'Generated from template rarity'], ['Restrictions', 'Banners, containers, unique and explicitly excluded items'], ['Fluid capacity', '512,000 mB']],
+  },
+  singularity_fabricator: {
+    ...machineProfiles.singularity_fabricator,
+    description: 'A registered high-energy machine intended to compress eligible materials into singularities. Its progression role and recipe set are currently pending rework.',
+    input: 'Eligible bulk material + registered fluid',
+    output: 'Material singularity',
+    primaryResource: 'Dorios Energy + registered fluid',
+    specifications: [['Development status', 'Pending rework'], ['Planned role', 'Singularity production for future Kyarium progression']],
+  },
+  overclock_tower: {
+    ...machineProfiles.overclock_tower,
+    description: 'Consumes registered Overclock fuel and publishes the selected Overclock level to a cable network. A relay is required before machines can receive the boost.',
+    input: 'Registered Overclock fuel',
+    output: 'Network Overclock level',
+    primaryResource: 'Dorios Energy + Overclock fuel',
+    specifications: [['Network source', 'Overclock Tower'], ['Required distributor', 'Overclock Relay'], ['Connection', 'Reinforced Cable']],
+  },
+  overclock_relay: {
+    ...machineProfiles.overclock_relay,
+    description: 'Receives the level published by an Overclock Tower and distributes it to supported nearby machines through the reinforced cable network.',
+    input: 'Tower Overclock signal',
+    output: 'Machine Overclock boost',
+    primaryResource: 'Overclock network',
+    specifications: [['Network source', 'Overclock Tower'], ['Connection', 'Reinforced Cable'], ['Fuel', 'Consumed by the tower']],
+  },
+});
+
 export default machineProfiles;

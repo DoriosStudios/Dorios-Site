@@ -3,6 +3,7 @@ import {craftingRecipeDetails} from './recipeData.js';
 import processingRecipes from './processingRecipes.json';
 import {vanillaStationMeta} from '../vanillaStationMeta.js';
 import documentationProfiles from './documentationProfiles.generated.json';
+import itemEditorialProfiles from './itemEditorialProfiles.js';
 
 const pageMeta = {
   overview: ['Heavy Machinery Wiki', 'Technical reference for UtilityCraft: Heavy Machinery.'],
@@ -34,6 +35,8 @@ const stationMeta = {
   autosieve: {label: 'Autosieve', face: 'blocks/multiblock/autosieve_controller_north.png'},
   'reaction-chamber': {label: 'Reaction Chamber', face: 'blocks/multiblock/matter_condenser_controller_north.png'},
   'magmatic-chamber': {label: 'Magmatic Chamber', face: 'blocks/multiblock/magmatic_chamber_controller_north.png'},
+  'isotope-centrifuge': {label: 'Isotope Centrifuge', face: 'blocks/machines/isotope_centrifuge_north.png'},
+  'chemical-processor': {label: 'Chemical Processor', face: 'blocks/machines/chemical_processor_north.png'},
 };
 
 const machineControllerIds = {
@@ -44,7 +47,27 @@ const machineControllerIds = {
   autosieve: 'autosieve_controller',
   'reaction-chamber': 'reaction_chamber_controller',
   'magmatic-chamber': 'magmatic_chamber_controller',
+  'isotope-centrifuge': 'isotope_centrifuge',
+  'chemical-processor': 'chemical_processor',
+  'liquid-tank-controller': 'liquid_tank_controller',
+  'gas-tank-controller': 'gas_tank_controller',
 };
+
+const documentedItems = data.items.map((item) => {
+  const generated = documentationProfiles.items[item.id] ?? {};
+  const editorial = itemEditorialProfiles[item.id] ?? {};
+  return {
+    ...item,
+    ...generated,
+    ...editorial,
+    documentation: {
+      ...(generated.documentation ?? {}),
+      ...(editorial.documentation ?? {}),
+      basic: {...(generated.documentation?.basic ?? {}), ...(editorial.documentation?.basic ?? {})},
+      capabilities: {...(generated.documentation?.capabilities ?? {}), ...(editorial.documentation?.capabilities ?? {})},
+    },
+  };
+});
 
 const heavyMachineryProject = {
   id: 'heavy-machinery',
@@ -58,8 +81,8 @@ const heavyMachineryProject = {
   sectionDescriptions,
   stationMeta,
   machineControllerIds,
-  items: data.items.map((item) => ({...item, ...(documentationProfiles.items[item.id] ?? {})})),
-  allItems: data.items.map((item) => ({...item, ...(documentationProfiles.items[item.id] ?? {})})),
+  items: documentedItems,
+  allItems: documentedItems,
   blocks: data.blocks,
   allBlocks: data.blocks,
   machines: data.machines,
@@ -76,6 +99,14 @@ const heavyMachineryProject = {
     description: 'Technical documentation for large-scale multiblock machinery, high-cost infrastructure, and complex late-game industrial processes.',
     heroImage: 'guide/casings_showcase.png',
     heroImageAlt: 'Heavy Machinery multiblock casing tiers',
+    cardImage: 'blocks/multiblock/crusher_controller.png',
+    categoryImages: {
+      items: 'items/enriched_uranium_rod.png',
+      blocks: 'blocks/block_of_uranium.png',
+      machines: 'blocks/multiblock/crusher_controller.png',
+      generators: 'blocks/multiblock/bronze/thermal_reactor_controller.png',
+      recipes: 'items/charged_darloonite_crystal.png',
+    },
     dependencyName: 'UtilityCraft base add-on',
     dependencyCopy: 'Heavy Machinery is not standalone. It uses the public UtilityCraft core for energy, machines, fluids, recipe registration, and multiblock systems.',
     stepsTitle: 'From component to factory.',

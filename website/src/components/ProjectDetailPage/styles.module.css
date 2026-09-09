@@ -196,7 +196,7 @@ a.dependencyCard:focus-visible .dependencyVisual img { transform: scale(1.06); }
 
 @media (max-width: 960px) {
   .hero { grid-template-columns: 1fr; min-height: 0; }
-  .artwork { width: min(100%, 760px); }
+  .artwork { width: min(100%, 760px); order: -1; }
   .about,
   .linkSection,
   .relatedSection { grid-template-columns: 1fr; gap: 2rem; }

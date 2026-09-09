@@ -17,7 +17,7 @@ const item = (id, name, category, description, imageId = id) => ({
   name,
   category,
   description,
-  image: id.startsWith('utility_exo_') ? `equipment/${imageId}.png` : `items/${imageId}.png`,
+  image: /^(?:utility_exo|hazmat)_/.test(id) ? `equipment/${imageId}.png` : `items/${imageId}.png`,
 });
 
 export const items = [
@@ -45,10 +45,15 @@ export const items = [
   item('charged_darloonite_crystal', 'Charged Darloonite Crystal', 'Crystals', 'An energized crystal used in high-cost controllers and machines.'),
   item('control_panel', 'Control Panel', 'Components', 'The primary interface component used to craft multiblock controllers.'),
   item('saline_coolant_bucket', 'Saline Coolant Bucket', 'Fluids', 'Dedicated coolant for stabilizing the Thermal Reactor.'),
+  item('high_speed_rotor', 'High-Speed Rotor', 'Components', 'A precision rotor used to construct the Isotope Centrifuge and other high-speed machinery.'),
   item('utility_exo_helmet', 'Utility Exo Helmet', 'Equipment', 'The helmet component of the modular Utility Exo set.'),
   item('utility_exo_chestplate', 'Utility Exo Chestplate', 'Equipment', 'The armored chest component of the Utility Exo set.'),
   item('utility_exo_leggings', 'Utility Exo Leggings', 'Equipment', 'The leg component of the Utility Exo set.'),
   item('utility_exo_boots', 'Utility Exo Boots', 'Equipment', 'The boot component of the Utility Exo set.'),
+  item('hazmat_helmet', 'Hazmat Helmet', 'Equipment', 'A tagged protective helmet for hazardous industrial environments.'),
+  item('hazmat_chestplate', 'Hazmat Chestplate', 'Equipment', 'A tagged protective chestpiece for hazardous industrial environments.'),
+  item('hazmat_leggings', 'Hazmat Leggings', 'Equipment', 'Tagged protective leggings for hazardous industrial environments.'),
+  item('hazmat_boots', 'Hazmat Boots', 'Equipment', 'Tagged protective boots for hazardous industrial environments.'),
 ];
 
 const uniformFaces = (texture) => ({top: texture, left: texture, right: texture});
@@ -77,6 +82,11 @@ export const blocks = [
   block('tin_plated_block', 'Tin Plated Block', 'Materials', 'Material', 'blocks/block_of_tin_plate.png', 'A plated tin construction block.'),
   block('uranium_block', 'Block of Uranium', 'Materials', 'Material', 'blocks/block_of_uranium.png', 'Refined uranium storage block.'),
   block('controller_case', 'Controller Case', 'Controllers', 'Component', 'blocks/controller_case.png', 'Base casing used to assemble specialized machine controllers.', directionalFaces('blocks', 'controller_case')),
+  block('isotope_centrifuge', 'Isotope Centrifuge', 'Machines', 'Steel', 'blocks/machines/isotope_centrifuge_north.png', 'Separates natural uranium hexafluoride into enriched and depleted gas outputs.', {top: 'blocks/machines/isotope_centrifuge_up.png', left: 'blocks/machines/isotope_centrifuge_west.png', right: 'blocks/machines/isotope_centrifuge_north.png'}),
+  block('chemical_processor', 'Chemical Processor', 'Machines', 'Steel', 'blocks/machines/chemical_processor_north.png', 'Combines registered liquid and gas reactants into gas and optional item products.', {top: 'blocks/machines/chemical_processor_up.png', left: 'blocks/machines/chemical_processor_west.png', right: 'blocks/machines/chemical_processor_north.png'}),
+  block('gas_tank_controller', 'Gas Tank Controller', 'Controllers', 'Steel', 'blocks/multiblock/gas_tank_controller/front.png', 'Controls a five-channel multiblock gas storage system.', {top: 'blocks/multiblock/gas_tank_controller/top.png', left: 'blocks/multiblock/gas_tank_controller/sides.png', right: 'blocks/multiblock/gas_tank_controller/front.png'}),
+  block('liquid_tank_controller', 'Liquid Tank Controller', 'Controllers', 'Steel', 'blocks/multiblock/liquid_tank_controller/front.png', 'Controls a five-channel multiblock liquid storage system.', {top: 'blocks/multiblock/liquid_tank_controller/top.png', left: 'blocks/multiblock/liquid_tank_controller/sides.png', right: 'blocks/multiblock/liquid_tank_controller/front.png'}),
+  block('gas_turbine_controller', 'Gas Turbine Controller', 'Controllers', 'Bronze', 'blocks/multiblock/gas_turbine/front.png', 'Controls a scalable gas-burning turbine with a visible central rotor.', {top: 'blocks/multiblock/gas_turbine/top.png', left: 'blocks/multiblock/gas_turbine/side.png', right: 'blocks/multiblock/gas_turbine/front.png'}),
 
   ...[
     ['bronze_block', 'Block of Bronze', 'Structure'],
@@ -84,6 +94,7 @@ export const blocks = [
     ['bronze_case', 'Bronze Casing', 'Casing'],
     ['bronze_energy_port', 'Bronze Energy Port', 'Energy port'],
     ['bronze_fluid_port', 'Bronze Liquid Port', 'Liquid port'],
+    ['bronze_gas_port', 'Bronze Gas Port', 'Gas port'],
     ['bronze_hazard_block', 'Bronze Hazard Block', 'Structure'],
     ['bronze_item_port', 'Bronze Item Port', 'Item port'],
     ['bronze_plated_block', 'Bronze Plated Block', 'Structure'],
@@ -99,6 +110,7 @@ export const blocks = [
     ['steel_case', 'Steel Casing', 'Casing'],
     ['steel_energy_port', 'Steel Energy Port', 'Energy port'],
     ['steel_fluid_port', 'Steel Liquid Port', 'Liquid port'],
+    ['steel_gas_port', 'Steel Gas Port', 'Gas port'],
     ['steel_hazard_block', 'Steel Hazard Block', 'Structure'],
     ['steel_item_port', 'Steel Item Port', 'Item port'],
     ['steel_plated_block', 'Steel Plated Block', 'Structure'],
@@ -111,6 +123,7 @@ export const blocks = [
     ['netherite_case', 'Netherite Casing', 'Casing'],
     ['netherite_energy_port', 'Netherite Energy Port', 'Energy port'],
     ['netherite_fluid_port', 'Netherite Liquid Port', 'Liquid port'],
+    ['netherite_gas_port', 'Netherite Gas Port', 'Gas port'],
     ['netherite_hazard_block', 'Netherite Hazard Block', 'Structure'],
     ['netherite_item_port', 'Netherite Item Port', 'Item port'],
     ['netherite_plated_block', 'Netherite Plated Block', 'Structure'],
@@ -124,6 +137,7 @@ export const blocks = [
     ['efficiency_module', 'Efficiency Module', 'Reduces machine energy consumption.'],
     ['energy_cell', 'Energy Cell', 'Expands internal Dorios Energy storage.'],
     ['fluid_cell', 'Liquid Cell', 'Expands machine liquid storage.'],
+    ['gas_cell', 'Gas Cell', 'Expands machine gas storage and adds capacity to Gas Tank multiblocks.'],
     ['fluid_controller', 'Liquid Controller', 'Coordinates multiblock liquid storage.'],
     ['fuel_assemblies', 'Fuel Assemblies', 'Holds nuclear fuel inside a reactor structure.'],
     ['processing_module', 'Processing Module', 'Raises the number of operations completed per cycle.'],
@@ -133,6 +147,7 @@ export const blocks = [
     ['efficiency_module', 'energy_cell', 'processing_module', 'rod_control', 'speed_module'].includes(id)
       ? directionalFaces('blocks/multiblock', id, id === 'rod_control' ? 'side' : 'west')
       : id === 'fluid_cell' ? {top: 'blocks/multiblock/fluid_cell_up.png', left: 'blocks/multiblock/fluid_cell_side.png', right: 'blocks/multiblock/fluid_cell_side.png'}
+        : id === 'gas_cell' ? {top: 'blocks/multiblock/gas_cell_up.png', left: 'blocks/multiblock/gas_cell_side.png', right: 'blocks/multiblock/gas_cell_side.png'}
         : id === 'fluid_controller' ? directionalFaces('blocks/multiblock', id) : undefined)),
 
   ...[
@@ -169,12 +184,17 @@ export const machines = [
   {id: 'autosieve', name: 'Autosieve Factory', controller: 'Autosieve Controller', tier: 'Steel', recipe: 'Sieve', cost: '6,400 DE base', input: 'Material grid + mesh', output: '15 output slots', description: 'Sieves blocks with reusable meshes. Mesh tier unlocks drops while modifiers improve chance and amount.', modules: ['Processing', 'Speed', 'Efficiency', 'Energy Cell'], image: 'blocks/multiblock/autosieve_controller.png'},
   {id: 'reaction-chamber', name: 'Reaction Chamber', controller: 'Reaction Chamber Controller', tier: 'Steel', recipe: 'Reaction', cost: 'Recipe dependent', input: 'Items + liquid reactant', output: 'Items + product liquid', description: 'Combines solid inputs with a liquid reactant and can produce items, liquid, or both.', modules: ['Processing', 'Speed', 'Efficiency', 'Energy Cell', 'Liquid Cell'], image: 'blocks/multiblock/matter_condenser_controller.png'},
   {id: 'magmatic-chamber', name: 'Magmatic Chamber', controller: 'Magmatic Chamber Controller', tier: 'Steel', recipe: 'Melter', cost: 'Recipe dependent', input: 'Material grid', output: 'Molten liquid tank', description: 'Melts registered items into liquids while enforcing a compatible output tank.', modules: ['Processing', 'Speed', 'Efficiency', 'Energy Cell', 'Liquid Cell'], image: 'blocks/multiblock/magmatic_chamber_controller.png'},
+  {id: 'isotope-centrifuge', name: 'Isotope Centrifuge', controller: 'Isotope Centrifuge', blockSlug: 'isotope_centrifuge', tier: 'Steel', recipe: 'Isotope Centrifuge', cost: '16.384 MDE base', input: '1,000 mB natural uranium hexafluoride', output: '250 mB enriched UF6 + 750 mB depleted UF6', description: 'Separates natural uranium hexafluoride into enriched and depleted outputs. All three tanks hold 32,000 mB, progress pauses safely when energy or output space is unavailable, and every gas face is configurable.', modules: ['Speed', 'Energy'], image: 'blocks/machines/isotope_centrifuge_north.png', specifications: [['Energy capacity', '65.536 MDE'], ['Gas tanks', '3 × 32,000 mB'], ['Output requirement', 'Both gas outputs need compatible space']]},
+  {id: 'chemical-processor', name: 'Chemical Processor', controller: 'Chemical Processor', blockSlug: 'chemical_processor', tier: 'Steel', recipe: 'Chemical Processor', cost: 'Recipe dependent', input: 'Registered liquid + gas reactants', output: 'Gas + optional item product', description: 'Runs chemical recipes that combine a liquid and gas input. Per-face controls expose the liquid input, gas input, primary gas output, drain route, and optional item output.', modules: ['Speed', 'Energy'], image: 'blocks/machines/chemical_processor_north.png'},
+  {id: 'liquid-tank-controller', name: 'Liquid Tank Controller', controller: 'Liquid Tank Controller', blockSlug: 'liquid_tank_controller', tier: 'Steel multiblock', recipe: null, cost: 'No energy required', input: 'Liquid ports + Liquid Cells', output: 'Five independently configurable liquid tanks', description: 'Forms a steel-cased storage multiblock with five liquid channels. Each Liquid Cell contributes 256,000 mB of total capacity divided evenly across the five tanks.', modules: ['Liquid Cells', 'Liquid Ports'], image: 'blocks/multiblock/liquid_tank_controller/front.png'},
+  {id: 'gas-tank-controller', name: 'Gas Tank Controller', controller: 'Gas Tank Controller', blockSlug: 'gas_tank_controller', tier: 'Steel multiblock', recipe: null, cost: 'No energy required', input: 'Gas ports + Gas Cells', output: 'Five independently configurable gas tanks', description: 'Forms a steel-cased storage multiblock with five gas channels. Each Gas Cell contributes 256,000 mB of total capacity divided evenly across the five tanks.', modules: ['Gas Cells', 'Gas Ports'], image: 'blocks/multiblock/gas_tank_controller/front.png'},
 ];
 
 export const generators = [
   {id: 'thermal-reactor', name: 'Thermal Reactor', status: 'Operational', tier: 'Bronze multiblock', fuel: 'Lava + saline coolant', output: 'Up to 2,000 DE per mB before efficiency', risk: 'Overheating above 1,000 K; critical at 1,200 K', description: 'Burns lava to create Dorios Energy. Temperature, pressure, coolant, vents, conductors, and burn rate must remain balanced.', image: 'guide/thermal_reactor_ui.png', components: ['Thermo Core', 'Heat Conductors', 'Liquid Cells', 'Energy Units', 'Top Vents']},
   {id: 'power-condenser', name: 'Power Condenser Matrix', status: 'Operational', tier: 'Steel multiblock', fuel: 'External energy input', output: 'Automatic network transfer', risk: 'Requires at least one condenser unit', description: 'Stores Dorios Energy and automatically sends it to the connected network. Capacity and transfer scale with installed condenser units.', image: 'guide/components_showcase.png', components: ['Controller', 'Condenser Units', 'Energy Ports', 'Steel Casings']},
-  {id: 'nuclear-reactor', name: 'Nuclear Reactor', status: 'Experimental', tier: 'Netherite infrastructure', fuel: 'Uranium assemblies', output: 'Under active development', risk: 'Controller and reactor components are present; behavior is not finalized', description: 'The repository includes its controller, fuel assemblies, rod control, and liquid control blocks. Runtime documentation will be finalized with the reactor implementation.', image: 'guide/controllers_showcase.png', components: ['Nuclear Controller', 'Fuel Assemblies', 'Rod Control', 'Liquid Controller']},
+  {id: 'nuclear-reactor', name: 'Nuclear Reactor', status: 'Operational', tier: 'Netherite infrastructure', fuel: 'Uranium or Enriched Uranium Fuel Rods', output: 'Temperature-scaled Dorios Energy + nuclear waste gas', risk: 'Efficiency falls when Fuel Assemblies exceed Rod Control capacity; inadequate cooling can overheat or melt down the reactor', description: 'Consumes fuel rods at a player-selected FU/t rate. Fuel Assemblies raise capacity and reaction speed, each Rod Control efficiently manages four assemblies, coolant and Heat Conductors remove heat, and Energy Cells raise storage and transfer.', image: 'blocks/multiblock/nuclear_reactor_controller.png', components: ['Nuclear Controller', 'Fuel Assemblies', 'Rod Controls', 'Heat Conductors', 'Liquid and Gas Cells', 'Energy Cells']},
+  {id: 'gas-turbine', name: 'Gas Turbine', status: 'Operational', tier: 'Bronze multiblock', fuel: 'Registered turbine gas', output: 'Rate-controlled Dorios Energy', risk: 'Requires central rotor clearance and at least one Energy Cell in the outer structure', description: 'Burns registered gas while a visible rotor accelerates to operating speed. Structure size and air volume define gas capacity and maximum rate; the UI controls mB/t consumption and reports RPM and output.', image: 'blocks/multiblock/gas_turbine/front.png', components: ['Gas Turbine Controller', 'Bronze Casings', 'Energy Cells', 'Clear rotor chamber']},
 ];
 
 const slugify = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -278,4 +298,7 @@ export const mechanics = [
   {name: 'Fluid Management', icon: 'droplet', description: 'The liquid input, storage, transfer, and output system used by chambers, reactors, tanks, and multiblock ports.'},
   {name: 'Multiblock Machines', icon: 'tool', description: 'Expandable processing factories assembled from one controller, compatible casings, ports, and internal modules.'},
   {name: 'Multiblock Generators', icon: 'battery', description: 'Large structures that generate, buffer, and distribute Dorios Energy through configurable internal components.'},
+  {name: 'Uranium Fuel Cycle', icon: 'settings', description: 'Raw uranium is processed into uranium products, converted into uranium hexafluoride, enriched in the Isotope Centrifuge, formed into Enriched Uranium Fuel Rods, and consumed by the Nuclear Reactor while producing waste gas.'},
+  {name: 'Hazard Equipment', icon: 'shield', description: 'Hazmat pieces carry the shared hazard-equipment tag and offer repairable armor protection. Utility Exo pieces provide extremely durable wearable equipment; special abilities are documented only when implemented.'},
+  {name: 'Modular Storage', icon: 'droplet', description: 'Liquid and Gas Tank Controllers form steel-cased storage structures with five independent channels. Cells add capacity and compatible ports provide per-face automation.'},
 ];

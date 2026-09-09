@@ -281,6 +281,27 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-end;
+	color: #fff;
+}
+
+.bannerContent h2,
+.bannerContent .overline,
+.bannerContent .bannerDescription,
+.bannerContent .downloadBadge,
+.bannerContent .downloadBadge strong,
+.bannerContent .downloadBadge span {
+	color: #fff;
+}
+
+.bannerContent .tags span {
+	border-color: rgba(255, 255, 255, .34);
+	background: rgba(8, 9, 10, .58);
+	color: #fff;
+}
+
+.bannerContent .downloadBadge {
+	border-color: rgba(255, 255, 255, .28);
+	background: rgba(8, 9, 10, .64);
 }
 
 .bannerContent .overline { margin-top: clamp(0.65rem, 1.3vw, 1rem); }

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "@docusaurus/Link";
 import { useColorMode } from "@docusaurus/theme-common";
+import { IconBrandDiscord } from "@tabler/icons-react";
 import "@fontsource-variable/league-spartan";
 import "@fontsource-variable/space-grotesk";
 import styles from "./styles.module.css";
@@ -106,10 +107,7 @@ export function DoriosHeader({ activePage, project }) {
           <span>Join Discord</span>
           <span className={styles.actionSeparator} aria-hidden="true" />
           <span className={styles.actionIcon} aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="presentation">
-              <path d="M14 5h5v5M19 5l-8 8" />
-              <path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5" />
-            </svg>
+            <IconBrandDiscord role="presentation" />
           </span>
         </a>
       </div>

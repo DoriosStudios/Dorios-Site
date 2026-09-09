@@ -260,6 +260,16 @@
   stroke-width: 1.8;
 }
 
+.discordLink {
+  border-color: color-mix(in srgb, #5865f2 72%, var(--ds-border));
+  background: color-mix(in srgb, #5865f2 12%, transparent);
+  color: color-mix(in srgb, #5865f2 62%, var(--ds-text));
+}
+
+.discordLink .actionIcon {
+  color: #5865f2;
+}
+
 .actionSeparator {
   width: 1px;
   height: 16px;
@@ -283,6 +293,14 @@
 .discordLink:hover .actionIcon,
 .discordLink:focus-visible .actionIcon {
   color: currentColor;
+}
+
+.discordLink:hover,
+.discordLink:focus-visible {
+  border-color: #5865f2;
+  background: #5865f2;
+  box-shadow: 0 8px 24px rgba(88, 101, 242, .28);
+  color: #fff;
 }
 
 .siteFooter {

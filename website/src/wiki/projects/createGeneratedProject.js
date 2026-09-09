@@ -56,7 +56,7 @@ function normalizeItem(entry, {itemProfiles = {}} = {}) {
     shortId: entry.id,
     slug: entry.slug ?? slugify(entry.id),
     category: entry.category ?? 'General',
-    description: entry.description ?? '',
+    description: profile.description ?? entry.description ?? '',
     entryType: 'items',
     variants: entry.variants?.map((variant) => ({
       ...variant,
@@ -84,7 +84,7 @@ function normalizeBlock(entry, {generatedCompressedRenders = false, blockProfile
     slug: entry.slug ?? slugify(entry.id),
     category: entry.category ?? 'General',
     tier: entry.tier ?? tierFor(entry.name, entry.category),
-    description: entry.description ?? '',
+    description: profile.description ?? entry.description ?? '',
     entryType: 'blocks',
   };
 }
@@ -260,7 +260,7 @@ function generatorFromBlock(block, profile = {}) {
   return {
     id: block.shortId,
     name: block.name,
-    description: '',
+    description: profile.description ?? operatingFacts.risk,
     blockSlug: block.slug,
     faces: block.faces,
     render: block.render,

@@ -103,6 +103,75 @@ const itemEditorialProfiles = {
       usage: 'Choose the level that matches the amount of Cryofluid you need to move. The Infinite variant remains available after transferring its contents.',
     },
   },
+  'utilitycraft:titanium': {
+    documentation: {
+      description: 'Titanium Ingot is the durable mid-to-late-game metal between UtilityCraft infrastructure and Aetherium technology. It supports titanium tools, armor, meshes, conveyors, and advanced machine components.',
+      basic: {itemType: 'Metal ingot', maximumStack: 64},
+      tier: 'Titanium',
+      properties: [['Progression role', 'Bridge into Aetherium technology'], ['Equipment family', 'Tools, armor, mesh and conveyors']],
+      relatedItems: ['utilitycraft:raw_titanium', 'utilitycraft:titanium_dust', 'utilitycraft:titanium_plate', 'utilitycraft:titanium_mesh'],
+    },
+  },
+  'utilitycraft:tungsten': {
+    documentation: {
+      description: 'Tungsten Ingot is a heat-resistant technical metal recovered from Nether and deepslate ore chains. It is used in high-energy, cryogenic, and reinforced machine components.',
+      basic: {itemType: 'Technical metal ingot', maximumStack: 64},
+      tier: 'Tungsten',
+      properties: [['Primary role', 'Heat-resistant machine components'], ['Sources', 'Nether and deepslate tungsten ore chains']],
+      relatedItems: ['utilitycraft:raw_tungsten', 'utilitycraft:tungsten_dust', 'utilitycraft:tungsten_plate'],
+    },
+  },
+  'utilitycraft:hyper_processing_upgrade': {
+    documentation: {
+      description: 'The Hyper Processing Upgrade raises late-game processing throughput in Ascendant machines that expose a Hyper slot.',
+      basic: {itemType: 'Machine upgrade', maximumStack: 64},
+      tier: 'Ascendant',
+      properties: [['Semantic type', 'Hyper processing'], ['Compatibility', 'Machines with a Hyper upgrade slot']],
+      usage: 'Use the upgrade directly on a compatible machine. The receiving machine controls the effective level cap.',
+    },
+  },
+  'utilitycraft:multi_processing_upgrade': {
+    documentation: {
+      description: 'The Multi Processing Upgrade enables compatible systems to handle additional operations or lanes during one processing cycle.',
+      basic: {itemType: 'Machine upgrade', maximumStack: 64},
+      tier: 'Ascendant',
+      properties: [['Semantic type', 'Multi processing'], ['Compatibility', 'Machine-specific']],
+      usage: 'Install it only in a machine that lists Multi Processing among its accepted upgrades.',
+    },
+  },
+  'utilitycraft:resource_efficiency_upgrade': {
+    documentation: {
+      description: 'The Resource Efficiency Upgrade improves material usage in compatible Ascendant machines and is separate from ordinary energy-efficiency upgrades.',
+      basic: {itemType: 'Machine upgrade', maximumStack: 64},
+      tier: 'Ascendant',
+      properties: [['Semantic type', 'Resource efficiency'], ['Effect', 'Machine-defined material savings']],
+      usage: 'Install it in the dedicated Resource Efficiency slot of a compatible machine.',
+    },
+  },
+  'utilitycraft:energy_capacity_upgrade': {
+    documentation: {
+      description: 'The Energy Capacity Upgrade expands the internal Dorios Energy buffer of compatible late-game machines.',
+      basic: {itemType: 'Capacity upgrade', maximumStack: 64},
+      tier: 'Ascendant',
+      properties: [['Stored resource', 'Dorios Energy'], ['Effect', 'Machine-defined internal capacity increase']],
+    },
+  },
+  'utilitycraft:liquid_capacity_upgrade': {
+    documentation: {
+      description: 'The Liquid Capacity Upgrade expands the internal liquid tanks of compatible Ascendant machines.',
+      basic: {itemType: 'Capacity upgrade', maximumStack: 64},
+      tier: 'Ascendant',
+      properties: [['Stored resource', 'Liquids'], ['Compatibility', 'Fluid-capable machines']],
+    },
+  },
+  'utilitycraft:gas_capacity_upgrade': {
+    documentation: {
+      description: 'The Gas Capacity Upgrade expands the internal gas tanks of compatible Ascendant machines.',
+      basic: {itemType: 'Capacity upgrade', maximumStack: 64},
+      tier: 'Ascendant',
+      properties: [['Stored resource', 'Gases'], ['Compatibility', 'Gas-capable machines']],
+    },
+  },
 };
 
 export default itemEditorialProfiles;

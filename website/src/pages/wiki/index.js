@@ -5,6 +5,7 @@ import '@fontsource-variable/space-grotesk';
 import DoriosMarketingShell from '../../components/DoriosMarketingShell';
 import {projectCardPalette} from '../../data/cardPalettes';
 import {listedProjects} from '../../data/projects';
+import {wikiProjects} from '../../wiki/projects';
 import styles from './wikiHub.module.css';
 
 const wikis = listedProjects.filter((project) => project.routes.wiki);
@@ -21,60 +22,42 @@ function ArrowIcon() {
   );
 }
 
-function ProjectTags({project}) {
-  return (
-    <div className={styles.tags} aria-label={`${project.kind}, ${project.lifecycle}`}>
-      <span>{project.kind}</span>
-      <span>{project.lifecycle}</span>
-    </div>
-  );
+function cardImage(wiki) {
+  const project = wikiProjects[wiki.id];
+  const source = project?.overview?.cardImage ?? project?.fallbackImage;
+  if (!source) return wiki.media.icon;
+  return source.startsWith('/') ? source : `${project.assetRoot}/${source}`;
 }
 
-function FeaturedWikiCard({wiki, index}) {
-  return (
-    <Link className={styles.featuredLink} to={wiki.routes.wiki} style={projectCardPalette(wiki)}>
-      <article className={styles.featuredCard}>
-        <div className={styles.cardTopline}>
-          <span className={styles.cardNumber}>{String(index + 1).padStart(2, '0')}</span>
-          <ProjectTags project={wiki} />
-        </div>
-
-        <div className={styles.featuredVisual} aria-hidden="true">
-          <img src={wiki.media.cover || wiki.media.icon} alt="" loading={index === 0 ? 'eager' : 'lazy'} />
-        </div>
-
-        <div className={styles.featuredCopy}>
-          <p>{wiki.category}</p>
-          <h2>{wiki.name}</h2>
-          <div>{wiki.summary}</div>
-        </div>
-
-        <span className={styles.cardAction}>
-          Explore wiki
-          <i><ArrowIcon /></i>
-        </span>
-      </article>
-    </Link>
-  );
+function cardMetrics(wiki) {
+  const project = wikiProjects[wiki.id];
+  const values = {
+    items: project?.items?.length ?? wiki.metrics?.items,
+    blocks: project?.blocks?.length ?? wiki.metrics?.blocks,
+    recipes: project ? (project.craftingRecipeDetails?.length ?? 0) + (project.processingRecipes?.length ?? 0) : wiki.metrics?.recipes,
+    machines: project?.machines?.length ?? wiki.metrics?.machines,
+  };
+  return Object.entries(values)
+    .filter(([, value]) => Number(value) > 0)
+    .slice(0, 3)
+    .map(([label, value]) => `${Number(value).toLocaleString('en-US')} ${label}`);
 }
 
-function LibraryWikiCard({wiki, index}) {
+function WikiCard({wiki, index}) {
+  const metrics = cardMetrics(wiki);
   return (
-    <Link className={styles.libraryLink} to={wiki.routes.wiki} style={projectCardPalette(wiki)}>
-      <article className={styles.libraryCard}>
-        <div className={styles.cardTopline}>
-          <span className={styles.cardNumber}>{String(index + 1).padStart(2, '0')}</span>
-          <ProjectTags project={wiki} />
-        </div>
-        <div className={styles.libraryCopy}>
-          <p>{wiki.category}</p>
-          <h2>{wiki.name}</h2>
-          <div>{wiki.summary}</div>
-        </div>
-        <span className={styles.cardAction}>
-          Open reference
-          <i><ArrowIcon /></i>
+    <Link className={styles.wikiLink} to={wiki.routes.wiki} style={projectCardPalette(wiki)}>
+      <article className={styles.wikiCard}>
+        <span className={styles.cardVisual} aria-hidden="true">
+          <img src={cardImage(wiki)} alt="" loading={index === 0 ? 'eager' : 'lazy'} />
         </span>
+        <div className={styles.cardCopy}>
+          <span>{wiki.kind} · {wiki.category}</span>
+          <strong>{wiki.name}</strong>
+          <p>{wiki.summary}</p>
+          {metrics.length > 0 && <small>{metrics.join(' · ')}</small>}
+        </div>
+        <i className={styles.cardArrow} aria-hidden="true"><ArrowIcon /></i>
       </article>
     </Link>
   );
@@ -100,9 +83,9 @@ export default function WikiHub() {
                 </div>
                 <span>{featuredWikis.length} featured projects</span>
               </div>
-              <div className={styles.featuredGrid}>
+              <div className={styles.wikiGrid}>
                 {featuredWikis.map((wiki, index) => (
-                  <FeaturedWikiCard key={wiki.id} wiki={wiki} index={index} />
+                  <WikiCard key={wiki.id} wiki={wiki} index={index} />
                 ))}
               </div>
             </section>
@@ -117,9 +100,9 @@ export default function WikiHub() {
                 </div>
                 <span>{libraryWikis.length} references</span>
               </div>
-              <div className={styles.libraryGrid}>
+              <div className={styles.wikiGrid}>
                 {libraryWikis.map((wiki, index) => (
-                  <LibraryWikiCard
+                  <WikiCard
                     key={wiki.id}
                     wiki={wiki}
                     index={featuredWikis.length + index}
