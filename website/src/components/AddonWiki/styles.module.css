@@ -3915,6 +3915,162 @@
 	.dynamicOperationList { grid-template-columns: 1fr; gap: 0.4rem; }
 }
 
+/* Item Detail reads as an editorial wiki article. Cards are reserved for
+   recipes, sources, related entries and other independently useful targets. */
+.itemDetailPage {
+	overflow: visible;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+}
+.itemDetailHero {
+	min-height: 0;
+	grid-template-columns: 132px minmax(0, 1fr);
+	align-items: start;
+	gap: 1.35rem;
+	padding: 1rem 0 1.5rem;
+	border-bottom: 1px solid var(--ds-border);
+}
+.itemDetailVisual {
+	width: 132px;
+	height: 132px;
+	min-height: 132px;
+	border-radius: 16px;
+}
+.itemDetailVisual > .detailItemVisual { min-height: 132px; }
+.itemDetailVisual > .detailItemVisual.tierFlipbook { height: 132px; }
+.itemDetailVisual .detailItemVisual img { width: min(72%, 96px); }
+.itemDetailHeading h1 { font-size: clamp(2.65rem, 4.2vw, 4.6rem); }
+.itemDetailCopy {
+	grid-column: 2;
+	margin-top: -.65rem;
+}
+.itemDetailCopy > p {
+	max-width: 780px;
+	margin: 0;
+	font-size: 1rem;
+	line-height: 1.6;
+}
+.itemHeaderMeta { display: flex; flex-wrap: wrap; gap: .35rem .9rem; margin-top: .65rem; color: var(--ds-muted); font-size: .78rem; }
+.itemHeaderMeta span + span::before { margin-right: .9rem; color: var(--wiki-project-accent); content: '·'; }
+.itemIdentifier {
+	width: fit-content;
+	max-width: 100%;
+	display: flex;
+	gap: .55rem;
+	margin-top: .75rem;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+}
+.itemIdentifier > span { font-size: .72rem; letter-spacing: .07em; text-transform: uppercase; }
+.itemIdentifier code { padding: .1rem .3rem; border-radius: 4px; background: color-mix(in srgb, var(--ds-surface-raised) 72%, transparent); font-size: .78rem; }
+.itemIdentifier .copyIdentifier { width: 1.75rem; height: 1.75rem; flex-basis: 1.75rem; border: 0; }
+.itemArticleBody { display: grid; }
+.itemWikiSection { min-width: 0; padding: 2rem 0; border-bottom: 1px solid var(--ds-border); }
+.itemWikiSection > header { display: grid; grid-template-columns: minmax(130px, .25fr) minmax(0, 1fr); align-items: end; gap: 1rem; margin-bottom: 1.2rem; }
+.itemWikiSection > header p { margin: 0 0 .2rem; color: var(--wiki-project-accent); font-size: .7rem; font-weight: 850; letter-spacing: .11em; text-transform: uppercase; }
+.itemWikiSection > header h2 { margin: 0; color: var(--ds-text); font-size: clamp(1.9rem, 3vw, 2.75rem); letter-spacing: -.055em; line-height: .95; }
+.itemProperties { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; }
+.itemProperties > div { min-width: 0; display: grid; grid-template-columns: minmax(120px, .42fr) minmax(0, 1fr); gap: .75rem; padding: .75rem .15rem; border-top: 1px solid color-mix(in srgb, var(--wiki-project-accent) 12%, var(--ds-border)); }
+.itemProperties > div:nth-child(even) { padding-left: 1.25rem; }
+.itemProperties dt { color: var(--ds-muted); font-size: .78rem; font-weight: 750; }
+.itemProperties dd { min-width: 0; margin: 0; color: var(--ds-text); font-size: .9rem; overflow-wrap: anywhere; }
+.itemWikiSection .itemEditorialSection { margin-top: 1rem; padding: 1rem 0 0; border: 0; border-top: 1px solid var(--ds-border); border-radius: 0; background: transparent; }
+.itemWikiSection .itemSectionHeading { font-size: 1.35rem; }
+.itemWikiSection .itemSectionHeading > span { display: none; }
+.itemWikiSection .documentationList li { background: transparent; }
+.itemSubheading { margin: 0 0 .35rem; color: var(--ds-muted); font: 800 .72rem var(--wiki-ui-font); letter-spacing: .09em; text-transform: uppercase; }
+.primarySources, .mainUses { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1.5rem; }
+.sourceMethod, .mainUse { min-width: 0; padding: 1rem 0; border-top: 2px solid color-mix(in srgb, var(--wiki-project-accent) 32%, var(--ds-border)); }
+.sourceMethod > div:first-child > small, .mainUseHeading small { display: block; color: var(--wiki-project-accent); font-size: .68rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+.sourceMethod h3 { margin: .2rem 0 0; color: var(--ds-text); font-size: 1.25rem; }
+.sourceMethod > div:first-child > p, .mainUse > p { margin: .45rem 0 0; color: var(--ds-muted); font-size: .88rem; line-height: 1.5; }
+.sourceMethod > dl { margin: .8rem 0 0; }
+.sourceMethod > dl > div { display: grid; grid-template-columns: minmax(120px, .45fr) minmax(0, 1fr); gap: .6rem; padding: .45rem 0; border-top: 1px solid var(--ds-border); }
+.sourceMethod dt { color: var(--ds-muted); font-size: .72rem; }
+.sourceMethod dd { margin: 0; color: var(--ds-text); font-size: .82rem; }
+.primaryRecipes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+.itemRecipeCard { min-width: 0; margin-top: 1rem; overflow: hidden; border: 1px solid color-mix(in srgb, var(--wiki-project-accent) 20%, var(--ds-border)); border-radius: 14px; background: color-mix(in srgb, var(--ds-surface) 78%, var(--ds-bg)); }
+.itemRecipeCard > header { display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; align-items: center; gap: .65rem; padding: .7rem .8rem; border-bottom: 1px solid var(--ds-border); }
+.itemRecipeCard > header img, .itemRecipeCard > header > span { width: 36px; height: 36px; object-fit: contain; }
+.itemRecipeCard > header small, .itemRecipeGroup > small { display: block; color: var(--wiki-project-accent); font-size: .62rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+.itemRecipeCard > header strong { display: block; color: var(--ds-text); font-size: .82rem; }
+.itemRecipeCard > header > a { color: var(--wiki-project-accent); font-size: .7rem; font-weight: 800; }
+.itemRecipeFlow { display: grid; gap: .65rem; padding: .85rem; }
+.itemRecipeGroup > div { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .4rem; }
+.itemRecipeIngredient { min-width: 112px; display: grid; grid-template-columns: 42px minmax(0, 1fr); align-items: center; gap: .45rem; }
+.itemRecipeIngredient .recipeSlot { width: 42px; height: 42px; }
+.itemRecipeIngredient .recipeSlot img { width: 32px; height: 32px; }
+.itemRecipeIngredient > span > strong { display: block; color: var(--ds-text); font-size: .72rem; line-height: 1.2; }
+.itemRecipeIngredient > span > small { color: var(--ds-muted); font-size: .68rem; }
+.itemRecipeArrow { color: var(--wiki-project-accent); font-size: 1.15rem; }
+.itemRecipeMetrics { display: flex; flex-wrap: wrap; gap: .6rem 1.25rem; margin: 0; padding: .65rem .85rem; border-top: 1px solid var(--ds-border); }
+.itemRecipeMetrics div { display: flex; gap: .4rem; }
+.itemRecipeMetrics dt { color: var(--ds-muted); font-size: .67rem; }
+.itemRecipeMetrics dd { margin: 0; color: var(--ds-text); font-size: .7rem; font-weight: 750; }
+.mainUseHeading { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: center; gap: .7rem; color: inherit; }
+.mainUseHeading > img { width: 48px; height: 48px; object-fit: contain; image-rendering: pixelated; }
+.mainUseHeading strong { display: block; margin-top: .15rem; color: var(--ds-text); font-size: 1.05rem; }
+.mainUseHeading b { color: var(--wiki-project-accent); }
+.itemMoreLink { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.15rem; padding-top: 1rem; border-top: 1px solid var(--ds-border); color: var(--ds-muted); font-size: .82rem; }
+.itemMoreLink span, .itemMoreLink strong { display: block; }
+.itemMoreLink strong { color: var(--ds-text); font-size: .9rem; }
+.itemMoreLink a { flex: 0 0 auto; min-height: 40px; display: inline-flex; align-items: center; padding: .5rem .7rem; border: 1px solid var(--ds-border); border-radius: 9px; color: var(--wiki-project-accent); font-size: .75rem; font-weight: 800; }
+.itemUsageCopy { max-width: 850px; margin: 0; color: var(--ds-muted); line-height: 1.65; }
+.itemClosingGrid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); gap: 2rem; }
+.itemClosingGrid .itemWikiSection { border-bottom: 0; }
+.itemClosingGrid .itemWikiSection > header { display: block; }
+.itemClosingGrid .itemWikiSection > header p { margin-bottom: .35rem; }
+.itemClosingGrid .relatedItemGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.itemClosingGrid .relatedItemCard { grid-template-columns: 52px minmax(0, 1fr) auto; min-height: 70px; padding: .55rem 0; border: 0; border-top: 1px solid var(--ds-border); border-radius: 0; background: transparent; }
+.itemClosingGrid .relatedItemCard::after { color: var(--wiki-project-accent); content: '→'; }
+.itemClosingGrid .relatedItemVisual { width: 48px; height: 48px; }
+.itemTrivia { margin: 0; padding: 0; list-style: none; }
+.itemTrivia li { padding: .8rem 0 .8rem 1rem; border-top: 1px solid var(--ds-border); color: var(--ds-muted); font-size: .86rem; line-height: 1.55; }
+.itemTrivia li::before { position: absolute; margin-left: -1rem; color: var(--wiki-project-accent); content: '◆'; font-size: .55rem; }
+
+@media (max-width: 760px) {
+	.itemDetailHero { grid-template-columns: 88px minmax(0, 1fr); gap: .9rem; padding-top: .6rem; }
+	.itemDetailVisual { width: 88px; height: 88px; min-height: 88px; border-radius: 12px; }
+	.itemDetailVisual > .detailItemVisual { min-height: 88px; }
+	.itemDetailVisual > .detailItemVisual.tierFlipbook { height: 88px; }
+	.itemDetailVisual .detailItemVisual img { width: 62px; }
+	.itemDetailHeading h1 { font-size: clamp(2rem, 9.5vw, 3.15rem); }
+	.itemDetailCopy { grid-column: 1 / -1; margin-top: 0; }
+	.itemHeaderMeta { gap: .25rem .6rem; }
+	.itemHeaderMeta span + span::before { margin-right: .6rem; }
+	.itemIdentifier { align-items: center; flex-wrap: wrap; }
+	.itemWikiSection { padding: 1.55rem 0; }
+	.itemWikiSection > header { display: block; margin-bottom: .9rem; }
+	.itemWikiSection > header p { margin-bottom: .3rem; }
+	.itemProperties, .primarySources, .mainUses, .primaryRecipes, .itemClosingGrid { grid-template-columns: 1fr; }
+	.itemProperties > div, .itemProperties > div:nth-child(even) { grid-template-columns: minmax(105px, .42fr) minmax(0, 1fr); padding-left: .1rem; }
+	.itemMoreLink { align-items: flex-start; flex-direction: column; }
+	.itemMoreLink a { width: 100%; justify-content: space-between; }
+	.itemClosingGrid { gap: 0; }
+	.itemClosingGrid .relatedItemGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px) {
+	.itemDetailHero { grid-template-columns: 72px minmax(0, 1fr); gap: .8rem; padding: .6rem 0 1.25rem; }
+	.itemDetailVisual { width: 72px; height: 72px; min-height: 72px; }
+	.itemDetailVisual > .detailItemVisual { min-height: 72px; }
+	.itemDetailVisual > .detailItemVisual.tierFlipbook { height: 72px; }
+	.itemDetailVisual .detailItemVisual img { width: 50px; max-height: 60px; height: auto; }
+	.itemDetailVisual .detailItemVisual.tierFlipbook img { width: 50px; max-height: none; height: 72px; object-fit: contain; }
+	.itemDetailHeading h1 { font-size: clamp(1.85rem, 9vw, 2.45rem); }
+	.itemDetailCopy { grid-column: 1 / -1; width: 100%; margin-top: .35rem; }
+	.itemDetailCopy > p { font-size: .9rem; line-height: 1.55; }
+	.itemIdentifier { margin-top: .65rem; }
+	.itemIdentifier > span { width: 100%; }
+	.itemProperties > div, .itemProperties > div:nth-child(even), .sourceMethod > dl > div { grid-template-columns: 1fr; gap: .2rem; }
+	.itemRecipeCard > header { grid-template-columns: 32px minmax(0, 1fr); }
+	.itemRecipeCard > header > a { grid-column: 2; }
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.categoryCard,
 	.sidebar nav a,

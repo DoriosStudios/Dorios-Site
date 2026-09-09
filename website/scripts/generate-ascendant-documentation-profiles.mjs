@@ -67,10 +67,10 @@ function formatIdentifier(value) {
 }
 
 function number(value) {
-  return Number(value).toLocaleString('en-US');
+  return Number(value).toLocaleString('en-US', {maximumFractionDigits: 3});
 }
 
-function tierFromTags(tags) {
+function tierFromTags(tags, identifier) {
   const joined = tags.join(' ');
   const tiers = [
     ['netherite_tier', 'Netherite'],
@@ -79,7 +79,11 @@ function tierFromTags(tags) {
     ['stone_tier', 'Stone'],
     ['wooden_tier', 'Wood'],
   ];
-  return tiers.find(([token]) => joined.includes(token))?.[1] ?? 'No explicit Minecraft tier tag';
+  const normalizedIdentifier = String(identifier ?? '');
+  const namedTier = ['absolute', 'aetherium', 'titanium', 'niobium', 'kyarium']
+    .find((tier) => normalizedIdentifier.includes(tier));
+  return tiers.find(([token]) => joined.includes(token))?.[1]
+    ?? (namedTier ? formatIdentifier(namedTier) : 'Uses its add-on-specific mining profile');
 }
 
 const ENCHANTMENT_PRESETS = {
@@ -108,8 +112,9 @@ function repairLabel(entry) {
   if (!items) return null;
   const amount = String(entry.repair_amount ?? '');
   const ratio = amount.match(/\*\s*(0?\.\d+)/)?.[1];
-  if (ratio) return `${items} — ${Number(ratio) * 100}% of maximum durability`;
-  if (amount) return `${items} — ${amount}`;
+  if (ratio) return `${items} — restores ${number(Number(ratio) * 100)}% of maximum durability`;
+  if (/q\.remaining_durability|q\.max_durability/.test(amount)) return `${items} — combines the remaining durability of both items`;
+  if (amount) return `${items} — custom repair value`;
   return items;
 }
 
@@ -117,10 +122,13 @@ function digSpeedLabel(digger) {
   const speeds = digger?.destroy_speeds ?? [];
   if (!speeds.length) return null;
   return speeds.map(({speed, block}) => {
+    const rawTarget = typeof block === 'string' ? block : String(block?.tags ?? 'configured blocks');
     const target = typeof block === 'string'
       ? formatIdentifier(block)
-      : String(block?.tags ?? 'configured blocks').replace(/q\.any_tag\(|query\.any_tag\(|[()']/g, '').replace(/,/g, ' / ');
-    return `${speed}× — ${target}`;
+      : rawTarget.replace(/q\.any_tag\(|query\.any_tag\(|[()']/g, '').replace(/,/g, ' / ');
+    return /item_destructible|is_pickaxe/i.test(rawTarget)
+      ? `${number(speed)}× on blocks in its mining profile`
+      : `${number(speed)}× on ${target}`;
   }).join('; ');
 }
 
@@ -146,10 +154,10 @@ function capsuleInfo(identifier) {
   const capacity = infinite ? 512000 : Number(tier) * 1000;
   return {
     kind: family === 'steam' ? 'Gas capsule' : 'Fluid capsule',
-    capacity: `${number(capacity)} mB${infinite ? ' · infinite flag' : ''}`,
+    capacity: infinite ? 'Reusable; transfers up to 512,000 mB at a time' : `${number(capacity)} mB`,
     entries: [
       `${family === 'steam' ? 'Gas' : 'Fluid'} contents: ${labels[family]}.`,
-      infinite ? 'The runtime reuses this capsule after transfer.' : 'Transfers its contents and returns an Empty Liquid Capsule.',
+      infinite ? 'The capsule remains available after transferring its contents.' : 'Returns an Empty Liquid Capsule after transfer.',
       ['water', 'lava'].includes(family) && !infinite ? 'Can collect source blocks directly in the world.' : null,
     ].filter(Boolean),
   };
@@ -158,9 +166,9 @@ function capsuleInfo(identifier) {
 function specialFunction(components, identifier) {
   if (components['utilitycraft:drill']) {
     const size = components['utilitycraft:drill'].size;
-    return `Absolute drill profile · ${size}×${size}×${size} operator area after its StatsCore ability is active.`;
+    return `Mines a ${size}×${size}×${size} area while its area-mining ability is active.`;
   }
-  if (components['utilitycraft:hammer']) return `Hammer tier ${components['utilitycraft:hammer'].tier}; registered as a hammer for AT Core ore-drop overrides.`;
+  if (components['utilitycraft:hammer']) return `Breaks blocks using its tier ${components['utilitycraft:hammer'].tier} hammer profile and supports hammer-specific ore drops.`;
   if (components['utilitycraft:hoe'] || components['utilitycraft:shovel']) {
     const hoe = components['utilitycraft:hoe'];
     const shovel = components['utilitycraft:shovel'];
@@ -187,12 +195,12 @@ function itemProfile(identifier, components) {
     durability && ['Durability', number(durability)],
     components['minecraft:damage'] !== undefined && ['Attack damage', components['minecraft:damage']],
     wearable?.protection !== undefined && ['Protection', wearable.protection],
-    enchantable && ['Enchantability', `${enchantable.value} · ${formatIdentifier(enchantable.slot)} preset`],
+    enchantable && ['Enchantability', enchantable.value],
     components['minecraft:fire_resistant'] && ['Fire resistant', 'Yes'],
   ].filter(Boolean);
   const properties = [
     digger && ['Tool roles', roleLabels(tags)],
-    digger && ['Mining tier', tierFromTags(tags)],
+    digger && ['Mining tier', tierFromTags(tags, identifier)],
     digger && ['Mining speed', digSpeedLabel(digger)],
     wearable?.slot && ['Wear slot', wearable.slot.replace('slot.armor.', '').replace(/\b\w/g, (letter) => letter.toUpperCase())],
     repairItems.length && ['Repair with', repairItems.map(repairLabel).filter(Boolean).join('; ')],
@@ -203,7 +211,7 @@ function itemProfile(identifier, components) {
     id: capsule ? 'resource-storage' : wearable ? 'equipment-properties' : 'tool-properties',
     label: capsule ? 'Storage' : wearable ? 'Equipment' : 'Tool Properties',
     title: capsule ? 'Resource storage' : wearable ? 'Equipment properties' : 'Tool properties',
-    copy: capsule ? 'Capsule behavior is registered by Ascendant Technology\'s resource registry.' : 'Values are read from the registered Bedrock item definition.',
+    copy: capsule ? 'Capacity and transfer behavior.' : wearable ? 'Protection and repair details.' : 'Mining and repair details.',
     facts: properties,
     entries: capsule?.entries,
   }] : [];
@@ -211,15 +219,17 @@ function itemProfile(identifier, components) {
     ? ['Uses the all-slot preset: every compatible category is considered by the item component.']
     : ENCHANTMENT_PRESETS[enchantable.slot] ?? []) : [];
   if (enchantable) sections.push({
-    id: 'enchantments', label: 'Enchantments', title: 'Enchantment preset',
-    copy: `Bedrock slot preset: ${formatIdentifier(enchantable.slot)} · enchantability ${enchantable.value}.`,
+    id: 'enchantments', label: 'Enchantments', title: 'Compatible enchantments',
+    copy: `Enchantability ${enchantable.value}.`,
     entries: preset,
   });
   return {
     documentation: {
       description: capsule
-        ? `${formatIdentifier(identifier)} stores ${capsule.kind.toLowerCase().replace(' capsule', '')} resources for Ascendant Technology machines and holders.`
-        : `${formatIdentifier(identifier)} is a registered ${itemType.toLowerCase()} with its Bedrock durability, repair, and enchantment data documented below.`,
+        ? `${formatIdentifier(identifier)} carries ${capsule.kind.toLowerCase().replace(' capsule', '')} resources between compatible Ascendant Technology machines and storage.`
+        : wearable
+          ? `${formatIdentifier(identifier)} is protective equipment for Ascendant Technology progression, with high durability and compatible armor enchantments.`
+          : `${formatIdentifier(identifier)} is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.`,
       basic: {itemType, maximumStack: components['minecraft:max_stack_size'] ?? 1},
       statistics: stats,
       statisticsTitle: itemType === 'Armor' ? 'Armor statistics' : itemType === 'Tool' ? 'Tool statistics' : 'Item statistics',

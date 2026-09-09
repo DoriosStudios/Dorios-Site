@@ -2,7 +2,7 @@
   "items": {
     "utilitycraft:aetherium_boots": {
       "documentation": {
-        "description": "Aetherium Boots is a registered armor with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Aetherium Boots is protective equipment for Ascendant Technology progression, with high durability and compatible armor enchantments.",
         "basic": {
           "itemType": "Armor",
           "maximumStack": 1
@@ -18,7 +18,7 @@
           ],
           [
             "Enchantability",
-            "30 · Armor Feet preset"
+            30
           ],
           [
             "Fire resistant",
@@ -31,7 +31,7 @@
             "id": "equipment-properties",
             "label": "Equipment",
             "title": "Equipment properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Protection and repair details.",
             "facts": [
               [
                 "Wear slot",
@@ -39,15 +39,15 @@
               ],
               [
                 "Repair with",
-                "Aetherium Shard — 25% of maximum durability; Aetherium — 33.300000000000004% of maximum durability; Aetherium Boots — 50% of maximum durability"
+                "Aetherium Shard — restores 25% of maximum durability; Aetherium — restores 33.3% of maximum durability; Aetherium Boots — restores 50% of maximum durability"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Armor Feet · enchantability 30.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 30.",
             "entries": [
               "Protection",
               "Fire Protection",
@@ -69,7 +69,7 @@
     },
     "utilitycraft:aetherium_chestplate": {
       "documentation": {
-        "description": "Aetherium Chestplate is a registered armor with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Aetherium Chestplate is protective equipment for Ascendant Technology progression, with high durability and compatible armor enchantments.",
         "basic": {
           "itemType": "Armor",
           "maximumStack": 1
@@ -85,7 +85,7 @@
           ],
           [
             "Enchantability",
-            "30 · Armor Torso preset"
+            30
           ],
           [
             "Fire resistant",
@@ -98,7 +98,7 @@
             "id": "equipment-properties",
             "label": "Equipment",
             "title": "Equipment properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Protection and repair details.",
             "facts": [
               [
                 "Wear slot",
@@ -106,15 +106,15 @@
               ],
               [
                 "Repair with",
-                "Aetherium Shard — 25% of maximum durability; Aetherium — 33.300000000000004% of maximum durability; Aetherium Chestplate — 50% of maximum durability"
+                "Aetherium Shard — restores 25% of maximum durability; Aetherium — restores 33.3% of maximum durability; Aetherium Chestplate — restores 50% of maximum durability"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Armor Torso · enchantability 30.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 30.",
             "entries": [
               "Protection",
               "Fire Protection",
@@ -132,7 +132,7 @@
     },
     "utilitycraft:aetherium_helmet": {
       "documentation": {
-        "description": "Aetherium Helmet is a registered armor with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Aetherium Helmet is protective equipment for Ascendant Technology progression, with high durability and compatible armor enchantments.",
         "basic": {
           "itemType": "Armor",
           "maximumStack": 1
@@ -148,7 +148,7 @@
           ],
           [
             "Enchantability",
-            "30 · Armor Head preset"
+            30
           ],
           [
             "Fire resistant",
@@ -161,7 +161,7 @@
             "id": "equipment-properties",
             "label": "Equipment",
             "title": "Equipment properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Protection and repair details.",
             "facts": [
               [
                 "Wear slot",
@@ -169,15 +169,15 @@
               ],
               [
                 "Repair with",
-                "Aetherium Shard — 25% of maximum durability; Aetherium — 33.300000000000004% of maximum durability; Aetherium Helmet — 50% of maximum durability"
+                "Aetherium Shard — restores 25% of maximum durability; Aetherium — restores 33.3% of maximum durability; Aetherium Helmet — restores 50% of maximum durability"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Armor Head · enchantability 30.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 30.",
             "entries": [
               "Protection",
               "Fire Protection",
@@ -197,7 +197,7 @@
     },
     "utilitycraft:aetherium_leggings": {
       "documentation": {
-        "description": "Aetherium Leggings is a registered armor with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Aetherium Leggings is protective equipment for Ascendant Technology progression, with high durability and compatible armor enchantments.",
         "basic": {
           "itemType": "Armor",
           "maximumStack": 1
@@ -213,7 +213,7 @@
           ],
           [
             "Enchantability",
-            "30 · Armor Legs preset"
+            30
           ],
           [
             "Fire resistant",
@@ -226,7 +226,7 @@
             "id": "equipment-properties",
             "label": "Equipment",
             "title": "Equipment properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Protection and repair details.",
             "facts": [
               [
                 "Wear slot",
@@ -234,15 +234,15 @@
               ],
               [
                 "Repair with",
-                "Aetherium Shard — 25% of maximum durability; Aetherium — 33.300000000000004% of maximum durability; Aetherium Leggings — 50% of maximum durability"
+                "Aetherium Shard — restores 25% of maximum durability; Aetherium — restores 33.3% of maximum durability; Aetherium Leggings — restores 50% of maximum durability"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Armor Legs · enchantability 30.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 30.",
             "entries": [
               "Protection",
               "Fire Protection",
@@ -261,7 +261,7 @@
     },
     "utilitycraft:titanium_boots": {
       "documentation": {
-        "description": "Titanium Boots is a registered armor with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Titanium Boots is protective equipment for Ascendant Technology progression, with high durability and compatible armor enchantments.",
         "basic": {
           "itemType": "Armor",
           "maximumStack": 1
@@ -277,7 +277,7 @@
           ],
           [
             "Enchantability",
-            "18 · Armor Feet preset"
+            18
           ]
         ],
         "statisticsTitle": "Armor statistics",
@@ -286,7 +286,7 @@
             "id": "equipment-properties",
             "label": "Equipment",
             "title": "Equipment properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Protection and repair details.",
             "facts": [
               [
                 "Wear slot",
@@ -294,15 +294,15 @@
               ],
               [
                 "Repair with",
-                "Titanium — 25% of maximum durability; Titanium Plate — 33.300000000000004% of maximum durability; Titanium Boots — 50% of maximum durability"
+                "Titanium — restores 25% of maximum durability; Titanium Plate — restores 33.3% of maximum durability; Titanium Boots — restores 50% of maximum durability"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Armor Feet · enchantability 18.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 18.",
             "entries": [
               "Protection",
               "Fire Protection",
@@ -324,7 +324,7 @@
     },
     "utilitycraft:titanium_chestplate": {
       "documentation": {
-        "description": "Titanium Chestplate is a registered armor with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Titanium Chestplate is protective equipment for Ascendant Technology progression, with high durability and compatible armor enchantments.",
         "basic": {
           "itemType": "Armor",
           "maximumStack": 1
@@ -340,7 +340,7 @@
           ],
           [
             "Enchantability",
-            "18 · Armor Torso preset"
+            18
           ]
         ],
         "statisticsTitle": "Armor statistics",
@@ -349,7 +349,7 @@
             "id": "equipment-properties",
             "label": "Equipment",
             "title": "Equipment properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Protection and repair details.",
             "facts": [
               [
                 "Wear slot",
@@ -357,15 +357,15 @@
               ],
               [
                 "Repair with",
-                "Titanium — 25% of maximum durability; Titanium Plate — 33.300000000000004% of maximum durability; Titanium Chestplate — 50% of maximum durability"
+                "Titanium — restores 25% of maximum durability; Titanium Plate — restores 33.3% of maximum durability; Titanium Chestplate — restores 50% of maximum durability"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Armor Torso · enchantability 18.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 18.",
             "entries": [
               "Protection",
               "Fire Protection",
@@ -383,7 +383,7 @@
     },
     "utilitycraft:titanium_helmet": {
       "documentation": {
-        "description": "Titanium Helmet is a registered armor with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Titanium Helmet is protective equipment for Ascendant Technology progression, with high durability and compatible armor enchantments.",
         "basic": {
           "itemType": "Armor",
           "maximumStack": 1
@@ -399,7 +399,7 @@
           ],
           [
             "Enchantability",
-            "18 · Armor Head preset"
+            18
           ]
         ],
         "statisticsTitle": "Armor statistics",
@@ -408,7 +408,7 @@
             "id": "equipment-properties",
             "label": "Equipment",
             "title": "Equipment properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Protection and repair details.",
             "facts": [
               [
                 "Wear slot",
@@ -416,15 +416,15 @@
               ],
               [
                 "Repair with",
-                "Titanium — 25% of maximum durability; Titanium Plate — 33.300000000000004% of maximum durability; Titanium Helmet — 50% of maximum durability"
+                "Titanium — restores 25% of maximum durability; Titanium Plate — restores 33.3% of maximum durability; Titanium Helmet — restores 50% of maximum durability"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Armor Head · enchantability 18.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 18.",
             "entries": [
               "Protection",
               "Fire Protection",
@@ -444,7 +444,7 @@
     },
     "utilitycraft:titanium_leggings": {
       "documentation": {
-        "description": "Titanium Leggings is a registered armor with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Titanium Leggings is protective equipment for Ascendant Technology progression, with high durability and compatible armor enchantments.",
         "basic": {
           "itemType": "Armor",
           "maximumStack": 1
@@ -460,7 +460,7 @@
           ],
           [
             "Enchantability",
-            "18 · Armor Legs preset"
+            18
           ]
         ],
         "statisticsTitle": "Armor statistics",
@@ -469,7 +469,7 @@
             "id": "equipment-properties",
             "label": "Equipment",
             "title": "Equipment properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Protection and repair details.",
             "facts": [
               [
                 "Wear slot",
@@ -477,15 +477,15 @@
               ],
               [
                 "Repair with",
-                "Titanium — 25% of maximum durability; Titanium Plate — 33.300000000000004% of maximum durability; Titanium Leggings — 50% of maximum durability"
+                "Titanium — restores 25% of maximum durability; Titanium Plate — restores 33.3% of maximum durability; Titanium Leggings — restores 50% of maximum durability"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Armor Legs · enchantability 18.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 18.",
             "entries": [
               "Protection",
               "Fire Protection",
@@ -504,7 +504,7 @@
     },
     "utilitycraft:titanium_mesh": {
       "documentation": {
-        "description": "Titanium Mesh is a registered equipment with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Titanium Mesh is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Equipment",
           "maximumStack": 1
@@ -521,7 +521,7 @@
     },
     "utilitycraft:aetherium_fishing_net": {
       "documentation": {
-        "description": "Aetherium Fishing Net is a registered equipment with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Aetherium Fishing Net is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Equipment",
           "maximumStack": 1
@@ -538,7 +538,7 @@
     },
     "utilitycraft:titanium_fishing_net": {
       "documentation": {
-        "description": "Titanium Fishing Net is a registered equipment with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Titanium Fishing Net is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Equipment",
           "maximumStack": 1
@@ -553,9 +553,26 @@
         "sections": []
       }
     },
+    "utilitycraft:aetherium_storage_cell": {
+      "documentation": {
+        "description": "Aetherium Storage Cell is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
+        "basic": {
+          "itemType": "Equipment",
+          "maximumStack": 1
+        },
+        "statistics": [
+          [
+            "Durability",
+            "1,000"
+          ]
+        ],
+        "statisticsTitle": "Item statistics",
+        "sections": []
+      }
+    },
     "utilitycraft:absolute_drill": {
       "documentation": {
-        "description": "Absolute Drill is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Absolute Drill is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -571,7 +588,7 @@
           ],
           [
             "Enchantability",
-            "30 · Pickaxe preset"
+            30
           ]
         ],
         "statisticsTitle": "Tool statistics",
@@ -580,7 +597,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Mining tier",
@@ -588,23 +605,23 @@
               ],
               [
                 "Mining speed",
-                "20× — minecraft:is_pickaxe_item_destructible /  minecraft:is_shovel_item_destructible /  minecraft:is_axe_item_destructible /  minecraft:is_shears_item_destructible"
+                "20× on blocks in its mining profile"
               ],
               [
                 "Repair with",
-                "Aetherium — 2031; Drill — 2031; Heavy Drill — 4062"
+                "Aetherium — custom repair value; Drill — custom repair value; Heavy Drill — custom repair value"
               ],
               [
                 "Special function",
-                "Absolute drill profile · 7×7×7 operator area after its StatsCore ability is active."
+                "Mines a 7×7×7 area while its area-mining ability is active."
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Pickaxe · enchantability 30.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 30.",
             "entries": [
               "Efficiency",
               "Fortune",
@@ -619,7 +636,7 @@
     },
     "utilitycraft:aetherium_aiot": {
       "documentation": {
-        "description": "Aetherium Aiot is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Aetherium Aiot is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -635,7 +652,7 @@
           ],
           [
             "Enchantability",
-            "40 · Axe preset"
+            40
           ],
           [
             "Fire resistant",
@@ -648,7 +665,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -660,11 +677,11 @@
               ],
               [
                 "Mining speed",
-                "30× — minecraft:is_pickaxe_item_destructible /  minecraft:is_shovel_item_destructible /  minecraft:is_axe_item_destructible /  minecraft:is_hoe_item_destructible; 30× — Web; 30× — Bamboo; 30× — Honeycomb Block"
+                "30× on blocks in its mining profile; 30× on Web; 30× on Bamboo; 30× on Honeycomb Block"
               ],
               [
                 "Repair with",
-                "Aetherium Shard — 25% of maximum durability; Aetherium — 33.300000000000004% of maximum durability; Aetherium Aiot — ((q.remaining_durability) + q.max_durability) / 2"
+                "Aetherium Shard — restores 25% of maximum durability; Aetherium — restores 33.3% of maximum durability; Aetherium Aiot — combines the remaining durability of both items"
               ],
               [
                 "Special function",
@@ -675,8 +692,8 @@
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Axe · enchantability 40.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 40.",
             "entries": [
               "Efficiency",
               "Fortune",
@@ -694,7 +711,7 @@
     },
     "utilitycraft:aetherium_axe": {
       "documentation": {
-        "description": "Aetherium Axe is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Aetherium Axe is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -710,7 +727,7 @@
           ],
           [
             "Enchantability",
-            "30 · Axe preset"
+            30
           ],
           [
             "Fire resistant",
@@ -723,7 +740,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -731,23 +748,23 @@
               ],
               [
                 "Mining tier",
-                "No explicit Minecraft tier tag"
+                "Aetherium"
               ],
               [
                 "Mining speed",
-                "20× — minecraft:is_axe_item_destructible"
+                "20× on blocks in its mining profile"
               ],
               [
                 "Repair with",
-                "Aetherium Shard — 25% of maximum durability; Aetherium — 33.300000000000004% of maximum durability; Aetherium Axe — ((q.remaining_durability) + q.max_durability) / 2"
+                "Aetherium Shard — restores 25% of maximum durability; Aetherium — restores 33.3% of maximum durability; Aetherium Axe — combines the remaining durability of both items"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Axe · enchantability 30.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 30.",
             "entries": [
               "Efficiency",
               "Fortune",
@@ -765,7 +782,7 @@
     },
     "utilitycraft:aetherium_hammer": {
       "documentation": {
-        "description": "Aetherium Hammer is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Aetherium Hammer is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -781,7 +798,7 @@
           ],
           [
             "Enchantability",
-            "30 · Pickaxe preset"
+            30
           ],
           [
             "Fire resistant",
@@ -794,7 +811,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -806,23 +823,23 @@
               ],
               [
                 "Mining speed",
-                "20× — minecraft:is_pickaxe_item_destructible; 16× —  utilitycraft:compressed_siftable ; 14× — Dirt; 14× — Gravel; 14× — Sand"
+                "20× on blocks in its mining profile; 16× on  utilitycraft:compressed_siftable ; 14× on Dirt; 14× on Gravel; 14× on Sand"
               ],
               [
                 "Repair with",
-                "Aetherium Shard — 25% of maximum durability; Aetherium — 33.300000000000004% of maximum durability; Aetherium Hammer — ((q.remaining_durability) + q.max_durability) / 2"
+                "Aetherium Shard — restores 25% of maximum durability; Aetherium — restores 33.3% of maximum durability; Aetherium Hammer — combines the remaining durability of both items"
               ],
               [
                 "Special function",
-                "Hammer tier 4; registered as a hammer for AT Core ore-drop overrides."
+                "Breaks blocks using its tier 4 hammer profile and supports hammer-specific ore drops."
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Pickaxe · enchantability 30.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 30.",
             "entries": [
               "Efficiency",
               "Fortune",
@@ -837,7 +854,7 @@
     },
     "utilitycraft:aetherium_hoe": {
       "documentation": {
-        "description": "Aetherium Hoe is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Aetherium Hoe is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -853,7 +870,7 @@
           ],
           [
             "Enchantability",
-            "30 · Hoe preset"
+            30
           ],
           [
             "Fire resistant",
@@ -866,7 +883,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -874,23 +891,23 @@
               ],
               [
                 "Mining tier",
-                "No explicit Minecraft tier tag"
+                "Aetherium"
               ],
               [
                 "Mining speed",
-                "20× — minecraft:is_hoe_item_destructible"
+                "20× on blocks in its mining profile"
               ],
               [
                 "Repair with",
-                "Aetherium Shard — 25% of maximum durability; Aetherium — 33.300000000000004% of maximum durability; Aetherium Hoe — ((q.remaining_durability) + q.max_durability) / 2"
+                "Aetherium Shard — restores 25% of maximum durability; Aetherium — restores 33.3% of maximum durability; Aetherium Hoe — combines the remaining durability of both items"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Hoe · enchantability 30.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 30.",
             "entries": [
               "Efficiency",
               "Fortune",
@@ -905,7 +922,7 @@
     },
     "utilitycraft:aetherium_paxel": {
       "documentation": {
-        "description": "Aetherium Paxel is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Aetherium Paxel is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -921,7 +938,7 @@
           ],
           [
             "Enchantability",
-            "30 · Pickaxe preset"
+            30
           ],
           [
             "Fire resistant",
@@ -934,7 +951,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -942,23 +959,23 @@
               ],
               [
                 "Mining tier",
-                "No explicit Minecraft tier tag"
+                "Aetherium"
               ],
               [
                 "Mining speed",
-                "24× — minecraft:is_pickaxe_item_destructible /  minecraft:is_shovel_item_destructible /  minecraft:is_axe_item_destructible"
+                "24× on blocks in its mining profile"
               ],
               [
                 "Repair with",
-                "Aetherium Shard — 25% of maximum durability; Aetherium — 33.300000000000004% of maximum durability; Aetherium Paxel — ((q.remaining_durability) + q.max_durability) / 2"
+                "Aetherium Shard — restores 25% of maximum durability; Aetherium — restores 33.3% of maximum durability; Aetherium Paxel — combines the remaining durability of both items"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Pickaxe · enchantability 30.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 30.",
             "entries": [
               "Efficiency",
               "Fortune",
@@ -973,7 +990,7 @@
     },
     "utilitycraft:aetherium_pickaxe": {
       "documentation": {
-        "description": "Aetherium Pickaxe is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Aetherium Pickaxe is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -989,7 +1006,7 @@
           ],
           [
             "Enchantability",
-            "30 · Pickaxe preset"
+            30
           ],
           [
             "Fire resistant",
@@ -1002,7 +1019,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -1010,23 +1027,23 @@
               ],
               [
                 "Mining tier",
-                "No explicit Minecraft tier tag"
+                "Netherite"
               ],
               [
                 "Mining speed",
-                "20× — minecraft:is_pickaxe_item_destructible"
+                "20× on blocks in its mining profile"
               ],
               [
                 "Repair with",
-                "Aetherium Shard — 25% of maximum durability; Aetherium — 33.300000000000004% of maximum durability; Aetherium Pickaxe — ((q.remaining_durability) + q.max_durability) / 2"
+                "Aetherium Shard — restores 25% of maximum durability; Aetherium — restores 33.3% of maximum durability; Aetherium Pickaxe — combines the remaining durability of both items"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Pickaxe · enchantability 30.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 30.",
             "entries": [
               "Efficiency",
               "Fortune",
@@ -1041,7 +1058,7 @@
     },
     "utilitycraft:aetherium_shovel": {
       "documentation": {
-        "description": "Aetherium Shovel is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Aetherium Shovel is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -1057,7 +1074,7 @@
           ],
           [
             "Enchantability",
-            "30 · Shovel preset"
+            30
           ],
           [
             "Fire resistant",
@@ -1070,7 +1087,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -1078,23 +1095,23 @@
               ],
               [
                 "Mining tier",
-                "No explicit Minecraft tier tag"
+                "Aetherium"
               ],
               [
                 "Mining speed",
-                "20× — minecraft:is_shovel_item_destructible"
+                "20× on blocks in its mining profile"
               ],
               [
                 "Repair with",
-                "Aetherium Shard — 25% of maximum durability; Aetherium — 33.300000000000004% of maximum durability; Aetherium Shovel — ((q.remaining_durability) + q.max_durability) / 2"
+                "Aetherium Shard — restores 25% of maximum durability; Aetherium — restores 33.3% of maximum durability; Aetherium Shovel — combines the remaining durability of both items"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Shovel · enchantability 30.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 30.",
             "entries": [
               "Efficiency",
               "Fortune",
@@ -1109,7 +1126,7 @@
     },
     "utilitycraft:aetherium_sword": {
       "documentation": {
-        "description": "Aetherium Sword is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Aetherium Sword is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -1125,7 +1142,7 @@
           ],
           [
             "Enchantability",
-            "30 · Sword preset"
+            30
           ],
           [
             "Fire resistant",
@@ -1138,7 +1155,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -1146,23 +1163,23 @@
               ],
               [
                 "Mining tier",
-                "No explicit Minecraft tier tag"
+                "Aetherium"
               ],
               [
                 "Mining speed",
-                "50× — Web; 20× — minecraft:is_sword_item_destructible"
+                "50× on Web; 20× on blocks in its mining profile"
               ],
               [
                 "Repair with",
-                "Aetherium Shard — 25% of maximum durability; Aetherium — 33.300000000000004% of maximum durability; Aetherium Sword — ((q.remaining_durability) + q.max_durability) / 2"
+                "Aetherium Shard — restores 25% of maximum durability; Aetherium — restores 33.3% of maximum durability; Aetherium Sword — combines the remaining durability of both items"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Sword · enchantability 30.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 30.",
             "entries": [
               "Sharpness",
               "Smite",
@@ -1180,7 +1197,7 @@
     },
     "utilitycraft:aetherium_liquid_capsule_2": {
       "documentation": {
-        "description": "Aetherium Liquid Capsule 2 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Aetherium Liquid Capsule 2 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1192,7 +1209,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1201,7 +1218,7 @@
             ],
             "entries": [
               "Fluid contents: Liquified Aetherium.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1209,7 +1226,7 @@
     },
     "utilitycraft:aetherium_liquid_capsule_3": {
       "documentation": {
-        "description": "Aetherium Liquid Capsule 3 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Aetherium Liquid Capsule 3 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1221,7 +1238,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1230,7 +1247,7 @@
             ],
             "entries": [
               "Fluid contents: Liquified Aetherium.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1238,7 +1255,7 @@
     },
     "utilitycraft:aetherium_liquid_capsule_4": {
       "documentation": {
-        "description": "Aetherium Liquid Capsule 4 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Aetherium Liquid Capsule 4 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1250,7 +1267,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1259,7 +1276,7 @@
             ],
             "entries": [
               "Fluid contents: Liquified Aetherium.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1267,7 +1284,7 @@
     },
     "utilitycraft:aetherium_liquid_capsule_5": {
       "documentation": {
-        "description": "Aetherium Liquid Capsule 5 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Aetherium Liquid Capsule 5 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1279,7 +1296,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1288,7 +1305,7 @@
             ],
             "entries": [
               "Fluid contents: Liquified Aetherium.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1296,7 +1313,7 @@
     },
     "utilitycraft:aetherium_liquid_capsule_6": {
       "documentation": {
-        "description": "Aetherium Liquid Capsule 6 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Aetherium Liquid Capsule 6 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1308,7 +1325,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1317,7 +1334,7 @@
             ],
             "entries": [
               "Fluid contents: Liquified Aetherium.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1325,7 +1342,7 @@
     },
     "utilitycraft:aetherium_liquid_capsule_7": {
       "documentation": {
-        "description": "Aetherium Liquid Capsule 7 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Aetherium Liquid Capsule 7 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1337,7 +1354,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1346,7 +1363,7 @@
             ],
             "entries": [
               "Fluid contents: Liquified Aetherium.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1354,7 +1371,7 @@
     },
     "utilitycraft:aetherium_liquid_capsule_8": {
       "documentation": {
-        "description": "Aetherium Liquid Capsule 8 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Aetherium Liquid Capsule 8 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1366,7 +1383,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1375,7 +1392,7 @@
             ],
             "entries": [
               "Fluid contents: Liquified Aetherium.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1383,7 +1400,7 @@
     },
     "utilitycraft:aetherium_liquid_capsule_1": {
       "documentation": {
-        "description": "Aetherium Liquid Capsule 1 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Aetherium Liquid Capsule 1 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1395,7 +1412,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1404,7 +1421,7 @@
             ],
             "entries": [
               "Fluid contents: Liquified Aetherium.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1412,7 +1429,7 @@
     },
     "utilitycraft:aetherium_liquid_capsule_infinite": {
       "documentation": {
-        "description": "Aetherium Liquid Capsule Infinite stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Aetherium Liquid Capsule Infinite carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 1
@@ -1424,16 +1441,16 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
-                "512,000 mB · infinite flag"
+                "Reusable; transfers up to 512,000 mB at a time"
               ]
             ],
             "entries": [
               "Fluid contents: Liquified Aetherium.",
-              "The runtime reuses this capsule after transfer."
+              "The capsule remains available after transferring its contents."
             ]
           }
         ]
@@ -1441,7 +1458,7 @@
     },
     "utilitycraft:cryofluid_capsule_1": {
       "documentation": {
-        "description": "Cryofluid Capsule 1 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Cryofluid Capsule 1 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1453,7 +1470,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1462,7 +1479,7 @@
             ],
             "entries": [
               "Fluid contents: Cryofluid.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1470,7 +1487,7 @@
     },
     "utilitycraft:cryofluid_capsule_2": {
       "documentation": {
-        "description": "Cryofluid Capsule 2 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Cryofluid Capsule 2 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1482,7 +1499,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1491,7 +1508,7 @@
             ],
             "entries": [
               "Fluid contents: Cryofluid.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1499,7 +1516,7 @@
     },
     "utilitycraft:cryofluid_capsule_3": {
       "documentation": {
-        "description": "Cryofluid Capsule 3 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Cryofluid Capsule 3 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1511,7 +1528,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1520,7 +1537,7 @@
             ],
             "entries": [
               "Fluid contents: Cryofluid.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1528,7 +1545,7 @@
     },
     "utilitycraft:cryofluid_capsule_4": {
       "documentation": {
-        "description": "Cryofluid Capsule 4 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Cryofluid Capsule 4 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1540,7 +1557,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1549,7 +1566,7 @@
             ],
             "entries": [
               "Fluid contents: Cryofluid.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1557,7 +1574,7 @@
     },
     "utilitycraft:cryofluid_capsule_5": {
       "documentation": {
-        "description": "Cryofluid Capsule 5 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Cryofluid Capsule 5 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1569,7 +1586,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1578,7 +1595,7 @@
             ],
             "entries": [
               "Fluid contents: Cryofluid.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1586,7 +1603,7 @@
     },
     "utilitycraft:cryofluid_capsule_6": {
       "documentation": {
-        "description": "Cryofluid Capsule 6 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Cryofluid Capsule 6 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1598,7 +1615,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1607,7 +1624,7 @@
             ],
             "entries": [
               "Fluid contents: Cryofluid.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1615,7 +1632,7 @@
     },
     "utilitycraft:cryofluid_capsule_7": {
       "documentation": {
-        "description": "Cryofluid Capsule 7 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Cryofluid Capsule 7 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1627,7 +1644,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1636,7 +1653,7 @@
             ],
             "entries": [
               "Fluid contents: Cryofluid.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1644,7 +1661,7 @@
     },
     "utilitycraft:cryofluid_capsule_8": {
       "documentation": {
-        "description": "Cryofluid Capsule 8 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Cryofluid Capsule 8 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1656,7 +1673,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1665,7 +1682,7 @@
             ],
             "entries": [
               "Fluid contents: Cryofluid.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1673,7 +1690,7 @@
     },
     "utilitycraft:cryofluid_capsule_infinite": {
       "documentation": {
-        "description": "Cryofluid Capsule Infinite stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Cryofluid Capsule Infinite carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 1
@@ -1685,16 +1702,16 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
-                "512,000 mB · infinite flag"
+                "Reusable; transfers up to 512,000 mB at a time"
               ]
             ],
             "entries": [
               "Fluid contents: Cryofluid.",
-              "The runtime reuses this capsule after transfer."
+              "The capsule remains available after transferring its contents."
             ]
           }
         ]
@@ -1702,7 +1719,7 @@
     },
     "utilitycraft:dark_matter_liquid_capsule_1": {
       "documentation": {
-        "description": "Dark Matter Liquid Capsule 1 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Dark Matter Liquid Capsule 1 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1714,7 +1731,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1723,7 +1740,7 @@
             ],
             "entries": [
               "Fluid contents: Dark Matter.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1731,7 +1748,7 @@
     },
     "utilitycraft:dark_matter_liquid_capsule_2": {
       "documentation": {
-        "description": "Dark Matter Liquid Capsule 2 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Dark Matter Liquid Capsule 2 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1743,7 +1760,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1752,7 +1769,7 @@
             ],
             "entries": [
               "Fluid contents: Dark Matter.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1760,7 +1777,7 @@
     },
     "utilitycraft:dark_matter_liquid_capsule_3": {
       "documentation": {
-        "description": "Dark Matter Liquid Capsule 3 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Dark Matter Liquid Capsule 3 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1772,7 +1789,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1781,7 +1798,7 @@
             ],
             "entries": [
               "Fluid contents: Dark Matter.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1789,7 +1806,7 @@
     },
     "utilitycraft:dark_matter_liquid_capsule_4": {
       "documentation": {
-        "description": "Dark Matter Liquid Capsule 4 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Dark Matter Liquid Capsule 4 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1801,7 +1818,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1810,7 +1827,7 @@
             ],
             "entries": [
               "Fluid contents: Dark Matter.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1818,7 +1835,7 @@
     },
     "utilitycraft:dark_matter_liquid_capsule_5": {
       "documentation": {
-        "description": "Dark Matter Liquid Capsule 5 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Dark Matter Liquid Capsule 5 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1830,7 +1847,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1839,7 +1856,7 @@
             ],
             "entries": [
               "Fluid contents: Dark Matter.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1847,7 +1864,7 @@
     },
     "utilitycraft:dark_matter_liquid_capsule_6": {
       "documentation": {
-        "description": "Dark Matter Liquid Capsule 6 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Dark Matter Liquid Capsule 6 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1859,7 +1876,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1868,7 +1885,7 @@
             ],
             "entries": [
               "Fluid contents: Dark Matter.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1876,7 +1893,7 @@
     },
     "utilitycraft:dark_matter_liquid_capsule_7": {
       "documentation": {
-        "description": "Dark Matter Liquid Capsule 7 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Dark Matter Liquid Capsule 7 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1888,7 +1905,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1897,7 +1914,7 @@
             ],
             "entries": [
               "Fluid contents: Dark Matter.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1905,7 +1922,7 @@
     },
     "utilitycraft:dark_matter_liquid_capsule_8": {
       "documentation": {
-        "description": "Dark Matter Liquid Capsule 8 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Dark Matter Liquid Capsule 8 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -1917,7 +1934,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1926,7 +1943,7 @@
             ],
             "entries": [
               "Fluid contents: Dark Matter.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -1934,7 +1951,7 @@
     },
     "utilitycraft:dark_matter_liquid_capsule_infinite": {
       "documentation": {
-        "description": "Dark Matter Liquid Capsule Infinite stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Dark Matter Liquid Capsule Infinite carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 1
@@ -1946,16 +1963,16 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
-                "512,000 mB · infinite flag"
+                "Reusable; transfers up to 512,000 mB at a time"
               ]
             ],
             "entries": [
               "Fluid contents: Dark Matter.",
-              "The runtime reuses this capsule after transfer."
+              "The capsule remains available after transferring its contents."
             ]
           }
         ]
@@ -1963,7 +1980,7 @@
     },
     "utilitycraft:empty_liquid_capsule": {
       "documentation": {
-        "description": "Empty Liquid Capsule stores empty resource resources for Ascendant Technology machines and holders.",
+        "description": "Empty Liquid Capsule carries empty resource resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Empty resource capsule",
           "maximumStack": 64
@@ -1975,7 +1992,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -1993,7 +2010,7 @@
     },
     "utilitycraft:steam_capsule_1": {
       "documentation": {
-        "description": "Steam Capsule 1 stores gas resources for Ascendant Technology machines and holders.",
+        "description": "Steam Capsule 1 carries gas resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Gas capsule",
           "maximumStack": 64
@@ -2005,7 +2022,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2014,7 +2031,7 @@
             ],
             "entries": [
               "Gas contents: Steam.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2022,7 +2039,7 @@
     },
     "utilitycraft:steam_capsule_2": {
       "documentation": {
-        "description": "Steam Capsule 2 stores gas resources for Ascendant Technology machines and holders.",
+        "description": "Steam Capsule 2 carries gas resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Gas capsule",
           "maximumStack": 64
@@ -2034,7 +2051,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2043,7 +2060,7 @@
             ],
             "entries": [
               "Gas contents: Steam.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2051,7 +2068,7 @@
     },
     "utilitycraft:steam_capsule_3": {
       "documentation": {
-        "description": "Steam Capsule 3 stores gas resources for Ascendant Technology machines and holders.",
+        "description": "Steam Capsule 3 carries gas resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Gas capsule",
           "maximumStack": 64
@@ -2063,7 +2080,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2072,7 +2089,7 @@
             ],
             "entries": [
               "Gas contents: Steam.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2080,7 +2097,7 @@
     },
     "utilitycraft:steam_capsule_4": {
       "documentation": {
-        "description": "Steam Capsule 4 stores gas resources for Ascendant Technology machines and holders.",
+        "description": "Steam Capsule 4 carries gas resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Gas capsule",
           "maximumStack": 64
@@ -2092,7 +2109,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2101,7 +2118,7 @@
             ],
             "entries": [
               "Gas contents: Steam.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2109,7 +2126,7 @@
     },
     "utilitycraft:steam_capsule_5": {
       "documentation": {
-        "description": "Steam Capsule 5 stores gas resources for Ascendant Technology machines and holders.",
+        "description": "Steam Capsule 5 carries gas resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Gas capsule",
           "maximumStack": 64
@@ -2121,7 +2138,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2130,7 +2147,7 @@
             ],
             "entries": [
               "Gas contents: Steam.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2138,7 +2155,7 @@
     },
     "utilitycraft:steam_capsule_6": {
       "documentation": {
-        "description": "Steam Capsule 6 stores gas resources for Ascendant Technology machines and holders.",
+        "description": "Steam Capsule 6 carries gas resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Gas capsule",
           "maximumStack": 64
@@ -2150,7 +2167,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2159,7 +2176,7 @@
             ],
             "entries": [
               "Gas contents: Steam.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2167,7 +2184,7 @@
     },
     "utilitycraft:steam_capsule_7": {
       "documentation": {
-        "description": "Steam Capsule 7 stores gas resources for Ascendant Technology machines and holders.",
+        "description": "Steam Capsule 7 carries gas resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Gas capsule",
           "maximumStack": 64
@@ -2179,7 +2196,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2188,7 +2205,7 @@
             ],
             "entries": [
               "Gas contents: Steam.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2196,7 +2213,7 @@
     },
     "utilitycraft:steam_capsule_8": {
       "documentation": {
-        "description": "Steam Capsule 8 stores gas resources for Ascendant Technology machines and holders.",
+        "description": "Steam Capsule 8 carries gas resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Gas capsule",
           "maximumStack": 64
@@ -2208,7 +2225,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2217,7 +2234,7 @@
             ],
             "entries": [
               "Gas contents: Steam.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2225,7 +2242,7 @@
     },
     "utilitycraft:lava_capsule_1": {
       "documentation": {
-        "description": "Lava Capsule 1 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Lava Capsule 1 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2237,7 +2254,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2246,7 +2263,7 @@
             ],
             "entries": [
               "Fluid contents: Lava.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2255,7 +2272,7 @@
     },
     "utilitycraft:lava_capsule_2": {
       "documentation": {
-        "description": "Lava Capsule 2 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Lava Capsule 2 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2267,7 +2284,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2276,7 +2293,7 @@
             ],
             "entries": [
               "Fluid contents: Lava.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2285,7 +2302,7 @@
     },
     "utilitycraft:lava_capsule_3": {
       "documentation": {
-        "description": "Lava Capsule 3 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Lava Capsule 3 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2297,7 +2314,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2306,7 +2323,7 @@
             ],
             "entries": [
               "Fluid contents: Lava.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2315,7 +2332,7 @@
     },
     "utilitycraft:lava_capsule_4": {
       "documentation": {
-        "description": "Lava Capsule 4 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Lava Capsule 4 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2327,7 +2344,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2336,7 +2353,7 @@
             ],
             "entries": [
               "Fluid contents: Lava.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2345,7 +2362,7 @@
     },
     "utilitycraft:lava_capsule_5": {
       "documentation": {
-        "description": "Lava Capsule 5 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Lava Capsule 5 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2357,7 +2374,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2366,7 +2383,7 @@
             ],
             "entries": [
               "Fluid contents: Lava.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2375,7 +2392,7 @@
     },
     "utilitycraft:lava_capsule_6": {
       "documentation": {
-        "description": "Lava Capsule 6 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Lava Capsule 6 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2387,7 +2404,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2396,7 +2413,7 @@
             ],
             "entries": [
               "Fluid contents: Lava.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2405,7 +2422,7 @@
     },
     "utilitycraft:lava_capsule_7": {
       "documentation": {
-        "description": "Lava Capsule 7 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Lava Capsule 7 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2417,7 +2434,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2426,7 +2443,7 @@
             ],
             "entries": [
               "Fluid contents: Lava.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2435,7 +2452,7 @@
     },
     "utilitycraft:lava_capsule_8": {
       "documentation": {
-        "description": "Lava Capsule 8 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Lava Capsule 8 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2447,7 +2464,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2456,7 +2473,7 @@
             ],
             "entries": [
               "Fluid contents: Lava.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2465,7 +2482,7 @@
     },
     "utilitycraft:lava_capsule_infinite": {
       "documentation": {
-        "description": "Lava Capsule Infinite stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Lava Capsule Infinite carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 1
@@ -2477,16 +2494,16 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
-                "512,000 mB · infinite flag"
+                "Reusable; transfers up to 512,000 mB at a time"
               ]
             ],
             "entries": [
               "Fluid contents: Lava.",
-              "The runtime reuses this capsule after transfer."
+              "The capsule remains available after transferring its contents."
             ]
           }
         ]
@@ -2494,7 +2511,7 @@
     },
     "utilitycraft:water_capsule_1": {
       "documentation": {
-        "description": "Water Capsule 1 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Water Capsule 1 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2506,7 +2523,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2515,7 +2532,7 @@
             ],
             "entries": [
               "Fluid contents: Water.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2524,7 +2541,7 @@
     },
     "utilitycraft:water_capsule_2": {
       "documentation": {
-        "description": "Water Capsule 2 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Water Capsule 2 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2536,7 +2553,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2545,7 +2562,7 @@
             ],
             "entries": [
               "Fluid contents: Water.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2554,7 +2571,7 @@
     },
     "utilitycraft:water_capsule_3": {
       "documentation": {
-        "description": "Water Capsule 3 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Water Capsule 3 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2566,7 +2583,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2575,7 +2592,7 @@
             ],
             "entries": [
               "Fluid contents: Water.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2584,7 +2601,7 @@
     },
     "utilitycraft:water_capsule_4": {
       "documentation": {
-        "description": "Water Capsule 4 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Water Capsule 4 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2596,7 +2613,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2605,7 +2622,7 @@
             ],
             "entries": [
               "Fluid contents: Water.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2614,7 +2631,7 @@
     },
     "utilitycraft:water_capsule_5": {
       "documentation": {
-        "description": "Water Capsule 5 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Water Capsule 5 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2626,7 +2643,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2635,7 +2652,7 @@
             ],
             "entries": [
               "Fluid contents: Water.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2644,7 +2661,7 @@
     },
     "utilitycraft:water_capsule_6": {
       "documentation": {
-        "description": "Water Capsule 6 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Water Capsule 6 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2656,7 +2673,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2665,7 +2682,7 @@
             ],
             "entries": [
               "Fluid contents: Water.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2674,7 +2691,7 @@
     },
     "utilitycraft:water_capsule_7": {
       "documentation": {
-        "description": "Water Capsule 7 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Water Capsule 7 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2686,7 +2703,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2695,7 +2712,7 @@
             ],
             "entries": [
               "Fluid contents: Water.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2704,7 +2721,7 @@
     },
     "utilitycraft:water_capsule_8": {
       "documentation": {
-        "description": "Water Capsule 8 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Water Capsule 8 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2716,7 +2733,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2725,7 +2742,7 @@
             ],
             "entries": [
               "Fluid contents: Water.",
-              "Transfers its contents and returns an Empty Liquid Capsule.",
+              "Returns an Empty Liquid Capsule after transfer.",
               "Can collect source blocks directly in the world."
             ]
           }
@@ -2734,7 +2751,7 @@
     },
     "utilitycraft:water_capsule_infinite": {
       "documentation": {
-        "description": "Water Capsule Infinite stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Water Capsule Infinite carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 1
@@ -2746,16 +2763,16 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
-                "512,000 mB · infinite flag"
+                "Reusable; transfers up to 512,000 mB at a time"
               ]
             ],
             "entries": [
               "Fluid contents: Water.",
-              "The runtime reuses this capsule after transfer."
+              "The capsule remains available after transferring its contents."
             ]
           }
         ]
@@ -2763,7 +2780,7 @@
     },
     "utilitycraft:xp_capsule_1": {
       "documentation": {
-        "description": "Xp Capsule 1 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Xp Capsule 1 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2775,7 +2792,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2784,7 +2801,7 @@
             ],
             "entries": [
               "Fluid contents: XP.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2792,7 +2809,7 @@
     },
     "utilitycraft:xp_capsule_2": {
       "documentation": {
-        "description": "Xp Capsule 2 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Xp Capsule 2 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2804,7 +2821,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2813,7 +2830,7 @@
             ],
             "entries": [
               "Fluid contents: XP.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2821,7 +2838,7 @@
     },
     "utilitycraft:xp_capsule_3": {
       "documentation": {
-        "description": "Xp Capsule 3 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Xp Capsule 3 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2833,7 +2850,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2842,7 +2859,7 @@
             ],
             "entries": [
               "Fluid contents: XP.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2850,7 +2867,7 @@
     },
     "utilitycraft:xp_capsule_4": {
       "documentation": {
-        "description": "Xp Capsule 4 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Xp Capsule 4 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2862,7 +2879,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2871,7 +2888,7 @@
             ],
             "entries": [
               "Fluid contents: XP.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2879,7 +2896,7 @@
     },
     "utilitycraft:xp_capsule_5": {
       "documentation": {
-        "description": "Xp Capsule 5 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Xp Capsule 5 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2891,7 +2908,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2900,7 +2917,7 @@
             ],
             "entries": [
               "Fluid contents: XP.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2908,7 +2925,7 @@
     },
     "utilitycraft:xp_capsule_6": {
       "documentation": {
-        "description": "Xp Capsule 6 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Xp Capsule 6 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2920,7 +2937,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2929,7 +2946,7 @@
             ],
             "entries": [
               "Fluid contents: XP.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2937,7 +2954,7 @@
     },
     "utilitycraft:xp_capsule_7": {
       "documentation": {
-        "description": "Xp Capsule 7 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Xp Capsule 7 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2949,7 +2966,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2958,7 +2975,7 @@
             ],
             "entries": [
               "Fluid contents: XP.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2966,7 +2983,7 @@
     },
     "utilitycraft:xp_capsule_8": {
       "documentation": {
-        "description": "Xp Capsule 8 stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Xp Capsule 8 carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 64
@@ -2978,7 +2995,7 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
@@ -2987,7 +3004,7 @@
             ],
             "entries": [
               "Fluid contents: XP.",
-              "Transfers its contents and returns an Empty Liquid Capsule."
+              "Returns an Empty Liquid Capsule after transfer."
             ]
           }
         ]
@@ -2995,7 +3012,7 @@
     },
     "utilitycraft:xp_capsule_infinite": {
       "documentation": {
-        "description": "Xp Capsule Infinite stores fluid resources for Ascendant Technology machines and holders.",
+        "description": "Xp Capsule Infinite carries fluid resources between compatible Ascendant Technology machines and storage.",
         "basic": {
           "itemType": "Fluid capsule",
           "maximumStack": 1
@@ -3007,16 +3024,16 @@
             "id": "resource-storage",
             "label": "Storage",
             "title": "Resource storage",
-            "copy": "Capsule behavior is registered by Ascendant Technology's resource registry.",
+            "copy": "Capacity and transfer behavior.",
             "facts": [
               [
                 "Maximum capacity",
-                "512,000 mB · infinite flag"
+                "Reusable; transfers up to 512,000 mB at a time"
               ]
             ],
             "entries": [
               "Fluid contents: XP.",
-              "The runtime reuses this capsule after transfer."
+              "The capsule remains available after transferring its contents."
             ]
           }
         ]
@@ -3024,7 +3041,7 @@
     },
     "utilitycraft:titanium_aiot": {
       "documentation": {
-        "description": "Titanium Aiot is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Titanium Aiot is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -3040,7 +3057,7 @@
           ],
           [
             "Enchantability",
-            "20 · Axe preset"
+            20
           ]
         ],
         "statisticsTitle": "Tool statistics",
@@ -3049,7 +3066,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -3057,15 +3074,15 @@
               ],
               [
                 "Mining tier",
-                "No explicit Minecraft tier tag"
+                "Titanium"
               ],
               [
                 "Mining speed",
-                "22× — minecraft:is_pickaxe_item_destructible /  minecraft:is_shovel_item_destructible /  minecraft:is_axe_item_destructible /  minecraft:is_hoe_item_destructible; 30× — Web; 30× — Bamboo; 30× — Honeycomb Block"
+                "22× on blocks in its mining profile; 30× on Web; 30× on Bamboo; 30× on Honeycomb Block"
               ],
               [
                 "Repair with",
-                "Titanium — 25% of maximum durability; Titanium Plate — 33% of maximum durability; Titanium Aiot — ((q.remaining_durability) + q.max_durability) / 2"
+                "Titanium — restores 25% of maximum durability; Titanium Plate — restores 33% of maximum durability; Titanium Aiot — combines the remaining durability of both items"
               ],
               [
                 "Special function",
@@ -3076,8 +3093,8 @@
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Axe · enchantability 20.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 20.",
             "entries": [
               "Efficiency",
               "Fortune",
@@ -3095,7 +3112,7 @@
     },
     "utilitycraft:titanium_axe": {
       "documentation": {
-        "description": "Titanium Axe is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Titanium Axe is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -3111,7 +3128,7 @@
           ],
           [
             "Enchantability",
-            "20 · Axe preset"
+            20
           ]
         ],
         "statisticsTitle": "Tool statistics",
@@ -3120,7 +3137,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -3128,23 +3145,23 @@
               ],
               [
                 "Mining tier",
-                "No explicit Minecraft tier tag"
+                "Titanium"
               ],
               [
                 "Mining speed",
-                "12× — minecraft:is_axe_item_destructible"
+                "12× on blocks in its mining profile"
               ],
               [
                 "Repair with",
-                "Titanium — 25% of maximum durability; Titanium Plate — 33% of maximum durability; Titanium Axe — ((q.remaining_durability) + q.max_durability) / 2"
+                "Titanium — restores 25% of maximum durability; Titanium Plate — restores 33% of maximum durability; Titanium Axe — combines the remaining durability of both items"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Axe · enchantability 20.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 20.",
             "entries": [
               "Efficiency",
               "Fortune",
@@ -3162,7 +3179,7 @@
     },
     "utilitycraft:titanium_hammer": {
       "documentation": {
-        "description": "Titanium Hammer is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Titanium Hammer is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -3178,7 +3195,7 @@
           ],
           [
             "Enchantability",
-            "20 · Pickaxe preset"
+            20
           ]
         ],
         "statisticsTitle": "Tool statistics",
@@ -3187,7 +3204,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -3199,23 +3216,23 @@
               ],
               [
                 "Mining speed",
-                "12× — minecraft:is_pickaxe_item_destructible; 10× —  utilitycraft:compressed_siftable "
+                "12× on blocks in its mining profile; 10× on  utilitycraft:compressed_siftable "
               ],
               [
                 "Repair with",
-                "Titanium — 25% of maximum durability; Titanium Plate — 33% of maximum durability; Titanium Hammer — ((q.remaining_durability) + q.max_durability) / 2"
+                "Titanium — restores 25% of maximum durability; Titanium Plate — restores 33% of maximum durability; Titanium Hammer — combines the remaining durability of both items"
               ],
               [
                 "Special function",
-                "Hammer tier 5; registered as a hammer for AT Core ore-drop overrides."
+                "Breaks blocks using its tier 5 hammer profile and supports hammer-specific ore drops."
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Pickaxe · enchantability 20.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 20.",
             "entries": [
               "Efficiency",
               "Fortune",
@@ -3230,7 +3247,7 @@
     },
     "utilitycraft:titanium_hoe": {
       "documentation": {
-        "description": "Titanium Hoe is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Titanium Hoe is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -3246,7 +3263,7 @@
           ],
           [
             "Enchantability",
-            "20 · Hoe preset"
+            20
           ]
         ],
         "statisticsTitle": "Tool statistics",
@@ -3255,7 +3272,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -3263,23 +3280,23 @@
               ],
               [
                 "Mining tier",
-                "No explicit Minecraft tier tag"
+                "Titanium"
               ],
               [
                 "Mining speed",
-                "12× — minecraft:is_hoe_item_destructible"
+                "12× on blocks in its mining profile"
               ],
               [
                 "Repair with",
-                "Titanium — 25% of maximum durability; Titanium Plate — 33% of maximum durability; Titanium Hoe — ((q.remaining_durability) + q.max_durability) / 2"
+                "Titanium — restores 25% of maximum durability; Titanium Plate — restores 33% of maximum durability; Titanium Hoe — combines the remaining durability of both items"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Hoe · enchantability 20.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 20.",
             "entries": [
               "Efficiency",
               "Fortune",
@@ -3294,7 +3311,7 @@
     },
     "utilitycraft:titanium_paxel": {
       "documentation": {
-        "description": "Titanium Paxel is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Titanium Paxel is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -3310,7 +3327,7 @@
           ],
           [
             "Enchantability",
-            "20 · Pickaxe preset"
+            20
           ]
         ],
         "statisticsTitle": "Tool statistics",
@@ -3319,7 +3336,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -3327,23 +3344,23 @@
               ],
               [
                 "Mining tier",
-                "No explicit Minecraft tier tag"
+                "Titanium"
               ],
               [
                 "Mining speed",
-                "12× — minecraft:is_pickaxe_item_destructible /  minecraft:is_shovel_item_destructible /  minecraft:is_axe_item_destructible"
+                "12× on blocks in its mining profile"
               ],
               [
                 "Repair with",
-                "Titanium — 25% of maximum durability; Titanium Plate — 33% of maximum durability; Titanium Paxel — ((q.remaining_durability) + q.max_durability) / 2"
+                "Titanium — restores 25% of maximum durability; Titanium Plate — restores 33% of maximum durability; Titanium Paxel — combines the remaining durability of both items"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Pickaxe · enchantability 20.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 20.",
             "entries": [
               "Efficiency",
               "Fortune",
@@ -3358,7 +3375,7 @@
     },
     "utilitycraft:titanium_pickaxe": {
       "documentation": {
-        "description": "Titanium Pickaxe is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Titanium Pickaxe is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -3374,7 +3391,7 @@
           ],
           [
             "Enchantability",
-            "20 · Pickaxe preset"
+            20
           ]
         ],
         "statisticsTitle": "Tool statistics",
@@ -3383,7 +3400,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -3391,23 +3408,23 @@
               ],
               [
                 "Mining tier",
-                "No explicit Minecraft tier tag"
+                "Titanium"
               ],
               [
                 "Mining speed",
-                "12× — minecraft:is_pickaxe_item_destructible"
+                "12× on blocks in its mining profile"
               ],
               [
                 "Repair with",
-                "Titanium — 25% of maximum durability; Titanium Plate — 33% of maximum durability; Titanium Pickaxe — ((q.remaining_durability) + q.max_durability) / 2"
+                "Titanium — restores 25% of maximum durability; Titanium Plate — restores 33% of maximum durability; Titanium Pickaxe — combines the remaining durability of both items"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Pickaxe · enchantability 20.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 20.",
             "entries": [
               "Efficiency",
               "Fortune",
@@ -3422,7 +3439,7 @@
     },
     "utilitycraft:titanium_shovel": {
       "documentation": {
-        "description": "Titanium Shovel is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Titanium Shovel is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -3438,7 +3455,7 @@
           ],
           [
             "Enchantability",
-            "20 · Shovel preset"
+            20
           ]
         ],
         "statisticsTitle": "Tool statistics",
@@ -3447,7 +3464,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -3455,23 +3472,23 @@
               ],
               [
                 "Mining tier",
-                "No explicit Minecraft tier tag"
+                "Titanium"
               ],
               [
                 "Mining speed",
-                "12× — minecraft:is_shovel_item_destructible"
+                "12× on blocks in its mining profile"
               ],
               [
                 "Repair with",
-                "Titanium — 25% of maximum durability; Titanium Plate — 33% of maximum durability; Titanium Shovel — ((q.remaining_durability) + q.max_durability) / 2"
+                "Titanium — restores 25% of maximum durability; Titanium Plate — restores 33% of maximum durability; Titanium Shovel — combines the remaining durability of both items"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Shovel · enchantability 20.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 20.",
             "entries": [
               "Efficiency",
               "Fortune",
@@ -3486,7 +3503,7 @@
     },
     "utilitycraft:titanium_sword": {
       "documentation": {
-        "description": "Titanium Sword is a registered tool with its Bedrock durability, repair, and enchantment data documented below.",
+        "description": "Titanium Sword is an Ascendant Technology tool built for high-tier mining and compatible tool enchantments.",
         "basic": {
           "itemType": "Tool",
           "maximumStack": 1
@@ -3502,7 +3519,7 @@
           ],
           [
             "Enchantability",
-            "20 · Sword preset"
+            20
           ]
         ],
         "statisticsTitle": "Tool statistics",
@@ -3511,7 +3528,7 @@
             "id": "tool-properties",
             "label": "Tool Properties",
             "title": "Tool properties",
-            "copy": "Values are read from the registered Bedrock item definition.",
+            "copy": "Mining and repair details.",
             "facts": [
               [
                 "Tool roles",
@@ -3519,23 +3536,23 @@
               ],
               [
                 "Mining tier",
-                "No explicit Minecraft tier tag"
+                "Titanium"
               ],
               [
                 "Mining speed",
-                "12× — Web"
+                "12× on Web"
               ],
               [
                 "Repair with",
-                "Titanium — 25% of maximum durability; Titanium Plate — 33% of maximum durability; Titanium Sword — ((q.remaining_durability) + q.max_durability) / 2"
+                "Titanium — restores 25% of maximum durability; Titanium Plate — restores 33% of maximum durability; Titanium Sword — combines the remaining durability of both items"
               ]
             ]
           },
           {
             "id": "enchantments",
             "label": "Enchantments",
-            "title": "Enchantment preset",
-            "copy": "Bedrock slot preset: Sword · enchantability 20.",
+            "title": "Compatible enchantments",
+            "copy": "Enchantability 20.",
             "entries": [
               "Sharpness",
               "Smite",
@@ -3631,19 +3648,19 @@
             "dimension": "Overworld",
             "height": "Y -56 to -54",
             "replace": "Deepslate",
-            "detail": "3 attempts/chunk · 1/64 scatter · vein up to 3"
+            "detail": "3 attempts/chunk · 1/48 scatter · vein up to 3"
           },
           {
             "dimension": "Overworld",
             "height": "Y -61 to -59",
             "replace": "Deepslate",
-            "detail": "8 attempts/chunk · 1/64 scatter · vein up to 3"
+            "detail": "8 attempts/chunk · 1/48 scatter · vein up to 3"
           },
           {
             "dimension": "Overworld",
             "height": "Y -58 to -56",
             "replace": "Deepslate",
-            "detail": "6 attempts/chunk · 1/64 scatter · vein up to 3"
+            "detail": "6 attempts/chunk · 1/48 scatter · vein up to 3"
           }
         ],
         "modifiers": [
@@ -3953,14 +3970,7 @@
             "amount": "×6–8"
           }
         ],
-        "locations": [
-          {
-            "dimension": "The End",
-            "height": "Y 0 to 80",
-            "replace": "End Stone",
-            "detail": "40 attempts/chunk · Always evaluated · vein up to 7"
-          }
-        ],
+        "locations": [],
         "modifiers": [
           {
             "title": "AT Core resolver",

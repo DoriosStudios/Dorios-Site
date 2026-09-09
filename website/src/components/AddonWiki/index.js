@@ -1,5 +1,6 @@
 import React, {createContext, useContext, useEffect, useMemo, useRef, useState} from 'react';
 import Link from '@docusaurus/Link';
+import {useLocation} from '@docusaurus/router';
 import Layout from '@theme/Layout';
 import '@fontsource-variable/space-grotesk';
 import {
@@ -1901,6 +1902,12 @@ function normalizedItemDocumentation(entry) {
     statisticsTitle: source.statisticsTitle,
     statistics: meaningfulList(source.statistics),
     sections: meaningfulList(source.sections),
+    tier: source.tier ?? entry.tier,
+    properties: meaningfulList(source.properties),
+    primarySources: meaningfulList(source.primarySources),
+    mainUses: meaningfulList(source.mainUses),
+    relatedItems: meaningfulList(source.relatedItems),
+    trivia: meaningfulList(source.trivia),
     acquisition: {
       entityDrops: meaningfulList(source.acquisition?.entityDrops),
       structures: meaningfulList(source.acquisition?.structures),
@@ -1965,6 +1972,15 @@ function obtainingRecipes(project, entry) {
   return {crafting, machine};
 }
 
+function useWikiQuery() {
+  const location = useLocation();
+  const [query, setQuery] = useState('');
+  useEffect(() => {
+    setQuery(new URLSearchParams(location.search).get('q') ?? '');
+  }, [location.search]);
+  return [query, setQuery];
+}
+
 function DocumentationSection({section}) {
   const facts = meaningfulList(section.facts).filter((fact) => Array.isArray(fact) && fact[1] !== undefined && fact[1] !== null && fact[1] !== '');
   const entries = meaningfulList(section.entries);
@@ -1988,26 +2004,131 @@ function recipesUsingItem(project, entry) {
     ...project.craftingRecipeDetails,
     ...project.processingRecipes.map(normalizedProcessingRecipe),
   ];
-  return recipes.filter((recipe) => recipe.slots?.some((slot) => identifiers.has(slot?.id))).slice(0, 6);
+  return recipes.filter((recipe) => [
+    ...(recipe.slots ?? []),
+    ...recipePrimaryInputs(recipe),
+    ...recipeCatalysts(recipe),
+    ...(recipe.inputGroups ?? []).flatMap((group) => group.alternatives ?? []),
+  ].some((ingredient) => identifiers.has(ingredient?.id ?? ingredient?.identifier)));
 }
 
-function relatedItemsFor(project, entry, obtained, usedIn) {
+function relatedItemsFor(project, entry, usedIn, curated = []) {
   const identifiers = itemIdentifiers(entry);
+  if (curated.length) return curated.map((value) => catalogEntryFor(project, value)).filter(Boolean);
   const sameCategory = (project.items ?? []).filter((candidate) => (
     candidate.category === entry.category && !identifiers.has(candidate.id) && !identifiers.has(candidate.identifier)
   ));
-  const recipeNeighbours = [
-    ...obtained.crafting.flatMap((recipe) => recipe.slots ?? []),
-    ...obtained.machine.flatMap((recipe) => recipe.slots ?? []),
-    ...usedIn.map((recipe) => recipe.result),
-  ].map((value) => catalogEntryFor(project, value)).filter(Boolean);
+  const family = String(entry.shortId ?? entry.id).split('_')[0];
+  const recipeNeighbours = usedIn.map((recipe) => catalogEntryFor(project, recipe.result)).filter(Boolean);
+  const familyItems = sameCategory.filter((candidate) => String(candidate.shortId ?? candidate.id).includes(family));
   const seen = new Set();
-  return [...recipeNeighbours, ...sameCategory].filter((candidate) => {
+  return [...recipeNeighbours, ...familyItems, ...sameCategory].filter((candidate) => {
     const key = candidate.identifier ?? candidate.id;
     if (!key || identifiers.has(key) || seen.has(key)) return false;
     seen.add(key);
     return true;
   }).slice(0, 4);
+}
+
+function itemRecipeHref(project, recipe) {
+  return `${project.basePath}/recipes/${recipe.type ? 'processing' : 'crafting'}-${recipe.id}`;
+}
+
+function recipeMatchesReference(recipe, reference = {}) {
+  if (reference.id && recipe.id !== reference.id) return false;
+  if (reference.station && recipe.station !== reference.station) return false;
+  if (reference.result && recipe.result?.id !== reference.result) return false;
+  if (reference.input) {
+    const ingredients = [...recipePrimaryInputs(recipe), ...recipeCatalysts(recipe), ...(recipe.slots ?? [])];
+    if (!ingredients.some((ingredient) => ingredient?.id === reference.input)) return false;
+  }
+  return Boolean(reference.id || reference.station || reference.result || reference.input);
+}
+
+function resolveEditorialRecipe(project, reference) {
+  if (!reference) return null;
+  const recipes = [
+    ...project.craftingRecipeDetails,
+    ...project.processingRecipes.map(normalizedProcessingRecipe),
+  ];
+  return recipes.find((recipe) => recipeMatchesReference(recipe, reference)) ?? null;
+}
+
+function aggregateIngredients(ingredients) {
+  const result = [];
+  for (const ingredient of ingredients.filter(Boolean)) {
+    const key = ingredient.id ?? ingredient.label;
+    const current = result.find((item) => (item.id ?? item.label) === key);
+    if (current) current.count = (current.count ?? 1) + (ingredient.count ?? 1);
+    else result.push({...ingredient, count: ingredient.count ?? 1});
+  }
+  return result;
+}
+
+function ItemRecipeGroup({label, ingredients, result = false}) {
+  if (!ingredients.length) return null;
+  return <div className={styles.itemRecipeGroup}>
+    <small>{label}</small>
+    <div>{aggregateIngredients(ingredients).map((ingredient, index) => <div className={styles.itemRecipeIngredient} key={`${ingredient.id ?? ingredient.label}-${index}`}>
+      <RecipeSlot ingredient={ingredient} result={result} />
+      <span><strong>{ingredientLabel(ingredient)}</strong>{(ingredient.count ?? 1) > 1 && <small>×{ingredient.count}</small>}</span>
+    </div>)}</div>
+  </div>;
+}
+
+function ItemRecipeCard({recipe}) {
+  const project = useWikiProject();
+  const station = project.stationMeta[recipe.station] ?? {label: formatIdentifier(recipe.station), face: project.recipeFallbackFace};
+  const outputs = recipeOutputs(recipe);
+  const byproducts = recipeByproducts(recipe);
+  const metrics = [
+    [recipe.cost ?? recipe.energyCost, 'Energy', `${Number(recipe.cost ?? recipe.energyCost).toLocaleString('en-US')} DE`],
+    [recipe.ticks, 'Time', `${recipe.ticks} ticks · ${(recipe.ticks / 20).toLocaleString('en-US', {maximumFractionDigits: 2})}s`],
+    [recipe.chance, 'Chance', formatChance(recipe.chance)],
+  ].filter(([condition]) => condition !== undefined && condition !== null);
+  return <article className={styles.itemRecipeCard}>
+    <header>{station.face ? <img src={resolveAsset(project, station.face)} alt="" /> : <span className={styles.stationFallback} aria-hidden="true">▦</span>}
+      <div><small>Station</small><strong>{station.label}</strong></div>
+      <Link to={itemRecipeHref(project, recipe)} aria-label={`Open full ${station.label} recipe`}>Full recipe →</Link>
+    </header>
+    <div className={styles.itemRecipeFlow}>
+      <ItemRecipeGroup label="Input" ingredients={recipePrimaryInputs(recipe)} />
+      <ItemRecipeGroup label="Catalysts" ingredients={recipeCatalysts(recipe)} />
+      <ItemRecipeGroup label={recipe.inputFluid ? 'Fluid input' : 'Fluid'} ingredients={recipeFluidInputs(recipe)} />
+      <span className={styles.itemRecipeArrow} aria-hidden="true">↓</span>
+      <ItemRecipeGroup label="Output" ingredients={outputs} result />
+      <ItemRecipeGroup label="Secondary output" ingredients={byproducts} result />
+    </div>
+    {metrics.length > 0 && <dl className={styles.itemRecipeMetrics}>{metrics.map(([, label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}
+  </article>;
+}
+
+function ItemSection({id, eyebrow, title, children, className = ''}) {
+  return <section className={`${styles.itemWikiSection} ${className}`} aria-labelledby={id}>
+    <header><p>{eyebrow}</p><h2 id={id}>{title}</h2></header>
+    {children}
+  </section>;
+}
+
+function SourceMethod({source, recipe}) {
+  return <article className={styles.sourceMethod}>
+    <div><small>{source.type ?? 'Primary source'}</small><h3>{source.title}</h3>{source.description && <p>{source.description}</p>}</div>
+    {source.facts?.length > 0 && <dl>{source.facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}
+    {recipe && <ItemRecipeCard recipe={recipe} />}
+  </article>;
+}
+
+function MainUse({use, recipe}) {
+  const project = useWikiProject();
+  const target = catalogEntryFor(project, use.item ?? recipe?.result);
+  const href = target ? detailLinkFor(project, target) : null;
+  const image = target ? visualFor(project, target) : null;
+  const heading = <>{image && <img src={image} alt="" />}<span><small>Main use</small><strong>{use.title ?? target?.name ?? formatIdentifier(recipe?.result?.id)}</strong></span></>;
+  return <article className={styles.mainUse}>
+    {href ? <Link className={styles.mainUseHeading} to={href}>{heading}<b aria-hidden="true">→</b></Link> : <div className={styles.mainUseHeading}>{heading}</div>}
+    {use.description && <p>{use.description}</p>}
+    {recipe && <ItemRecipeCard recipe={recipe} />}
+  </article>;
 }
 
 function AcquisitionCard({icon, eyebrow, title, chance, quantity, note}) {
@@ -2043,62 +2164,33 @@ function SourceGroup({icon, title, children}) {
   );
 }
 
-function ItemDocumentationTabs({project, documentation, basics, groups, statistics, recipes, usedIn, relatedItems, compactProcessingRecipes}) {
-  const [activeTab, setActiveTab] = useState('item-details');
+function ItemDocumentation({entry, project, documentation, properties, groups, recipes, usedIn, relatedItems}) {
   const recipeCount = recipes.crafting.length + recipes.machine.length;
   const hasSources = documentation.acquisition.entityDrops.length > 0
     || documentation.acquisition.structures.length > 0
     || documentation.acquisition.biomes.length > 0;
-  const isTrinket = groups.length > 0 || Boolean(documentation.basic.equipSlot && documentation.basic.equipSlot !== 'Not a trinket slot');
-  const tabs = [
-    {
-      id: 'item-details',
-      label: 'Item Details',
-      content: <div className={styles.itemTabLayout}>
-        <section className={`${styles.itemEditorialSection} ${styles.itemBasicSection}`} aria-labelledby="item-basic-information">
-          <ItemSectionHeading id="item-basic-information" icon="info">Basic Information</ItemSectionHeading>
-          <dl className={styles.itemBasicList}>{basics.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
-        </section>
-        {statistics.length > 0 && <section className={`${styles.itemEditorialSection} ${styles.itemStatisticsSection}`} aria-labelledby="item-statistics">
-          <ItemSectionHeading id="item-statistics" icon="capabilities">{documentation.statisticsTitle ?? 'Item Statistics'}</ItemSectionHeading>
-          <dl className={styles.itemBasicList}>{statistics.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
-        </section>}
-        {relatedItems.length > 0 && <section className={`${styles.itemEditorialSection} ${styles.itemRelatedSection}`} aria-labelledby="item-related-items">
-          <ItemSectionHeading id="item-related-items" icon="related">Related Items</ItemSectionHeading>
-          <div className={styles.relatedItemGrid}>{relatedItems.map((item) => <RelatedItemCard project={project} item={item} key={item.identifier ?? item.id} />)}</div>
-        </section>}
-        {documentation.sections.map((section) => <DocumentationSection section={section} key={section.id} />)}
-        {recipeCount > 0 && <section className={`${styles.itemEditorialSection} ${styles.itemRecipeSection}`} aria-labelledby="item-recipes">
-          <ItemSectionHeading id="item-recipes" icon="recipe">How to Obtain</ItemSectionHeading>
-          <div className={`${styles.recipeAcquisition} ${compactProcessingRecipes ? styles.compactRecipeAcquisition : ''}`}>
-            <header><DetailIcon name="recipe" /><div><small>Recipes</small><h3>{recipeCount} documented recipe{recipeCount === 1 ? '' : 's'}</h3></div></header>
-            <div>{recipes.crafting.map((recipe) => <RecipeCard key={`crafting-${recipe.id}`} recipe={recipe} />)}{recipes.machine.map((recipe) => <RecipeCard key={`machine-${recipe.id}`} recipe={recipe} />)}</div>
-          </div>
-        </section>}
-        {usedIn.length > 0 && <section className={`${styles.itemEditorialSection} ${styles.itemUsedInSection}`} aria-labelledby="item-used-in">
-          <ItemSectionHeading id="item-used-in" icon="used">Used In</ItemSectionHeading>
-          <div className={styles.usedInGrid}>{usedIn.map((recipe) => <RecipeResultLink project={project} recipe={recipe} key={`${recipe.type ?? 'recipe'}-${recipe.id}`} />)}</div>
-        </section>}
-        {documentation.usage && <section className={`${styles.itemEditorialSection} ${styles.itemUsageSection}`} aria-labelledby="item-usage">
-          <ItemSectionHeading id="item-usage" icon="usage">Usage</ItemSectionHeading>
-          <div className={styles.itemUsage}><DetailIcon name="usage" /><p>{documentation.usage}</p></div>
-        </section>}
-      </div>,
-    },
-    ...(groups.length > 0 ? [{
-      id: 'trinket-capabilities',
-      label: 'Trinket Capabilities',
-      content: <section className={`${styles.itemEditorialSection} ${styles.itemCapabilitiesSection}`} aria-labelledby="item-capabilities">
-        <ItemSectionHeading id="item-capabilities" icon="capabilities">Trinket Capabilities</ItemSectionHeading>
-        <div className={styles.capabilityGrid}>{groups.map((group) => <CapabilityGroup key={group.id} group={group} />)}</div>
-      </section>,
-    }] : []),
-    ...(hasSources ? [{
-      id: 'sources',
-      label: 'Sources',
-      content: <section className={`${styles.itemEditorialSection} ${styles.itemSourcesSection}`} aria-labelledby="item-sources">
-        <ItemSectionHeading id="item-sources" icon="obtain">Sources</ItemSectionHeading>
-        <div className={styles.sourceGroups}>
+  const selectedPrimary = documentation.primarySources.map((source) => ({source, recipe: resolveEditorialRecipe(project, source.recipe)}));
+  const selectedRecipeIds = new Set(selectedPrimary.map(({recipe}) => recipe?.id).filter(Boolean));
+  const fallbackRecipes = [...recipes.crafting, ...recipes.machine].slice(0, 2);
+  const visibleRecipes = selectedPrimary.length ? [] : fallbackRecipes;
+  const otherMethodCount = Math.max(0, recipeCount - selectedRecipeIds.size - visibleRecipes.length);
+  const selectedUses = documentation.mainUses.map((use) => ({use, recipe: resolveEditorialRecipe(project, use.recipe)}));
+  const visibleUses = selectedUses.length ? selectedUses : usedIn.slice(0, 2).map((recipe) => ({
+    use: {id: recipe.id, item: recipe.result, description: `Used in a ${project.stationMeta[recipe.station]?.label ?? formatIdentifier(recipe.station)} recipe.`},
+    recipe,
+  }));
+  const additionalUses = Math.max(0, usedIn.length - visibleUses.length);
+  const recipeHref = `${project.basePath}/recipes?q=${encodeURIComponent(entry.identifier ?? entry.id)}`;
+  return <div className={styles.itemArticleBody}>
+    <ItemSection id="item-properties" eyebrow="Reference" title="Properties">
+      <dl className={styles.itemProperties}>{properties.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+      {documentation.sections.map((section) => <DocumentationSection section={section} key={section.id} />)}
+    </ItemSection>
+
+    {(selectedPrimary.length > 0 || visibleRecipes.length > 0 || hasSources) && <ItemSection id="item-obtain" eyebrow="Sources" title="How to Obtain">
+      {selectedPrimary.length > 0 && <><h3 className={styles.itemSubheading}>Primary Sources</h3><div className={styles.primarySources}>{selectedPrimary.map(({source, recipe}) => <SourceMethod key={source.id ?? source.title} source={source} recipe={recipe} />)}</div></>}
+      {visibleRecipes.length > 0 && <div className={styles.primaryRecipes}>{visibleRecipes.map((recipe) => <ItemRecipeCard key={`${recipe.type ?? 'crafting'}-${recipe.id}`} recipe={recipe} />)}</div>}
+      {hasSources && <div className={styles.sourceGroups}>
           {documentation.acquisition.entityDrops.length > 0 && <SourceGroup icon="entity" title="Entity Drops">
             {documentation.acquisition.entityDrops.map((drop, index) => <AcquisitionCard key={`${drop.entity}-${index}`} icon="entity" eyebrow="Entity Drop" title={formatIdentifier(drop.entity)} chance={formatChance(drop.chance)} quantity={quantityLabel(drop)} />)}
           </SourceGroup>}
@@ -2112,36 +2204,22 @@ function ItemDocumentationTabs({project, documentation, basics, groups, statisti
           {documentation.acquisition.biomes.length > 0 && <SourceGroup icon="biome" title="Biome Loot">
             {documentation.acquisition.biomes.map((loot, index) => <AcquisitionCard key={`${loot.biome}-${index}`} icon="biome" eyebrow="Biome Loot" title={formatIdentifier(loot.biome)} chance={formatChance(loot.chance)} />)}
           </SourceGroup>}
-        </div>
-      </section>,
-    }] : []),
-  ];
+      </div>}
+      {(otherMethodCount > 0 || recipeCount > 0) && <div className={styles.itemMoreLink}><span><strong>Other Methods</strong>{otherMethodCount > 0 ? `${otherMethodCount} additional documented recipe${otherMethodCount === 1 ? '' : 's'} and conversion${otherMethodCount === 1 ? '' : 's'}.` : 'See this method in the complete recipe catalog.'}</span><Link to={recipeHref}>View all recipes →</Link></div>}
+    </ItemSection>}
 
-  return (
-    <section className={`${styles.machineReference} ${styles.itemReference}`} aria-labelledby="item-reference">
-      <p className={styles.itemReferenceLabel} id="item-reference">{isTrinket ? 'Trinket reference' : 'Item reference'}</p>
-      <div className={styles.itemTabs} role="tablist" aria-label="Item documentation sections">
-        {tabs.map((tab) => <button
-          key={tab.id}
-          id={`item-tab-${tab.id}`}
-          type="button"
-          role="tab"
-          aria-selected={activeTab === tab.id}
-          aria-controls={`item-panel-${tab.id}`}
-          className={activeTab === tab.id ? styles.activeItemTab : undefined}
-          onClick={() => setActiveTab(tab.id)}
-        >{tab.label}</button>)}
-      </div>
-      {tabs.map((tab) => <div
-        key={tab.id}
-        id={`item-panel-${tab.id}`}
-        role="tabpanel"
-        aria-labelledby={`item-tab-${tab.id}`}
-        className={styles.itemTabPanel}
-        hidden={activeTab !== tab.id}
-      >{tab.content}</div>)}
-    </section>
-  );
+    {visibleUses.length > 0 && <ItemSection id="item-main-uses" eyebrow="Progression" title="Main Uses">
+      <div className={styles.mainUses}>{visibleUses.map(({use, recipe}) => <MainUse key={use.id ?? recipe?.id} use={use} recipe={recipe} />)}</div>
+      {(additionalUses > 0 || usedIn.length > 0) && <div className={styles.itemMoreLink}><span><strong>Additional uses</strong>{additionalUses > 0 ? `${additionalUses} more documented use${additionalUses === 1 ? '' : 's'}.` : 'Explore every documented use in the recipe catalog.'}</span><Link to={recipeHref}>View all uses →</Link></div>}
+    </ItemSection>}
+
+    {groups.length > 0 && <ItemSection id="item-capabilities" eyebrow="Equipment" title="Trinket Capabilities"><div className={styles.capabilityGrid}>{groups.map((group) => <CapabilityGroup key={group.id} group={group} />)}</div></ItemSection>}
+    {documentation.usage && <ItemSection id="item-usage" eyebrow="Gameplay" title="Usage"><p className={styles.itemUsageCopy}>{documentation.usage}</p></ItemSection>}
+    {(relatedItems.length > 0 || documentation.trivia.length > 0) && <div className={styles.itemClosingGrid}>
+      {relatedItems.length > 0 && <ItemSection id="item-related" eyebrow="Continue reading" title="Related Items"><div className={styles.relatedItemGrid}>{relatedItems.map((item) => <RelatedItemCard project={project} item={item} key={item.identifier ?? item.id} />)}</div></ItemSection>}
+      {documentation.trivia.length > 0 && <ItemSection id="item-trivia" eyebrow="Notes" title="Trivia"><ul className={styles.itemTrivia}>{documentation.trivia.map((note, index) => <li key={index}>{note}</li>)}</ul></ItemSection>}
+    </div>}
+  </div>;
 }
 
 function ItemDetail({entry, visual}) {
@@ -2151,37 +2229,40 @@ function ItemDetail({entry, visual}) {
   const statistics = documentation.statistics;
   const recipes = obtainingRecipes(project, entry);
   const usedIn = recipesUsingItem(project, entry);
-  const relatedItems = relatedItemsFor(project, entry, recipes, usedIn);
-  const recipeCount = recipes.crafting.length + recipes.machine.length;
-  const compactProcessingRecipes = recipes.crafting.length === 0
-    && recipes.machine.length > 1
-    && recipes.machine.every(usesLinearRecipeFlow);
-  const basics = [
-    ['Item Type', documentation.basic.itemType],
+  const relatedItems = relatedItemsFor(project, entry, usedIn, documentation.relatedItems);
+  const rawProperties = [
+    ['Type', documentation.basic.itemType],
+    ['Tier', documentation.tier],
     ['Equip Slot', documentation.basic.equipSlot && documentation.basic.equipSlot !== 'Not a trinket slot' ? documentation.basic.equipSlot : null],
-    ['Maximum Stack', documentation.basic.maximumStack],
+    ['Stack Size', documentation.basic.maximumStack],
     ['Add-on', project.name],
+    ...documentation.properties,
+    ...statistics,
   ].filter(([, value]) => value !== undefined && value !== null && value !== '');
+  const properties = [...new Map(rawProperties.map((property) => [property[0].toLowerCase(), property])).values()];
   const typeLabel = String(documentation.basic.itemType ?? entry.category ?? 'Item').toUpperCase();
   return (
     <article className={styles.itemDetailPage}>
       <header className={styles.itemDetailHero}>
         <div className={styles.itemDetailVisual}>{visual}</div>
         <div className={styles.itemDetailHeading}>
-          <p className={styles.eyebrow}>Item · {typeLabel}</p><h1>{entry.name}</h1><p>{compactItemDescription(entry, documentation)}</p>
+          <p className={styles.eyebrow}>Item · {typeLabel}</p><h1>{entry.name}</h1>
+          <div className={styles.itemHeaderMeta}><span>{documentation.basic.itemType}</span>{documentation.tier && <span>{documentation.tier} tier</span>}<span>{project.name}</span></div>
+        </div>
+        <div className={styles.itemDetailCopy}>
+          <p>{compactItemDescription(entry, documentation)}</p>
           {documentation.basic.identifier && <div className={styles.itemIdentifier}><span>Identifier</span><code>{documentation.basic.identifier}</code><CopyIdentifierButton identifier={documentation.basic.identifier} /></div>}
         </div>
       </header>
-      <ItemDocumentationTabs
+      <ItemDocumentation
+        entry={entry}
         project={project}
         documentation={documentation}
-        basics={basics}
+        properties={properties}
         groups={groups}
-        statistics={statistics}
         recipes={recipes}
         usedIn={usedIn}
         relatedItems={relatedItems}
-        compactProcessingRecipes={compactProcessingRecipes}
       />
     </article>
   );
@@ -2905,7 +2986,7 @@ function AddonWikiEntryContent({entryType, slug}) {
     assetRoot, blocks, allBlocks, craftingRecipeDetails, entities = [], generators, machineControllerIds,
     machines, mechanics, items, processingRecipes, stationMeta, wikiSections,
   } = project;
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useWikiQuery();
   const mechanicEntries = mechanics.map((entry) => ({...entry, id: entry.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}));
   const collections = {items, blocks, machines, generators, entities, mechanics: mechanicEntries};
   let entry = collections[entryType]?.find((candidate) => (
@@ -3091,7 +3172,7 @@ const pageComponents = {
 
 function AddonWikiContent({section}) {
   const project = useWikiProject();
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useWikiQuery();
   const itemCategory = project.itemCategorySections?.find(({id}) => id === section);
   const isHowToPlay = section.startsWith('how-to-play');
   const Page = itemCategory ? ItemsPage : (isHowToPlay ? HowToPlayPage : (pageComponents[section] ?? OverviewPage));

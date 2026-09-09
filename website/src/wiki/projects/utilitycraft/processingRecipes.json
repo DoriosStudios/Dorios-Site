@@ -3568,8 +3568,8 @@
     "output": "minecraft:yellow_flower (20%)"
   },
   {
-    "id": "utilitycraft-autosieve-minecraft-gravel-minecraft-flint-0-1-0p2-0",
-    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-minecraft-flint-0-1-0p2-0",
+    "id": "utilitycraft-autosieve-minecraft-gravel-minecraft-flint-0-1-0p2-1",
+    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-minecraft-flint-0-1-0p2-1",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -3627,8 +3627,8 @@
     "output": "minecraft:flint (20%)"
   },
   {
-    "id": "utilitycraft-autosieve-minecraft-gravel-minecraft-lapis-lazuli-3-4-0p025-5",
-    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-minecraft-lapis-lazuli-3-4-0p025-5",
+    "id": "utilitycraft-autosieve-minecraft-gravel-minecraft-lapis-lazuli-3-4-0p025-6",
+    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-minecraft-lapis-lazuli-3-4-0p025-6",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -3686,8 +3686,8 @@
     "output": "4× minecraft:lapis_lazuli (2.5%)"
   },
   {
-    "id": "utilitycraft-autosieve-minecraft-gravel-utilitycraft-coal-chunk-0-1-0p25-3",
-    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-utilitycraft-coal-chunk-0-1-0p25-3",
+    "id": "utilitycraft-autosieve-minecraft-gravel-utilitycraft-coal-chunk-0-1-0p25-4",
+    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-utilitycraft-coal-chunk-0-1-0p25-4",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -3745,8 +3745,8 @@
     "output": "utilitycraft:coal_chunk (25%)"
   },
   {
-    "id": "utilitycraft-autosieve-minecraft-gravel-utilitycraft-diamond-shard-4-1-0p01-7",
-    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-utilitycraft-diamond-shard-4-1-0p01-7",
+    "id": "utilitycraft-autosieve-minecraft-gravel-utilitycraft-diamond-shard-4-1-0p01-8",
+    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-utilitycraft-diamond-shard-4-1-0p01-8",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -3804,8 +3804,8 @@
     "output": "utilitycraft:diamond_shard (1%)"
   },
   {
-    "id": "utilitycraft-autosieve-minecraft-gravel-utilitycraft-dripstone-pebble-1-1-0p15-1",
-    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-utilitycraft-dripstone-pebble-1-1-0p15-1",
+    "id": "utilitycraft-autosieve-minecraft-gravel-utilitycraft-dripstone-pebble-1-1-0p15-2",
+    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-utilitycraft-dripstone-pebble-1-1-0p15-2",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -3863,8 +3863,8 @@
     "output": "utilitycraft:dripstone_pebble (15%)"
   },
   {
-    "id": "utilitycraft-autosieve-minecraft-gravel-utilitycraft-emerald-shard-4-1-0p02-6",
-    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-utilitycraft-emerald-shard-4-1-0p02-6",
+    "id": "utilitycraft-autosieve-minecraft-gravel-utilitycraft-emerald-shard-4-1-0p02-7",
+    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-utilitycraft-emerald-shard-4-1-0p02-7",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -3922,8 +3922,8 @@
     "output": "utilitycraft:emerald_shard (2%)"
   },
   {
-    "id": "utilitycraft-autosieve-minecraft-gravel-utilitycraft-gold-chunk-3-1-0p05-4",
-    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-utilitycraft-gold-chunk-3-1-0p05-4",
+    "id": "utilitycraft-autosieve-minecraft-gravel-utilitycraft-gold-chunk-3-1-0p05-5",
+    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-utilitycraft-gold-chunk-3-1-0p05-5",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -3981,8 +3981,8 @@
     "output": "utilitycraft:gold_chunk (5%)"
   },
   {
-    "id": "utilitycraft-autosieve-minecraft-gravel-utilitycraft-iron-chunk-1-1-0p15-2",
-    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-utilitycraft-iron-chunk-1-1-0p15-2",
+    "id": "utilitycraft-autosieve-minecraft-gravel-utilitycraft-iron-chunk-1-1-0p15-3",
+    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-utilitycraft-iron-chunk-1-1-0p15-3",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -4038,6 +4038,65 @@
     "originId": "utilitycraft",
     "input": "minecraft:gravel",
     "output": "utilitycraft:iron_chunk (15%)"
+  },
+  {
+    "id": "utilitycraft-autosieve-minecraft-gravel-utilitycraft-lead-chunk-4-1-0p04-0",
+    "identifier": "utilitycraft:process/autosieve/minecraft-gravel-utilitycraft-lead-chunk-4-1-0p04-0",
+    "type": "machine",
+    "station": "autosieve",
+    "category": "Auto Sieve loot",
+    "recipeKind": "loot",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "minecraft:gravel",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "minecraft:gravel",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_chunk",
+      "count": 1,
+      "chance": 0.04
+    },
+    "results": [],
+    "drops": [
+      {
+        "id": "utilitycraft:lead_chunk",
+        "count": 1,
+        "chance": 0.04
+      }
+    ],
+    "conditions": [
+      {
+        "id": "mesh-tier",
+        "label": "Minimum mesh tier",
+        "value": 4
+      }
+    ],
+    "tier": 4,
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "minecraft:gravel",
+    "output": "utilitycraft:lead_chunk (4%)"
   },
   {
     "id": "utilitycraft-autosieve-minecraft-sand-ae2be-certus-quartz-crystal-3-1-0p17-13",
@@ -5671,8 +5730,8 @@
     "output": "9× utilitycraft:gilded_blackstone_pebble (33%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-minecraft-echo-shard-5-9-0p025-0",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-minecraft-echo-shard-5-9-0p025-0",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-minecraft-echo-shard-5-9-0p025-1",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-minecraft-echo-shard-5-9-0p025-1",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -5730,8 +5789,8 @@
     "output": "9× minecraft:echo_shard (2.5%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-minecraft-lapis-lazuli-3-36-0p15-9",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-minecraft-lapis-lazuli-3-36-0p15-9",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-minecraft-lapis-lazuli-3-36-0p15-10",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-minecraft-lapis-lazuli-3-36-0p15-10",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -5789,8 +5848,8 @@
     "output": "36× minecraft:lapis_lazuli (15%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-minecraft-sculk-catalyst-5-9-0p005-1",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-minecraft-sculk-catalyst-5-9-0p005-1",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-minecraft-sculk-catalyst-5-9-0p005-2",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-minecraft-sculk-catalyst-5-9-0p005-2",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -5848,8 +5907,8 @@
     "output": "9× minecraft:sculk_catalyst (0.5%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-calcite-pebble-2-9-0p12-3",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-calcite-pebble-2-9-0p12-3",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-calcite-pebble-2-9-0p12-4",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-calcite-pebble-2-9-0p12-4",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -5907,8 +5966,8 @@
     "output": "9× utilitycraft:calcite_pebble (12%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-coal-chunk-0-9-0p3-10",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-coal-chunk-0-9-0p3-10",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-coal-chunk-0-9-0p3-11",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-coal-chunk-0-9-0p3-11",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -5966,8 +6025,8 @@
     "output": "9× utilitycraft:deepslate_coal_chunk (30%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-gold-chunk-4-9-0p2-7",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-gold-chunk-4-9-0p2-7",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-gold-chunk-4-9-0p2-8",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-gold-chunk-4-9-0p2-8",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -6025,8 +6084,8 @@
     "output": "9× utilitycraft:deepslate_gold_chunk (20%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-iron-chunk-1-9-0p25-8",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-iron-chunk-1-9-0p25-8",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-iron-chunk-1-9-0p25-9",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-iron-chunk-1-9-0p25-9",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -6084,8 +6143,67 @@
     "output": "9× utilitycraft:deepslate_iron_chunk (25%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-diamond-shard-4-9-0p05-5",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-diamond-shard-4-9-0p05-5",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-lead-chunk-4-9-0p04-0",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-lead-chunk-4-9-0p04-0",
+    "type": "machine",
+    "station": "autosieve",
+    "category": "Auto Sieve loot",
+    "recipeKind": "loot",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:compressed_crushed_cobbled_deepslate",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:compressed_crushed_cobbled_deepslate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:deepslate_lead_chunk",
+      "count": 9,
+      "chance": 0.04
+    },
+    "results": [],
+    "drops": [
+      {
+        "id": "utilitycraft:deepslate_lead_chunk",
+        "count": 9,
+        "chance": 0.04
+      }
+    ],
+    "conditions": [
+      {
+        "id": "mesh-tier",
+        "label": "Minimum mesh tier",
+        "value": 4
+      }
+    ],
+    "tier": 4,
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:compressed_crushed_cobbled_deepslate",
+    "output": "9× utilitycraft:deepslate_lead_chunk (4%)"
+  },
+  {
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-diamond-shard-4-9-0p05-6",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-diamond-shard-4-9-0p05-6",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -6143,8 +6261,8 @@
     "output": "9× utilitycraft:diamond_shard (5%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-emerald-shard-4-9-0p05-6",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-emerald-shard-4-9-0p05-6",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-emerald-shard-4-9-0p05-7",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-emerald-shard-4-9-0p05-7",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -6202,8 +6320,8 @@
     "output": "9× utilitycraft:emerald_shard (5%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-geode-5-9-0p025-2",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-geode-5-9-0p025-2",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-geode-5-9-0p025-3",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-geode-5-9-0p025-3",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -6261,8 +6379,8 @@
     "output": "9× utilitycraft:geode (2.5%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-tuff-pebble-1-9-0p18-4",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-tuff-pebble-1-9-0p18-4",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-tuff-pebble-1-9-0p18-5",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-tuff-pebble-1-9-0p18-5",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -7659,8 +7777,8 @@
     "output": "9× minecraft:wheat_seeds (10%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-minecraft-flint-0-9-0p2-0",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-minecraft-flint-0-9-0p2-0",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-minecraft-flint-0-9-0p2-1",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-minecraft-flint-0-9-0p2-1",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -7718,8 +7836,8 @@
     "output": "9× minecraft:flint (20%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-minecraft-lapis-lazuli-3-36-0p025-5",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-minecraft-lapis-lazuli-3-36-0p025-5",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-minecraft-lapis-lazuli-3-36-0p025-6",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-minecraft-lapis-lazuli-3-36-0p025-6",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -7777,8 +7895,8 @@
     "output": "36× minecraft:lapis_lazuli (2.5%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-utilitycraft-coal-chunk-0-9-0p25-3",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-coal-chunk-0-9-0p25-3",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-utilitycraft-coal-chunk-0-9-0p25-4",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-coal-chunk-0-9-0p25-4",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -7836,8 +7954,8 @@
     "output": "9× utilitycraft:coal_chunk (25%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-utilitycraft-diamond-shard-4-9-0p01-7",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-diamond-shard-4-9-0p01-7",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-utilitycraft-diamond-shard-4-9-0p01-8",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-diamond-shard-4-9-0p01-8",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -7895,8 +8013,8 @@
     "output": "9× utilitycraft:diamond_shard (1%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-utilitycraft-dripstone-pebble-1-9-0p15-1",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-dripstone-pebble-1-9-0p15-1",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-utilitycraft-dripstone-pebble-1-9-0p15-2",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-dripstone-pebble-1-9-0p15-2",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -7954,8 +8072,8 @@
     "output": "9× utilitycraft:dripstone_pebble (15%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-utilitycraft-emerald-shard-4-9-0p02-6",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-emerald-shard-4-9-0p02-6",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-utilitycraft-emerald-shard-4-9-0p02-7",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-emerald-shard-4-9-0p02-7",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -8013,8 +8131,8 @@
     "output": "9× utilitycraft:emerald_shard (2%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-utilitycraft-gold-chunk-3-9-0p05-4",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-gold-chunk-3-9-0p05-4",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-utilitycraft-gold-chunk-3-9-0p05-5",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-gold-chunk-3-9-0p05-5",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -8072,8 +8190,8 @@
     "output": "9× utilitycraft:gold_chunk (5%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-utilitycraft-iron-chunk-1-9-0p15-2",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-iron-chunk-1-9-0p15-2",
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-utilitycraft-iron-chunk-1-9-0p15-3",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-iron-chunk-1-9-0p15-3",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -8129,6 +8247,65 @@
     "originId": "utilitycraft",
     "input": "utilitycraft:compressed_gravel",
     "output": "9× utilitycraft:iron_chunk (15%)"
+  },
+  {
+    "id": "utilitycraft-autosieve-utilitycraft-compressed-gravel-utilitycraft-lead-chunk-4-9-0p04-0",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-lead-chunk-4-9-0p04-0",
+    "type": "machine",
+    "station": "autosieve",
+    "category": "Auto Sieve loot",
+    "recipeKind": "loot",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:compressed_gravel",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:compressed_gravel",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_chunk",
+      "count": 9,
+      "chance": 0.04
+    },
+    "results": [],
+    "drops": [
+      {
+        "id": "utilitycraft:lead_chunk",
+        "count": 9,
+        "chance": 0.04
+      }
+    ],
+    "conditions": [
+      {
+        "id": "mesh-tier",
+        "label": "Minimum mesh tier",
+        "value": 4
+      }
+    ],
+    "tier": 4,
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:compressed_gravel",
+    "output": "9× utilitycraft:lead_chunk (4%)"
   },
   {
     "id": "utilitycraft-autosieve-utilitycraft-compressed-sand-ae2be-certus-quartz-crystal-3-9-0p17-13",
@@ -9381,8 +9558,8 @@
     "output": "utilitycraft:gilded_blackstone_pebble (33%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-minecraft-echo-shard-5-1-0p025-0",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-minecraft-echo-shard-5-1-0p025-0",
+    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-minecraft-echo-shard-5-1-0p025-1",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-minecraft-echo-shard-5-1-0p025-1",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -9440,8 +9617,8 @@
     "output": "minecraft:echo_shard (2.5%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-minecraft-lapis-lazuli-3-4-0p15-9",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-minecraft-lapis-lazuli-3-4-0p15-9",
+    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-minecraft-lapis-lazuli-3-4-0p15-10",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-minecraft-lapis-lazuli-3-4-0p15-10",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -9499,8 +9676,8 @@
     "output": "4× minecraft:lapis_lazuli (15%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-minecraft-sculk-catalyst-5-1-0p005-1",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-minecraft-sculk-catalyst-5-1-0p005-1",
+    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-minecraft-sculk-catalyst-5-1-0p005-2",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-minecraft-sculk-catalyst-5-1-0p005-2",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -9558,8 +9735,8 @@
     "output": "minecraft:sculk_catalyst (0.5%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-calcite-pebble-2-1-0p12-3",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-calcite-pebble-2-1-0p12-3",
+    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-calcite-pebble-2-1-0p12-4",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-calcite-pebble-2-1-0p12-4",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -9617,8 +9794,8 @@
     "output": "utilitycraft:calcite_pebble (12%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-coal-chunk-0-1-0p3-10",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-coal-chunk-0-1-0p3-10",
+    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-coal-chunk-0-1-0p3-11",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-coal-chunk-0-1-0p3-11",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -9676,8 +9853,8 @@
     "output": "utilitycraft:deepslate_coal_chunk (30%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-gold-chunk-4-1-0p2-7",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-gold-chunk-4-1-0p2-7",
+    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-gold-chunk-4-1-0p2-8",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-gold-chunk-4-1-0p2-8",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -9735,8 +9912,8 @@
     "output": "utilitycraft:deepslate_gold_chunk (20%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-iron-chunk-1-1-0p25-8",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-iron-chunk-1-1-0p25-8",
+    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-iron-chunk-1-1-0p25-9",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-iron-chunk-1-1-0p25-9",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -9794,8 +9971,67 @@
     "output": "utilitycraft:deepslate_iron_chunk (25%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-diamond-shard-4-1-0p05-5",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-diamond-shard-4-1-0p05-5",
+    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-lead-chunk-4-1-0p04-0",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-deepslate-lead-chunk-4-1-0p04-0",
+    "type": "machine",
+    "station": "autosieve",
+    "category": "Auto Sieve loot",
+    "recipeKind": "loot",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:crushed_cobbled_deepslate",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:crushed_cobbled_deepslate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:deepslate_lead_chunk",
+      "count": 1,
+      "chance": 0.04
+    },
+    "results": [],
+    "drops": [
+      {
+        "id": "utilitycraft:deepslate_lead_chunk",
+        "count": 1,
+        "chance": 0.04
+      }
+    ],
+    "conditions": [
+      {
+        "id": "mesh-tier",
+        "label": "Minimum mesh tier",
+        "value": 4
+      }
+    ],
+    "tier": 4,
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:crushed_cobbled_deepslate",
+    "output": "utilitycraft:deepslate_lead_chunk (4%)"
+  },
+  {
+    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-diamond-shard-4-1-0p05-6",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-diamond-shard-4-1-0p05-6",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -9853,8 +10089,8 @@
     "output": "utilitycraft:diamond_shard (5%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-emerald-shard-4-1-0p05-6",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-emerald-shard-4-1-0p05-6",
+    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-emerald-shard-4-1-0p05-7",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-emerald-shard-4-1-0p05-7",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -9912,8 +10148,8 @@
     "output": "utilitycraft:emerald_shard (5%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-geode-5-1-0p025-2",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-geode-5-1-0p025-2",
+    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-geode-5-1-0p025-3",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-geode-5-1-0p025-3",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -9971,8 +10207,8 @@
     "output": "utilitycraft:geode (2.5%)"
   },
   {
-    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-tuff-pebble-1-1-0p18-4",
-    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-tuff-pebble-1-1-0p18-4",
+    "id": "utilitycraft-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-tuff-pebble-1-1-0p18-5",
+    "identifier": "utilitycraft:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-tuff-pebble-1-1-0p18-5",
     "type": "machine",
     "station": "autosieve",
     "category": "Auto Sieve loot",
@@ -20295,8 +20531,1170 @@
     "output": "utilitycraft:heat_conductor"
   },
   {
-    "id": "utilitycraft-crafter-0-0-utilitycraft-advanced-battery",
-    "identifier": "utilitycraft:process/crafter/0-0-utilitycraft-advanced-battery",
+    "id": "utilitycraft-crafter-0-0-utilitycraft-basic-gas-tank",
+    "identifier": "utilitycraft:process/crafter/0-0-utilitycraft-basic-gas-tank",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "glass",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "basic_chip",
+        "count": 1
+      },
+      {
+        "id": "bucket",
+        "count": 1
+      },
+      {
+        "id": "basic_chip",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "gas_pipe",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "glass",
+        "count": 1
+      },
+      {
+        "id": "basic_chip",
+        "count": 1
+      },
+      {
+        "id": "bucket",
+        "count": 1
+      },
+      {
+        "id": "gas_pipe",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:basic_gas_tank",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:basic_gas_tank",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "lead_plate + glass + basic_chip + bucket + gas_pipe",
+    "output": "utilitycraft:basic_gas_tank"
+  },
+  {
+    "id": "utilitycraft-crafter-0-1-utilitycraft-advanced-gas-tank",
+    "identifier": "utilitycraft:process/crafter/0-1-utilitycraft-advanced-gas-tank",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "glass",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "advanced_chip",
+        "count": 1
+      },
+      {
+        "id": "basic_gas_tank",
+        "count": 1
+      },
+      {
+        "id": "advanced_chip",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "gas_pipe",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "glass",
+        "count": 1
+      },
+      {
+        "id": "advanced_chip",
+        "count": 1
+      },
+      {
+        "id": "basic_gas_tank",
+        "count": 1
+      },
+      {
+        "id": "gas_pipe",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:advanced_gas_tank",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:advanced_gas_tank",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "lead_plate + glass + advanced_chip + basic_gas_tank + gas_pipe",
+    "output": "utilitycraft:advanced_gas_tank"
+  },
+  {
+    "id": "utilitycraft-crafter-0-2-utilitycraft-expert-gas-tank",
+    "identifier": "utilitycraft:process/crafter/0-2-utilitycraft-expert-gas-tank",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "glass",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "advanced_gas_tank",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "gas_pipe",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "glass",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "advanced_gas_tank",
+        "count": 1
+      },
+      {
+        "id": "gas_pipe",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:expert_gas_tank",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:expert_gas_tank",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "lead_plate + glass + expert_chip + advanced_gas_tank + gas_pipe",
+    "output": "utilitycraft:expert_gas_tank"
+  },
+  {
+    "id": "utilitycraft-crafter-0-3-utilitycraft-ultimate-gas-tank",
+    "identifier": "utilitycraft:process/crafter/0-3-utilitycraft-ultimate-gas-tank",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "glass",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "expert_gas_tank",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "gas_pipe",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "glass",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "expert_gas_tank",
+        "count": 1
+      },
+      {
+        "id": "gas_pipe",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:ultimate_gas_tank",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:ultimate_gas_tank",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "lead_plate + glass + ultimate_chip + expert_gas_tank + gas_pipe",
+    "output": "utilitycraft:ultimate_gas_tank"
+  },
+  {
+    "id": "utilitycraft-crafter-1-0-utilitycraft-liquid-trash-can",
+    "identifier": "utilitycraft:process/crafter/1-0-utilitycraft-liquid-trash-can",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 5,
+    "slots": [
+      null,
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      null,
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "basic_trash_can",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      null,
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      null
+    ],
+    "inputs": [
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "basic_trash_can",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:liquid_trash_can",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:liquid_trash_can",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "fluid_pipe + basic_trash_can",
+    "output": "utilitycraft:liquid_trash_can"
+  },
+  {
+    "id": "utilitycraft-crafter-1-1-utilitycraft-gas-trash-can",
+    "identifier": "utilitycraft:process/crafter/1-1-utilitycraft-gas-trash-can",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 5,
+    "slots": [
+      null,
+      {
+        "id": "gas_pipe",
+        "count": 1
+      },
+      null,
+      {
+        "id": "gas_pipe",
+        "count": 1
+      },
+      {
+        "id": "basic_trash_can",
+        "count": 1
+      },
+      {
+        "id": "gas_pipe",
+        "count": 1
+      },
+      null,
+      {
+        "id": "gas_pipe",
+        "count": 1
+      },
+      null
+    ],
+    "inputs": [
+      {
+        "id": "gas_pipe",
+        "count": 1
+      },
+      {
+        "id": "basic_trash_can",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:gas_trash_can",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:gas_trash_can",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "gas_pipe + basic_trash_can",
+    "output": "utilitycraft:gas_trash_can"
+  },
+  {
+    "id": "utilitycraft-crafter-1-2-utilitycraft-energy-trash-can",
+    "identifier": "utilitycraft:process/crafter/1-2-utilitycraft-energy-trash-can",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 5,
+    "slots": [
+      null,
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      null,
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "basic_trash_can",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      null,
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      null
+    ],
+    "inputs": [
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "basic_trash_can",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:energy_trash_can",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:energy_trash_can",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "energy_cable + basic_trash_can",
+    "output": "utilitycraft:energy_trash_can"
+  },
+  {
+    "id": "utilitycraft-crafter-1-3-utilitycraft-ultimate-trash-can",
+    "identifier": "utilitycraft:process/crafter/1-3-utilitycraft-ultimate-trash-can",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 5,
+    "slots": [
+      null,
+      {
+        "id": "liquid_trash_can",
+        "count": 1
+      },
+      null,
+      {
+        "id": "gas_trash_can",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "basic_trash_can",
+        "count": 1
+      },
+      null,
+      {
+        "id": "energy_trash_can",
+        "count": 1
+      },
+      null
+    ],
+    "inputs": [
+      {
+        "id": "liquid_trash_can",
+        "count": 1
+      },
+      {
+        "id": "gas_trash_can",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "basic_trash_can",
+        "count": 1
+      },
+      {
+        "id": "energy_trash_can",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:ultimate_trash_can",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:ultimate_trash_can",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "liquid_trash_can + gas_trash_can + expert_chip + basic_trash_can + energy_trash_can",
+    "output": "utilitycraft:ultimate_trash_can"
+  },
+  {
+    "id": "utilitycraft-crafter-2-0-utilitycraft-electrolyzer",
+    "identifier": "utilitycraft:process/crafter/2-0-utilitycraft-electrolyzer",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "machine_case",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "gas_pipe",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      },
+      {
+        "id": "gas_pipe",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "machine_case",
+        "count": 1
+      },
+      {
+        "id": "gas_pipe",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:electrolyzer",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:electrolyzer",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "lead_plate + fluid_pipe + expert_chip + machine_case + gas_pipe + stabilized_obsidian_dust",
+    "output": "utilitycraft:electrolyzer"
+  },
+  {
+    "id": "utilitycraft-crafter-2-1-utilitycraft-chemical-converter",
+    "identifier": "utilitycraft:process/crafter/2-1-utilitycraft-chemical-converter",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "gas_pipe",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "machine_case",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "gas_pipe",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "machine_case",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:chemical_converter",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:chemical_converter",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "lead_plate + gas_pipe + ultimate_chip + machine_case + stabilized_obsidian_dust",
+    "output": "utilitycraft:chemical_converter"
+  },
+  {
+    "id": "utilitycraft-crafter-2-2-utilitycraft-basic-gas-generator",
+    "identifier": "utilitycraft:process/crafter/2-2-utilitycraft-basic-gas-generator",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "gold_plate",
+        "count": 1
+      },
+      {
+        "id": "basic_gas_tank",
+        "count": 1
+      },
+      {
+        "id": "gold_plate",
+        "count": 1
+      },
+      {
+        "id": "basic_chip",
+        "count": 1
+      },
+      {
+        "id": "furnace",
+        "count": 1
+      },
+      {
+        "id": "basic_chip",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "basic_chip",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "gold_plate",
+        "count": 1
+      },
+      {
+        "id": "basic_gas_tank",
+        "count": 1
+      },
+      {
+        "id": "basic_chip",
+        "count": 1
+      },
+      {
+        "id": "furnace",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:basic_gas_generator",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:basic_gas_generator",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "gold_plate + basic_gas_tank + basic_chip + furnace + lead_plate",
+    "output": "utilitycraft:basic_gas_generator"
+  },
+  {
+    "id": "utilitycraft-crafter-2-3-utilitycraft-advanced-gas-generator",
+    "identifier": "utilitycraft:process/crafter/2-3-utilitycraft-advanced-gas-generator",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "energized_iron_plate",
+        "count": 1
+      },
+      {
+        "id": "advanced_gas_tank",
+        "count": 1
+      },
+      {
+        "id": "energized_iron_plate",
+        "count": 1
+      },
+      {
+        "id": "advanced_chip",
+        "count": 1
+      },
+      {
+        "id": "basic_gas_generator",
+        "count": 1
+      },
+      {
+        "id": "advanced_chip",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "advanced_chip",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "energized_iron_plate",
+        "count": 1
+      },
+      {
+        "id": "advanced_gas_tank",
+        "count": 1
+      },
+      {
+        "id": "advanced_chip",
+        "count": 1
+      },
+      {
+        "id": "basic_gas_generator",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:advanced_gas_generator",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:advanced_gas_generator",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "energized_iron_plate + advanced_gas_tank + advanced_chip + basic_gas_generator + lead_plate",
+    "output": "utilitycraft:advanced_gas_generator"
+  },
+  {
+    "id": "utilitycraft-crafter-2-4-utilitycraft-expert-gas-generator",
+    "identifier": "utilitycraft:process/crafter/2-4-utilitycraft-expert-gas-generator",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "diamond_dust",
+        "count": 1
+      },
+      {
+        "id": "expert_gas_tank",
+        "count": 1
+      },
+      {
+        "id": "diamond_dust",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "advanced_gas_generator",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "diamond_dust",
+        "count": 1
+      },
+      {
+        "id": "expert_gas_tank",
+        "count": 1
+      },
+      {
+        "id": "expert_chip",
+        "count": 1
+      },
+      {
+        "id": "advanced_gas_generator",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:expert_gas_generator",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:expert_gas_generator",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "diamond_dust + expert_gas_tank + expert_chip + advanced_gas_generator + lead_plate",
+    "output": "utilitycraft:expert_gas_generator"
+  },
+  {
+    "id": "utilitycraft-crafter-2-5-utilitycraft-ultimate-gas-generator",
+    "identifier": "utilitycraft:process/crafter/2-5-utilitycraft-ultimate-gas-generator",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "ultimate_gas_tank",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "expert_gas_generator",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "ultimate_gas_tank",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "expert_gas_generator",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:ultimate_gas_generator",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:ultimate_gas_generator",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "netherite_plate + ultimate_gas_tank + ultimate_chip + expert_gas_generator",
+    "output": "utilitycraft:ultimate_gas_generator"
+  },
+  {
+    "id": "utilitycraft-crafter-3-0-utilitycraft-advanced-battery",
+    "identifier": "utilitycraft:process/crafter/3-0-utilitycraft-advanced-battery",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20380,8 +21778,8 @@
     "output": "utilitycraft:advanced_battery"
   },
   {
-    "id": "utilitycraft-crafter-0-1-utilitycraft-basic-battery",
-    "identifier": "utilitycraft:process/crafter/0-1-utilitycraft-basic-battery",
+    "id": "utilitycraft-crafter-3-1-utilitycraft-basic-battery",
+    "identifier": "utilitycraft:process/crafter/3-1-utilitycraft-basic-battery",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20465,8 +21863,8 @@
     "output": "utilitycraft:basic_battery"
   },
   {
-    "id": "utilitycraft-crafter-0-10-utilitycraft-expert-magmator",
-    "identifier": "utilitycraft:process/crafter/0-10-utilitycraft-expert-magmator",
+    "id": "utilitycraft-crafter-3-10-utilitycraft-expert-magmator",
+    "identifier": "utilitycraft:process/crafter/3-10-utilitycraft-expert-magmator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20554,8 +21952,8 @@
     "output": "utilitycraft:expert_magmator"
   },
   {
-    "id": "utilitycraft-crafter-0-11-utilitycraft-ultimate-magmator",
-    "identifier": "utilitycraft:process/crafter/0-11-utilitycraft-ultimate-magmator",
+    "id": "utilitycraft-crafter-3-11-utilitycraft-ultimate-magmator",
+    "identifier": "utilitycraft:process/crafter/3-11-utilitycraft-ultimate-magmator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20639,8 +22037,8 @@
     "output": "utilitycraft:ultimate_magmator"
   },
   {
-    "id": "utilitycraft-crafter-0-12-utilitycraft-advanced-energy-receiver",
-    "identifier": "utilitycraft:process/crafter/0-12-utilitycraft-advanced-energy-receiver",
+    "id": "utilitycraft-crafter-3-12-utilitycraft-advanced-energy-receiver",
+    "identifier": "utilitycraft:process/crafter/3-12-utilitycraft-advanced-energy-receiver",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20724,8 +22122,8 @@
     "output": "utilitycraft:advanced_energy_receiver"
   },
   {
-    "id": "utilitycraft-crafter-0-13-utilitycraft-basic-energy-receiver",
-    "identifier": "utilitycraft:process/crafter/0-13-utilitycraft-basic-energy-receiver",
+    "id": "utilitycraft-crafter-3-13-utilitycraft-basic-energy-receiver",
+    "identifier": "utilitycraft:process/crafter/3-13-utilitycraft-basic-energy-receiver",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20813,8 +22211,8 @@
     "output": "utilitycraft:basic_energy_receiver"
   },
   {
-    "id": "utilitycraft-crafter-0-14-utilitycraft-expert-energy-receiver",
-    "identifier": "utilitycraft:process/crafter/0-14-utilitycraft-expert-energy-receiver",
+    "id": "utilitycraft-crafter-3-14-utilitycraft-expert-energy-receiver",
+    "identifier": "utilitycraft:process/crafter/3-14-utilitycraft-expert-energy-receiver",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20898,8 +22296,8 @@
     "output": "utilitycraft:expert_energy_receiver"
   },
   {
-    "id": "utilitycraft-crafter-0-15-utilitycraft-ultimate-energy-receiver",
-    "identifier": "utilitycraft:process/crafter/0-15-utilitycraft-ultimate-energy-receiver",
+    "id": "utilitycraft-crafter-3-15-utilitycraft-ultimate-energy-receiver",
+    "identifier": "utilitycraft:process/crafter/3-15-utilitycraft-ultimate-energy-receiver",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20983,8 +22381,8 @@
     "output": "utilitycraft:ultimate_energy_receiver"
   },
   {
-    "id": "utilitycraft-crafter-0-16-utilitycraft-advanced-solar-panel",
-    "identifier": "utilitycraft:process/crafter/0-16-utilitycraft-advanced-solar-panel",
+    "id": "utilitycraft-crafter-3-16-utilitycraft-advanced-solar-panel",
+    "identifier": "utilitycraft:process/crafter/3-16-utilitycraft-advanced-solar-panel",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21072,8 +22470,8 @@
     "output": "utilitycraft:advanced_solar_panel"
   },
   {
-    "id": "utilitycraft-crafter-0-17-utilitycraft-basic-solar-panel",
-    "identifier": "utilitycraft:process/crafter/0-17-utilitycraft-basic-solar-panel",
+    "id": "utilitycraft-crafter-3-17-utilitycraft-basic-solar-panel",
+    "identifier": "utilitycraft:process/crafter/3-17-utilitycraft-basic-solar-panel",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21157,8 +22555,8 @@
     "output": "utilitycraft:basic_solar_panel"
   },
   {
-    "id": "utilitycraft-crafter-0-18-utilitycraft-expert-solar-panel",
-    "identifier": "utilitycraft:process/crafter/0-18-utilitycraft-expert-solar-panel",
+    "id": "utilitycraft-crafter-3-18-utilitycraft-expert-solar-panel",
+    "identifier": "utilitycraft:process/crafter/3-18-utilitycraft-expert-solar-panel",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21246,8 +22644,8 @@
     "output": "utilitycraft:expert_solar_panel"
   },
   {
-    "id": "utilitycraft-crafter-0-19-utilitycraft-ultimate-solar-panel",
-    "identifier": "utilitycraft:process/crafter/0-19-utilitycraft-ultimate-solar-panel",
+    "id": "utilitycraft-crafter-3-19-utilitycraft-ultimate-solar-panel",
+    "identifier": "utilitycraft:process/crafter/3-19-utilitycraft-ultimate-solar-panel",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21335,8 +22733,8 @@
     "output": "utilitycraft:ultimate_solar_panel"
   },
   {
-    "id": "utilitycraft-crafter-0-2-utilitycraft-expert-battery",
-    "identifier": "utilitycraft:process/crafter/0-2-utilitycraft-expert-battery",
+    "id": "utilitycraft-crafter-3-2-utilitycraft-expert-battery",
+    "identifier": "utilitycraft:process/crafter/3-2-utilitycraft-expert-battery",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21420,8 +22818,8 @@
     "output": "utilitycraft:expert_battery"
   },
   {
-    "id": "utilitycraft-crafter-0-20-utilitycraft-advanced-thermo-generator",
-    "identifier": "utilitycraft:process/crafter/0-20-utilitycraft-advanced-thermo-generator",
+    "id": "utilitycraft-crafter-3-20-utilitycraft-advanced-thermo-generator",
+    "identifier": "utilitycraft:process/crafter/3-20-utilitycraft-advanced-thermo-generator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21509,8 +22907,8 @@
     "output": "utilitycraft:advanced_thermo_generator"
   },
   {
-    "id": "utilitycraft-crafter-0-21-utilitycraft-basic-thermo-generator",
-    "identifier": "utilitycraft:process/crafter/0-21-utilitycraft-basic-thermo-generator",
+    "id": "utilitycraft-crafter-3-21-utilitycraft-basic-thermo-generator",
+    "identifier": "utilitycraft:process/crafter/3-21-utilitycraft-basic-thermo-generator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21598,8 +22996,8 @@
     "output": "utilitycraft:basic_thermo_generator"
   },
   {
-    "id": "utilitycraft-crafter-0-22-utilitycraft-expert-thermo-generator",
-    "identifier": "utilitycraft:process/crafter/0-22-utilitycraft-expert-thermo-generator",
+    "id": "utilitycraft-crafter-3-22-utilitycraft-expert-thermo-generator",
+    "identifier": "utilitycraft:process/crafter/3-22-utilitycraft-expert-thermo-generator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21687,8 +23085,8 @@
     "output": "utilitycraft:expert_thermo_generator"
   },
   {
-    "id": "utilitycraft-crafter-0-23-utilitycraft-ultimate-thermo-generator",
-    "identifier": "utilitycraft:process/crafter/0-23-utilitycraft-ultimate-thermo-generator",
+    "id": "utilitycraft-crafter-3-23-utilitycraft-ultimate-thermo-generator",
+    "identifier": "utilitycraft:process/crafter/3-23-utilitycraft-ultimate-thermo-generator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21776,8 +23174,8 @@
     "output": "utilitycraft:ultimate_thermo_generator"
   },
   {
-    "id": "utilitycraft-crafter-0-24-utilitycraft-advanced-energy-transmitter",
-    "identifier": "utilitycraft:process/crafter/0-24-utilitycraft-advanced-energy-transmitter",
+    "id": "utilitycraft-crafter-3-24-utilitycraft-advanced-energy-transmitter",
+    "identifier": "utilitycraft:process/crafter/3-24-utilitycraft-advanced-energy-transmitter",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21861,8 +23259,8 @@
     "output": "utilitycraft:advanced_energy_transmitter"
   },
   {
-    "id": "utilitycraft-crafter-0-25-utilitycraft-basic-energy-transmitter",
-    "identifier": "utilitycraft:process/crafter/0-25-utilitycraft-basic-energy-transmitter",
+    "id": "utilitycraft-crafter-3-25-utilitycraft-basic-energy-transmitter",
+    "identifier": "utilitycraft:process/crafter/3-25-utilitycraft-basic-energy-transmitter",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21950,8 +23348,8 @@
     "output": "utilitycraft:basic_energy_transmitter"
   },
   {
-    "id": "utilitycraft-crafter-0-26-utilitycraft-expert-energy-transmitter",
-    "identifier": "utilitycraft:process/crafter/0-26-utilitycraft-expert-energy-transmitter",
+    "id": "utilitycraft-crafter-3-26-utilitycraft-expert-energy-transmitter",
+    "identifier": "utilitycraft:process/crafter/3-26-utilitycraft-expert-energy-transmitter",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -22035,8 +23433,8 @@
     "output": "utilitycraft:expert_energy_transmitter"
   },
   {
-    "id": "utilitycraft-crafter-0-27-utilitycraft-ultimate-energy-transmitter",
-    "identifier": "utilitycraft:process/crafter/0-27-utilitycraft-ultimate-energy-transmitter",
+    "id": "utilitycraft-crafter-3-27-utilitycraft-ultimate-energy-transmitter",
+    "identifier": "utilitycraft:process/crafter/3-27-utilitycraft-ultimate-energy-transmitter",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -22120,8 +23518,8 @@
     "output": "utilitycraft:ultimate_energy_transmitter"
   },
   {
-    "id": "utilitycraft-crafter-0-28-utilitycraft-advanced-wind-turbine",
-    "identifier": "utilitycraft:process/crafter/0-28-utilitycraft-advanced-wind-turbine",
+    "id": "utilitycraft-crafter-3-28-utilitycraft-advanced-wind-turbine",
+    "identifier": "utilitycraft:process/crafter/3-28-utilitycraft-advanced-wind-turbine",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -22209,8 +23607,8 @@
     "output": "utilitycraft:advanced_wind_turbine"
   },
   {
-    "id": "utilitycraft-crafter-0-29-utilitycraft-basic-wind-turbine",
-    "identifier": "utilitycraft:process/crafter/0-29-utilitycraft-basic-wind-turbine",
+    "id": "utilitycraft-crafter-3-29-utilitycraft-basic-wind-turbine",
+    "identifier": "utilitycraft:process/crafter/3-29-utilitycraft-basic-wind-turbine",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -22298,8 +23696,8 @@
     "output": "utilitycraft:basic_wind_turbine"
   },
   {
-    "id": "utilitycraft-crafter-0-3-utilitycraft-ultimate-battery",
-    "identifier": "utilitycraft:process/crafter/0-3-utilitycraft-ultimate-battery",
+    "id": "utilitycraft-crafter-3-3-utilitycraft-ultimate-battery",
+    "identifier": "utilitycraft:process/crafter/3-3-utilitycraft-ultimate-battery",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -22383,8 +23781,8 @@
     "output": "utilitycraft:ultimate_battery"
   },
   {
-    "id": "utilitycraft-crafter-0-30-utilitycraft-expert-wind-turbine",
-    "identifier": "utilitycraft:process/crafter/0-30-utilitycraft-expert-wind-turbine",
+    "id": "utilitycraft-crafter-3-30-utilitycraft-expert-wind-turbine",
+    "identifier": "utilitycraft:process/crafter/3-30-utilitycraft-expert-wind-turbine",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -22472,8 +23870,8 @@
     "output": "utilitycraft:expert_wind_turbine"
   },
   {
-    "id": "utilitycraft-crafter-0-31-utilitycraft-ultimate-wind-turbine",
-    "identifier": "utilitycraft:process/crafter/0-31-utilitycraft-ultimate-wind-turbine",
+    "id": "utilitycraft-crafter-3-31-utilitycraft-ultimate-wind-turbine",
+    "identifier": "utilitycraft:process/crafter/3-31-utilitycraft-ultimate-wind-turbine",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -22561,8 +23959,8 @@
     "output": "utilitycraft:ultimate_wind_turbine"
   },
   {
-    "id": "utilitycraft-crafter-0-32-utilitycraft-machine-case",
-    "identifier": "utilitycraft:process/crafter/0-32-utilitycraft-machine-case",
+    "id": "utilitycraft-crafter-3-32-utilitycraft-machine-case",
+    "identifier": "utilitycraft:process/crafter/3-32-utilitycraft-machine-case",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -22646,8 +24044,8 @@
     "output": "utilitycraft:machine_case"
   },
   {
-    "id": "utilitycraft-crafter-0-33-utilitycraft-assembler",
-    "identifier": "utilitycraft:process/crafter/0-33-utilitycraft-assembler",
+    "id": "utilitycraft-crafter-3-33-utilitycraft-assembler",
+    "identifier": "utilitycraft:process/crafter/3-33-utilitycraft-assembler",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -22735,8 +24133,8 @@
     "output": "utilitycraft:assembler"
   },
   {
-    "id": "utilitycraft-crafter-0-34-utilitycraft-autofisher",
-    "identifier": "utilitycraft:process/crafter/0-34-utilitycraft-autofisher",
+    "id": "utilitycraft-crafter-3-34-utilitycraft-autofisher",
+    "identifier": "utilitycraft:process/crafter/3-34-utilitycraft-autofisher",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -22824,8 +24222,8 @@
     "output": "utilitycraft:autofisher"
   },
   {
-    "id": "utilitycraft-crafter-0-35-utilitycraft-autosieve",
-    "identifier": "utilitycraft:process/crafter/0-35-utilitycraft-autosieve",
+    "id": "utilitycraft-crafter-3-35-utilitycraft-autosieve",
+    "identifier": "utilitycraft:process/crafter/3-35-utilitycraft-autosieve",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -22913,8 +24311,8 @@
     "output": "utilitycraft:autosieve"
   },
   {
-    "id": "utilitycraft-crafter-0-36-utilitycraft-block-breaker",
-    "identifier": "utilitycraft:process/crafter/0-36-utilitycraft-block-breaker",
+    "id": "utilitycraft-crafter-3-36-utilitycraft-block-breaker",
+    "identifier": "utilitycraft:process/crafter/3-36-utilitycraft-block-breaker",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -23002,8 +24400,8 @@
     "output": "utilitycraft:block_breaker"
   },
   {
-    "id": "utilitycraft-crafter-0-37-utilitycraft-block-placer",
-    "identifier": "utilitycraft:process/crafter/0-37-utilitycraft-block-placer",
+    "id": "utilitycraft-crafter-3-37-utilitycraft-block-placer",
+    "identifier": "utilitycraft:process/crafter/3-37-utilitycraft-block-placer",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -23091,8 +24489,8 @@
     "output": "utilitycraft:block_placer"
   },
   {
-    "id": "utilitycraft-crafter-0-38-utilitycraft-blueprint-paper",
-    "identifier": "utilitycraft:process/crafter/0-38-utilitycraft-blueprint-paper",
+    "id": "utilitycraft-crafter-3-38-utilitycraft-blueprint-paper",
+    "identifier": "utilitycraft:process/crafter/3-38-utilitycraft-blueprint-paper",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -23150,8 +24548,8 @@
     "output": "utilitycraft:blueprint_paper"
   },
   {
-    "id": "utilitycraft-crafter-0-39-utilitycraft-crusher",
-    "identifier": "utilitycraft:process/crafter/0-39-utilitycraft-crusher",
+    "id": "utilitycraft-crafter-3-39-utilitycraft-crusher",
+    "identifier": "utilitycraft:process/crafter/3-39-utilitycraft-crusher",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -23239,8 +24637,8 @@
     "output": "utilitycraft:crusher"
   },
   {
-    "id": "utilitycraft-crafter-0-4-utilitycraft-advanced-furnator",
-    "identifier": "utilitycraft:process/crafter/0-4-utilitycraft-advanced-furnator",
+    "id": "utilitycraft-crafter-3-4-utilitycraft-advanced-furnator",
+    "identifier": "utilitycraft:process/crafter/3-4-utilitycraft-advanced-furnator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -23328,8 +24726,8 @@
     "output": "utilitycraft:advanced_furnator"
   },
   {
-    "id": "utilitycraft-crafter-0-40-utilitycraft-digitizer",
-    "identifier": "utilitycraft:process/crafter/0-40-utilitycraft-digitizer",
+    "id": "utilitycraft-crafter-3-40-utilitycraft-digitizer",
+    "identifier": "utilitycraft:process/crafter/3-40-utilitycraft-digitizer",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -23417,8 +24815,8 @@
     "output": "utilitycraft:digitizer"
   },
   {
-    "id": "utilitycraft-crafter-0-41-utilitycraft-electro-press",
-    "identifier": "utilitycraft:process/crafter/0-41-utilitycraft-electro-press",
+    "id": "utilitycraft-crafter-3-41-utilitycraft-electro-press",
+    "identifier": "utilitycraft:process/crafter/3-41-utilitycraft-electro-press",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -23506,8 +24904,8 @@
     "output": "utilitycraft:electro_press"
   },
   {
-    "id": "utilitycraft-crafter-0-5-utilitycraft-basic-furnator",
-    "identifier": "utilitycraft:process/crafter/0-5-utilitycraft-basic-furnator",
+    "id": "utilitycraft-crafter-3-5-utilitycraft-basic-furnator",
+    "identifier": "utilitycraft:process/crafter/3-5-utilitycraft-basic-furnator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -23595,8 +24993,8 @@
     "output": "utilitycraft:basic_furnator"
   },
   {
-    "id": "utilitycraft-crafter-0-6-utilitycraft-expert-furnator",
-    "identifier": "utilitycraft:process/crafter/0-6-utilitycraft-expert-furnator",
+    "id": "utilitycraft-crafter-3-6-utilitycraft-expert-furnator",
+    "identifier": "utilitycraft:process/crafter/3-6-utilitycraft-expert-furnator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -23684,8 +25082,8 @@
     "output": "utilitycraft:expert_furnator"
   },
   {
-    "id": "utilitycraft-crafter-0-7-utilitycraft-ultimate-furnator",
-    "identifier": "utilitycraft:process/crafter/0-7-utilitycraft-ultimate-furnator",
+    "id": "utilitycraft-crafter-3-7-utilitycraft-ultimate-furnator",
+    "identifier": "utilitycraft:process/crafter/3-7-utilitycraft-ultimate-furnator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -23773,8 +25171,8 @@
     "output": "utilitycraft:ultimate_furnator"
   },
   {
-    "id": "utilitycraft-crafter-0-8-utilitycraft-advanced-magmator",
-    "identifier": "utilitycraft:process/crafter/0-8-utilitycraft-advanced-magmator",
+    "id": "utilitycraft-crafter-3-8-utilitycraft-advanced-magmator",
+    "identifier": "utilitycraft:process/crafter/3-8-utilitycraft-advanced-magmator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -23862,8 +25260,8 @@
     "output": "utilitycraft:advanced_magmator"
   },
   {
-    "id": "utilitycraft-crafter-0-9-utilitycraft-basic-magmator",
-    "identifier": "utilitycraft:process/crafter/0-9-utilitycraft-basic-magmator",
+    "id": "utilitycraft-crafter-3-9-utilitycraft-basic-magmator",
+    "identifier": "utilitycraft:process/crafter/3-9-utilitycraft-basic-magmator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -23951,8 +25349,8 @@
     "output": "utilitycraft:basic_magmator"
   },
   {
-    "id": "utilitycraft-crafter-1-0-utilitycraft-harvester",
-    "identifier": "utilitycraft:process/crafter/1-0-utilitycraft-harvester",
+    "id": "utilitycraft-crafter-4-0-utilitycraft-harvester",
+    "identifier": "utilitycraft:process/crafter/4-0-utilitycraft-harvester",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -24040,8 +25438,8 @@
     "output": "utilitycraft:harvester"
   },
   {
-    "id": "utilitycraft-crafter-1-1-utilitycraft-incinerator",
-    "identifier": "utilitycraft:process/crafter/1-1-utilitycraft-incinerator",
+    "id": "utilitycraft-crafter-4-1-utilitycraft-incinerator",
+    "identifier": "utilitycraft:process/crafter/4-1-utilitycraft-incinerator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -24129,8 +25527,8 @@
     "output": "utilitycraft:incinerator"
   },
   {
-    "id": "utilitycraft-crafter-1-10-utilitycraft-mechanic-hopper",
-    "identifier": "utilitycraft:process/crafter/1-10-utilitycraft-mechanic-hopper",
+    "id": "utilitycraft-crafter-4-10-utilitycraft-mechanic-hopper",
+    "identifier": "utilitycraft:process/crafter/4-10-utilitycraft-mechanic-hopper",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -24197,8 +25595,8 @@
     "output": "utilitycraft:mechanic_hopper"
   },
   {
-    "id": "utilitycraft-crafter-1-11-utilitycraft-mechanic-upper",
-    "identifier": "utilitycraft:process/crafter/1-11-utilitycraft-mechanic-upper",
+    "id": "utilitycraft-crafter-4-11-utilitycraft-mechanic-upper",
+    "identifier": "utilitycraft:process/crafter/4-11-utilitycraft-mechanic-upper",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -24265,8 +25663,8 @@
     "output": "utilitycraft:mechanic_upper"
   },
   {
-    "id": "utilitycraft-crafter-1-12-utilitycraft-mechanical-spawner",
-    "identifier": "utilitycraft:process/crafter/1-12-utilitycraft-mechanical-spawner",
+    "id": "utilitycraft-crafter-4-12-utilitycraft-mechanical-spawner",
+    "identifier": "utilitycraft:process/crafter/4-12-utilitycraft-mechanical-spawner",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -24350,8 +25748,8 @@
     "output": "utilitycraft:mechanical_spawner"
   },
   {
-    "id": "utilitycraft-crafter-1-13-utilitycraft-spawner-core",
-    "identifier": "utilitycraft:process/crafter/1-13-utilitycraft-spawner-core",
+    "id": "utilitycraft-crafter-4-13-utilitycraft-spawner-core",
+    "identifier": "utilitycraft:process/crafter/4-13-utilitycraft-spawner-core",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -24431,8 +25829,8 @@
     "output": "utilitycraft:spawner_core"
   },
   {
-    "id": "utilitycraft-crafter-1-14-utilitycraft-ender-hopper",
-    "identifier": "utilitycraft:process/crafter/1-14-utilitycraft-ender-hopper",
+    "id": "utilitycraft-crafter-4-14-utilitycraft-ender-hopper",
+    "identifier": "utilitycraft:process/crafter/4-14-utilitycraft-ender-hopper",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -24506,8 +25904,8 @@
     "output": "utilitycraft:ender_hopper"
   },
   {
-    "id": "utilitycraft-crafter-1-15-utilitycraft-fan",
-    "identifier": "utilitycraft:process/crafter/1-15-utilitycraft-fan",
+    "id": "utilitycraft-crafter-4-15-utilitycraft-fan",
+    "identifier": "utilitycraft:process/crafter/4-15-utilitycraft-fan",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -24591,8 +25989,8 @@
     "output": "utilitycraft:fan"
   },
   {
-    "id": "utilitycraft-crafter-1-16-utilitycraft-mob-grinder",
-    "identifier": "utilitycraft:process/crafter/1-16-utilitycraft-mob-grinder",
+    "id": "utilitycraft-crafter-4-16-utilitycraft-mob-grinder",
+    "identifier": "utilitycraft:process/crafter/4-16-utilitycraft-mob-grinder",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -24670,8 +26068,8 @@
     "output": "utilitycraft:mob_grinder"
   },
   {
-    "id": "utilitycraft-crafter-1-17-utilitycraft-xp-magnet",
-    "identifier": "utilitycraft:process/crafter/1-17-utilitycraft-xp-magnet",
+    "id": "utilitycraft-crafter-4-17-utilitycraft-xp-magnet",
+    "identifier": "utilitycraft:process/crafter/4-17-utilitycraft-xp-magnet",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -24747,8 +26145,8 @@
     "output": "utilitycraft:xp_magnet"
   },
   {
-    "id": "utilitycraft-crafter-1-18-utilitycraft-energy-cable",
-    "identifier": "utilitycraft:process/crafter/1-18-utilitycraft-energy-cable",
+    "id": "utilitycraft-crafter-4-18-utilitycraft-energy-cable",
+    "identifier": "utilitycraft:process/crafter/4-18-utilitycraft-energy-cable",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -24828,8 +26226,8 @@
     "output": "8× utilitycraft:energy_cable"
   },
   {
-    "id": "utilitycraft-crafter-1-19-utilitycraft-fluid-extractor",
-    "identifier": "utilitycraft:process/crafter/1-19-utilitycraft-fluid-extractor",
+    "id": "utilitycraft-crafter-4-19-utilitycraft-fluid-extractor",
+    "identifier": "utilitycraft:process/crafter/4-19-utilitycraft-fluid-extractor",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -24893,8 +26291,8 @@
     "output": "utilitycraft:fluid_extractor"
   },
   {
-    "id": "utilitycraft-crafter-1-2-utilitycraft-induction-anvil",
-    "identifier": "utilitycraft:process/crafter/1-2-utilitycraft-induction-anvil",
+    "id": "utilitycraft-crafter-4-2-utilitycraft-induction-anvil",
+    "identifier": "utilitycraft:process/crafter/4-2-utilitycraft-induction-anvil",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -24982,8 +26380,8 @@
     "output": "utilitycraft:induction_anvil"
   },
   {
-    "id": "utilitycraft-crafter-1-20-utilitycraft-fluid-pipe",
-    "identifier": "utilitycraft:process/crafter/1-20-utilitycraft-fluid-pipe",
+    "id": "utilitycraft-crafter-4-20-utilitycraft-fluid-pipe",
+    "identifier": "utilitycraft:process/crafter/4-20-utilitycraft-fluid-pipe",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -25063,8 +26461,8 @@
     "output": "8× utilitycraft:fluid_pipe"
   },
   {
-    "id": "utilitycraft-crafter-1-21-utilitycraft-item-conduit",
-    "identifier": "utilitycraft:process/crafter/1-21-utilitycraft-item-conduit",
+    "id": "utilitycraft-crafter-4-21-utilitycraft-item-conduit",
+    "identifier": "utilitycraft:process/crafter/4-21-utilitycraft-item-conduit",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -25144,8 +26542,8 @@
     "output": "8× utilitycraft:item_conduit"
   },
   {
-    "id": "utilitycraft-crafter-1-22-utilitycraft-item-exporter",
-    "identifier": "utilitycraft:process/crafter/1-22-utilitycraft-item-exporter",
+    "id": "utilitycraft-crafter-4-22-utilitycraft-item-exporter",
+    "identifier": "utilitycraft:process/crafter/4-22-utilitycraft-item-exporter",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -25209,8 +26607,8 @@
     "output": "utilitycraft:item_exporter"
   },
   {
-    "id": "utilitycraft-crafter-1-23-utilitycraft-item-importer",
-    "identifier": "utilitycraft:process/crafter/1-23-utilitycraft-item-importer",
+    "id": "utilitycraft-crafter-4-23-utilitycraft-item-importer",
+    "identifier": "utilitycraft:process/crafter/4-23-utilitycraft-item-importer",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -25274,8 +26672,8 @@
     "output": "utilitycraft:item_importer"
   },
   {
-    "id": "utilitycraft-crafter-1-24-utilitycraft-mechanic-hopper",
-    "identifier": "utilitycraft:process/crafter/1-24-utilitycraft-mechanic-hopper",
+    "id": "utilitycraft-crafter-4-24-utilitycraft-mechanic-hopper",
+    "identifier": "utilitycraft:process/crafter/4-24-utilitycraft-mechanic-hopper",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -25323,8 +26721,8 @@
     "output": "utilitycraft:mechanic_hopper"
   },
   {
-    "id": "utilitycraft-crafter-1-25-utilitycraft-mechanic-upper",
-    "identifier": "utilitycraft:process/crafter/1-25-utilitycraft-mechanic-upper",
+    "id": "utilitycraft-crafter-4-25-utilitycraft-mechanic-upper",
+    "identifier": "utilitycraft:process/crafter/4-25-utilitycraft-mechanic-upper",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -25372,8 +26770,8 @@
     "output": "utilitycraft:mechanic_upper"
   },
   {
-    "id": "utilitycraft-crafter-1-26-utilitycraft-advanced-fluid-tank",
-    "identifier": "utilitycraft:process/crafter/1-26-utilitycraft-advanced-fluid-tank",
+    "id": "utilitycraft-crafter-4-26-utilitycraft-advanced-fluid-tank",
+    "identifier": "utilitycraft:process/crafter/4-26-utilitycraft-advanced-fluid-tank",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -25381,19 +26779,15 @@
     "slotCount": 9,
     "slots": [
       {
-        "id": "energized_iron_ingot",
+        "id": "steel_plate",
         "count": 1
       },
       {
-        "id": "basic_fluid_tank",
+        "id": "glass",
         "count": 1
       },
       {
-        "id": "energized_iron_ingot",
-        "count": 1
-      },
-      {
-        "id": "basic_fluid_tank",
+        "id": "steel_plate",
         "count": 1
       },
       {
@@ -25405,25 +26799,29 @@
         "count": 1
       },
       {
-        "id": "energized_iron_ingot",
+        "id": "advanced_chip",
         "count": 1
       },
       {
-        "id": "glass",
+        "id": "steel_plate",
         "count": 1
       },
       {
-        "id": "energized_iron_ingot",
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
         "count": 1
       }
     ],
     "inputs": [
       {
-        "id": "energized_iron_ingot",
+        "id": "steel_plate",
         "count": 1
       },
       {
-        "id": "basic_fluid_tank",
+        "id": "glass",
         "count": 1
       },
       {
@@ -25431,7 +26829,11 @@
         "count": 1
       },
       {
-        "id": "glass",
+        "id": "basic_fluid_tank",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
         "count": 1
       }
     ],
@@ -25453,12 +26855,12 @@
       "category": "Base"
     },
     "originId": "utilitycraft",
-    "input": "energized_iron_ingot + basic_fluid_tank + advanced_chip + glass",
+    "input": "steel_plate + glass + advanced_chip + basic_fluid_tank + fluid_pipe",
     "output": "utilitycraft:advanced_fluid_tank"
   },
   {
-    "id": "utilitycraft-crafter-1-27-utilitycraft-basic-fluid-tank",
-    "identifier": "utilitycraft:process/crafter/1-27-utilitycraft-basic-fluid-tank",
+    "id": "utilitycraft-crafter-4-27-utilitycraft-basic-fluid-tank",
+    "identifier": "utilitycraft:process/crafter/4-27-utilitycraft-basic-fluid-tank",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -25466,7 +26868,7 @@
     "slotCount": 9,
     "slots": [
       {
-        "id": "gold_plate",
+        "id": "steel_plate",
         "count": 1
       },
       {
@@ -25474,11 +26876,7 @@
         "count": 1
       },
       {
-        "id": "gold_plate",
-        "count": 1
-      },
-      {
-        "id": "glass",
+        "id": "steel_plate",
         "count": 1
       },
       {
@@ -25486,25 +26884,29 @@
         "count": 1
       },
       {
-        "id": "glass",
+        "id": "bucket",
         "count": 1
       },
       {
-        "id": "gold_plate",
+        "id": "basic_chip",
         "count": 1
       },
       {
-        "id": "glass",
+        "id": "steel_plate",
         "count": 1
       },
       {
-        "id": "gold_plate",
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
         "count": 1
       }
     ],
     "inputs": [
       {
-        "id": "gold_plate",
+        "id": "steel_plate",
         "count": 1
       },
       {
@@ -25513,6 +26915,14 @@
       },
       {
         "id": "basic_chip",
+        "count": 1
+      },
+      {
+        "id": "bucket",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
         "count": 1
       }
     ],
@@ -25534,12 +26944,12 @@
       "category": "Base"
     },
     "originId": "utilitycraft",
-    "input": "gold_plate + glass + basic_chip",
+    "input": "steel_plate + glass + basic_chip + bucket + fluid_pipe",
     "output": "utilitycraft:basic_fluid_tank"
   },
   {
-    "id": "utilitycraft-crafter-1-28-utilitycraft-expert-fluid-tank",
-    "identifier": "utilitycraft:process/crafter/1-28-utilitycraft-expert-fluid-tank",
+    "id": "utilitycraft-crafter-4-28-utilitycraft-expert-fluid-tank",
+    "identifier": "utilitycraft:process/crafter/4-28-utilitycraft-expert-fluid-tank",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -25547,19 +26957,15 @@
     "slotCount": 9,
     "slots": [
       {
-        "id": "diamond_dust",
+        "id": "steel_plate",
         "count": 1
       },
       {
-        "id": "advanced_fluid_tank",
+        "id": "glass",
         "count": 1
       },
       {
-        "id": "diamond_dust",
-        "count": 1
-      },
-      {
-        "id": "advanced_fluid_tank",
+        "id": "steel_plate",
         "count": 1
       },
       {
@@ -25571,25 +26977,29 @@
         "count": 1
       },
       {
-        "id": "diamond_dust",
+        "id": "expert_chip",
         "count": 1
       },
       {
-        "id": "glass",
+        "id": "steel_plate",
         "count": 1
       },
       {
-        "id": "diamond_dust",
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
         "count": 1
       }
     ],
     "inputs": [
       {
-        "id": "diamond_dust",
+        "id": "steel_plate",
         "count": 1
       },
       {
-        "id": "advanced_fluid_tank",
+        "id": "glass",
         "count": 1
       },
       {
@@ -25597,7 +27007,11 @@
         "count": 1
       },
       {
-        "id": "glass",
+        "id": "advanced_fluid_tank",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
         "count": 1
       }
     ],
@@ -25619,12 +27033,12 @@
       "category": "Base"
     },
     "originId": "utilitycraft",
-    "input": "diamond_dust + advanced_fluid_tank + expert_chip + glass",
+    "input": "steel_plate + glass + expert_chip + advanced_fluid_tank + fluid_pipe",
     "output": "utilitycraft:expert_fluid_tank"
   },
   {
-    "id": "utilitycraft-crafter-1-29-utilitycraft-ultimate-fluid-tank",
-    "identifier": "utilitycraft:process/crafter/1-29-utilitycraft-ultimate-fluid-tank",
+    "id": "utilitycraft-crafter-4-29-utilitycraft-ultimate-fluid-tank",
+    "identifier": "utilitycraft:process/crafter/4-29-utilitycraft-ultimate-fluid-tank",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -25632,19 +27046,15 @@
     "slotCount": 9,
     "slots": [
       {
-        "id": "netherite_dust",
+        "id": "steel_plate",
         "count": 1
       },
       {
-        "id": "expert_fluid_tank",
+        "id": "glass",
         "count": 1
       },
       {
-        "id": "netherite_dust",
-        "count": 1
-      },
-      {
-        "id": "expert_fluid_tank",
+        "id": "steel_plate",
         "count": 1
       },
       {
@@ -25656,25 +27066,29 @@
         "count": 1
       },
       {
-        "id": "netherite_dust",
+        "id": "ultimate_chip",
         "count": 1
       },
       {
-        "id": "glass",
+        "id": "steel_plate",
         "count": 1
       },
       {
-        "id": "netherite_dust",
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
         "count": 1
       }
     ],
     "inputs": [
       {
-        "id": "netherite_dust",
+        "id": "steel_plate",
         "count": 1
       },
       {
-        "id": "expert_fluid_tank",
+        "id": "glass",
         "count": 1
       },
       {
@@ -25682,7 +27096,11 @@
         "count": 1
       },
       {
-        "id": "glass",
+        "id": "expert_fluid_tank",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
         "count": 1
       }
     ],
@@ -25704,12 +27122,12 @@
       "category": "Base"
     },
     "originId": "utilitycraft",
-    "input": "netherite_dust + expert_fluid_tank + ultimate_chip + glass",
+    "input": "steel_plate + glass + ultimate_chip + expert_fluid_tank + fluid_pipe",
     "output": "utilitycraft:ultimate_fluid_tank"
   },
   {
-    "id": "utilitycraft-crafter-1-3-utilitycraft-infuser",
-    "identifier": "utilitycraft:process/crafter/1-3-utilitycraft-infuser",
+    "id": "utilitycraft-crafter-4-3-utilitycraft-infuser",
+    "identifier": "utilitycraft:process/crafter/4-3-utilitycraft-infuser",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -25797,8 +27215,8 @@
     "output": "utilitycraft:infuser"
   },
   {
-    "id": "utilitycraft-crafter-1-30-utilitycraft-xp-drain",
-    "identifier": "utilitycraft:process/crafter/1-30-utilitycraft-xp-drain",
+    "id": "utilitycraft-crafter-4-30-utilitycraft-xp-drain",
+    "identifier": "utilitycraft:process/crafter/4-30-utilitycraft-xp-drain",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -25878,8 +27296,8 @@
     "output": "utilitycraft:xp_drain"
   },
   {
-    "id": "utilitycraft-crafter-1-31-utilitycraft-xp-spout",
-    "identifier": "utilitycraft:process/crafter/1-31-utilitycraft-xp-spout",
+    "id": "utilitycraft-crafter-4-31-utilitycraft-xp-spout",
+    "identifier": "utilitycraft:process/crafter/4-31-utilitycraft-xp-spout",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -25954,8 +27372,8 @@
     "output": "utilitycraft:xp_spout"
   },
   {
-    "id": "utilitycraft-crafter-1-32-utilitycraft-black-elevator",
-    "identifier": "utilitycraft:process/crafter/1-32-utilitycraft-black-elevator",
+    "id": "utilitycraft-crafter-4-32-utilitycraft-black-elevator",
+    "identifier": "utilitycraft:process/crafter/4-32-utilitycraft-black-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -26031,8 +27449,8 @@
     "output": "utilitycraft:black_elevator"
   },
   {
-    "id": "utilitycraft-crafter-1-33-utilitycraft-blue-elevator",
-    "identifier": "utilitycraft:process/crafter/1-33-utilitycraft-blue-elevator",
+    "id": "utilitycraft-crafter-4-33-utilitycraft-blue-elevator",
+    "identifier": "utilitycraft:process/crafter/4-33-utilitycraft-blue-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -26108,8 +27526,8 @@
     "output": "utilitycraft:blue_elevator"
   },
   {
-    "id": "utilitycraft-crafter-1-34-utilitycraft-brown-elevator",
-    "identifier": "utilitycraft:process/crafter/1-34-utilitycraft-brown-elevator",
+    "id": "utilitycraft-crafter-4-34-utilitycraft-brown-elevator",
+    "identifier": "utilitycraft:process/crafter/4-34-utilitycraft-brown-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -26185,8 +27603,8 @@
     "output": "utilitycraft:brown_elevator"
   },
   {
-    "id": "utilitycraft-crafter-1-35-utilitycraft-cyan-elevator",
-    "identifier": "utilitycraft:process/crafter/1-35-utilitycraft-cyan-elevator",
+    "id": "utilitycraft-crafter-4-35-utilitycraft-cyan-elevator",
+    "identifier": "utilitycraft:process/crafter/4-35-utilitycraft-cyan-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -26262,8 +27680,8 @@
     "output": "utilitycraft:cyan_elevator"
   },
   {
-    "id": "utilitycraft-crafter-1-36-utilitycraft-gray-elevator",
-    "identifier": "utilitycraft:process/crafter/1-36-utilitycraft-gray-elevator",
+    "id": "utilitycraft-crafter-4-36-utilitycraft-gray-elevator",
+    "identifier": "utilitycraft:process/crafter/4-36-utilitycraft-gray-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -26339,8 +27757,8 @@
     "output": "utilitycraft:gray_elevator"
   },
   {
-    "id": "utilitycraft-crafter-1-37-utilitycraft-green-elevator",
-    "identifier": "utilitycraft:process/crafter/1-37-utilitycraft-green-elevator",
+    "id": "utilitycraft-crafter-4-37-utilitycraft-green-elevator",
+    "identifier": "utilitycraft:process/crafter/4-37-utilitycraft-green-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -26416,8 +27834,8 @@
     "output": "utilitycraft:green_elevator"
   },
   {
-    "id": "utilitycraft-crafter-1-38-utilitycraft-light-blue-elevator",
-    "identifier": "utilitycraft:process/crafter/1-38-utilitycraft-light-blue-elevator",
+    "id": "utilitycraft-crafter-4-38-utilitycraft-light-blue-elevator",
+    "identifier": "utilitycraft:process/crafter/4-38-utilitycraft-light-blue-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -26493,8 +27911,8 @@
     "output": "utilitycraft:light_blue_elevator"
   },
   {
-    "id": "utilitycraft-crafter-1-39-utilitycraft-light-gray-elevator",
-    "identifier": "utilitycraft:process/crafter/1-39-utilitycraft-light-gray-elevator",
+    "id": "utilitycraft-crafter-4-39-utilitycraft-light-gray-elevator",
+    "identifier": "utilitycraft:process/crafter/4-39-utilitycraft-light-gray-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -26570,8 +27988,8 @@
     "output": "utilitycraft:light_gray_elevator"
   },
   {
-    "id": "utilitycraft-crafter-1-4-utilitycraft-magmatic-chamber",
-    "identifier": "utilitycraft:process/crafter/1-4-utilitycraft-magmatic-chamber",
+    "id": "utilitycraft-crafter-4-4-utilitycraft-magmatic-chamber",
+    "identifier": "utilitycraft:process/crafter/4-4-utilitycraft-magmatic-chamber",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -26663,8 +28081,8 @@
     "output": "utilitycraft:magmatic_chamber"
   },
   {
-    "id": "utilitycraft-crafter-1-40-utilitycraft-lime-elevator",
-    "identifier": "utilitycraft:process/crafter/1-40-utilitycraft-lime-elevator",
+    "id": "utilitycraft-crafter-4-40-utilitycraft-lime-elevator",
+    "identifier": "utilitycraft:process/crafter/4-40-utilitycraft-lime-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -26740,8 +28158,8 @@
     "output": "utilitycraft:lime_elevator"
   },
   {
-    "id": "utilitycraft-crafter-1-41-utilitycraft-magenta-elevator",
-    "identifier": "utilitycraft:process/crafter/1-41-utilitycraft-magenta-elevator",
+    "id": "utilitycraft-crafter-4-41-utilitycraft-magenta-elevator",
+    "identifier": "utilitycraft:process/crafter/4-41-utilitycraft-magenta-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -26817,8 +28235,8 @@
     "output": "utilitycraft:magenta_elevator"
   },
   {
-    "id": "utilitycraft-crafter-1-42-utilitycraft-orange-elevator",
-    "identifier": "utilitycraft:process/crafter/1-42-utilitycraft-orange-elevator",
+    "id": "utilitycraft-crafter-4-42-utilitycraft-orange-elevator",
+    "identifier": "utilitycraft:process/crafter/4-42-utilitycraft-orange-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -26894,8 +28312,8 @@
     "output": "utilitycraft:orange_elevator"
   },
   {
-    "id": "utilitycraft-crafter-1-43-utilitycraft-pink-elevator",
-    "identifier": "utilitycraft:process/crafter/1-43-utilitycraft-pink-elevator",
+    "id": "utilitycraft-crafter-4-43-utilitycraft-pink-elevator",
+    "identifier": "utilitycraft:process/crafter/4-43-utilitycraft-pink-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -26971,8 +28389,8 @@
     "output": "utilitycraft:pink_elevator"
   },
   {
-    "id": "utilitycraft-crafter-1-44-utilitycraft-purple-elevator",
-    "identifier": "utilitycraft:process/crafter/1-44-utilitycraft-purple-elevator",
+    "id": "utilitycraft-crafter-4-44-utilitycraft-purple-elevator",
+    "identifier": "utilitycraft:process/crafter/4-44-utilitycraft-purple-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -27048,8 +28466,8 @@
     "output": "utilitycraft:purple_elevator"
   },
   {
-    "id": "utilitycraft-crafter-1-45-utilitycraft-red-elevator",
-    "identifier": "utilitycraft:process/crafter/1-45-utilitycraft-red-elevator",
+    "id": "utilitycraft-crafter-4-45-utilitycraft-red-elevator",
+    "identifier": "utilitycraft:process/crafter/4-45-utilitycraft-red-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -27125,8 +28543,8 @@
     "output": "utilitycraft:red_elevator"
   },
   {
-    "id": "utilitycraft-crafter-1-46-utilitycraft-yellow-elevator",
-    "identifier": "utilitycraft:process/crafter/1-46-utilitycraft-yellow-elevator",
+    "id": "utilitycraft-crafter-4-46-utilitycraft-yellow-elevator",
+    "identifier": "utilitycraft:process/crafter/4-46-utilitycraft-yellow-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -27202,8 +28620,8 @@
     "output": "utilitycraft:yellow_elevator"
   },
   {
-    "id": "utilitycraft-crafter-1-5-utilitycraft-seed-synthesizer",
-    "identifier": "utilitycraft:process/crafter/1-5-utilitycraft-seed-synthesizer",
+    "id": "utilitycraft-crafter-4-5-utilitycraft-seed-synthesizer",
+    "identifier": "utilitycraft:process/crafter/4-5-utilitycraft-seed-synthesizer",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -27291,8 +28709,8 @@
     "output": "utilitycraft:seed_synthesizer"
   },
   {
-    "id": "utilitycraft-crafter-1-6-utilitycraft-basic-trash-can",
-    "identifier": "utilitycraft:process/crafter/1-6-utilitycraft-basic-trash-can",
+    "id": "utilitycraft-crafter-4-6-utilitycraft-basic-trash-can",
+    "identifier": "utilitycraft:process/crafter/4-6-utilitycraft-basic-trash-can",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -27372,8 +28790,8 @@
     "output": "utilitycraft:basic_trash_can"
   },
   {
-    "id": "utilitycraft-crafter-1-7-utilitycraft-waycenter",
-    "identifier": "utilitycraft:process/crafter/1-7-utilitycraft-waycenter",
+    "id": "utilitycraft-crafter-4-7-utilitycraft-waycenter",
+    "identifier": "utilitycraft:process/crafter/4-7-utilitycraft-waycenter",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -27465,8 +28883,8 @@
     "output": "utilitycraft:waycenter"
   },
   {
-    "id": "utilitycraft-crafter-1-8-utilitycraft-xp-condenser",
-    "identifier": "utilitycraft:process/crafter/1-8-utilitycraft-xp-condenser",
+    "id": "utilitycraft-crafter-4-8-utilitycraft-xp-condenser",
+    "identifier": "utilitycraft:process/crafter/4-8-utilitycraft-xp-condenser",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -27554,8 +28972,8 @@
     "output": "utilitycraft:xp_condenser"
   },
   {
-    "id": "utilitycraft-crafter-1-9-utilitycraft-mechanic-dropper",
-    "identifier": "utilitycraft:process/crafter/1-9-utilitycraft-mechanic-dropper",
+    "id": "utilitycraft-crafter-4-9-utilitycraft-mechanic-dropper",
+    "identifier": "utilitycraft:process/crafter/4-9-utilitycraft-mechanic-dropper",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -27622,8 +29040,8 @@
     "output": "utilitycraft:mechanic_dropper"
   },
   {
-    "id": "utilitycraft-crafter-2-0-utilitycraft-elevator",
-    "identifier": "utilitycraft:process/crafter/2-0-utilitycraft-elevator",
+    "id": "utilitycraft-crafter-5-0-utilitycraft-elevator",
+    "identifier": "utilitycraft:process/crafter/5-0-utilitycraft-elevator",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -27699,8 +29117,8 @@
     "output": "utilitycraft:elevator"
   },
   {
-    "id": "utilitycraft-crafter-2-1-utilitycraft-copper-fishing-net",
-    "identifier": "utilitycraft:process/crafter/2-1-utilitycraft-copper-fishing-net",
+    "id": "utilitycraft-crafter-5-1-utilitycraft-copper-fishing-net",
+    "identifier": "utilitycraft:process/crafter/5-1-utilitycraft-copper-fishing-net",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -27776,8 +29194,8 @@
     "output": "utilitycraft:copper_fishing_net"
   },
   {
-    "id": "utilitycraft-crafter-2-10-utilitycraft-chip",
-    "identifier": "utilitycraft:process/crafter/2-10-utilitycraft-chip",
+    "id": "utilitycraft-crafter-5-10-utilitycraft-chip",
+    "identifier": "utilitycraft:process/crafter/5-10-utilitycraft-chip",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -27841,8 +29259,8 @@
     "output": "utilitycraft:chip"
   },
   {
-    "id": "utilitycraft-crafter-2-11-utilitycraft-expert-chip",
-    "identifier": "utilitycraft:process/crafter/2-11-utilitycraft-expert-chip",
+    "id": "utilitycraft-crafter-5-11-utilitycraft-expert-chip",
+    "identifier": "utilitycraft:process/crafter/5-11-utilitycraft-expert-chip",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -27922,8 +29340,8 @@
     "output": "utilitycraft:expert_chip"
   },
   {
-    "id": "utilitycraft-crafter-2-12-utilitycraft-ultimate-chip",
-    "identifier": "utilitycraft:process/crafter/2-12-utilitycraft-ultimate-chip",
+    "id": "utilitycraft-crafter-5-12-utilitycraft-ultimate-chip",
+    "identifier": "utilitycraft:process/crafter/5-12-utilitycraft-ultimate-chip",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -28003,8 +29421,8 @@
     "output": "utilitycraft:ultimate_chip"
   },
   {
-    "id": "utilitycraft-crafter-2-13-utilitycraft-settings",
-    "identifier": "utilitycraft:process/crafter/2-13-utilitycraft-settings",
+    "id": "utilitycraft-crafter-5-13-utilitycraft-settings",
+    "identifier": "utilitycraft:process/crafter/5-13-utilitycraft-settings",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -28052,8 +29470,8 @@
     "output": "utilitycraft:settings"
   },
   {
-    "id": "utilitycraft-crafter-2-14-utilitycraft-base-upgrade",
-    "identifier": "utilitycraft:process/crafter/2-14-utilitycraft-base-upgrade",
+    "id": "utilitycraft-crafter-5-14-utilitycraft-base-upgrade",
+    "identifier": "utilitycraft:process/crafter/5-14-utilitycraft-base-upgrade",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -28137,8 +29555,8 @@
     "output": "utilitycraft:base_upgrade"
   },
   {
-    "id": "utilitycraft-crafter-2-15-utilitycraft-damage-upgrade",
-    "identifier": "utilitycraft:process/crafter/2-15-utilitycraft-damage-upgrade",
+    "id": "utilitycraft-crafter-5-15-utilitycraft-damage-upgrade",
+    "identifier": "utilitycraft:process/crafter/5-15-utilitycraft-damage-upgrade",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -28226,8 +29644,8 @@
     "output": "utilitycraft:damage_upgrade"
   },
   {
-    "id": "utilitycraft-crafter-2-16-utilitycraft-energy-upgrade",
-    "identifier": "utilitycraft:process/crafter/2-16-utilitycraft-energy-upgrade",
+    "id": "utilitycraft-crafter-5-16-utilitycraft-energy-upgrade",
+    "identifier": "utilitycraft:process/crafter/5-16-utilitycraft-energy-upgrade",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -28311,8 +29729,8 @@
     "output": "utilitycraft:energy_upgrade"
   },
   {
-    "id": "utilitycraft-crafter-2-17-utilitycraft-filter-upgrade",
-    "identifier": "utilitycraft:process/crafter/2-17-utilitycraft-filter-upgrade",
+    "id": "utilitycraft-crafter-5-17-utilitycraft-filter-upgrade",
+    "identifier": "utilitycraft:process/crafter/5-17-utilitycraft-filter-upgrade",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -28400,8 +29818,8 @@
     "output": "utilitycraft:filter_upgrade"
   },
   {
-    "id": "utilitycraft-crafter-2-18-utilitycraft-quantity-upgrade",
-    "identifier": "utilitycraft:process/crafter/2-18-utilitycraft-quantity-upgrade",
+    "id": "utilitycraft-crafter-5-18-utilitycraft-quantity-upgrade",
+    "identifier": "utilitycraft:process/crafter/5-18-utilitycraft-quantity-upgrade",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -28489,8 +29907,8 @@
     "output": "utilitycraft:quantity_upgrade"
   },
   {
-    "id": "utilitycraft-crafter-2-19-utilitycraft-range-upgrade",
-    "identifier": "utilitycraft:process/crafter/2-19-utilitycraft-range-upgrade",
+    "id": "utilitycraft-crafter-5-19-utilitycraft-range-upgrade",
+    "identifier": "utilitycraft:process/crafter/5-19-utilitycraft-range-upgrade",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -28578,8 +29996,8 @@
     "output": "utilitycraft:range_upgrade"
   },
   {
-    "id": "utilitycraft-crafter-2-2-utilitycraft-diamond-fishing-net",
-    "identifier": "utilitycraft:process/crafter/2-2-utilitycraft-diamond-fishing-net",
+    "id": "utilitycraft-crafter-5-2-utilitycraft-diamond-fishing-net",
+    "identifier": "utilitycraft:process/crafter/5-2-utilitycraft-diamond-fishing-net",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -28655,8 +30073,8 @@
     "output": "utilitycraft:diamond_fishing_net"
   },
   {
-    "id": "utilitycraft-crafter-2-20-utilitycraft-speed-upgrade",
-    "identifier": "utilitycraft:process/crafter/2-20-utilitycraft-speed-upgrade",
+    "id": "utilitycraft-crafter-5-20-utilitycraft-speed-upgrade",
+    "identifier": "utilitycraft:process/crafter/5-20-utilitycraft-speed-upgrade",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -28744,8 +30162,8 @@
     "output": "utilitycraft:speed_upgrade"
   },
   {
-    "id": "utilitycraft-crafter-2-21-utilitycraft-waycarpet",
-    "identifier": "utilitycraft:process/crafter/2-21-utilitycraft-waycarpet",
+    "id": "utilitycraft-crafter-5-21-utilitycraft-waycarpet",
+    "identifier": "utilitycraft:process/crafter/5-21-utilitycraft-waycarpet",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -28810,8 +30228,8 @@
     "output": "utilitycraft:waycarpet"
   },
   {
-    "id": "utilitycraft-crafter-2-22-utilitycraft-way-chip",
-    "identifier": "utilitycraft:process/crafter/2-22-utilitycraft-way-chip",
+    "id": "utilitycraft-crafter-5-22-utilitycraft-way-chip",
+    "identifier": "utilitycraft:process/crafter/5-22-utilitycraft-way-chip",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -28891,8 +30309,8 @@
     "output": "utilitycraft:way_chip"
   },
   {
-    "id": "utilitycraft-crafter-2-3-utilitycraft-emerald-fishing-net",
-    "identifier": "utilitycraft:process/crafter/2-3-utilitycraft-emerald-fishing-net",
+    "id": "utilitycraft-crafter-5-3-utilitycraft-emerald-fishing-net",
+    "identifier": "utilitycraft:process/crafter/5-3-utilitycraft-emerald-fishing-net",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -28968,8 +30386,8 @@
     "output": "utilitycraft:emerald_fishing_net"
   },
   {
-    "id": "utilitycraft-crafter-2-4-utilitycraft-golden-fishing-net",
-    "identifier": "utilitycraft:process/crafter/2-4-utilitycraft-golden-fishing-net",
+    "id": "utilitycraft-crafter-5-4-utilitycraft-golden-fishing-net",
+    "identifier": "utilitycraft:process/crafter/5-4-utilitycraft-golden-fishing-net",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -29045,8 +30463,8 @@
     "output": "utilitycraft:golden_fishing_net"
   },
   {
-    "id": "utilitycraft-crafter-2-5-utilitycraft-iron-fishing-net",
-    "identifier": "utilitycraft:process/crafter/2-5-utilitycraft-iron-fishing-net",
+    "id": "utilitycraft-crafter-5-5-utilitycraft-iron-fishing-net",
+    "identifier": "utilitycraft:process/crafter/5-5-utilitycraft-iron-fishing-net",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -29122,8 +30540,8 @@
     "output": "utilitycraft:iron_fishing_net"
   },
   {
-    "id": "utilitycraft-crafter-2-6-utilitycraft-netherite-fishing-net",
-    "identifier": "utilitycraft:process/crafter/2-6-utilitycraft-netherite-fishing-net",
+    "id": "utilitycraft-crafter-5-6-utilitycraft-netherite-fishing-net",
+    "identifier": "utilitycraft:process/crafter/5-6-utilitycraft-netherite-fishing-net",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -29199,8 +30617,8 @@
     "output": "utilitycraft:netherite_fishing_net"
   },
   {
-    "id": "utilitycraft-crafter-2-7-utilitycraft-string-fishing-net",
-    "identifier": "utilitycraft:process/crafter/2-7-utilitycraft-string-fishing-net",
+    "id": "utilitycraft-crafter-5-7-utilitycraft-string-fishing-net",
+    "identifier": "utilitycraft:process/crafter/5-7-utilitycraft-string-fishing-net",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -29263,8 +30681,8 @@
     "output": "utilitycraft:string_fishing_net"
   },
   {
-    "id": "utilitycraft-crafter-2-8-utilitycraft-advanced-chip",
-    "identifier": "utilitycraft:process/crafter/2-8-utilitycraft-advanced-chip",
+    "id": "utilitycraft-crafter-5-8-utilitycraft-advanced-chip",
+    "identifier": "utilitycraft:process/crafter/5-8-utilitycraft-advanced-chip",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -29344,8 +30762,8 @@
     "output": "utilitycraft:advanced_chip"
   },
   {
-    "id": "utilitycraft-crafter-2-9-utilitycraft-basic-chip",
-    "identifier": "utilitycraft:process/crafter/2-9-utilitycraft-basic-chip",
+    "id": "utilitycraft-crafter-5-9-utilitycraft-basic-chip",
+    "identifier": "utilitycraft:process/crafter/5-9-utilitycraft-basic-chip",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -29505,12 +30923,12 @@
     ],
     "result": {
       "id": "utilitycraft:aetherium_dust",
-      "count": 6
+      "count": 9
     },
     "results": [
       {
         "id": "utilitycraft:aetherium_dust",
-        "count": 6
+        "count": 9
       }
     ],
     "cost": 21600,
@@ -29524,11 +30942,11 @@
     },
     "originId": "ascendant-technology",
     "input": "utilitycraft:aetherium_block",
-    "output": "6× utilitycraft:aetherium_dust"
+    "output": "9× utilitycraft:aetherium_dust"
   },
   {
-    "id": "ascendant-technology-crusher-utilitycraft-aetherium-shard",
-    "identifier": "ascendant-technology:process/crusher/utilitycraft-aetherium-shard",
+    "id": "ascendant-technology-crusher-utilitycraft-aetherium-crystal",
+    "identifier": "ascendant-technology:process/crusher/utilitycraft-aetherium-crystal",
     "type": "machine",
     "station": "crusher",
     "category": "Crusher recipe",
@@ -29536,7 +30954,7 @@
     "slotCount": 1,
     "slots": [
       {
-        "id": "utilitycraft:aetherium_shard",
+        "id": "utilitycraft:aetherium_crystal",
         "count": 1
       },
       null,
@@ -29550,17 +30968,17 @@
     ],
     "inputs": [
       {
-        "id": "utilitycraft:aetherium_shard",
+        "id": "utilitycraft:aetherium_crystal",
         "count": 1
       }
     ],
     "result": {
-      "id": "utilitycraft:aetherium_dust",
+      "id": "utilitycraft:aetherium_crystal_dust",
       "count": 2
     },
     "results": [
       {
-        "id": "utilitycraft:aetherium_dust",
+        "id": "utilitycraft:aetherium_crystal_dust",
         "count": 2
       }
     ],
@@ -29574,8 +30992,161 @@
       "category": "Ascendant Technology"
     },
     "originId": "ascendant-technology",
-    "input": "utilitycraft:aetherium_shard",
-    "output": "2× utilitycraft:aetherium_dust"
+    "input": "utilitycraft:aetherium_crystal",
+    "output": "2× utilitycraft:aetherium_crystal_dust"
+  },
+  {
+    "id": "ascendant-technology-crusher-utilitycraft-aetherium-crystal-block",
+    "identifier": "ascendant-technology:process/crusher/utilitycraft-aetherium-crystal-block",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:aetherium_crystal_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:aetherium_crystal_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:aetherium_crystal_dust",
+      "count": 8
+    },
+    "results": [
+      {
+        "id": "utilitycraft:aetherium_crystal_dust",
+        "count": 8
+      }
+    ],
+    "cost": 9600,
+    "energyCost": 9600,
+    "tier": 6,
+    "origin": {
+      "id": "ascendant-technology",
+      "label": "Ascendant Technology",
+      "accent": "#a78bfa",
+      "category": "Ascendant Technology"
+    },
+    "originId": "ascendant-technology",
+    "input": "utilitycraft:aetherium_crystal_block",
+    "output": "8× utilitycraft:aetherium_crystal_dust"
+  },
+  {
+    "id": "ascendant-technology-crusher-utilitycraft-aetherium-shard",
+    "identifier": "ascendant-technology:process/crusher/utilitycraft-aetherium-shard",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:aetherium_shard",
+        "count": 2
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:aetherium_shard",
+        "count": 2
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:aetherium_crystal_dust",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:aetherium_crystal_dust",
+        "count": 1
+      }
+    ],
+    "cost": 2400,
+    "energyCost": 2400,
+    "tier": 6,
+    "origin": {
+      "id": "ascendant-technology",
+      "label": "Ascendant Technology",
+      "accent": "#a78bfa",
+      "category": "Ascendant Technology"
+    },
+    "originId": "ascendant-technology",
+    "input": "2× utilitycraft:aetherium_shard",
+    "output": "utilitycraft:aetherium_crystal_dust"
+  },
+  {
+    "id": "ascendant-technology-crusher-utilitycraft-deepslate-aetherium-ore",
+    "identifier": "ascendant-technology:process/crusher/utilitycraft-deepslate-aetherium-ore",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_aetherium_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_aetherium_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:aetherium_shard",
+      "count": 2
+    },
+    "results": [
+      {
+        "id": "utilitycraft:aetherium_shard",
+        "count": 2
+      }
+    ],
+    "cost": 2400,
+    "energyCost": 2400,
+    "tier": 6,
+    "origin": {
+      "id": "ascendant-technology",
+      "label": "Ascendant Technology",
+      "accent": "#a78bfa",
+      "category": "Ascendant Technology"
+    },
+    "originId": "ascendant-technology",
+    "input": "utilitycraft:deepslate_aetherium_ore",
+    "output": "2× utilitycraft:aetherium_shard"
   },
   {
     "id": "ascendant-technology-crusher-utilitycraft-deepslate-titanium-ore",
@@ -29678,6 +31249,57 @@
     "originId": "ascendant-technology",
     "input": "utilitycraft:deepslate_tungsten_ore",
     "output": "2× utilitycraft:raw_tungsten_dust"
+  },
+  {
+    "id": "ascendant-technology-crusher-utilitycraft-end-aetherium-ore",
+    "identifier": "ascendant-technology:process/crusher/utilitycraft-end-aetherium-ore",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:end_aetherium_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:end_aetherium_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:aetherium_shard",
+      "count": 2
+    },
+    "results": [
+      {
+        "id": "utilitycraft:aetherium_shard",
+        "count": 2
+      }
+    ],
+    "cost": 2400,
+    "energyCost": 2400,
+    "tier": 6,
+    "origin": {
+      "id": "ascendant-technology",
+      "label": "Ascendant Technology",
+      "accent": "#a78bfa",
+      "category": "Ascendant Technology"
+    },
+    "originId": "ascendant-technology",
+    "input": "utilitycraft:end_aetherium_ore",
+    "output": "2× utilitycraft:aetherium_shard"
   },
   {
     "id": "ascendant-technology-crusher-utilitycraft-nether-tungsten-ore",
@@ -37830,6 +39452,102 @@
     "output": "utilitycraft:copper_dust"
   },
   {
+    "id": "utilitycraft-crusher-utilitycraft-deepslate-lead-ore",
+    "identifier": "utilitycraft:process/crusher/utilitycraft-deepslate-lead-ore",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_lead_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_lead_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_dust",
+      "count": 2
+    },
+    "results": [
+      {
+        "id": "utilitycraft:lead_dust",
+        "count": 2
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:deepslate_lead_ore",
+    "output": "2× utilitycraft:lead_dust"
+  },
+  {
+    "id": "utilitycraft-crusher-utilitycraft-deepslate-uranium-ore",
+    "identifier": "utilitycraft:process/crusher/utilitycraft-deepslate-uranium-ore",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_uranium_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_uranium_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_dust",
+      "count": 2
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_dust",
+        "count": 2
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:deepslate_uranium_ore",
+    "output": "2× utilitycraft:uranium_dust"
+  },
+  {
     "id": "utilitycraft-crusher-utilitycraft-double-compressed-cobblestone",
     "identifier": "utilitycraft:process/crusher/utilitycraft-double-compressed-cobblestone",
     "type": "machine",
@@ -38169,6 +39887,198 @@
     "output": "utilitycraft:iron_dust"
   },
   {
+    "id": "utilitycraft-crusher-utilitycraft-lead-block",
+    "identifier": "utilitycraft:process/crusher/utilitycraft-lead-block",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:lead_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:lead_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_dust",
+      "count": 6
+    },
+    "results": [
+      {
+        "id": "utilitycraft:lead_dust",
+        "count": 6
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:lead_block",
+    "output": "6× utilitycraft:lead_dust"
+  },
+  {
+    "id": "utilitycraft-crusher-utilitycraft-lead-ingot",
+    "identifier": "utilitycraft:process/crusher/utilitycraft-lead-ingot",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:lead_ingot",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:lead_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_dust",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:lead_dust",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:lead_ingot",
+    "output": "utilitycraft:lead_dust"
+  },
+  {
+    "id": "utilitycraft-crusher-utilitycraft-lead-ore",
+    "identifier": "utilitycraft:process/crusher/utilitycraft-lead-ore",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:lead_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:lead_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_dust",
+      "count": 2
+    },
+    "results": [
+      {
+        "id": "utilitycraft:lead_dust",
+        "count": 2
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:lead_ore",
+    "output": "2× utilitycraft:lead_dust"
+  },
+  {
+    "id": "utilitycraft-crusher-utilitycraft-lead-plate",
+    "identifier": "utilitycraft:process/crusher/utilitycraft-lead-plate",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:lead_plate",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:lead_plate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_dust",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:lead_dust",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:lead_plate",
+    "output": "utilitycraft:lead_dust"
+  },
+  {
     "id": "utilitycraft-crusher-utilitycraft-netherite-plate",
     "identifier": "utilitycraft:process/crusher/utilitycraft-netherite-plate",
     "type": "machine",
@@ -38366,6 +40276,102 @@
     "output": "12× utilitycraft:energized_iron_dust"
   },
   {
+    "id": "utilitycraft-crusher-utilitycraft-raw-lead",
+    "identifier": "utilitycraft:process/crusher/utilitycraft-raw-lead",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_lead",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_lead",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_dust",
+      "count": 2
+    },
+    "results": [
+      {
+        "id": "utilitycraft:lead_dust",
+        "count": 2
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:raw_lead",
+    "output": "2× utilitycraft:lead_dust"
+  },
+  {
+    "id": "utilitycraft-crusher-utilitycraft-raw-lead-block",
+    "identifier": "utilitycraft:process/crusher/utilitycraft-raw-lead-block",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_lead_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_lead_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_dust",
+      "count": 12
+    },
+    "results": [
+      {
+        "id": "utilitycraft:lead_dust",
+        "count": 12
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:raw_lead_block",
+    "output": "12× utilitycraft:lead_dust"
+  },
+  {
     "id": "utilitycraft-crusher-utilitycraft-raw-steel",
     "identifier": "utilitycraft:process/crusher/utilitycraft-raw-steel",
     "type": "machine",
@@ -38462,6 +40468,102 @@
     "originId": "utilitycraft",
     "input": "utilitycraft:raw_steel_block",
     "output": "12× utilitycraft:steel_dust"
+  },
+  {
+    "id": "utilitycraft-crusher-utilitycraft-raw-uranium",
+    "identifier": "utilitycraft:process/crusher/utilitycraft-raw-uranium",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_uranium",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_uranium",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_dust",
+      "count": 2
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_dust",
+        "count": 2
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:raw_uranium",
+    "output": "2× utilitycraft:uranium_dust"
+  },
+  {
+    "id": "utilitycraft-crusher-utilitycraft-raw-uranium-block",
+    "identifier": "utilitycraft:process/crusher/utilitycraft-raw-uranium-block",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_uranium_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_uranium_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_dust",
+      "count": 12
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_dust",
+        "count": 12
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:raw_uranium_block",
+    "output": "12× utilitycraft:uranium_dust"
   },
   {
     "id": "utilitycraft-crusher-utilitycraft-silicon-block",
@@ -38705,6 +40807,198 @@
     "originId": "utilitycraft",
     "input": "utilitycraft:triple_compressed_cobblestone",
     "output": "utilitycraft:compressed_gravel_3"
+  },
+  {
+    "id": "utilitycraft-crusher-utilitycraft-uranium-block",
+    "identifier": "utilitycraft:process/crusher/utilitycraft-uranium-block",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:uranium_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:uranium_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_dust",
+      "count": 6
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_dust",
+        "count": 6
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:uranium_block",
+    "output": "6× utilitycraft:uranium_dust"
+  },
+  {
+    "id": "utilitycraft-crusher-utilitycraft-uranium-ingot",
+    "identifier": "utilitycraft:process/crusher/utilitycraft-uranium-ingot",
+    "type": "machine",
+    "station": "crusher",
+    "category": "Crusher recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:uranium_ingot",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:uranium_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_dust",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_dust",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:uranium_ingot",
+    "output": "utilitycraft:uranium_dust"
+  },
+  {
+    "id": "ascendant-technology-electro-press-utilitycraft-aetherium-crystal",
+    "identifier": "ascendant-technology:process/electro-press/utilitycraft-aetherium-crystal",
+    "type": "machine",
+    "station": "electro_press",
+    "category": "Electro Press recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:aetherium_crystal",
+        "count": 4
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:aetherium_crystal",
+        "count": 4
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:aetherium_crystal_block",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:aetherium_crystal_block",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "ascendant-technology",
+      "label": "Ascendant Technology",
+      "accent": "#a78bfa",
+      "category": "Ascendant Technology"
+    },
+    "originId": "ascendant-technology",
+    "input": "4× utilitycraft:aetherium_crystal",
+    "output": "utilitycraft:aetherium_crystal_block"
+  },
+  {
+    "id": "ascendant-technology-electro-press-utilitycraft-aetherium-shard",
+    "identifier": "ascendant-technology:process/electro-press/utilitycraft-aetherium-shard",
+    "type": "machine",
+    "station": "electro_press",
+    "category": "Electro Press recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:aetherium_shard",
+        "count": 4
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:aetherium_shard",
+        "count": 4
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:aetherium_crystal",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:aetherium_crystal",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "ascendant-technology",
+      "label": "Ascendant Technology",
+      "accent": "#a78bfa",
+      "category": "Ascendant Technology"
+    },
+    "originId": "ascendant-technology",
+    "input": "4× utilitycraft:aetherium_shard",
+    "output": "utilitycraft:aetherium_crystal"
   },
   {
     "id": "ascendant-technology-electro-press-utilitycraft-deepslate-tungsten-chunk",
@@ -41499,6 +43793,102 @@
     "output": "minecraft:deepslate_iron_ore"
   },
   {
+    "id": "utilitycraft-electro-press-utilitycraft-deepslate-lead-chunk",
+    "identifier": "utilitycraft:process/electro-press/utilitycraft-deepslate-lead-chunk",
+    "type": "machine",
+    "station": "electro_press",
+    "category": "Electro Press recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_lead_chunk",
+        "count": 4
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_lead_chunk",
+        "count": 4
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:deepslate_lead_ore",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:deepslate_lead_ore",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "4× utilitycraft:deepslate_lead_chunk",
+    "output": "utilitycraft:deepslate_lead_ore"
+  },
+  {
+    "id": "utilitycraft-electro-press-utilitycraft-deepslate-uranium-chunk",
+    "identifier": "utilitycraft:process/electro-press/utilitycraft-deepslate-uranium-chunk",
+    "type": "machine",
+    "station": "electro_press",
+    "category": "Electro Press recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_uranium_chunk",
+        "count": 4
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_uranium_chunk",
+        "count": 4
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:deepslate_uranium_ore",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:deepslate_uranium_ore",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "4× utilitycraft:deepslate_uranium_chunk",
+    "output": "utilitycraft:deepslate_uranium_ore"
+  },
+  {
     "id": "utilitycraft-electro-press-utilitycraft-diamond-shard",
     "identifier": "utilitycraft:process/electro-press/utilitycraft-diamond-shard",
     "type": "machine",
@@ -42073,6 +44463,102 @@
     "originId": "utilitycraft",
     "input": "4× utilitycraft:iron_chunk",
     "output": "minecraft:iron_ore"
+  },
+  {
+    "id": "utilitycraft-electro-press-utilitycraft-lead-chunk",
+    "identifier": "utilitycraft:process/electro-press/utilitycraft-lead-chunk",
+    "type": "machine",
+    "station": "electro_press",
+    "category": "Electro Press recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:lead_chunk",
+        "count": 4
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:lead_chunk",
+        "count": 4
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_ore",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:lead_ore",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "4× utilitycraft:lead_chunk",
+    "output": "utilitycraft:lead_ore"
+  },
+  {
+    "id": "utilitycraft-electro-press-utilitycraft-lead-ingot",
+    "identifier": "utilitycraft:process/electro-press/utilitycraft-lead-ingot",
+    "type": "machine",
+    "station": "electro_press",
+    "category": "Electro Press recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:lead_ingot",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:lead_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_plate",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:lead_plate",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:lead_ingot",
+    "output": "utilitycraft:lead_plate"
   },
   {
     "id": "utilitycraft-electro-press-utilitycraft-mud-ball",
@@ -42937,6 +45423,54 @@
     "originId": "utilitycraft",
     "input": "4× utilitycraft:tuff_pebble",
     "output": "minecraft:tuff"
+  },
+  {
+    "id": "utilitycraft-electro-press-utilitycraft-uranium-ingot",
+    "identifier": "utilitycraft:process/electro-press/utilitycraft-uranium-ingot",
+    "type": "machine",
+    "station": "electro_press",
+    "category": "Electro Press recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:uranium_ingot",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:uranium_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_pellet",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_pellet",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:uranium_ingot",
+    "output": "utilitycraft:uranium_pellet"
   },
   {
     "id": "utilitycraft-electro-press-utilitycraft-wither-skull-shard",
@@ -45493,6 +48027,54 @@
     "originId": "utilitycraft",
     "input": "Items matching wooden",
     "output": "1000× Dorios Energy"
+  },
+  {
+    "id": "ascendant-technology-incinerator-utilitycraft-aetherium-dust",
+    "identifier": "ascendant-technology:process/incinerator/utilitycraft-aetherium-dust",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:aetherium_dust",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:aetherium_dust",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:aetherium",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:aetherium",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "ascendant-technology",
+      "label": "Ascendant Technology",
+      "accent": "#a78bfa",
+      "category": "Ascendant Technology"
+    },
+    "originId": "ascendant-technology",
+    "input": "utilitycraft:aetherium_dust",
+    "output": "utilitycraft:aetherium"
   },
   {
     "id": "ascendant-technology-incinerator-utilitycraft-deepslate-titanium-ore",
@@ -52409,6 +54991,102 @@
     "output": "minecraft:slime_ball"
   },
   {
+    "id": "utilitycraft-incinerator-utilitycraft-deepslate-lead-ore",
+    "identifier": "utilitycraft:process/incinerator/utilitycraft-deepslate-lead-ore",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_lead_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_lead_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:lead_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:deepslate_lead_ore",
+    "output": "utilitycraft:lead_ingot"
+  },
+  {
+    "id": "utilitycraft-incinerator-utilitycraft-deepslate-uranium-ore",
+    "identifier": "utilitycraft:process/incinerator/utilitycraft-deepslate-uranium-ore",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:deepslate_uranium_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:deepslate_uranium_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:deepslate_uranium_ore",
+    "output": "utilitycraft:uranium_ingot"
+  },
+  {
     "id": "utilitycraft-incinerator-utilitycraft-double-compressed-cobblestone",
     "identifier": "utilitycraft:process/incinerator/utilitycraft-double-compressed-cobblestone",
     "type": "machine",
@@ -52601,6 +55279,102 @@
     "originId": "utilitycraft",
     "input": "utilitycraft:iron_dust",
     "output": "minecraft:iron_ingot"
+  },
+  {
+    "id": "utilitycraft-incinerator-utilitycraft-lead-dust",
+    "identifier": "utilitycraft:process/incinerator/utilitycraft-lead-dust",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:lead_dust",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:lead_dust",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:lead_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:lead_dust",
+    "output": "utilitycraft:lead_ingot"
+  },
+  {
+    "id": "utilitycraft-incinerator-utilitycraft-lead-ore",
+    "identifier": "utilitycraft:process/incinerator/utilitycraft-lead-ore",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:lead_ore",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:lead_ore",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:lead_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:lead_ore",
+    "output": "utilitycraft:lead_ingot"
   },
   {
     "id": "utilitycraft-incinerator-utilitycraft-netherite-dust",
@@ -52893,6 +55667,102 @@
     "output": "utilitycraft:energized_iron_block"
   },
   {
+    "id": "utilitycraft-incinerator-utilitycraft-raw-lead",
+    "identifier": "utilitycraft:process/incinerator/utilitycraft-raw-lead",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_lead",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_lead",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:lead_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:raw_lead",
+    "output": "utilitycraft:lead_ingot"
+  },
+  {
+    "id": "utilitycraft-incinerator-utilitycraft-raw-lead-block",
+    "identifier": "utilitycraft:process/incinerator/utilitycraft-raw-lead-block",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_lead_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_lead_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:lead_block",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:lead_block",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:raw_lead_block",
+    "output": "utilitycraft:lead_block"
+  },
+  {
     "id": "utilitycraft-incinerator-utilitycraft-raw-leather",
     "identifier": "utilitycraft:process/incinerator/utilitycraft-raw-leather",
     "type": "machine",
@@ -53037,6 +55907,102 @@
     "output": "utilitycraft:steel_block"
   },
   {
+    "id": "utilitycraft-incinerator-utilitycraft-raw-uranium",
+    "identifier": "utilitycraft:process/incinerator/utilitycraft-raw-uranium",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_uranium",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_uranium",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:raw_uranium",
+    "output": "utilitycraft:uranium_ingot"
+  },
+  {
+    "id": "utilitycraft-incinerator-utilitycraft-raw-uranium-block",
+    "identifier": "utilitycraft:process/incinerator/utilitycraft-raw-uranium-block",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:raw_uranium_block",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:raw_uranium_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_block",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_block",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:raw_uranium_block",
+    "output": "utilitycraft:uranium_block"
+  },
+  {
     "id": "utilitycraft-incinerator-utilitycraft-steel-dust",
     "identifier": "utilitycraft:process/incinerator/utilitycraft-steel-dust",
     "type": "machine",
@@ -53133,6 +56099,54 @@
     "originId": "utilitycraft",
     "input": "utilitycraft:triple_compressed_cobblestone",
     "output": "utilitycraft:compressed_stone_3"
+  },
+  {
+    "id": "utilitycraft-incinerator-utilitycraft-uranium-dust",
+    "identifier": "utilitycraft:process/incinerator/utilitycraft-uranium-dust",
+    "type": "machine",
+    "station": "incinerator",
+    "category": "Incinerator recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:uranium_dust",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:uranium_dust",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:uranium_ingot",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:uranium_ingot",
+        "count": 1
+      }
+    ],
+    "origin": {
+      "id": "utilitycraft",
+      "label": "Base",
+      "accent": "#38bdf8",
+      "category": "Base"
+    },
+    "originId": "utilitycraft",
+    "input": "utilitycraft:uranium_dust",
+    "output": "utilitycraft:uranium_ingot"
   },
   {
     "id": "ascendant-technology-infuser-minecraft-blaze-powder-minecraft-obsidian",

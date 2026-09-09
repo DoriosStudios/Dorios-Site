@@ -799,7 +799,7 @@ function ascendantSpecializedRecipes(baseInfuser, ascendantInfuser, heavyInfuser
     }));
   }
 
-  const stabilizer = read('cryoStabilizer.js', 'cryoStabilizerRecipeDefinitions');
+  const stabilizer = read('stabilizer.js', 'stabilizerRecipeDefinitions');
   for (const [id, definition] of Object.entries(stabilizer)) {
     const input = normalizedStack(definition.input);
     const output = normalizedStack(definition.output);
@@ -819,7 +819,7 @@ function ascendantSpecializedRecipes(baseInfuser, ascendantInfuser, heavyInfuser
     }
   }
 
-  const cooling = read('cryoCooling.js', 'cryoCoolingRecipeDefinitions');
+  const cooling = read('freezing.js', 'freezingRecipeDefinitions');
   for (const [id, definition] of Object.entries(cooling)) {
     const input = normalizedStack(definition.input);
     const output = normalizedStack(definition.output);
@@ -839,9 +839,9 @@ function ascendantSpecializedRecipes(baseInfuser, ascendantInfuser, heavyInfuser
     }
   }
 
-  const cryoCatalysts = read('cryoChamber.js', 'cryoChamberCatalystDefinitions');
-  const lapisSources = read('cryoChamber.js', 'cryoChamberLapisDefinitions');
-  const cryoGeneration = read('cryoChamber.js', 'cryoChamberGeneration');
+  const cryoCatalysts = read('cryogen.js', 'cryogenCatalystDefinitions');
+  const lapisSources = read('cryogen.js', 'cryogenLapisDefinitions');
+  const cryoGeneration = read('cryogen.js', 'cryogenGeneration');
   for (const [catalystId, catalyst] of Object.entries(cryoCatalysts)) {
     for (const [lapisId, lapis] of Object.entries(lapisSources)) {
       const catalystInput = normalizedStack(catalyst.input);
@@ -869,7 +869,7 @@ function ascendantSpecializedRecipes(baseInfuser, ascendantInfuser, heavyInfuser
     }
   }
 
-  const cryofluidSynthesis = read('cryofluidSynthesizer.js', 'CRYOFLUID_SYNTHESIS_RECIPE');
+  const cryofluidSynthesis = read('cryogen.js', 'cryogenSynthesisRecipe');
   const synthesisGroups = Object.entries(cryofluidSynthesis.inputs ?? {}).map(([id, definition]) => ({
     id,
     label: `${titleize(id)} value`,

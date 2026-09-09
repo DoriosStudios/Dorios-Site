@@ -4,6 +4,25 @@ import {createGeneratedProject} from '../createGeneratedProject';
 import utilitycraft from '../utilitycraft';
 import machineProfiles from './machineProfiles';
 import documentationProfiles from './documentationProfiles.generated.json';
+import itemEditorialProfiles from './itemEditorialProfiles';
+
+const itemProfiles = Object.fromEntries(new Set([
+  ...Object.keys(documentationProfiles.items),
+  ...Object.keys(itemEditorialProfiles),
+]).values().map((identifier) => {
+  const generated = documentationProfiles.items[identifier] ?? {};
+  const editorial = itemEditorialProfiles[identifier] ?? {};
+  return [identifier, {
+    ...generated,
+    ...editorial,
+    documentation: {
+      ...(generated.documentation ?? {}),
+      ...(editorial.documentation ?? {}),
+      basic: {...(generated.documentation?.basic ?? {}), ...(editorial.documentation?.basic ?? {})},
+      capabilities: {...(generated.documentation?.capabilities ?? {}), ...(editorial.documentation?.capabilities ?? {})},
+    },
+  }];
+}));
 
 // Conveyor movement and bridge reach are implemented by the transportation
 // runtime, rather than by a Bedrock block component. Keep these player-facing
@@ -41,7 +60,7 @@ const ascendantTechnology = createGeneratedProject({
   processingRecipes,
   machineProfiles,
   blockProfiles: {...conveyorProfiles, ...documentationProfiles.blocks},
-  itemProfiles: documentationProfiles.items,
+  itemProfiles,
   machineCategoryOrder: [
     'Superior Machines',
     'Unique Machines',
