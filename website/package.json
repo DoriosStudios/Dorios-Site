@@ -16,7 +16,7 @@
     "generate:social-previews": "node scripts/generate-social-previews.mjs",
     "prebuild": "npm run refresh:github-stats && npm run refresh:curseforge-stats && npm run generate:utilitycraft-machine-recipes && npm run generate:ascendant-documentation && npm run generate:ascendant-machine-grid && npm run generate:shared-item-documentation && npm run generate:ascendant-glyph-icons && npm run generate:vanilla-assets && npm run generate:social-previews",
     "prestart": "npm run refresh:github-stats && npm run refresh:curseforge-stats && npm run generate:utilitycraft-machine-recipes && npm run generate:ascendant-documentation && npm run generate:ascendant-machine-grid && npm run generate:shared-item-documentation && npm run generate:ascendant-glyph-icons && npm run generate:vanilla-assets && npm run generate:social-previews",
-    "start": "docusaurus start",
+    "start": "node scripts/start-dev.mjs",
     "build": "npm run validate:catalog && npm run validate:machine-recipes && docusaurus build",
     "validate:catalog": "node scripts/validate-project-catalog.mjs",
     "swizzle": "docusaurus swizzle",

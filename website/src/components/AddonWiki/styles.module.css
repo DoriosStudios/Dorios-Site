@@ -117,6 +117,8 @@
 	box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
 	font-family: var(--wiki-ui-font);
 }
+.mobileSidebarBar { display: none; }
+.mobileNavContent { display: block; }
 
 .sidebarHeader {
 	display: flex;
@@ -1179,6 +1181,10 @@
 	color: var(--ds-muted);
 	font-size: 0.75rem;
 }
+.blockCopy > .blockTags { flex-wrap: wrap; gap: .25rem; }
+.blockCopy > .blockTags b { padding: .14rem .36rem; background: color-mix(in srgb, var(--wiki-project-accent) 8%, var(--ds-surface-raised)); font-size: .62rem; }
+.detailBlockTags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .8rem; }
+.detailBlockTags span { padding: .24rem .48rem; border: 1px solid color-mix(in srgb, var(--wiki-project-accent) 28%, var(--ds-border)); border-radius: 999px; color: var(--ds-muted); font: 750 .66rem var(--wiki-ui-font); }
 
 .technologyNotice {
 	display: grid;
@@ -1549,14 +1555,28 @@
 }
 .recipeCard {
 	min-width: 0;
+	position: relative;
 	overflow: visible;
 	border: 1px solid color-mix(in srgb, var(--recipe-origin-accent, var(--ds-border)) 48%, var(--ds-border));
 	box-shadow: inset 3px 0 var(--recipe-origin-accent, transparent);
 	border-radius: 13px;
 	background: var(--ds-surface);
+	transition: border-color 180ms ease, background-color 180ms ease;
+}
+.recipeCard:hover,
+.recipeCard:focus-within {
+	border-color: color-mix(in srgb, var(--recipe-origin-accent, var(--wiki-project-accent)) 72%, var(--ds-border));
+	background: color-mix(in srgb, var(--recipe-origin-accent, var(--wiki-project-accent)) 4%, var(--ds-surface));
+}
+.recipeCardTarget {
+	position: absolute;
+	z-index: 1;
+	inset: 0;
+	border-radius: inherit;
 }
 .recipeCard > header {
-	min-height: 44px;
+	min-height: 50px;
+	position: relative;
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
@@ -1566,18 +1586,14 @@
 	background: color-mix(in srgb, var(--ds-surface-raised) 76%, transparent);
 }
 .recipeCard > header > img {
-	width: 26px;
-	height: 26px;
-	padding: 2px;
-	border: 1px solid var(--ds-border);
-	border-radius: 7px;
-	background: var(--ds-bg);
-	object-fit: cover;
+	width: 42px;
+	height: 42px;
+	object-fit: contain;
 	image-rendering: pixelated;
 }
 .stationFallback {
-	width: 26px;
-	height: 26px;
+	width: 42px;
+	height: 42px;
 	display: grid;
 	place-items: center;
 	border: 1px solid var(--ds-border);
@@ -1655,9 +1671,10 @@
 	text-overflow: ellipsis;
 }
 .recipeFlow {
-	min-height: 126px;
+	min-height: 118px;
+	position: relative;
 	display: grid;
-	grid-template-columns: 96px auto minmax(74px, 116px);
+	grid-template-columns: 116px auto minmax(74px, 116px);
 	align-items: center;
 	justify-content: start;
 	gap: clamp(0.45rem, 1.2vw, 0.8rem);
@@ -1665,10 +1682,31 @@
 }
 .craftingSlots {
 	display: grid;
-	grid-template-columns: repeat(3, 30px);
-	grid-template-rows: repeat(3, 30px);
-	gap: 3px;
+	grid-template-columns: repeat(3, 38px);
+	grid-template-rows: repeat(3, 38px);
+	gap: 0;
+	overflow: visible;
+	border: 1px solid color-mix(in srgb, var(--wiki-project-accent) 42%, var(--ds-border));
+	border-radius: 8px;
+	background: color-mix(in srgb, var(--ds-bg) 42%, transparent);
 }
+.craftingSlots2 {
+	grid-template-columns: repeat(2, 44px);
+	grid-template-rows: repeat(2, 44px);
+}
+.craftingSlots > .recipeSlot,
+.craftingSlots > .emptySlot {
+	width: auto;
+	height: auto;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+}
+.craftingSlots:not(.craftingSlots2) > :not(:nth-child(3n)) { border-right: 1px solid color-mix(in srgb, var(--wiki-project-accent) 24%, var(--ds-border)); }
+.craftingSlots:not(.craftingSlots2) > :nth-child(-n + 6) { border-bottom: 1px solid color-mix(in srgb, var(--wiki-project-accent) 24%, var(--ds-border)); }
+.craftingSlots2 > :nth-child(odd) { border-right: 1px solid color-mix(in srgb, var(--wiki-project-accent) 24%, var(--ds-border)); }
+.craftingSlots2 > :nth-child(-n + 2) { border-bottom: 1px solid color-mix(in srgb, var(--wiki-project-accent) 24%, var(--ds-border)); }
+.craftingSlots .recipeSlot img { width: 31px; height: 31px; }
 .recipeSlot,
 .emptySlot {
 	width: 30px;
@@ -1797,15 +1835,15 @@
 	gap: 0.28rem;
 }
 .recipeResult .resultSlot {
-	width: 46px;
-	height: 46px;
-	border-width: 2px;
-	border-color: color-mix(in srgb, var(--ds-accent) 55%, var(--ds-border));
-	border-radius: 10px;
+	width: 62px;
+	height: 62px;
+	border: 0;
+	background: transparent;
 }
+.recipeSlot { z-index: 2; }
 .recipeResult .resultSlot img {
-	width: 35px;
-	height: 35px;
+	width: 54px;
+	height: 54px;
 }
 .recipeResult > strong {
 	max-width: 120px;
@@ -1837,7 +1875,7 @@
 	padding: 0 2.25rem 0.5rem 0;
 }
 .linearRecipeFlow {
-	min-height: 92px;
+	min-height: 84px;
 	grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
 	justify-content: stretch;
 	gap: 0.7rem;
@@ -1869,13 +1907,12 @@
 	font-size: 1rem;
 }
 .linearRecipeCard .recipeResult .resultSlot {
-	width: 34px;
-	height: 34px;
-	border-radius: 8px;
+	width: 54px;
+	height: 54px;
 }
 .linearRecipeCard .recipeResult .resultSlot img {
-	width: 26px;
-	height: 26px;
+	width: 48px;
+	height: 48px;
 }
 .singleCraftingRecipeCard .recipeFlow {
 	grid-template-columns: 70px auto minmax(90px, 130px);
@@ -3107,8 +3144,8 @@
 	border: 1px solid color-mix(in srgb, var(--wiki-project-accent) 24%, var(--ds-border));
 	border-radius: 19px;
 	background:
-		radial-gradient(circle, color-mix(in srgb, var(--wiki-project-accent) 14%, transparent), transparent 66%),
-		color-mix(in srgb, var(--ds-surface-raised) 82%, transparent);
+		radial-gradient(circle, color-mix(in srgb, var(--wiki-project-accent) 10%, transparent), transparent 66%),
+		color-mix(in srgb, var(--ds-surface-raised) 42%, transparent);
 }
 .itemDetailVisual > .detailItemVisual { width: 100%; min-height: 160px; background: transparent; }
 .itemDetailVisual > .detailItemVisual.tierFlipbook { height: 160px; }
@@ -3802,24 +3839,16 @@
 	.relatedItemGrid { grid-template-columns: 1fr; }
 	.itemUsage { grid-template-columns: 1fr; }
 	.recipeFlow {
-		grid-template-columns: 96px auto minmax(48px, 1fr);
+		grid-template-columns: 116px auto minmax(48px, 1fr);
 		gap: 0.35rem;
 		padding: 0.55rem;
 	}
 	.craftingSlots {
-		grid-template-columns: repeat(3, 30px);
-		grid-template-rows: repeat(3, 30px);
-		gap: 3px;
+		grid-template-columns: repeat(3, 38px);
+		grid-template-rows: repeat(3, 38px);
+		gap: 0;
 	}
-	.recipeSlot,
-	.emptySlot {
-		width: 30px;
-		height: 30px;
-	}
-	.recipeSlot img {
-		width: 23px;
-		height: 23px;
-	}
+	.craftingSlots2 { grid-template-columns: repeat(2, 44px); grid-template-rows: repeat(2, 44px); }
 	.linearRecipeFlow {
 		min-height: 88px;
 		grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
@@ -3914,6 +3943,130 @@
 	.abyssalDropRow { padding-inline: 0.25rem; font-size: 0.64rem; }
 	.dynamicOperationList { grid-template-columns: 1fr; gap: 0.4rem; }
 }
+.linearRecipeSlots .recipeSlot {
+	width: 42px;
+	height: 42px;
+	border-color: transparent;
+	background: transparent;
+}
+.linearRecipeSlots .recipeSlot img { width: 36px; height: 36px; }
+
+@media (max-width: 900px) {
+	.contextBar { gap: 0; padding: .45rem 0; }
+	.contextBar > .search { display: none; }
+	.wikiLayout { gap: .45rem; padding-top: .45rem; }
+	.detailBack { padding: .55rem 0 .35rem; }
+	.sidebar,
+	.sidebarCollapsed .sidebar {
+		padding: .4rem;
+		overflow: hidden;
+		border-radius: 12px;
+	}
+	.mobileSidebarBar {
+		min-height: 48px;
+		display: flex;
+		align-items: center;
+		gap: .4rem;
+	}
+	.mobileSidebarCurrent {
+		min-width: 0;
+		max-width: 112px;
+		display: flex;
+		align-items: center;
+		gap: .6rem;
+		padding-left: .2rem;
+	}
+	.mobileSidebarCurrent > .navIcon {
+		width: 30px;
+		height: 30px;
+		flex: 0 0 30px;
+		display: grid;
+		place-items: center;
+		border-radius: 8px;
+		background: color-mix(in srgb, var(--ds-accent) 13%, var(--ds-surface-raised));
+		color: var(--ds-accent);
+	}
+	.mobileSidebarCurrent > span:last-child { min-width: 0; }
+	.mobileSidebarCurrent strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+	.mobileSidebarCurrent strong { color: var(--ds-text); font-size: .76rem; }
+	.sidebar .compactWikiSearch {
+		width: auto;
+		min-width: 0;
+		min-height: 38px;
+		flex: 1 1 auto;
+		padding-inline: .55rem;
+		border-radius: 9px;
+		background: color-mix(in srgb, var(--ds-bg) 48%, transparent);
+	}
+	.sidebar .compactWikiSearch input { font-size: .75rem; }
+	.sidebar .compactWikiSearch kbd { display: none; }
+	.mobileSidebarToggle {
+		width: 38px;
+		height: 38px;
+		min-height: 38px;
+		flex: 0 0 auto;
+		display: inline-flex;
+		align-items: center;
+		gap: .35rem;
+		justify-content: center;
+		padding: 0;
+		border: 1px solid color-mix(in srgb, var(--ds-accent) 24%, var(--ds-border));
+		border-radius: 9px;
+		background: color-mix(in srgb, var(--ds-accent) 7%, var(--ds-surface-raised));
+		color: var(--ds-text);
+		font: 800 .68rem var(--wiki-ui-font);
+		cursor: pointer;
+	}
+	.mobileSidebarToggle > span { display: none; }
+	.mobileSidebarToggle svg { color: var(--ds-accent); transition: transform 180ms ease; }
+	.mobileSidebarToggle[aria-expanded='true'] svg { transform: rotate(180deg); }
+	.mobileNavContent { display: none; }
+	.mobileNavContent.mobileNavOpen {
+		display: flex;
+		align-items: center;
+		gap: .35rem;
+		overflow-x: auto;
+		overscroll-behavior-inline: contain;
+		scrollbar-width: thin;
+		margin-top: .35rem;
+		padding: .45rem .1rem .15rem;
+		border-top: 1px solid var(--ds-border);
+	}
+	.mobileNavContent nav,
+	.mobileNavContent .navSection,
+	.mobileNavContent .navSection > div,
+	.mobileNavContent .navGroup,
+	.mobileNavContent .navGroupHeader { display: contents; }
+	.mobileNavContent .navSectionLabel,
+	.sidebarCollapsed .mobileNavContent .navSectionLabel,
+	.mobileNavContent .navGroupHeader > button,
+	.mobileNavContent .navSubmenu { display: none; }
+	.mobileNavContent .sidebar nav a,
+	.mobileNavContent nav a,
+	.sidebarCollapsed .mobileNavContent nav a {
+		min-height: 38px;
+		flex: 0 0 auto;
+		justify-content: flex-start;
+		gap: .45rem;
+		padding: 0 .65rem;
+		white-space: nowrap;
+		transform: none;
+	}
+	.mobileNavContent nav .activeNav { transform: none; }
+	.mobileNavContent .repoSideLink,
+	.sidebarCollapsed .mobileNavContent .repoSideLink {
+		min-height: 38px;
+		flex: 0 0 auto;
+		justify-content: flex-start;
+		gap: .45rem;
+		margin: 0;
+		padding: 0 .65rem;
+		white-space: nowrap;
+	}
+	.sidebarCollapsed .mobileNavContent .navLabel,
+	.sidebarCollapsed .mobileNavContent .repoSideLink span,
+	.sidebarCollapsed .mobileNavContent .repoExternalIcon { display: inline; }
+}
 
 /* Item Detail reads as an editorial wiki article. Cards are reserved for
    recipes, sources, related entries and other independently useful targets. */
@@ -3985,9 +4138,24 @@
 .itemSubheading { margin: 0 0 .35rem; color: var(--ds-muted); font: 800 .72rem var(--wiki-ui-font); letter-spacing: .09em; text-transform: uppercase; }
 .primarySources, .mainUses { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1.5rem; }
 .sourceMethod, .mainUse { min-width: 0; padding: 1rem 0; border-top: 2px solid color-mix(in srgb, var(--wiki-project-accent) 32%, var(--ds-border)); }
-.sourceMethod > div:first-child > small, .mainUseHeading small { display: block; color: var(--wiki-project-accent); font-size: .68rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+.sourceMethodHeading > div:first-child > small, .mainUseHeading small { display: block; color: var(--wiki-project-accent); font-size: .68rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
 .sourceMethod h3 { margin: .2rem 0 0; color: var(--ds-text); font-size: 1.25rem; }
-.sourceMethod > div:first-child > p, .mainUse > p { margin: .45rem 0 0; color: var(--ds-muted); font-size: .88rem; line-height: 1.5; }
+.sourceMethodHeading > div:first-child > p, .mainUse > p { margin: .45rem 0 0; color: var(--ds-muted); font-size: .88rem; line-height: 1.5; }
+.sourceMethodHeading { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: .8rem; }
+.sourceVisuals { display: flex; align-items: flex-end; gap: .35rem; }
+.sourceVisual {
+	width: 66px;
+	display: grid;
+	justify-items: center;
+	gap: .2rem;
+	color: var(--ds-muted);
+	font: 700 .55rem var(--wiki-ui-font);
+	text-align: center;
+}
+.sourceVisual img { width: 58px; height: 58px; object-fit: contain; image-rendering: pixelated; filter: drop-shadow(0 7px 8px rgba(0, 0, 0, .2)); }
+.sourceVisual[data-station] img { width: 64px; height: 64px; }
+.sourceVisual:hover { color: var(--wiki-project-accent); text-decoration: none; }
+.sourceVisual span { max-width: 66px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .sourceMethod > dl { margin: .8rem 0 0; }
 .sourceMethod > dl > div { display: grid; grid-template-columns: minmax(120px, .45fr) minmax(0, 1fr); gap: .6rem; padding: .45rem 0; border-top: 1px solid var(--ds-border); }
 .sourceMethod dt { color: var(--ds-muted); font-size: .72rem; }
@@ -4032,6 +4200,26 @@
 .itemTrivia li { padding: .8rem 0 .8rem 1rem; border-top: 1px solid var(--ds-border); color: var(--ds-muted); font-size: .86rem; line-height: 1.55; }
 .itemTrivia li::before { position: absolute; margin-left: -1rem; color: var(--wiki-project-accent); content: '◆'; font-size: .55rem; }
 
+.siftableBlockReference {
+	margin-top: 1rem;
+	padding: 1rem;
+	border: 1px solid color-mix(in srgb, var(--wiki-project-accent) 24%, var(--ds-border));
+	border-radius: 15px;
+	background: color-mix(in srgb, var(--wiki-project-accent) 4%, var(--ds-surface));
+}
+.siftableBlockReference > header { display: grid; grid-template-columns: 72px minmax(0, 1fr); align-items: center; gap: .85rem; }
+.siftableBlockReference > header h2 { margin: .12rem 0 0; color: var(--ds-text); font-size: 1.65rem; }
+.siftableBlockReference > header p:last-child { margin: .25rem 0 0; color: var(--ds-muted); font-size: .78rem; }
+.siftableBlockFacts { display: grid; grid-template-columns: minmax(180px, 1.3fr) minmax(140px, .7fr) auto; align-items: end; gap: .7rem; margin-top: .85rem; padding-top: .75rem; border-top: 1px solid var(--ds-border); }
+.siftableBlockFacts > span { min-height: 46px; display: flex; flex-direction: column; justify-content: center; }
+.siftableBlockFacts small { color: var(--ds-muted); font: 750 .62rem var(--wiki-ui-font); letter-spacing: .06em; text-transform: uppercase; }
+.siftableBlockFacts strong { margin-top: .18rem; color: var(--ds-text); font-size: .78rem; }
+.siftableBlockFacts em { margin-top: .12rem; color: var(--ds-muted); font: normal .65rem var(--wiki-ui-font); }
+.siftableBlockFacts .sieveMeshBadge { width: fit-content; margin-top: .24rem; }
+.siftableBlockFacts > button { min-height: 38px; display: inline-flex; align-items: center; justify-content: space-between; gap: .65rem; padding: .45rem .65rem; border: 1px solid color-mix(in srgb, var(--wiki-project-accent) 42%, var(--ds-border)); border-radius: 9px; background: transparent; color: var(--ds-text); font: 800 .68rem var(--wiki-ui-font); cursor: pointer; }
+.siftableBlockFacts > button:hover { background: var(--wiki-project-accent); color: #fff; }
+.siftableBlockFacts > button b { font-size: 1rem; }
+
 @media (max-width: 760px) {
 	.itemDetailHero { grid-template-columns: 88px minmax(0, 1fr); gap: .9rem; padding-top: .6rem; }
 	.itemDetailVisual { width: 88px; height: 88px; min-height: 88px; border-radius: 12px; }
@@ -4052,23 +4240,35 @@
 	.itemMoreLink a { width: 100%; justify-content: space-between; }
 	.itemClosingGrid { gap: 0; }
 	.itemClosingGrid .relatedItemGrid { grid-template-columns: 1fr; }
+	.siftableBlockFacts { grid-template-columns: 1fr 1fr; }
+	.siftableBlockFacts > button { grid-column: 1 / -1; }
 }
 
 @media (max-width: 420px) {
-	.itemDetailHero { grid-template-columns: 72px minmax(0, 1fr); gap: .8rem; padding: .6rem 0 1.25rem; }
-	.itemDetailVisual { width: 72px; height: 72px; min-height: 72px; }
-	.itemDetailVisual > .detailItemVisual { min-height: 72px; }
-	.itemDetailVisual > .detailItemVisual.tierFlipbook { height: 72px; }
-	.itemDetailVisual .detailItemVisual img { width: 50px; max-height: 60px; height: auto; }
-	.itemDetailVisual .detailItemVisual.tierFlipbook img { width: 50px; max-height: none; height: 72px; object-fit: contain; }
+	.itemDetailHero { grid-template-columns: 94px minmax(0, 1fr); gap: .8rem; padding: .45rem 0 1rem; }
+	.itemDetailVisual { width: 94px; height: 94px; min-height: 94px; }
+	.itemDetailVisual > .detailItemVisual { min-height: 94px; }
+	.itemDetailVisual > .detailItemVisual.tierFlipbook { height: 94px; }
+	.itemDetailVisual .detailItemVisual img { width: 72px; max-height: 82px; height: auto; }
+	.itemDetailVisual .detailItemVisual.tierFlipbook img { width: 72px; max-height: none; height: 94px; object-fit: contain; }
 	.itemDetailHeading h1 { font-size: clamp(1.85rem, 9vw, 2.45rem); }
 	.itemDetailCopy { grid-column: 1 / -1; width: 100%; margin-top: .35rem; }
 	.itemDetailCopy > p { font-size: .9rem; line-height: 1.55; }
+	.sourceMethodHeading { align-items: start; }
+	.sourceVisual { width: 54px; }
+	.sourceVisual img, .sourceVisual[data-station] img { width: 48px; height: 48px; }
+	.sourceVisual span { max-width: 54px; }
 	.itemIdentifier { margin-top: .65rem; }
 	.itemIdentifier > span { width: 100%; }
 	.itemProperties > div, .itemProperties > div:nth-child(even), .sourceMethod > dl > div { grid-template-columns: 1fr; gap: .2rem; }
 	.itemRecipeCard > header { grid-template-columns: 32px minmax(0, 1fr); }
 	.itemRecipeCard > header > a { grid-column: 2; }
+	.siftableBlockReference { padding: .75rem; }
+	.siftableBlockReference > header { grid-template-columns: 58px minmax(0, 1fr); }
+	.siftableBlockReference > header .autosieveInputVisual,
+	.siftableBlockReference > header .autosieveInputVisual img { width: 52px; height: 52px; }
+	.siftableBlockFacts { grid-template-columns: 1fr; }
+	.siftableBlockFacts > button { grid-column: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -64,5 +64,7 @@ if (!apiKey) {
   }
 }
 
-await fs.writeFile(outputPath, `${JSON.stringify(next, null, 2)}\n`, 'utf8');
+if (apiKey || Object.keys(previous).length === 0) {
+  await fs.writeFile(outputPath, `${JSON.stringify(next, null, 2)}\n`, 'utf8');
+}
 console.log(`[curseforge-stats] Refreshed ${refreshed}/${projects.length} projects; ${Object.keys(next).length} cached totals available.`);

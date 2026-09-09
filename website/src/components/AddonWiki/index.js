@@ -133,7 +133,7 @@ function sectionSocialImage(project, section, itemCategory) {
   return resolveAsset(project, project.overview.heroImage ?? project.fallbackImage);
 }
 
-function WikiSearch({query, setQuery, placeholder}) {
+function WikiSearch({query, setQuery, placeholder, compact = false}) {
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -148,7 +148,7 @@ function WikiSearch({query, setQuery, placeholder}) {
   }, []);
 
   return (
-    <label className={styles.search}>
+    <label className={`${styles.search} ${compact ? styles.compactWikiSearch : ''}`}>
       <IconSearch aria-hidden="true" size={18} stroke={1.8} />
       <span className={styles.srOnly}>Search this wiki section</span>
       <input
@@ -168,7 +168,13 @@ function WikiFrame({active, query, setQuery, children}) {
   const catalogProject = getProjectByWikiPath(project.basePath);
   const activeSectionRef = useRef(null);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [mobileNavigationOpen, setMobileNavigationOpen] = useState(false);
   const [expandedSections, setExpandedSections] = useState(() => new Set(active.startsWith('how-to-play') ? ['how-to-play'] : []));
+  const activeRootSection = project.wikiSections.find((section) => active === section.id || active.startsWith(`${section.id}/`));
+  const activeChildSection = activeRootSection?.children?.find((child) => (
+    active === (child.id === 'introduction' ? activeRootSection.id : `${activeRootSection.id}/${child.id}`)
+  ));
+  const mobileNavigationLabel = activeChildSection?.label ?? activeRootSection?.label ?? 'Wiki navigation';
 
   useEffect(() => {
     setSidebarCollapsed(window.localStorage.getItem('dorios-wiki-sidebar-collapsed') === 'true');
@@ -176,7 +182,22 @@ function WikiFrame({active, query, setQuery, children}) {
 
   useEffect(() => {
     activeSectionRef.current?.scrollIntoView({block: 'nearest', inline: 'center'});
+    setMobileNavigationOpen(false);
   }, [active]);
+
+  useEffect(() => {
+    if (!mobileNavigationOpen) return;
+    window.requestAnimationFrame(() => activeSectionRef.current?.scrollIntoView({block: 'nearest', inline: 'center'}));
+  }, [mobileNavigationOpen]);
+
+  useEffect(() => {
+    if (!mobileNavigationOpen) return undefined;
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') setMobileNavigationOpen(false);
+    };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [mobileNavigationOpen]);
 
   useEffect(() => {
     if (!active.startsWith('how-to-play')) return;
@@ -264,6 +285,25 @@ function WikiFrame({active, query, setQuery, children}) {
 
         <div className={`${styles.wikiLayout} ${sidebarCollapsed ? styles.sidebarCollapsed : ''}`}>
           <aside className={styles.sidebar} aria-label={`${project.name} wiki sections`}>
+            <div className={styles.mobileSidebarBar}>
+              <div className={styles.mobileSidebarCurrent}>
+                <span className={styles.navIcon}><WikiIcon name={activeRootSection?.icon ?? 'book'} /></span>
+                <span><strong>{mobileNavigationLabel}</strong></span>
+              </div>
+              <WikiSearch query={query} setQuery={setQuery} placeholder="Search…" compact />
+              <button
+                type="button"
+                className={styles.mobileSidebarToggle}
+                data-wiki-menu
+                onClick={() => setMobileNavigationOpen((current) => !current)}
+                aria-label={mobileNavigationOpen ? 'Close wiki navigation' : 'Open wiki navigation'}
+                aria-expanded={mobileNavigationOpen}
+                aria-controls="wiki-navigation"
+              >
+                <span>{mobileNavigationOpen ? 'Close' : 'Browse'}</span>
+                <IconChevronDown aria-hidden="true" size={18} stroke={2} />
+              </button>
+            </div>
             <div className={styles.sidebarHeader}>
               <p>{project.name}</p>
               <button
@@ -279,21 +319,23 @@ function WikiFrame({active, query, setQuery, children}) {
                   : <IconChevronLeft aria-hidden="true" size={18} stroke={1.9} />}
               </button>
             </div>
-            <nav>
-              {groupedWikiSections(project.wikiSections).map((group) => (
-                <section className={styles.navSection} key={group.id} aria-label={group.label}>
-                  <p className={styles.navSectionLabel}>{group.label}</p>
-                  <div>{group.sections.map(renderWikiSection)}</div>
-                </section>
-              ))}
-            </nav>
-            {project.repository && (
-              <a className={styles.repoSideLink} href={project.repository} target="_blank" rel="noreferrer">
-                <IconBrandGithub aria-hidden="true" size={18} stroke={1.8} />
-                <span>GitHub repository</span>
-                <IconExternalLink className={styles.repoExternalIcon} aria-hidden="true" size={16} stroke={1.8} />
-              </a>
-            )}
+            <div id="wiki-navigation" className={`${styles.mobileNavContent} ${mobileNavigationOpen ? styles.mobileNavOpen : ''}`}>
+              <nav>
+                {groupedWikiSections(project.wikiSections).map((group) => (
+                  <section className={styles.navSection} key={group.id} aria-label={group.label}>
+                    <p className={styles.navSectionLabel}>{group.label}</p>
+                    <div>{group.sections.map(renderWikiSection)}</div>
+                  </section>
+                ))}
+              </nav>
+              {project.repository && (
+                <a className={styles.repoSideLink} href={project.repository} target="_blank" rel="noreferrer">
+                  <IconBrandGithub aria-hidden="true" size={18} stroke={1.8} />
+                  <span>GitHub repository</span>
+                  <IconExternalLink className={styles.repoExternalIcon} aria-hidden="true" size={16} stroke={1.8} />
+                </a>
+              )}
+            </div>
           </aside>
           <div className={styles.content}>{children}</div>
         </div>
@@ -471,7 +513,7 @@ function BlockPreview({entry, size = 'min(100%, 7rem)'}) {
   );
 }
 
-function BlockCard({entry}) {
+function BlockCard({entry, tags = []}) {
   const project = useWikiProject();
   return (
     <li className={styles.catalogListItem}>
@@ -481,7 +523,7 @@ function BlockCard({entry}) {
         <div className={styles.blockCopy}>
           <span>{entry.category}</span>
           <h2>{entry.name}</h2>
-          {entry.tier && <div><b>{entry.tier}</b></div>}
+          {tags.length > 0 && <div className={styles.blockTags}>{tags.slice(0, 4).map((tag) => <b key={tag}>{tag}</b>)}</div>}
         </div>
           <i className={styles.catalogArrow} aria-hidden="true">→</i>
         </article>
@@ -883,22 +925,20 @@ function RecipeCard({recipe}) {
   const outputs = recipeOutputs(recipe);
   const inputName = inputs.map(ingredientLabel).join(' + ');
   const outputName = outputs.map(ingredientLabel).join(' + ');
-  const singleCrafting = !linear && recipe.slots.filter(Boolean).length === 1 && outputs.length === 1;
+  const origin = recipeOriginFor(recipe, project);
+  const occupiedSlots = (recipe.slots ?? []).map((ingredient, index) => ingredient ? index : null).filter((index) => index !== null);
+  const twoByTwo = !linear && occupiedSlots.length > 0 && occupiedSlots.every((index) => [0, 1, 3, 4].includes(index));
+  const craftingSlots = twoByTwo ? [0, 1, 3, 4].map((index) => recipe.slots[index]) : recipe.slots;
 
   return (
-    <article className={`${styles.recipeCard} ${linear ? styles.linearRecipeCard : ''} ${singleCrafting ? styles.singleCraftingRecipeCard : ''}`} style={{'--recipe-origin-accent': recipeOriginFor(recipe, project).accent}}>
+    <article className={`${styles.recipeCard} ${linear ? styles.linearRecipeCard : ''}`} style={{'--recipe-origin-accent': origin.accent}}>
+      <Link className={styles.recipeCardTarget} to={detailHref} aria-label={`Open recipe for ${outputName}`} />
       <header>
         {station.face
           ? <img src={resolveAsset(project, station.face)} alt="" />
           : <span className={styles.stationFallback} aria-hidden="true">▦</span>}
-        <div><span>{station.label}</span><strong>{recipe.category}</strong></div>
-        <RecipeOriginBadge recipe={recipe} compact />
-        <Link
-          to={detailHref}
-          aria-label={`Open recipe for ${recipe.result.label ?? formatIdentifier(recipe.result.id)}`}
-        >
-          ↗
-        </Link>
+        <div><span>{station.label}</span></div>
+        {origin.id !== project.id && <RecipeOriginBadge recipe={recipe} compact />}
       </header>
       <div className={`${styles.recipeFlow} ${linear ? styles.linearRecipeFlow : ''}`}>
         {linear
@@ -911,7 +951,7 @@ function RecipeCard({recipe}) {
             </div>
             <strong title={inputName}>{inputName}</strong>
           </div>
-          : <div className={styles.craftingSlots}>{recipe.slots.map((ingredient, slot) => <RecipeSlot key={slot} ingredient={ingredient} />)}</div>}
+          : <div className={`${styles.craftingSlots} ${twoByTwo ? styles.craftingSlots2 : ''}`}>{craftingSlots.map((ingredient, slot) => <RecipeSlot key={slot} ingredient={ingredient} />)}</div>}
         <span className={styles.recipeArrow} aria-hidden="true">→</span>
         <div className={styles.recipeResult}>
           <div className={styles.recipeResultSlots}>
@@ -1270,25 +1310,89 @@ function ItemsPage({query, categorySection}) {
   );
 }
 
+const HAMMER_TIER_LABELS = [
+  'Wooden Hammer',
+  'Stone, Copper, or Golden Hammer',
+  'Iron or Steel Hammer',
+  'Diamond or Netherite Hammer',
+  'Aetherium Hammer',
+  'Titanium Hammer',
+];
+
+function blockIdentifiers(entry) {
+  return new Set([entry.id, entry.identifier, entry.shortId].filter(Boolean));
+}
+
+function sieveGroupForBlock(project, entry) {
+  const identifiers = blockIdentifiers(entry);
+  const recipes = project.processingRecipes
+    .map(normalizedProcessingRecipe)
+    .filter((recipe) => recipe.station === 'autosieve' && recipePrimaryInputs(recipe).some((input) => identifiers.has(input.id)));
+  return autosieveRecipeGroups(recipes)[0] ?? null;
+}
+
+function hammerRequirementForBlock(project, entry) {
+  const identifiers = blockIdentifiers(entry);
+  const recipe = project.processingRecipes
+    .map(normalizedProcessingRecipe)
+    .filter((candidate) => candidate.station === 'crusher' && recipeOutputs(candidate).some((result) => identifiers.has(result.id)))
+    .sort((left, right) => Number(left.tier ?? 0) - Number(right.tier ?? 0))[0];
+  if (!recipe) return null;
+  const tier = Number(recipe.tier ?? 0);
+  return {tier, label: HAMMER_TIER_LABELS[tier] ?? `Tier ${tier} Hammer`, source: recipePrimaryInputs(recipe)[0]};
+}
+
+function blockTagsFor(entry, sieveGroup) {
+  const source = `${entry.name} ${entry.id} ${entry.identifier} ${entry.category}`.toLowerCase();
+  const tags = ['Block'];
+  if (sieveGroup) tags.push('Siftable');
+  if (/crushed/.test(source)) tags.push('Crushed');
+  if (/compressed/.test(source)) tags.push('Compressed');
+  if (/\bore\b|_ore/.test(source)) tags.push('Ore');
+  if (/endstone|end_stone|\bend\b/.test(source)) tags.push('End');
+  else if (/nether|blackstone|basalt|soul/.test(source)) tags.push('Nether');
+  else tags.push('Overworld');
+  if (entry.category && !tags.some((tag) => tag.toLowerCase() === entry.category.toLowerCase())) tags.push(entry.category);
+  return [...new Set(tags)];
+}
+
 function BlocksPage({query}) {
   const project = useWikiProject();
-  const {blocks, machines = [], generators = []} = project;
+  const {blocks, machines = [], generators = [], processingRecipes = []} = project;
   const specializedBlockSlugs = new Set([
     ...machines.map((entry) => entry.blockSlug ?? entry.id),
     ...generators.map((entry) => entry.blockSlug ?? entry.id),
   ]);
-  const [category, setCategory] = useState('All');
+  const [tag, setTag] = useState('All');
   const normalized = query.trim().toLowerCase();
-  const visible = blocks.filter((entry) => !specializedBlockSlugs.has(entry.slug) && !specializedBlockSlugs.has(entry.shortId)
-    && (category === 'All' || entry.category === category)
-    && `${entry.name} ${entry.category} ${entry.tier} ${entry.id}`.toLowerCase().includes(normalized));
+  const catalog = useMemo(() => blocks
+    .filter((entry) => !specializedBlockSlugs.has(entry.slug) && !specializedBlockSlugs.has(entry.shortId))
+    .map((entry) => {
+      const sieveGroup = sieveGroupForBlock(project, entry);
+      return {entry, tags: blockTagsFor(entry, sieveGroup)};
+    }), [blocks, processingRecipes]);
+  const tagCounts = catalog.reduce((counts, item) => {
+    item.tags.forEach((name) => counts.set(name, (counts.get(name) ?? 0) + 1));
+    return counts;
+  }, new Map());
+  const tagOrder = ['Block', 'Siftable', 'Crushed', 'Compressed', 'Ore', 'End', 'Nether', 'Overworld'];
+  const filters = [
+    {name: 'All', count: catalog.length},
+    ...[...tagCounts].map(([name, count]) => ({name, count})).sort((left, right) => {
+      const leftIndex = tagOrder.indexOf(left.name);
+      const rightIndex = tagOrder.indexOf(right.name);
+      return (leftIndex < 0 ? tagOrder.length : leftIndex) - (rightIndex < 0 ? tagOrder.length : rightIndex) || left.name.localeCompare(right.name);
+    }),
+  ];
+  const visible = catalog.filter(({entry, tags}) => (tag === 'All' || tags.includes(tag))
+    && `${entry.name} ${entry.category} ${entry.tier} ${entry.id} ${tags.join(' ')}`.toLowerCase().includes(normalized));
   return (
     <>
       <PageIntro section="blocks" count={blocks.length} countLabel="blocks found" />
-      <FilterChips categories={categoriesFor(blocks)} active={category} setActive={setCategory} />
+      <FilterChips categories={filters} active={tag} setActive={setTag} ariaLabel="Filter blocks by tag" />
       <p className={styles.resultCount}>{visible.length} entries shown</p>
       <ul className={`${styles.simpleCatalogList} ${styles.blockCatalogList}`} aria-label={`${project.name} block catalog`}>
-        {visible.map((entry) => <BlockCard key={entry.id} entry={entry} />)}
+        {visible.map(({entry, tags}) => <BlockCard key={entry.id} entry={entry} tags={tags} />)}
       </ul>
       {!visible.length && <p className={styles.empty}>No blocks match the current filters.</p>}
     </>
@@ -1972,6 +2076,32 @@ function obtainingRecipes(project, entry) {
   return {crafting, machine};
 }
 
+function SiftableBlockReference({entry, group, hammer}) {
+  const [expanded, setExpanded] = useState(false);
+  if (!group?.drops?.length) return null;
+  const contentId = `block-${autosieveContentId(entry.id ?? entry.slug)}`;
+  const minimumTier = Math.min(...group.drops.map((drop) => drop.tier));
+  return (
+    <section className={styles.siftableBlockReference} aria-labelledby="siftable-block-reference">
+      <header>
+        <SieveItemVisual ingredient={group.input} className={styles.autosieveInputVisual} />
+        <div><p className={styles.eyebrow}>Sifting reference</p><h2 id="siftable-block-reference">Siftable block</h2><p>{group.drops.length} possible drops, each rolled independently.</p></div>
+      </header>
+      <div className={styles.siftableBlockFacts}>
+        {hammer && <span><small>Required hammer</small><strong>{hammer.label}</strong>{hammer.source && <em>Created from {ingredientLabel(hammer.source)}</em>}</span>}
+        <span><small>Minimum mesh</small><SieveMeshBadge tier={minimumTier} /></span>
+        <button type="button" aria-expanded={expanded} aria-controls={contentId} onClick={() => setExpanded((current) => !current)}>
+          <span>{expanded ? 'Hide drop table' : 'Show drop table'}</span><b aria-hidden="true">{expanded ? '−' : '+'}</b>
+        </button>
+      </div>
+      {expanded && <div id={contentId} className={styles.autosieveDropList}>
+        <div className={styles.autosieveDropHeader} aria-hidden="true"><span>Drop</span><span>Chance</span><span>Amount</span><span>Min. tier</span></div>
+        <AutoSieveDropRows drops={group.drops} />
+      </div>}
+    </section>
+  );
+}
+
 function useWikiQuery() {
   const location = useLocation();
   const [query, setQuery] = useState('');
@@ -2111,8 +2241,39 @@ function ItemSection({id, eyebrow, title, children, className = ''}) {
 }
 
 function SourceMethod({source, recipe}) {
+  const project = useWikiProject();
+  const sourceItems = [...(source.items ?? []), ...(source.item ? [source.item] : [])];
+  const visuals = sourceItems.map((item) => {
+    const target = catalogEntryFor(project, item);
+    return {
+      id: item,
+      label: target?.name ?? formatIdentifier(item),
+      image: visualFor(project, item),
+      href: detailLinkFor(project, item),
+    };
+  });
+  if (source.station) {
+    const station = project.stationMeta[source.station];
+    const stationTarget = catalogEntryFor(project, source.station);
+    visuals.push({
+      id: `station-${source.station}`,
+      label: station?.label ?? stationTarget?.name ?? formatIdentifier(source.station),
+      image: station?.face ? resolveAsset(project, station.face) : visualFor(project, source.station),
+      href: detailLinkFor(project, source.station),
+      station: true,
+    });
+  }
+  const renderVisual = (entry) => {
+    const content = <><img src={entry.image} alt="" loading="lazy" /><span>{entry.label}</span></>;
+    return entry.href
+      ? <Link className={styles.sourceVisual} data-station={entry.station || undefined} to={entry.href} key={entry.id}>{content}</Link>
+      : <span className={styles.sourceVisual} data-station={entry.station || undefined} key={entry.id}>{content}</span>;
+  };
   return <article className={styles.sourceMethod}>
-    <div><small>{source.type ?? 'Primary source'}</small><h3>{source.title}</h3>{source.description && <p>{source.description}</p>}</div>
+    <div className={styles.sourceMethodHeading}>
+      <div><small>{source.type ?? 'Primary source'}</small><h3>{source.title}</h3>{source.description && <p>{source.description}</p>}</div>
+      {visuals.some(({image}) => image) && <div className={styles.sourceVisuals}>{visuals.filter(({image}) => image).map(renderVisual)}</div>}
+    </div>
     {source.facts?.length > 0 && <dl>{source.facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}
     {recipe && <ItemRecipeCard recipe={recipe} />}
   </article>;
@@ -2433,6 +2594,7 @@ function CatalystWeaverRecipeFlow({recipe, machine}) {
 
 function ProcessingCatalogCard({recipe, machine}) {
   const project = useWikiProject();
+  const origin = recipeOriginFor(recipe, project);
   const inputs = recipePrimaryInputs(recipe);
   const results = recipeOutputs(recipe);
   const title = results.map(ingredientLabel).join(' + ');
@@ -2440,7 +2602,7 @@ function ProcessingCatalogCard({recipe, machine}) {
   const catalystWeaver = isCatalystWeaverRecipe(recipe, machine);
   return (
     <article className={`${styles.machineProcessCard} ${catalystWeaver ? styles.catalystWeaverProcessCard : ''}`} style={{'--recipe-origin-accent': recipeOriginFor(recipe, project).accent}}>
-      <header><h4 title={title}>{title}</h4><RecipeOriginBadge recipe={recipe} compact /></header>
+      <header><h4 title={title}>{title}</h4>{origin.id !== project.id && <RecipeOriginBadge recipe={recipe} compact />}</header>
       {catalystWeaver ? <CatalystWeaverRecipeFlow recipe={recipe} machine={machine} /> : <div className={styles.machineProcessFlow}>
         <div className={styles.machineProcessInputs}>
           {inputs.map((ingredient, index) => <React.Fragment key={`${ingredient.id ?? ingredient.label}-${index}`}>
@@ -2559,11 +2721,12 @@ function SieveMeshBadge({tier, className = ''}) {
 }
 
 function AutoSieveDropRows({drops}) {
+  const project = useWikiProject();
   return (
     <div className={styles.autosieveDropRows}>
       {drops.map((drop) => (
         <div className={styles.autosieveDropRow} key={drop.id} style={{'--recipe-origin-accent': drop.origin.accent}}>
-          <div className={styles.autosieveDropName}><SieveItemVisual ingredient={drop.result} className={styles.autosieveDropVisual} /><strong>{ingredientLabel(drop.result)}</strong><RecipeOriginBadge recipe={{origin: drop.origin}} compact /></div>
+          <div className={styles.autosieveDropName}><SieveItemVisual ingredient={drop.result} className={styles.autosieveDropVisual} /><strong>{ingredientLabel(drop.result)}</strong>{drop.origin.id !== project.id && <RecipeOriginBadge recipe={{origin: drop.origin}} compact />}</div>
           <span>{formatSieveChance(drop.chance)}</span>
           <span>{formatSieveAmount(drop.amount)}</span>
           <SieveMeshBadge tier={drop.tier} />
@@ -2574,10 +2737,12 @@ function AutoSieveDropRows({drops}) {
 }
 
 function AutoSieveSiftCard({group}) {
+  const project = useWikiProject();
   const [expanded, setExpanded] = useState(false);
   const contentId = autosieveContentId(group.id);
   const minimumTier = Math.min(...group.drops.map((drop) => drop.tier));
   const origins = [...new Map(group.drops.map((drop) => [drop.origin.id, drop.origin])).values()];
+  const externalOrigins = origins.filter((origin) => origin.id !== project.id);
   const singleOrigin = origins.length === 1 ? origins[0] : null;
   return (
     <article className={styles.autosieveSiftCard} data-expanded={expanded || undefined} style={singleOrigin ? {'--recipe-origin-accent': singleOrigin.accent} : undefined}>
@@ -2592,7 +2757,7 @@ function AutoSieveSiftCard({group}) {
           </div>
           <p>Sieveable block <span aria-hidden="true">·</span> {group.drops.length} possible drop{group.drops.length === 1 ? '' : 's'}</p>
           <div className={styles.autosieveMinTier}><small>Minimum mesh</small><SieveMeshBadge tier={minimumTier} /></div>
-          {origins.length > 0 && <div className={styles.autosieveOriginBadges}>{origins.map((origin) => <RecipeOriginBadge key={origin.id} recipe={{origin}} compact />)}</div>}
+          {externalOrigins.length > 0 && <div className={styles.autosieveOriginBadges}>{externalOrigins.map((origin) => <RecipeOriginBadge key={origin.id} recipe={{origin}} compact />)}</div>}
         </div>
       </header>
       {expanded && <div id={contentId} className={styles.autosieveDropList}>
@@ -3018,6 +3183,9 @@ function AddonWikiEntryContent({entryType, slug}) {
   let visual;
   let facts = [];
   let referenceGroups;
+  let blockSieveGroup;
+  let blockHammer;
+  let blockTags = [];
 
   if (entryType === 'machines') {
     const controller = (allBlocks ?? blocks).find((candidate) => candidate.slug === (entry.blockSlug ?? machineControllerIds[entry.id]));
@@ -3071,6 +3239,9 @@ function AddonWikiEntryContent({entryType, slug}) {
     visual = <div className={styles.detailCubeVisual}><BlockPreview entry={entry} size="min(100%, 12.5rem)" /></div>;
     facts = blockDetailFacts(entry);
     referenceGroups = entryReferenceGroups(entryType, entry);
+    blockSieveGroup = sieveGroupForBlock(project, entry);
+    blockHammer = hammerRequirementForBlock(project, entry);
+    blockTags = blockTagsFor(entry, blockSieveGroup);
   } else if (entryType === 'generators') {
     visual = <div className={styles.detailGuideVisual}>{entry.faces
       ? <BlockPreview entry={entry} size="min(100%, 12.5rem)" />
@@ -3118,10 +3289,8 @@ function AddonWikiEntryContent({entryType, slug}) {
             <RecipeCard recipe={recipe} />
             <DetailFacts facts={[
               ['Station', stationMeta[recipe.station]?.label ?? formatIdentifier(recipe.station)],
-              ['Added by', <RecipeOriginBadge recipe={recipe} />],
-              ['Category', recipe.category],
+              ...(recipeOriginFor(recipe, project).id !== project.id ? [['Added by', <RecipeOriginBadge recipe={recipe} />]] : []),
               ['Used slots', recipe.slotCount],
-              ['Recipe type', recipe.recipeKind ?? recipe.kind ?? 'Processing'],
               ['Energy', recipe.cost],
               ['Duration', recipe.duration ?? (recipe.ticks ? `${recipe.ticks} ticks` : null)],
               ['Fluid', normalizedFluidIngredient(recipe.fluid)?.label],
@@ -3137,10 +3306,11 @@ function AddonWikiEntryContent({entryType, slug}) {
           <>
             <article className={styles.detailHero}>
               {visual}
-              <div className={styles.detailHeading}><p className={styles.eyebrow}>{entryTypeLabel} entry</p><h1>{entry.name}</h1>{entry.description && <p>{entry.description}</p>}</div>
+              <div className={styles.detailHeading}><p className={styles.eyebrow}>{entryTypeLabel} entry</p><h1>{entry.name}</h1>{entry.description && <p>{entry.description}</p>}{blockTags.length > 0 && <div className={styles.detailBlockTags}>{blockTags.map((tag) => <span key={tag}>{tag}</span>)}</div>}</div>
             </article>
             {referenceGroups?.length ? <EntryReference entryType={entryType} groups={referenceGroups} /> : <DetailFacts facts={facts} />}
             {entryType === 'blocks' && <MiningReference mining={entry.mining} />}
+            {entryType === 'blocks' && <SiftableBlockReference entry={entry} group={blockSieveGroup} hammer={blockHammer} />}
             {entryType === 'blocks' && <RelatedRecipes entry={entry} />}
           </>
         )}

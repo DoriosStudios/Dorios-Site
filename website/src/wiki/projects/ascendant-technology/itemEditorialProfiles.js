@@ -15,6 +15,7 @@ const itemEditorialProfiles = {
           id: 'world-generation',
           type: 'World generation',
           title: 'Aetherium Ore',
+          items: ['utilitycraft:deepslate_aetherium_ore', 'utilitycraft:end_aetherium_ore'],
           description: 'Mine Aetherium Ore without Silk Touch. Fortune increases the crystal yield.',
           facts: [
             ['Dimensions', 'The End and Overworld'],
@@ -27,6 +28,8 @@ const itemEditorialProfiles = {
           id: 'advanced-sieving',
           type: 'Sieving',
           title: 'Crushed Endstone',
+          item: 'utilitycraft:crushed_endstone',
+          station: 'autosieve',
           description: 'Sieve Crushed Endstone for Aetherium Shards, then combine four shards into one crystal.',
           facts: [
             ['Minimum mesh tier', '5'],
@@ -72,6 +75,7 @@ const itemEditorialProfiles = {
         id: 'catalyst-weaver',
         type: 'Machine processing',
         title: 'Catalyst Weaver',
+        station: 'catalyst_weaver',
         description: 'Combines the metal base with Aetherium Crystal or Crystal Dust and 8,000 mB of lava.',
         recipe: recipe('catalyst_weaver', 'utilitycraft:aetherium', 'utilitycraft:aetherium_crystal'),
       }],
