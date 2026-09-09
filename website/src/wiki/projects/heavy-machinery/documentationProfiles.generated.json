@@ -1,5 +1,248 @@
 {
   "items": {
+    "utilitycraft:hazmat_boots": {
+      "documentation": {
+        "description": "Hazmat Boots has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Armor",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Armor statistics",
+        "statistics": [
+          [
+            "Durability",
+            "195"
+          ],
+          [
+            "Protection",
+            2
+          ],
+          [
+            "Enchantability",
+            "9 · Armor Feet preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "equipment",
+            "label": "Equipment",
+            "title": "Equipment properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Wear slot",
+                "Armor Feet"
+              ],
+              [
+                "Repair with",
+                "Rubber Sheet — 25% of maximum durability; Hazmat Boots — context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Armor Feet · enchantability 9.",
+            "entries": [
+              "Protection",
+              "Fire Protection",
+              "Blast Protection",
+              "Projectile Protection",
+              "Feather Falling",
+              "Depth Strider",
+              "Frost Walker",
+              "Soul Speed",
+              "Thorns",
+              "Unbreaking",
+              "Mending",
+              "Curse of Binding",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:hazmat_chestplate": {
+      "documentation": {
+        "description": "Hazmat Chestplate has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Armor",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Armor statistics",
+        "statistics": [
+          [
+            "Durability",
+            "240"
+          ],
+          [
+            "Protection",
+            6
+          ],
+          [
+            "Enchantability",
+            "9 · Armor Torso preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "equipment",
+            "label": "Equipment",
+            "title": "Equipment properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Wear slot",
+                "Armor Chest"
+              ],
+              [
+                "Repair with",
+                "Rubber Sheet — 25% of maximum durability; Hazmat Chestplate — context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Armor Torso · enchantability 9.",
+            "entries": [
+              "Protection",
+              "Fire Protection",
+              "Blast Protection",
+              "Projectile Protection",
+              "Thorns",
+              "Unbreaking",
+              "Mending",
+              "Curse of Binding",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:hazmat_helmet": {
+      "documentation": {
+        "description": "Hazmat Helmet has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Armor",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Armor statistics",
+        "statistics": [
+          [
+            "Durability",
+            "165"
+          ],
+          [
+            "Protection",
+            2
+          ],
+          [
+            "Enchantability",
+            "9 · Armor Head preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "equipment",
+            "label": "Equipment",
+            "title": "Equipment properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Wear slot",
+                "Armor Head"
+              ],
+              [
+                "Repair with",
+                "Rubber Sheet — 25% of maximum durability; Hazmat Helmet — context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Armor Head · enchantability 9.",
+            "entries": [
+              "Protection",
+              "Fire Protection",
+              "Blast Protection",
+              "Projectile Protection",
+              "Respiration",
+              "Aqua Affinity",
+              "Thorns",
+              "Unbreaking",
+              "Mending",
+              "Curse of Binding",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
+    "utilitycraft:hazmat_leggings": {
+      "documentation": {
+        "description": "Hazmat Leggings has its registered Bedrock item properties documented below.",
+        "basic": {
+          "itemType": "Armor",
+          "maximumStack": 1
+        },
+        "statisticsTitle": "Armor statistics",
+        "statistics": [
+          [
+            "Durability",
+            "225"
+          ],
+          [
+            "Protection",
+            5
+          ],
+          [
+            "Enchantability",
+            "9 · Armor Legs preset"
+          ]
+        ],
+        "sections": [
+          {
+            "id": "equipment",
+            "label": "Equipment",
+            "title": "Equipment properties",
+            "copy": "Values are read from the registered Bedrock item definition.",
+            "facts": [
+              [
+                "Wear slot",
+                "Armor Legs"
+              ],
+              [
+                "Repair with",
+                "Rubber Sheet — 25% of maximum durability; Hazmat Leggings — context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+              ]
+            ]
+          },
+          {
+            "id": "enchantments",
+            "label": "Enchantments",
+            "title": "Enchantment preset",
+            "copy": "Bedrock slot preset: Armor Legs · enchantability 9.",
+            "entries": [
+              "Protection",
+              "Fire Protection",
+              "Blast Protection",
+              "Projectile Protection",
+              "Swift Sneak",
+              "Thorns",
+              "Unbreaking",
+              "Mending",
+              "Curse of Binding",
+              "Curse of Vanishing"
+            ]
+          }
+        ]
+      }
+    },
     "utilitycraft:utility_exo_boots": {
       "documentation": {
         "description": "Utility Exo Boots has its registered Bedrock item properties documented below.",
@@ -120,7 +363,23 @@
         ]
       }
     },
+    "utilitycraft:high_speed_rotor": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
     "utilitycraft:bronze_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:fluorite_dust": {
       "documentation": {
         "basic": {
           "itemType": "Item",
@@ -136,7 +395,7 @@
         }
       }
     },
-    "utilitycraft:uranium_dust": {
+    "utilitycraft:enriched_uranium_oxide": {
       "documentation": {
         "basic": {
           "itemType": "Item",
@@ -152,7 +411,7 @@
         }
       }
     },
-    "utilitycraft:uranium_pellet": {
+    "utilitycraft:spent_uranium_pellet": {
       "documentation": {
         "basic": {
           "itemType": "Item",
@@ -192,6 +451,22 @@
         }
       }
     },
+    "utilitycraft:rubber_sheet": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:uranium_concentrate": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
     "utilitycraft:charged_darloonite_crystal": {
       "documentation": {
         "basic": {
@@ -208,6 +483,14 @@
         }
       }
     },
+    "utilitycraft:fluorite_crystal": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
     "utilitycraft:bronze_ingot": {
       "documentation": {
         "basic": {
@@ -217,14 +500,6 @@
       }
     },
     "utilitycraft:tin_ingot": {
-      "documentation": {
-        "basic": {
-          "itemType": "Item",
-          "maximumStack": 64
-        }
-      }
-    },
-    "utilitycraft:uranium_ingot": {
       "documentation": {
         "basic": {
           "itemType": "Item",
@@ -256,14 +531,6 @@
         }
       }
     },
-    "utilitycraft:deepslate_uranium_chunk": {
-      "documentation": {
-        "basic": {
-          "itemType": "Item",
-          "maximumStack": 64
-        }
-      }
-    },
     "utilitycraft:tin_chunk": {
       "documentation": {
         "basic": {
@@ -281,14 +548,6 @@
       }
     },
     "utilitycraft:raw_tin": {
-      "documentation": {
-        "basic": {
-          "itemType": "Item",
-          "maximumStack": 64
-        }
-      }
-    },
-    "utilitycraft:raw_uranium": {
       "documentation": {
         "basic": {
           "itemType": "Item",

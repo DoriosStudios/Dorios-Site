@@ -480,6 +480,14 @@
         }
       }
     },
+    "utilitycraft:lead_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
     "utilitycraft:netherite_dust": {
       "documentation": {
         "basic": {
@@ -528,6 +536,22 @@
         }
       }
     },
+    "utilitycraft:uranium_dust": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:uranium_pellet": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
     "utilitycraft:copper_plate": {
       "documentation": {
         "basic": {
@@ -553,6 +577,14 @@
       }
     },
     "utilitycraft:iron_plate": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:lead_plate": {
       "documentation": {
         "basic": {
           "itemType": "Item",
@@ -744,6 +776,22 @@
         }
       }
     },
+    "utilitycraft:lead_ingot": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:uranium_ingot": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
     "utilitycraft:blueprint": {
       "documentation": {
         "basic": {
@@ -865,6 +913,14 @@
       }
     },
     "utilitycraft:ultimate_upgrade": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:lead_nugget": {
       "documentation": {
         "basic": {
           "itemType": "Item",
@@ -1008,6 +1064,22 @@
         }
       }
     },
+    "utilitycraft:deepslate_lead_chunk": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:deepslate_uranium_chunk": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
     "utilitycraft:diamond_shard": {
       "documentation": {
         "basic": {
@@ -1096,6 +1168,14 @@
         }
       }
     },
+    "utilitycraft:lead_chunk": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
     "utilitycraft:mud_ball": {
       "documentation": {
         "basic": {
@@ -1177,6 +1257,22 @@
       }
     },
     "utilitycraft:wither_skull_shard": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:raw_lead": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:raw_uranium": {
       "documentation": {
         "basic": {
           "itemType": "Item",
@@ -3328,14 +3424,6 @@
         ]
       }
     },
-    "utilitycraft:bionic_arm": {
-      "documentation": {
-        "basic": {
-          "itemType": "Item",
-          "maximumStack": 1
-        }
-      }
-    },
     "utilitycraft:flint_knife": {
       "documentation": {
         "description": "Flint Knife has its registered Bedrock item properties documented below.",
@@ -3978,14 +4066,6 @@
         "basic": {
           "itemType": "Item",
           "maximumStack": 16
-        }
-      }
-    },
-    "utilitycraft:mortar": {
-      "documentation": {
-        "basic": {
-          "itemType": "Item",
-          "maximumStack": 64
         }
       }
     },

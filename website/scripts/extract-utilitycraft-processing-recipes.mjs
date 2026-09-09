@@ -600,7 +600,7 @@ function baseRecipeData() {
 }
 
 function coreAdditions(root, originId, layout) {
-  const prefix = layout === 'ascendant' ? 'added' : 'recipes_register';
+  const prefix = layout === 'ascendant' ? 'added' : 'recipesRegister';
   const registryRoot = layout === 'ascendant' ? root : path.dirname(root);
   const variables = layout === 'ascendant'
     ? {
@@ -1152,7 +1152,7 @@ function abyssalFisherRecipes(root) {
 
 function heavySpecializedRecipes() {
   const root = recipeRoots['heavy-machinery'];
-  const definitions = readLiteral(root, 'reaction_chamber.js', 'reactionRecipes');
+  const definitions = readLiteral(root, 'reactionChamber.js', 'reactionRecipes');
   return Object.entries(definitions ?? {}).flatMap(([key, definition]) => {
     const [inputId, fluidType] = key.split('|');
     if (!isConcreteIdentifier(inputId) || !fluidType) return [];

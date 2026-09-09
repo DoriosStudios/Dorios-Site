@@ -2241,8 +2241,8 @@
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
   {
-    "id": "heavy-machinery-electro-press-utilitycraft-deepslate-uranium-chunk-arc-press-forge",
-    "identifier": "heavy-machinery:process/electro-press/utilitycraft-deepslate-uranium-chunk-arc-press-forge",
+    "id": "heavy-machinery-electro-press-utilitycraft-enriched-uranium-oxide-arc-press-forge",
+    "identifier": "heavy-machinery:process/electro-press/utilitycraft-enriched-uranium-oxide-arc-press-forge",
     "type": "machine",
     "station": "arc_press_forge",
     "category": "Arc Press Forge recipe",
@@ -2250,8 +2250,8 @@
     "slotCount": 1,
     "slots": [
       {
-        "id": "utilitycraft:deepslate_uranium_chunk",
-        "count": 4
+        "id": "utilitycraft:enriched_uranium_oxide",
+        "count": 1
       },
       null,
       null,
@@ -2264,17 +2264,17 @@
     ],
     "inputs": [
       {
-        "id": "utilitycraft:deepslate_uranium_chunk",
-        "count": 4
+        "id": "utilitycraft:enriched_uranium_oxide",
+        "count": 1
       }
     ],
     "result": {
-      "id": "utilitycraft:deepslate_uranium_ore",
+      "id": "utilitycraft:enriched_uranium_pellet",
       "count": 1
     },
     "results": [
       {
-        "id": "utilitycraft:deepslate_uranium_ore",
+        "id": "utilitycraft:enriched_uranium_pellet",
         "count": 1
       }
     ],
@@ -2285,8 +2285,8 @@
       "category": "Heavy Machinery"
     },
     "originId": "heavy-machinery",
-    "input": "4× utilitycraft:deepslate_uranium_chunk",
-    "output": "utilitycraft:deepslate_uranium_ore",
+    "input": "utilitycraft:enriched_uranium_oxide",
+    "output": "utilitycraft:enriched_uranium_pellet",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
@@ -2387,56 +2387,6 @@
     "originId": "heavy-machinery",
     "input": "utilitycraft:tin_ingot",
     "output": "utilitycraft:tin_plate",
-    "machineAddon": "ascendant-technology",
-    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
-  },
-  {
-    "id": "heavy-machinery-electro-press-utilitycraft-uranium-ingot-arc-press-forge",
-    "identifier": "heavy-machinery:process/electro-press/utilitycraft-uranium-ingot-arc-press-forge",
-    "type": "machine",
-    "station": "arc_press_forge",
-    "category": "Arc Press Forge recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:uranium_ingot",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:uranium_ingot",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:uranium_rod",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:uranium_rod",
-        "count": 1
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:uranium_ingot",
-    "output": "utilitycraft:uranium_rod",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
@@ -7442,24 +7392,24 @@
     "slotCount": 5,
     "slots": [
       {
-        "id": "minecraft:gold_ingot",
+        "id": "minecraft:netherite_ingot",
         "count": 1
       },
       {
-        "id": "utilitycraft:steel_ingot",
-        "count": 1
+        "id": "utilitycraft:titanium_dust",
+        "count": 8
       },
       {
-        "id": "utilitycraft:energized_iron_ingot",
-        "count": 1
+        "id": "utilitycraft:tungsten_dust",
+        "count": 8
       },
       {
         "id": "utilitycraft:ender_pearl_dust",
-        "count": 4
+        "count": 8
       },
       {
         "id": "utilitycraft:aetherium_crystal",
-        "count": 1
+        "count": 2
       },
       null,
       null,
@@ -7468,26 +7418,26 @@
     ],
     "inputs": [
       {
-        "id": "minecraft:gold_ingot",
+        "id": "minecraft:netherite_ingot",
         "count": 1
       }
     ],
     "catalysts": [
       {
-        "id": "utilitycraft:steel_ingot",
-        "count": 1
+        "id": "utilitycraft:titanium_dust",
+        "count": 8
       },
       {
-        "id": "utilitycraft:energized_iron_ingot",
-        "count": 1
+        "id": "utilitycraft:tungsten_dust",
+        "count": 8
       },
       {
         "id": "utilitycraft:ender_pearl_dust",
-        "count": 4
+        "count": 8
       },
       {
         "id": "utilitycraft:aetherium_crystal",
-        "count": 1
+        "count": 2
       }
     ],
     "result": {
@@ -7500,18 +7450,9 @@
         "count": 1
       }
     ],
-    "byproducts": [
-      {
-        "id": "utilitycraft:stabilized_obsidian_dust",
-        "count": 2,
-        "min": 0,
-        "max": 2,
-        "chance": 0.05
-      }
-    ],
     "fluid": {
-      "type": "lava",
-      "amount": 8000
+      "type": "cryofluid",
+      "amount": 1600
     },
     "cost": 12000,
     "energyCost": 12000,
@@ -7523,12 +7464,12 @@
       "category": "Ascendant Technology"
     },
     "originId": "ascendant-technology",
-    "input": "minecraft:gold_ingot + utilitycraft:steel_ingot + utilitycraft:energized_iron_ingot + 4× utilitycraft:ender_pearl_dust + utilitycraft:aetherium_crystal",
-    "output": "utilitycraft:aetherium + 0–2× utilitycraft:stabilized_obsidian_dust (5%)"
+    "input": "minecraft:netherite_ingot + 8× utilitycraft:titanium_dust + 8× utilitycraft:tungsten_dust + 8× utilitycraft:ender_pearl_dust + 2× utilitycraft:aetherium_crystal",
+    "output": "utilitycraft:aetherium"
   },
   {
-    "id": "ascendant-technology-catalyst-weaver-utilitycraft-aetherium-ingot-from-crystal-dust",
-    "identifier": "ascendant-technology:process/catalyst-weaver/utilitycraft-aetherium-ingot-from-crystal-dust",
+    "id": "ascendant-technology-catalyst-weaver-utilitycraft-aetherium-ingot-from-shards",
+    "identifier": "ascendant-technology:process/catalyst-weaver/utilitycraft-aetherium-ingot-from-shards",
     "type": "machine",
     "station": "catalyst_weaver",
     "category": "Catalyst Weaver recipe",
@@ -7536,24 +7477,24 @@
     "slotCount": 5,
     "slots": [
       {
-        "id": "minecraft:gold_ingot",
+        "id": "minecraft:netherite_ingot",
         "count": 1
       },
       {
-        "id": "utilitycraft:steel_ingot",
-        "count": 1
+        "id": "utilitycraft:titanium_dust",
+        "count": 8
       },
       {
-        "id": "utilitycraft:energized_iron_ingot",
-        "count": 1
+        "id": "utilitycraft:tungsten_dust",
+        "count": 8
       },
       {
         "id": "utilitycraft:ender_pearl_dust",
-        "count": 4
+        "count": 8
       },
       {
-        "id": "utilitycraft:aetherium_crystal_dust",
-        "count": 2
+        "id": "utilitycraft:aetherium_shard",
+        "count": 8
       },
       null,
       null,
@@ -7562,26 +7503,26 @@
     ],
     "inputs": [
       {
-        "id": "minecraft:gold_ingot",
+        "id": "minecraft:netherite_ingot",
         "count": 1
       }
     ],
     "catalysts": [
       {
-        "id": "utilitycraft:steel_ingot",
-        "count": 1
+        "id": "utilitycraft:titanium_dust",
+        "count": 8
       },
       {
-        "id": "utilitycraft:energized_iron_ingot",
-        "count": 1
+        "id": "utilitycraft:tungsten_dust",
+        "count": 8
       },
       {
         "id": "utilitycraft:ender_pearl_dust",
-        "count": 4
+        "count": 8
       },
       {
-        "id": "utilitycraft:aetherium_crystal_dust",
-        "count": 2
+        "id": "utilitycraft:aetherium_shard",
+        "count": 8
       }
     ],
     "result": {
@@ -7594,18 +7535,9 @@
         "count": 1
       }
     ],
-    "byproducts": [
-      {
-        "id": "utilitycraft:stabilized_obsidian_dust",
-        "count": 2,
-        "min": 0,
-        "max": 2,
-        "chance": 0.05
-      }
-    ],
     "fluid": {
-      "type": "lava",
-      "amount": 8000
+      "type": "cryofluid",
+      "amount": 1600
     },
     "cost": 12000,
     "energyCost": 12000,
@@ -7617,8 +7549,8 @@
       "category": "Ascendant Technology"
     },
     "originId": "ascendant-technology",
-    "input": "minecraft:gold_ingot + utilitycraft:steel_ingot + utilitycraft:energized_iron_ingot + 4× utilitycraft:ender_pearl_dust + 2× utilitycraft:aetherium_crystal_dust",
-    "output": "utilitycraft:aetherium + 0–2× utilitycraft:stabilized_obsidian_dust (5%)"
+    "input": "minecraft:netherite_ingot + 8× utilitycraft:titanium_dust + 8× utilitycraft:tungsten_dust + 8× utilitycraft:ender_pearl_dust + 8× utilitycraft:aetherium_shard",
+    "output": "utilitycraft:aetherium"
   },
   {
     "id": "ascendant-technology-catalyst-weaver-utilitycraft-amethyst-recovery",
@@ -8322,7 +8254,7 @@
     "station": "catalyst_weaver",
     "category": "Catalyst Weaver recipe",
     "recipeKind": "catalyst",
-    "slotCount": 5,
+    "slotCount": 4,
     "slots": [
       {
         "id": "utilitycraft:speed_upgrade",
@@ -8333,10 +8265,6 @@
         "count": 2
       },
       {
-        "id": "utilitycraft:aetherium_dust",
-        "count": 1
-      },
-      {
         "id": "utilitycraft:aetherium_crystal_dust",
         "count": 1
       },
@@ -8344,6 +8272,7 @@
         "id": "utilitycraft:titanium_dust",
         "count": 1
       },
+      null,
       null,
       null,
       null,
@@ -8359,10 +8288,6 @@
       {
         "id": "utilitycraft:energized_iron_dust",
         "count": 2
-      },
-      {
-        "id": "utilitycraft:aetherium_dust",
-        "count": 1
       },
       {
         "id": "utilitycraft:aetherium_crystal_dust",
@@ -8393,7 +8318,81 @@
       "category": "Ascendant Technology"
     },
     "originId": "ascendant-technology",
-    "input": "utilitycraft:speed_upgrade + 2× utilitycraft:energized_iron_dust + utilitycraft:aetherium_dust + utilitycraft:aetherium_crystal_dust + utilitycraft:titanium_dust",
+    "input": "utilitycraft:speed_upgrade + 2× utilitycraft:energized_iron_dust + utilitycraft:aetherium_crystal_dust + utilitycraft:titanium_dust",
+    "output": "utilitycraft:hyper_processing_upgrade"
+  },
+  {
+    "id": "ascendant-technology-catalyst-weaver-utilitycraft-hyper-processing-upgrade-alternative",
+    "identifier": "ascendant-technology:process/catalyst-weaver/utilitycraft-hyper-processing-upgrade-alternative",
+    "type": "machine",
+    "station": "catalyst_weaver",
+    "category": "Catalyst Weaver recipe",
+    "recipeKind": "catalyst",
+    "slotCount": 4,
+    "slots": [
+      {
+        "id": "utilitycraft:speed_upgrade",
+        "count": 1
+      },
+      {
+        "id": "utilitycraft:energized_iron_dust",
+        "count": 2
+      },
+      {
+        "id": "utilitycraft:aetherium_dust",
+        "count": 1
+      },
+      {
+        "id": "utilitycraft:titanium_dust",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:speed_upgrade",
+        "count": 1
+      }
+    ],
+    "catalysts": [
+      {
+        "id": "utilitycraft:energized_iron_dust",
+        "count": 2
+      },
+      {
+        "id": "utilitycraft:aetherium_dust",
+        "count": 1
+      },
+      {
+        "id": "utilitycraft:titanium_dust",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:hyper_processing_upgrade",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:hyper_processing_upgrade",
+        "count": 1
+      }
+    ],
+    "cost": 12800,
+    "energyCost": 12800,
+    "note": "Processing speed modifier ×0.25.",
+    "origin": {
+      "id": "ascendant-technology",
+      "label": "Ascendant Technology",
+      "accent": "#a78bfa",
+      "category": "Ascendant Technology"
+    },
+    "originId": "ascendant-technology",
+    "input": "utilitycraft:speed_upgrade + 2× utilitycraft:energized_iron_dust + utilitycraft:aetherium_dust + utilitycraft:titanium_dust",
     "output": "utilitycraft:hyper_processing_upgrade"
   },
   {
@@ -14390,6 +14389,67 @@
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
   {
+    "id": "heavy-machinery-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-fluorite-crystal-5-9-0p015-2-centrifugal-siever",
+    "identifier": "heavy-machinery:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-fluorite-crystal-5-9-0p015-2-centrifugal-siever",
+    "type": "machine",
+    "station": "centrifugal_siever",
+    "category": "Centrifugal Siever loot",
+    "recipeKind": "loot",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:compressed_crushed_cobbled_deepslate",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:compressed_crushed_cobbled_deepslate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:fluorite_crystal",
+      "count": 9,
+      "chance": 0.015
+    },
+    "results": [],
+    "drops": [
+      {
+        "id": "utilitycraft:fluorite_crystal",
+        "count": 9,
+        "chance": 0.015
+      }
+    ],
+    "conditions": [
+      {
+        "id": "mesh-tier",
+        "label": "Minimum mesh tier",
+        "value": 5
+      }
+    ],
+    "tier": 5,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:compressed_crushed_cobbled_deepslate",
+    "output": "9× utilitycraft:fluorite_crystal (1.5%)",
+    "machineAddon": "ascendant-technology",
+    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
+  },
+  {
     "id": "heavy-machinery-autosieve-utilitycraft-compressed-gravel-utilitycraft-tin-chunk-4-9-0p05-0-centrifugal-siever",
     "identifier": "heavy-machinery:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-tin-chunk-4-9-0p05-0-centrifugal-siever",
     "type": "machine",
@@ -14569,6 +14629,67 @@
     "originId": "heavy-machinery",
     "input": "utilitycraft:crushed_cobbled_deepslate",
     "output": "utilitycraft:deepslate_uranium_chunk (1%)",
+    "machineAddon": "ascendant-technology",
+    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
+  },
+  {
+    "id": "heavy-machinery-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-fluorite-crystal-5-1-0p015-2-centrifugal-siever",
+    "identifier": "heavy-machinery:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-fluorite-crystal-5-1-0p015-2-centrifugal-siever",
+    "type": "machine",
+    "station": "centrifugal_siever",
+    "category": "Centrifugal Siever loot",
+    "recipeKind": "loot",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:crushed_cobbled_deepslate",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:crushed_cobbled_deepslate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:fluorite_crystal",
+      "count": 1,
+      "chance": 0.015
+    },
+    "results": [],
+    "drops": [
+      {
+        "id": "utilitycraft:fluorite_crystal",
+        "count": 1,
+        "chance": 0.015
+      }
+    ],
+    "conditions": [
+      {
+        "id": "mesh-tier",
+        "label": "Minimum mesh tier",
+        "value": 5
+      }
+    ],
+    "tier": 5,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:crushed_cobbled_deepslate",
+    "output": "utilitycraft:fluorite_crystal (1.5%)",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
@@ -54860,6 +54981,67 @@
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
   {
+    "id": "heavy-machinery-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-fluorite-crystal-5-9-0p015-2-dual-siever",
+    "identifier": "heavy-machinery:process/autosieve/utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-fluorite-crystal-5-9-0p015-2-dual-siever",
+    "type": "machine",
+    "station": "dual_siever",
+    "category": "Dual Siever loot",
+    "recipeKind": "loot",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:compressed_crushed_cobbled_deepslate",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:compressed_crushed_cobbled_deepslate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:fluorite_crystal",
+      "count": 9,
+      "chance": 0.015
+    },
+    "results": [],
+    "drops": [
+      {
+        "id": "utilitycraft:fluorite_crystal",
+        "count": 9,
+        "chance": 0.015
+      }
+    ],
+    "conditions": [
+      {
+        "id": "mesh-tier",
+        "label": "Minimum mesh tier",
+        "value": 5
+      }
+    ],
+    "tier": 5,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:compressed_crushed_cobbled_deepslate",
+    "output": "9× utilitycraft:fluorite_crystal (1.5%)",
+    "machineAddon": "ascendant-technology",
+    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
+  },
+  {
     "id": "heavy-machinery-autosieve-utilitycraft-compressed-gravel-utilitycraft-tin-chunk-4-9-0p05-0-dual-siever",
     "identifier": "heavy-machinery:process/autosieve/utilitycraft-compressed-gravel-utilitycraft-tin-chunk-4-9-0p05-0-dual-siever",
     "type": "machine",
@@ -55039,6 +55221,67 @@
     "originId": "heavy-machinery",
     "input": "utilitycraft:crushed_cobbled_deepslate",
     "output": "utilitycraft:deepslate_uranium_chunk (1%)",
+    "machineAddon": "ascendant-technology",
+    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
+  },
+  {
+    "id": "heavy-machinery-autosieve-utilitycraft-crushed-cobbled-deepslate-utilitycraft-fluorite-crystal-5-1-0p015-2-dual-siever",
+    "identifier": "heavy-machinery:process/autosieve/utilitycraft-crushed-cobbled-deepslate-utilitycraft-fluorite-crystal-5-1-0p015-2-dual-siever",
+    "type": "machine",
+    "station": "dual_siever",
+    "category": "Dual Siever loot",
+    "recipeKind": "loot",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "utilitycraft:crushed_cobbled_deepslate",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:crushed_cobbled_deepslate",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:fluorite_crystal",
+      "count": 1,
+      "chance": 0.015
+    },
+    "results": [],
+    "drops": [
+      {
+        "id": "utilitycraft:fluorite_crystal",
+        "count": 1,
+        "chance": 0.015
+      }
+    ],
+    "conditions": [
+      {
+        "id": "mesh-tier",
+        "label": "Minimum mesh tier",
+        "value": 5
+      }
+    ],
+    "tier": 5,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:crushed_cobbled_deepslate",
+    "output": "utilitycraft:fluorite_crystal (1.5%)",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
@@ -72622,8 +72865,8 @@
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
   {
-    "id": "heavy-machinery-crusher-utilitycraft-deepslate-uranium-ore-impact-crusher",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-uranium-ore-impact-crusher",
+    "id": "heavy-machinery-crusher-utilitycraft-fluorite-crystal-impact-crusher",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-fluorite-crystal-impact-crusher",
     "type": "machine",
     "station": "impact_crusher",
     "category": "Impact Crusher recipe",
@@ -72631,7 +72874,7 @@
     "slotCount": 1,
     "slots": [
       {
-        "id": "utilitycraft:deepslate_uranium_ore",
+        "id": "utilitycraft:fluorite_crystal",
         "count": 1
       },
       null,
@@ -72645,18 +72888,18 @@
     ],
     "inputs": [
       {
-        "id": "utilitycraft:deepslate_uranium_ore",
+        "id": "utilitycraft:fluorite_crystal",
         "count": 1
       }
     ],
     "result": {
-      "id": "utilitycraft:uranium_dust",
-      "count": 2
+      "id": "utilitycraft:fluorite_dust",
+      "count": 1
     },
     "results": [
       {
-        "id": "utilitycraft:uranium_dust",
-        "count": 2
+        "id": "utilitycraft:fluorite_dust",
+        "count": 1
       }
     ],
     "origin": {
@@ -72666,8 +72909,8 @@
       "category": "Heavy Machinery"
     },
     "originId": "heavy-machinery",
-    "input": "utilitycraft:deepslate_uranium_ore",
-    "output": "2× utilitycraft:uranium_dust",
+    "input": "utilitycraft:fluorite_crystal",
+    "output": "utilitycraft:fluorite_dust",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
@@ -72768,106 +73011,6 @@
     "originId": "heavy-machinery",
     "input": "utilitycraft:raw_tin",
     "output": "2× utilitycraft:tin_dust",
-    "machineAddon": "ascendant-technology",
-    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
-  },
-  {
-    "id": "heavy-machinery-crusher-utilitycraft-raw-uranium-block-impact-crusher",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-raw-uranium-block-impact-crusher",
-    "type": "machine",
-    "station": "impact_crusher",
-    "category": "Impact Crusher recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:raw_uranium_block",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:raw_uranium_block",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:uranium_dust",
-      "count": 12
-    },
-    "results": [
-      {
-        "id": "utilitycraft:uranium_dust",
-        "count": 12
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:raw_uranium_block",
-    "output": "12× utilitycraft:uranium_dust",
-    "machineAddon": "ascendant-technology",
-    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
-  },
-  {
-    "id": "heavy-machinery-crusher-utilitycraft-raw-uranium-impact-crusher",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-raw-uranium-impact-crusher",
-    "type": "machine",
-    "station": "impact_crusher",
-    "category": "Impact Crusher recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:raw_uranium",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:raw_uranium",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:uranium_dust",
-      "count": 2
-    },
-    "results": [
-      {
-        "id": "utilitycraft:uranium_dust",
-        "count": 2
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:raw_uranium",
-    "output": "2× utilitycraft:uranium_dust",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
@@ -73068,106 +73211,6 @@
     "originId": "heavy-machinery",
     "input": "utilitycraft:tin_plate",
     "output": "utilitycraft:tin_dust",
-    "machineAddon": "ascendant-technology",
-    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
-  },
-  {
-    "id": "heavy-machinery-crusher-utilitycraft-uranium-block-impact-crusher",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-uranium-block-impact-crusher",
-    "type": "machine",
-    "station": "impact_crusher",
-    "category": "Impact Crusher recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:uranium_block",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:uranium_block",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:uranium_dust",
-      "count": 6
-    },
-    "results": [
-      {
-        "id": "utilitycraft:uranium_dust",
-        "count": 6
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:uranium_block",
-    "output": "6× utilitycraft:uranium_dust",
-    "machineAddon": "ascendant-technology",
-    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
-  },
-  {
-    "id": "heavy-machinery-crusher-utilitycraft-uranium-ingot-impact-crusher",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-uranium-ingot-impact-crusher",
-    "type": "machine",
-    "station": "impact_crusher",
-    "category": "Impact Crusher recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:uranium_ingot",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:uranium_ingot",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:uranium_dust",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:uranium_dust",
-        "count": 1
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:uranium_ingot",
-    "output": "utilitycraft:uranium_dust",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
@@ -83014,56 +83057,6 @@
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
   {
-    "id": "heavy-machinery-incinerator-utilitycraft-deepslate-uranium-ore-industrial-burner",
-    "identifier": "heavy-machinery:process/incinerator/utilitycraft-deepslate-uranium-ore-industrial-burner",
-    "type": "machine",
-    "station": "industrial_burner",
-    "category": "Industrial Burner recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:deepslate_uranium_ore",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:deepslate_uranium_ore",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:uranium_ingot",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:uranium_ingot",
-        "count": 1
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:deepslate_uranium_ore",
-    "output": "utilitycraft:uranium_ingot",
-    "machineAddon": "ascendant-technology",
-    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
-  },
-  {
     "id": "heavy-machinery-incinerator-utilitycraft-raw-tin-block-industrial-burner",
     "identifier": "heavy-machinery:process/incinerator/utilitycraft-raw-tin-block-industrial-burner",
     "type": "machine",
@@ -83164,106 +83157,6 @@
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
   {
-    "id": "heavy-machinery-incinerator-utilitycraft-raw-uranium-block-industrial-burner",
-    "identifier": "heavy-machinery:process/incinerator/utilitycraft-raw-uranium-block-industrial-burner",
-    "type": "machine",
-    "station": "industrial_burner",
-    "category": "Industrial Burner recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:raw_uranium_block",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:raw_uranium_block",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:uranium_block",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:uranium_block",
-        "count": 1
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:raw_uranium_block",
-    "output": "utilitycraft:uranium_block",
-    "machineAddon": "ascendant-technology",
-    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
-  },
-  {
-    "id": "heavy-machinery-incinerator-utilitycraft-raw-uranium-industrial-burner",
-    "identifier": "heavy-machinery:process/incinerator/utilitycraft-raw-uranium-industrial-burner",
-    "type": "machine",
-    "station": "industrial_burner",
-    "category": "Industrial Burner recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:raw_uranium",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:raw_uranium",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:uranium_ingot",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:uranium_ingot",
-        "count": 1
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:raw_uranium",
-    "output": "utilitycraft:uranium_ingot",
-    "machineAddon": "ascendant-technology",
-    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
-  },
-  {
     "id": "heavy-machinery-incinerator-utilitycraft-tin-dust-industrial-burner",
     "identifier": "heavy-machinery:process/incinerator/utilitycraft-tin-dust-industrial-burner",
     "type": "machine",
@@ -83360,56 +83253,6 @@
     "originId": "heavy-machinery",
     "input": "utilitycraft:tin_ore",
     "output": "utilitycraft:tin_ingot",
-    "machineAddon": "ascendant-technology",
-    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
-  },
-  {
-    "id": "heavy-machinery-incinerator-utilitycraft-uranium-dust-industrial-burner",
-    "identifier": "heavy-machinery:process/incinerator/utilitycraft-uranium-dust-industrial-burner",
-    "type": "machine",
-    "station": "industrial_burner",
-    "category": "Industrial Burner recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:uranium_dust",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:uranium_dust",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:uranium_ingot",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:uranium_ingot",
-        "count": 1
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:uranium_dust",
-    "output": "utilitycraft:uranium_ingot",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
@@ -93628,8 +93471,8 @@
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
   {
-    "id": "heavy-machinery-crusher-utilitycraft-deepslate-uranium-ore-pulverizer",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-deepslate-uranium-ore-pulverizer",
+    "id": "heavy-machinery-crusher-utilitycraft-fluorite-crystal-pulverizer",
+    "identifier": "heavy-machinery:process/crusher/utilitycraft-fluorite-crystal-pulverizer",
     "type": "machine",
     "station": "pulverizer",
     "category": "Pulverizer recipe",
@@ -93637,7 +93480,7 @@
     "slotCount": 1,
     "slots": [
       {
-        "id": "utilitycraft:deepslate_uranium_ore",
+        "id": "utilitycraft:fluorite_crystal",
         "count": 1
       },
       null,
@@ -93651,18 +93494,18 @@
     ],
     "inputs": [
       {
-        "id": "utilitycraft:deepslate_uranium_ore",
+        "id": "utilitycraft:fluorite_crystal",
         "count": 1
       }
     ],
     "result": {
-      "id": "utilitycraft:uranium_dust",
-      "count": 2
+      "id": "utilitycraft:fluorite_dust",
+      "count": 1
     },
     "results": [
       {
-        "id": "utilitycraft:uranium_dust",
-        "count": 2
+        "id": "utilitycraft:fluorite_dust",
+        "count": 1
       }
     ],
     "origin": {
@@ -93672,8 +93515,8 @@
       "category": "Heavy Machinery"
     },
     "originId": "heavy-machinery",
-    "input": "utilitycraft:deepslate_uranium_ore",
-    "output": "2× utilitycraft:uranium_dust",
+    "input": "utilitycraft:fluorite_crystal",
+    "output": "utilitycraft:fluorite_dust",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
@@ -93774,106 +93617,6 @@
     "originId": "heavy-machinery",
     "input": "utilitycraft:raw_tin",
     "output": "2× utilitycraft:tin_dust",
-    "machineAddon": "ascendant-technology",
-    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
-  },
-  {
-    "id": "heavy-machinery-crusher-utilitycraft-raw-uranium-block-pulverizer",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-raw-uranium-block-pulverizer",
-    "type": "machine",
-    "station": "pulverizer",
-    "category": "Pulverizer recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:raw_uranium_block",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:raw_uranium_block",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:uranium_dust",
-      "count": 12
-    },
-    "results": [
-      {
-        "id": "utilitycraft:uranium_dust",
-        "count": 12
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:raw_uranium_block",
-    "output": "12× utilitycraft:uranium_dust",
-    "machineAddon": "ascendant-technology",
-    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
-  },
-  {
-    "id": "heavy-machinery-crusher-utilitycraft-raw-uranium-pulverizer",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-raw-uranium-pulverizer",
-    "type": "machine",
-    "station": "pulverizer",
-    "category": "Pulverizer recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:raw_uranium",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:raw_uranium",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:uranium_dust",
-      "count": 2
-    },
-    "results": [
-      {
-        "id": "utilitycraft:uranium_dust",
-        "count": 2
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:raw_uranium",
-    "output": "2× utilitycraft:uranium_dust",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },
@@ -94074,106 +93817,6 @@
     "originId": "heavy-machinery",
     "input": "utilitycraft:tin_plate",
     "output": "utilitycraft:tin_dust",
-    "machineAddon": "ascendant-technology",
-    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
-  },
-  {
-    "id": "heavy-machinery-crusher-utilitycraft-uranium-block-pulverizer",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-uranium-block-pulverizer",
-    "type": "machine",
-    "station": "pulverizer",
-    "category": "Pulverizer recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:uranium_block",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:uranium_block",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:uranium_dust",
-      "count": 6
-    },
-    "results": [
-      {
-        "id": "utilitycraft:uranium_dust",
-        "count": 6
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:uranium_block",
-    "output": "6× utilitycraft:uranium_dust",
-    "machineAddon": "ascendant-technology",
-    "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
-  },
-  {
-    "id": "heavy-machinery-crusher-utilitycraft-uranium-ingot-pulverizer",
-    "identifier": "heavy-machinery:process/crusher/utilitycraft-uranium-ingot-pulverizer",
-    "type": "machine",
-    "station": "pulverizer",
-    "category": "Pulverizer recipe",
-    "recipeKind": "processing",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:uranium_ingot",
-        "count": 1
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:uranium_ingot",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:uranium_dust",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:uranium_dust",
-        "count": 1
-      }
-    ],
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "utilitycraft:uranium_ingot",
-    "output": "utilitycraft:uranium_dust",
     "machineAddon": "ascendant-technology",
     "note": "Uses the shared UtilityCraft registry; machine-specific modes change throughput rather than the recipe."
   },

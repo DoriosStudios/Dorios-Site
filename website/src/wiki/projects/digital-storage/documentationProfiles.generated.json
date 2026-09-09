@@ -286,6 +286,14 @@
         }
       }
     },
+    "utilitycraft:dimensional_range_upgrade": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
     "utilitycraft:wireless_crafting_panel_off": {
       "documentation": {
         "basic": {
