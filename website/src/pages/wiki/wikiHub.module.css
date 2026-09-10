@@ -152,13 +152,14 @@
   white-space: nowrap;
 }
 
-.cardCopy > strong {
+.cardCopy > h3 {
   margin-top: .22rem;
+  margin-bottom: 0;
   color: var(--ds-text);
-  font-family: var(--ds-display-font);
+  font-family: var(--ds-ui-font, "Space Grotesk Variable", "Space Grotesk", sans-serif);
   font-size: 1.2rem;
-  font-weight: 820;
-  letter-spacing: -.035em;
+  font-weight: 500;
+  letter-spacing: -.02em;
   line-height: 1;
 }
 
@@ -274,7 +275,7 @@
     height: 76px;
   }
 
-  .cardCopy > strong {
+  .cardCopy > h3 {
     font-size: 1.12rem;
   }
 }

@@ -29,6 +29,13 @@ const config = {
       tagName: 'script',
       attributes: {},
       innerHTML: `
+        try {
+          var themeCookie = document.cookie.match(/(?:^|;\\s*)dorios-theme=(light|dark)(?:;|$)/);
+          if (themeCookie) {
+            window.localStorage.setItem('theme', themeCookie[1]);
+          }
+        } catch (error) {}
+
         window.dataLayer = window.dataLayer || [];
         if (typeof window.gtag !== 'function') {
           window.gtag = function gtag() {

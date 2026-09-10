@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import '@fontsource-variable/space-grotesk';
@@ -14,6 +14,14 @@ const featuredWikis = wikis
   .sort((left, right) => left.featuredRank - right.featuredRank);
 const libraryWikis = wikis.filter((project) => !Number.isInteger(project.featuredRank));
 
+const PACK_ICON_FALLBACKS = {
+  utilitycraft: '/img/addons/utilitycraft/pack_icon.jpg',
+  smelters: '/img/addons/smelters/pack_icon.png',
+  trinkets: '/img/addons/trinkets/pack_icon.png',
+  excavate: '/img/addons/excavate/pack_icon.png',
+  'cobblestone-generators': '/img/addons/cobble_gens/pack_icon.jpg',
+};
+
 function ArrowIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -22,11 +30,33 @@ function ArrowIcon() {
   );
 }
 
-function cardImage(wiki) {
+function cardImages(wiki) {
   const project = wikiProjects[wiki.id];
-  const source = project?.overview?.cardImage ?? project?.fallbackImage;
-  if (!source) return wiki.media.icon;
-  return source.startsWith('/') ? source : `${project.assetRoot}/${source}`;
+  const source = project?.overview?.cardImage;
+  const resolvedSource = source && (source.startsWith('/') ? source : `${project.assetRoot}/${source}`);
+  return [...new Set([
+    wiki.id === 'bonsais' && '/img/wiki/utilitycraft/renders/bonsai.png',
+    resolvedSource,
+    PACK_ICON_FALLBACKS[wiki.id],
+    project?.fallbackImage && (project.fallbackImage.startsWith('/') ? project.fallbackImage : `${project.assetRoot}/${project.fallbackImage}`),
+    wiki.media.cover,
+  ].filter(Boolean))];
+}
+
+function WikiCardImage({wiki, eager}) {
+  const sources = cardImages(wiki);
+  const sourceKey = sources.join('|');
+  const [sourceIndex, setSourceIndex] = useState(0);
+
+  useEffect(() => setSourceIndex(0), [sourceKey]);
+
+  if (!sources[sourceIndex]) return null;
+  return <img
+    src={sources[sourceIndex]}
+    alt=""
+    loading={eager ? 'eager' : 'lazy'}
+    onError={() => setSourceIndex((current) => current + 1)}
+  />;
 }
 
 function cardMetrics(wiki) {
@@ -49,11 +79,11 @@ function WikiCard({wiki, index}) {
     <Link className={styles.wikiLink} to={wiki.routes.wiki} style={projectCardPalette(wiki)}>
       <article className={styles.wikiCard}>
         <span className={styles.cardVisual} aria-hidden="true">
-          <img src={cardImage(wiki)} alt="" loading={index === 0 ? 'eager' : 'lazy'} />
+          <WikiCardImage wiki={wiki} eager={index === 0} />
         </span>
         <div className={styles.cardCopy}>
           <span>{wiki.kind} · {wiki.category}</span>
-          <strong>{wiki.name}</strong>
+          <h3>{wiki.name}</h3>
           <p>{wiki.summary}</p>
           {metrics.length > 0 && <small>{metrics.join(' · ')}</small>}
         </div>

@@ -1,6 +1,6 @@
-import React, {createContext, useContext, useEffect, useMemo, useRef, useState} from 'react';
+import React, {createContext, useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react';
 import Link from '@docusaurus/Link';
-import {useLocation} from '@docusaurus/router';
+import {useHistory, useLocation} from '@docusaurus/router';
 import Layout from '@theme/Layout';
 import '@fontsource-variable/space-grotesk';
 import {
@@ -16,12 +16,14 @@ import {
   IconExternalLink,
   IconFileText,
   IconHelpCircle,
+  IconAdjustmentsHorizontal,
   IconSearch,
   IconSettings,
   IconSword,
   IconTool,
   IconUsers,
   IconWind,
+  IconX,
 } from '@tabler/icons-react';
 import DoriosMarketingShell from '../DoriosMarketingShell';
 import SocialMetadata from '../SocialMetadata';
@@ -64,7 +66,7 @@ const WIKI_SECTION_GROUPS = [
 ];
 const TRINKET_TYPE_SECTION_IDS = new Set(['hearty-charms', 'feet', 'rings', 'head', 'body', 'necklaces', 'charms', 'talismans', 'gauntlets', 'dolls', 'archaic-charms', 'amulets']);
 const EQUIPMENT_SECTION_IDS = new Set(['armor-sets', 'ring-materials', 'utility-items']);
-const CATALOG_PAGE_SIZE = 50;
+const CATALOG_PAGE_SIZE = 60;
 
 function groupedWikiSections(sections) {
   const assigned = new Set();
@@ -95,6 +97,31 @@ function resolveAsset(project, source) {
   return `${project.assetRoot}/${source}`.replace(/([^:]\/)\/+/g, '$1');
 }
 
+function blockRenderCandidates(project, entry) {
+  const assetProject = entry.assetRoot ? {...project, assetRoot: entry.assetRoot} : project;
+  const identifier = String(entry.identifier ?? entry.id ?? '');
+  const shortId = String(entry.shortId ?? identifier.replace(/^.*:/, ''));
+  const renderNames = [...new Set([
+    shortId,
+    identifier.replace(':', '_'),
+    identifier.replace(':', '/'),
+    entry.slug,
+    String(entry.name ?? '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, ''),
+  ].filter(Boolean))];
+  const northFace = entry.faces?.north ?? entry.faces?.right;
+  const remainingFaces = Object.entries(entry.faces ?? {})
+    .filter(([face, source]) => source && !['north', 'right'].includes(face))
+    .map(([, source]) => source);
+  return [...new Set([
+    entry.render,
+    ...renderNames.map((name) => `renders/${name}.png`),
+    northFace,
+    ...remainingFaces,
+    entry.itemImage,
+    entry.image,
+  ].filter(Boolean).map((source) => resolveAsset(assetProject, source)))];
+}
+
 function socialRender(source) {
   return source?.replace(/^\/img\/wiki\/([^/]+)\/renders\//, '/img/social/wiki/$1/renders/');
 }
@@ -104,8 +131,8 @@ function entrySocialImage(project, entryType, entry, controller, recipe) {
     return resolveAsset(project, controller?.render ?? controller?.itemImage ?? controller?.image ?? Object.values(controller?.faces ?? {}).find(Boolean) ?? project.overview.heroImage);
   }
   if (entryType === 'items') return resolveAsset(project, entry.image ?? project.fallbackImage);
-  if (entryType === 'blocks') return resolveAsset(project, entry.render ?? entry.itemImage ?? entry.image ?? Object.values(entry.faces ?? {}).find(Boolean) ?? project.fallbackImage);
-  if (entryType === 'generators') return resolveAsset(project, entry.render ?? entry.itemImage ?? entry.image ?? Object.values(entry.faces ?? {}).find(Boolean) ?? project.fallbackImage);
+  if (entryType === 'blocks') return resolveAsset(project, entry.render ?? entry.faces?.north ?? entry.faces?.right ?? entry.itemImage ?? entry.image ?? Object.values(entry.faces ?? {}).find(Boolean) ?? project.fallbackImage);
+  if (entryType === 'generators') return resolveAsset(project, entry.render ?? entry.faces?.north ?? entry.faces?.right ?? entry.itemImage ?? entry.image ?? Object.values(entry.faces ?? {}).find(Boolean) ?? project.fallbackImage);
   if (entryType === 'entities') return resolveAsset(project, entry.image ?? project.overview.heroImage);
   if (entryType === 'recipes') return visualFor(project, recipe?.result?.id ?? recipe?.result?.label) ?? resolveAsset(project, project.recipeFallbackFace ?? project.fallbackImage);
   return resolveAsset(project, project.mechanicsGuide?.image ?? project.overview.heroImage ?? project.fallbackImage);
@@ -427,11 +454,60 @@ function CatalogPagination({page, totalItems, onPageChange, targetId}) {
   );
 }
 
+function pageFromSearch(search) {
+  const value = Number(new URLSearchParams(search).get('page'));
+  return Number.isInteger(value) && value > 0 ? value : 1;
+}
+
+function useCatalogPage(resetValues) {
+  const location = useLocation();
+  const history = useHistory();
+  const pageParameter = new URLSearchParams(location.search).get('page');
+  const hasValidPage = /^\d+$/.test(pageParameter ?? '') && Number(pageParameter) > 0;
+  const page = pageFromSearch(location.search);
+  const resetKey = resetValues.map((value) => String(value ?? '')).join('\u0001');
+  const searchQuery = String(resetValues[0] ?? '').trim();
+  const previousResetKey = useRef(resetKey);
+
+  const setPage = useCallback((nextPage, options = {}) => {
+    const params = new URLSearchParams(location.search);
+    params.set('page', String(Math.max(1, Number(nextPage) || 1)));
+    if (searchQuery) params.set('q', searchQuery);
+    else params.delete('q');
+    const destination = {
+      pathname: location.pathname,
+      search: `?${params.toString()}`,
+      hash: location.hash,
+    };
+    if (options.replace) history.replace(destination);
+    else history.push(destination);
+  }, [history, location.hash, location.pathname, location.search, searchQuery]);
+
+  useEffect(() => {
+    if (!hasValidPage) setPage(1, {replace: true});
+  }, [hasValidPage, setPage]);
+
+  useEffect(() => {
+    if (previousResetKey.current === resetKey) return;
+    previousResetKey.current = resetKey;
+    setPage(1, {replace: true});
+  }, [resetKey, setPage]);
+
+  return [page, setPage];
+}
+
 function paginatedResultLabel(totalItems, page) {
   if (!totalItems) return '0 entries shown';
   const first = (page - 1) * CATALOG_PAGE_SIZE + 1;
   const last = Math.min(page * CATALOG_PAGE_SIZE, totalItems);
   return `${first}–${last} of ${totalItems} entries shown`;
+}
+
+function CatalogResultBar({id, totalItems, page, setPage}) {
+  return <div className={styles.catalogResultBar}>
+    <p id={id} className={styles.resultCount} aria-live="polite">{paginatedResultLabel(totalItems, page)}</p>
+    <CatalogPagination page={page} totalItems={totalItems} onPageChange={setPage} targetId={id} />
+  </div>;
 }
 
 function categoriesFor(entries) {
@@ -552,16 +628,22 @@ function ItemCard({entry}) {
 
 function BlockPreview({entry, size = 'min(100%, 7rem)'}) {
   const project = useWikiProject();
-  const fallback = Object.values(entry.faces ?? {}).find(Boolean);
-  const source = entry.render ?? entry.itemImage ?? entry.image ?? fallback;
-  if (!source) return <div className={styles.blockFallback} style={{'--block-preview-size': size}} aria-hidden="true">◆</div>;
-  const assetProject = entry.assetRoot ? {...project, assetRoot: entry.assetRoot} : project;
+  const sources = blockRenderCandidates(project, entry);
+  const sourceKey = sources.join('|');
+  const [sourceIndex, setSourceIndex] = useState(0);
+  useEffect(() => setSourceIndex(0), [sourceKey]);
+  if (!sources[sourceIndex]) return <div className={styles.blockFallback} style={{'--block-preview-size': size}} aria-hidden="true">◆</div>;
   return (
     <figure
       className={`${styles.blockPreview} ${entry.itemImage ? styles.itemBlockPreview : ''}`}
       style={{'--block-preview-size': size}}
     >
-      <img src={resolveAsset(assetProject, source)} alt={`${entry.name} render`} loading="lazy" />
+      <img
+        src={sources[sourceIndex]}
+        alt={`${entry.name} render`}
+        loading="lazy"
+        onError={() => setSourceIndex((current) => current + 1)}
+      />
     </figure>
   );
 }
@@ -977,30 +1059,51 @@ function RecipeCard({recipe}) {
   const outputName = outputs.map(ingredientLabel).join(' + ');
   const origin = recipeOriginFor(recipe, project);
   const catalystWeaver = isCatalystWeaverRecipe(recipe);
+  const energyMetric = compactProcessingMetric(recipe.cost ?? recipe.energyCost ?? recipe.energy);
+  const primaryInputs = recipePrimaryInputs(recipe);
+  const catalysts = recipeCatalysts(recipe);
+  const compact = !catalystWeaver && inputs.length <= 3;
   const occupiedSlots = (recipe.slots ?? []).map((ingredient, index) => ingredient ? index : null).filter((index) => index !== null);
   const twoByTwo = !linear && occupiedSlots.length > 0 && occupiedSlots.every((index) => [0, 1, 3, 4].includes(index));
   const craftingSlots = twoByTwo ? [0, 1, 3, 4].map((index) => recipe.slots[index]) : recipe.slots;
 
   return (
-    <article className={`${styles.recipeCard} ${linear ? styles.linearRecipeCard : ''}`} style={{'--recipe-origin-accent': origin.accent}}>
+    <article className={`${styles.recipeCard} ${linear ? styles.linearRecipeCard : ''} ${compact ? styles.compactRecipeCard : ''}`} style={{'--recipe-origin-accent': origin.accent}}>
       <Link className={styles.recipeCardTarget} to={detailHref} aria-label={`Open recipe for ${outputName}`} />
       <header>
         {station.face
           ? <img src={resolveAsset(project, station.face)} alt="" />
           : <span className={styles.stationFallback} aria-hidden="true">▦</span>}
-        <div><span>{station.label}</span></div>
+        <div>
+          <span>{station.label}</span>
+          {energyMetric && <small className={styles.recipeStationMetric}><img src={MACHINE_RESOURCE_ICONS.energy} alt="" />{energyMetric}</small>}
+        </div>
         {origin.id !== project.id && <RecipeOriginBadge recipe={recipe} compact />}
       </header>
-      {catalystWeaver ? <CatalystWeaverRecipeFlow recipe={recipe} /> : (
+      {catalystWeaver ? <CatalystWeaverRecipeFlow recipe={recipe} showMetric={false} /> : (
         <div className={`${styles.recipeFlow} ${linear ? styles.linearRecipeFlow : ''}`}>
           {linear
             ? <div className={styles.linearRecipeInput}>
-              <div className={styles.linearRecipeSlots}>
-                {inputs.map((ingredient, index) => <React.Fragment key={`${ingredient.id ?? ingredient.label}-${index}`}>
+              {catalysts.length > 0 ? <div className={styles.catalyzedRecipeSlots}>
+                <div className={styles.catalystRecipeSlots}>
+                  {catalysts.map((ingredient, index) => <React.Fragment key={`${ingredient.id ?? ingredient.label}-${index}`}>
+                    {index > 0 && <span className={styles.recipeFlowJoin} aria-hidden="true">+</span>}
+                    <RecipeSlot ingredient={ingredient} />
+                  </React.Fragment>)}
+                </div>
+                <span className={styles.catalystCornerArrow} aria-hidden="true">↳</span>
+                <div className={styles.primaryRecipeSlots}>
+                  {primaryInputs.map((ingredient, index) => <React.Fragment key={`${ingredient.id ?? ingredient.label}-${index}`}>
+                    {index > 0 && <span className={styles.recipeFlowJoin} aria-hidden="true">+</span>}
+                    <RecipeSlot ingredient={ingredient} />
+                  </React.Fragment>)}
+                </div>
+              </div> : <div className={styles.linearRecipeSlots}>
+                {primaryInputs.map((ingredient, index) => <React.Fragment key={`${ingredient.id ?? ingredient.label}-${index}`}>
                   {index > 0 && <span className={styles.recipeFlowJoin} aria-hidden="true">+</span>}
                   <RecipeSlot ingredient={ingredient} />
                 </React.Fragment>)}
-              </div>
+              </div>}
               <strong title={inputName}>{inputName}</strong>
             </div>
             : <div className={`${styles.craftingSlots} ${twoByTwo ? styles.craftingSlots2 : ''}`}>{craftingSlots.map((ingredient, slot) => <RecipeSlot key={slot} ingredient={ingredient} />)}</div>}
@@ -1322,7 +1425,7 @@ function ItemsPage({query, categorySection}) {
   const {items} = project;
   const itemCatalogClass = project.itemCatalogColumns === 1 ? styles.simpleCatalogList : `${styles.simpleCatalogList} ${styles.itemCatalogList}`;
   const [category, setCategory] = useState('All');
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useCatalogPage([query, category, categorySection?.id]);
   const fixedCategories = categoriesInSection(categorySection);
   const normalized = query.trim().toLowerCase();
   const visible = items.filter((entry) => {
@@ -1332,8 +1435,10 @@ function ItemsPage({query, categorySection}) {
     return matchesCategory
       && `${entry.name} ${entry.category} ${entry.id} ${entry.description ?? ''}`.toLowerCase().includes(normalized);
   });
-  useEffect(() => setPage(1), [query, category, categorySection?.id]);
   const currentPage = Math.min(page, Math.max(1, Math.ceil(visible.length / CATALOG_PAGE_SIZE)));
+  useEffect(() => {
+    if (page !== currentPage) setPage(currentPage, {replace: true});
+  }, [currentPage, page, setPage]);
   const pageEntries = visible.slice((currentPage - 1) * CATALOG_PAGE_SIZE, currentPage * CATALOG_PAGE_SIZE);
   const categoryOrder = project.itemCategoryOrder ?? [];
   const filters = categoriesFor(items).sort((left, right) => {
@@ -1356,7 +1461,7 @@ function ItemsPage({query, categorySection}) {
     <>
       <PageIntro section={categorySection?.id ?? 'items'} count={visible.length} countLabel="items found" />
       {!categorySection && <FilterChips categories={filters} active={category} setActive={setCategory} />}
-      <p id="items-page-results" className={styles.resultCount} aria-live="polite">{paginatedResultLabel(visible.length, currentPage)}</p>
+      <CatalogResultBar id="items-page-results" totalItems={visible.length} page={currentPage} setPage={setPage} />
       {project.groupItemsByCategory ? <div className={styles.itemGroups}>{groupedEntries.map(([groupName, entries]) => (
         <section className={styles.itemGroup} key={groupName}>
           <header><div><span>Item category</span><h2>{groupName}</h2></div><b>{entries.length}</b></header>
@@ -1427,7 +1532,7 @@ function BlocksPage({query}) {
     ...generators.map((entry) => entry.blockSlug ?? entry.id),
   ]);
   const [tag, setTag] = useState('All');
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useCatalogPage([query, tag]);
   const normalized = query.trim().toLowerCase();
   const catalog = useMemo(() => blocks
     .filter((entry) => !specializedBlockSlugs.has(entry.slug) && !specializedBlockSlugs.has(entry.shortId))
@@ -1450,14 +1555,16 @@ function BlocksPage({query}) {
   ];
   const visible = catalog.filter(({entry, tags}) => (tag === 'All' || tags.includes(tag))
     && `${entry.name} ${entry.category} ${entry.tier} ${entry.id} ${tags.join(' ')}`.toLowerCase().includes(normalized));
-  useEffect(() => setPage(1), [query, tag]);
   const currentPage = Math.min(page, Math.max(1, Math.ceil(visible.length / CATALOG_PAGE_SIZE)));
+  useEffect(() => {
+    if (page !== currentPage) setPage(currentPage, {replace: true});
+  }, [currentPage, page, setPage]);
   const pageEntries = visible.slice((currentPage - 1) * CATALOG_PAGE_SIZE, currentPage * CATALOG_PAGE_SIZE);
   return (
     <>
       <PageIntro section="blocks" count={blocks.length} countLabel="blocks found" />
       <FilterChips categories={filters} active={tag} setActive={setTag} ariaLabel="Filter blocks by tag" />
-      <p id="blocks-page-results" className={styles.resultCount} aria-live="polite">{paginatedResultLabel(visible.length, currentPage)}</p>
+      <CatalogResultBar id="blocks-page-results" totalItems={visible.length} page={currentPage} setPage={setPage} />
       <ul className={`${styles.simpleCatalogList} ${styles.blockCatalogList}`} aria-label={`${project.name} block catalog`}>
         {pageEntries.map(({entry, tags}) => <BlockCard key={entry.id} entry={entry} tags={tags} />)}
       </ul>
@@ -1785,39 +1892,147 @@ function RecipesPage({query}) {
   const {craftingRecipeDetails, processingRecipes, stationMeta} = project;
   const [stationFilter, setStationFilter] = useState('All');
   const [originFilter, setOriginFilter] = useState('All');
-  const [page, setPage] = useState(1);
+  const [recipeMode, setRecipeMode] = useState('standard');
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const filterButtonRef = useRef(null);
+  const filterDialogRef = useRef(null);
+  const [page, setPage] = useCatalogPage([query, stationFilter, originFilter, recipeMode]);
   const normalized = query.trim().toLowerCase();
   const allRecipes = useMemo(() => [
     ...craftingRecipeDetails,
     ...processingRecipes.map(normalizedProcessingRecipe),
   ], []);
+  const catalystRecipeCount = allRecipes.filter((recipe) => isCatalystWeaverRecipe(recipe)).length;
+  const standardRecipeCount = allRecipes.length - catalystRecipeCount;
+  const modeRecipes = useMemo(() => allRecipes.filter((recipe) => (
+    recipeMode === 'catalyst' ? isCatalystWeaverRecipe(recipe) : !isCatalystWeaverRecipe(recipe)
+  )), [allRecipes, recipeMode]);
   const stationFilters = useMemo(() => {
-    const counts = allRecipes.reduce((result, recipe) => {
+    const counts = modeRecipes.reduce((result, recipe) => {
       const label = stationMeta[recipe.station]?.label ?? formatIdentifier(recipe.station);
       result[label] = (result[label] ?? 0) + 1;
       return result;
     }, {});
-    return [{name: 'All', count: allRecipes.length}, ...Object.entries(counts).map(([name, count]) => ({name, count}))];
-  }, [allRecipes]);
-  const originFilters = useMemo(() => recipeOriginFilters(allRecipes, project), [allRecipes, project]);
-  const visible = allRecipes.filter((recipe) => {
+    return [{name: 'All', count: modeRecipes.length}, ...Object.entries(counts).map(([name, count]) => ({name, count}))];
+  }, [modeRecipes, stationMeta]);
+  const originFilters = useMemo(() => recipeOriginFilters(modeRecipes, project), [modeRecipes, project]);
+  const visible = modeRecipes.filter((recipe) => {
     const stationLabel = stationMeta[recipe.station]?.label ?? formatIdentifier(recipe.station);
     const matchesStation = stationFilter === 'All' || stationFilter === stationLabel;
     const origin = recipeOriginFor(recipe, project);
     const searchable = `${recipe.identifier} ${recipe.category} ${stationLabel} ${origin.category} ${origin.addonLabel} ${recipeSearchTerms(recipe)}`.toLowerCase();
     return matchesStation && recipeMatchesOrigin(recipe, originFilter, project) && searchable.includes(normalized);
   });
-  useEffect(() => setPage(1), [query, stationFilter, originFilter]);
   const currentPage = Math.min(page, Math.max(1, Math.ceil(visible.length / CATALOG_PAGE_SIZE)));
+  useEffect(() => {
+    if (page !== currentPage) setPage(currentPage, {replace: true});
+  }, [currentPage, page, setPage]);
   const pageRecipes = visible.slice((currentPage - 1) * CATALOG_PAGE_SIZE, currentPage * CATALOG_PAGE_SIZE);
+  const selectRecipeMode = (mode) => {
+    if (mode === recipeMode) return;
+    setRecipeMode(mode);
+    setStationFilter('All');
+    setOriginFilter('All');
+  };
+  const activeFilterCount = Number(stationFilter !== 'All') + Number(originFilter !== 'All') + Number(recipeMode !== 'standard');
+  const filterSummary = recipeMode === 'catalyst'
+    ? 'Catalyst Weaver only'
+    : activeFilterCount > 0 ? `${activeFilterCount} active` : 'Standard recipes';
+  const closeFilters = useCallback(() => {
+    setFiltersOpen(false);
+    requestAnimationFrame(() => filterButtonRef.current?.focus());
+  }, []);
+  const resetFilters = () => {
+    setRecipeMode('standard');
+    setStationFilter('All');
+    setOriginFilter('All');
+  };
+  useEffect(() => {
+    if (!filtersOpen) return undefined;
+    const previousOverflow = document.body.style.overflow;
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeFilters();
+        return;
+      }
+      if (event.key !== 'Tab') return;
+      const focusable = [...filterDialogRef.current.querySelectorAll('button:not(:disabled), select, [href], [tabindex]:not([tabindex="-1"])')];
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && (document.activeElement === first || document.activeElement === filterDialogRef.current)) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', handleKeyDown);
+    requestAnimationFrame(() => filterDialogRef.current?.focus());
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [closeFilters, filtersOpen]);
   return (
     <>
       <PageIntro section="recipes" count={allRecipes.length} countLabel="documented entries" />
-      <div className={styles.recipeFilters}>
-        <FilterSelect label="Recipe station" categories={stationFilters} active={stationFilter} setActive={setStationFilter} />
-        {originFilters.length > 2 && <FilterSelect label="Added by" categories={originFilters} active={originFilter} setActive={setOriginFilter} ariaLabel="Filter recipes by add-on origin" />}
+      <div className={styles.recipeFilterToolbar}>
+        <button
+          ref={filterButtonRef}
+          type="button"
+          className={styles.openRecipeFilters}
+          aria-expanded={filtersOpen}
+          aria-controls="recipe-filter-dialog"
+          onClick={() => setFiltersOpen(true)}
+        >
+          <IconAdjustmentsHorizontal aria-hidden="true" size={20} stroke={1.8} />
+          <span><strong>Filters</strong><small>{filterSummary}</small></span>
+          {activeFilterCount > 0 && <b aria-label={`${activeFilterCount} active filters`}>{activeFilterCount}</b>}
+        </button>
       </div>
-      <p id="recipes-page-results" className={styles.resultCount} aria-live="polite">{paginatedResultLabel(visible.length, currentPage)}</p>
+      {filtersOpen && <div className={styles.recipeFilterOverlay} onMouseDown={(event) => {
+        if (event.target === event.currentTarget) closeFilters();
+      }}>
+        <section
+          id="recipe-filter-dialog"
+          ref={filterDialogRef}
+          className={styles.recipeFilterDialog}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="recipe-filter-title"
+          tabIndex={-1}
+        >
+          <header>
+            <div><span>Recipe catalog</span><h2 id="recipe-filter-title">Filters</h2></div>
+            <button type="button" onClick={closeFilters} aria-label="Close recipe filters"><IconX aria-hidden="true" size={21} /></button>
+          </header>
+          <div className={styles.recipeFilterContent}>
+            <div className={styles.recipeFilterFields}>
+              <FilterSelect label="Recipe station" categories={stationFilters} active={stationFilter} setActive={setStationFilter} />
+              {originFilters.length > 2 && <FilterSelect label="Added by" categories={originFilters} active={originFilter} setActive={setOriginFilter} ariaLabel="Filter recipes by add-on origin" />}
+            </div>
+            {catalystRecipeCount > 0 && <section className={styles.recipeFamilyFilter}>
+              <div><span>Recipe family</span><p>Catalyst Weaver recipes stay hidden until selected and are shown separately from every other station.</p></div>
+              <div role="radiogroup" aria-label="Choose which recipe family is shown">
+                <button type="button" role="radio" aria-checked={recipeMode === 'standard'} onClick={() => selectRecipeMode('standard')}>
+                  <i aria-hidden="true" /><span><strong>Standard recipes</strong><small>{standardRecipeCount.toLocaleString('en-US')} entries</small></span>
+                </button>
+                <button type="button" role="radio" aria-checked={recipeMode === 'catalyst'} onClick={() => selectRecipeMode('catalyst')}>
+                  <i aria-hidden="true" /><span><strong>Catalyst Weaver</strong><small>{catalystRecipeCount.toLocaleString('en-US')} entries</small></span>
+                </button>
+              </div>
+            </section>}
+          </div>
+          <footer>
+            <button type="button" className={styles.resetRecipeFilters} onClick={resetFilters} disabled={activeFilterCount === 0}>Reset</button>
+            <button type="button" className={styles.applyRecipeFilters} onClick={closeFilters}>Show {visible.length.toLocaleString('en-US')} recipes</button>
+          </footer>
+        </section>
+      </div>}
+      <CatalogResultBar id="recipes-page-results" totalItems={visible.length} page={currentPage} setPage={setPage} />
       <section className={styles.recipeGrid}>
         {pageRecipes.map((recipe) => <RecipeCard key={`${recipe.station}-${recipe.id}`} recipe={recipe} />)}
       </section>
@@ -2327,9 +2542,9 @@ function ItemRecipeCard({recipe}) {
   </article>;
 }
 
-function ItemSection({id, eyebrow, title, children, className = ''}) {
+function ItemSection({id, title, children, className = ''}) {
   return <section className={`${styles.itemWikiSection} ${className}`} aria-labelledby={id}>
-    <header><p>{eyebrow}</p><h2 id={id}>{title}</h2></header>
+    <header><h2 id={id}>{title}</h2></header>
     {children}
   </section>;
 }
@@ -2643,7 +2858,7 @@ function isCatalystWeaverRecipe(recipe, machine) {
     .some((value) => value === 'catalyst_weaver' || value.includes('catalyst_weaver'));
 }
 
-function CatalystWeaverRecipeFlow({recipe, machine}) {
+function CatalystWeaverRecipeFlow({recipe, machine, showMetric = true}) {
   const inputs = recipePrimaryInputs(recipe);
   const catalysts = recipeCatalysts(recipe);
   const fluids = recipeFluidInputs(recipe);
@@ -2668,7 +2883,7 @@ function CatalystWeaverRecipeFlow({recipe, machine}) {
       </div>
       <div className={styles.catalystWeaverProcess}>
         <span className={styles.machineProcessArrow} aria-hidden="true">→</span>
-        {metric && <small><img src={MACHINE_RESOURCE_ICONS.energy} alt="" />{metric}</small>}
+        {showMetric && metric && <small><img src={MACHINE_RESOURCE_ICONS.energy} alt="" />{metric}</small>}
       </div>
       <div className={styles.catalystWeaverOutputArea}>
         <span className={styles.catalystWeaverMainOutput}><RecipeSlot ingredient={primaryResult} result /></span>

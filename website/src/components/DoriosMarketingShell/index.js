@@ -6,6 +6,24 @@ import "@fontsource-variable/league-spartan";
 import "@fontsource-variable/space-grotesk";
 import styles from "./styles.module.css";
 
+const THEME_COOKIE = "dorios-theme";
+const THEME_COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
+
+function readCookie(name) {
+  if (typeof document === "undefined") return null;
+  const prefix = `${encodeURIComponent(name)}=`;
+  const entry = document.cookie
+    .split(";")
+    .map((part) => part.trim())
+    .find((part) => part.startsWith(prefix));
+  return entry ? decodeURIComponent(entry.slice(prefix.length)) : null;
+}
+
+function writeCookie(name, value) {
+  if (typeof document === "undefined") return;
+  document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}; Max-Age=${THEME_COOKIE_MAX_AGE}; Path=/; SameSite=Lax`;
+}
+
 function navigationFor(project) {
   return [
     { label: "Projects", to: "/projects", key: "projects" },
@@ -23,15 +41,33 @@ function navigationFor(project) {
 
 function ThemeToggle() {
   const { colorMode, setColorMode } = useColorMode();
+  const restoredTheme = React.useRef(false);
   const isDarkTheme = colorMode === "dark";
   const nextTheme = isDarkTheme ? "light" : "dark";
   const nextThemeLabel = isDarkTheme ? "Light" : "Dark";
+
+  React.useEffect(() => {
+    const savedTheme = readCookie(THEME_COOKIE);
+    if (!restoredTheme.current) {
+      restoredTheme.current = true;
+      if ((savedTheme === "light" || savedTheme === "dark") && savedTheme !== colorMode) {
+        setColorMode(savedTheme);
+        return;
+      }
+    }
+    writeCookie(THEME_COOKIE, colorMode);
+  }, [colorMode, setColorMode]);
+
+  const changeTheme = () => {
+    writeCookie(THEME_COOKIE, nextTheme);
+    setColorMode(nextTheme);
+  };
 
   return (
     <button
       type="button"
       className={styles.themeToggle}
-      onClick={() => setColorMode(nextTheme)}
+      onClick={changeTheme}
       aria-label={`Switch to ${nextTheme} theme`}
       title={`Switch to ${nextTheme} theme`}
     >
