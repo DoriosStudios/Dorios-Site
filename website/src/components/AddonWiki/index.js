@@ -1023,6 +1023,19 @@ function usesLinearRecipeFlow(recipe) {
   return Boolean(recipe?.result && (recipe?.type || recipe?.kind !== 'shaped'));
 }
 
+function craftingGridFor(recipe) {
+  const sourceSlots = Array.isArray(recipe?.slots) ? recipe.slots : [];
+  const occupiedSlots = sourceSlots.map((ingredient, index) => ingredient ? index : null).filter((index) => index !== null);
+  const compactSlotArray = sourceSlots.length === 4;
+  const embeddedTwoByTwo = sourceSlots.length > 4
+    && occupiedSlots.length > 0
+    && occupiedSlots.every((index) => [0, 1, 3, 4].includes(index));
+  return {
+    twoByTwo: compactSlotArray || embeddedTwoByTwo,
+    slots: embeddedTwoByTwo ? [0, 1, 3, 4].map((index) => sourceSlots[index]) : sourceSlots,
+  };
+}
+
 function compactProcessingMetric(value) {
   if (value === undefined || value === null || value === '') return null;
   if (typeof value === 'number') return `${Number(value).toLocaleString('en-US')} DE/action`;
@@ -1062,10 +1075,8 @@ function RecipeCard({recipe}) {
   const energyMetric = compactProcessingMetric(recipe.cost ?? recipe.energyCost ?? recipe.energy);
   const primaryInputs = recipePrimaryInputs(recipe);
   const catalysts = recipeCatalysts(recipe);
-  const compact = !catalystWeaver && inputs.length <= 3;
-  const occupiedSlots = (recipe.slots ?? []).map((ingredient, index) => ingredient ? index : null).filter((index) => index !== null);
-  const twoByTwo = !linear && occupiedSlots.length > 0 && occupiedSlots.every((index) => [0, 1, 3, 4].includes(index));
-  const craftingSlots = twoByTwo ? [0, 1, 3, 4].map((index) => recipe.slots[index]) : recipe.slots;
+  const compact = !catalystWeaver && inputs.length > 1 && inputs.length <= 3;
+  const {twoByTwo, slots: craftingSlots} = craftingGridFor(recipe);
 
   return (
     <article className={`${styles.recipeCard} ${linear ? styles.linearRecipeCard : ''} ${compact ? styles.compactRecipeCard : ''}`} style={{'--recipe-origin-accent': origin.accent}}>
@@ -2515,11 +2526,30 @@ function ItemRecipeGroup({label, ingredients, result = false}) {
   </div>;
 }
 
+function ItemCraftingRecipeGroup({recipe}) {
+  const {twoByTwo, slots} = craftingGridFor(recipe);
+  const ingredients = aggregateIngredients(slots);
+  if (!ingredients.length) return null;
+  return <div className={styles.itemCraftingRecipeGroup}>
+    <div className={`${styles.craftingSlots} ${twoByTwo ? styles.craftingSlots2 : ''}`}>
+      {slots.map((ingredient, slot) => <RecipeSlot key={slot} ingredient={ingredient} />)}
+    </div>
+    <div className={styles.itemCraftingRecipeLegend}>
+      <small>Input</small>
+      <div>{ingredients.map((ingredient, index) => <span key={`${ingredient.id ?? ingredient.label}-${index}`}>
+        <strong>{ingredientLabel(ingredient)}</strong>
+        {(ingredient.count ?? 1) > 1 && <em>×{ingredient.count}</em>}
+      </span>)}</div>
+    </div>
+  </div>;
+}
+
 function ItemRecipeCard({recipe}) {
   const project = useWikiProject();
   const station = project.stationMeta[recipe.station] ?? {label: formatIdentifier(recipe.station), face: project.recipeFallbackFace};
   const outputs = recipeOutputs(recipe);
   const byproducts = recipeByproducts(recipe);
+  const hasCraftingGrid = !recipe.type && Array.isArray(recipe.slots) && recipe.slots.some(Boolean);
   const metrics = [
     [recipe.cost ?? recipe.energyCost, 'Energy', `${Number(recipe.cost ?? recipe.energyCost).toLocaleString('en-US')} DE`],
     [recipe.ticks, 'Time', `${recipe.ticks} ticks · ${(recipe.ticks / 20).toLocaleString('en-US', {maximumFractionDigits: 2})}s`],
@@ -2531,7 +2561,9 @@ function ItemRecipeCard({recipe}) {
       <Link to={itemRecipeHref(project, recipe)} aria-label={`Open full ${station.label} recipe`}>Full recipe →</Link>
     </header>
     <div className={styles.itemRecipeFlow}>
-      <ItemRecipeGroup label="Input" ingredients={recipePrimaryInputs(recipe)} />
+      {hasCraftingGrid
+        ? <ItemCraftingRecipeGroup recipe={recipe} />
+        : <ItemRecipeGroup label="Input" ingredients={recipePrimaryInputs(recipe)} />}
       <ItemRecipeGroup label="Catalysts" ingredients={recipeCatalysts(recipe)} />
       <ItemRecipeGroup label={recipe.inputFluid ? 'Fluid input' : 'Fluid'} ingredients={recipeFluidInputs(recipe)} />
       <span className={styles.itemRecipeArrow} aria-hidden="true">↓</span>

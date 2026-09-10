@@ -269,7 +269,9 @@
 
 .bannerOverlay {
 	z-index: 1;
-	background: linear-gradient(90deg, rgba(7, 8, 9, 0.94) 0%, rgba(7, 8, 9, 0.76) 44%, rgba(7, 8, 9, 0.15) 78%, rgba(7, 8, 9, 0.06) 100%), linear-gradient(0deg, rgba(7, 8, 9, 0.74) 0%, transparent 48%);
+	background:
+		linear-gradient(90deg, color-mix(in srgb, var(--ds-surface) 96%, transparent) 0%, color-mix(in srgb, var(--ds-surface) 82%, transparent) 44%, color-mix(in srgb, var(--ds-surface) 18%, transparent) 78%, color-mix(in srgb, var(--ds-surface) 6%, transparent) 100%),
+		linear-gradient(0deg, color-mix(in srgb, var(--ds-surface) 76%, transparent) 0%, transparent 48%);
 }
 
 .bannerContent {
@@ -281,7 +283,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-end;
-	color: #fff;
+	color: var(--ds-text);
 }
 
 .bannerContent h2,
@@ -290,18 +292,18 @@
 .bannerContent .downloadBadge,
 .bannerContent .downloadBadge strong,
 .bannerContent .downloadBadge span {
-	color: #fff;
+	color: var(--ds-text);
 }
 
 .bannerContent .tags span {
-	border-color: rgba(255, 255, 255, .34);
-	background: rgba(8, 9, 10, .58);
-	color: #fff;
+	border-color: color-mix(in srgb, var(--ds-text) 30%, transparent);
+	background: color-mix(in srgb, var(--ds-surface) 72%, transparent);
+	color: var(--ds-text);
 }
 
 .bannerContent .downloadBadge {
-	border-color: rgba(255, 255, 255, .28);
-	background: rgba(8, 9, 10, .64);
+	border-color: color-mix(in srgb, var(--ds-text) 24%, transparent);
+	background: color-mix(in srgb, var(--ds-surface) 76%, transparent);
 }
 
 .bannerContent .overline { margin-top: clamp(0.65rem, 1.3vw, 1rem); }
