@@ -42,7 +42,7 @@
       },
       "media": {
         "cover": "/img/addons/utilitycraft/MCPEDL.png",
-        "icon": "/img/projects/utilitycraft/icon.png",
+        "icon": "/img/projects/utilitycraft/pack_icon.png",
         "coverFit": "cover",
         "alt": "UtilityCraft project artwork"
       },
@@ -93,7 +93,7 @@
       },
       "media": {
         "cover": "/img/addons/heavy/MCPEDL.png",
-        "icon": "/img/projects/heavy-machinery/icon.png",
+        "icon": "/img/projects/heavy-machinery/pack_icon.png",
         "coverFit": "cover",
         "alt": "Heavy Machinery pack icon"
       },
@@ -146,7 +146,7 @@
       },
       "media": {
         "cover": "/img/addons/ascendant/MCPEDL.png",
-        "icon": "/img/projects/ascendant-technology/icon.png",
+        "icon": "/img/projects/ascendant-technology/pack_icon.png",
         "coverFit": "cover",
         "alt": "Ascendant Technology project artwork"
       },
@@ -195,7 +195,7 @@
       },
       "media": {
         "cover": null,
-        "icon": "/img/projects/better-containers/icon.png",
+        "icon": "/img/projects/better-containers/pack_icon.png",
         "coverFit": "cover",
         "alt": "Better Containers project artwork"
       },
@@ -246,7 +246,7 @@
       },
       "media": {
         "cover": "/img/addons/smelters/MCPEDL.png",
-        "icon": "/img/projects/smelters/icon.png",
+        "icon": "/img/projects/smelters/pack_icon.png",
         "coverFit": "cover",
         "alt": "Better Smelters project artwork"
       },
@@ -295,7 +295,7 @@
       },
       "media": {
         "cover": "/img/addons/bonsais/MCPEDL.png",
-        "icon": "/img/projects/bonsais/icon.png",
+        "icon": "/img/projects/bonsais/pack_icon.png",
         "coverFit": "cover",
         "alt": "Bountiful Bonsais project artwork"
       },
@@ -514,7 +514,7 @@
       },
       "media": {
         "cover": "/img/projects/digital-storage/MCPEDL.png",
-        "icon": "/img/projects/digital-storage/icon.png",
+        "icon": "/img/projects/digital-storage/pack_icon.png",
         "coverFit": "cover",
         "alt": "Digital Storage project artwork"
       },
@@ -565,7 +565,7 @@
       },
       "media": {
         "cover": "/img/addons/atelier/MCPEDL.png",
-        "icon": "/img/projects/atelier/icon.png",
+        "icon": "/img/projects/atelier/pack_icon.png",
         "coverFit": "cover",
         "alt": "Dorios' Atelier project artwork"
       },
@@ -656,7 +656,7 @@
       },
       "media": {
         "cover": "/img/addons/excavate/MCPEDL.png",
-        "icon": "/img/projects/excavate/icon.png",
+        "icon": "/img/projects/excavate/pack_icon.png",
         "coverFit": "cover",
         "alt": "Dorios' Excavate project artwork"
       },
@@ -704,7 +704,7 @@
       },
       "media": {
         "cover": null,
-        "icon": "/img/projects/insight/icon.png",
+        "icon": "/img/projects/insight/pack_icon.png",
         "coverFit": "cover",
         "alt": "Dorios' Insight project artwork"
       },
@@ -749,7 +749,7 @@
       },
       "media": {
         "cover": "/img/addons/trinkets/MCPEDL.png",
-        "icon": "/img/projects/trinkets/icon.png",
+        "icon": "/img/projects/trinkets/pack_icon.png",
         "coverFit": "cover",
         "alt": "Dorios' Trinkets project artwork"
       },
@@ -922,7 +922,7 @@
       },
       "media": {
         "cover": null,
-        "icon": "/img/projects/tiered-machinery/icon.png",
+        "icon": "/img/projects/tiered-machinery/pack_icon.png",
         "coverFit": "cover",
         "alt": "Tiered Machinery project artwork"
       },
@@ -1007,7 +1007,7 @@
       "links": {},
       "media": {
         "cover": null,
-        "icon": "/img/projects/chests/icon.png",
+        "icon": "/img/projects/chests/pack_icon.png",
         "coverFit": "cover",
         "alt": "Dorios' Chests project artwork"
       },
@@ -1056,7 +1056,7 @@
       },
       "media": {
         "cover": null,
-        "icon": "/img/projects/enchants/icon.png",
+        "icon": "/img/projects/enchants/pack_icon.png",
         "coverFit": "cover",
         "alt": "Dorios' Enchants project artwork"
       },
@@ -1097,7 +1097,7 @@
       "links": {},
       "media": {
         "cover": null,
-        "icon": "/img/projects/lucky-tools/icon.png",
+        "icon": "/img/projects/lucky-tools/pack_icon.png",
         "coverFit": "cover",
         "alt": "Lucky Tools project artwork"
       },
@@ -1141,7 +1141,7 @@
       },
       "media": {
         "cover": null,
-        "icon": "/img/projects/project-u/icon.png",
+        "icon": "/img/projects/project-u/pack_icon.png",
         "coverFit": "cover",
         "alt": "ProjectU project artwork"
       },
@@ -1181,7 +1181,7 @@
       "links": {},
       "media": {
         "cover": null,
-        "icon": "/img/projects/remix-attributes/icon.png",
+        "icon": "/img/projects/remix-attributes/pack_icon.png",
         "coverFit": "cover",
         "alt": "Remix's Attributes project artwork"
       },
@@ -1223,7 +1223,7 @@
       "links": {},
       "media": {
         "cover": null,
-        "icon": "/img/projects/too-many-trinkets/icon.png",
+        "icon": "/img/projects/too-many-trinkets/pack_icon.png",
         "coverFit": "cover",
         "alt": "Too Many Trinkets project artwork"
       },
@@ -1267,7 +1267,7 @@
       },
       "media": {
         "cover": null,
-        "icon": "/img/projects/utilitycraft-quarry/icon.png",
+        "icon": "/img/projects/utilitycraft-quarry/pack_icon.png",
         "coverFit": "cover",
         "alt": "UtilityCraft Quarry project artwork"
       },

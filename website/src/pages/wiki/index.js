@@ -14,14 +14,6 @@ const featuredWikis = wikis
   .sort((left, right) => left.featuredRank - right.featuredRank);
 const libraryWikis = wikis.filter((project) => !Number.isInteger(project.featuredRank));
 
-const PACK_ICON_FALLBACKS = {
-  utilitycraft: '/img/addons/utilitycraft/pack_icon.jpg',
-  smelters: '/img/addons/smelters/pack_icon.png',
-  trinkets: '/img/addons/trinkets/pack_icon.png',
-  excavate: '/img/addons/excavate/pack_icon.png',
-  'cobblestone-generators': '/img/addons/cobble_gens/pack_icon.jpg',
-};
-
 function ArrowIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -37,7 +29,7 @@ function cardImages(wiki) {
   return [...new Set([
     wiki.id === 'bonsais' && '/img/wiki/utilitycraft/renders/bonsai.png',
     resolvedSource,
-    PACK_ICON_FALLBACKS[wiki.id],
+    wiki.media.icon,
     project?.fallbackImage && (project.fallbackImage.startsWith('/') ? project.fallbackImage : `${project.assetRoot}/${project.fallbackImage}`),
     wiki.media.cover,
   ].filter(Boolean))];

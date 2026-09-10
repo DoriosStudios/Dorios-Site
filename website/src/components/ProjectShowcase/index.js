@@ -21,7 +21,7 @@ export default function ProjectShowcase({ id, title, intro, projects }) {
           <Link key={project.folder} className={styles.projectCard} to={`/projects/${project.folder}`}>
             <img
               className={styles.projectImage}
-              src={`/img/addons/${project.folder}/MCPEDL.png`}
+              src={project.media?.cover ?? project.media?.icon ?? `/img/projects/${project.id ?? project.folder}/pack_icon.png`}
               alt={`${project.title} addon artwork`}
               loading="lazy"
             />
