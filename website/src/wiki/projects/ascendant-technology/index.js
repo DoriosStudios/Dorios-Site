@@ -6,10 +6,10 @@ import machineProfiles from './machineProfiles';
 import documentationProfiles from './documentationProfiles.generated.json';
 import itemEditorialProfiles from './itemEditorialProfiles';
 
-const itemProfiles = Object.fromEntries(new Set([
+const itemProfiles = Object.fromEntries([...new Set([
   ...Object.keys(documentationProfiles.items),
   ...Object.keys(itemEditorialProfiles),
-]).values().map((identifier) => {
+])].map((identifier) => {
   const generated = documentationProfiles.items[identifier] ?? {};
   const editorial = itemEditorialProfiles[identifier] ?? {};
   return [identifier, {
