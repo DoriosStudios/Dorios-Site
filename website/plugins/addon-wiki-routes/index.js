@@ -88,7 +88,15 @@ module.exports = function doriosGeneratedRoutesPlugin() {
           machineFilter: (block) => /\/blocks\/machinery\/machines\//i.test(`/${block.source}`),
           additionalMachineIds: ['mob_magnet'],
           generatorFilter: (block) => /\/blocks\/machinery\/generators\//i.test(`/${block.source}`) || block.id === 'cobble_gen_6',
-          mechanics: ['dorios-energy', 'gas-management', 'superior-machines', 'absolute-generators'],
+          mechanics: [
+            'dorios-energy',
+            'gas-management',
+            'superior-machines',
+            'absolute-generators',
+            'cryogenic-branches',
+            'overclock-network',
+            'progression-status',
+          ],
         },
         ...genericProjectIds
           .filter((id) => !['utilitycraft', 'ascendant-technology'].includes(id))

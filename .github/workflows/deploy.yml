@@ -43,6 +43,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+          NODE_OPTIONS: --max-old-space-size=6144
+          DOCUSAURUS_SSG_WORKER_THREAD_COUNT: 1
+          DOCUSAURUS_SSR_CONCURRENCY: 4
 
       - name: Verify deploy artifact
         shell: bash
