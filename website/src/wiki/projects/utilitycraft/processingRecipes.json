@@ -17243,8 +17243,514 @@
     "output": "4–8× minecraft:wool + utilitycraft:wool_seeds (12%)"
   },
   {
-    "id": "heavy-machinery-crafter-0-0-utilitycraft-gas-turbine-controller",
-    "identifier": "heavy-machinery:process/crafter/0-0-utilitycraft-gas-turbine-controller",
+    "id": "heavy-machinery-crafter-0-0-utilitycraft-nuclear-reactor-controller",
+    "identifier": "heavy-machinery:process/crafter/0-0-utilitycraft-nuclear-reactor-controller",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "compressed_netherite_block",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "compressed_netherite_block",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "netherite_controller_case",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "lead_block",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      },
+      {
+        "id": "lead_block",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "compressed_netherite_block",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "ultimate_chip",
+        "count": 1
+      },
+      {
+        "id": "netherite_controller_case",
+        "count": 1
+      },
+      {
+        "id": "lead_block",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:nuclear_reactor_controller",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:nuclear_reactor_controller",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "compressed_netherite_block + control_panel + ultimate_chip + netherite_controller_case + lead_block + stabilized_obsidian_dust",
+    "output": "utilitycraft:nuclear_reactor_controller"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-0-utilitycraft-netherite-item-port",
+    "identifier": "heavy-machinery:process/crafter/1-0-utilitycraft-netherite-item-port",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "item_conduit",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "item_conduit",
+        "count": 1
+      },
+      {
+        "id": "netherite_case",
+        "count": 1
+      },
+      {
+        "id": "item_conduit",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "item_conduit",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "item_conduit",
+        "count": 1
+      },
+      {
+        "id": "netherite_case",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:netherite_item_port",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:netherite_item_port",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "lead_plate + item_conduit + netherite_case",
+    "output": "utilitycraft:netherite_item_port"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-1-utilitycraft-netherite-fluid-port",
+    "identifier": "heavy-machinery:process/crafter/1-1-utilitycraft-netherite-fluid-port",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "netherite_case",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "fluid_pipe",
+        "count": 1
+      },
+      {
+        "id": "netherite_case",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:netherite_fluid_port",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:netherite_fluid_port",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "lead_plate + fluid_pipe + netherite_case",
+    "output": "utilitycraft:netherite_fluid_port"
+  },
+  {
+    "id": "heavy-machinery-crafter-1-2-utilitycraft-netherite-energy-port",
+    "identifier": "heavy-machinery:process/crafter/1-2-utilitycraft-netherite-energy-port",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "netherite_case",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "lead_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "lead_plate",
+        "count": 1
+      },
+      {
+        "id": "energy_cable",
+        "count": 1
+      },
+      {
+        "id": "netherite_case",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:netherite_energy_port",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:netherite_energy_port",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "lead_plate + energy_cable + netherite_case",
+    "output": "utilitycraft:netherite_energy_port"
+  },
+  {
+    "id": "heavy-machinery-crafter-2-0-utilitycraft-netherite-case",
+    "identifier": "heavy-machinery:process/crafter/2-0-utilitycraft-netherite-case",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      },
+      {
+        "id": "lead_block",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      },
+      {
+        "id": "lead_block",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:netherite_case",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:netherite_case",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "netherite_plate + stabilized_obsidian_dust + lead_block",
+    "output": "utilitycraft:netherite_case"
+  },
+  {
+    "id": "heavy-machinery-crafter-2-1-utilitycraft-netherite-controller-case",
+    "identifier": "heavy-machinery:process/crafter/2-1-utilitycraft-netherite-controller-case",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "lead_block",
+        "count": 1
+      },
+      {
+        "id": "compressed_netherite_block",
+        "count": 1
+      },
+      {
+        "id": "lead_block",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "netherite_case",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "lead_block",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      },
+      {
+        "id": "lead_block",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "lead_block",
+        "count": 1
+      },
+      {
+        "id": "compressed_netherite_block",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "netherite_case",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:netherite_controller_case",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:netherite_controller_case",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "lead_block + compressed_netherite_block + netherite_plate + netherite_case + stabilized_obsidian_dust",
+    "output": "utilitycraft:netherite_controller_case"
+  },
+  {
+    "id": "heavy-machinery-crafter-3-0-utilitycraft-combustion-chamber-controller",
+    "identifier": "heavy-machinery:process/crafter/3-0-utilitycraft-combustion-chamber-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -17280,7 +17786,7 @@
         "count": 1
       },
       {
-        "id": "advanced_gas_generator",
+        "id": "expert_furnator",
         "count": 1
       },
       {
@@ -17306,7 +17812,96 @@
         "count": 1
       },
       {
-        "id": "advanced_gas_generator",
+        "id": "expert_furnator",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:combustion_chamber_controller",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:combustion_chamber_controller",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "bronze_plate + control_panel + charged_darloonite_crystal + bronze_controller_case + expert_furnator",
+    "output": "utilitycraft:combustion_chamber_controller"
+  },
+  {
+    "id": "heavy-machinery-crafter-3-1-utilitycraft-gas-turbine-controller",
+    "identifier": "heavy-machinery:process/crafter/3-1-utilitycraft-gas-turbine-controller",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "high_speed_rotor",
+        "count": 1
+      },
+      {
+        "id": "bronze_controller_case",
+        "count": 1
+      },
+      {
+        "id": "high_speed_rotor",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "expert_gas_generator",
+        "count": 1
+      },
+      {
+        "id": "bronze_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "bronze_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "high_speed_rotor",
+        "count": 1
+      },
+      {
+        "id": "bronze_controller_case",
+        "count": 1
+      },
+      {
+        "id": "expert_gas_generator",
         "count": 1
       }
     ],
@@ -17328,12 +17923,12 @@
       "category": "Heavy Machinery"
     },
     "originId": "heavy-machinery",
-    "input": "bronze_plate + control_panel + charged_darloonite_crystal + bronze_controller_case + advanced_gas_generator",
+    "input": "bronze_plate + control_panel + high_speed_rotor + bronze_controller_case + expert_gas_generator",
     "output": "utilitycraft:gas_turbine_controller"
   },
   {
-    "id": "heavy-machinery-crafter-0-1-utilitycraft-tin-gas-port",
-    "identifier": "heavy-machinery:process/crafter/0-1-utilitycraft-tin-gas-port",
+    "id": "heavy-machinery-crafter-3-2-utilitycraft-tin-gas-port",
+    "identifier": "heavy-machinery:process/crafter/3-2-utilitycraft-tin-gas-port",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -17413,8 +18008,8 @@
     "output": "utilitycraft:tin_gas_port"
   },
   {
-    "id": "heavy-machinery-crafter-0-2-utilitycraft-bronze-gas-port",
-    "identifier": "heavy-machinery:process/crafter/0-2-utilitycraft-bronze-gas-port",
+    "id": "heavy-machinery-crafter-3-3-utilitycraft-bronze-gas-port",
+    "identifier": "heavy-machinery:process/crafter/3-3-utilitycraft-bronze-gas-port",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -17494,8 +18089,8 @@
     "output": "utilitycraft:bronze_gas_port"
   },
   {
-    "id": "heavy-machinery-crafter-0-3-utilitycraft-steel-gas-port",
-    "identifier": "heavy-machinery:process/crafter/0-3-utilitycraft-steel-gas-port",
+    "id": "heavy-machinery-crafter-3-4-utilitycraft-steel-gas-port",
+    "identifier": "heavy-machinery:process/crafter/3-4-utilitycraft-steel-gas-port",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -17575,8 +18170,8 @@
     "output": "utilitycraft:steel_gas_port"
   },
   {
-    "id": "heavy-machinery-crafter-0-4-utilitycraft-netherite-gas-port",
-    "identifier": "heavy-machinery:process/crafter/0-4-utilitycraft-netherite-gas-port",
+    "id": "heavy-machinery-crafter-3-5-utilitycraft-netherite-gas-port",
+    "identifier": "heavy-machinery:process/crafter/3-5-utilitycraft-netherite-gas-port",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -17584,7 +18179,7 @@
     "slotCount": 9,
     "slots": [
       {
-        "id": "tin_plate",
+        "id": "lead_plate",
         "count": 1
       },
       {
@@ -17592,7 +18187,7 @@
         "count": 1
       },
       {
-        "id": "tin_plate",
+        "id": "lead_plate",
         "count": 1
       },
       {
@@ -17608,7 +18203,7 @@
         "count": 1
       },
       {
-        "id": "tin_plate",
+        "id": "lead_plate",
         "count": 1
       },
       {
@@ -17616,13 +18211,13 @@
         "count": 1
       },
       {
-        "id": "tin_plate",
+        "id": "lead_plate",
         "count": 1
       }
     ],
     "inputs": [
       {
-        "id": "tin_plate",
+        "id": "lead_plate",
         "count": 1
       },
       {
@@ -17652,12 +18247,12 @@
       "category": "Heavy Machinery"
     },
     "originId": "heavy-machinery",
-    "input": "tin_plate + gas_pipe + netherite_case",
+    "input": "lead_plate + gas_pipe + netherite_case",
     "output": "utilitycraft:netherite_gas_port"
   },
   {
-    "id": "heavy-machinery-crafter-0-5-utilitycraft-gas-cell",
-    "identifier": "heavy-machinery:process/crafter/0-5-utilitycraft-gas-cell",
+    "id": "heavy-machinery-crafter-3-6-utilitycraft-gas-cell",
+    "identifier": "heavy-machinery:process/crafter/3-6-utilitycraft-gas-cell",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -17741,8 +18336,8 @@
     "output": "utilitycraft:gas_cell"
   },
   {
-    "id": "heavy-machinery-crafter-0-6-utilitycraft-liquid-tank-controller",
-    "identifier": "heavy-machinery:process/crafter/0-6-utilitycraft-liquid-tank-controller",
+    "id": "heavy-machinery-crafter-3-7-utilitycraft-liquid-tank-controller",
+    "identifier": "heavy-machinery:process/crafter/3-7-utilitycraft-liquid-tank-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -17830,8 +18425,8 @@
     "output": "utilitycraft:liquid_tank_controller"
   },
   {
-    "id": "heavy-machinery-crafter-0-7-utilitycraft-gas-tank-controller",
-    "identifier": "heavy-machinery:process/crafter/0-7-utilitycraft-gas-tank-controller",
+    "id": "heavy-machinery-crafter-3-8-utilitycraft-gas-tank-controller",
+    "identifier": "heavy-machinery:process/crafter/3-8-utilitycraft-gas-tank-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -17919,8 +18514,8 @@
     "output": "utilitycraft:gas_tank_controller"
   },
   {
-    "id": "heavy-machinery-crafter-1-0-utilitycraft-reaction-chamber",
-    "identifier": "heavy-machinery:process/crafter/1-0-utilitycraft-reaction-chamber",
+    "id": "heavy-machinery-crafter-4-0-utilitycraft-reaction-chamber",
+    "identifier": "heavy-machinery:process/crafter/4-0-utilitycraft-reaction-chamber",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -18008,8 +18603,8 @@
     "output": "utilitycraft:reaction_chamber"
   },
   {
-    "id": "heavy-machinery-crafter-1-1-utilitycraft-chemical-processor",
-    "identifier": "heavy-machinery:process/crafter/1-1-utilitycraft-chemical-processor",
+    "id": "heavy-machinery-crafter-4-1-utilitycraft-chemical-processor",
+    "identifier": "heavy-machinery:process/crafter/4-1-utilitycraft-chemical-processor",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -18097,8 +18692,8 @@
     "output": "utilitycraft:chemical_processor"
   },
   {
-    "id": "heavy-machinery-crafter-1-2-utilitycraft-uranium-rod",
-    "identifier": "heavy-machinery:process/crafter/1-2-utilitycraft-uranium-rod",
+    "id": "heavy-machinery-crafter-4-2-utilitycraft-uranium-rod",
+    "identifier": "heavy-machinery:process/crafter/4-2-utilitycraft-uranium-rod",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -18165,8 +18760,8 @@
     "output": "utilitycraft:uranium_rod"
   },
   {
-    "id": "heavy-machinery-crafter-1-3-utilitycraft-enriched-uranium-rod",
-    "identifier": "heavy-machinery:process/crafter/1-3-utilitycraft-enriched-uranium-rod",
+    "id": "heavy-machinery-crafter-4-3-utilitycraft-enriched-uranium-rod",
+    "identifier": "heavy-machinery:process/crafter/4-3-utilitycraft-enriched-uranium-rod",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -18233,8 +18828,8 @@
     "output": "utilitycraft:enriched_uranium_rod"
   },
   {
-    "id": "heavy-machinery-crafter-2-0-utilitycraft-isotope-centrifuge",
-    "identifier": "heavy-machinery:process/crafter/2-0-utilitycraft-isotope-centrifuge",
+    "id": "heavy-machinery-crafter-5-0-utilitycraft-isotope-centrifuge",
+    "identifier": "heavy-machinery:process/crafter/5-0-utilitycraft-isotope-centrifuge",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -18326,8 +18921,8 @@
     "output": "utilitycraft:isotope_centrifuge"
   },
   {
-    "id": "heavy-machinery-crafter-2-1-utilitycraft-bronze-bricks",
-    "identifier": "heavy-machinery:process/crafter/2-1-utilitycraft-bronze-bricks",
+    "id": "heavy-machinery-crafter-5-1-utilitycraft-bronze-bricks",
+    "identifier": "heavy-machinery:process/crafter/5-1-utilitycraft-bronze-bricks",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -18384,8 +18979,8 @@
     "output": "4× utilitycraft:bronze_bricks"
   },
   {
-    "id": "heavy-machinery-crafter-2-10-utilitycraft-reinforced-steel-glass",
-    "identifier": "heavy-machinery:process/crafter/2-10-utilitycraft-reinforced-steel-glass",
+    "id": "heavy-machinery-crafter-5-10-utilitycraft-reinforced-steel-glass",
+    "identifier": "heavy-machinery:process/crafter/5-10-utilitycraft-reinforced-steel-glass",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -18465,8 +19060,8 @@
     "output": "utilitycraft:reinforced_steel_glass"
   },
   {
-    "id": "heavy-machinery-crafter-2-11-utilitycraft-steel-bricks",
-    "identifier": "heavy-machinery:process/crafter/2-11-utilitycraft-steel-bricks",
+    "id": "heavy-machinery-crafter-5-11-utilitycraft-steel-bricks",
+    "identifier": "heavy-machinery:process/crafter/5-11-utilitycraft-steel-bricks",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -18523,8 +19118,8 @@
     "output": "4× utilitycraft:steel_bricks"
   },
   {
-    "id": "heavy-machinery-crafter-2-12-utilitycraft-steel-case",
-    "identifier": "heavy-machinery:process/crafter/2-12-utilitycraft-steel-case",
+    "id": "heavy-machinery-crafter-5-12-utilitycraft-steel-case",
+    "identifier": "heavy-machinery:process/crafter/5-12-utilitycraft-steel-case",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -18604,8 +19199,8 @@
     "output": "utilitycraft:steel_case"
   },
   {
-    "id": "heavy-machinery-crafter-2-13-utilitycraft-steel-energy-port",
-    "identifier": "heavy-machinery:process/crafter/2-13-utilitycraft-steel-energy-port",
+    "id": "heavy-machinery-crafter-5-13-utilitycraft-steel-energy-port",
+    "identifier": "heavy-machinery:process/crafter/5-13-utilitycraft-steel-energy-port",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -18685,8 +19280,8 @@
     "output": "utilitycraft:steel_energy_port"
   },
   {
-    "id": "heavy-machinery-crafter-2-14-utilitycraft-steel-fluid-port",
-    "identifier": "heavy-machinery:process/crafter/2-14-utilitycraft-steel-fluid-port",
+    "id": "heavy-machinery-crafter-5-14-utilitycraft-steel-fluid-port",
+    "identifier": "heavy-machinery:process/crafter/5-14-utilitycraft-steel-fluid-port",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -18766,8 +19361,8 @@
     "output": "utilitycraft:steel_fluid_port"
   },
   {
-    "id": "heavy-machinery-crafter-2-15-utilitycraft-steel-hazard-block",
-    "identifier": "heavy-machinery:process/crafter/2-15-utilitycraft-steel-hazard-block",
+    "id": "heavy-machinery-crafter-5-15-utilitycraft-steel-hazard-block",
+    "identifier": "heavy-machinery:process/crafter/5-15-utilitycraft-steel-hazard-block",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -18829,8 +19424,8 @@
     "output": "utilitycraft:steel_hazard_block"
   },
   {
-    "id": "heavy-machinery-crafter-2-16-utilitycraft-steel-item-port",
-    "identifier": "heavy-machinery:process/crafter/2-16-utilitycraft-steel-item-port",
+    "id": "heavy-machinery-crafter-5-16-utilitycraft-steel-item-port",
+    "identifier": "heavy-machinery:process/crafter/5-16-utilitycraft-steel-item-port",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -18910,8 +19505,8 @@
     "output": "utilitycraft:steel_item_port"
   },
   {
-    "id": "heavy-machinery-crafter-2-17-utilitycraft-steel-plated-block",
-    "identifier": "heavy-machinery:process/crafter/2-17-utilitycraft-steel-plated-block",
+    "id": "heavy-machinery-crafter-5-17-utilitycraft-steel-plated-block",
+    "identifier": "heavy-machinery:process/crafter/5-17-utilitycraft-steel-plated-block",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -18987,8 +19582,8 @@
     "output": "utilitycraft:steel_plated_block"
   },
   {
-    "id": "heavy-machinery-crafter-2-18-utilitycraft-steel-vent-panel",
-    "identifier": "heavy-machinery:process/crafter/2-18-utilitycraft-steel-vent-panel",
+    "id": "heavy-machinery-crafter-5-18-utilitycraft-steel-vent-panel",
+    "identifier": "heavy-machinery:process/crafter/5-18-utilitycraft-steel-vent-panel",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -19061,8 +19656,8 @@
     "output": "utilitycraft:steel_vent_panel"
   },
   {
-    "id": "heavy-machinery-crafter-2-19-utilitycraft-autosieve-controller",
-    "identifier": "heavy-machinery:process/crafter/2-19-utilitycraft-autosieve-controller",
+    "id": "heavy-machinery-crafter-5-19-utilitycraft-autosieve-controller",
+    "identifier": "heavy-machinery:process/crafter/5-19-utilitycraft-autosieve-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -19150,8 +19745,8 @@
     "output": "utilitycraft:autosieve_controller"
   },
   {
-    "id": "heavy-machinery-crafter-2-2-utilitycraft-bronze-case",
-    "identifier": "heavy-machinery:process/crafter/2-2-utilitycraft-bronze-case",
+    "id": "heavy-machinery-crafter-5-2-utilitycraft-bronze-case",
+    "identifier": "heavy-machinery:process/crafter/5-2-utilitycraft-bronze-case",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -19231,8 +19826,8 @@
     "output": "utilitycraft:bronze_case"
   },
   {
-    "id": "heavy-machinery-crafter-2-20-utilitycraft-bronze-controller-case",
-    "identifier": "heavy-machinery:process/crafter/2-20-utilitycraft-bronze-controller-case",
+    "id": "heavy-machinery-crafter-5-20-utilitycraft-bronze-controller-case",
+    "identifier": "heavy-machinery:process/crafter/5-20-utilitycraft-bronze-controller-case",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -19316,8 +19911,8 @@
     "output": "utilitycraft:bronze_controller_case"
   },
   {
-    "id": "heavy-machinery-crafter-2-21-utilitycraft-control-panel",
-    "identifier": "heavy-machinery:process/crafter/2-21-utilitycraft-control-panel",
+    "id": "heavy-machinery-crafter-5-21-utilitycraft-control-panel",
+    "identifier": "heavy-machinery:process/crafter/5-21-utilitycraft-control-panel",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -19401,8 +19996,8 @@
     "output": "utilitycraft:control_panel"
   },
   {
-    "id": "heavy-machinery-crafter-2-3-utilitycraft-bronze-energy-port",
-    "identifier": "heavy-machinery:process/crafter/2-3-utilitycraft-bronze-energy-port",
+    "id": "heavy-machinery-crafter-5-3-utilitycraft-bronze-energy-port",
+    "identifier": "heavy-machinery:process/crafter/5-3-utilitycraft-bronze-energy-port",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -19482,8 +20077,8 @@
     "output": "utilitycraft:bronze_energy_port"
   },
   {
-    "id": "heavy-machinery-crafter-2-4-utilitycraft-bronze-fluid-port",
-    "identifier": "heavy-machinery:process/crafter/2-4-utilitycraft-bronze-fluid-port",
+    "id": "heavy-machinery-crafter-5-4-utilitycraft-bronze-fluid-port",
+    "identifier": "heavy-machinery:process/crafter/5-4-utilitycraft-bronze-fluid-port",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -19563,8 +20158,8 @@
     "output": "utilitycraft:bronze_fluid_port"
   },
   {
-    "id": "heavy-machinery-crafter-2-5-utilitycraft-bronze-hazard-block",
-    "identifier": "heavy-machinery:process/crafter/2-5-utilitycraft-bronze-hazard-block",
+    "id": "heavy-machinery-crafter-5-5-utilitycraft-bronze-hazard-block",
+    "identifier": "heavy-machinery:process/crafter/5-5-utilitycraft-bronze-hazard-block",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -19626,8 +20221,8 @@
     "output": "utilitycraft:bronze_hazard_block"
   },
   {
-    "id": "heavy-machinery-crafter-2-6-utilitycraft-bronze-item-port",
-    "identifier": "heavy-machinery:process/crafter/2-6-utilitycraft-bronze-item-port",
+    "id": "heavy-machinery-crafter-5-6-utilitycraft-bronze-item-port",
+    "identifier": "heavy-machinery:process/crafter/5-6-utilitycraft-bronze-item-port",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -19707,8 +20302,8 @@
     "output": "utilitycraft:bronze_item_port"
   },
   {
-    "id": "heavy-machinery-crafter-2-7-utilitycraft-bronze-plated-block",
-    "identifier": "heavy-machinery:process/crafter/2-7-utilitycraft-bronze-plated-block",
+    "id": "heavy-machinery-crafter-5-7-utilitycraft-bronze-plated-block",
+    "identifier": "heavy-machinery:process/crafter/5-7-utilitycraft-bronze-plated-block",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -19784,8 +20379,8 @@
     "output": "utilitycraft:bronze_plated_block"
   },
   {
-    "id": "heavy-machinery-crafter-2-8-utilitycraft-bronze-vent-panel",
-    "identifier": "heavy-machinery:process/crafter/2-8-utilitycraft-bronze-vent-panel",
+    "id": "heavy-machinery-crafter-5-8-utilitycraft-bronze-vent-panel",
+    "identifier": "heavy-machinery:process/crafter/5-8-utilitycraft-bronze-vent-panel",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -19858,8 +20453,8 @@
     "output": "utilitycraft:bronze_vent_panel"
   },
   {
-    "id": "heavy-machinery-crafter-2-9-utilitycraft-reinforced-bronze-glass",
-    "identifier": "heavy-machinery:process/crafter/2-9-utilitycraft-reinforced-bronze-glass",
+    "id": "heavy-machinery-crafter-5-9-utilitycraft-reinforced-bronze-glass",
+    "identifier": "heavy-machinery:process/crafter/5-9-utilitycraft-reinforced-bronze-glass",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -19939,8 +20534,8 @@
     "output": "utilitycraft:reinforced_bronze_glass"
   },
   {
-    "id": "heavy-machinery-crafter-3-0-utilitycraft-controller-case",
-    "identifier": "heavy-machinery:process/crafter/3-0-utilitycraft-controller-case",
+    "id": "heavy-machinery-crafter-6-0-utilitycraft-controller-case",
+    "identifier": "heavy-machinery:process/crafter/6-0-utilitycraft-controller-case",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20024,8 +20619,8 @@
     "output": "utilitycraft:controller_case"
   },
   {
-    "id": "heavy-machinery-crafter-3-1-utilitycraft-crusher-controller",
-    "identifier": "heavy-machinery:process/crafter/3-1-utilitycraft-crusher-controller",
+    "id": "heavy-machinery-crafter-6-1-utilitycraft-crusher-controller",
+    "identifier": "heavy-machinery:process/crafter/6-1-utilitycraft-crusher-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20113,8 +20708,8 @@
     "output": "utilitycraft:crusher_controller"
   },
   {
-    "id": "heavy-machinery-crafter-3-10-utilitycraft-processing-module",
-    "identifier": "heavy-machinery:process/crafter/3-10-utilitycraft-processing-module",
+    "id": "heavy-machinery-crafter-6-10-utilitycraft-processing-module",
+    "identifier": "heavy-machinery:process/crafter/6-10-utilitycraft-processing-module",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20198,8 +20793,8 @@
     "output": "utilitycraft:processing_module"
   },
   {
-    "id": "heavy-machinery-crafter-3-11-utilitycraft-speed-module",
-    "identifier": "heavy-machinery:process/crafter/3-11-utilitycraft-speed-module",
+    "id": "heavy-machinery-crafter-6-11-utilitycraft-speed-module",
+    "identifier": "heavy-machinery:process/crafter/6-11-utilitycraft-speed-module",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20287,8 +20882,8 @@
     "output": "utilitycraft:speed_module"
   },
   {
-    "id": "heavy-machinery-crafter-3-12-utilitycraft-thermo-core",
-    "identifier": "heavy-machinery:process/crafter/3-12-utilitycraft-thermo-core",
+    "id": "heavy-machinery-crafter-6-12-utilitycraft-thermo-core",
+    "identifier": "heavy-machinery:process/crafter/6-12-utilitycraft-thermo-core",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20372,8 +20967,8 @@
     "output": "utilitycraft:thermo_core"
   },
   {
-    "id": "heavy-machinery-crafter-3-13-utilitycraft-power-condenser-controller",
-    "identifier": "heavy-machinery:process/crafter/3-13-utilitycraft-power-condenser-controller",
+    "id": "heavy-machinery-crafter-6-13-utilitycraft-power-condenser-controller",
+    "identifier": "heavy-machinery:process/crafter/6-13-utilitycraft-power-condenser-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20461,8 +21056,8 @@
     "output": "utilitycraft:power_condenser_controller"
   },
   {
-    "id": "heavy-machinery-crafter-3-14-utilitycraft-reaction-chamber-controller",
-    "identifier": "heavy-machinery:process/crafter/3-14-utilitycraft-reaction-chamber-controller",
+    "id": "heavy-machinery-crafter-6-14-utilitycraft-reaction-chamber-controller",
+    "identifier": "heavy-machinery:process/crafter/6-14-utilitycraft-reaction-chamber-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20550,8 +21145,8 @@
     "output": "utilitycraft:reaction_chamber_controller"
   },
   {
-    "id": "heavy-machinery-crafter-3-15-utilitycraft-thermo-reactor-controller",
-    "identifier": "heavy-machinery:process/crafter/3-15-utilitycraft-thermo-reactor-controller",
+    "id": "heavy-machinery-crafter-6-15-utilitycraft-thermo-reactor-controller",
+    "identifier": "heavy-machinery:process/crafter/6-15-utilitycraft-thermo-reactor-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20639,8 +21234,8 @@
     "output": "utilitycraft:thermo_reactor_controller"
   },
   {
-    "id": "heavy-machinery-crafter-3-16-utilitycraft-advanced-power-condenser-unit",
-    "identifier": "heavy-machinery:process/crafter/3-16-utilitycraft-advanced-power-condenser-unit",
+    "id": "heavy-machinery-crafter-6-16-utilitycraft-advanced-power-condenser-unit",
+    "identifier": "heavy-machinery:process/crafter/6-16-utilitycraft-advanced-power-condenser-unit",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20720,8 +21315,8 @@
     "output": "utilitycraft:advanced_power_condenser_unit"
   },
   {
-    "id": "heavy-machinery-crafter-3-17-utilitycraft-basic-power-condenser-unit",
-    "identifier": "heavy-machinery:process/crafter/3-17-utilitycraft-basic-power-condenser-unit",
+    "id": "heavy-machinery-crafter-6-17-utilitycraft-basic-power-condenser-unit",
+    "identifier": "heavy-machinery:process/crafter/6-17-utilitycraft-basic-power-condenser-unit",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20801,8 +21396,8 @@
     "output": "utilitycraft:basic_power_condenser_unit"
   },
   {
-    "id": "heavy-machinery-crafter-3-18-utilitycraft-expert-power-condenser-unit",
-    "identifier": "heavy-machinery:process/crafter/3-18-utilitycraft-expert-power-condenser-unit",
+    "id": "heavy-machinery-crafter-6-18-utilitycraft-expert-power-condenser-unit",
+    "identifier": "heavy-machinery:process/crafter/6-18-utilitycraft-expert-power-condenser-unit",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20882,8 +21477,8 @@
     "output": "utilitycraft:expert_power_condenser_unit"
   },
   {
-    "id": "heavy-machinery-crafter-3-19-utilitycraft-ultimate-power-condenser-unit",
-    "identifier": "heavy-machinery:process/crafter/3-19-utilitycraft-ultimate-power-condenser-unit",
+    "id": "heavy-machinery-crafter-6-19-utilitycraft-ultimate-power-condenser-unit",
+    "identifier": "heavy-machinery:process/crafter/6-19-utilitycraft-ultimate-power-condenser-unit",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -20963,8 +21558,8 @@
     "output": "utilitycraft:ultimate_power_condenser_unit"
   },
   {
-    "id": "heavy-machinery-crafter-3-2-utilitycraft-electro-press-controller",
-    "identifier": "heavy-machinery:process/crafter/3-2-utilitycraft-electro-press-controller",
+    "id": "heavy-machinery-crafter-6-2-utilitycraft-electro-press-controller",
+    "identifier": "heavy-machinery:process/crafter/6-2-utilitycraft-electro-press-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21052,8 +21647,8 @@
     "output": "utilitycraft:electro_press_controller"
   },
   {
-    "id": "heavy-machinery-crafter-3-20-utilitycraft-tin-plated-block",
-    "identifier": "heavy-machinery:process/crafter/3-20-utilitycraft-tin-plated-block",
+    "id": "heavy-machinery-crafter-6-20-utilitycraft-tin-plated-block",
+    "identifier": "heavy-machinery:process/crafter/6-20-utilitycraft-tin-plated-block",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21129,8 +21724,8 @@
     "output": "utilitycraft:tin_plated_block"
   },
   {
-    "id": "heavy-machinery-crafter-3-3-utilitycraft-energy-cell",
-    "identifier": "heavy-machinery:process/crafter/3-3-utilitycraft-energy-cell",
+    "id": "heavy-machinery-crafter-6-3-utilitycraft-energy-cell",
+    "identifier": "heavy-machinery:process/crafter/6-3-utilitycraft-energy-cell",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21210,8 +21805,8 @@
     "output": "utilitycraft:energy_cell"
   },
   {
-    "id": "heavy-machinery-crafter-3-4-utilitycraft-incinerator-controller",
-    "identifier": "heavy-machinery:process/crafter/3-4-utilitycraft-incinerator-controller",
+    "id": "heavy-machinery-crafter-6-4-utilitycraft-incinerator-controller",
+    "identifier": "heavy-machinery:process/crafter/6-4-utilitycraft-incinerator-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21299,8 +21894,8 @@
     "output": "utilitycraft:incinerator_controller"
   },
   {
-    "id": "heavy-machinery-crafter-3-5-utilitycraft-infuser-controller",
-    "identifier": "heavy-machinery:process/crafter/3-5-utilitycraft-infuser-controller",
+    "id": "heavy-machinery-crafter-6-5-utilitycraft-infuser-controller",
+    "identifier": "heavy-machinery:process/crafter/6-5-utilitycraft-infuser-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21388,8 +21983,8 @@
     "output": "utilitycraft:infuser_controller"
   },
   {
-    "id": "heavy-machinery-crafter-3-6-utilitycraft-magmatic-chamber-controller",
-    "identifier": "heavy-machinery:process/crafter/3-6-utilitycraft-magmatic-chamber-controller",
+    "id": "heavy-machinery-crafter-6-6-utilitycraft-magmatic-chamber-controller",
+    "identifier": "heavy-machinery:process/crafter/6-6-utilitycraft-magmatic-chamber-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21477,8 +22072,8 @@
     "output": "utilitycraft:magmatic_chamber_controller"
   },
   {
-    "id": "heavy-machinery-crafter-3-7-utilitycraft-efficiency-module",
-    "identifier": "heavy-machinery:process/crafter/3-7-utilitycraft-efficiency-module",
+    "id": "heavy-machinery-crafter-6-7-utilitycraft-efficiency-module",
+    "identifier": "heavy-machinery:process/crafter/6-7-utilitycraft-efficiency-module",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21566,8 +22161,8 @@
     "output": "utilitycraft:efficiency_module"
   },
   {
-    "id": "heavy-machinery-crafter-3-8-utilitycraft-fluid-cell",
-    "identifier": "heavy-machinery:process/crafter/3-8-utilitycraft-fluid-cell",
+    "id": "heavy-machinery-crafter-6-8-utilitycraft-fluid-cell",
+    "identifier": "heavy-machinery:process/crafter/6-8-utilitycraft-fluid-cell",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -21651,8 +22246,8 @@
     "output": "utilitycraft:fluid_cell"
   },
   {
-    "id": "heavy-machinery-crafter-3-9-utilitycraft-heat-conductor",
-    "identifier": "heavy-machinery:process/crafter/3-9-utilitycraft-heat-conductor",
+    "id": "heavy-machinery-crafter-6-9-utilitycraft-heat-conductor",
+    "identifier": "heavy-machinery:process/crafter/6-9-utilitycraft-heat-conductor",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",

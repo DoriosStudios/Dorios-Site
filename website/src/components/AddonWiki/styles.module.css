@@ -4540,6 +4540,111 @@
 .itemTrivia li { padding: .8rem 0 .8rem 1rem; border-top: 1px solid var(--ds-border); color: var(--ds-muted); font-size: .86rem; line-height: 1.55; }
 .itemTrivia li::before { position: absolute; margin-left: -1rem; color: var(--wiki-project-accent); content: '◆'; font-size: .55rem; }
 
+.repairItemList {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0;
+	margin: .8rem 0 0;
+	padding: 0;
+	list-style: none;
+}
+.repairItemList li > a,
+.repairItemList li > span {
+	min-height: 52px;
+	display: grid;
+	grid-template-columns: 38px minmax(0, 1fr) auto;
+	align-items: center;
+	gap: .65rem;
+	padding: .45rem .15rem;
+	border: 0;
+	border-top: 1px solid color-mix(in srgb, var(--wiki-project-accent) 16%, var(--ds-border));
+	border-radius: 0;
+	background: transparent;
+	color: var(--ds-text);
+	text-decoration: none;
+}
+.repairItemList img { width: 36px; height: 36px; object-fit: contain; image-rendering: pixelated; }
+.repairItemList strong { min-width: 0; font-size: .78rem; }
+.repairItemList q { color: var(--wiki-project-accent); font-size: .72rem; font-weight: 850; white-space: nowrap; }
+.repairItemList a:hover { border-color: var(--wiki-project-accent); }
+.documentationList[data-layout='list'] {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0;
+}
+.documentationList[data-layout='list'] > li {
+	padding: .48rem .15rem;
+	border: 0;
+	border-bottom: 1px solid color-mix(in srgb, var(--wiki-project-accent) 12%, var(--ds-border));
+	border-radius: 0;
+	background: transparent;
+}
+.documentationList[data-layout='list'] > .enchantmentGroup {
+	grid-column: 1;
+	display: grid;
+	grid-template-columns: minmax(150px, .35fr) minmax(0, 1fr);
+	gap: .75rem;
+	align-items: baseline;
+}
+.enchantmentGroup > strong { color: var(--wiki-project-accent); font-size: .7rem; }
+.enchantmentGroup ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: .15rem 1rem; margin: 0; padding: 0; list-style: none; }
+.enchantmentGroup ul li { position: relative; padding: .08rem 0 .08rem .75rem; border: 0; border-radius: 0; background: transparent; }
+.enchantmentGroup ul li::before { position: absolute; left: 0; color: var(--wiki-project-accent); content: '•'; }
+
+.primarySources { gap: .8rem; }
+.sourceMethod {
+	padding: .85rem;
+	border: 1px solid color-mix(in srgb, var(--wiki-project-accent) 22%, var(--ds-border));
+	border-radius: 13px;
+	background: color-mix(in srgb, var(--ds-surface) 76%, var(--ds-bg));
+}
+.sourceProcess {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: .45rem;
+	margin-top: .8rem;
+	padding: .65rem;
+	border-radius: 10px;
+	background: color-mix(in srgb, var(--wiki-project-accent) 5%, var(--ds-bg));
+}
+.sourceProcess .sourceVisuals { align-items: center; }
+.sourceProcessArrow { color: var(--wiki-project-accent); font-size: 1.2rem; }
+.sourceOutputs { padding-left: .1rem; }
+.sourceOutputs .sourceVisual { color: var(--ds-text); }
+.sourceOutputs .sourceVisual img { width: 64px; height: 64px; }
+.sourceMesh {
+	min-height: 48px;
+	display: grid;
+	align-content: center;
+	gap: .25rem;
+	margin-left: auto;
+	padding-left: .7rem;
+	border-left: 1px solid var(--ds-border);
+}
+.sourceMesh > small { color: var(--ds-muted); font: 800 .58rem var(--wiki-ui-font); letter-spacing: .07em; text-transform: uppercase; }
+.sourceMesh .sieveMeshBadge { padding: 0; border: 0; background: transparent; }
+.sourceMesh .sieveMeshBadge img { width: 27px; height: 27px; }
+.sourceMethod dt { font-weight: 800; }
+.sourceMethod dd strong { color: var(--ds-text); font-weight: 850; }
+
+.oreModifierHeader,
+.oreModifierRow {
+	display: grid;
+	grid-template-columns: minmax(120px, .35fr) minmax(190px, .55fr) minmax(220px, 1fr);
+	align-items: center;
+	gap: .75rem;
+}
+.oreModifierHeader { padding: .4rem .25rem; color: var(--ds-muted); font: 800 .58rem var(--wiki-ui-font); letter-spacing: .07em; text-transform: uppercase; }
+.oreModifierRows { display: grid; }
+.oreModifierRow { min-height: 54px; padding: .4rem .25rem; border-top: 1px solid color-mix(in srgb, var(--wiki-project-accent) 12%, var(--ds-border)); }
+.oreModifierRow > strong { color: var(--ds-text); font: 800 .72rem var(--wiki-ui-font); }
+.oreModifierRow > p { margin: 0; color: var(--ds-muted); font: .68rem/1.4 var(--wiki-ui-font); }
+.oreModifierDrops { display: grid; gap: .25rem; }
+.oreModifierDrops .oreDropItem > span { min-width: 0; display: grid; gap: .08rem; }
+.oreModifierDrops .oreDropItem small { color: var(--wiki-project-accent); font: 800 .6rem var(--wiki-ui-font); }
+.oreModifierTextDrop { color: var(--ds-text); font: 750 .68rem/1.35 var(--wiki-ui-font); }
+
 .siftableBlockReference {
 	margin-top: 1rem;
 	padding: 1rem;
@@ -4582,6 +4687,11 @@
 	.itemWikiSection { padding: 1.55rem 0; }
 	.itemWikiSection > header { display: block; margin-bottom: .9rem; }
 	.itemProperties, .primarySources, .mainUses, .primaryRecipes, .itemClosingGrid { grid-template-columns: 1fr; }
+	.documentationList[data-layout='list'] { grid-template-columns: 1fr; }
+	.documentationList[data-layout='list'] > .enchantmentGroup { grid-column: 1; grid-template-columns: 1fr; gap: .35rem; }
+	.oreModifierHeader { display: none; }
+	.oreModifierRow { grid-template-columns: minmax(110px, .4fr) minmax(0, .6fr); }
+	.oreModifierRow > p { grid-column: 1 / -1; }
 	.itemProperties > div, .itemProperties > div:nth-child(even) { grid-template-columns: minmax(105px, .42fr) minmax(0, 1fr); padding-left: .1rem; }
 	.itemMoreLink { align-items: flex-start; flex-direction: column; }
 	.itemMoreLink a { width: 100%; justify-content: space-between; }
@@ -4606,6 +4716,8 @@
 	.itemDetailCopy { grid-column: 1 / -1; width: 100%; margin-top: .35rem; }
 	.itemDetailCopy > p { font-size: .9rem; line-height: 1.55; }
 	.sourceMethodHeading { align-items: start; }
+	.sourceProcess { align-items: flex-start; }
+	.sourceMesh { width: 100%; margin-left: 0; padding: .55rem 0 0; border-top: 1px solid var(--ds-border); border-left: 0; }
 	.sourceVisual { width: 54px; }
 	.sourceVisual img, .sourceVisual[data-station] img { width: 48px; height: 48px; }
 	.sourceVisual span { max-width: 54px; }

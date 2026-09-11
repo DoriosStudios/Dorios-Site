@@ -2212,7 +2212,7 @@ function MiningReference({mining}) {
     <section className={styles.oreMiningReference} aria-labelledby="ore-mining-reference">
       <header>
         <div><p className={styles.eyebrow}>Resource reference</p><h2 id="ore-mining-reference">Mining &amp; drops</h2></div>
-        <p>The AT Core resolver is listed separately from optional StatsCore effects, so a tool change never looks like a base drop.</p>
+        <p>Base loot is listed separately from optional StatsCore effects, so tool-specific drops remain clear.</p>
       </header>
       <div className={styles.oreMiningFacts}>
         <span><small>Required tool</small><strong>{mining.requiredTool}</strong></span>
@@ -2239,7 +2239,16 @@ function MiningReference({mining}) {
       {activeTab === 'locations' && <div className={styles.oreLocationList}>{mining.locations.map((location, index) => <article key={`${location.dimension}-${location.height}-${index}`}>
         <strong>{location.dimension}</strong><span>{location.height}</span><small>Replaces {location.replace} · {location.detail}</small>
       </article>)}</div>}
-      {activeTab === 'modifiers' && <div className={styles.oreModifierGrid}>{mining.modifiers.map((modifier) => <article key={modifier.title}><strong>{modifier.title}</strong><p>{modifier.copy}</p></article>)}</div>}
+      {activeTab === 'modifiers' && <div className={`${styles.oreDropTable} ${styles.oreModifierTable}`} role="table" aria-label="Drops changed by special mining abilities">
+        <div className={styles.oreModifierHeader} role="row"><span>Special ability</span><span>Possible drop</span><span>Loot behavior</span></div>
+        <div className={styles.oreModifierRows}>{mining.modifiers.map((modifier) => <div className={styles.oreModifierRow} role="row" key={modifier.title}>
+          <strong>{modifier.title}</strong>
+          <span className={styles.oreModifierDrops}>{modifier.dropLabel
+            ? <span className={styles.oreModifierTextDrop}>{modifier.dropLabel}</span>
+            : meaningfulList(modifier.drops).map((drop, index) => <span className={styles.oreDropItem} key={`${drop.id}-${index}`}><RecipeSlot ingredient={{id: drop.id, label: formatIdentifier(drop.id)}} /><span><em>{formatIdentifier(drop.id)}</em>{drop.amount && <small>{drop.amount}</small>}</span></span>)}</span>
+          <p>{modifier.copy}</p>
+        </div>)}</div>
+      </div>}
     </section>
   );
 }
@@ -2431,14 +2440,50 @@ function useWikiQuery() {
 }
 
 function DocumentationSection({section}) {
+  const project = useWikiProject();
   const facts = meaningfulList(section.facts).filter((fact) => Array.isArray(fact) && fact[1] !== undefined && fact[1] !== null && fact[1] !== '');
   const entries = meaningfulList(section.entries);
+  const repairs = meaningfulList(section.repairs);
+  const enchantmentGroups = [
+    {label: 'Damage — choose one', names: ['Sharpness', 'Smite', 'Bane of Arthropods']},
+    {label: 'Protection — choose one', names: ['Protection', 'Fire Protection', 'Blast Protection', 'Projectile Protection']},
+    {label: 'Mining drops — choose one', names: ['Fortune', 'Silk Touch']},
+    {label: 'Boot movement — choose one', names: ['Depth Strider', 'Frost Walker']},
+    {label: 'Bow infinity — choose one', names: ['Infinity', 'Mending']},
+  ];
+  const groupedEntries = (() => {
+    if (section.id !== 'enchantments') return entries.map((entry) => ({entry}));
+    const available = new Set(entries);
+    const groupsByFirstEntry = new Map();
+    enchantmentGroups.forEach((group) => {
+      const names = group.names.filter((name) => available.has(name));
+      if (names.length > 1) {
+        names.forEach((name) => available.delete(name));
+        groupsByFirstEntry.set(Math.min(...names.map((name) => entries.indexOf(name))), {...group, names});
+      }
+    });
+    const result = [];
+    entries.forEach((entry, index) => {
+      if (groupsByFirstEntry.has(index)) result.push({group: groupsByFirstEntry.get(index)});
+      if (available.has(entry)) result.push({entry});
+    });
+    return result;
+  })();
   return (
     <section className={`${styles.itemEditorialSection} ${styles.documentationSection}`} aria-labelledby={`item-section-${section.id}`}>
       <ItemSectionHeading id={`item-section-${section.id}`} icon="capabilities">{section.title ?? section.label}</ItemSectionHeading>
       {section.copy && <p className={styles.documentationCopy}>{section.copy}</p>}
       {facts.length > 0 && <dl className={styles.itemBasicList}>{facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{Array.isArray(value) ? value.join(', ') : value}</dd></div>)}</dl>}
-      {entries.length > 0 && <ul className={styles.documentationList}>{entries.map((entry, index) => <li key={`${entry}-${index}`}>{entry}</li>)}</ul>}
+      {repairs.length > 0 && <ul className={styles.repairItemList} aria-label="Repair materials">{repairs.map((repair, index) => {
+        const target = catalogEntryFor(project, repair.id);
+        const href = detailLinkFor(project, repair.id);
+        const image = visualFor(project, repair.id);
+        const content = <>{image && <img src={image} alt="" loading="lazy" />}<strong>{repair.label ?? target?.name ?? formatIdentifier(repair.id)}</strong>{repair.value && <q>{repair.value}</q>}</>;
+        return <li key={`${repair.id}-${index}`}>{href ? <Link to={href}>{content}</Link> : <span>{content}</span>}</li>;
+      })}</ul>}
+      {entries.length > 0 && <ul className={styles.documentationList} data-layout={section.id === 'enchantments' ? 'list' : undefined}>{groupedEntries.map((item, index) => item.group
+        ? <li className={styles.enchantmentGroup} key={item.group.label}><strong>{item.group.label}</strong><ul>{item.group.names.map((name) => <li key={name}>{name}</li>)}</ul></li>
+        : <li key={`${item.entry}-${index}`}>{item.entry}</li>)}</ul>}
     </section>
   );
 }
@@ -2603,18 +2648,35 @@ function SourceMethod({source, recipe}) {
       station: true,
     });
   }
+  const outputItems = [...(source.outputs ?? []), ...(source.output ? [source.output] : [])];
+  const outputVisuals = outputItems.map((item) => {
+    const target = catalogEntryFor(project, item);
+    return {
+      id: `output-${item}`,
+      label: target?.name ?? formatIdentifier(item),
+      image: visualFor(project, item),
+      href: detailLinkFor(project, item),
+      output: true,
+    };
+  });
   const renderVisual = (entry) => {
     const content = <><img src={entry.image} alt="" loading="lazy" /><span>{entry.label}</span></>;
     return entry.href
       ? <Link className={styles.sourceVisual} data-station={entry.station || undefined} to={entry.href} key={entry.id}>{content}</Link>
       : <span className={styles.sourceVisual} data-station={entry.station || undefined} key={entry.id}>{content}</span>;
   };
-  return <article className={styles.sourceMethod}>
+  const hasProcess = outputVisuals.length > 0 || source.minimumMeshTier !== undefined;
+  return <article className={styles.sourceMethod} data-source-type={String(source.type ?? '').toLowerCase().replace(/\s+/g, '-')}>
     <div className={styles.sourceMethodHeading}>
       <div><small>{source.type ?? 'Primary source'}</small><h3>{source.title}</h3>{source.description && <p>{source.description}</p>}</div>
-      {visuals.some(({image}) => image) && <div className={styles.sourceVisuals}>{visuals.filter(({image}) => image).map(renderVisual)}</div>}
+      {!hasProcess && visuals.some(({image}) => image) && <div className={styles.sourceVisuals}>{visuals.filter(({image}) => image).map(renderVisual)}</div>}
     </div>
-    {source.facts?.length > 0 && <dl>{source.facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}
+    {hasProcess && <div className={styles.sourceProcess}>
+      {visuals.some(({image}) => image) && <div className={styles.sourceVisuals}>{visuals.filter(({image}) => image).map(renderVisual)}</div>}
+      {outputVisuals.length > 0 && <><b className={styles.sourceProcessArrow} aria-hidden="true">→</b><div className={`${styles.sourceVisuals} ${styles.sourceOutputs}`}>{outputVisuals.filter(({image}) => image).map(renderVisual)}</div></>}
+      {source.minimumMeshTier !== undefined && <div className={styles.sourceMesh}><small>Minimum mesh</small><SieveMeshBadge tier={source.minimumMeshTier} /></div>}
+    </div>}
+    {source.facts?.length > 0 && <dl>{source.facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{source.emphasizeFacts ? <strong>{value}</strong> : value}</dd></div>)}</dl>}
     {recipe && <ItemRecipeCard recipe={recipe} />}
   </article>;
 }

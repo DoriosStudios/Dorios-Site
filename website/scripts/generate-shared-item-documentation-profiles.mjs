@@ -92,12 +92,19 @@ function miningTier(tags) {
   return tiers.find(([tier]) => tags.some((tag) => tag.includes(`${tier}_tier`)))?.[1] ?? null;
 }
 
-function repairLabel(record) {
-  const items = record?.items?.map(label).join(' + ');
-  if (!items) return null;
+function repairEntries(record) {
   const formula = String(record.repair_amount ?? '');
   const ratio = formula.match(/\*\s*(0?\.\d+)/)?.[1];
-  return ratio ? `${items} — ${Number(ratio) * 100}% of maximum durability` : (formula ? `${items} — ${formula}` : items);
+  const repairValue = ratio
+    ? `${number(Number(ratio) * 100)}%`
+    : /q\.remaining_durability|q\.max_durability/.test(formula)
+      ? 'combines durability'
+      : formula || null;
+  return (record.items ?? []).map((identifier) => ({
+    id: identifier,
+    label: label(identifier),
+    value: repairValue,
+  }));
 }
 
 function digSpeedLabel(digger) {
@@ -134,6 +141,7 @@ function profileFor(project, identifier, components) {
   const wearable = components['minecraft:wearable'];
   const digger = components['minecraft:digger'];
   const repairable = components['minecraft:repairable']?.repair_items ?? [];
+  const repairs = repairable.flatMap(repairEntries);
   const food = components['minecraft:food'];
   const capacity = storageCellCapacity(project, identifier);
   const storageTiers = capacity ? storageCellTiers(project) : [];
@@ -161,7 +169,6 @@ function profileFor(project, identifier, components) {
     digger && miningTier(tags) && ['Mining tier', miningTier(tags)],
     digger && ['Mining speed', digSpeedLabel(digger)],
     wearable?.slot && ['Wear slot', label(wearable.slot.replace('slot.armor.', 'armor_'))],
-    repairable.length && ['Repair with', repairable.map(repairLabel).filter(Boolean).join('; ')],
     components['minecraft:fire_resistant'] && ['Fire resistant', 'Yes'],
     components['minecraft:cooldown']?.category && ['Cooldown category', label(components['minecraft:cooldown'].category)],
     components['minecraft:cooldown']?.duration && ['Cooldown', `${components['minecraft:cooldown'].duration} seconds`],
@@ -171,12 +178,13 @@ function profileFor(project, identifier, components) {
     components['minecraft:use_animation'] && ['Use animation', label(components['minecraft:use_animation'])],
     capacity && ['Network behavior', 'Stores one item type per cell; capacity is shared when the cell is installed in a Storage Cell Drive.'],
   ].filter((entry) => entry && entry[1]);
-  const sections = properties.length ? [{
+  const sections = (properties.length || repairs.length) ? [{
     id: capacity ? 'storage-cell' : wearable ? 'equipment' : digger ? 'tool-properties' : 'properties',
     label: capacity ? 'Storage Cell' : wearable ? 'Equipment' : digger ? 'Tool Properties' : 'Properties',
     title: capacity ? 'Digital storage cell' : wearable ? 'Equipment properties' : digger ? 'Tool properties' : 'Item properties',
     copy: capacity ? 'Capacity is read from Digital Storage’s runtime cell registry.' : 'Values are read from the registered Bedrock item definition.',
     facts: properties,
+    repairs,
     ...(storageTiers.length ? {entries: storageTiers} : {}),
   }] : [];
   const preset = enchantable ? ENCHANTMENT_PRESETS[enchantable.slot] ?? ['All compatible enchantments in the configured Bedrock slot preset.'] : [];

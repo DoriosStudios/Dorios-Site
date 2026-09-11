@@ -107,15 +107,21 @@ function roleLabels(tags) {
   return roles.length ? roles.join(' · ') : null;
 }
 
-function repairLabel(entry) {
-  const items = entry.items?.map(formatIdentifier).join(' + ');
-  if (!items) return null;
+function repairEntries(entry) {
   const amount = String(entry.repair_amount ?? '');
   const ratio = amount.match(/\*\s*(0?\.\d+)/)?.[1];
-  if (ratio) return `${items} — restores ${number(Number(ratio) * 100)}% of maximum durability`;
-  if (/q\.remaining_durability|q\.max_durability/.test(amount)) return `${items} — combines the remaining durability of both items`;
-  if (amount) return `${items} — custom repair value`;
-  return items;
+  const repairValue = ratio
+    ? `${number(Number(ratio) * 100)}%`
+    : /q\.remaining_durability|q\.max_durability/.test(amount)
+      ? 'combines durability'
+      : amount
+        ? 'custom repair value'
+        : null;
+  return (entry.items ?? []).map((identifier) => ({
+    id: identifier,
+    label: formatIdentifier(identifier),
+    value: repairValue,
+  }));
 }
 
 function digSpeedLabel(digger) {
@@ -184,6 +190,7 @@ function itemProfile(identifier, components) {
   const durability = components['minecraft:durability']?.max_durability;
   const enchantable = components['minecraft:enchantable'];
   const repairItems = components['minecraft:repairable']?.repair_items ?? [];
+  const repairs = repairItems.flatMap(repairEntries);
   const wearable = components['minecraft:wearable'];
   const digger = components['minecraft:digger'];
   const special = specialFunction(components, identifier);
@@ -203,16 +210,16 @@ function itemProfile(identifier, components) {
     digger && ['Mining tier', tierFromTags(tags, identifier)],
     digger && ['Mining speed', digSpeedLabel(digger)],
     wearable?.slot && ['Wear slot', wearable.slot.replace('slot.armor.', '').replace(/\b\w/g, (letter) => letter.toUpperCase())],
-    repairItems.length && ['Repair with', repairItems.map(repairLabel).filter(Boolean).join('; ')],
     special && ['Special function', special],
     capsule && ['Maximum capacity', capsule.capacity],
   ].filter(Boolean).filter(([, value]) => value);
-  const sections = properties.length ? [{
+  const sections = (properties.length || repairs.length) ? [{
     id: capsule ? 'resource-storage' : wearable ? 'equipment-properties' : 'tool-properties',
     label: capsule ? 'Storage' : wearable ? 'Equipment' : 'Tool Properties',
     title: capsule ? 'Resource storage' : wearable ? 'Equipment properties' : 'Tool properties',
     copy: capsule ? 'Capacity and transfer behavior.' : wearable ? 'Protection and repair details.' : 'Mining and repair details.',
     facts: properties,
+    repairs,
     entries: capsule?.entries,
   }] : [];
   const preset = enchantable ? (enchantable.slot === 'all'
@@ -286,49 +293,116 @@ function featureGeneration() {
 }
 
 const ORE_DROPS = {
-  'utilitycraft:deepslate_titanium_ore': {drop: 'utilitycraft:raw_titanium', silk: 'utilitycraft:deepslate_titanium_ore', mode: 'bonus', perLevel: [0.6, 1]},
-  'utilitycraft:deepslate_tungsten_ore': {drop: 'utilitycraft:raw_tungsten', silk: 'utilitycraft:deepslate_tungsten_ore', mode: 'bonus', perLevel: [0.6, 1]},
-  'utilitycraft:nether_tungsten_ore': {drop: 'utilitycraft:raw_tungsten', silk: 'utilitycraft:nether_tungsten_ore', mode: 'bonus', perLevel: [0.6, 1]},
-  'utilitycraft:deepslate_aetherium_ore': {drop: 'utilitycraft:aetherium_shard', silk: 'utilitycraft:deepslate_aetherium_ore', mode: 'multiplier', perLevel: [0.2, 0.5]},
-  'utilitycraft:end_aetherium_ore': {drop: 'utilitycraft:aetherium_shard', silk: 'utilitycraft:end_aetherium_ore', mode: 'multiplier', perLevel: [0.5, 0.75]},
+  'utilitycraft:deepslate_titanium_ore': {drop: 'utilitycraft:raw_titanium', loot: 'deepslate_titanium_ore.json'},
+  'utilitycraft:deepslate_tungsten_ore': {drop: 'utilitycraft:raw_tungsten', loot: 'deepslate_tungsten_ore.json'},
+  'utilitycraft:nether_tungsten_ore': {drop: 'utilitycraft:raw_tungsten', loot: 'nether_tungsten_ore.json'},
+  'utilitycraft:deepslate_aetherium_ore': {drop: 'utilitycraft:aetherium_crystal', loot: 'deepslate_aetherium_ore.json'},
+  'utilitycraft:end_aetherium_ore': {drop: 'utilitycraft:aetherium_crystal', loot: 'end_aetherium_ore.json'},
 };
 
+const ORE_PLATE_DROPS = {
+  'utilitycraft:deepslate_titanium_ore': 'utilitycraft:titanium_plate',
+  'utilitycraft:deepslate_tungsten_ore': 'utilitycraft:tungsten_plate',
+  'utilitycraft:nether_tungsten_ore': 'utilitycraft:tungsten_plate',
+};
+
+const ORE_BONUS_DROPS = {
+  'utilitycraft:deepslate_titanium_ore': 'utilitycraft:raw_titanium',
+  'utilitycraft:deepslate_tungsten_ore': 'utilitycraft:raw_tungsten',
+  'utilitycraft:nether_tungsten_ore': 'utilitycraft:raw_tungsten',
+  'utilitycraft:deepslate_aetherium_ore': 'utilitycraft:aetherium_shard',
+  'utilitycraft:end_aetherium_ore': 'utilitycraft:aetherium_shard',
+};
+
+const ORE_DUST_DROPS = {
+  'utilitycraft:deepslate_titanium_ore': 'utilitycraft:titanium_dust',
+  'utilitycraft:deepslate_tungsten_ore': 'utilitycraft:raw_tungsten_dust',
+  'utilitycraft:nether_tungsten_ore': 'utilitycraft:raw_tungsten_dust',
+  'utilitycraft:deepslate_aetherium_ore': 'utilitycraft:aetherium_crystal_dust',
+  'utilitycraft:end_aetherium_ore': 'utilitycraft:aetherium_crystal_dust',
+};
+
+const SPECIAL_TOOL_DROPS = {
+  'utilitycraft:deepslate_titanium_ore': [
+    {title: 'Smelting Pickaxe', id: 'utilitycraft:titanium', amount: '×1 base; ×0.25–2/Fortune', copy: 'Replaces Raw Titanium with smelted Titanium and awards 2–5 XP.'},
+    {title: 'Hammer', id: 'utilitycraft:titanium_dust', amount: '×5–12 + ×1–3/Fortune', copy: 'Replaces Raw Titanium with Titanium Dust.'},
+  ],
+  'utilitycraft:deepslate_tungsten_ore': [
+    {title: 'Hammer', id: 'utilitycraft:raw_tungsten_dust', amount: '×5–12 + ×1–3/Fortune', copy: 'Replaces Raw Tungsten with Raw Tungsten Dust.'},
+  ],
+  'utilitycraft:nether_tungsten_ore': [
+    {title: 'Hammer', id: 'utilitycraft:raw_tungsten_dust', amount: '×5–12 + ×1–3/Fortune', copy: 'Replaces Raw Tungsten with Raw Tungsten Dust.'},
+  ],
+  'utilitycraft:end_aetherium_ore': [
+    {title: 'Hammer', id: 'utilitycraft:aetherium_shard', amount: '×2–6 + ×1–3/Fortune', copy: 'Replaces Aetherium Crystal with Aetherium Shards.'},
+  ],
+};
+
+function enchantmentLevelRange(pool, enchantment) {
+  for (const condition of pool.conditions ?? []) {
+    if (condition.condition !== 'match_tool') continue;
+    const match = (condition.enchantments ?? []).find((entry) => entry.enchantment === enchantment);
+    if (match) return {min: match.levels?.min ?? 0, max: match.levels?.max ?? Number.POSITIVE_INFINITY};
+  }
+  return null;
+}
+
+function poolMatchesMiningTool(pool, fortune, silkTouch = false) {
+  const silk = enchantmentLevelRange(pool, 'silk_touch');
+  const fortuneRange = enchantmentLevelRange(pool, 'fortune');
+  const silkLevel = silkTouch ? 1 : 0;
+  return (!silk || (silkLevel >= silk.min && silkLevel <= silk.max))
+    && (!fortuneRange || (fortune >= fortuneRange.min && fortune <= fortuneRange.max));
+}
+
+function entryCountRange(entry) {
+  const count = (entry.functions ?? []).find((fn) => fn.function === 'set_count')?.count ?? 1;
+  return typeof count === 'number' ? {min: count, max: count} : {min: count.min ?? 1, max: count.max ?? count.min ?? 1};
+}
+
+function readOreLoot(config) {
+  return readJson(path.join(addonRoot, 'BP', 'loot_tables', 'blocks', config.loot));
+}
+
 function fortuneRows(config) {
+  const loot = readOreLoot(config);
   return Array.from({length: 11}, (_, fortune) => {
-    let min = 1;
-    let max = 1;
-    if (config.mode === 'bonus') {
-      min += config.perLevel[0] * fortune;
-      max += config.perLevel[1] * fortune;
-    } else {
-      min *= 1 + config.perLevel[0] * fortune;
-      max *= 1 + config.perLevel[1] * fortune;
-    }
-    min = Math.max(1, Math.floor(min));
-    max = Math.max(1, Math.floor(max));
+    const ranges = (loot.pools ?? [])
+      .filter((pool) => poolMatchesMiningTool(pool, fortune, false))
+      .flatMap((pool) => pool.entries ?? [])
+      .filter((entry) => entry.type === 'item' && entry.name === config.drop)
+      .map(entryCountRange);
+    const min = ranges.reduce((sum, range) => sum + range.min, 0);
+    const max = ranges.reduce((sum, range) => sum + range.max, 0);
     return {fortune, id: config.drop, amount: min === max ? `×${min}` : `×${min}–${max}`};
   });
 }
 
-function oreModifiers(identifier) {
+function silkDrop(config) {
+  const loot = readOreLoot(config);
+  const entry = (loot.pools ?? [])
+    .filter((pool) => poolMatchesMiningTool(pool, 0, true) && enchantmentLevelRange(pool, 'silk_touch')?.min >= 1)
+    .flatMap((pool) => pool.entries ?? [])
+    .find((candidate) => candidate.type === 'item');
+  if (!entry) return null;
+  const count = entryCountRange(entry);
+  return {id: entry.name, amount: count.min === count.max ? `×${count.min}` : `×${count.min}–${count.max}`};
+}
+
+function oreModifiers(identifier, config) {
   const modifiers = [
-    {title: 'AT Core resolver', copy: 'Replaces the normal raw-resource stack with the configured formula shown above. Silk Touch leaves the ore block intact.'},
-    {title: 'StatsCore · Double / Triple Trouble', copy: 'A refined compatible tool can roll a full extra loot-table result; Triple Trouble can add a second extra result.'},
+    {title: 'Alternative Drop', drops: [{id: config.drop, amount: 'Loot-table result'}], copy: 'The normal and Fortune amounts are listed in the drop table above.'},
   ];
-  if (identifier.includes('titanium_ore')) {
-    modifiers.splice(1, 0,
-      {title: 'Smelting Pickaxe', copy: 'Drops Titanium instead of Raw Titanium, using its own Fortuna multiplier; awards 2–5 XP.'},
-      {title: 'Hammer', copy: 'Drops 5–12 Titanium Dust, plus 1–3 per Fortuna level.'},
-      {title: 'StatsCore · Forger / Crushing', copy: 'Forger adds Titanium Plates equal to the tracked ore-drop amount; Crushing adds one Titanium Dust.'},
-    );
-  } else if (identifier.includes('tungsten_ore')) {
-    modifiers.splice(1, 0,
-      {title: 'Hammer', copy: 'Drops 5–12 Raw Tungsten Dust, plus 1–3 per Fortuna level.'},
-      {title: 'StatsCore · Forger / Crushing', copy: 'Forger adds Tungsten Plates equal to the tracked ore-drop amount; Crushing adds one Raw Tungsten Dust.'},
-    );
-  } else {
-    modifiers.splice(1, 0, {title: 'StatsCore · Bonus Loot', copy: 'When the tool\'s resolved Bonus Loot chance succeeds, the ore gets an additional matching drop amount.'});
+  for (const tool of SPECIAL_TOOL_DROPS[identifier] ?? []) {
+    modifiers.push({title: tool.title, drops: [{id: tool.id, amount: tool.amount}], copy: tool.copy});
   }
+  const plate = ORE_PLATE_DROPS[identifier];
+  if (plate) modifiers.push({title: 'Forger', drops: [{id: plate, amount: 'Matches tracked drop amount'}], copy: 'Adds Plates equal to the amount detected in the resolved ore drop.'});
+  const dust = ORE_DUST_DROPS[identifier];
+  if (dust) modifiers.push({title: 'Crushing', drops: [{id: dust, amount: '×1 extra'}], copy: 'Adds one mapped Dust without replacing the normal loot.'});
+  const bonus = ORE_BONUS_DROPS[identifier];
+  if (bonus) modifiers.push({title: 'Bonus Loot', drops: [{id: bonus, amount: 'ceil(tracked amount × chance)'}], copy: 'When Bonus Loot succeeds, it adds the mapped resource according to the tool chance and detected drop amount.'});
+  modifiers.push({title: 'Double / Triple Trouble', dropLabel: 'Complete loot-table result', copy: 'Double Trouble adds one complete extra loot-table roll; Triple Trouble can add a second one.'});
   return modifiers;
 }
 
@@ -366,15 +440,15 @@ function blockProfile(identifier, block, generation) {
   ];
   return {
     blockType: 'Ore', tier: tierFromTags(tags),
-    description: `${formatIdentifier(identifier)} is a world-generated ore with an AT Core drop resolver and optional StatsCore mining modifiers.`,
+    description: `${formatIdentifier(identifier)} is a world-generated ore with its base loot and optional StatsCore mining modifiers documented separately.`,
     blockData: {
       breakTime: components['minecraft:destructible_by_mining']?.seconds_to_destroy,
       explosionResistance: components['minecraft:destructible_by_explosion'] === false ? 'Immune' : components['minecraft:destructible_by_explosion']?.explosion_resistance,
       tool: `${tierFromTags(tags)} pickaxe`, lootTable: components['minecraft:loot'],
     },
     mining: {
-      requiredTool: `${tierFromTags(tags)} pickaxe`, silkDrop: {id: drop.silk, amount: '×1'},
-      drops: fortuneRows(drop), locations: generation.get(identifier) ?? [], modifiers: oreModifiers(identifier),
+      requiredTool: `${tierFromTags(tags)} pickaxe`, silkDrop: silkDrop(drop),
+      drops: fortuneRows(drop), locations: generation.get(identifier) ?? [], modifiers: oreModifiers(identifier, drop),
     },
   };
 }

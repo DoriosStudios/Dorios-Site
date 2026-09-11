@@ -1780,11 +1780,19 @@
               [
                 "Mining speed",
                 "13× — Configured block tags; 26× — Web"
-              ],
-              [
-                "Repair with",
-                "Copper Ingot — 95; Copper Paxel — 955"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:copper_ingot",
+                "label": "Copper Ingot",
+                "value": "95"
+              },
+              {
+                "id": "utilitycraft:copper_paxel",
+                "label": "Copper Paxel",
+                "value": "955"
+              }
             ]
           },
           {
@@ -1847,11 +1855,19 @@
               [
                 "Mining speed",
                 "20× — Configured block tags; 30× — Web"
-              ],
-              [
-                "Repair with",
-                "Diamond — 550; Diamond Aiot — 1561"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:diamond",
+                "label": "Diamond",
+                "value": "550"
+              },
+              {
+                "id": "utilitycraft:diamond_aiot",
+                "label": "Diamond Aiot",
+                "value": "1561"
+              }
             ]
           },
           {
@@ -1910,11 +1926,19 @@
               [
                 "Mining speed",
                 "30× — Configured block tags; 30× — Web"
-              ],
-              [
-                "Repair with",
-                "Gold Ingot — 16; Golden Aiot — 48"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:gold_ingot",
+                "label": "Gold Ingot",
+                "value": "16"
+              },
+              {
+                "id": "utilitycraft:golden_aiot",
+                "label": "Golden Aiot",
+                "value": "48"
+              }
             ]
           },
           {
@@ -1977,11 +2001,19 @@
               [
                 "Mining speed",
                 "18× — Configured block tags; 30× — Web"
-              ],
-              [
-                "Repair with",
-                "Iron Ingot — 83; Iron Aiot — 251"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:iron_ingot",
+                "label": "Iron Ingot",
+                "value": "83"
+              },
+              {
+                "id": "utilitycraft:iron_aiot",
+                "label": "Iron Aiot",
+                "value": "251"
+              }
             ]
           },
           {
@@ -2046,13 +2078,21 @@
                 "24× — Configured block tags; 30× — Web"
               ],
               [
-                "Repair with",
-                "Netherite Ingot — 800; Netherite Aiot — 2431"
-              ],
-              [
                 "Fire resistant",
                 "Yes"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:netherite_ingot",
+                "label": "Netherite Ingot",
+                "value": "800"
+              },
+              {
+                "id": "utilitycraft:netherite_aiot",
+                "label": "Netherite Aiot",
+                "value": "2431"
+              }
             ]
           },
           {
@@ -2115,11 +2155,19 @@
               [
                 "Mining speed",
                 "20× — Configured block tags; 30× — Web"
-              ],
-              [
-                "Repair with",
-                "Steel Ingot — 500; Steel Aiot — 3750"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "utilitycraft:steel_ingot",
+                "label": "Steel Ingot",
+                "value": "500"
+              },
+              {
+                "id": "utilitycraft:steel_aiot",
+                "label": "Steel Aiot",
+                "value": "3750"
+              }
             ]
           },
           {
@@ -2182,11 +2230,19 @@
               [
                 "Mining speed",
                 "12× — Configured block tags; 24× — Web"
-              ],
-              [
-                "Repair with",
-                "Cobblestone — 44; Stone Paxel — 131"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:cobblestone",
+                "label": "Cobblestone",
+                "value": "44"
+              },
+              {
+                "id": "utilitycraft:stone_paxel",
+                "label": "Stone Paxel",
+                "value": "131"
+              }
             ]
           },
           {
@@ -2245,11 +2301,19 @@
               [
                 "Mining speed",
                 "10× — Configured block tags; 20× — Web"
-              ],
-              [
-                "Repair with",
-                "Planks — 550; Wooden Aiot — 1561"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:planks",
+                "label": "Planks",
+                "value": "550"
+              },
+              {
+                "id": "utilitycraft:wooden_aiot",
+                "label": "Wooden Aiot",
+                "value": "1561"
+              }
             ]
           },
           {
@@ -2308,11 +2372,19 @@
               [
                 "Mining speed",
                 "14× — Configured block tags"
-              ],
-              [
-                "Repair with",
-                "Iron Block — 800; Drill — 2031"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:iron_block",
+                "label": "Iron Block",
+                "value": "800"
+              },
+              {
+                "id": "utilitycraft:drill",
+                "label": "Drill",
+                "value": "2031"
+              }
             ]
           },
           {
@@ -2368,11 +2440,19 @@
               [
                 "Mining speed",
                 "20× — Configured block tags"
-              ],
-              [
-                "Repair with",
-                "Diamond — 1600; Drill — 4062"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:diamond",
+                "label": "Diamond",
+                "value": "1600"
+              },
+              {
+                "id": "utilitycraft:drill",
+                "label": "Drill",
+                "value": "4062"
+              }
             ]
           },
           {
@@ -2428,11 +2508,19 @@
               [
                 "Mining speed",
                 "12× — Configured block tags; 7× — Dirt; 7× — Gravel; 7× — Sand"
-              ],
-              [
-                "Repair with",
-                "Copper Ingot — 47; Copper Hammer — 190"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:copper_ingot",
+                "label": "Copper Ingot",
+                "value": "47"
+              },
+              {
+                "id": "utilitycraft:copper_hammer",
+                "label": "Copper Hammer",
+                "value": "190"
+              }
             ]
           },
           {
@@ -2492,11 +2580,19 @@
               [
                 "Mining speed",
                 "18× — Configured block tags; 11× — Dirt; 11× — Gravel; 11× — Sand"
-              ],
-              [
-                "Repair with",
-                "Diamond — 550; Diamond Hammer — 1561"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:diamond",
+                "label": "Diamond",
+                "value": "550"
+              },
+              {
+                "id": "utilitycraft:diamond_hammer",
+                "label": "Diamond Hammer",
+                "value": "1561"
+              }
             ]
           },
           {
@@ -2552,11 +2648,19 @@
               [
                 "Mining speed",
                 "40× — Configured block tags; 24× — Dirt; 24× — Gravel; 24× — Sand"
-              ],
-              [
-                "Repair with",
-                "Gold Ingot — 26; Golden Hammer — 102"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:gold_ingot",
+                "label": "Gold Ingot",
+                "value": "26"
+              },
+              {
+                "id": "utilitycraft:golden_hammer",
+                "label": "Golden Hammer",
+                "value": "102"
+              }
             ]
           },
           {
@@ -2616,11 +2720,19 @@
               [
                 "Mining speed",
                 "14× — Configured block tags; 8× — Dirt; 8× — Gravel; 8× — Sand"
-              ],
-              [
-                "Repair with",
-                "Iron Ingot — 83; Iron Hammer — 251"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:iron_ingot",
+                "label": "Iron Ingot",
+                "value": "83"
+              },
+              {
+                "id": "utilitycraft:iron_hammer",
+                "label": "Iron Hammer",
+                "value": "251"
+              }
             ]
           },
           {
@@ -2682,13 +2794,21 @@
                 "20× — Configured block tags; 12× — Dirt; 12× — Gravel; 12× — Sand"
               ],
               [
-                "Repair with",
-                "Netherite Ingot — 800; Netherite Hammer — 2031"
-              ],
-              [
                 "Fire resistant",
                 "Yes"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:netherite_ingot",
+                "label": "Netherite Ingot",
+                "value": "800"
+              },
+              {
+                "id": "utilitycraft:netherite_hammer",
+                "label": "Netherite Hammer",
+                "value": "2031"
+              }
             ]
           },
           {
@@ -2748,11 +2868,19 @@
               [
                 "Mining speed",
                 "16× — Configured block tags; 10× — Dirt; 10× — Gravel; 10× — Sand"
-              ],
-              [
-                "Repair with",
-                "Steel Ingot — 188; Steel Hammer — 750"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "utilitycraft:steel_ingot",
+                "label": "Steel Ingot",
+                "value": "188"
+              },
+              {
+                "id": "utilitycraft:steel_hammer",
+                "label": "Steel Hammer",
+                "value": "750"
+              }
             ]
           },
           {
@@ -2812,11 +2940,19 @@
               [
                 "Mining speed",
                 "10× — Configured block tags; 6× — Dirt; 6× — Gravel; 6× — Sand"
-              ],
-              [
-                "Repair with",
-                "Cobblestone — 33; Stone Hammer — 131"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:cobblestone",
+                "label": "Cobblestone",
+                "value": "33"
+              },
+              {
+                "id": "utilitycraft:stone_hammer",
+                "label": "Stone Hammer",
+                "value": "131"
+              }
             ]
           },
           {
@@ -2872,11 +3008,19 @@
               [
                 "Mining speed",
                 "6× — Configured block tags; 4× — Dirt; 4× — Gravel; 4× — Sand"
-              ],
-              [
-                "Repair with",
-                "Planks — 15; Wooden Hammer — 59"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "planks",
+                "label": "Planks",
+                "value": "15"
+              },
+              {
+                "id": "utilitycraft:wooden_hammer",
+                "label": "Wooden Hammer",
+                "value": "59"
+              }
             ]
           },
           {
@@ -2932,11 +3076,19 @@
               [
                 "Mining speed",
                 "13× — Configured block tags"
-              ],
-              [
-                "Repair with",
-                "Copper Ingot — 89; Copper Paxel — 191"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:copper_ingot",
+                "label": "Copper Ingot",
+                "value": "89"
+              },
+              {
+                "id": "utilitycraft:copper_paxel",
+                "label": "Copper Paxel",
+                "value": "191"
+              }
             ]
           },
           {
@@ -2999,11 +3151,19 @@
               [
                 "Mining speed",
                 "16× — Configured block tags"
-              ],
-              [
-                "Repair with",
-                "Diamond — 550; Diamond Paxel — 1561"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:diamond",
+                "label": "Diamond",
+                "value": "550"
+              },
+              {
+                "id": "utilitycraft:diamond_paxel",
+                "label": "Diamond Paxel",
+                "value": "1561"
+              }
             ]
           },
           {
@@ -3062,11 +3222,19 @@
               [
                 "Mining speed",
                 "30× — Configured block tags"
-              ],
-              [
-                "Repair with",
-                "Gold Ingot — 16; Golden Paxel — 48"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:gold_ingot",
+                "label": "Gold Ingot",
+                "value": "16"
+              },
+              {
+                "id": "utilitycraft:golden_paxel",
+                "label": "Golden Paxel",
+                "value": "48"
+              }
             ]
           },
           {
@@ -3129,11 +3297,19 @@
               [
                 "Mining speed",
                 "14× — Configured block tags"
-              ],
-              [
-                "Repair with",
-                "Iron Ingot — 83; Iron Paxel — 251"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:iron_ingot",
+                "label": "Iron Ingot",
+                "value": "83"
+              },
+              {
+                "id": "utilitycraft:iron_paxel",
+                "label": "Iron Paxel",
+                "value": "251"
+              }
             ]
           },
           {
@@ -3198,13 +3374,21 @@
                 "24× — Configured block tags"
               ],
               [
-                "Repair with",
-                "Netherite Ingot — 800; Netherite Paxel — 2031"
-              ],
-              [
                 "Fire resistant",
                 "Yes"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:netherite_ingot",
+                "label": "Netherite Ingot",
+                "value": "800"
+              },
+              {
+                "id": "utilitycraft:netherite_paxel",
+                "label": "Netherite Paxel",
+                "value": "2031"
+              }
             ]
           },
           {
@@ -3267,11 +3451,19 @@
               [
                 "Mining speed",
                 "15× — Configured block tags"
-              ],
-              [
-                "Repair with",
-                "Iron Ingot — 188; Iron Paxel — 750"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:iron_ingot",
+                "label": "Iron Ingot",
+                "value": "188"
+              },
+              {
+                "id": "utilitycraft:iron_paxel",
+                "label": "Iron Paxel",
+                "value": "750"
+              }
             ]
           },
           {
@@ -3334,11 +3526,19 @@
               [
                 "Mining speed",
                 "12× — Configured block tags"
-              ],
-              [
-                "Repair with",
-                "Cobblestone — 83; Stone Paxel — 131"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:cobblestone",
+                "label": "Cobblestone",
+                "value": "83"
+              },
+              {
+                "id": "utilitycraft:stone_paxel",
+                "label": "Stone Paxel",
+                "value": "131"
+              }
             ]
           },
           {
@@ -3397,11 +3597,19 @@
               [
                 "Mining speed",
                 "10× — Configured block tags"
-              ],
-              [
-                "Repair with",
-                "Planks — 20; Wooden Paxel — 60"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:planks",
+                "label": "Planks",
+                "value": "20"
+              },
+              {
+                "id": "utilitycraft:wooden_paxel",
+                "label": "Wooden Paxel",
+                "value": "60"
+              }
             ]
           },
           {
@@ -3453,7 +3661,8 @@
                 "Mining speed",
                 "10× — Oak Leaves; 10× — Birch Leaves; 10× — Acacia Leaves; 10× — Azalea Leaves; 10× — Azalea Leaves Flowered; 10× — Cherry Leaves; 10× — Jungle Leaves; 10× — Spruce Leaves; 10× — Dark Oak Leaves; 10× — Mangrove Leaves; 10× — Pale Oak Leaves"
               ]
-            ]
+            ],
+            "repairs": []
           },
           {
             "id": "enchantments",
@@ -3511,11 +3720,19 @@
               [
                 "Mining speed",
                 "16× — Configured block tags"
-              ],
-              [
-                "Repair with",
-                "Emerald — 550; Lucky Pickaxe — 1561"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:emerald",
+                "label": "Emerald",
+                "value": "550"
+              },
+              {
+                "id": "utilitycraft:lucky_pickaxe",
+                "label": "Lucky Pickaxe",
+                "value": "1561"
+              }
             ]
           },
           {
@@ -3575,11 +3792,19 @@
               [
                 "Mining speed",
                 "16× — Configured block tags; 60× — Bamboo"
-              ],
-              [
-                "Repair with",
-                "Emerald — 25% of maximum durability; Lucky Sword — context.other->query.remaining_durability+0.12*context.other->query.max_durability"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:emerald",
+                "label": "Emerald",
+                "value": "25%"
+              },
+              {
+                "id": "utilitycraft:lucky_sword",
+                "label": "Lucky Sword",
+                "value": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+              }
             ]
           },
           {
@@ -3646,11 +3871,19 @@
               [
                 "Mining speed",
                 "16× — Configured block tags"
-              ],
-              [
-                "Repair with",
-                "Iron Ingot — 301; Smelting Pickaxe — 3031"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "minecraft:iron_ingot",
+                "label": "Iron Ingot",
+                "value": "301"
+              },
+              {
+                "id": "utilitycraft:smelting_pickaxe",
+                "label": "Smelting Pickaxe",
+                "value": "3031"
+              }
             ]
           },
           {
@@ -3711,7 +3944,8 @@
                 "Mining speed",
                 "7× — Configured block tags"
               ]
-            ]
+            ],
+            "repairs": []
           },
           {
             "id": "enchantments",
@@ -3774,7 +4008,8 @@
                 "Mining speed",
                 "15× — Configured block tags"
               ]
-            ]
+            ],
+            "repairs": []
           },
           {
             "id": "enchantments",
@@ -3834,7 +4069,8 @@
                 "Mining speed",
                 "7× — Configured block tags"
               ]
-            ]
+            ],
+            "repairs": []
           },
           {
             "id": "enchantments",
@@ -3894,7 +4130,8 @@
                 "Mining speed",
                 "7× — Configured block tags"
               ]
-            ]
+            ],
+            "repairs": []
           },
           {
             "id": "enchantments",
@@ -3954,7 +4191,8 @@
                 "Mining speed",
                 "15× — Bamboo; 15× — Web"
               ]
-            ]
+            ],
+            "repairs": []
           },
           {
             "id": "enchantments",
@@ -4016,7 +4254,8 @@
                 "Use animation",
                 "Drink"
               ]
-            ]
+            ],
+            "repairs": []
           }
         ]
       }

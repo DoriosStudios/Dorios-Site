@@ -32,11 +32,19 @@
               [
                 "Wear slot",
                 "Armor Feet"
-              ],
-              [
-                "Repair with",
-                "Rubber Sheet — 25% of maximum durability; Hazmat Boots — context.other->query.remaining_durability+0.12*context.other->query.max_durability"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "utilitycraft:rubber_sheet",
+                "label": "Rubber Sheet",
+                "value": "25%"
+              },
+              {
+                "id": "utilitycraft:hazmat_boots",
+                "label": "Hazmat Boots",
+                "value": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+              }
             ]
           },
           {
@@ -95,11 +103,19 @@
               [
                 "Wear slot",
                 "Armor Chest"
-              ],
-              [
-                "Repair with",
-                "Rubber Sheet — 25% of maximum durability; Hazmat Chestplate — context.other->query.remaining_durability+0.12*context.other->query.max_durability"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "utilitycraft:rubber_sheet",
+                "label": "Rubber Sheet",
+                "value": "25%"
+              },
+              {
+                "id": "utilitycraft:hazmat_chestplate",
+                "label": "Hazmat Chestplate",
+                "value": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+              }
             ]
           },
           {
@@ -154,11 +170,19 @@
               [
                 "Wear slot",
                 "Armor Head"
-              ],
-              [
-                "Repair with",
-                "Rubber Sheet — 25% of maximum durability; Hazmat Helmet — context.other->query.remaining_durability+0.12*context.other->query.max_durability"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "utilitycraft:rubber_sheet",
+                "label": "Rubber Sheet",
+                "value": "25%"
+              },
+              {
+                "id": "utilitycraft:hazmat_helmet",
+                "label": "Hazmat Helmet",
+                "value": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+              }
             ]
           },
           {
@@ -215,11 +239,19 @@
               [
                 "Wear slot",
                 "Armor Legs"
-              ],
-              [
-                "Repair with",
-                "Rubber Sheet — 25% of maximum durability; Hazmat Leggings — context.other->query.remaining_durability+0.12*context.other->query.max_durability"
               ]
+            ],
+            "repairs": [
+              {
+                "id": "utilitycraft:rubber_sheet",
+                "label": "Rubber Sheet",
+                "value": "25%"
+              },
+              {
+                "id": "utilitycraft:hazmat_leggings",
+                "label": "Hazmat Leggings",
+                "value": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+              }
             ]
           },
           {
@@ -268,7 +300,8 @@
                 "Wear slot",
                 "Armor Feet"
               ]
-            ]
+            ],
+            "repairs": []
           }
         ]
       }
@@ -298,7 +331,8 @@
                 "Wear slot",
                 "Armor Chest"
               ]
-            ]
+            ],
+            "repairs": []
           }
         ]
       }
@@ -328,7 +362,8 @@
                 "Wear slot",
                 "Armor Head"
               ]
-            ]
+            ],
+            "repairs": []
           }
         ]
       }
@@ -358,7 +393,8 @@
                 "Wear slot",
                 "Armor Legs"
               ]
-            ]
+            ],
+            "repairs": []
           }
         ]
       }

@@ -30,6 +30,7 @@
                 "Stores one item type per cell; capacity is shared when the cell is installed in a Storage Cell Drive."
               ]
             ],
+            "repairs": [],
             "entries": [
               "Storage Cell — 1,024 items",
               "Basic Storage Cell — 4,096 items",
@@ -71,6 +72,7 @@
                 "Stores one item type per cell; capacity is shared when the cell is installed in a Storage Cell Drive."
               ]
             ],
+            "repairs": [],
             "entries": [
               "Storage Cell — 1,024 items",
               "Basic Storage Cell — 4,096 items",
@@ -129,6 +131,7 @@
                 "Stores one item type per cell; capacity is shared when the cell is installed in a Storage Cell Drive."
               ]
             ],
+            "repairs": [],
             "entries": [
               "Storage Cell — 1,024 items",
               "Basic Storage Cell — 4,096 items",
@@ -170,6 +173,7 @@
                 "Stores one item type per cell; capacity is shared when the cell is installed in a Storage Cell Drive."
               ]
             ],
+            "repairs": [],
             "entries": [
               "Storage Cell — 1,024 items",
               "Basic Storage Cell — 4,096 items",
@@ -211,6 +215,7 @@
                 "Stores one item type per cell; capacity is shared when the cell is installed in a Storage Cell Drive."
               ]
             ],
+            "repairs": [],
             "entries": [
               "Storage Cell — 1,024 items",
               "Basic Storage Cell — 4,096 items",

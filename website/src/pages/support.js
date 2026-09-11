@@ -26,9 +26,17 @@ const communityLinks = [
     action: 'Explore repositories',
     href: 'https://github.com/DoriosStudios',
   },
+  {
+    id: 'patreon',
+    eyebrow: 'Support Dorios',
+    title: 'Become a Patron',
+    action: 'Help keep addons free',
+    href: 'https://www.patreon.com/DoriosStudios',
+  },
 ];
 
 function BrandIcon({brand}) {
+  if (brand === 'patreon') return <PatreonIcon />;
   if (brand === 'discord') {
     return (
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -92,7 +100,6 @@ export default function SupportPage() {
               >
                 <div className={styles.cardTopline}>
                   <span className={styles.brandIcon}><BrandIcon brand={link.id} /></span>
-                  <span className={styles.externalIcon}><ExternalIcon /></span>
                 </div>
                 <div className={styles.communityCopy}>
                   <span>{link.eyebrow}</span>
@@ -104,26 +111,6 @@ export default function SupportPage() {
                 </strong>
               </a>
             ))}
-          </section>
-
-          <section className={styles.callout} aria-labelledby="patreon-title">
-            <div className={styles.calloutCopy}>
-              <p className={styles.calloutKicker}>Keep it free</p>
-              <h2 id="patreon-title">Help make the next world possible.</h2>
-              <p>Direct support gives the studio more room to create, test, and improve the addons the community plays with.</p>
-            </div>
-            <a
-              className={styles.patronPanel}
-              href="https://www.patreon.com/DoriosStudios"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Become a Patron (opens in a new tab)"
-            >
-              <span className={styles.patreonIcon}><PatreonIcon /></span>
-              <span>Support Dorios</span>
-              <strong>Become a Patron</strong>
-              <i><ExternalIcon /></i>
-            </a>
           </section>
         </main>
       </DoriosMarketingShell>

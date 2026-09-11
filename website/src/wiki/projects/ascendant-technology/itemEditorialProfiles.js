@@ -3,7 +3,7 @@ const recipe = (station, result, input) => ({station, result, input});
 const itemEditorialProfiles = {
   'utilitycraft:aetherium_crystal': {
     documentation: {
-      description: 'Aetherium Crystal is a rare crystalline resource harvested from Aetherium Ore in the Overworld and The End. It can also be assembled from Aetherium Shards obtained through high-tier sieving. The crystal is a key ingredient for Aetherium metal and refined crystal technology.',
+      description: 'Aetherium Crystal is obtained directly by mining Aetherium Ore without Silk Touch or assembled from Aetherium Shards recovered through high-tier sieving. The crystal is a key ingredient for Aetherium metal and refined crystal technology.',
       basic: {itemType: 'Crystal', maximumStack: 64},
       tier: 'Aetherium',
       properties: [
@@ -14,8 +14,10 @@ const itemEditorialProfiles = {
         {
           id: 'world-generation',
           type: 'World generation',
-          title: 'Aetherium Ore',
+          title: 'Aetherium Crystals from Ore',
           items: ['utilitycraft:deepslate_aetherium_ore', 'utilitycraft:end_aetherium_ore'],
+          output: 'utilitycraft:aetherium_crystal',
+          emphasizeFacts: true,
           description: 'Mine Aetherium Ore without Silk Touch. Fortune increases the crystal yield.',
           facts: [
             ['Dimensions', 'The End and Overworld'],
@@ -26,16 +28,23 @@ const itemEditorialProfiles = {
         },
         {
           id: 'advanced-sieving',
-          type: 'Sieving',
-          title: 'Crushed Endstone',
+          type: 'Intermediate · Sieving',
+          title: 'Aetherium Shards from Crushed Endstone',
           item: 'utilitycraft:crushed_endstone',
           station: 'autosieve',
-          description: 'Sieve Crushed Endstone for Aetherium Shards, then combine four shards into one crystal.',
+          output: 'utilitycraft:aetherium_shard',
+          minimumMeshTier: 5,
+          description: 'Sieve Crushed Endstone to obtain Aetherium Shards, then combine four shards in the crafting step below. Sieving does not produce the crystal directly.',
           facts: [
-            ['Minimum mesh tier', '5'],
             ['Shard chance', '10% per roll'],
-            ['Conversion', '4 shards → 1 crystal'],
           ],
+        },
+        {
+          id: 'crystal-crafting',
+          type: 'Crafting',
+          title: 'Assemble the Crystal',
+          item: 'utilitycraft:aetherium_shard',
+          description: 'Combine four Aetherium Shards in a 2×2 grid to create one Aetherium Crystal.',
           recipe: {id: 'aetherium_crystal'},
         },
       ],

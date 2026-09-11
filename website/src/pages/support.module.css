@@ -53,13 +53,13 @@
 
 .communityCards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--ds-grid-gap);
 }
 
 .communityCard {
   --platform-accent: var(--ds-accent);
-  min-height: 270px;
+  min-height: 235px;
   position: relative;
   display: flex;
   overflow: hidden;
@@ -88,6 +88,10 @@
   --platform-accent: var(--ds-accent);
 }
 
+.communityCard[data-platform='patreon'] {
+  --platform-accent: #ff424d;
+}
+
 .communityCard:hover,
 .communityCard:focus-visible {
   border-color: color-mix(in srgb, var(--platform-accent) 72%, var(--ds-border));
@@ -104,7 +108,6 @@
 .cardTopline {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
   gap: 1rem;
 }
 
@@ -326,7 +329,7 @@
   transform: translate(3px, -2px);
 }
 
-@media (max-width: 920px) {
+@media (max-width: 700px) {
   .communityCards {
     grid-template-columns: 1fr;
   }
