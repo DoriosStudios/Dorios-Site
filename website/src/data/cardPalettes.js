@@ -36,7 +36,7 @@ export const projectCardPalettes = {
 export const memberCardPalettes = {
   milo504: ['#ff7300', '#3d291a'],
   weathervictor: ['#7f7771', '#c7c5c1'],
-  kauzin: ['#450547', '#c47caa'],
+  kauziin: ['#450547', '#c47caa'],
   srgui: ['#c3c4be', '#1c1d24'],
   jrice: ['#1caad1', '#225973'],
   sam: ['#74d47f', '#102520'],

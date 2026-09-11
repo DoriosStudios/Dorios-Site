@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-11T17:30:40.413680+00:00",
+  "project": {
+    "id": "bonsais",
+    "name": "Bountiful Bonsais"
+  },
+  "counts": {
+    "items": 1,
+    "catalogItems": 1,
+    "blocks": 1,
+    "entities": 26,
+    "recipes": 2,
+    "variantGroups": 0
+  },
+  "content": {
+    "items": [
+      {
+        "id": "apple_sapling",
+        "slug": "apple-sapling",
+        "identifier": "utilitycraft:apple_sapling",
+        "name": "Apple Sapling",
+        "category": "General",
+        "image": "textures/items/apple_tree.png",
+        "source": "BP/items/apple_sapling.json"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "bonsai",
+        "slug": "bonsai",
+        "identifier": "utilitycraft:bonsai",
+        "name": "Bonsai",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/bonsais/bonsai.png",
+          "left": "textures/blocks/bonsais/bonsai.png",
+          "right": "textures/blocks/bonsais/bonsai.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:selection_box",
+          "minecraft:tick",
+          "utilitycraft:bonsai"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bonsai.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "directional": false
+        }
+      }
+    ],
+    "entities": [
+      {
+        "id": "acacia_tree",
+        "slug": "acacia-tree",
+        "identifier": "utilitycraft:acacia_tree",
+        "name": "Acacia Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/acacia_tree.png",
+        "source": "BP/entities/bonsai trees/acacia_tree.json"
+      },
+      {
+        "id": "apple_tree",
+        "slug": "apple-tree",
+        "identifier": "utilitycraft:apple_tree",
+        "name": "Apple Tree Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/apple_tree.png",
+        "source": "BP/entities/bonsai trees/apple_tree.json"
+      },
+      {
+        "id": "bamboo",
+        "slug": "bamboo",
+        "identifier": "utilitycraft:bamboo",
+        "name": "Bamboo Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/bamboo_stem.png",
+        "source": "BP/entities/bonsai trees/bamboo.json"
+      },
+      {
+        "id": "beetroot",
+        "slug": "beetroot",
+        "identifier": "utilitycraft:beetroot",
+        "name": "Beetroot Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/beetroots_bonsai.png",
+        "source": "BP/entities/bonsai trees/beetroot.json"
+      },
+      {
+        "id": "birch_tree",
+        "slug": "birch-tree",
+        "identifier": "utilitycraft:birch_tree",
+        "name": "Birch Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/birch_tree.png",
+        "source": "BP/entities/bonsai trees/birch_tree.json"
+      },
+      {
+        "id": "cactus",
+        "slug": "cactus",
+        "identifier": "utilitycraft:cactus",
+        "name": "Cactus Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/cactus.png",
+        "source": "BP/entities/bonsai trees/cactus.json"
+      },
+      {
+        "id": "carrot",
+        "slug": "carrot",
+        "identifier": "utilitycraft:carrot",
+        "name": "Carrot Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/carrots_bonsai.png",
+        "source": "BP/entities/bonsai trees/carrot.json"
+      },
+      {
+        "id": "cherry_tree",
+        "slug": "cherry-tree",
+        "identifier": "utilitycraft:cherry_tree",
+        "name": "Cherry Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/cherry_tree.png",
+        "source": "BP/entities/bonsai trees/cherry_tree.json"
+      },
+      {
+        "id": "chorus_fruit",
+        "slug": "chorus-fruit",
+        "identifier": "utilitycraft:chorus_fruit",
+        "name": "Chorus Fruit Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/chorus_flower.png",
+        "source": "BP/entities/bonsai trees/chorus_fruit.json"
+      },
+      {
+        "id": "crimson_tree",
+        "slug": "crimson-tree",
+        "identifier": "utilitycraft:crimson_tree",
+        "name": "Crimson Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/crimson_tree.png",
+        "source": "BP/entities/bonsai trees/crimson_tree.json"
+      },
+      {
+        "id": "darkoak_tree",
+        "slug": "darkoak-tree",
+        "identifier": "utilitycraft:darkoak_tree",
+        "name": "Dark Oak Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/dark_oak_tree.png",
+        "source": "BP/entities/bonsai trees/darkoak_tree.json"
+      },
+      {
+        "id": "jungle_tree",
+        "slug": "jungle-tree",
+        "identifier": "utilitycraft:jungle_tree",
+        "name": "Jungle Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/jungle_tree.png",
+        "source": "BP/entities/bonsai trees/jungle_tree.json"
+      },
+      {
+        "id": "kelp",
+        "slug": "kelp",
+        "identifier": "utilitycraft:kelp",
+        "name": "Kelp Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/kelp.png",
+        "source": "BP/entities/bonsai trees/kelp.json"
+      },
+      {
+        "id": "mangrove_tree",
+        "slug": "mangrove-tree",
+        "identifier": "utilitycraft:mangrove_tree",
+        "name": "Mangrove Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/mangrove_tree.png",
+        "source": "BP/entities/bonsai trees/mangrove_tree.json"
+      },
+      {
+        "id": "melon",
+        "slug": "melon",
+        "identifier": "utilitycraft:melon",
+        "name": "Melon Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/melon_bonsai.png",
+        "source": "BP/entities/bonsai trees/melon.json"
+      },
+      {
+        "id": "mushroom",
+        "slug": "mushroom",
+        "identifier": "utilitycraft:mushroom",
+        "name": "Mushroom Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/mushroom_red.png",
+        "source": "BP/entities/bonsai trees/mushroom.json"
+      },
+      {
+        "id": "nether_wart",
+        "slug": "nether-wart",
+        "identifier": "utilitycraft:nether_wart",
+        "name": "Nether Wart Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/nether_wart_bonsai.png",
+        "source": "BP/entities/bonsai trees/nether_wart.json"
+      },
+      {
+        "id": "oak_tree",
+        "slug": "oak-tree",
+        "identifier": "utilitycraft:oak_tree",
+        "name": "Oak Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/oak_tree.png",
+        "source": "BP/entities/bonsai trees/oak_tree.json"
+      },
+      {
+        "id": "pale_oak_tree",
+        "slug": "pale-oak-tree",
+        "identifier": "utilitycraft:pale_oak_tree",
+        "name": "Pale Oak Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/pale_oak_tree.png",
+        "source": "BP/entities/bonsai trees/pale_oak_tree.json"
+      },
+      {
+        "id": "potato",
+        "slug": "potato",
+        "identifier": "utilitycraft:potato",
+        "name": "Potato Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/potatoes_bonsai.png",
+        "source": "BP/entities/bonsai trees/potato.json"
+      },
+      {
+        "id": "pumpkin",
+        "slug": "pumpkin",
+        "identifier": "utilitycraft:pumpkin",
+        "name": "Pumpkin Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/pumpkin_bonsai.png",
+        "source": "BP/entities/bonsai trees/pumpkin.json"
+      },
+      {
+        "id": "spruce_tree",
+        "slug": "spruce-tree",
+        "identifier": "utilitycraft:spruce_tree",
+        "name": "Spruce Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/spruce_tree.png",
+        "source": "BP/entities/bonsai trees/spruce_tree.json"
+      },
+      {
+        "id": "sugarcane",
+        "slug": "sugarcane",
+        "identifier": "utilitycraft:sugarcane",
+        "name": "Sugar Cane Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/reeds.png",
+        "source": "BP/entities/bonsai trees/sugarcane.json"
+      },
+      {
+        "id": "sweet_berries",
+        "slug": "sweet-berries",
+        "identifier": "utilitycraft:sweet_berries",
+        "name": "Sweet Berry Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/sweet_berry_bonsai.png",
+        "source": "BP/entities/bonsai trees/sweet_berries.json"
+      },
+      {
+        "id": "warped_tree",
+        "slug": "warped-tree",
+        "identifier": "utilitycraft:warped_tree",
+        "name": "Warped Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/warped_tree.png",
+        "source": "BP/entities/bonsai trees/warped_tree.json"
+      },
+      {
+        "id": "wheat",
+        "slug": "wheat",
+        "identifier": "utilitycraft:wheat",
+        "name": "Wheat Bonsai",
+        "category": "Bonsai Trees",
+        "image": "textures/entity/wheat_bonsai.png",
+        "source": "BP/entities/bonsai trees/wheat.json"
+      }
+    ],
+    "recipes": [
+      {
+        "id": "apple_sapling",
+        "identifier": "utilitycraft:apple_sapling",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:apple",
+            "count": 1
+          },
+          {
+            "id": "oak_sapling",
+            "count": 1
+          },
+          {
+            "id": "minecraft:apple",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 3,
+        "result": {
+          "id": "utilitycraft:apple_sapling",
+          "count": 1
+        },
+        "source": "BP/recipes/apple_sapling.json"
+      },
+      {
+        "id": "bonsai",
+        "identifier": "utilitycraft:bonsai",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:stone_block_slab",
+            "count": 1
+          },
+          {
+            "id": "minecraft:hopper",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stone_block_slab",
+            "count": 1
+          },
+          {
+            "id": "minecraft:planks",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stone_block_slab",
+            "count": 1
+          },
+          {
+            "id": "minecraft:planks",
+            "count": 1
+          },
+          null,
+          null,
+          null
+        ],
+        "slotCount": 6,
+        "result": {
+          "id": "utilitycraft:bonsai",
+          "count": 1
+        },
+        "source": "BP/recipes/bonsai.json"
+      }
+    ]
+  },
+  "catalog": {
+    "items": [
+      {
+        "id": "apple_sapling",
+        "slug": "apple-sapling",
+        "identifier": "utilitycraft:apple_sapling",
+        "name": "Apple Sapling",
+        "category": "General",
+        "image": "textures/items/apple_tree.png",
+        "source": "BP/items/apple_sapling.json"
+      }
+    ]
+  },
+  "variantGroups": []
+}

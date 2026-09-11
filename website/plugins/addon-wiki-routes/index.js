@@ -9,6 +9,8 @@ module.exports = function doriosGeneratedRoutesPlugin() {
       const genericProjectIds = require(path.join(projectRoot, 'generatedProjects.json'));
       const projectCatalog = require(path.join(__dirname, '..', '..', 'src', 'data', 'projectCatalog.json'));
       const projectComponent = path.join(__dirname, '..', '..', 'src', 'components', 'ProjectDetailPage', 'route.js');
+      const staffComponent = path.join(__dirname, '..', '..', 'src', 'components', 'StaffProfilePage', 'route.js');
+      const staffProfilesPath = path.join(__dirname, '..', '..', 'src', 'data', 'staffProfiles.js');
       const entryComponent = path.join(__dirname, '..', '..', 'src', 'components', 'AddonWiki', 'entryPage.js');
       const pageComponent = path.join(__dirname, '..', '..', 'src', 'components', 'AddonWiki', 'page.js');
       const dataPath = path.join(projectRoot, 'heavy-machinery', 'data.js');
@@ -16,6 +18,7 @@ module.exports = function doriosGeneratedRoutesPlugin() {
       const heavyProcessingRecipes = require(path.join(projectRoot, 'heavy-machinery', 'processingRecipes.json'));
       const data = await import(`${pathToFileURL(dataPath).href}?wiki-routes`);
       const recipeData = await import(`${pathToFileURL(recipePath).href}?wiki-routes`);
+      const staffData = await import(`${pathToFileURL(staffProfilesPath).href}?staff-routes`);
       const trinketCategorySections = require(path.join(projectRoot, 'trinkets', 'categorySections.json'));
       const utilityHowToPlaySections = [
         'how-to-play',
@@ -58,6 +61,14 @@ module.exports = function doriosGeneratedRoutesPlugin() {
           props: {projectSlug: project.slug},
         }));
       });
+
+      staffData.staffMembers.forEach((member) => actions.addRoute({
+        path: `/studio/staff/${member.id}`,
+        component: staffComponent,
+        exact: true,
+        priority: 30,
+        props: {memberId: member.id},
+      }));
 
       addEntryRoutes('heavy-machinery', {
         items: data.items.map((entry) => entry.slug),

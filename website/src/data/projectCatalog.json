@@ -703,7 +703,7 @@
         "releases": "https://github.com/DoriosStudios/Dorios-Insight/releases"
       },
       "media": {
-        "cover": null,
+        "cover": "/img/addons/insight/MCPEDL.png",
         "icon": "/img/projects/insight/pack_icon.png",
         "coverFit": "cover",
         "alt": "Dorios' Insight project artwork"

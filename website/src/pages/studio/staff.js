@@ -3,143 +3,8 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import DoriosMarketingShell from '../../components/DoriosMarketingShell';
 import {memberCardPalette} from '../../data/cardPalettes';
+import {staffGroups as groups} from '../../data/staffProfiles';
 import styles from './studioSubpage.module.css';
-
-const groups = [
-  {
-    id: 'leadership',
-    number: '01',
-    title: 'Leadership',
-    copy: 'Direction, development and the foundation of the studio.',
-    featured: true,
-    people: [
-      {
-        id: 'milo504',
-        name: 'Milo504 (Drag504)',
-        role: 'Owner & Lead Developer',
-        specialties: ['Founder', 'Systems'],
-        bio: 'Leads UtilityCraft development and the studio’s technical direction.',
-      },
-      {
-        id: 'weathervictor',
-        name: 'WeatherVictor',
-        role: 'Owner & UI Designer',
-        specialties: ['Co-Founder', 'Interface'],
-        bio: 'Designs interfaces and supports the shared code behind studio projects.',
-      },
-    ],
-  },
-  {
-    id: 'development',
-    number: '02',
-    title: 'Development',
-    copy: 'Code, quality review and systems implementation.',
-    people: [
-      {
-        id: 'kauzin',
-        name: 'Kauziin',
-        role: 'Coder & Quality Checker',
-        specialties: ['Code', 'UI', 'Quality Checker'],
-        bio: 'Builds code and interfaces while leading quality-of-life review.',
-      },
-      {
-        id: 'srgui',
-        name: 'Sr Gui',
-        role: 'Builder & Developer',
-        specialties: ['Building', 'Development'],
-        bio: 'Creates builds and supports implementation across current projects.',
-      },
-      {
-        id: 'the_white_cat',
-        image: 'the_white_cat.png',
-        name: 'The White Cat',
-        role: 'Coder & Art Designer',
-        specialties: ['Code', 'Art design'],
-        bio: "Develops recent studio projects such as Dorios' Feast and contributes to other projects.",
-      },
-      {
-        id: 'sh_pro',
-        image: 'sh_pro.png',
-        name: 'SH.PRO',
-        role: 'Coder & UI Designer',
-        specialties: ['Code', 'UI design'],
-        bio: "Created Digital Storage and Dorios' Backpacks, working primarily on user interfaces.",
-      },
-    ],
-  },
-  {
-    id: 'art-design',
-    number: '03',
-    title: 'Art & Design',
-    copy: 'The visual language, movement and spaces that give projects character.',
-    people: [
-      {
-        id: 'jrice',
-        name: 'JR.ice',
-        role: 'Designer',
-        specialties: ['Visual Direction', 'Textures'],
-        bio: 'Shapes UtilityCraft’s textures and the studio’s visual language.',
-      },
-      {
-        id: 'sam',
-        name: 'Sam',
-        role: 'Animator',
-        specialties: ['Animation', 'Creative'],
-        bio: 'Creates animation and motion for Endless Agony and other projects.',
-      },
-      {
-        id: 'mikey',
-        name: 'Mikey',
-        role: 'Builder',
-        specialties: ['Building'],
-        bio: 'Builds environments and structures for Endless Agony and UtilitySky.',
-      },
-      {
-        id: 'druski',
-        name: 'Druski',
-        role: 'Art Designer & Modeler',
-        specialties: ['Textures', 'Models', 'Animation'],
-        bio: 'Creates textures, models and animations across a range of studio projects.',
-      },
-    ],
-  },
-  {
-    id: 'community',
-    number: '04',
-    title: 'Community',
-    copy: 'Independent creators who collaborate with the studio and its projects.',
-    people: [
-      {
-        id: 'cloud',
-        name: 'Cloud',
-        role: 'Independent Creator',
-        specialties: ['Better Smelters', 'Collaboration'],
-        bio: 'Develops Better Smelters and collaborates on shared addon work.',
-      },
-      {
-        id: 'mainmas',
-        name: 'Mainmas',
-        role: 'Independent Creator',
-        specialties: ['Community', 'Project support'],
-        bio: 'Supports community work and helps studio projects move forward.',
-      },
-      {
-        id: 'yusou',
-        name: 'Yusou',
-        role: 'Independent Creator',
-        specialties: ['Independent work', 'Collaboration'],
-        bio: 'Develops independent work while collaborating with the studio.',
-      },
-      {
-        id: 'luna',
-        name: 'Luna (Jordan J)',
-        role: 'Server Manager & Content Creator',
-        specialties: ['Servers', 'Tutorials', 'Content'],
-        bio: 'Hosts servers and creates tutorials and other content for the studio’s projects.',
-      },
-    ],
-  },
-];
 
 function ArrowIcon() {
   return (
@@ -166,9 +31,9 @@ function StudioNavigation() {
 
 function PersonCard({person, featured}) {
   return (
-    <article className={`${styles.personCard} ${featured ? styles.featuredCard : ''}`} style={memberCardPalette(person)}>
+    <Link className={`${styles.personCard} ${featured ? styles.featuredCard : ''}`} style={memberCardPalette(person)} to={`/studio/staff/${person.id}`} aria-label={`View ${person.name}'s profile`}>
       <div className={styles.portrait}>
-        <img src={`/img/about/${person.image ?? `${person.id}.jpg`}`} alt={`Portrait of ${person.name}`} loading="lazy" />
+        <img src={`/img/about/${person.image}`} alt={`Portrait of ${person.name}`} loading="lazy" />
         {featured && <span className={styles.ownerBadge}>Owner</span>}
       </div>
       <div className={styles.personCopy}>
@@ -179,7 +44,7 @@ function PersonCard({person, featured}) {
         </div>
         <span className={styles.personBio}>{person.bio}</span>
       </div>
-    </article>
+    </Link>
   );
 }
 

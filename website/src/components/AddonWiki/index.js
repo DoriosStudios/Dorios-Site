@@ -1075,11 +1075,10 @@ function RecipeCard({recipe}) {
   const energyMetric = compactProcessingMetric(recipe.cost ?? recipe.energyCost ?? recipe.energy);
   const primaryInputs = recipePrimaryInputs(recipe);
   const catalysts = recipeCatalysts(recipe);
-  const compact = !catalystWeaver && inputs.length > 1 && inputs.length <= 3;
   const {twoByTwo, slots: craftingSlots} = craftingGridFor(recipe);
 
   return (
-    <article className={`${styles.recipeCard} ${linear ? styles.linearRecipeCard : ''} ${compact ? styles.compactRecipeCard : ''}`} style={{'--recipe-origin-accent': origin.accent}}>
+    <article className={`${styles.recipeCard} ${linear ? styles.linearRecipeCard : ''}`} style={{'--recipe-origin-accent': origin.accent}}>
       <Link className={styles.recipeCardTarget} to={detailHref} aria-label={`Open recipe for ${outputName}`} />
       <header>
         {station.face

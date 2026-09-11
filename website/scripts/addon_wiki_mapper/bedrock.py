@@ -45,8 +45,10 @@ def _lang_index(resource_pack: Path) -> dict[str, str]:
         if not line or line.startswith("#") or "=" not in line:
             continue
         key, value = line.split("=", 1)
-        clean = FORMATTING_CODE.sub("", value.replace("\\n", "\n")).splitlines()[0].strip()
-        index[key.strip()] = clean
+        lines = FORMATTING_CODE.sub("", value.replace("\\n", "\n")).splitlines()
+        clean = lines[0].strip() if lines else ""
+        if clean:
+            index[key.strip()] = clean
     return index
 
 

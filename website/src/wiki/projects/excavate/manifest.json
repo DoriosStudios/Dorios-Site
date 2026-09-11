@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-11T17:30:41.208434+00:00",
+  "project": {
+    "id": "excavate",
+    "name": "Dorios' Excavate"
+  },
+  "counts": {
+    "items": 1,
+    "catalogItems": 1,
+    "blocks": 0,
+    "entities": 1,
+    "recipes": 1,
+    "variantGroups": 0
+  },
+  "content": {
+    "items": [
+      {
+        "id": "settings_item",
+        "slug": "settings-item",
+        "identifier": "dorios:settings_item",
+        "name": "Settings Item",
+        "category": "General",
+        "image": null,
+        "source": "BP/items/settings_item.json"
+      }
+    ],
+    "blocks": [],
+    "entities": [
+      {
+        "id": "excavate_outline",
+        "slug": "excavate-outline",
+        "identifier": "dorios:excavate_outline",
+        "name": "Excavate Outline",
+        "category": "General",
+        "image": "textures/entity/excavate_outline.png",
+        "source": "BP/entities/excavate_outline.json"
+      }
+    ],
+    "recipes": [
+      {
+        "id": "excavate_settings",
+        "identifier": "dorios:excavate_settings",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "wooden_pickaxe",
+            "count": 1
+          },
+          {
+            "id": "paper",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "dorios:settings_item",
+          "count": 1
+        },
+        "source": "BP/recipes/excavate_settings.json"
+      }
+    ]
+  },
+  "catalog": {
+    "items": [
+      {
+        "id": "settings_item",
+        "slug": "settings-item",
+        "identifier": "dorios:settings_item",
+        "name": "Settings Item",
+        "category": "General",
+        "image": null,
+        "source": "BP/items/settings_item.json"
+      }
+    ]
+  },
+  "variantGroups": []
+}

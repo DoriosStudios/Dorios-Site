@@ -839,8 +839,30 @@ function ascendantSpecializedRecipes(baseInfuser, ascendantInfuser, heavyInfuser
     }
   }
 
-  const cryoCatalysts = read('cryogen.js', 'cryogenCatalystDefinitions');
-  const lapisSources = read('cryogen.js', 'cryogenLapisDefinitions');
+  const cryogenTitaniumValues = read('cryogen.js', 'cryogenTitaniumValues');
+  const cryogenLapisValues = read('cryogen.js', 'cryogenLapisValues');
+  const cryogenDefinitionContext = {
+    cryogenTitaniumValues,
+    cryogenLapisValues,
+    createTitaniumDefinitions(values) {
+      return Object.fromEntries(Object.entries(values).map(([id, value]) => {
+        const batches = Math.max(1, value / 8);
+        return [id, {
+          input: {id, amount: Math.max(1, Math.ceil(8 / value))},
+          water: Math.round(1_000 * batches),
+          cryofluid: Math.round(800 * batches),
+        }];
+      }));
+    },
+    createLapisDefinitions(values) {
+      return Object.fromEntries(Object.entries(values).map(([id, value]) => [id, {
+        input: {id, amount: Math.max(1, Math.ceil(8 / value))},
+        yieldMultiplier: Math.max(1, value / 8),
+      }]));
+    },
+  };
+  const cryoCatalysts = read('cryogen.js', 'cryogenCatalystDefinitions', cryogenDefinitionContext);
+  const lapisSources = read('cryogen.js', 'cryogenLapisDefinitions', cryogenDefinitionContext);
   const cryoGeneration = read('cryogen.js', 'cryogenGeneration');
   for (const [catalystId, catalyst] of Object.entries(cryoCatalysts)) {
     for (const [lapisId, lapis] of Object.entries(lapisSources)) {
@@ -869,7 +891,7 @@ function ascendantSpecializedRecipes(baseInfuser, ascendantInfuser, heavyInfuser
     }
   }
 
-  const cryofluidSynthesis = read('cryogen.js', 'cryogenSynthesisRecipe');
+  const cryofluidSynthesis = read('cryogen.js', 'cryogenSynthesisRecipe', cryogenDefinitionContext);
   const synthesisGroups = Object.entries(cryofluidSynthesis.inputs ?? {}).map(([id, definition]) => ({
     id,
     label: `${titleize(id)} value`,

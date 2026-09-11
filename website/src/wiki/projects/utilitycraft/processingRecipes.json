@@ -46482,2514 +46482,6 @@
     "output": "minecraft:wither_skeleton_skull"
   },
   {
-    "id": "utilitycraft-furnator-banner-1500-29",
-    "identifier": "utilitycraft:process/furnator/banner-1500-29",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "banner",
-        "count": 1,
-        "label": "Items matching banner"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "banner",
-        "count": 1,
-        "label": "Items matching banner"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 1500,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 1500,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "banner"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching banner",
-    "output": "1500× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-blaze-rod-12000-17",
-    "identifier": "utilitycraft:process/furnator/blaze-rod-12000-17",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "blaze_rod",
-        "count": 1,
-        "label": "Items matching blaze_rod"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "blaze_rod",
-        "count": 1,
-        "label": "Items matching blaze_rod"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 12000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 12000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "blaze_rod"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching blaze_rod",
-    "output": "12000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-boat-6000-20",
-    "identifier": "utilitycraft:process/furnator/boat-6000-20",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "boat",
-        "count": 1,
-        "label": "Items matching boat"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "boat",
-        "count": 1,
-        "label": "Items matching boat"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 6000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 6000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "boat"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching boat",
-    "output": "6000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-bundle-of-blaze-rods-108000-12",
-    "identifier": "utilitycraft:process/furnator/bundle-of-blaze-rods-108000-12",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "bundle_of_blaze_rods",
-        "count": 1,
-        "label": "Items matching bundle_of_blaze_rods"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "bundle_of_blaze_rods",
-        "count": 1,
-        "label": "Items matching bundle_of_blaze_rods"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 108000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 108000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "bundle_of_blaze_rods"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching bundle_of_blaze_rods",
-    "output": "108000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-button-500-35",
-    "identifier": "utilitycraft:process/furnator/button-500-35",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "button",
-        "count": 1,
-        "label": "Items matching button"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "button",
-        "count": 1,
-        "label": "Items matching button"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 500,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 500,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "button"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching button",
-    "output": "500× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-charcoal-8000-19",
-    "identifier": "utilitycraft:process/furnator/charcoal-8000-19",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "charcoal",
-        "count": 1,
-        "label": "Items matching charcoal"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "charcoal",
-        "count": 1,
-        "label": "Items matching charcoal"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 8000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 8000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "charcoal"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching charcoal",
-    "output": "8000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-charcoal-block-80000-14",
-    "identifier": "utilitycraft:process/furnator/charcoal-block-80000-14",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "charcoal_block",
-        "count": 1,
-        "label": "Items matching charcoal_block"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "charcoal_block",
-        "count": 1,
-        "label": "Items matching charcoal_block"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 80000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 80000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "charcoal_block"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching charcoal_block",
-    "output": "80000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-chest-3000-21",
-    "identifier": "utilitycraft:process/furnator/chest-3000-21",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "chest",
-        "count": 1,
-        "label": "Items matching chest"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "chest",
-        "count": 1,
-        "label": "Items matching chest"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 3000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 3000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "chest"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching chest",
-    "output": "3000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-coal-8000-18",
-    "identifier": "utilitycraft:process/furnator/coal-8000-18",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "coal",
-        "count": 1,
-        "label": "Items matching coal"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "coal",
-        "count": 1,
-        "label": "Items matching coal"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 8000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 8000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "coal"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching coal",
-    "output": "8000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-coal-block-80000-15",
-    "identifier": "utilitycraft:process/furnator/coal-block-80000-15",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "coal_block",
-        "count": 1,
-        "label": "Items matching coal_block"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "coal_block",
-        "count": 1,
-        "label": "Items matching coal_block"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 80000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 80000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "coal_block"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching coal_block",
-    "output": "80000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-compressed-charcoal-block-2-8000000-4",
-    "identifier": "utilitycraft:process/furnator/compressed-charcoal-block-2-8000000-4",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "compressed_charcoal_block_2",
-        "count": 1,
-        "label": "Items matching compressed_charcoal_block_2"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "compressed_charcoal_block_2",
-        "count": 1,
-        "label": "Items matching compressed_charcoal_block_2"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 8000000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 8000000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "compressed_charcoal_block_2"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching compressed_charcoal_block_2",
-    "output": "8000000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-compressed-charcoal-block-3-80000000-2",
-    "identifier": "utilitycraft:process/furnator/compressed-charcoal-block-3-80000000-2",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "compressed_charcoal_block_3",
-        "count": 1,
-        "label": "Items matching compressed_charcoal_block_3"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "compressed_charcoal_block_3",
-        "count": 1,
-        "label": "Items matching compressed_charcoal_block_3"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 80000000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 80000000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "compressed_charcoal_block_3"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching compressed_charcoal_block_3",
-    "output": "80000000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-compressed-charcoal-block-4-800000000-0",
-    "identifier": "utilitycraft:process/furnator/compressed-charcoal-block-4-800000000-0",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "compressed_charcoal_block_4",
-        "count": 1,
-        "label": "Items matching compressed_charcoal_block_4"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "compressed_charcoal_block_4",
-        "count": 1,
-        "label": "Items matching compressed_charcoal_block_4"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 800000000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 800000000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "compressed_charcoal_block_4"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching compressed_charcoal_block_4",
-    "output": "800000000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-compressed-charcoal-block-800000-6",
-    "identifier": "utilitycraft:process/furnator/compressed-charcoal-block-800000-6",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "compressed_charcoal_block",
-        "count": 1,
-        "label": "Items matching compressed_charcoal_block"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "compressed_charcoal_block",
-        "count": 1,
-        "label": "Items matching compressed_charcoal_block"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 800000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 800000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "compressed_charcoal_block"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching compressed_charcoal_block",
-    "output": "800000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-compressed-coal-block-2-8000000-5",
-    "identifier": "utilitycraft:process/furnator/compressed-coal-block-2-8000000-5",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "compressed_coal_block_2",
-        "count": 1,
-        "label": "Items matching compressed_coal_block_2"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "compressed_coal_block_2",
-        "count": 1,
-        "label": "Items matching compressed_coal_block_2"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 8000000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 8000000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "compressed_coal_block_2"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching compressed_coal_block_2",
-    "output": "8000000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-compressed-coal-block-3-80000000-3",
-    "identifier": "utilitycraft:process/furnator/compressed-coal-block-3-80000000-3",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "compressed_coal_block_3",
-        "count": 1,
-        "label": "Items matching compressed_coal_block_3"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "compressed_coal_block_3",
-        "count": 1,
-        "label": "Items matching compressed_coal_block_3"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 80000000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 80000000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "compressed_coal_block_3"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching compressed_coal_block_3",
-    "output": "80000000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-compressed-coal-block-4-800000000-1",
-    "identifier": "utilitycraft:process/furnator/compressed-coal-block-4-800000000-1",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "compressed_coal_block_4",
-        "count": 1,
-        "label": "Items matching compressed_coal_block_4"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "compressed_coal_block_4",
-        "count": 1,
-        "label": "Items matching compressed_coal_block_4"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 800000000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 800000000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "compressed_coal_block_4"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching compressed_coal_block_4",
-    "output": "800000000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-compressed-coal-block-800000-7",
-    "identifier": "utilitycraft:process/furnator/compressed-coal-block-800000-7",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "compressed_coal_block",
-        "count": 1,
-        "label": "Items matching compressed_coal_block"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "compressed_coal_block",
-        "count": 1,
-        "label": "Items matching compressed_coal_block"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 800000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 800000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "compressed_coal_block"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching compressed_coal_block",
-    "output": "800000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-door-1000-31",
-    "identifier": "utilitycraft:process/furnator/door-1000-31",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "_door",
-        "count": 1,
-        "label": "Items matching _door"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "_door",
-        "count": 1,
-        "label": "Items matching _door"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 1000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 1000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "_door"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching _door",
-    "output": "1000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-dried-kelp-block-20000-16",
-    "identifier": "utilitycraft:process/furnator/dried-kelp-block-20000-16",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "dried_kelp_block",
-        "count": 1,
-        "label": "Items matching dried_kelp_block"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "dried_kelp_block",
-        "count": 1,
-        "label": "Items matching dried_kelp_block"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 20000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 20000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "dried_kelp_block"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching dried_kelp_block",
-    "output": "20000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-fence-1500-24",
-    "identifier": "utilitycraft:process/furnator/fence-1500-24",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "fence",
-        "count": 1,
-        "label": "Items matching fence"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "fence",
-        "count": 1,
-        "label": "Items matching fence"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 1500,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 1500,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "fence"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching fence",
-    "output": "1500× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-hyphae-1500-28",
-    "identifier": "utilitycraft:process/furnator/hyphae-1500-28",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "hyphae",
-        "count": 1,
-        "label": "Items matching hyphae"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "hyphae",
-        "count": 1,
-        "label": "Items matching hyphae"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 1500,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 1500,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "hyphae"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching hyphae",
-    "output": "1500× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-ladder-750-32",
-    "identifier": "utilitycraft:process/furnator/ladder-750-32",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "ladder",
-        "count": 1,
-        "label": "Items matching ladder"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "ladder",
-        "count": 1,
-        "label": "Items matching ladder"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 750,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 750,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "ladder"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching ladder",
-    "output": "750× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-lava-ball-100000-13",
-    "identifier": "utilitycraft:process/furnator/lava-ball-100000-13",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "lava_ball",
-        "count": 1,
-        "label": "Items matching lava_ball"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "lava_ball",
-        "count": 1,
-        "label": "Items matching lava_ball"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 100000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 100000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "lava_ball"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching lava_ball",
-    "output": "100000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-leaves-500-36",
-    "identifier": "utilitycraft:process/furnator/leaves-500-36",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "leaves",
-        "count": 1,
-        "label": "Items matching leaves"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "leaves",
-        "count": 1,
-        "label": "Items matching leaves"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 500,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 500,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "leaves"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching leaves",
-    "output": "500× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-log-1500-25",
-    "identifier": "utilitycraft:process/furnator/log-1500-25",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "log",
-        "count": 1,
-        "label": "Items matching log"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "log",
-        "count": 1,
-        "label": "Items matching log"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 1500,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 1500,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "log"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching log",
-    "output": "1500× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-plank-1500-22",
-    "identifier": "utilitycraft:process/furnator/plank-1500-22",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "plank",
-        "count": 1,
-        "label": "Items matching plank"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "plank",
-        "count": 1,
-        "label": "Items matching plank"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 1500,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 1500,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "plank"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching plank",
-    "output": "1500× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-sapling-500-34",
-    "identifier": "utilitycraft:process/furnator/sapling-500-34",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "sapling",
-        "count": 1,
-        "label": "Items matching sapling"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "sapling",
-        "count": 1,
-        "label": "Items matching sapling"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 500,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 500,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "sapling"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching sapling",
-    "output": "500× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-scaffolding-250-37",
-    "identifier": "utilitycraft:process/furnator/scaffolding-250-37",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "scaffolding",
-        "count": 1,
-        "label": "Items matching scaffolding"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "scaffolding",
-        "count": 1,
-        "label": "Items matching scaffolding"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 250,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 250,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "scaffolding"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching scaffolding",
-    "output": "250× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-stair-1500-23",
-    "identifier": "utilitycraft:process/furnator/stair-1500-23",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "stair",
-        "count": 1,
-        "label": "Items matching stair"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "stair",
-        "count": 1,
-        "label": "Items matching stair"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 1500,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 1500,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "stair"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching stair",
-    "output": "1500× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-stem-1500-27",
-    "identifier": "utilitycraft:process/furnator/stem-1500-27",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "stem",
-        "count": 1,
-        "label": "Items matching stem"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "stem",
-        "count": 1,
-        "label": "Items matching stem"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 1500,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 1500,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "stem"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching stem",
-    "output": "1500× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-stick-500-33",
-    "identifier": "utilitycraft:process/furnator/stick-500-33",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "stick",
-        "count": 1,
-        "label": "Items matching stick"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "stick",
-        "count": 1,
-        "label": "Items matching stick"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 500,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 500,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "stick"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching stick",
-    "output": "500× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-utilitycraft-compressed-wood-15000-11",
-    "identifier": "utilitycraft:process/furnator/utilitycraft-compressed-wood-15000-11",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:compressed_*_wood",
-        "count": 1,
-        "label": "Items matching utilitycraft:compressed_*_wood"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:compressed_*_wood",
-        "count": 1,
-        "label": "Items matching utilitycraft:compressed_*_wood"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 15000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 15000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "utilitycraft:compressed_*_wood"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching utilitycraft:compressed_*_wood",
-    "output": "15000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-utilitycraft-compressed-wood-2-150000-10",
-    "identifier": "utilitycraft:process/furnator/utilitycraft-compressed-wood-2-150000-10",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:compressed_*_wood_2",
-        "count": 1,
-        "label": "Items matching utilitycraft:compressed_*_wood_2"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:compressed_*_wood_2",
-        "count": 1,
-        "label": "Items matching utilitycraft:compressed_*_wood_2"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 150000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 150000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "utilitycraft:compressed_*_wood_2"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching utilitycraft:compressed_*_wood_2",
-    "output": "150000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-utilitycraft-compressed-wood-3-1500000-9",
-    "identifier": "utilitycraft:process/furnator/utilitycraft-compressed-wood-3-1500000-9",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:compressed_*_wood_3",
-        "count": 1,
-        "label": "Items matching utilitycraft:compressed_*_wood_3"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:compressed_*_wood_3",
-        "count": 1,
-        "label": "Items matching utilitycraft:compressed_*_wood_3"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 1500000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 1500000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "utilitycraft:compressed_*_wood_3"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching utilitycraft:compressed_*_wood_3",
-    "output": "1500000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-utilitycraft-compressed-wood-4-15000000-8",
-    "identifier": "utilitycraft:process/furnator/utilitycraft-compressed-wood-4-15000000-8",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "utilitycraft:compressed_*_wood_4",
-        "count": 1,
-        "label": "Items matching utilitycraft:compressed_*_wood_4"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "utilitycraft:compressed_*_wood_4",
-        "count": 1,
-        "label": "Items matching utilitycraft:compressed_*_wood_4"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 15000000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 15000000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "utilitycraft:compressed_*_wood_4"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching utilitycraft:compressed_*_wood_4",
-    "output": "15000000× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-wood-1500-26",
-    "identifier": "utilitycraft:process/furnator/wood-1500-26",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "_wood",
-        "count": 1,
-        "label": "Items matching _wood"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "_wood",
-        "count": 1,
-        "label": "Items matching _wood"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 1500,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 1500,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "_wood"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching _wood",
-    "output": "1500× Dorios Energy"
-  },
-  {
-    "id": "utilitycraft-furnator-wooden-1000-30",
-    "identifier": "utilitycraft:process/furnator/wooden-1000-30",
-    "type": "machine",
-    "station": "furnator",
-    "category": "Furnator fuel rule",
-    "recipeKind": "fuel-rule",
-    "slotCount": 1,
-    "slots": [
-      {
-        "id": "wooden",
-        "count": 1,
-        "label": "Items matching wooden"
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "inputs": [
-      {
-        "id": "wooden",
-        "count": 1,
-        "label": "Items matching wooden"
-      }
-    ],
-    "result": {
-      "id": "energy:dorios-energy",
-      "count": 1000,
-      "label": "Dorios Energy",
-      "unit": "mB",
-      "resourceType": "energy",
-      "resourceId": "dorios-energy"
-    },
-    "results": [
-      {
-        "id": "energy:dorios-energy",
-        "count": 1000,
-        "label": "Dorios Energy",
-        "unit": "mB",
-        "resourceType": "energy",
-        "resourceId": "dorios-energy"
-      }
-    ],
-    "conditions": [
-      {
-        "id": "match-rule",
-        "label": "Accepted item pattern",
-        "value": "wooden"
-      }
-    ],
-    "note": "Pattern-based fuel rule; matching item variants are accepted at runtime.",
-    "origin": {
-      "id": "utilitycraft",
-      "label": "Base",
-      "accent": "#38bdf8",
-      "category": "Base"
-    },
-    "originId": "utilitycraft",
-    "input": "Items matching wooden",
-    "output": "1000× Dorios Energy"
-  },
-  {
     "id": "ascendant-technology-incinerator-utilitycraft-aetherium-dust",
     "identifier": "ascendant-technology:process/incinerator/utilitycraft-aetherium-dust",
     "type": "machine",
@@ -57146,6 +54638,63 @@
     "output": "utilitycraft:absolute_chip"
   },
   {
+    "id": "ascendant-technology-infuser-utilitycraft-titanium-dust-utilitycraft-tungsten-dust",
+    "identifier": "ascendant-technology:process/infuser/utilitycraft-titanium-dust-utilitycraft-tungsten-dust",
+    "type": "machine",
+    "station": "infuser",
+    "category": "Infuser recipe",
+    "recipeKind": "infusion",
+    "slotCount": 2,
+    "slots": [
+      {
+        "id": "utilitycraft:titanium_dust",
+        "count": 1
+      },
+      {
+        "id": "utilitycraft:tungsten_dust",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:tungsten_dust",
+        "count": 1
+      }
+    ],
+    "catalysts": [
+      {
+        "id": "utilitycraft:titanium_dust",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tingstanium_dust",
+      "count": 2
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tingstanium_dust",
+        "count": 2
+      }
+    ],
+    "origin": {
+      "id": "ascendant-technology",
+      "label": "Ascendant Technology",
+      "accent": "#a78bfa",
+      "category": "Ascendant Technology"
+    },
+    "originId": "ascendant-technology",
+    "input": "utilitycraft:tungsten_dust + utilitycraft:titanium_dust",
+    "output": "2× utilitycraft:tingstanium_dust"
+  },
+  {
     "id": "heavy-machinery-infuser-minecraft-echo-shard-minecraft-amethyst-shard",
     "identifier": "heavy-machinery:process/infuser/minecraft-echo-shard-minecraft-amethyst-shard",
     "type": "machine",
@@ -61371,6 +58920,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -61509,6 +59062,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -61607,6 +59164,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -61710,6 +59271,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -61841,6 +59406,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -61939,6 +59508,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -62037,6 +59610,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -62140,6 +59717,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -62271,6 +59852,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -62374,6 +59959,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -62477,6 +60066,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -62622,6 +60215,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -62753,6 +60350,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -62891,6 +60492,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -62989,6 +60594,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -63134,6 +60743,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -63232,6 +60845,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -63363,6 +60980,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -63466,6 +61087,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -63564,6 +61189,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -63695,6 +61324,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -63833,6 +61466,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -64009,6 +61646,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -64112,6 +61753,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -64215,6 +61860,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -64313,6 +61962,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -64411,6 +62064,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -64542,6 +62199,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -64640,6 +62301,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -64738,6 +62403,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -64883,6 +62552,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -64991,6 +62664,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -65094,6 +62771,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -65249,6 +62930,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -65352,6 +63037,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -65455,6 +63144,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -65558,6 +63251,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -65661,6 +63358,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -65861,6 +63562,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -65964,6 +63669,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -66067,6 +63776,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -66170,6 +63883,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -66273,6 +63990,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -66376,6 +64097,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -66479,6 +64204,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -66582,6 +64311,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -66685,6 +64418,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -66788,6 +64525,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -66891,6 +64632,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -66994,6 +64739,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -67097,6 +64846,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -67200,6 +64953,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -67303,6 +65060,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -67406,6 +65167,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -67509,6 +65274,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -67612,6 +65381,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -67715,6 +65488,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -67818,6 +65595,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -67921,6 +65702,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -68024,6 +65809,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -68127,6 +65916,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -68230,6 +66023,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -68333,6 +66130,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -68436,6 +66237,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }
@@ -68539,6 +66344,10 @@
           {
             "id": "utilitycraft:black_soil",
             "costMultiplier": 0.25
+          },
+          {
+            "id": "utilitycraft:pink_soil",
+            "costMultiplier": 0.1
           }
         ]
       }

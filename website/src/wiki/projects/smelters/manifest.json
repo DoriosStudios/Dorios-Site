@@ -1,0 +1,2954 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-11T17:30:39.270906+00:00",
+  "project": {
+    "id": "smelters",
+    "name": "Better Smelters"
+  },
+  "counts": {
+    "items": 61,
+    "catalogItems": 13,
+    "blocks": 11,
+    "entities": 1,
+    "recipes": 23,
+    "variantGroups": 3
+  },
+  "content": {
+    "items": [
+      {
+        "id": "amethyst_upgrade_to_netherite",
+        "slug": "amethyst-upgrade-to-netherite",
+        "identifier": "better_smelters:amethyst_upgrade_to_netherite",
+        "name": "Amethyst Upgrade to Netherite",
+        "category": "General",
+        "image": "textures/items/amethyst_netherite_upgrade.png",
+        "source": "BP/items/amethyst_upgrade_to_netherite.json"
+      },
+      {
+        "id": "arrow_right_0",
+        "slug": "arrow-right-0",
+        "identifier": "better_smelters:arrow_right_0",
+        "name": "Arrow Right 0",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_0.png",
+        "source": "BP/items/progress bars/arrow_right_0.json"
+      },
+      {
+        "id": "arrow_right_1",
+        "slug": "arrow-right-1",
+        "identifier": "better_smelters:arrow_right_1",
+        "name": "Arrow Right 1",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_1.png",
+        "source": "BP/items/progress bars/arrow_right_1.json"
+      },
+      {
+        "id": "arrow_right_10",
+        "slug": "arrow-right-10",
+        "identifier": "better_smelters:arrow_right_10",
+        "name": "Arrow Right 10",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_10.png",
+        "source": "BP/items/progress bars/arrow_right_10.json"
+      },
+      {
+        "id": "arrow_right_11",
+        "slug": "arrow-right-11",
+        "identifier": "better_smelters:arrow_right_11",
+        "name": "Arrow Right 11",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_11.png",
+        "source": "BP/items/progress bars/arrow_right_11.json"
+      },
+      {
+        "id": "arrow_right_12",
+        "slug": "arrow-right-12",
+        "identifier": "better_smelters:arrow_right_12",
+        "name": "Arrow Right 12",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_12.png",
+        "source": "BP/items/progress bars/arrow_right_12.json"
+      },
+      {
+        "id": "arrow_right_13",
+        "slug": "arrow-right-13",
+        "identifier": "better_smelters:arrow_right_13",
+        "name": "Arrow Right 13",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_13.png",
+        "source": "BP/items/progress bars/arrow_right_13.json"
+      },
+      {
+        "id": "arrow_right_14",
+        "slug": "arrow-right-14",
+        "identifier": "better_smelters:arrow_right_14",
+        "name": "Arrow Right 14",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_14.png",
+        "source": "BP/items/progress bars/arrow_right_14.json"
+      },
+      {
+        "id": "arrow_right_15",
+        "slug": "arrow-right-15",
+        "identifier": "better_smelters:arrow_right_15",
+        "name": "Arrow Right 15",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_15.png",
+        "source": "BP/items/progress bars/arrow_right_15.json"
+      },
+      {
+        "id": "arrow_right_16",
+        "slug": "arrow-right-16",
+        "identifier": "better_smelters:arrow_right_16",
+        "name": "Arrow Right 16",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_16.png",
+        "source": "BP/items/progress bars/arrow_right_16.json"
+      },
+      {
+        "id": "arrow_right_17",
+        "slug": "arrow-right-17",
+        "identifier": "better_smelters:arrow_right_17",
+        "name": "Arrow Right 17",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_17.png",
+        "source": "BP/items/progress bars/arrow_right_17.json"
+      },
+      {
+        "id": "arrow_right_18",
+        "slug": "arrow-right-18",
+        "identifier": "better_smelters:arrow_right_18",
+        "name": "Arrow Right 18",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_18.png",
+        "source": "BP/items/progress bars/arrow_right_18.json"
+      },
+      {
+        "id": "arrow_right_19",
+        "slug": "arrow-right-19",
+        "identifier": "better_smelters:arrow_right_19",
+        "name": "Arrow Right 19",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_19.png",
+        "source": "BP/items/progress bars/arrow_right_19.json"
+      },
+      {
+        "id": "arrow_right_2",
+        "slug": "arrow-right-2",
+        "identifier": "better_smelters:arrow_right_2",
+        "name": "Arrow Right 2",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_2.png",
+        "source": "BP/items/progress bars/arrow_right_2.json"
+      },
+      {
+        "id": "arrow_right_20",
+        "slug": "arrow-right-20",
+        "identifier": "better_smelters:arrow_right_20",
+        "name": "Arrow Right 20",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_20.png",
+        "source": "BP/items/progress bars/arrow_right_20.json"
+      },
+      {
+        "id": "arrow_right_21",
+        "slug": "arrow-right-21",
+        "identifier": "better_smelters:arrow_right_21",
+        "name": "Arrow Right 21",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_21.png",
+        "source": "BP/items/progress bars/arrow_right_21.json"
+      },
+      {
+        "id": "arrow_right_22",
+        "slug": "arrow-right-22",
+        "identifier": "better_smelters:arrow_right_22",
+        "name": "Arrow Right 22",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_22.png",
+        "source": "BP/items/progress bars/arrow_right_22.json"
+      },
+      {
+        "id": "arrow_right_3",
+        "slug": "arrow-right-3",
+        "identifier": "better_smelters:arrow_right_3",
+        "name": "Arrow Right 3",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_3.png",
+        "source": "BP/items/progress bars/arrow_right_3.json"
+      },
+      {
+        "id": "arrow_right_4",
+        "slug": "arrow-right-4",
+        "identifier": "better_smelters:arrow_right_4",
+        "name": "Arrow Right 4",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_4.png",
+        "source": "BP/items/progress bars/arrow_right_4.json"
+      },
+      {
+        "id": "arrow_right_5",
+        "slug": "arrow-right-5",
+        "identifier": "better_smelters:arrow_right_5",
+        "name": "Arrow Right 5",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_5.png",
+        "source": "BP/items/progress bars/arrow_right_5.json"
+      },
+      {
+        "id": "arrow_right_6",
+        "slug": "arrow-right-6",
+        "identifier": "better_smelters:arrow_right_6",
+        "name": "Arrow Right 6",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_6.png",
+        "source": "BP/items/progress bars/arrow_right_6.json"
+      },
+      {
+        "id": "arrow_right_7",
+        "slug": "arrow-right-7",
+        "identifier": "better_smelters:arrow_right_7",
+        "name": "Arrow Right 7",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_7.png",
+        "source": "BP/items/progress bars/arrow_right_7.json"
+      },
+      {
+        "id": "arrow_right_8",
+        "slug": "arrow-right-8",
+        "identifier": "better_smelters:arrow_right_8",
+        "name": "Arrow Right 8",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_8.png",
+        "source": "BP/items/progress bars/arrow_right_8.json"
+      },
+      {
+        "id": "arrow_right_9",
+        "slug": "arrow-right-9",
+        "identifier": "better_smelters:arrow_right_9",
+        "name": "Arrow Right 9",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_9.png",
+        "source": "BP/items/progress bars/arrow_right_9.json"
+      },
+      {
+        "id": "blue_flame_0",
+        "slug": "blue-flame-0",
+        "identifier": "better_smelters:blue_flame_0",
+        "name": "Blue Flame 0",
+        "category": "Progress Bars",
+        "image": "textures/items/blue_flame_0.png",
+        "source": "BP/items/progress bars/blue_flame_0.json"
+      },
+      {
+        "id": "blue_flame_1",
+        "slug": "blue-flame-1",
+        "identifier": "better_smelters:blue_flame_1",
+        "name": "Blue Flame 1",
+        "category": "Progress Bars",
+        "image": "textures/items/blue_flame_1.png",
+        "source": "BP/items/progress bars/blue_flame_1.json"
+      },
+      {
+        "id": "blue_flame_10",
+        "slug": "blue-flame-10",
+        "identifier": "better_smelters:blue_flame_10",
+        "name": "Blue Flame 10",
+        "category": "Progress Bars",
+        "image": "textures/items/blue_flame_10.png",
+        "source": "BP/items/progress bars/blue_flame_10.json"
+      },
+      {
+        "id": "blue_flame_11",
+        "slug": "blue-flame-11",
+        "identifier": "better_smelters:blue_flame_11",
+        "name": "Blue Flame 11",
+        "category": "Progress Bars",
+        "image": "textures/items/blue_flame_11.png",
+        "source": "BP/items/progress bars/blue_flame_11.json"
+      },
+      {
+        "id": "blue_flame_12",
+        "slug": "blue-flame-12",
+        "identifier": "better_smelters:blue_flame_12",
+        "name": "Blue Flame 12",
+        "category": "Progress Bars",
+        "image": "textures/items/blue_flame_12.png",
+        "source": "BP/items/progress bars/blue_flame_12.json"
+      },
+      {
+        "id": "blue_flame_13",
+        "slug": "blue-flame-13",
+        "identifier": "better_smelters:blue_flame_13",
+        "name": "Blue Flame 13",
+        "category": "Progress Bars",
+        "image": "textures/items/blue_flame_13.png",
+        "source": "BP/items/progress bars/blue_flame_13.json"
+      },
+      {
+        "id": "blue_flame_2",
+        "slug": "blue-flame-2",
+        "identifier": "better_smelters:blue_flame_2",
+        "name": "Blue Flame 2",
+        "category": "Progress Bars",
+        "image": "textures/items/blue_flame_2.png",
+        "source": "BP/items/progress bars/blue_flame_2.json"
+      },
+      {
+        "id": "blue_flame_3",
+        "slug": "blue-flame-3",
+        "identifier": "better_smelters:blue_flame_3",
+        "name": "Blue Flame 3",
+        "category": "Progress Bars",
+        "image": "textures/items/blue_flame_3.png",
+        "source": "BP/items/progress bars/blue_flame_3.json"
+      },
+      {
+        "id": "blue_flame_4",
+        "slug": "blue-flame-4",
+        "identifier": "better_smelters:blue_flame_4",
+        "name": "Blue Flame 4",
+        "category": "Progress Bars",
+        "image": "textures/items/blue_flame_4.png",
+        "source": "BP/items/progress bars/blue_flame_4.json"
+      },
+      {
+        "id": "blue_flame_5",
+        "slug": "blue-flame-5",
+        "identifier": "better_smelters:blue_flame_5",
+        "name": "Blue Flame 5",
+        "category": "Progress Bars",
+        "image": "textures/items/blue_flame_5.png",
+        "source": "BP/items/progress bars/blue_flame_5.json"
+      },
+      {
+        "id": "blue_flame_6",
+        "slug": "blue-flame-6",
+        "identifier": "better_smelters:blue_flame_6",
+        "name": "Blue Flame 6",
+        "category": "Progress Bars",
+        "image": "textures/items/blue_flame_6.png",
+        "source": "BP/items/progress bars/blue_flame_6.json"
+      },
+      {
+        "id": "blue_flame_7",
+        "slug": "blue-flame-7",
+        "identifier": "better_smelters:blue_flame_7",
+        "name": "Blue Flame 7",
+        "category": "Progress Bars",
+        "image": "textures/items/blue_flame_7.png",
+        "source": "BP/items/progress bars/blue_flame_7.json"
+      },
+      {
+        "id": "blue_flame_8",
+        "slug": "blue-flame-8",
+        "identifier": "better_smelters:blue_flame_8",
+        "name": "Blue Flame 8",
+        "category": "Progress Bars",
+        "image": "textures/items/blue_flame_8.png",
+        "source": "BP/items/progress bars/blue_flame_8.json"
+      },
+      {
+        "id": "blue_flame_9",
+        "slug": "blue-flame-9",
+        "identifier": "better_smelters:blue_flame_9",
+        "name": "Blue Flame 9",
+        "category": "Progress Bars",
+        "image": "textures/items/blue_flame_9.png",
+        "source": "BP/items/progress bars/blue_flame_9.json"
+      },
+      {
+        "id": "copper_upgrade_to_iron",
+        "slug": "copper-upgrade-to-iron",
+        "identifier": "better_smelters:copper_upgrade_to_iron",
+        "name": "Copper Furnace Upgrade to Iron",
+        "category": "General",
+        "image": "textures/items/copper_iron_upgrade.png",
+        "source": "BP/items/copper_upgrade_to_iron.json"
+      },
+      {
+        "id": "diamond_upgrade_to_netherite",
+        "slug": "diamond-upgrade-to-netherite",
+        "identifier": "better_smelters:diamond_upgrade_to_netherite",
+        "name": "Diamond Furnace Upgrade to Netherite",
+        "category": "General",
+        "image": "textures/items/diamond_netherite_upgrade.png",
+        "source": "BP/items/diamond_upgrade_to_netherite.json"
+      },
+      {
+        "id": "emerald_upgrade_to_amethyst",
+        "slug": "emerald-upgrade-to-amethyst",
+        "identifier": "better_smelters:emerald_upgrade_to_amethyst",
+        "name": "Emerald Furnace Upgrade to Amethyst",
+        "category": "General",
+        "image": "textures/items/emerald_amethyst_upgrade.png",
+        "source": "BP/items/emerald_upgrade_to_amethyst.json"
+      },
+      {
+        "id": "emerald_upgrade_to_diamond",
+        "slug": "emerald-upgrade-to-diamond",
+        "identifier": "better_smelters:emerald_upgrade_to_diamond",
+        "name": "Emerald Furnace Upgrade to Diamond",
+        "category": "General",
+        "image": "textures/items/emerald_diamond_upgrade.png",
+        "source": "BP/items/emerald_upgrade_to_diamond.json"
+      },
+      {
+        "id": "flame_0",
+        "slug": "flame-0",
+        "identifier": "better_smelters:flame_0",
+        "name": "Flame 0",
+        "category": "Progress Bars",
+        "image": "textures/items/flame_0.png",
+        "source": "BP/items/progress bars/flame_0.json"
+      },
+      {
+        "id": "flame_1",
+        "slug": "flame-1",
+        "identifier": "better_smelters:flame_1",
+        "name": "Flame 1",
+        "category": "Progress Bars",
+        "image": "textures/items/flame_1.png",
+        "source": "BP/items/progress bars/flame_1.json"
+      },
+      {
+        "id": "flame_10",
+        "slug": "flame-10",
+        "identifier": "better_smelters:flame_10",
+        "name": "Flame 10",
+        "category": "Progress Bars",
+        "image": "textures/items/flame_10.png",
+        "source": "BP/items/progress bars/flame_10.json"
+      },
+      {
+        "id": "flame_11",
+        "slug": "flame-11",
+        "identifier": "better_smelters:flame_11",
+        "name": "Flame 11",
+        "category": "Progress Bars",
+        "image": "textures/items/flame_11.png",
+        "source": "BP/items/progress bars/flame_11.json"
+      },
+      {
+        "id": "flame_12",
+        "slug": "flame-12",
+        "identifier": "better_smelters:flame_12",
+        "name": "Flame 12",
+        "category": "Progress Bars",
+        "image": "textures/items/flame_12.png",
+        "source": "BP/items/progress bars/flame_12.json"
+      },
+      {
+        "id": "flame_13",
+        "slug": "flame-13",
+        "identifier": "better_smelters:flame_13",
+        "name": "Flame 13",
+        "category": "Progress Bars",
+        "image": "textures/items/flame_13.png",
+        "source": "BP/items/progress bars/flame_13.json"
+      },
+      {
+        "id": "flame_2",
+        "slug": "flame-2",
+        "identifier": "better_smelters:flame_2",
+        "name": "Flame 2",
+        "category": "Progress Bars",
+        "image": "textures/items/flame_2.png",
+        "source": "BP/items/progress bars/flame_2.json"
+      },
+      {
+        "id": "flame_3",
+        "slug": "flame-3",
+        "identifier": "better_smelters:flame_3",
+        "name": "Flame 3",
+        "category": "Progress Bars",
+        "image": "textures/items/flame_3.png",
+        "source": "BP/items/progress bars/flame_3.json"
+      },
+      {
+        "id": "flame_4",
+        "slug": "flame-4",
+        "identifier": "better_smelters:flame_4",
+        "name": "Flame 4",
+        "category": "Progress Bars",
+        "image": "textures/items/flame_4.png",
+        "source": "BP/items/progress bars/flame_4.json"
+      },
+      {
+        "id": "flame_5",
+        "slug": "flame-5",
+        "identifier": "better_smelters:flame_5",
+        "name": "Flame 5",
+        "category": "Progress Bars",
+        "image": "textures/items/flame_5.png",
+        "source": "BP/items/progress bars/flame_5.json"
+      },
+      {
+        "id": "flame_6",
+        "slug": "flame-6",
+        "identifier": "better_smelters:flame_6",
+        "name": "Flame 6",
+        "category": "Progress Bars",
+        "image": "textures/items/flame_6.png",
+        "source": "BP/items/progress bars/flame_6.json"
+      },
+      {
+        "id": "flame_7",
+        "slug": "flame-7",
+        "identifier": "better_smelters:flame_7",
+        "name": "Flame 7",
+        "category": "Progress Bars",
+        "image": "textures/items/flame_7.png",
+        "source": "BP/items/progress bars/flame_7.json"
+      },
+      {
+        "id": "flame_8",
+        "slug": "flame-8",
+        "identifier": "better_smelters:flame_8",
+        "name": "Flame 8",
+        "category": "Progress Bars",
+        "image": "textures/items/flame_8.png",
+        "source": "BP/items/progress bars/flame_8.json"
+      },
+      {
+        "id": "flame_9",
+        "slug": "flame-9",
+        "identifier": "better_smelters:flame_9",
+        "name": "Flame 9",
+        "category": "Progress Bars",
+        "image": "textures/items/flame_9.png",
+        "source": "BP/items/progress bars/flame_9.json"
+      },
+      {
+        "id": "upgrade_to_copper",
+        "slug": "upgrade-to-copper",
+        "identifier": "better_smelters:upgrade_to_copper",
+        "name": "Furnace Upgrade to Copper",
+        "category": "General",
+        "image": "textures/items/upgrade_copper.png",
+        "source": "BP/items/upgrade_copper.json"
+      },
+      {
+        "id": "upgrade_to_iron",
+        "slug": "upgrade-to-iron",
+        "identifier": "better_smelters:upgrade_to_iron",
+        "name": "Furnace Upgrade to Iron",
+        "category": "General",
+        "image": "textures/items/upgrade_iron.png",
+        "source": "BP/items/upgrade_iron.json"
+      },
+      {
+        "id": "gold_upgrade_to_emerald",
+        "slug": "gold-upgrade-to-emerald",
+        "identifier": "better_smelters:gold_upgrade_to_emerald",
+        "name": "Gold Furnace Upgrade to Emerald",
+        "category": "General",
+        "image": "textures/items/gold_emerald_upgrade.png",
+        "source": "BP/items/gold_upgrade_to_emerald.json"
+      },
+      {
+        "id": "iron_upgrade_to_gold",
+        "slug": "iron-upgrade-to-gold",
+        "identifier": "better_smelters:iron_upgrade_to_gold",
+        "name": "Iron Furnace Upgrade to Gold",
+        "category": "General",
+        "image": "textures/items/iron_gold_upgrade.png",
+        "source": "BP/items/iron_upgrade_to_gold.json"
+      },
+      {
+        "id": "netherite_upgrade_to_blazing",
+        "slug": "netherite-upgrade-to-blazing",
+        "identifier": "better_smelters:netherite_upgrade_to_blazing",
+        "name": "Netherite Furnace Upgrade to Blazing",
+        "category": "General",
+        "image": "textures/items/netherite_blazing_upgrade.png",
+        "source": "BP/items/netherite_upgrade_to_blazing.json"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "amethyst_furnace",
+        "slug": "amethyst-furnace",
+        "identifier": "better_smelters:amethyst_furnace",
+        "name": "Amethyst Furnace",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/furnaces/amethyst/up.png",
+          "left": "textures/blocks/furnaces/amethyst/side.png",
+          "right": "textures/blocks/furnaces/amethyst/front.png"
+        },
+        "componentKeys": [
+          "better_smelters:furnace",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:better_smelters:furnace",
+          "tag:dorios:item",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/amethyst_furnace.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "blazing_furnace",
+        "slug": "blazing-furnace",
+        "identifier": "better_smelters:blazing_furnace",
+        "name": "Blazing Furnace",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/furnaces/blazing/up.png",
+          "left": "textures/blocks/furnaces/blazing/side.png",
+          "right": "textures/blocks/furnaces/blazing/front.png"
+        },
+        "componentKeys": [
+          "better_smelters:furnace",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:better_smelters:furnace",
+          "tag:dorios:item",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/blazing_furnace.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "copper_furnace",
+        "slug": "copper-furnace",
+        "identifier": "better_smelters:copper_furnace",
+        "name": "Copper Furnace",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/furnaces/copper/up.png",
+          "left": "textures/blocks/furnaces/copper/side.png",
+          "right": "textures/blocks/furnaces/copper/front.png"
+        },
+        "componentKeys": [
+          "better_smelters:furnace",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:better_smelters:furnace",
+          "tag:dorios:item",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/copper_furnace.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "diamond_furnace",
+        "slug": "diamond-furnace",
+        "identifier": "better_smelters:diamond_furnace",
+        "name": "Diamond Furnace",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/furnaces/diamond/up.png",
+          "left": "textures/blocks/furnaces/diamond/side.png",
+          "right": "textures/blocks/furnaces/diamond/front.png"
+        },
+        "componentKeys": [
+          "better_smelters:furnace",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:better_smelters:furnace",
+          "tag:dorios:item",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/diamond_furnace.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "emerald_furnace",
+        "slug": "emerald-furnace",
+        "identifier": "better_smelters:emerald_furnace",
+        "name": "Emerald Furnace",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/furnaces/emerald/up.png",
+          "left": "textures/blocks/furnaces/emerald/side.png",
+          "right": "textures/blocks/furnaces/emerald/front.png"
+        },
+        "componentKeys": [
+          "better_smelters:furnace",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:better_smelters:furnace",
+          "tag:dorios:item",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/emerald_furnace.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "gold_furnace",
+        "slug": "gold-furnace",
+        "identifier": "better_smelters:gold_furnace",
+        "name": "Gold Furnace",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/furnaces/gold/up.png",
+          "left": "textures/blocks/furnaces/gold/side.png",
+          "right": "textures/blocks/furnaces/gold/front.png"
+        },
+        "componentKeys": [
+          "better_smelters:furnace",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:better_smelters:furnace",
+          "tag:dorios:item",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/gold_furnace.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "iron_furnace",
+        "slug": "iron-furnace",
+        "identifier": "better_smelters:iron_furnace",
+        "name": "Iron Furnace",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/furnaces/iron/up.png",
+          "left": "textures/blocks/furnaces/iron/side.png",
+          "right": "textures/blocks/furnaces/iron/front.png"
+        },
+        "componentKeys": [
+          "better_smelters:furnace",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:better_smelters:furnace",
+          "tag:dorios:item",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/iron_furnace.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "nether_star_furnace",
+        "slug": "nether-star-furnace",
+        "identifier": "better_smelters:nether_star_furnace",
+        "name": "Nether Star Furnace",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/furnaces/nether_star/up.png",
+          "left": "textures/blocks/furnaces/nether_star/side.png",
+          "right": "textures/blocks/furnaces/nether_star/front.png"
+        },
+        "componentKeys": [
+          "better_smelters:furnace",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:better_smelters:furnace",
+          "tag:dorios:item",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/nether_star_furnace.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "netherite_furnace",
+        "slug": "netherite-furnace",
+        "identifier": "better_smelters:netherite_furnace",
+        "name": "Netherite Furnace",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/furnaces/netherite/up.png",
+          "left": "textures/blocks/furnaces/netherite/side.png",
+          "right": "textures/blocks/furnaces/netherite/front.png"
+        },
+        "componentKeys": [
+          "better_smelters:furnace",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:better_smelters:furnace",
+          "tag:dorios:item",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/netherite_furnace.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "netherrack_furnace",
+        "slug": "netherrack-furnace",
+        "identifier": "better_smelters:netherrack_furnace",
+        "name": "Netherrack Furnace",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/furnaces/netherrack/up.png",
+          "left": "textures/blocks/furnaces/netherrack/side.png",
+          "right": "textures/blocks/furnaces/netherrack/front.png"
+        },
+        "componentKeys": [
+          "better_smelters:furnace",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:better_smelters:furnace",
+          "tag:dorios:item",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/netherrack_furnace.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "oak_wood_furnace",
+        "slug": "oak-wood-furnace",
+        "identifier": "better_smelters:oak_wood_furnace",
+        "name": "Oak Wood Furnace",
+        "category": "General",
+        "render": null,
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/furnaces/oak_wood/up.png",
+          "left": "textures/blocks/furnaces/oak_wood/side.png",
+          "right": "textures/blocks/furnaces/oak_wood/front.png"
+        },
+        "componentKeys": [
+          "better_smelters:furnace",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:better_smelters:furnace",
+          "tag:dorios:item",
+          "tag:minecraft:is_axe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/oak_wood_furnace.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Axe",
+          "directional": true
+        }
+      }
+    ],
+    "entities": [
+      {
+        "id": "furnace",
+        "slug": "furnace",
+        "identifier": "better_smelters:furnace",
+        "name": "Furnace",
+        "category": "General",
+        "image": null,
+        "source": "BP/entities/furnace.json"
+      }
+    ],
+    "recipes": [
+      {
+        "id": "amethyst_furnace",
+        "identifier": "better_smelters:amethyst_furnace",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "better_smelters:emerald_furnace",
+            "count": 1
+          },
+          {
+            "id": "amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "amethyst_block",
+            "count": 1
+          },
+          {
+            "id": "amethyst_shard",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:amethyst_furnace",
+          "count": 1
+        },
+        "source": "BP/recipes/amethyst_furnace.json"
+      },
+      {
+        "id": "amethyst_upgrade_to_netherite",
+        "identifier": "better_smelters:amethyst_upgrade_to_netherite",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:amethyst_upgrade_to_netherite",
+          "count": 1
+        },
+        "source": "BP/recipes/amethyst_upgrade_to_netherite.json"
+      },
+      {
+        "id": "blazing_furnace",
+        "identifier": "better_smelters:blazing_furnace",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "better_smelters:netherite_furnace",
+            "count": 1
+          },
+          {
+            "id": "blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "netherite_block",
+            "count": 1
+          },
+          {
+            "id": "blaze_rod",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:blazing_furnace",
+          "count": 1
+        },
+        "source": "BP/recipes/blazing_furnace.json"
+      },
+      {
+        "id": "copper_furnace",
+        "identifier": "better_smelters:copper_furnace",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "furnace",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_block",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:copper_furnace",
+          "count": 1
+        },
+        "source": "BP/recipes/copper_furnace.json"
+      },
+      {
+        "id": "copper_upgrade_to_iron",
+        "identifier": "better_smelters:copper_upgrade_to_iron",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:copper_upgrade_to_iron",
+          "count": 1
+        },
+        "source": "BP/recipes/copper_upgrade_to_iron.json"
+      },
+      {
+        "id": "diamond_furnace",
+        "identifier": "better_smelters:diamond_furnace",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "better_smelters:emerald_furnace",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond_block",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:diamond_furnace",
+          "count": 1
+        },
+        "source": "BP/recipes/diamond_furnace.json"
+      },
+      {
+        "id": "diamond_upgrade_to_netherite",
+        "identifier": "better_smelters:diamond_upgrade_to_netherite",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:diamond_upgrade_to_netherite",
+          "count": 1
+        },
+        "source": "BP/recipes/diamond_upgrade_to_netherite.json"
+      },
+      {
+        "id": "emerald_furnace",
+        "identifier": "better_smelters:emerald_furnace",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "better_smelters:gold_furnace",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald_block",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:emerald_furnace",
+          "count": 1
+        },
+        "source": "BP/recipes/emerald_furnace.json"
+      },
+      {
+        "id": "emerald_upgrade_to_amethyst",
+        "identifier": "better_smelters:emerald_upgrade_to_amethyst",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:emerald_upgrade_to_amethyst",
+          "count": 1
+        },
+        "source": "BP/recipes/emerald_upgrade_to_amethyst.json"
+      },
+      {
+        "id": "emerald_upgrade_to_diamond",
+        "identifier": "better_smelters:emerald_upgrade_to_diamond",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:emerald_upgrade_to_diamond",
+          "count": 1
+        },
+        "source": "BP/recipes/emerald_upgrade_to_diamond.json"
+      },
+      {
+        "id": "gold_furnace",
+        "identifier": "better_smelters:gold_furnace",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "better_smelters:iron_furnace",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_block",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:gold_furnace",
+          "count": 1
+        },
+        "source": "BP/recipes/gold_furnace.json"
+      },
+      {
+        "id": "gold_upgrade_to_emerald",
+        "identifier": "better_smelters:gold_upgrade_to_emerald",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:gold_upgrade_to_emerald",
+          "count": 1
+        },
+        "source": "BP/recipes/gold_upgrade_to_emerald.json"
+      },
+      {
+        "id": "iron_furnace",
+        "identifier": "better_smelters:iron_furnace",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "better_smelters:copper_furnace",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_block",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:iron_furnace",
+          "count": 1
+        },
+        "source": "BP/recipes/iron_furnace.json"
+      },
+      {
+        "id": "iron_upgrade_to_gold",
+        "identifier": "better_smelters:iron_upgrade_to_gold",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:iron_upgrade_to_gold",
+          "count": 1
+        },
+        "source": "BP/recipes/iron_upgrade_to_gold.json"
+      },
+      {
+        "id": "nether_star_furnace",
+        "identifier": "better_smelters:nether_star_furnace",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          null,
+          {
+            "id": "nether_star",
+            "count": 1
+          },
+          null,
+          {
+            "id": "nether_star",
+            "count": 1
+          },
+          {
+            "id": "better_smelters:blazing_furnace",
+            "count": 1
+          },
+          {
+            "id": "nether_star",
+            "count": 1
+          },
+          null,
+          {
+            "id": "nether_star",
+            "count": 1
+          },
+          null
+        ],
+        "slotCount": 5,
+        "result": {
+          "id": "better_smelters:nether_star_furnace",
+          "count": 1
+        },
+        "source": "BP/recipes/nether_star_furnace.json"
+      },
+      {
+        "id": "netherite_furnacev1",
+        "identifier": "better_smelters:netherite_furnacev1",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "better_smelters:diamond_furnace",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:netherite_furnace",
+          "count": 1
+        },
+        "source": "BP/recipes/netherite_furnacev1.json"
+      },
+      {
+        "id": "netherite_furnacev2",
+        "identifier": "better_smelters:netherite_furnacev2",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "better_smelters:amethyst_furnace",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:netherite_furnace",
+          "count": 1
+        },
+        "source": "BP/recipes/netherite_furnacev2.json"
+      },
+      {
+        "id": "netherite_upgrade_to_blazing",
+        "identifier": "better_smelters:netherite_upgrade_to_blazing",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:netherite_upgrade_to_blazing",
+          "count": 1
+        },
+        "source": "BP/recipes/netherite_upgrade_to_blazing.json"
+      },
+      {
+        "id": "netherite_upgrade_to_blazingv2",
+        "identifier": "better_smelters:netherite_upgrade_to_blazingv2",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:netherite_upgrade_to_blazing",
+          "count": 1
+        },
+        "source": "BP/recipes/netherite_upgrade_to_blazingv2.json"
+      },
+      {
+        "id": "netherrack_furnace",
+        "identifier": "better_smelters:netherrack_furnace",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:netherrack",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherrack",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherrack",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherrack",
+            "count": 1
+          },
+          {
+            "id": "furnace",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherrack",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherrack",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherrack",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherrack",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:netherrack_furnace",
+          "count": 1
+        },
+        "source": "BP/recipes/netherrack_furnace.json"
+      },
+      {
+        "id": "oak_wood_furnace",
+        "identifier": "better_smelters:oak_wood_furnace",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "planks",
+            "count": 1
+          },
+          {
+            "id": "planks",
+            "count": 1
+          },
+          {
+            "id": "planks",
+            "count": 1
+          },
+          {
+            "id": "planks",
+            "count": 1
+          },
+          null,
+          {
+            "id": "planks",
+            "count": 1
+          },
+          {
+            "id": "planks",
+            "count": 1
+          },
+          {
+            "id": "log",
+            "count": 1
+          },
+          {
+            "id": "planks",
+            "count": 1
+          }
+        ],
+        "slotCount": 8,
+        "result": {
+          "id": "better_smelters:oak_wood_furnace",
+          "count": 1
+        },
+        "source": "BP/recipes/oak_wood_furnace.json"
+      },
+      {
+        "id": "upgrade_to_copper",
+        "identifier": "better_smelters:upgrade_to_copper",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:cobblestone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:upgrade_to_copper",
+          "count": 1
+        },
+        "source": "BP/recipes/upgrade_to_copper.json"
+      },
+      {
+        "id": "upgrade_to_iron",
+        "identifier": "better_smelters:upgrade_to_iron",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:cobblestone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "better_smelters:upgrade_to_iron",
+          "count": 1
+        },
+        "source": "BP/recipes/upgrade_to_iron.json"
+      }
+    ]
+  },
+  "catalog": {
+    "items": [
+      {
+        "id": "amethyst_upgrade_to_netherite",
+        "slug": "amethyst-upgrade-to-netherite",
+        "identifier": "better_smelters:amethyst_upgrade_to_netherite",
+        "name": "Amethyst Upgrade to Netherite",
+        "category": "General",
+        "image": "textures/items/amethyst_netherite_upgrade.png",
+        "source": "BP/items/amethyst_upgrade_to_netherite.json"
+      },
+      {
+        "id": "arrow_right",
+        "slug": "arrow-right",
+        "identifier": "better_smelters:arrow_right",
+        "name": "Arrow Right",
+        "category": "Progress Bars",
+        "image": "textures/items/arrow_right_0.png",
+        "source": "BP/items/progress bars/arrow_right_0.json",
+        "variants": [
+          {
+            "id": "arrow_right_0",
+            "identifier": "better_smelters:arrow_right_0",
+            "name": "Arrow Right 0",
+            "tier": "0",
+            "image": "textures/items/arrow_right_0.png"
+          },
+          {
+            "id": "arrow_right_1",
+            "identifier": "better_smelters:arrow_right_1",
+            "name": "Arrow Right 1",
+            "tier": "1",
+            "image": "textures/items/arrow_right_1.png"
+          },
+          {
+            "id": "arrow_right_2",
+            "identifier": "better_smelters:arrow_right_2",
+            "name": "Arrow Right 2",
+            "tier": "2",
+            "image": "textures/items/arrow_right_2.png"
+          },
+          {
+            "id": "arrow_right_3",
+            "identifier": "better_smelters:arrow_right_3",
+            "name": "Arrow Right 3",
+            "tier": "3",
+            "image": "textures/items/arrow_right_3.png"
+          },
+          {
+            "id": "arrow_right_4",
+            "identifier": "better_smelters:arrow_right_4",
+            "name": "Arrow Right 4",
+            "tier": "4",
+            "image": "textures/items/arrow_right_4.png"
+          },
+          {
+            "id": "arrow_right_5",
+            "identifier": "better_smelters:arrow_right_5",
+            "name": "Arrow Right 5",
+            "tier": "5",
+            "image": "textures/items/arrow_right_5.png"
+          },
+          {
+            "id": "arrow_right_6",
+            "identifier": "better_smelters:arrow_right_6",
+            "name": "Arrow Right 6",
+            "tier": "6",
+            "image": "textures/items/arrow_right_6.png"
+          },
+          {
+            "id": "arrow_right_7",
+            "identifier": "better_smelters:arrow_right_7",
+            "name": "Arrow Right 7",
+            "tier": "7",
+            "image": "textures/items/arrow_right_7.png"
+          },
+          {
+            "id": "arrow_right_8",
+            "identifier": "better_smelters:arrow_right_8",
+            "name": "Arrow Right 8",
+            "tier": "8",
+            "image": "textures/items/arrow_right_8.png"
+          },
+          {
+            "id": "arrow_right_9",
+            "identifier": "better_smelters:arrow_right_9",
+            "name": "Arrow Right 9",
+            "tier": "9",
+            "image": "textures/items/arrow_right_9.png"
+          },
+          {
+            "id": "arrow_right_10",
+            "identifier": "better_smelters:arrow_right_10",
+            "name": "Arrow Right 10",
+            "tier": "10",
+            "image": "textures/items/arrow_right_10.png"
+          },
+          {
+            "id": "arrow_right_11",
+            "identifier": "better_smelters:arrow_right_11",
+            "name": "Arrow Right 11",
+            "tier": "11",
+            "image": "textures/items/arrow_right_11.png"
+          },
+          {
+            "id": "arrow_right_12",
+            "identifier": "better_smelters:arrow_right_12",
+            "name": "Arrow Right 12",
+            "tier": "12",
+            "image": "textures/items/arrow_right_12.png"
+          },
+          {
+            "id": "arrow_right_13",
+            "identifier": "better_smelters:arrow_right_13",
+            "name": "Arrow Right 13",
+            "tier": "13",
+            "image": "textures/items/arrow_right_13.png"
+          },
+          {
+            "id": "arrow_right_14",
+            "identifier": "better_smelters:arrow_right_14",
+            "name": "Arrow Right 14",
+            "tier": "14",
+            "image": "textures/items/arrow_right_14.png"
+          },
+          {
+            "id": "arrow_right_15",
+            "identifier": "better_smelters:arrow_right_15",
+            "name": "Arrow Right 15",
+            "tier": "15",
+            "image": "textures/items/arrow_right_15.png"
+          },
+          {
+            "id": "arrow_right_16",
+            "identifier": "better_smelters:arrow_right_16",
+            "name": "Arrow Right 16",
+            "tier": "16",
+            "image": "textures/items/arrow_right_16.png"
+          },
+          {
+            "id": "arrow_right_17",
+            "identifier": "better_smelters:arrow_right_17",
+            "name": "Arrow Right 17",
+            "tier": "17",
+            "image": "textures/items/arrow_right_17.png"
+          },
+          {
+            "id": "arrow_right_18",
+            "identifier": "better_smelters:arrow_right_18",
+            "name": "Arrow Right 18",
+            "tier": "18",
+            "image": "textures/items/arrow_right_18.png"
+          },
+          {
+            "id": "arrow_right_19",
+            "identifier": "better_smelters:arrow_right_19",
+            "name": "Arrow Right 19",
+            "tier": "19",
+            "image": "textures/items/arrow_right_19.png"
+          },
+          {
+            "id": "arrow_right_20",
+            "identifier": "better_smelters:arrow_right_20",
+            "name": "Arrow Right 20",
+            "tier": "20",
+            "image": "textures/items/arrow_right_20.png"
+          },
+          {
+            "id": "arrow_right_21",
+            "identifier": "better_smelters:arrow_right_21",
+            "name": "Arrow Right 21",
+            "tier": "21",
+            "image": "textures/items/arrow_right_21.png"
+          },
+          {
+            "id": "arrow_right_22",
+            "identifier": "better_smelters:arrow_right_22",
+            "name": "Arrow Right 22",
+            "tier": "22",
+            "image": "textures/items/arrow_right_22.png"
+          }
+        ]
+      },
+      {
+        "id": "blue_flame",
+        "slug": "blue-flame",
+        "identifier": "better_smelters:blue_flame",
+        "name": "Blue Flame",
+        "category": "Progress Bars",
+        "image": "textures/items/blue_flame_0.png",
+        "source": "BP/items/progress bars/blue_flame_0.json",
+        "variants": [
+          {
+            "id": "blue_flame_0",
+            "identifier": "better_smelters:blue_flame_0",
+            "name": "Blue Flame 0",
+            "tier": "0",
+            "image": "textures/items/blue_flame_0.png"
+          },
+          {
+            "id": "blue_flame_1",
+            "identifier": "better_smelters:blue_flame_1",
+            "name": "Blue Flame 1",
+            "tier": "1",
+            "image": "textures/items/blue_flame_1.png"
+          },
+          {
+            "id": "blue_flame_2",
+            "identifier": "better_smelters:blue_flame_2",
+            "name": "Blue Flame 2",
+            "tier": "2",
+            "image": "textures/items/blue_flame_2.png"
+          },
+          {
+            "id": "blue_flame_3",
+            "identifier": "better_smelters:blue_flame_3",
+            "name": "Blue Flame 3",
+            "tier": "3",
+            "image": "textures/items/blue_flame_3.png"
+          },
+          {
+            "id": "blue_flame_4",
+            "identifier": "better_smelters:blue_flame_4",
+            "name": "Blue Flame 4",
+            "tier": "4",
+            "image": "textures/items/blue_flame_4.png"
+          },
+          {
+            "id": "blue_flame_5",
+            "identifier": "better_smelters:blue_flame_5",
+            "name": "Blue Flame 5",
+            "tier": "5",
+            "image": "textures/items/blue_flame_5.png"
+          },
+          {
+            "id": "blue_flame_6",
+            "identifier": "better_smelters:blue_flame_6",
+            "name": "Blue Flame 6",
+            "tier": "6",
+            "image": "textures/items/blue_flame_6.png"
+          },
+          {
+            "id": "blue_flame_7",
+            "identifier": "better_smelters:blue_flame_7",
+            "name": "Blue Flame 7",
+            "tier": "7",
+            "image": "textures/items/blue_flame_7.png"
+          },
+          {
+            "id": "blue_flame_8",
+            "identifier": "better_smelters:blue_flame_8",
+            "name": "Blue Flame 8",
+            "tier": "8",
+            "image": "textures/items/blue_flame_8.png"
+          },
+          {
+            "id": "blue_flame_9",
+            "identifier": "better_smelters:blue_flame_9",
+            "name": "Blue Flame 9",
+            "tier": "9",
+            "image": "textures/items/blue_flame_9.png"
+          },
+          {
+            "id": "blue_flame_10",
+            "identifier": "better_smelters:blue_flame_10",
+            "name": "Blue Flame 10",
+            "tier": "10",
+            "image": "textures/items/blue_flame_10.png"
+          },
+          {
+            "id": "blue_flame_11",
+            "identifier": "better_smelters:blue_flame_11",
+            "name": "Blue Flame 11",
+            "tier": "11",
+            "image": "textures/items/blue_flame_11.png"
+          },
+          {
+            "id": "blue_flame_12",
+            "identifier": "better_smelters:blue_flame_12",
+            "name": "Blue Flame 12",
+            "tier": "12",
+            "image": "textures/items/blue_flame_12.png"
+          },
+          {
+            "id": "blue_flame_13",
+            "identifier": "better_smelters:blue_flame_13",
+            "name": "Blue Flame 13",
+            "tier": "13",
+            "image": "textures/items/blue_flame_13.png"
+          }
+        ]
+      },
+      {
+        "id": "copper_upgrade_to_iron",
+        "slug": "copper-upgrade-to-iron",
+        "identifier": "better_smelters:copper_upgrade_to_iron",
+        "name": "Copper Furnace Upgrade to Iron",
+        "category": "General",
+        "image": "textures/items/copper_iron_upgrade.png",
+        "source": "BP/items/copper_upgrade_to_iron.json"
+      },
+      {
+        "id": "diamond_upgrade_to_netherite",
+        "slug": "diamond-upgrade-to-netherite",
+        "identifier": "better_smelters:diamond_upgrade_to_netherite",
+        "name": "Diamond Furnace Upgrade to Netherite",
+        "category": "General",
+        "image": "textures/items/diamond_netherite_upgrade.png",
+        "source": "BP/items/diamond_upgrade_to_netherite.json"
+      },
+      {
+        "id": "emerald_upgrade_to_amethyst",
+        "slug": "emerald-upgrade-to-amethyst",
+        "identifier": "better_smelters:emerald_upgrade_to_amethyst",
+        "name": "Emerald Furnace Upgrade to Amethyst",
+        "category": "General",
+        "image": "textures/items/emerald_amethyst_upgrade.png",
+        "source": "BP/items/emerald_upgrade_to_amethyst.json"
+      },
+      {
+        "id": "emerald_upgrade_to_diamond",
+        "slug": "emerald-upgrade-to-diamond",
+        "identifier": "better_smelters:emerald_upgrade_to_diamond",
+        "name": "Emerald Furnace Upgrade to Diamond",
+        "category": "General",
+        "image": "textures/items/emerald_diamond_upgrade.png",
+        "source": "BP/items/emerald_upgrade_to_diamond.json"
+      },
+      {
+        "id": "flame",
+        "slug": "flame",
+        "identifier": "better_smelters:flame",
+        "name": "Flame",
+        "category": "Progress Bars",
+        "image": "textures/items/flame_0.png",
+        "source": "BP/items/progress bars/flame_0.json",
+        "variants": [
+          {
+            "id": "flame_0",
+            "identifier": "better_smelters:flame_0",
+            "name": "Flame 0",
+            "tier": "0",
+            "image": "textures/items/flame_0.png"
+          },
+          {
+            "id": "flame_1",
+            "identifier": "better_smelters:flame_1",
+            "name": "Flame 1",
+            "tier": "1",
+            "image": "textures/items/flame_1.png"
+          },
+          {
+            "id": "flame_2",
+            "identifier": "better_smelters:flame_2",
+            "name": "Flame 2",
+            "tier": "2",
+            "image": "textures/items/flame_2.png"
+          },
+          {
+            "id": "flame_3",
+            "identifier": "better_smelters:flame_3",
+            "name": "Flame 3",
+            "tier": "3",
+            "image": "textures/items/flame_3.png"
+          },
+          {
+            "id": "flame_4",
+            "identifier": "better_smelters:flame_4",
+            "name": "Flame 4",
+            "tier": "4",
+            "image": "textures/items/flame_4.png"
+          },
+          {
+            "id": "flame_5",
+            "identifier": "better_smelters:flame_5",
+            "name": "Flame 5",
+            "tier": "5",
+            "image": "textures/items/flame_5.png"
+          },
+          {
+            "id": "flame_6",
+            "identifier": "better_smelters:flame_6",
+            "name": "Flame 6",
+            "tier": "6",
+            "image": "textures/items/flame_6.png"
+          },
+          {
+            "id": "flame_7",
+            "identifier": "better_smelters:flame_7",
+            "name": "Flame 7",
+            "tier": "7",
+            "image": "textures/items/flame_7.png"
+          },
+          {
+            "id": "flame_8",
+            "identifier": "better_smelters:flame_8",
+            "name": "Flame 8",
+            "tier": "8",
+            "image": "textures/items/flame_8.png"
+          },
+          {
+            "id": "flame_9",
+            "identifier": "better_smelters:flame_9",
+            "name": "Flame 9",
+            "tier": "9",
+            "image": "textures/items/flame_9.png"
+          },
+          {
+            "id": "flame_10",
+            "identifier": "better_smelters:flame_10",
+            "name": "Flame 10",
+            "tier": "10",
+            "image": "textures/items/flame_10.png"
+          },
+          {
+            "id": "flame_11",
+            "identifier": "better_smelters:flame_11",
+            "name": "Flame 11",
+            "tier": "11",
+            "image": "textures/items/flame_11.png"
+          },
+          {
+            "id": "flame_12",
+            "identifier": "better_smelters:flame_12",
+            "name": "Flame 12",
+            "tier": "12",
+            "image": "textures/items/flame_12.png"
+          },
+          {
+            "id": "flame_13",
+            "identifier": "better_smelters:flame_13",
+            "name": "Flame 13",
+            "tier": "13",
+            "image": "textures/items/flame_13.png"
+          }
+        ]
+      },
+      {
+        "id": "upgrade_to_copper",
+        "slug": "upgrade-to-copper",
+        "identifier": "better_smelters:upgrade_to_copper",
+        "name": "Furnace Upgrade to Copper",
+        "category": "General",
+        "image": "textures/items/upgrade_copper.png",
+        "source": "BP/items/upgrade_copper.json"
+      },
+      {
+        "id": "upgrade_to_iron",
+        "slug": "upgrade-to-iron",
+        "identifier": "better_smelters:upgrade_to_iron",
+        "name": "Furnace Upgrade to Iron",
+        "category": "General",
+        "image": "textures/items/upgrade_iron.png",
+        "source": "BP/items/upgrade_iron.json"
+      },
+      {
+        "id": "gold_upgrade_to_emerald",
+        "slug": "gold-upgrade-to-emerald",
+        "identifier": "better_smelters:gold_upgrade_to_emerald",
+        "name": "Gold Furnace Upgrade to Emerald",
+        "category": "General",
+        "image": "textures/items/gold_emerald_upgrade.png",
+        "source": "BP/items/gold_upgrade_to_emerald.json"
+      },
+      {
+        "id": "iron_upgrade_to_gold",
+        "slug": "iron-upgrade-to-gold",
+        "identifier": "better_smelters:iron_upgrade_to_gold",
+        "name": "Iron Furnace Upgrade to Gold",
+        "category": "General",
+        "image": "textures/items/iron_gold_upgrade.png",
+        "source": "BP/items/iron_upgrade_to_gold.json"
+      },
+      {
+        "id": "netherite_upgrade_to_blazing",
+        "slug": "netherite-upgrade-to-blazing",
+        "identifier": "better_smelters:netherite_upgrade_to_blazing",
+        "name": "Netherite Furnace Upgrade to Blazing",
+        "category": "General",
+        "image": "textures/items/netherite_blazing_upgrade.png",
+        "source": "BP/items/netherite_upgrade_to_blazing.json"
+      }
+    ]
+  },
+  "variantGroups": [
+    {
+      "id": "arrow_right",
+      "identifier": "better_smelters:arrow_right",
+      "variants": [
+        {
+          "id": "arrow_right_0",
+          "identifier": "better_smelters:arrow_right_0",
+          "name": "Arrow Right 0",
+          "tier": "0",
+          "image": "textures/items/arrow_right_0.png"
+        },
+        {
+          "id": "arrow_right_1",
+          "identifier": "better_smelters:arrow_right_1",
+          "name": "Arrow Right 1",
+          "tier": "1",
+          "image": "textures/items/arrow_right_1.png"
+        },
+        {
+          "id": "arrow_right_2",
+          "identifier": "better_smelters:arrow_right_2",
+          "name": "Arrow Right 2",
+          "tier": "2",
+          "image": "textures/items/arrow_right_2.png"
+        },
+        {
+          "id": "arrow_right_3",
+          "identifier": "better_smelters:arrow_right_3",
+          "name": "Arrow Right 3",
+          "tier": "3",
+          "image": "textures/items/arrow_right_3.png"
+        },
+        {
+          "id": "arrow_right_4",
+          "identifier": "better_smelters:arrow_right_4",
+          "name": "Arrow Right 4",
+          "tier": "4",
+          "image": "textures/items/arrow_right_4.png"
+        },
+        {
+          "id": "arrow_right_5",
+          "identifier": "better_smelters:arrow_right_5",
+          "name": "Arrow Right 5",
+          "tier": "5",
+          "image": "textures/items/arrow_right_5.png"
+        },
+        {
+          "id": "arrow_right_6",
+          "identifier": "better_smelters:arrow_right_6",
+          "name": "Arrow Right 6",
+          "tier": "6",
+          "image": "textures/items/arrow_right_6.png"
+        },
+        {
+          "id": "arrow_right_7",
+          "identifier": "better_smelters:arrow_right_7",
+          "name": "Arrow Right 7",
+          "tier": "7",
+          "image": "textures/items/arrow_right_7.png"
+        },
+        {
+          "id": "arrow_right_8",
+          "identifier": "better_smelters:arrow_right_8",
+          "name": "Arrow Right 8",
+          "tier": "8",
+          "image": "textures/items/arrow_right_8.png"
+        },
+        {
+          "id": "arrow_right_9",
+          "identifier": "better_smelters:arrow_right_9",
+          "name": "Arrow Right 9",
+          "tier": "9",
+          "image": "textures/items/arrow_right_9.png"
+        },
+        {
+          "id": "arrow_right_10",
+          "identifier": "better_smelters:arrow_right_10",
+          "name": "Arrow Right 10",
+          "tier": "10",
+          "image": "textures/items/arrow_right_10.png"
+        },
+        {
+          "id": "arrow_right_11",
+          "identifier": "better_smelters:arrow_right_11",
+          "name": "Arrow Right 11",
+          "tier": "11",
+          "image": "textures/items/arrow_right_11.png"
+        },
+        {
+          "id": "arrow_right_12",
+          "identifier": "better_smelters:arrow_right_12",
+          "name": "Arrow Right 12",
+          "tier": "12",
+          "image": "textures/items/arrow_right_12.png"
+        },
+        {
+          "id": "arrow_right_13",
+          "identifier": "better_smelters:arrow_right_13",
+          "name": "Arrow Right 13",
+          "tier": "13",
+          "image": "textures/items/arrow_right_13.png"
+        },
+        {
+          "id": "arrow_right_14",
+          "identifier": "better_smelters:arrow_right_14",
+          "name": "Arrow Right 14",
+          "tier": "14",
+          "image": "textures/items/arrow_right_14.png"
+        },
+        {
+          "id": "arrow_right_15",
+          "identifier": "better_smelters:arrow_right_15",
+          "name": "Arrow Right 15",
+          "tier": "15",
+          "image": "textures/items/arrow_right_15.png"
+        },
+        {
+          "id": "arrow_right_16",
+          "identifier": "better_smelters:arrow_right_16",
+          "name": "Arrow Right 16",
+          "tier": "16",
+          "image": "textures/items/arrow_right_16.png"
+        },
+        {
+          "id": "arrow_right_17",
+          "identifier": "better_smelters:arrow_right_17",
+          "name": "Arrow Right 17",
+          "tier": "17",
+          "image": "textures/items/arrow_right_17.png"
+        },
+        {
+          "id": "arrow_right_18",
+          "identifier": "better_smelters:arrow_right_18",
+          "name": "Arrow Right 18",
+          "tier": "18",
+          "image": "textures/items/arrow_right_18.png"
+        },
+        {
+          "id": "arrow_right_19",
+          "identifier": "better_smelters:arrow_right_19",
+          "name": "Arrow Right 19",
+          "tier": "19",
+          "image": "textures/items/arrow_right_19.png"
+        },
+        {
+          "id": "arrow_right_20",
+          "identifier": "better_smelters:arrow_right_20",
+          "name": "Arrow Right 20",
+          "tier": "20",
+          "image": "textures/items/arrow_right_20.png"
+        },
+        {
+          "id": "arrow_right_21",
+          "identifier": "better_smelters:arrow_right_21",
+          "name": "Arrow Right 21",
+          "tier": "21",
+          "image": "textures/items/arrow_right_21.png"
+        },
+        {
+          "id": "arrow_right_22",
+          "identifier": "better_smelters:arrow_right_22",
+          "name": "Arrow Right 22",
+          "tier": "22",
+          "image": "textures/items/arrow_right_22.png"
+        }
+      ]
+    },
+    {
+      "id": "blue_flame",
+      "identifier": "better_smelters:blue_flame",
+      "variants": [
+        {
+          "id": "blue_flame_0",
+          "identifier": "better_smelters:blue_flame_0",
+          "name": "Blue Flame 0",
+          "tier": "0",
+          "image": "textures/items/blue_flame_0.png"
+        },
+        {
+          "id": "blue_flame_1",
+          "identifier": "better_smelters:blue_flame_1",
+          "name": "Blue Flame 1",
+          "tier": "1",
+          "image": "textures/items/blue_flame_1.png"
+        },
+        {
+          "id": "blue_flame_2",
+          "identifier": "better_smelters:blue_flame_2",
+          "name": "Blue Flame 2",
+          "tier": "2",
+          "image": "textures/items/blue_flame_2.png"
+        },
+        {
+          "id": "blue_flame_3",
+          "identifier": "better_smelters:blue_flame_3",
+          "name": "Blue Flame 3",
+          "tier": "3",
+          "image": "textures/items/blue_flame_3.png"
+        },
+        {
+          "id": "blue_flame_4",
+          "identifier": "better_smelters:blue_flame_4",
+          "name": "Blue Flame 4",
+          "tier": "4",
+          "image": "textures/items/blue_flame_4.png"
+        },
+        {
+          "id": "blue_flame_5",
+          "identifier": "better_smelters:blue_flame_5",
+          "name": "Blue Flame 5",
+          "tier": "5",
+          "image": "textures/items/blue_flame_5.png"
+        },
+        {
+          "id": "blue_flame_6",
+          "identifier": "better_smelters:blue_flame_6",
+          "name": "Blue Flame 6",
+          "tier": "6",
+          "image": "textures/items/blue_flame_6.png"
+        },
+        {
+          "id": "blue_flame_7",
+          "identifier": "better_smelters:blue_flame_7",
+          "name": "Blue Flame 7",
+          "tier": "7",
+          "image": "textures/items/blue_flame_7.png"
+        },
+        {
+          "id": "blue_flame_8",
+          "identifier": "better_smelters:blue_flame_8",
+          "name": "Blue Flame 8",
+          "tier": "8",
+          "image": "textures/items/blue_flame_8.png"
+        },
+        {
+          "id": "blue_flame_9",
+          "identifier": "better_smelters:blue_flame_9",
+          "name": "Blue Flame 9",
+          "tier": "9",
+          "image": "textures/items/blue_flame_9.png"
+        },
+        {
+          "id": "blue_flame_10",
+          "identifier": "better_smelters:blue_flame_10",
+          "name": "Blue Flame 10",
+          "tier": "10",
+          "image": "textures/items/blue_flame_10.png"
+        },
+        {
+          "id": "blue_flame_11",
+          "identifier": "better_smelters:blue_flame_11",
+          "name": "Blue Flame 11",
+          "tier": "11",
+          "image": "textures/items/blue_flame_11.png"
+        },
+        {
+          "id": "blue_flame_12",
+          "identifier": "better_smelters:blue_flame_12",
+          "name": "Blue Flame 12",
+          "tier": "12",
+          "image": "textures/items/blue_flame_12.png"
+        },
+        {
+          "id": "blue_flame_13",
+          "identifier": "better_smelters:blue_flame_13",
+          "name": "Blue Flame 13",
+          "tier": "13",
+          "image": "textures/items/blue_flame_13.png"
+        }
+      ]
+    },
+    {
+      "id": "flame",
+      "identifier": "better_smelters:flame",
+      "variants": [
+        {
+          "id": "flame_0",
+          "identifier": "better_smelters:flame_0",
+          "name": "Flame 0",
+          "tier": "0",
+          "image": "textures/items/flame_0.png"
+        },
+        {
+          "id": "flame_1",
+          "identifier": "better_smelters:flame_1",
+          "name": "Flame 1",
+          "tier": "1",
+          "image": "textures/items/flame_1.png"
+        },
+        {
+          "id": "flame_2",
+          "identifier": "better_smelters:flame_2",
+          "name": "Flame 2",
+          "tier": "2",
+          "image": "textures/items/flame_2.png"
+        },
+        {
+          "id": "flame_3",
+          "identifier": "better_smelters:flame_3",
+          "name": "Flame 3",
+          "tier": "3",
+          "image": "textures/items/flame_3.png"
+        },
+        {
+          "id": "flame_4",
+          "identifier": "better_smelters:flame_4",
+          "name": "Flame 4",
+          "tier": "4",
+          "image": "textures/items/flame_4.png"
+        },
+        {
+          "id": "flame_5",
+          "identifier": "better_smelters:flame_5",
+          "name": "Flame 5",
+          "tier": "5",
+          "image": "textures/items/flame_5.png"
+        },
+        {
+          "id": "flame_6",
+          "identifier": "better_smelters:flame_6",
+          "name": "Flame 6",
+          "tier": "6",
+          "image": "textures/items/flame_6.png"
+        },
+        {
+          "id": "flame_7",
+          "identifier": "better_smelters:flame_7",
+          "name": "Flame 7",
+          "tier": "7",
+          "image": "textures/items/flame_7.png"
+        },
+        {
+          "id": "flame_8",
+          "identifier": "better_smelters:flame_8",
+          "name": "Flame 8",
+          "tier": "8",
+          "image": "textures/items/flame_8.png"
+        },
+        {
+          "id": "flame_9",
+          "identifier": "better_smelters:flame_9",
+          "name": "Flame 9",
+          "tier": "9",
+          "image": "textures/items/flame_9.png"
+        },
+        {
+          "id": "flame_10",
+          "identifier": "better_smelters:flame_10",
+          "name": "Flame 10",
+          "tier": "10",
+          "image": "textures/items/flame_10.png"
+        },
+        {
+          "id": "flame_11",
+          "identifier": "better_smelters:flame_11",
+          "name": "Flame 11",
+          "tier": "11",
+          "image": "textures/items/flame_11.png"
+        },
+        {
+          "id": "flame_12",
+          "identifier": "better_smelters:flame_12",
+          "name": "Flame 12",
+          "tier": "12",
+          "image": "textures/items/flame_12.png"
+        },
+        {
+          "id": "flame_13",
+          "identifier": "better_smelters:flame_13",
+          "name": "Flame 13",
+          "tier": "13",
+          "image": "textures/items/flame_13.png"
+        }
+      ]
+    }
+  ]
+}

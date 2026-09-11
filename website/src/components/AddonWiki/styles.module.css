@@ -1747,11 +1747,9 @@
 .recipeGrid {
 	display: grid;
 	grid-template-columns: repeat(6, minmax(0, 1fr));
-	grid-auto-flow: dense;
 	gap: 0.6rem;
 }
 .recipeGrid > .recipeCard { grid-column: span 2; }
-.recipeGrid > .compactRecipeCard { grid-column: span 3; }
 .recipeCard {
 	min-width: 0;
 	position: relative;
@@ -3837,8 +3835,7 @@
 	.recipeGrid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
-	.recipeGrid > .recipeCard,
-	.recipeGrid > .compactRecipeCard { grid-column: auto; }
+	.recipeGrid > .recipeCard { grid-column: auto; }
 	.machineSummary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 	.machineSummary > div:nth-child(3) { border-left: 0; }
 	.machineReferenceGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
