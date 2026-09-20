@@ -67,9 +67,9 @@ export default function About() {
             { id: 'jrice', name: 'JR.ice', role: 'Designer', quote: 'Lead designer behind UtilityCraft 3.0 and the studio’s visual style.' },
             { id: 'kauziin', name: 'Kauziin', role: 'Coder and Quality Checker', quote: 'Coder, UI Designer and the main head of Quality of Life improvements.' },
             { id: 'cloud', name: 'Cloud', role: 'Independent Creator', quote: 'Creator of Better Smelters and contributor to independent Minecraft projects.' },
-            { id: 'sam', name: 'Sam', role: 'Animator', quote: 'Animator and creative mind working on Endless Agony and adding life to our projects.' },
+            { id: 'sam', name: 'Sam', role: 'Animator', quote: 'Animator and creative mind adding life and motion to our projects.' },
             { id: 'mainmas', name: 'Mainmas', role: 'Independent Creator', quote: 'Independent contributor supporting Dorios Studios with community and project assistance.' },
-            { id: 'mikey', name: 'Mikey', role: 'Builder', quote: 'Builder for Endless Agony and UtilitySky, bringing environments and structures to life.' },
+            { id: 'mikey', name: 'Mikey', role: 'Builder', quote: 'Builder for UtilitySky, bringing environments and structures to life.' },
             { id: 'yusou', name: 'Yusou', role: 'Independent Creator', quote: 'Independent creator collaborating with Dorios Studios while developing personal projects.' },
             { id: 'srgui', name: 'Sr Gui', role: 'Builder & Developer', quote: 'An experienced builder now learning coding, bringing strong creative vision while growing into development.' },
           ].map((member, i) => (

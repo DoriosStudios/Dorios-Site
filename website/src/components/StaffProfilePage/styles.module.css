@@ -62,11 +62,11 @@
 .glance strong { color: var(--ds-text); font-size: .76rem; }
 .glance span { color: var(--ds-muted); font-size: .78rem; line-height: 1.45; }
 
-.projectColumns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 1.6vw, 1.5rem); margin-top: clamp(1.2rem, 2vw, 1.8rem); }
+.projectColumns { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(2rem, 4vw, 3.5rem); margin-top: clamp(1.2rem, 2vw, 1.8rem); }
 .projectSection { min-width: 0; }
 .projectSection > .sectionHeading { margin-bottom: .65rem; }
 .projectSection .sectionHeading h2 { font-size: clamp(1.45rem, 1.9vw, 1.95rem); }
-.projectList { display: grid; gap: .55rem; }
+.projectList { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: .65rem; }
 .projectCard { min-width: 0; min-height: 90px; display: grid; grid-template-columns: 160px minmax(0, 1fr) 22px; gap: .75rem; align-items: center; overflow: hidden; border: 1px solid var(--ds-border); border-radius: 13px; background: var(--ds-surface); transition: border-color 180ms ease, transform 180ms ease; }
 .projectCard:hover, .projectCard:focus-visible { border-color: var(--profile-accent); transform: translateY(-2px); }
 .projectVisual { width: 160px; min-height: 0; aspect-ratio: 16 / 9; display: grid; place-items: center; overflow: hidden; background: color-mix(in srgb, var(--profile-accent) 12%, var(--ds-bg)); }
@@ -111,7 +111,6 @@
   .profileFacts { display: contents; }
   .profileFacts > div { padding: .8rem; border-right: 1px solid var(--ds-border); border-bottom: 0; }
   .profileFacts > div:last-child { border-right: 0; }
-  .projectColumns { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 760px) {
@@ -127,6 +126,7 @@
   .aboutSection { grid-template-columns: 1fr; gap: 1.15rem; }
   .historyCopy { margin-left: 0; }
   .glance { padding: 1rem 0 0; border-top: 1px solid var(--ds-border); border-left: 0; }
+  .projectList { grid-template-columns: minmax(0, 1fr); }
   .memberNavigation { grid-template-columns: 1fr 44px 1fr; gap: .45rem; }
   .memberNavigation > a:not(.directoryLink) { grid-template-columns: 22px minmax(0, 1fr); }
   .memberNavigation > a:last-child { grid-template-columns: minmax(0, 1fr) 22px; }

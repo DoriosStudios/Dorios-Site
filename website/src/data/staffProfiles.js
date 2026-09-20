@@ -237,9 +237,9 @@ const profiles = [
     department: 'Art & Design',
     image: 'sam.jpg',
     specialties: ['Animation', 'Creative'],
-    bio: 'Creates animation and motion for Endless Agony and other projects.',
+    bio: 'Creates animation and motion for studio projects.',
     history: [
-      'Sam creates animation and motion for Endless Agony and other studio work.',
+      'Sam contributed animation and motion work to Endless Agony before its development was paused.',
       'Their recent work includes animations for an upcoming add-on, extending the studio’s projects through character and object motion.',
     ],
     joined: 'June 2025',
@@ -248,9 +248,7 @@ const profiles = [
     tools: [],
     areas: ['Animation', 'Creative'],
     createdProjects: [],
-    collaboratedProjects: [
-      { name: 'Endless Agony', role: 'Animator', summary: 'Animation and motion work.' },
-    ],
+    collaboratedProjects: [],
     timeline: [],
     links: {},
   },
@@ -261,9 +259,9 @@ const profiles = [
     department: 'Art & Design',
     image: 'mikey.jpg',
     specialties: ['Building'],
-    bio: 'Builds environments and structures for Endless Agony and UtilitySky.',
+    bio: 'Builds environments and structures for UtilitySky and other projects.',
     history: [
-      'MikeyZz builds environments and structures for adventure and survival projects, including Endless Agony and UtilitySky.',
+      'MikeyZz contributed environment and structure work to Endless Agony before its development was paused, and currently builds for UtilitySky.',
       'Before joining the studio, he created small building and utility add-ons including Buildy, Sneak Grow, Cyberpunk Blocks, Waypoints, Easy Shops and Shops. He also created the original Camouflage add-on before transferring it to Cloud.',
     ],
     joined: 'June 2025',
@@ -271,10 +269,52 @@ const profiles = [
     focus: 'Environment and structure building',
     tools: [],
     areas: ['Building', 'World design'],
-    createdProjects: [],
+    createdProjects: [
+      {
+        name: 'Cyberpunk Style Building Blocks',
+        href: 'https://www.curseforge.com/minecraft-bedrock/addons/cyberpunkblocks',
+        role: 'Creator & author',
+        summary: 'Neon and glowing blocks for cyberpunk-style building.',
+      },
+      {
+        name: 'Sneak Grow',
+        href: 'https://www.curseforge.com/minecraft-bedrock/addons/sneak-grow',
+        role: 'Creator',
+        summary: 'Speeds up crops, trees and plants when players sneak nearby.',
+      },
+      {
+        name: 'QuantumNavigation',
+        href: 'https://www.curseforge.com/minecraft-bedrock/addons/quantumnavigation',
+        role: 'Creator',
+        summary: 'Waypoint, teleportation and chunk-loading tools for survival and multiplayer worlds.',
+      },
+      {
+        name: 'EasyShops',
+        href: 'https://www.curseforge.com/minecraft-bedrock/addons/easyshops',
+        role: 'Creator',
+        summary: 'Player-owned chest shops, protected storage, banking and physical currency.',
+      },
+      {
+        name: 'BUILDY - Build Planner',
+        href: 'https://www.curseforge.com/minecraft-bedrock/addons/buildy-build-planner',
+        role: 'Creator',
+        summary: 'Survival blueprints for planning, sharing and completing large builds.',
+      },
+      {
+        name: 'Shops',
+        href: 'https://www.curseforge.com/minecraft-bedrock/addons/shops',
+        role: 'Creator',
+        summary: 'Portable player shops and auctions managed through an in-game tablet.',
+      },
+    ],
     collaboratedProjects: [
-      { name: 'Endless Agony', role: 'Builder', summary: 'Environment and structure work.' },
       { projectId: 'utilitysky', role: 'Builder', summary: 'Structures and world presentation.' },
+      {
+        name: 'Project - Camouflage',
+        href: 'https://www.curseforge.com/minecraft-bedrock/addons/project-camouflage',
+        role: 'Original creator & author',
+        summary: 'Created the original camouflage-block system before transferring maintenance to Cloud.',
+      },
     ],
     timeline: [],
     links: {
@@ -321,10 +361,59 @@ const profiles = [
     areas: ['Development', 'Collaboration'],
     createdProjects: [
       { projectId: 'smelters', role: 'Creator', summary: 'Expanded furnace progression and smelting systems.' },
+      {
+        name: 'Cloud Commands',
+        href: 'https://www.curseforge.com/minecraft-bedrock/scripts/cloud-commands',
+        role: 'Creator',
+        summary: 'Balanced teleportation commands for exploration and multiplayer worlds.',
+      },
+      {
+        name: 'UtilityAdventure',
+        href: 'https://www.curseforge.com/minecraft-bedrock/addons/utility-adventure',
+        role: 'Creator',
+        summary: 'Utility-focused systems for storing and processing liquids.',
+      },
+      {
+        name: 'Iron Chests New Legion',
+        href: 'https://www.curseforge.com/minecraft-bedrock/addons/iron-chests-unofficial-bedrock-edition-port',
+        role: 'Creator',
+        summary: 'Expanded chest tiers for compact, high-capacity storage.',
+      },
+      {
+        name: 'Cloud Trapdoors Bedrock Edition',
+        href: 'https://www.curseforge.com/minecraft-bedrock/addons/cloud-trapdoors-bedrock-edition',
+        role: 'Creator',
+        summary: 'Vanilla-style trapdoors for every plank variation.',
+      },
+      {
+        name: 'Food Tracker',
+        href: 'https://www.curseforge.com/minecraft-bedrock/addons/food-tracker',
+        role: 'Creator',
+        summary: 'Tracks food variety and rewards players for diversifying their meals.',
+      },
     ],
-    collaboratedProjects: [],
+    collaboratedProjects: [
+      {
+        projectId: 'trees',
+        role: 'Author',
+        summary: 'Contributed to the ore-tree farming add-on.',
+      },
+      {
+        name: 'Project - Camouflage',
+        href: 'https://www.curseforge.com/minecraft-bedrock/addons/project-camouflage',
+        role: 'Owner & maintainer',
+        summary: 'Maintains and develops the camouflage-block system after its transfer from MikeyZz.',
+      },
+      {
+        projectId: 'lamps',
+        role: 'Author',
+        summary: 'Contributed to the Bedrock redstone lamp add-on.',
+      },
+    ],
     timeline: [],
-    links: {},
+    links: {
+      CurseForge: 'https://www.curseforge.com/members/cloudcode/projects',
+    },
   },
   {
     id: 'mainmas',
