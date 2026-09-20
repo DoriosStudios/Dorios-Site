@@ -3175,19 +3175,20 @@ function AutoSieveSiftCard({group}) {
   );
 }
 
-function AutoSieveRecipeCatalog({recipes}) {
+function SiftingRecipeCatalog({machine, recipes}) {
   const groups = autosieveRecipeGroups(recipes);
+  const machineName = machine?.name ?? 'Autosieve';
   return (
     <section className={`${styles.machineRecipeSubsection} ${styles.autosieveRecipeSection}`} aria-labelledby="machine-autosieve-recipes">
       <div>
         <p className={styles.eyebrow}>02 / Processing</p>
         <h3 id="machine-autosieve-recipes">Sifting Results</h3>
-        <p className={styles.autosieveRecipeDescription}>The Autosieve rolls each sieveable block into its available drops. Results depend on the supplied block and the minimum mesh tier shown for each drop.</p>
+        <p className={styles.autosieveRecipeDescription}>The {machineName} rolls each sieveable block into its available drops. Results depend on the supplied block and the minimum mesh tier shown for each drop.</p>
       </div>
       <div className={styles.autosieveSiftGrid}>
         {groups.map((group) => <AutoSieveSiftCard group={group} key={group.id} />)}
       </div>
-      <p className={styles.autosieveRecipeNote}>Chances are evaluated independently for every Autosieve roll.</p>
+      <p className={styles.autosieveRecipeNote}>Chances are evaluated independently for every {machineName} roll.</p>
     </section>
   );
 }
@@ -3409,7 +3410,7 @@ function DynamicMachineOperation({machine}) {
 }
 
 function MachineRecipes({machine, recipes}) {
-  const usesSiftingCatalog = machine.id === 'autosieve';
+  const usesSiftingCatalog = ['autosieve', 'centrifugal_siever'].includes(machine.id);
   const usesAbyssalFisherCatalog = machine.id === 'abyssal_fisher';
   const [originFilter, setOriginFilter] = useState('All');
   const project = useWikiProject();
@@ -3422,7 +3423,7 @@ function MachineRecipes({machine, recipes}) {
           : <p className={styles.machineRecipeEmpty}>No crafting recipe is indexed for this machine.</p>}
       </section>
       {recipes.catalog.length > 0 && <RecipeOriginFilters recipes={recipes.catalog} active={originFilter} setActive={setOriginFilter} />}
-      {visibleCatalog.length > 0 && usesSiftingCatalog ? <AutoSieveRecipeCatalog recipes={visibleCatalog} />
+      {visibleCatalog.length > 0 && usesSiftingCatalog ? <SiftingRecipeCatalog machine={machine} recipes={visibleCatalog} />
         : visibleCatalog.length > 0 && usesAbyssalFisherCatalog ? <AbyssalFisherRecipeCatalog recipes={visibleCatalog} />
         : visibleCatalog.length > 0 && <section className={styles.machineRecipeSubsection} aria-labelledby="machine-recipes-catalog">
         <div><p className={styles.eyebrow}>02 / Processing</p><h3 id="machine-recipes-catalog">Recipes Catalog</h3></div>
