@@ -1,0 +1,126 @@
+{
+  "version.label": {
+    "message": "Atual",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.UtilityCraft Extensions": {
+    "message": "Extensões do UtilityCraft",
+    "description": "The label for category UtilityCraft Extensions in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Getting Started": {
+    "message": "Primeiros passos",
+    "description": "The label for category Getting Started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Your First Machine": {
+    "message": "Sua primeira máquina",
+    "description": "The label for category Your First Machine in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Machine UI": {
+    "message": "Interface de máquina",
+    "description": "The label for category Machine UI in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Machine IO": {
+    "message": "Entrada e saída de máquina",
+    "description": "The label for category Machine IO in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Machine Upgrades": {
+    "message": "Melhorias de máquina",
+    "description": "The label for category Machine Upgrades in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.UtilityCraft Registries": {
+    "message": "Registros do UtilityCraft",
+    "description": "The label for category UtilityCraft Registries in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Reusable Components": {
+    "message": "Componentes reutilizáveis",
+    "description": "The label for category Reusable Components in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Generators": {
+    "message": "Geradores",
+    "description": "The label for category Generators in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Advanced Examples": {
+    "message": "Exemplos avançados",
+    "description": "The label for category Advanced Examples in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Machine UI Core": {
+    "message": "Núcleo da interface de máquina",
+    "description": "The label for category Machine UI Core in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.DoriosCore": {
+    "message": "DoriosCore",
+    "description": "The label for category DoriosCore in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.dorios-core-api-reference": {
+    "message": "Referência da API",
+    "description": "The label for category API reference in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.DoriosLib": {
+    "message": "DoriosLib",
+    "description": "The label for category DoriosLib in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.dorios-lib-api-reference": {
+    "message": "Referência da API",
+    "description": "The label for category API reference in sidebar tutorialSidebar"
+  },
+  "sidebar.documentationSidebar.category.UtilityCraft Extensions": {
+    "message": "Extensões do UtilityCraft",
+    "description": "The label for category UtilityCraft Extensions in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Getting Started": {
+    "message": "Primeiros passos",
+    "description": "The label for category Getting Started in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Your First Machine": {
+    "message": "Sua primeira máquina",
+    "description": "The label for category Your First Machine in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Machine UI": {
+    "message": "Interface de máquina",
+    "description": "The label for category Machine UI in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Machine IO": {
+    "message": "Entrada e saída de máquina",
+    "description": "The label for category Machine IO in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Machine Upgrades": {
+    "message": "Melhorias de máquina",
+    "description": "The label for category Machine Upgrades in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.UtilityCraft Registries": {
+    "message": "Registros do UtilityCraft",
+    "description": "The label for category UtilityCraft Registries in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Reusable Components": {
+    "message": "Componentes reutilizáveis",
+    "description": "The label for category Reusable Components in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Generators": {
+    "message": "Geradores",
+    "description": "The label for category Generators in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Advanced Examples": {
+    "message": "Exemplos avançados",
+    "description": "The label for category Advanced Examples in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Machine UI Core": {
+    "message": "Núcleo da interface de máquina",
+    "description": "The label for category Machine UI Core in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.DoriosCore": {
+    "message": "DoriosCore",
+    "description": "The label for category DoriosCore in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.dorios-core-api-reference": {
+    "message": "Referência da API",
+    "description": "The label for category API reference in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.DoriosLib": {
+    "message": "DoriosLib",
+    "description": "The label for category DoriosLib in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.dorios-lib-api-reference": {
+    "message": "Referência da API",
+    "description": "The label for category API reference in sidebar documentationSidebar"
+  }
+}

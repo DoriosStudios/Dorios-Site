@@ -1,0 +1,30 @@
+{
+  "title": {
+    "message": "Dorios Studios",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Dorios Studios Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Projects": {
+    "message": "Projetos",
+    "description": "Navbar item with label Projects"
+  },
+  "item.label.Wiki": {
+    "message": "Wiki",
+    "description": "Navbar item with label Wiki"
+  },
+  "item.label.Documentation": {
+    "message": "Documentação",
+    "description": "Navbar item with label Documentation"
+  },
+  "item.label.Studio": {
+    "message": "Estúdio",
+    "description": "Navbar item with label Studio"
+  },
+  "item.label.Support": {
+    "message": "Suporte",
+    "description": "Navbar item with label Support"
+  }
+}

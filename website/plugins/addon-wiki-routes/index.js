@@ -1,10 +1,15 @@
 const path = require('node:path');
 const {pathToFileURL} = require('node:url');
+const {normalizeUrl} = require('@docusaurus/utils');
 
-module.exports = function doriosGeneratedRoutesPlugin() {
+module.exports = function doriosGeneratedRoutesPlugin(context) {
   return {
     name: 'dorios-generated-routes',
     async contentLoaded({actions}) {
+      const addLocalizedRoute = (route) => actions.addRoute({
+        ...route,
+        path: normalizeUrl([context.siteConfig.baseUrl, route.path]),
+      });
       const projectRoot = path.join(__dirname, '..', '..', 'src', 'wiki', 'projects');
       const genericProjectIds = require(path.join(projectRoot, 'generatedProjects.json'));
       const projectCatalog = require(path.join(__dirname, '..', '..', 'src', 'data', 'projectCatalog.json'));
@@ -33,7 +38,7 @@ module.exports = function doriosGeneratedRoutesPlugin() {
       const slugify = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
       const addEntryRoutes = (projectId, routeGroups) => {
         Object.entries(routeGroups).forEach(([entryType, slugs]) => {
-          slugs.forEach((slug) => actions.addRoute({
+          slugs.forEach((slug) => addLocalizedRoute({
             path: `/wiki/${projectId}/${entryType}/${slug}`,
             component: entryComponent,
             exact: true,
@@ -43,7 +48,7 @@ module.exports = function doriosGeneratedRoutesPlugin() {
         });
       };
       const addSectionRoutes = (projectId, sections) => {
-        sections.forEach((section) => actions.addRoute({
+        sections.forEach((section) => addLocalizedRoute({
           path: section === 'overview' ? `/wiki/${projectId}` : `/wiki/${projectId}/${section}`,
           component: pageComponent,
           exact: true,
@@ -53,7 +58,7 @@ module.exports = function doriosGeneratedRoutesPlugin() {
       };
 
       projectCatalog.projects.forEach((project) => {
-        [project.routes.project, ...project.aliases].forEach((projectPath) => actions.addRoute({
+        [project.routes.project, ...project.aliases].forEach((projectPath) => addLocalizedRoute({
           path: projectPath,
           component: projectComponent,
           exact: true,
@@ -62,7 +67,7 @@ module.exports = function doriosGeneratedRoutesPlugin() {
         }));
       });
 
-      staffData.staffMembers.forEach((member) => actions.addRoute({
+      staffData.staffMembers.forEach((member) => addLocalizedRoute({
         path: `/studio/staff/${member.id}`,
         component: staffComponent,
         exact: true,
@@ -114,7 +119,12 @@ module.exports = function doriosGeneratedRoutesPlugin() {
           .map((id) => ({
             id,
             manifest: require(path.join(projectRoot, id, 'manifest.json')),
+          processingRecipes: id === 'smelters'
+            ? require(path.join(projectRoot, id, 'furnaceData.generated.json')).processingRecipes
+            : [],
             machineFilter: (block) => block.componentKeys?.includes('tag:dorios:machine')
+              || (id === 'smelters' && (block.componentKeys?.includes('tag:better_smelters:furnace')
+                || block.componentKeys?.includes('better_smelters:furnace')))
               || /\/blocks\/machinery\/machines\//i.test(`/${block.source}`),
             generatorFilter: (block) => block.componentKeys?.includes('tag:dorios:generator')
               || /\/blocks\/machinery\/generators\//i.test(`/${block.source}`),
@@ -149,7 +159,7 @@ module.exports = function doriosGeneratedRoutesPlugin() {
         ].filter(Boolean);
         addSectionRoutes(project.id, sections);
         if (project.id === 'trinkets') {
-          trinketCategorySections.forEach(({id, aliases = []}) => aliases.forEach((alias) => actions.addRoute({
+          trinketCategorySections.forEach(({id, aliases = []}) => aliases.forEach((alias) => addLocalizedRoute({
             path: `/wiki/trinkets/${alias}`,
             component: pageComponent,
             exact: true,

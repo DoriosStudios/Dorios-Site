@@ -4,6 +4,8 @@ import Layout from '@theme/Layout';
 import DoriosMarketingShell from '../components/DoriosMarketingShell';
 import {projectCardPalette} from '../data/cardPalettes';
 import {getProject} from '../data/projects';
+import {useSiteI18n} from '../i18n/site';
+import {localizeProject} from '../i18n/projects';
 import styles from './home.module.css';
 
 const wordRows = [
@@ -27,13 +29,6 @@ function MovingWordField() {
   );
 }
 
-const destinations = [
-  {number: '01', label: 'Projects', to: '/projects', arrow: '↗'},
-  {number: '02', label: 'The Studio', to: '/studio', arrow: '↗'},
-  {number: '03', label: 'Wikis', to: '/wiki', arrow: '↗'},
-  {number: '04', label: 'Support us', to: '/support', arrow: '↗'},
-];
-
 const featuredShortcuts = ['utilitycraft', 'trinkets']
   .map((projectSlug) => getProject(projectSlug))
   .filter(Boolean);
@@ -47,27 +42,39 @@ function ArrowUpRight() {
 }
 
 export default function Home() {
+  const {t, locale} = useSiteI18n();
   const [hoveredDestination, setHoveredDestination] = useState(null);
   const [focusedDestination, setFocusedDestination] = useState(null);
   const activeDestination = hoveredDestination ?? focusedDestination;
+  const localizedFeaturedShortcuts = React.useMemo(
+    () => featuredShortcuts.map((project) => localizeProject(project, locale)),
+    [locale],
+  );
+
+  const destinations = [
+    {number: '01', label: t('projects'), to: '/projects', arrow: '↗'},
+    {number: '02', label: t('theStudio'), to: '/studio', arrow: '↗'},
+    {number: '03', label: t('wikis'), to: '/wiki', arrow: '↗'},
+    {number: '04', label: t('supportUs'), to: '/support', arrow: '↗'},
+  ];
 
   return (
-    <Layout title="Dorios Studios" description="Free Minecraft Bedrock addons made with imagination, care, and the community in mind." noFooter>
+    <Layout title="Dorios Studios" description={t('heroLead')} noFooter>
       <DoriosMarketingShell activePage="home">
         <main className={styles.homeMain}>
           <section className={styles.hero} aria-labelledby="home-title">
             <MovingWordField />
             <div className={styles.heroGrid}>
               <div className={styles.heroCopy}>
-                <p className={styles.eyebrow}>Independent Minecraft Bedrock studio</p>
-                <h1 id="home-title">Made to make <span>your world</span> bigger.</h1>
-                <p className={styles.heroLead}>Dorios Studios creates free, memorable addons that give players more ways to build, automate, explore, and play together.</p>
-                <Link className={styles.primaryButton} to="/projects">Explore our projects <span aria-hidden="true">→</span></Link>
+                <p className={styles.eyebrow}>{t('independentStudio')}</p>
+                <h1 id="home-title">{t('heroTitleBefore')} <span>{t('heroTitleAccent')}</span> {t('heroTitleAfter')}</h1>
+                <p className={styles.heroLead}>{t('heroLead')}</p>
+                <Link className={styles.primaryButton} to="/projects">{t('exploreProjects')} <span aria-hidden="true">→</span></Link>
               </div>
 
               <nav
                 className={styles.editorialNav}
-                aria-label="Explore Dorios Studios"
+                aria-label={t('exploreStudio')}
                 onMouseLeave={() => setHoveredDestination(null)}
                 onBlur={(event) => {
                   if (!event.currentTarget.contains(event.relatedTarget)) {
@@ -94,9 +101,9 @@ export default function Home() {
                 })}
               </nav>
             </div>
-            <div className={styles.heroFootnote}><span>Discover the studio</span><span className={styles.scrollLine} aria-hidden="true" /><span>Since 2021</span></div>
-            <section className={styles.featuredProjects} aria-label="Featured projects">
-              {featuredShortcuts.map((project) => <Link className={styles.featuredProjectCard} to={project.routes.project} key={project.id} style={projectCardPalette(project)}>
+            <div className={styles.heroFootnote}><span>{t('discoverStudio')}</span><span className={styles.scrollLine} aria-hidden="true" /><span>{t('since')}</span></div>
+            <section className={styles.featuredProjects} aria-label={t('featuredProjects')}>
+              {localizedFeaturedShortcuts.map((project) => <Link className={styles.featuredProjectCard} to={project.routes.project} key={project.id} style={projectCardPalette(project)}>
                   <span className={styles.featuredThumbnail}>
                     <img src={project.media.icon} alt="" loading="lazy" />
                   </span>

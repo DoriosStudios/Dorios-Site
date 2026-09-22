@@ -4,7 +4,9 @@ import Layout from '@theme/Layout';
 import {IconArrowUpRight, IconDownload, IconSortAscendingLetters, IconTrendingUp} from '@tabler/icons-react';
 import DoriosMarketingShell from '../../components/DoriosMarketingShell';
 import {projectCardPalette} from '../../data/cardPalettes';
-import {getProject, listedProjects} from '../../data/projects';
+import {listedProjects} from '../../data/projects';
+import {useSiteI18n} from '../../i18n/site';
+import {localizeProjects} from '../../i18n/projects';
 import styles from './projects.module.css';
 
 const catalogPreviewSize = 8;
@@ -16,29 +18,29 @@ const featuredSummaries = {
   'ascendant-technology': 'Superior machines and advanced materials for UtilityCraft’s end game.',
 };
 
-const primaryCarouselProjects = ['utilitycraft', 'trinkets']
-  .map((projectId) => getProject(projectId))
-  .filter(Boolean);
+const primaryCarouselProjectIds = ['utilitycraft', 'trinkets'];
 
 function Tags({project}) {
+  const {t} = useSiteI18n();
   return (
     <div className={styles.tags}>
       <span>{project.kind}</span>
       <span>{project.category}</span>
-      {project.ownership === 'community' && <span>Community</span>}
+      {project.ownership === 'community' && <span>{t('community')}</span>}
     </div>
   );
 }
 
 function DownloadBadge({project}) {
+  const {t, formatNumber} = useSiteI18n();
   const {downloadStats} = project;
   return (
     <span
       className={styles.downloadBadge}
-      title={`${downloadStats.total.toLocaleString('en-US')} combined CurseForge and GitHub downloads`}>
+      title={t('combinedDownloads', {count: formatNumber(downloadStats.total)})}>
       <IconDownload aria-hidden="true" size={14} stroke={2} />
       <strong>{downloadStats.display}</strong>
-      <span>downloads</span>
+      <span>{t('downloads')}</span>
     </span>
   );
 }
@@ -66,6 +68,7 @@ function ProjectArtwork({project, eager = false, className = ''}) {
 }
 
 function UtilityFeaturedCard({project}) {
+  const {t} = useSiteI18n();
   if (!project) return null;
   return (
     <Link
@@ -75,7 +78,7 @@ function UtilityFeaturedCard({project}) {
       <ProjectArtwork project={project} eager className={styles.utilityArtwork} />
       <div className={styles.utilityContent}>
         <div className={styles.utilityMetadata}>
-          <p className={styles.overline}>Featured project</p>
+          <p className={styles.overline}>{t('featuredProject')}</p>
           <Tags project={project} />
         </div>
         <h2>{project.name}</h2>
@@ -87,20 +90,21 @@ function UtilityFeaturedCard({project}) {
   );
 }
 
-function FeaturedCarousel() {
+function FeaturedCarousel({projects}) {
+  const {t} = useSiteI18n();
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    if (paused || primaryCarouselProjects.length < 2) return undefined;
+    if (paused || projects.length < 2) return undefined;
     const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % primaryCarouselProjects.length);
+      setActiveIndex((current) => (current + 1) % projects.length);
     }, 5200);
     return () => window.clearInterval(timer);
-  }, [paused]);
+  }, [paused, projects.length]);
 
-  if (!primaryCarouselProjects.length) return null;
-  const activeProject = primaryCarouselProjects[activeIndex];
+  if (!projects.length) return null;
+  const activeProject = projects[activeIndex];
   return (
     <div
       className={styles.primaryCarousel}
@@ -109,12 +113,12 @@ function FeaturedCarousel() {
       onFocusCapture={() => setPaused(true)}
       onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false); }}>
       <UtilityFeaturedCard key={activeProject.id} project={activeProject} />
-      <div className={styles.carouselPager} aria-label="Featured project carousel">
-        {primaryCarouselProjects.map((project, index) => <button
+      <div className={styles.carouselPager} aria-label={t('featuredCarousel')}>
+        {projects.map((project, index) => <button
           type="button"
           key={project.id}
           className={index === activeIndex ? styles.carouselPagerActive : undefined}
-          aria-label={`Show ${project.name}`}
+          aria-label={t('showProject', {project: project.name})}
           aria-current={index === activeIndex ? 'true' : undefined}
           onClick={() => setActiveIndex(index)}
         />)}
@@ -163,33 +167,37 @@ function CatalogCard({project}) {
 }
 
 export default function ProjectsPage() {
+  const {t, locale} = useSiteI18n();
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [sortMode, setSortMode] = useState('downloads');
-  const heavyMachinery = getProject('heavy-machinery');
-  const ascendantTechnology = getProject('ascendant-technology');
+  const localizedProjects = React.useMemo(() => localizeProjects(listedProjects, locale), [locale]);
+  const byId = React.useMemo(() => new Map(localizedProjects.map((project) => [project.id, project])), [localizedProjects]);
+  const primaryCarouselProjects = primaryCarouselProjectIds.map((projectId) => byId.get(projectId)).filter(Boolean);
+  const heavyMachinery = byId.get('heavy-machinery');
+  const ascendantTechnology = byId.get('ascendant-technology');
   const featuredIds = new Set(['utilitycraft', 'trinkets', 'heavy-machinery', 'ascendant-technology']);
-  const catalogProjects = listedProjects
+  const catalogProjects = localizedProjects
     .filter((project) => !featuredIds.has(project.id))
     .sort((left, right) => sortMode === 'alphabetical'
-      ? left.name.localeCompare(right.name, 'en', {sensitivity: 'base'})
+      ? left.name.localeCompare(right.name, locale, {sensitivity: 'base'})
       : right.downloadStats.total - left.downloadStats.total || left.name.localeCompare(right.name));
   const visibleCatalogProjects = showAllProjects
     ? catalogProjects
     : catalogProjects.slice(0, catalogPreviewSize);
 
   return (
-    <Layout title="Projects" description="Minecraft Bedrock projects by Dorios Studios." noFooter>
+    <Layout title={t('projects')} description={t('projectsHeroDescription')} noFooter>
       <DoriosMarketingShell activePage="projects">
         <main className={styles.projectsPage}>
           <header className={styles.hero} aria-labelledby="projects-title">
-            <p className={styles.kicker}>The work · {listedProjects.length} listed projects</p>
-            <h1 id="projects-title">Built for more ways <span>to play.</span></h1>
-            <p className={styles.heroDescription}>From essential utilities to new adventures, explore a growing catalog of active projects and established studio releases.</p>
+            <p className={styles.kicker}>{t('workCount', {count: localizedProjects.length})}</p>
+            <h1 id="projects-title">{t('projectsHeroBefore')} <span>{t('projectsHeroAccent')}</span></h1>
+            <p className={styles.heroDescription}>{t('projectsHeroDescription')}</p>
           </header>
 
-          <section className={styles.featuredSection} aria-label="Featured projects">
+          <section className={styles.featuredSection} aria-label={t('featuredProjects')}>
             <div className={styles.featuredGrid}>
-              <FeaturedCarousel />
+              <FeaturedCarousel projects={primaryCarouselProjects} />
               <div className={styles.bannerStack}>
                 <BannerFeaturedCard project={heavyMachinery} />
                 <BannerFeaturedCard project={ascendantTechnology} />
@@ -199,14 +207,14 @@ export default function ProjectsPage() {
 
           <section className={styles.catalog} aria-labelledby="catalog-title">
             <div className={styles.catalogHeader}>
-              <div><p className={styles.kicker}>More from Dorios</p><h2 id="catalog-title">Find your next project.</h2></div>
-              <div className={styles.sortControl} role="group" aria-label="Sort projects">
-                <span>Sort by</span>
+              <div><p className={styles.kicker}>{t('moreFromDorios')}</p><h2 id="catalog-title">{t('findNextProject')}</h2></div>
+              <div className={styles.sortControl} role="group" aria-label={t('sortProjects')}>
+                <span>{t('sortBy')}</span>
                 <button type="button" aria-pressed={sortMode === 'downloads'} onClick={() => setSortMode('downloads')}>
-                  <IconTrendingUp aria-hidden="true" size={16} stroke={1.9} /> Downloads
+                  <IconTrendingUp aria-hidden="true" size={16} stroke={1.9} /> {t('downloadsMetric')}
                 </button>
                 <button type="button" aria-pressed={sortMode === 'alphabetical'} onClick={() => setSortMode('alphabetical')}>
-                  <IconSortAscendingLetters aria-hidden="true" size={16} stroke={1.9} /> Alphabetical
+                  <IconSortAscendingLetters aria-hidden="true" size={16} stroke={1.9} /> {t('alphabetical')}
                 </button>
               </div>
             </div>
@@ -220,7 +228,7 @@ export default function ProjectsPage() {
                 aria-expanded={showAllProjects}
                 aria-controls="project-catalog"
                 onClick={() => setShowAllProjects((current) => !current)}>
-                {showAllProjects ? 'Show Fewer Projects' : 'View All Projects'}
+                {showAllProjects ? t('showFewerProjects') : t('viewAllProjects')}
                 <IconArrowUpRight aria-hidden="true" size={18} stroke={1.9} />
               </button>
             )}

@@ -53,7 +53,12 @@ const config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'pt-BR', 'es-MX'],
+    localeConfigs: {
+      en: {label: 'English', htmlLang: 'en-US'},
+      'pt-BR': {label: 'Português (Brasil)', htmlLang: 'pt-BR'},
+      'es-MX': {label: 'Español (México)', htmlLang: 'es-MX'},
+    },
   },
 
   presets: [
@@ -89,7 +94,12 @@ const config = {
           createSitemapItems: async ({defaultCreateSitemapItems, ...params}) => {
             const items = await defaultCreateSitemapItems(params);
             const legacyPaths = new Set(['/projects/ascendant', '/projects/cobble_gens']);
-            return items.filter((item) => !legacyPaths.has(new URL(item.url).pathname.replace(/\/$/, '')));
+            return items.filter((item) => {
+              const pathname = new URL(item.url).pathname
+                .replace(/^\/(?:pt-BR|es-MX)(?=\/|$)/, '')
+                .replace(/\/$/, '');
+              return !legacyPaths.has(pathname);
+            });
           },
         },
       }),
@@ -104,6 +114,7 @@ const config = {
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         indexPages: true,
+        language: ['en', 'pt', 'es'],
         docsRouteBasePath: ['docs', 'documentation'],
         // These routes are retained for direct links, but duplicate the
         // generated wiki and must not outrank its current entries in search.
@@ -189,6 +200,7 @@ const config = {
           {to: '/studio', label: 'Studio', position: 'left'},
           {to: '/support', label: 'Support', position: 'left'},
           {type: 'search', position: 'right'},
+          {type: 'custom-localeCycle', position: 'right'},
         ],
       },
 

@@ -1,6 +1,7 @@
 import React, {createContext, useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react';
 import Link from '@docusaurus/Link';
 import {useHistory, useLocation} from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import '@fontsource-variable/space-grotesk';
 import {
@@ -33,6 +34,7 @@ import {RECIPE_ORIGINS, recipeOriginFor as resolveRecipeOrigin} from '../../wiki
 import {fluidVisualFor, MACHINE_RESOURCE_ICONS} from '../../data/resourceVisuals';
 import {getProjectByWikiPath} from '../../data/projects';
 import {projectCardPalette} from '../../data/cardPalettes';
+import {useSiteI18n} from '../../i18n/site';
 import vanillaAssetIndex from '../../data/vanillaAssetIndex.json';
 import styles from './styles.module.css';
 
@@ -59,29 +61,46 @@ function WikiIcon({name, size = 20, stroke = 1.8}) {
 }
 
 const WIKI_SECTION_GROUPS = [
-  {id: 'overview', label: 'Overview', sections: ['overview', 'how-to-play']},
-  {id: 'content', label: 'Content', sections: ['items', 'blocks', 'entities']},
-  {id: 'systems', label: 'Systems', sections: ['machines', 'generators']},
-  {id: 'reference', label: 'Reference', sections: ['recipes', 'mechanics']},
+  {id: 'overview', labelKey: 'overview', sections: ['overview', 'how-to-play']},
+  {id: 'content', labelKey: 'content', sections: ['items', 'blocks', 'entities']},
+  {id: 'systems', labelKey: 'systems', sections: ['machines', 'generators']},
+  {id: 'reference', labelKey: 'reference', sections: ['recipes', 'mechanics']},
 ];
 const TRINKET_TYPE_SECTION_IDS = new Set(['hearty-charms', 'feet', 'rings', 'head', 'body', 'necklaces', 'charms', 'talismans', 'gauntlets', 'dolls', 'archaic-charms', 'amulets']);
 const EQUIPMENT_SECTION_IDS = new Set(['armor-sets', 'ring-materials', 'utility-items']);
 const CATALOG_PAGE_SIZE = 60;
 
-function groupedWikiSections(sections) {
+const SECTION_LABEL_KEYS = {
+  overview: 'overview',
+  items: 'items',
+  blocks: 'blocks',
+  machines: 'machines',
+  generators: 'generators',
+  entities: 'entities',
+  recipes: 'recipes',
+  mechanics: 'mechanics',
+  'how-to-play': 'howToPlay',
+};
+
+function localizedSection(section, t) {
+  const labelKey = SECTION_LABEL_KEYS[section.id];
+  return labelKey ? {...section, label: t(labelKey)} : section;
+}
+
+function groupedWikiSections(sections, t) {
   const assigned = new Set();
   const groups = WIKI_SECTION_GROUPS.map((group) => {
-    const matches = group.sections.map((id) => sections.find((section) => section.id === id)).filter(Boolean);
+    const matches = group.sections.map((id) => sections.find((section) => section.id === id)).filter(Boolean).map((section) => localizedSection(section, t));
     matches.forEach((section) => assigned.add(section.id));
-    return {...group, sections: matches};
+    return {...group, label: t(group.labelKey), sections: matches};
   }).filter((group) => group.sections.length);
-  const remaining = sections.filter((section) => !assigned.has(section.id));
+  const remaining = sections.filter((section) => !assigned.has(section.id)).map((section) => localizedSection(section, t));
   const trinketTypes = remaining.filter((section) => TRINKET_TYPE_SECTION_IDS.has(section.id));
   const equipment = remaining.filter((section) => EQUIPMENT_SECTION_IDS.has(section.id));
-  if (trinketTypes.length) groups.splice(Math.min(1, groups.length), 0, {id: 'trinket-types', label: 'Trinket Types', sections: trinketTypes});
-  if (equipment.length) groups.splice(Math.min(2, groups.length), 0, {id: 'equipment', label: 'Equipment', sections: equipment});
+  if (trinketTypes.length) groups.splice(Math.min(1, groups.length), 0, {id: 'trinket-types', label: t('trinketTypes'), sections: trinketTypes});
+  if (equipment.length) groups.splice(Math.min(2, groups.length), 0, {id: 'equipment', label: t('equipment'), sections: equipment});
   const ungrouped = remaining.filter((section) => !TRINKET_TYPE_SECTION_IDS.has(section.id) && !EQUIPMENT_SECTION_IDS.has(section.id));
-  if (ungrouped.length) groups.push({id: 'more', label: 'More', sections: ungrouped});
+  if (ungrouped.length) groups.push({id: 'more', label: t('more'), sections: ungrouped});
   return groups;
 }
 
@@ -211,6 +230,7 @@ function sectionSocialImage(project, section, itemCategory) {
 }
 
 function WikiSearch({query, setQuery, placeholder, compact = false}) {
+  const {t} = useSiteI18n();
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -227,13 +247,13 @@ function WikiSearch({query, setQuery, placeholder, compact = false}) {
   return (
     <label className={`${styles.search} ${compact ? styles.compactWikiSearch : ''}`}>
       <IconSearch aria-hidden="true" size={18} stroke={1.8} />
-      <span className={styles.srOnly}>Search this wiki section</span>
+      <span className={styles.srOnly}>{t('searchSection')}</span>
       <input
         ref={inputRef}
         type="search"
         value={query}
         onChange={(event) => setQuery(event.target.value)}
-        placeholder={placeholder ?? 'Search wiki…'}
+        placeholder={placeholder ?? t('searchWiki')}
       />
       <kbd>Ctrl K</kbd>
     </label>
@@ -241,6 +261,7 @@ function WikiSearch({query, setQuery, placeholder, compact = false}) {
 }
 
 function WikiFrame({active, query, setQuery, children}) {
+  const {t} = useSiteI18n();
   const project = useWikiProject();
   const catalogProject = getProjectByWikiPath(project.basePath);
   const activeSectionRef = useRef(null);
@@ -251,7 +272,7 @@ function WikiFrame({active, query, setQuery, children}) {
   const activeChildSection = activeRootSection?.children?.find((child) => (
     active === (child.id === 'introduction' ? activeRootSection.id : `${activeRootSection.id}/${child.id}`)
   ));
-  const mobileNavigationLabel = activeChildSection?.label ?? activeRootSection?.label ?? 'Wiki navigation';
+  const mobileNavigationLabel = activeChildSection?.label ?? (activeRootSection ? localizedSection(activeRootSection, t).label : t('wikiNavigation'));
 
   useEffect(() => {
     setSidebarCollapsed(window.localStorage.getItem('dorios-wiki-sidebar-collapsed') === 'true');
@@ -352,7 +373,7 @@ function WikiFrame({active, query, setQuery, children}) {
       <main className={styles.wikiPage} style={projectCardPalette(project.id)}>
         <div className={styles.contextBar}>
           <div className={styles.breadcrumb}>
-            <Link to="/projects">Projects</Link>
+            <Link to="/projects">{t('projects')}</Link>
             {catalogProject && <><i aria-hidden="true" /><Link to={catalogProject.routes.project}>{catalogProject.name}</Link></>}
             <i aria-hidden="true" />
             <Link to={project.basePath}>{project.wikiName}</Link>
@@ -367,17 +388,17 @@ function WikiFrame({active, query, setQuery, children}) {
                 <span className={styles.navIcon}><WikiIcon name={activeRootSection?.icon ?? 'book'} /></span>
                 <span><strong>{mobileNavigationLabel}</strong></span>
               </div>
-              <WikiSearch query={query} setQuery={setQuery} placeholder="Search…" compact />
+              <WikiSearch query={query} setQuery={setQuery} placeholder={t('searchWiki')} compact />
               <button
                 type="button"
                 className={styles.mobileSidebarToggle}
                 data-wiki-menu
                 onClick={() => setMobileNavigationOpen((current) => !current)}
-                aria-label={mobileNavigationOpen ? 'Close wiki navigation' : 'Open wiki navigation'}
+                aria-label={mobileNavigationOpen ? t('closeWikiNavigation') : t('openWikiNavigation')}
                 aria-expanded={mobileNavigationOpen}
                 aria-controls="wiki-navigation"
               >
-                <span>{mobileNavigationOpen ? 'Close' : 'Browse'}</span>
+                <span>{mobileNavigationOpen ? t('close') : t('browse')}</span>
                 <IconChevronDown aria-hidden="true" size={18} stroke={2} />
               </button>
             </div>
@@ -387,9 +408,9 @@ function WikiFrame({active, query, setQuery, children}) {
                 type="button"
                 className={styles.sidebarToggle}
                 onClick={toggleSidebar}
-                aria-label={sidebarCollapsed ? 'Expand wiki sidebar' : 'Collapse wiki sidebar'}
+                aria-label={sidebarCollapsed ? t('expandSidebar') : t('collapseSidebar')}
                 aria-expanded={!sidebarCollapsed}
-                title={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+                title={sidebarCollapsed ? t('expandSidebar') : t('collapseSidebar')}
               >
                 {sidebarCollapsed
                   ? <IconChevronRight aria-hidden="true" size={18} stroke={1.9} />
@@ -398,7 +419,7 @@ function WikiFrame({active, query, setQuery, children}) {
             </div>
             <div id="wiki-navigation" className={`${styles.mobileNavContent} ${mobileNavigationOpen ? styles.mobileNavOpen : ''}`}>
               <nav>
-                {groupedWikiSections(project.wikiSections).map((group) => (
+                {groupedWikiSections(project.wikiSections, t).map((group) => (
                   <section className={styles.navSection} key={group.id} aria-label={group.label}>
                     <p className={styles.navSectionLabel}>{group.label}</p>
                     <div>{group.sections.map(renderWikiSection)}</div>
@@ -408,7 +429,7 @@ function WikiFrame({active, query, setQuery, children}) {
               {project.repository && (
                 <a className={styles.repoSideLink} href={project.repository} target="_blank" rel="noreferrer">
                   <IconBrandGithub aria-hidden="true" size={18} stroke={1.8} />
-                  <span>GitHub repository</span>
+                  <span>{t('githubRepository')}</span>
                   <IconExternalLink className={styles.repoExternalIcon} aria-hidden="true" size={16} stroke={1.8} />
                 </a>
               )}
@@ -435,9 +456,10 @@ function PageIntro({section, count, countLabel, eyebrow}) {
   );
 }
 
-function FilterChips({categories, active, setActive, ariaLabel = 'Filter categories'}) {
+function FilterChips({categories, active, setActive, ariaLabel}) {
+  const {t} = useSiteI18n();
   return (
-    <div className={styles.filterChips} aria-label={ariaLabel}>
+    <div className={styles.filterChips} aria-label={ariaLabel ?? t('filterCategories')}>
       {categories.map(({id, name, count, origin}) => {
         const value = id ?? name;
         return (
@@ -3459,6 +3481,7 @@ function DynamicMachineOperation({machine}) {
 }
 
 function MachineRecipes({machine, recipes}) {
+  const {t} = useSiteI18n();
   const usesSiftingCatalog = ['autosieve', 'centrifugal_siever'].includes(machine.id);
   const usesAbyssalFisherCatalog = machine.id === 'abyssal_fisher';
   const [originFilter, setOriginFilter] = useState('All');
@@ -3467,45 +3490,46 @@ function MachineRecipes({machine, recipes}) {
   return (
     <div className={styles.machineRecipes}>
       <section className={styles.machineRecipeSubsection} aria-labelledby="machine-obtain">
-        <div><p className={styles.eyebrow}>01 / Acquisition</p><h3 id="machine-obtain">How to Obtain</h3></div>
+        <div><p className={styles.eyebrow}>01 / {t('acquisition')}</p><h3 id="machine-obtain">{t('howToObtain')}</h3></div>
         {recipes.obtain.length ? <div className={styles.machineObtainGrid}>{recipes.obtain.map((recipe) => <RecipeCard recipe={recipe} key={`obtain-${recipe.id}`} />)}</div>
-          : <p className={styles.machineRecipeEmpty}>No crafting recipe is indexed for this machine.</p>}
+          : <p className={styles.machineRecipeEmpty}>{t('noCraftingRecipe')}</p>}
       </section>
       {recipes.catalog.length > 0 && <RecipeOriginFilters recipes={recipes.catalog} active={originFilter} setActive={setOriginFilter} />}
       {visibleCatalog.length > 0 && usesSiftingCatalog ? <SiftingRecipeCatalog machine={machine} recipes={visibleCatalog} />
         : visibleCatalog.length > 0 && usesAbyssalFisherCatalog ? <AbyssalFisherRecipeCatalog recipes={visibleCatalog} />
         : visibleCatalog.length > 0 && <section className={styles.machineRecipeSubsection} aria-labelledby="machine-recipes-catalog">
-        <div><p className={styles.eyebrow}>02 / Processing</p><h3 id="machine-recipes-catalog">Recipes Catalog</h3></div>
+        <div><p className={styles.eyebrow}>02 / {t('processing')}</p><h3 id="machine-recipes-catalog">{t('recipesCatalog')}</h3></div>
         <div className={styles.machineRecipeCatalog}>{visibleCatalog.map((recipe) => <ProcessingCatalogCard recipe={recipe} machine={machine} key={`process-${recipe.id}`} />)}</div>
       </section>}
       {!recipes.catalog.length && <DynamicMachineOperation machine={machine} />}
-      {recipes.catalog.length > 0 && !visibleCatalog.length && <p className={styles.machineRecipeEmpty}>No recipes match the selected add-on origin.</p>}
+      {recipes.catalog.length > 0 && !visibleCatalog.length && <p className={styles.machineRecipeEmpty}>{t('noOriginRecipes')}</p>}
     </div>
   );
 }
 
 function MachineDocumentationTabs({machine, controller, blockDetails, specifications}) {
+  const {t} = useSiteI18n();
   const project = useWikiProject();
   const [activeTab, setActiveTab] = useHashSection(MACHINE_SECTION_IDS, 'details');
   const recipes = machineRecipeSets(project, machine, controller);
   const tabs = [
     {
       id: 'details',
-      label: 'Block Details',
+      label: t('blockDetails'),
       content: <div className={styles.machineReferenceGrid}>
-        <MachineReferencePanel index={1} title="Block Details" copy="Minecraft block properties, mining requirements and applicable categories." items={blockDetails.items} tags={blockDetails.tags} />
+        <MachineReferencePanel index={1} title={t('blockDetails')} copy={t('blockDetailsCopy')} items={blockDetails.items} tags={blockDetails.tags} />
       </div>,
     },
     {
       id: 'specs',
-      label: 'Machine Specifications',
+      label: t('machineSpecifications'),
       content: <div className={styles.machineReferenceGrid}>
-        <MachineReferencePanel index={2} title="Machine Specifications" copy="Capacity, operating values, interfaces and machine-specific limits." items={specifications} />
+        <MachineReferencePanel index={2} title={t('machineSpecifications')} copy={t('machineSpecificationsCopy')} items={specifications} />
       </div>,
     },
     {
       id: 'drops',
-      label: 'Recipes',
+      label: t('recipes'),
       content: <MachineRecipes machine={machine} recipes={recipes} />,
     },
   ];
@@ -3513,12 +3537,12 @@ function MachineDocumentationTabs({machine, controller, blockDetails, specificat
     <section className={styles.machineReference} aria-labelledby="machine-reference">
       <header>
         <div>
-          <p className={styles.eyebrow}>Technical reference</p>
-          <h2 id="machine-reference">Built to be understood</h2>
+          <p className={styles.eyebrow}>{t('technicalReference')}</p>
+          <h2 id="machine-reference">{t('builtToUnderstand')}</h2>
         </div>
-        <p>Choose a section to inspect block properties, technical capabilities, or the recipes this machine supports.</p>
+        <p>{t('machineSectionPrompt')}</p>
       </header>
-      <div className={styles.machineTabs} role="tablist" aria-label="Machine documentation sections">
+      <div className={styles.machineTabs} role="tablist" aria-label={t('machineDocumentationSections')}>
         {tabs.map((tab) => <button
           key={tab.id}
           id={`machine-tab-${tab.id}`}
@@ -3789,7 +3813,8 @@ function AddonWikiEntryContent({entryType, slug}) {
 }
 
 export function AddonWikiEntryPage({projectId = 'heavy-machinery', ...props}) {
-  const project = getWikiProject(projectId);
+  const {i18n: {currentLocale}} = useDocusaurusContext();
+  const project = useMemo(() => getWikiProject(projectId, currentLocale), [projectId, currentLocale]);
   return (
     <WikiProjectContext.Provider value={project}>
       <AddonWikiEntryContent {...props} />
@@ -3840,7 +3865,8 @@ function AddonWikiContent({section}) {
 }
 
 export default function AddonWiki({projectId = 'heavy-machinery', section = 'overview'}) {
-  const project = getWikiProject(projectId);
+  const {i18n: {currentLocale}} = useDocusaurusContext();
+  const project = useMemo(() => getWikiProject(projectId, currentLocale), [projectId, currentLocale]);
   return (
     <WikiProjectContext.Provider value={project}>
       <AddonWikiContent section={section} />

@@ -5,14 +5,12 @@ import '@fontsource-variable/space-grotesk';
 import DoriosMarketingShell from '../../components/DoriosMarketingShell';
 import {projectCardPalette} from '../../data/cardPalettes';
 import {listedProjects} from '../../data/projects';
+import {useSiteI18n} from '../../i18n/site';
+import {localizeProjects} from '../../i18n/projects';
 import {wikiProjects} from '../../wiki/projects';
 import styles from './wikiHub.module.css';
 
 const wikis = listedProjects.filter((project) => project.routes.wiki);
-const featuredWikis = wikis
-  .filter((project) => Number.isInteger(project.featuredRank))
-  .sort((left, right) => left.featuredRank - right.featuredRank);
-const libraryWikis = wikis.filter((project) => !Number.isInteger(project.featuredRank));
 
 function ArrowIcon() {
   return (
@@ -51,7 +49,7 @@ function WikiCardImage({wiki, eager}) {
   />;
 }
 
-function cardMetrics(wiki) {
+function cardMetrics(wiki, t, formatNumber) {
   const project = wikiProjects[wiki.id];
   const values = {
     items: project?.items?.length ?? wiki.metrics?.items,
@@ -62,11 +60,12 @@ function cardMetrics(wiki) {
   return Object.entries(values)
     .filter(([, value]) => Number(value) > 0)
     .slice(0, 3)
-    .map(([label, value]) => `${Number(value).toLocaleString('en-US')} ${label}`);
+    .map(([label, value]) => `${formatNumber(value)} ${t(`${label}Metric`)}`);
 }
 
 function WikiCard({wiki, index}) {
-  const metrics = cardMetrics(wiki);
+  const {t, formatNumber} = useSiteI18n();
+  const metrics = cardMetrics(wiki, t, formatNumber);
   return (
     <Link className={styles.wikiLink} to={wiki.routes.wiki} style={projectCardPalette(wiki)}>
       <article className={styles.wikiCard}>
@@ -86,24 +85,30 @@ function WikiCard({wiki, index}) {
 }
 
 export default function WikiHub() {
+  const {t, locale} = useSiteI18n();
+  const localizedWikis = React.useMemo(() => localizeProjects(wikis, locale), [locale]);
+  const featuredWikis = localizedWikis
+    .filter((project) => Number.isInteger(project.featuredRank))
+    .sort((left, right) => left.featuredRank - right.featuredRank);
+  const libraryWikis = localizedWikis.filter((project) => !Number.isInteger(project.featuredRank));
   return (
-    <Layout title="Dorios Studios Wikis" description="Technical references for Dorios Studios add-ons." noFooter>
+    <Layout title="Dorios Studios Wikis" description={t('technicalLibrary')} noFooter>
       <DoriosMarketingShell activePage="wiki">
         <main className={styles.page}>
           <header className={styles.hero}>
-            <p>Technical reference library</p>
-            <h1>Choose a project.</h1>
-            <span>Each wiki is generated from its own add-on data and uses the shared Dorios catalog interface.</span>
+            <p>{t('technicalLibrary')}</p>
+            <h1>{t('chooseProject')}</h1>
+            <span>{t('wikiHubLead')}</span>
           </header>
 
           {featuredWikis.length > 0 && (
             <section className={styles.collection} aria-labelledby="core-wikis-title">
               <div className={styles.sectionHeading}>
                 <div>
-                  <p>Start here</p>
-                  <h2 id="core-wikis-title">Core references</h2>
+                  <p>{t('startHere')}</p>
+                  <h2 id="core-wikis-title">{t('coreReferences')}</h2>
                 </div>
-                <span>{featuredWikis.length} featured projects</span>
+                <span>{t('featuredCount', {count: featuredWikis.length})}</span>
               </div>
               <div className={styles.wikiGrid}>
                 {featuredWikis.map((wiki, index) => (
@@ -117,10 +122,10 @@ export default function WikiHub() {
             <section className={styles.collection} aria-labelledby="library-wikis-title">
               <div className={styles.sectionHeading}>
                 <div>
-                  <p>Project library</p>
-                  <h2 id="library-wikis-title">More project wikis</h2>
+                  <p>{t('projectLibrary')}</p>
+                  <h2 id="library-wikis-title">{t('moreWikis')}</h2>
                 </div>
-                <span>{libraryWikis.length} references</span>
+                <span>{t('referenceCount', {count: libraryWikis.length})}</span>
               </div>
               <div className={styles.wikiGrid}>
                 {libraryWikis.map((wiki, index) => (

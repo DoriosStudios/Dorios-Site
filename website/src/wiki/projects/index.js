@@ -2,6 +2,7 @@ import ascendantTechnology from './ascendant-technology';
 import generatedProjects from './generatedProjects';
 import heavyMachinery from './heavy-machinery';
 import utilitycraft from './utilitycraft';
+import localizedWikiNames from '../../i18n/wikiNames.generated.json';
 
 const projects = {
   [ascendantTechnology.id]: ascendantTechnology,
@@ -51,6 +52,53 @@ const globalCatalogEntries = Object.values(projects).flatMap((project) => [
   ...globalBlockEntriesFor(project),
 ]);
 
+function localeNameMap(locale) {
+  const localeProjects = localizedWikiNames.locales?.[locale] ?? {};
+  return Object.values(localeProjects).reduce((result, project) => Object.assign(result, project.names), {});
+}
+
+function localizeEntry(entry, names) {
+  if (!entry) return entry;
+  const localizedName = names[entry.identifier] ?? names[entry.id];
+  return {
+    ...entry,
+    name: localizedName ?? entry.name,
+    variants: entry.variants?.map((variant) => ({
+      ...variant,
+      name: names[variant.identifier] ?? names[variant.id] ?? variant.name,
+    })),
+  };
+}
+
+export function localizeWikiProject(project, locale) {
+  if (!project || locale === 'en') return project;
+  const names = localeNameMap(locale);
+  const localizedBlocks = (project.allBlocks ?? project.blocks ?? []).map((entry) => localizeEntry(entry, names));
+  const blocksById = new Map(localizedBlocks.flatMap((entry) => [
+    [entry.shortId, entry],
+    [entry.slug, entry],
+    [entry.identifier, entry],
+  ]));
+  const localizeMachine = (entry) => {
+    const controller = blocksById.get(entry.blockSlug) ?? blocksById.get(entry.id);
+    return {...entry, name: controller?.name ?? names[entry.identifier] ?? entry.name, controller: controller?.name ?? entry.controller};
+  };
+  const localizeArray = (entries) => entries?.map((entry) => localizeEntry(entry, names));
+  return {
+    ...project,
+    locale,
+    items: localizeArray(project.items),
+    allItems: localizeArray(project.allItems),
+    lookupItems: localizeArray(project.lookupItems),
+    allBlocks: localizedBlocks,
+    blocks: localizeArray(project.blocks),
+    lookupBlocks: localizeArray(project.lookupBlocks),
+    entities: localizeArray(project.entities),
+    machines: project.machines?.map(localizeMachine),
+    generators: project.generators?.map(localizeMachine),
+  };
+}
+
 export function findGlobalCatalogEntry(value) {
   const identifier = catalogSource(value);
   if (!identifier) return null;
@@ -60,10 +108,10 @@ export function findGlobalCatalogEntry(value) {
   )) ?? globalCatalogEntries.find((entry) => entry.name?.toLowerCase() === normalizedName) ?? null;
 }
 
-export function getWikiProject(projectId) {
+export function getWikiProject(projectId, locale = 'en') {
   const project = projects[projectId];
   if (!project) throw new Error(`Unknown wiki project: ${projectId}`);
-  return project;
+  return localizeWikiProject(project, locale);
 }
 
 export {projects as wikiProjects};

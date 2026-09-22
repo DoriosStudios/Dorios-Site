@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from '@docusaurus/Head';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 const SITE_URL = 'https://doriosstudios.com';
 
@@ -18,6 +19,18 @@ function concise(value, limit = 220) {
   return normalized.length > limit ? `${normalized.slice(0, limit - 1).trimEnd()}…` : normalized;
 }
 
+function localePath(value, baseUrl) {
+  if (!value || /^https?:\/\//i.test(value)) return value;
+  const suffix = value.replace(/^\/+/, '');
+  return `${baseUrl}${suffix}`;
+}
+
+const OPEN_GRAPH_LOCALES = {
+  en: 'en_US',
+  'pt-BR': 'pt_BR',
+  'es-MX': 'es_MX',
+};
+
 export default function SocialMetadata({
   title,
   parent,
@@ -30,7 +43,8 @@ export default function SocialMetadata({
   imageHeight,
   largeImage = false,
 }) {
-  const canonicalUrl = absoluteUrl(path);
+  const {i18n: {currentLocale, localeConfigs}} = useDocusaurusContext();
+  const canonicalUrl = absoluteUrl(localePath(path, localeConfigs[currentLocale].baseUrl));
   const imageUrl = absoluteUrl(image);
   const context = [parent, type].filter(Boolean).join(' · ');
   const summary = [context, concise(description)].filter(Boolean).join('\n');
@@ -40,6 +54,10 @@ export default function SocialMetadata({
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Dorios Studios" />
+      <meta property="og:locale" content={OPEN_GRAPH_LOCALES[currentLocale] ?? OPEN_GRAPH_LOCALES.en} />
+      {Object.entries(OPEN_GRAPH_LOCALES)
+        .filter(([locale]) => locale !== currentLocale)
+        .map(([locale, value]) => <meta key={locale} property="og:locale:alternate" content={value} />)}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={summary} />
       {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}

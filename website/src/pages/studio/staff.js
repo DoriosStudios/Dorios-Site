@@ -4,6 +4,8 @@ import Layout from '@theme/Layout';
 import DoriosMarketingShell from '../../components/DoriosMarketingShell';
 import {memberCardPalette} from '../../data/cardPalettes';
 import {staffGroups as groups} from '../../data/staffProfiles';
+import {useSiteI18n} from '../../i18n/site';
+import {getPageCopy, pageText} from '../../i18n/pages';
 import styles from './studioSubpage.module.css';
 
 function ArrowIcon() {
@@ -14,32 +16,32 @@ function ArrowIcon() {
   );
 }
 
-function StudioNavigation() {
+function StudioNavigation({copy}) {
   return (
-    <nav className={styles.subnav} aria-label="The Studio sections">
+    <nav className={styles.subnav} aria-label={copy.sectionsLabel}>
       <Link className={styles.backLink} to="/studio">
-        <span aria-hidden="true">←</span> The Studio
+        <span aria-hidden="true">←</span> {copy.title.split(' · ')[1]}
       </Link>
       <div>
-        <Link to="/studio">Overview</Link>
-        <Link to="/studio/staff" aria-current="page">Staff</Link>
-        <Link to="/studio/credits">Credits</Link>
+        <Link to="/studio">{copy.overview}</Link>
+        <Link to="/studio/staff" aria-current="page">{copy.staff}</Link>
+        <Link to="/studio/credits">{copy.credits}</Link>
       </div>
     </nav>
   );
 }
 
-function PersonCard({person, featured}) {
+function PersonCard({person, featured, copy}) {
   return (
-    <Link className={`${styles.personCard} ${featured ? styles.featuredCard : ''}`} style={memberCardPalette(person)} to={`/studio/staff/${person.id}`} aria-label={`View ${person.name}'s profile`}>
+    <Link className={`${styles.personCard} ${featured ? styles.featuredCard : ''}`} style={memberCardPalette(person)} to={`/studio/staff/${person.id}`} aria-label={pageText(copy, 'profileLabel', {name: person.name})}>
       <div className={styles.portrait}>
-        <img src={`/img/about/${person.image}`} alt={`Portrait of ${person.name}`} loading="lazy" />
-        {featured && <span className={styles.ownerBadge}>Owner</span>}
+        <img src={`/img/about/${person.image}`} alt={pageText(copy, 'portraitLabel', {name: person.name})} loading="lazy" />
+        {featured && <span className={styles.ownerBadge}>{copy.owner}</span>}
       </div>
       <div className={styles.personCopy}>
         <p>{person.role}</p>
         <h3>{person.name}</h3>
-        <div className={styles.specialties} aria-label={`${person.name} specialties`}>
+        <div className={styles.specialties} aria-label={pageText(copy, 'specialtiesLabel', {name: person.name})}>
           {person.specialties.map((specialty) => <span key={specialty}>{specialty}</span>)}
         </div>
         <span className={styles.personBio}>{person.bio}</span>
@@ -49,64 +51,63 @@ function PersonCard({person, featured}) {
 }
 
 export default function StaffPage() {
+  const {locale} = useSiteI18n();
+  const copy = getPageCopy(locale, 'staff');
   return (
-    <Layout title="Staff · The Studio" description="Meet the staff and collaborating creators behind Dorios Studios." noFooter>
+    <Layout title={copy.title} description={copy.description} noFooter>
       <DoriosMarketingShell activePage="studio">
         <main className={styles.page}>
-          <StudioNavigation />
+          <StudioNavigation copy={copy} />
 
           <header className={styles.hero}>
             <div>
-              <p className={styles.breadcrumb}><Link to="/studio">The Studio</Link><span>/</span> Staff</p>
-              <p className={styles.kicker}>People behind the work</p>
-              <h1>Different disciplines. <span>One studio.</span></h1>
-              <p className={styles.lead}>
-                Development, interfaces, art, animation and community work come together here.
-                Profiles are grouped by each person’s primary published role.
-              </p>
+              <p className={styles.breadcrumb}><Link to="/studio">{copy.title.split(' · ')[1]}</Link><span>/</span> {copy.staff}</p>
+              <p className={styles.kicker}>{copy.kicker}</p>
+              <h1>{copy.headingBefore}<span>{copy.headingAccent}</span></h1>
+              <p className={styles.lead}>{copy.lead}</p>
             </div>
-            <aside className={styles.recordNote} aria-label="About this staff record">
-              <span>About this record</span>
-              <p>
-                Roles follow the studio’s currently published team profiles. No personal links are shown
-                unless the studio has provided one publicly.
-              </p>
+            <aside className={styles.recordNote} aria-label={copy.recordLabel}>
+              <span>{copy.recordTitle}</span>
+              <p>{copy.recordCopy}</p>
             </aside>
           </header>
 
-          <section className={styles.teamDirectory} aria-label="Dorios Studios team directory">
-            {groups.map((group) => (
+          <section className={styles.teamDirectory} aria-label={copy.directoryLabel}>
+            {groups.map((group) => {
+              const [title, groupCopy] = copy.groups[group.id] ?? [group.title, group.copy];
+              return (
               <section className={styles.teamGroup} id={group.id} key={group.id} aria-labelledby={`${group.id}-title`}>
                 <header className={styles.teamGroupHeader}>
                   <span>{group.number}</span>
                   <div>
-                    <h2 id={`${group.id}-title`}>{group.title}</h2>
-                    <p>{group.copy}</p>
+                    <h2 id={`${group.id}-title`}>{title}</h2>
+                    <p>{groupCopy}</p>
                   </div>
                 </header>
                 <div className={`${styles.peopleGrid} ${group.featured ? styles.founderGrid : ''}`}>
-                  {group.people.map((person) => <PersonCard key={person.id} person={person} featured={group.featured} />)}
+                  {group.people.map((person) => <PersonCard key={person.id} person={person} featured={group.featured} copy={copy} />)}
                 </div>
               </section>
-            ))}
+              );
+            })}
           </section>
 
           <section className={styles.documentationBar} aria-labelledby="documentation-title">
             <div>
-              <p className={styles.kicker}>Developer resources</p>
-              <h2 id="documentation-title">Build with Dorios scripts.</h2>
-              <p>Browse the scripting reference, examples and APIs used across the studio’s Bedrock projects.</p>
+              <p className={styles.kicker}>{copy.developerKicker}</p>
+              <h2 id="documentation-title">{copy.developerTitle}</h2>
+              <p>{copy.developerCopy}</p>
             </div>
-            <Link to="/documentation/dorios_core/">Open script documentation <ArrowIcon /></Link>
+            <Link to="/documentation/dorios_core/">{copy.openDocs} <ArrowIcon /></Link>
           </section>
 
           <section className={styles.nextPage} aria-labelledby="credits-cta-title">
             <div>
-              <p className={styles.kicker}>Beyond the staff</p>
-              <h2 id="credits-cta-title">Many more hands make the work possible.</h2>
-              <p>Continue to contributors, testers, special thanks and the tools behind Dorios Studios.</p>
+              <p className={styles.kicker}>{copy.nextKicker}</p>
+              <h2 id="credits-cta-title">{copy.nextTitle}</h2>
+              <p>{copy.nextCopy}</p>
             </div>
-            <Link to="/studio/credits">Explore the credits <ArrowIcon /></Link>
+            <Link to="/studio/credits">{copy.exploreCredits} <ArrowIcon /></Link>
           </section>
         </main>
       </DoriosMarketingShell>

@@ -209,6 +209,29 @@
   gap: 0.6rem;
 }
 
+.localeSwitcher {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0 0.72rem;
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-button-radius);
+  background: transparent;
+  color: var(--ds-text);
+  font-family: var(--ds-ui-font);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
 .themeToggle,
 .discordLink {
   min-height: 42px;
@@ -280,6 +303,8 @@
 
 .themeToggle:hover,
 .themeToggle:focus-visible,
+.localeSwitcher:hover,
+.localeSwitcher:focus-visible,
 .discordLink:hover,
 .discordLink:focus-visible {
   border-color: var(--ds-accent);
@@ -397,6 +422,10 @@
   }
   .headerActions {
     gap: 0.35rem;
+  }
+  .localeSwitcher {
+    min-height: 42px;
+    padding: 0 0.45rem;
   }
   .primaryNav {
     flex-wrap: wrap;
@@ -517,6 +546,7 @@
   .primaryNav a,
   .primaryNav a::after,
   .themeToggle,
+  .localeSwitcher,
   .discordLink,
   .brandMark,
   .blazingMark {
@@ -525,6 +555,8 @@
 
   .themeToggle:hover,
   .themeToggle:focus-visible,
+  .localeSwitcher:hover,
+  .localeSwitcher:focus-visible,
   .discordLink:hover,
   .discordLink:focus-visible {
     transform: none;

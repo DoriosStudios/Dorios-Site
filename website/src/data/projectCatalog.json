@@ -236,7 +236,7 @@
       "requires": [],
       "routes": {
         "project": "/projects/smelters",
-        "wiki": "/docs/better_smelters/"
+        "wiki": "/wiki/smelters"
       },
       "links": {
         "repository": "https://github.com/DoriosStudios/Better-Smelters",

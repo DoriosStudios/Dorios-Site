@@ -1,0 +1,4110 @@
+{
+  "generatedAt": "2026-09-22T15:21:02.958Z",
+  "source": "Better-Smelters/BP",
+  "machineProfiles": {
+    "amethyst_furnace": {
+      "category": "Furnaces",
+      "tier": "Amethyst",
+      "recipe": "better_smelters_furnace",
+      "description": "Amethyst Furnace processes every registered Better Smelters furnace recipe at 15× speed while using 40% of the baseline fuel per unit of work.",
+      "baseConsumption": "40 work-fuel units per smelt",
+      "energyCapacity": "Not applicable",
+      "productionType": "Item",
+      "input": "One registered smelting input and one supported solid fuel",
+      "output": "One smelted item per input, except Nether Star Furnace stack batches",
+      "primaryResource": "Solid fuel",
+      "modules": [],
+      "specifications": [
+        [
+          "Processing speed",
+          "15×"
+        ],
+        [
+          "Nominal cycle",
+          "5.33 ticks · 0.267 s"
+        ],
+        [
+          "Fuel use",
+          "40% of baseline"
+        ],
+        [
+          "Coal-equivalent yield",
+          "20 items per coal-equivalent"
+        ],
+        [
+          "Inventory",
+          "1 fuel slot · 1 input slot · 1 output slot"
+        ],
+        [
+          "Automated fuel",
+          "Pulled from the top; fuel slot is also exposed below"
+        ],
+        [
+          "Automated items",
+          "Input from the right side and output to the left side, relative to the furnace front"
+        ]
+      ],
+      "howItWorks": [
+        "Insert a registered smelting input and a supported solid fuel.",
+        "The furnace completes a nominal cycle in 5.33 ticks while its inventory can accept the result.",
+        "Collect the result manually or from the configured output side."
+      ],
+      "io": [
+        [
+          "Fuel input",
+          "Top or bottom"
+        ],
+        [
+          "Item input",
+          "Horizontal input sides; automatic pull uses the right side"
+        ],
+        [
+          "Item output",
+          "All exposed output sides; automatic push uses the left side"
+        ]
+      ]
+    },
+    "blazing_furnace": {
+      "category": "Furnaces",
+      "tier": "Blazing",
+      "recipe": "better_smelters_furnace",
+      "description": "Blazing Furnace processes every registered Better Smelters furnace recipe at 25× speed while using 10% of the baseline fuel per unit of work.",
+      "baseConsumption": "10 work-fuel units per smelt",
+      "energyCapacity": "Not applicable",
+      "productionType": "Item",
+      "input": "One registered smelting input and one supported solid fuel",
+      "output": "One smelted item per input, except Nether Star Furnace stack batches",
+      "primaryResource": "Solid fuel",
+      "modules": [],
+      "specifications": [
+        [
+          "Processing speed",
+          "25×"
+        ],
+        [
+          "Nominal cycle",
+          "3.2 ticks · 0.16 s"
+        ],
+        [
+          "Fuel use",
+          "10% of baseline"
+        ],
+        [
+          "Coal-equivalent yield",
+          "80 items per coal-equivalent"
+        ],
+        [
+          "Inventory",
+          "1 fuel slot · 1 input slot · 1 output slot"
+        ],
+        [
+          "Automated fuel",
+          "Pulled from the top; fuel slot is also exposed below"
+        ],
+        [
+          "Automated items",
+          "Input from the right side and output to the left side, relative to the furnace front"
+        ]
+      ],
+      "howItWorks": [
+        "Insert a registered smelting input and a supported solid fuel.",
+        "The furnace completes a nominal cycle in 3.2 ticks while its inventory can accept the result.",
+        "Collect the result manually or from the configured output side."
+      ],
+      "io": [
+        [
+          "Fuel input",
+          "Top or bottom"
+        ],
+        [
+          "Item input",
+          "Horizontal input sides; automatic pull uses the right side"
+        ],
+        [
+          "Item output",
+          "All exposed output sides; automatic push uses the left side"
+        ]
+      ]
+    },
+    "copper_furnace": {
+      "category": "Furnaces",
+      "tier": "Copper",
+      "recipe": "better_smelters_furnace",
+      "description": "Copper Furnace processes every registered Better Smelters furnace recipe at 1.5× speed while using 100% of the baseline fuel per unit of work.",
+      "baseConsumption": "100 work-fuel units per smelt",
+      "energyCapacity": "Not applicable",
+      "productionType": "Item",
+      "input": "One registered smelting input and one supported solid fuel",
+      "output": "One smelted item per input, except Nether Star Furnace stack batches",
+      "primaryResource": "Solid fuel",
+      "modules": [],
+      "specifications": [
+        [
+          "Processing speed",
+          "1.5×"
+        ],
+        [
+          "Nominal cycle",
+          "53.33 ticks · 2.667 s"
+        ],
+        [
+          "Fuel use",
+          "100% of baseline"
+        ],
+        [
+          "Coal-equivalent yield",
+          "8 items per coal-equivalent"
+        ],
+        [
+          "Inventory",
+          "1 fuel slot · 1 input slot · 1 output slot"
+        ],
+        [
+          "Automated fuel",
+          "Pulled from the top; fuel slot is also exposed below"
+        ],
+        [
+          "Automated items",
+          "Input from the right side and output to the left side, relative to the furnace front"
+        ]
+      ],
+      "howItWorks": [
+        "Insert a registered smelting input and a supported solid fuel.",
+        "The furnace completes a nominal cycle in 53.33 ticks while its inventory can accept the result.",
+        "Collect the result manually or from the configured output side."
+      ],
+      "io": [
+        [
+          "Fuel input",
+          "Top or bottom"
+        ],
+        [
+          "Item input",
+          "Horizontal input sides; automatic pull uses the right side"
+        ],
+        [
+          "Item output",
+          "All exposed output sides; automatic push uses the left side"
+        ]
+      ]
+    },
+    "diamond_furnace": {
+      "category": "Furnaces",
+      "tier": "Diamond",
+      "recipe": "better_smelters_furnace",
+      "description": "Diamond Furnace processes every registered Better Smelters furnace recipe at 10× speed while using 40% of the baseline fuel per unit of work.",
+      "baseConsumption": "40 work-fuel units per smelt",
+      "energyCapacity": "Not applicable",
+      "productionType": "Item",
+      "input": "One registered smelting input and one supported solid fuel",
+      "output": "One smelted item per input, except Nether Star Furnace stack batches",
+      "primaryResource": "Solid fuel",
+      "modules": [],
+      "specifications": [
+        [
+          "Processing speed",
+          "10×"
+        ],
+        [
+          "Nominal cycle",
+          "8 ticks · 0.4 s"
+        ],
+        [
+          "Fuel use",
+          "40% of baseline"
+        ],
+        [
+          "Coal-equivalent yield",
+          "20 items per coal-equivalent"
+        ],
+        [
+          "Inventory",
+          "1 fuel slot · 1 input slot · 1 output slot"
+        ],
+        [
+          "Automated fuel",
+          "Pulled from the top; fuel slot is also exposed below"
+        ],
+        [
+          "Automated items",
+          "Input from the right side and output to the left side, relative to the furnace front"
+        ]
+      ],
+      "howItWorks": [
+        "Insert a registered smelting input and a supported solid fuel.",
+        "The furnace completes a nominal cycle in 8 ticks while its inventory can accept the result.",
+        "Collect the result manually or from the configured output side."
+      ],
+      "io": [
+        [
+          "Fuel input",
+          "Top or bottom"
+        ],
+        [
+          "Item input",
+          "Horizontal input sides; automatic pull uses the right side"
+        ],
+        [
+          "Item output",
+          "All exposed output sides; automatic push uses the left side"
+        ]
+      ]
+    },
+    "emerald_furnace": {
+      "category": "Furnaces",
+      "tier": "Emerald",
+      "recipe": "better_smelters_furnace",
+      "description": "Emerald Furnace processes every registered Better Smelters furnace recipe at 5× speed while using 60% of the baseline fuel per unit of work.",
+      "baseConsumption": "60 work-fuel units per smelt",
+      "energyCapacity": "Not applicable",
+      "productionType": "Item",
+      "input": "One registered smelting input and one supported solid fuel",
+      "output": "One smelted item per input, except Nether Star Furnace stack batches",
+      "primaryResource": "Solid fuel",
+      "modules": [],
+      "specifications": [
+        [
+          "Processing speed",
+          "5×"
+        ],
+        [
+          "Nominal cycle",
+          "16 ticks · 0.8 s"
+        ],
+        [
+          "Fuel use",
+          "60% of baseline"
+        ],
+        [
+          "Coal-equivalent yield",
+          "13.33 items per coal-equivalent"
+        ],
+        [
+          "Inventory",
+          "1 fuel slot · 1 input slot · 1 output slot"
+        ],
+        [
+          "Automated fuel",
+          "Pulled from the top; fuel slot is also exposed below"
+        ],
+        [
+          "Automated items",
+          "Input from the right side and output to the left side, relative to the furnace front"
+        ]
+      ],
+      "howItWorks": [
+        "Insert a registered smelting input and a supported solid fuel.",
+        "The furnace completes a nominal cycle in 16 ticks while its inventory can accept the result.",
+        "Collect the result manually or from the configured output side."
+      ],
+      "io": [
+        [
+          "Fuel input",
+          "Top or bottom"
+        ],
+        [
+          "Item input",
+          "Horizontal input sides; automatic pull uses the right side"
+        ],
+        [
+          "Item output",
+          "All exposed output sides; automatic push uses the left side"
+        ]
+      ]
+    },
+    "gold_furnace": {
+      "category": "Furnaces",
+      "tier": "Gold",
+      "recipe": "better_smelters_furnace",
+      "description": "Gold Furnace processes every registered Better Smelters furnace recipe at 3× speed while using 80% of the baseline fuel per unit of work.",
+      "baseConsumption": "80 work-fuel units per smelt",
+      "energyCapacity": "Not applicable",
+      "productionType": "Item",
+      "input": "One registered smelting input and one supported solid fuel",
+      "output": "One smelted item per input, except Nether Star Furnace stack batches",
+      "primaryResource": "Solid fuel",
+      "modules": [],
+      "specifications": [
+        [
+          "Processing speed",
+          "3×"
+        ],
+        [
+          "Nominal cycle",
+          "26.67 ticks · 1.333 s"
+        ],
+        [
+          "Fuel use",
+          "80% of baseline"
+        ],
+        [
+          "Coal-equivalent yield",
+          "10 items per coal-equivalent"
+        ],
+        [
+          "Inventory",
+          "1 fuel slot · 1 input slot · 1 output slot"
+        ],
+        [
+          "Automated fuel",
+          "Pulled from the top; fuel slot is also exposed below"
+        ],
+        [
+          "Automated items",
+          "Input from the right side and output to the left side, relative to the furnace front"
+        ]
+      ],
+      "howItWorks": [
+        "Insert a registered smelting input and a supported solid fuel.",
+        "The furnace completes a nominal cycle in 26.67 ticks while its inventory can accept the result.",
+        "Collect the result manually or from the configured output side."
+      ],
+      "io": [
+        [
+          "Fuel input",
+          "Top or bottom"
+        ],
+        [
+          "Item input",
+          "Horizontal input sides; automatic pull uses the right side"
+        ],
+        [
+          "Item output",
+          "All exposed output sides; automatic push uses the left side"
+        ]
+      ]
+    },
+    "iron_furnace": {
+      "category": "Furnaces",
+      "tier": "Iron",
+      "recipe": "better_smelters_furnace",
+      "description": "Iron Furnace processes every registered Better Smelters furnace recipe at 2× speed while using 100% of the baseline fuel per unit of work.",
+      "baseConsumption": "100 work-fuel units per smelt",
+      "energyCapacity": "Not applicable",
+      "productionType": "Item",
+      "input": "One registered smelting input and one supported solid fuel",
+      "output": "One smelted item per input, except Nether Star Furnace stack batches",
+      "primaryResource": "Solid fuel",
+      "modules": [],
+      "specifications": [
+        [
+          "Processing speed",
+          "2×"
+        ],
+        [
+          "Nominal cycle",
+          "40 ticks · 2 s"
+        ],
+        [
+          "Fuel use",
+          "100% of baseline"
+        ],
+        [
+          "Coal-equivalent yield",
+          "8 items per coal-equivalent"
+        ],
+        [
+          "Inventory",
+          "1 fuel slot · 1 input slot · 1 output slot"
+        ],
+        [
+          "Automated fuel",
+          "Pulled from the top; fuel slot is also exposed below"
+        ],
+        [
+          "Automated items",
+          "Input from the right side and output to the left side, relative to the furnace front"
+        ]
+      ],
+      "howItWorks": [
+        "Insert a registered smelting input and a supported solid fuel.",
+        "The furnace completes a nominal cycle in 40 ticks while its inventory can accept the result.",
+        "Collect the result manually or from the configured output side."
+      ],
+      "io": [
+        [
+          "Fuel input",
+          "Top or bottom"
+        ],
+        [
+          "Item input",
+          "Horizontal input sides; automatic pull uses the right side"
+        ],
+        [
+          "Item output",
+          "All exposed output sides; automatic push uses the left side"
+        ]
+      ]
+    },
+    "nether_star_furnace": {
+      "category": "Furnaces",
+      "tier": "Nether Star",
+      "recipe": "better_smelters_furnace",
+      "description": "Nether Star Furnace processes every registered Better Smelters furnace recipe at 10× speed while using 1% of the baseline fuel per unit of work. When one cycle completes, it processes as much of the matching input stack as the output slot can accept.",
+      "baseConsumption": "1 work-fuel units per smelt",
+      "energyCapacity": "Not applicable",
+      "productionType": "Item",
+      "input": "One registered smelting input and one supported solid fuel",
+      "output": "One smelted item per input, except Nether Star Furnace stack batches",
+      "primaryResource": "Solid fuel",
+      "modules": [],
+      "specifications": [
+        [
+          "Processing speed",
+          "10×"
+        ],
+        [
+          "Nominal cycle",
+          "8 ticks · 0.4 s"
+        ],
+        [
+          "Fuel use",
+          "1% of baseline"
+        ],
+        [
+          "Coal-equivalent yield",
+          "800 items per coal-equivalent"
+        ],
+        [
+          "Inventory",
+          "1 fuel slot · 1 input slot · 1 output slot"
+        ],
+        [
+          "Automated fuel",
+          "Pulled from the top; fuel slot is also exposed below"
+        ],
+        [
+          "Automated items",
+          "Input from the right side and output to the left side, relative to the furnace front"
+        ],
+        [
+          "Special behavior",
+          "When one cycle completes, it processes as much of the matching input stack as the output slot can accept."
+        ]
+      ],
+      "howItWorks": [
+        "Insert a registered smelting input and a supported solid fuel.",
+        "The furnace completes a nominal cycle in 8 ticks while its inventory can accept the result.",
+        "Collect the result manually or from the configured output side."
+      ],
+      "io": [
+        [
+          "Fuel input",
+          "Top or bottom"
+        ],
+        [
+          "Item input",
+          "Horizontal input sides; automatic pull uses the right side"
+        ],
+        [
+          "Item output",
+          "All exposed output sides; automatic push uses the left side"
+        ]
+      ]
+    },
+    "netherite_furnace": {
+      "category": "Furnaces",
+      "tier": "Netherite",
+      "recipe": "better_smelters_furnace",
+      "description": "Netherite Furnace processes every registered Better Smelters furnace recipe at 20× speed while using 20% of the baseline fuel per unit of work.",
+      "baseConsumption": "20 work-fuel units per smelt",
+      "energyCapacity": "Not applicable",
+      "productionType": "Item",
+      "input": "One registered smelting input and one supported solid fuel",
+      "output": "One smelted item per input, except Nether Star Furnace stack batches",
+      "primaryResource": "Solid fuel",
+      "modules": [],
+      "specifications": [
+        [
+          "Processing speed",
+          "20×"
+        ],
+        [
+          "Nominal cycle",
+          "4 ticks · 0.2 s"
+        ],
+        [
+          "Fuel use",
+          "20% of baseline"
+        ],
+        [
+          "Coal-equivalent yield",
+          "40 items per coal-equivalent"
+        ],
+        [
+          "Inventory",
+          "1 fuel slot · 1 input slot · 1 output slot"
+        ],
+        [
+          "Automated fuel",
+          "Pulled from the top; fuel slot is also exposed below"
+        ],
+        [
+          "Automated items",
+          "Input from the right side and output to the left side, relative to the furnace front"
+        ]
+      ],
+      "howItWorks": [
+        "Insert a registered smelting input and a supported solid fuel.",
+        "The furnace completes a nominal cycle in 4 ticks while its inventory can accept the result.",
+        "Collect the result manually or from the configured output side."
+      ],
+      "io": [
+        [
+          "Fuel input",
+          "Top or bottom"
+        ],
+        [
+          "Item input",
+          "Horizontal input sides; automatic pull uses the right side"
+        ],
+        [
+          "Item output",
+          "All exposed output sides; automatic push uses the left side"
+        ]
+      ]
+    },
+    "netherrack_furnace": {
+      "category": "Furnaces",
+      "tier": "Netherrack",
+      "recipe": "better_smelters_furnace",
+      "description": "Netherrack Furnace processes every registered Better Smelters furnace recipe at 2× speed while using 100% of the baseline fuel per unit of work. After a valid fuel item starts the furnace, its infinite-fuel setting prevents the stored burn value from being consumed.",
+      "baseConsumption": "One valid solid fuel to start; no further burn value consumed",
+      "energyCapacity": "Not applicable",
+      "productionType": "Item",
+      "input": "One registered smelting input and one supported solid fuel",
+      "output": "One smelted item per input, except Nether Star Furnace stack batches",
+      "primaryResource": "Ignition fuel",
+      "modules": [],
+      "specifications": [
+        [
+          "Processing speed",
+          "2×"
+        ],
+        [
+          "Nominal cycle",
+          "40 ticks · 2 s"
+        ],
+        [
+          "Fuel use",
+          "Infinite after ignition"
+        ],
+        [
+          "Coal-equivalent yield",
+          "Unlimited after one valid fuel item starts the furnace"
+        ],
+        [
+          "Inventory",
+          "1 fuel slot · 1 input slot · 1 output slot"
+        ],
+        [
+          "Automated fuel",
+          "Pulled from the top; fuel slot is also exposed below"
+        ],
+        [
+          "Automated items",
+          "Input from the right side and output to the left side, relative to the furnace front"
+        ],
+        [
+          "Special behavior",
+          "After a valid fuel item starts the furnace, its infinite-fuel setting prevents the stored burn value from being consumed."
+        ]
+      ],
+      "howItWorks": [
+        "Insert a registered smelting input and a supported solid fuel.",
+        "The furnace completes a nominal cycle in 40 ticks while its inventory can accept the result.",
+        "Collect the result manually or from the configured output side."
+      ],
+      "io": [
+        [
+          "Fuel input",
+          "Top or bottom"
+        ],
+        [
+          "Item input",
+          "Horizontal input sides; automatic pull uses the right side"
+        ],
+        [
+          "Item output",
+          "All exposed output sides; automatic push uses the left side"
+        ]
+      ]
+    },
+    "oak_wood_furnace": {
+      "category": "Furnaces",
+      "tier": "Oak Wood",
+      "recipe": "better_smelters_furnace",
+      "description": "Oak Wood Furnace processes every registered Better Smelters furnace recipe at 1× speed while using 100% of the baseline fuel per unit of work. While active, each two-tick work interval has a 1% chance to destroy the furnace and drop its inventory.",
+      "baseConsumption": "100 work-fuel units per smelt",
+      "energyCapacity": "Not applicable",
+      "productionType": "Item",
+      "input": "One registered smelting input and one supported solid fuel",
+      "output": "One smelted item per input, except Nether Star Furnace stack batches",
+      "primaryResource": "Solid fuel",
+      "modules": [],
+      "specifications": [
+        [
+          "Processing speed",
+          "1×"
+        ],
+        [
+          "Nominal cycle",
+          "80 ticks · 4 s"
+        ],
+        [
+          "Fuel use",
+          "100% of baseline"
+        ],
+        [
+          "Coal-equivalent yield",
+          "8 items per coal-equivalent"
+        ],
+        [
+          "Inventory",
+          "1 fuel slot · 1 input slot · 1 output slot"
+        ],
+        [
+          "Automated fuel",
+          "Pulled from the top; fuel slot is also exposed below"
+        ],
+        [
+          "Automated items",
+          "Input from the right side and output to the left side, relative to the furnace front"
+        ],
+        [
+          "Special behavior",
+          "While active, each two-tick work interval has a 1% chance to destroy the furnace and drop its inventory."
+        ]
+      ],
+      "howItWorks": [
+        "Insert a registered smelting input and a supported solid fuel.",
+        "The furnace completes a nominal cycle in 80 ticks while its inventory can accept the result.",
+        "Collect the result manually or from the configured output side."
+      ],
+      "io": [
+        [
+          "Fuel input",
+          "Top or bottom"
+        ],
+        [
+          "Item input",
+          "Horizontal input sides; automatic pull uses the right side"
+        ],
+        [
+          "Item output",
+          "All exposed output sides; automatic push uses the left side"
+        ]
+      ]
+    }
+  },
+  "processingRecipes": [
+    {
+      "id": "better-smelters-furnace-minecraft-raw-iron-block",
+      "identifier": "better_smelters:process/furnace/minecraft-raw-iron-block",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:raw_iron_block",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:raw_iron_block",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:iron_block",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:iron_block",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:iron_block",
+      "input": "1× minecraft:raw_iron_block",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-raw-gold-block",
+      "identifier": "better_smelters:process/furnace/minecraft-raw-gold-block",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:raw_gold_block",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:raw_gold_block",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:gold_block",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:gold_block",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:gold_block",
+      "input": "1× minecraft:raw_gold_block",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-raw-copper-block",
+      "identifier": "better_smelters:process/furnace/minecraft-raw-copper-block",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:raw_copper_block",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:raw_copper_block",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:copper_block",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:copper_block",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:copper_block",
+      "input": "1× minecraft:raw_copper_block",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-ae2be-certus-quartz-dust",
+      "identifier": "better_smelters:process/furnace/ae2be-certus-quartz-dust",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "ae2be:certus_quartz_dust",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "ae2be:certus_quartz_dust",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "ae2be:silicon",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "ae2be:silicon",
+          "count": 1
+        }
+      ],
+      "output": "1× ae2be:silicon",
+      "input": "1× ae2be:certus_quartz_dust",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-porkchop",
+      "identifier": "better_smelters:process/furnace/minecraft-porkchop",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:porkchop",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:porkchop",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:cooked_porkchop",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:cooked_porkchop",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:cooked_porkchop",
+      "input": "1× minecraft:porkchop",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-beef",
+      "identifier": "better_smelters:process/furnace/minecraft-beef",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:beef",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:beef",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:cooked_beef",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:cooked_beef",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:cooked_beef",
+      "input": "1× minecraft:beef",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-chicken",
+      "identifier": "better_smelters:process/furnace/minecraft-chicken",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:chicken",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:chicken",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:cooked_chicken",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:cooked_chicken",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:cooked_chicken",
+      "input": "1× minecraft:chicken",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-cod",
+      "identifier": "better_smelters:process/furnace/minecraft-cod",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:cod",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:cod",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:cooked_cod",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:cooked_cod",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:cooked_cod",
+      "input": "1× minecraft:cod",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-salmon",
+      "identifier": "better_smelters:process/furnace/minecraft-salmon",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:salmon",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:salmon",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:cooked_salmon",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:cooked_salmon",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:cooked_salmon",
+      "input": "1× minecraft:salmon",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-potato",
+      "identifier": "better_smelters:process/furnace/minecraft-potato",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:potato",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:potato",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:baked_potato",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:baked_potato",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:baked_potato",
+      "input": "1× minecraft:potato",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-mutton",
+      "identifier": "better_smelters:process/furnace/minecraft-mutton",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:mutton",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:mutton",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:cooked_mutton",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:cooked_mutton",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:cooked_mutton",
+      "input": "1× minecraft:mutton",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-rabbit",
+      "identifier": "better_smelters:process/furnace/minecraft-rabbit",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:rabbit",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:rabbit",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:cooked_rabbit",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:cooked_rabbit",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:cooked_rabbit",
+      "input": "1× minecraft:rabbit",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-kelp",
+      "identifier": "better_smelters:process/furnace/minecraft-kelp",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:kelp",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:kelp",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:dried_kelp",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:dried_kelp",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:dried_kelp",
+      "input": "1× minecraft:kelp",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-raw-iron",
+      "identifier": "better_smelters:process/furnace/minecraft-raw-iron",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:raw_iron",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:raw_iron",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:iron_ingot",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:iron_ingot",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:iron_ingot",
+      "input": "1× minecraft:raw_iron",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-raw-gold",
+      "identifier": "better_smelters:process/furnace/minecraft-raw-gold",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:raw_gold",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:raw_gold",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:gold_ingot",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:gold_ingot",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:gold_ingot",
+      "input": "1× minecraft:raw_gold",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-raw-copper",
+      "identifier": "better_smelters:process/furnace/minecraft-raw-copper",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:raw_copper",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:raw_copper",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:copper_ingot",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:copper_ingot",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:copper_ingot",
+      "input": "1× minecraft:raw_copper",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-copper-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-copper-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:copper_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:copper_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:copper_ingot",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:copper_ingot",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:copper_ingot",
+      "input": "1× minecraft:copper_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-iron-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-iron-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:iron_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:iron_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:iron_ingot",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:iron_ingot",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:iron_ingot",
+      "input": "1× minecraft:iron_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-gold-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-gold-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:gold_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:gold_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:gold_ingot",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:gold_ingot",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:gold_ingot",
+      "input": "1× minecraft:gold_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-diamond-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-diamond-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:diamond_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:diamond_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:diamond",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:diamond",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:diamond",
+      "input": "1× minecraft:diamond_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-lapis-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-lapis-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:lapis_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:lapis_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:lapis_lazuli",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:lapis_lazuli",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:lapis_lazuli",
+      "input": "1× minecraft:lapis_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-redstone-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-redstone-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:redstone_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:redstone_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:redstone",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:redstone",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:redstone",
+      "input": "1× minecraft:redstone_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-coal-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-coal-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:coal_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:coal_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:coal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:coal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:coal",
+      "input": "1× minecraft:coal_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-emerald-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-emerald-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:emerald_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:emerald_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:emerald",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:emerald",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:emerald",
+      "input": "1× minecraft:emerald_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-deepslate-copper-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-deepslate-copper-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:deepslate_copper_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:deepslate_copper_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:copper_ingot",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:copper_ingot",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:copper_ingot",
+      "input": "1× minecraft:deepslate_copper_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-deepslate-iron-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-deepslate-iron-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:deepslate_iron_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:deepslate_iron_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:iron_ingot",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:iron_ingot",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:iron_ingot",
+      "input": "1× minecraft:deepslate_iron_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-deepslate-gold-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-deepslate-gold-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:deepslate_gold_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:deepslate_gold_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:gold_ingot",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:gold_ingot",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:gold_ingot",
+      "input": "1× minecraft:deepslate_gold_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-deepslate-diamond-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-deepslate-diamond-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:deepslate_diamond_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:deepslate_diamond_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:diamond",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:diamond",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:diamond",
+      "input": "1× minecraft:deepslate_diamond_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-deepslate-lapis-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-deepslate-lapis-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:deepslate_lapis_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:deepslate_lapis_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:lapis_lazuli",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:lapis_lazuli",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:lapis_lazuli",
+      "input": "1× minecraft:deepslate_lapis_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-deepslate-redstone-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-deepslate-redstone-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:deepslate_redstone_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:deepslate_redstone_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:redstone",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:redstone",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:redstone",
+      "input": "1× minecraft:deepslate_redstone_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-deepslate-coal-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-deepslate-coal-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:deepslate_coal_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:deepslate_coal_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:coal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:coal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:coal",
+      "input": "1× minecraft:deepslate_coal_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-deepslate-emerald-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-deepslate-emerald-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:deepslate_emerald_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:deepslate_emerald_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:emerald",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:emerald",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:emerald",
+      "input": "1× minecraft:deepslate_emerald_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-quartz-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-quartz-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:quartz_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:quartz_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:quartz",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:quartz",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:quartz",
+      "input": "1× minecraft:quartz_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-ancient-debris",
+      "identifier": "better_smelters:process/furnace/minecraft-ancient-debris",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:ancient_debris",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:ancient_debris",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:netherite_scrap",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:netherite_scrap",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:netherite_scrap",
+      "input": "1× minecraft:ancient_debris",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-nether-gold-ore",
+      "identifier": "better_smelters:process/furnace/minecraft-nether-gold-ore",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:nether_gold_ore",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:nether_gold_ore",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:gold_ingot",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:gold_ingot",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:gold_ingot",
+      "input": "1× minecraft:nether_gold_ore",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-sand",
+      "identifier": "better_smelters:process/furnace/minecraft-sand",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:sand",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:sand",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:glass",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:glass",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:glass",
+      "input": "1× minecraft:sand",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-cobblestone",
+      "identifier": "better_smelters:process/furnace/minecraft-cobblestone",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:cobblestone",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:cobblestone",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:stone",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:stone",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:stone",
+      "input": "1× minecraft:cobblestone",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-sandstone",
+      "identifier": "better_smelters:process/furnace/minecraft-sandstone",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:sandstone",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:sandstone",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:smooth_sandstone",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:smooth_sandstone",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:smooth_sandstone",
+      "input": "1× minecraft:sandstone",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-red-sandstone",
+      "identifier": "better_smelters:process/furnace/minecraft-red-sandstone",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:red_sandstone",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:red_sandstone",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:smooth_red_sandstone",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:smooth_red_sandstone",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:smooth_red_sandstone",
+      "input": "1× minecraft:red_sandstone",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-stone",
+      "identifier": "better_smelters:process/furnace/minecraft-stone",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:stone",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:stone",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:smooth_stone",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:smooth_stone",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:smooth_stone",
+      "input": "1× minecraft:stone",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-quartz-block",
+      "identifier": "better_smelters:process/furnace/minecraft-quartz-block",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:quartz_block",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:quartz_block",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:quartz_block",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:quartz_block",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:quartz_block",
+      "input": "1× minecraft:quartz_block",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-clay-ball",
+      "identifier": "better_smelters:process/furnace/minecraft-clay-ball",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:clay_ball",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:clay_ball",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:brick",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:brick",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:brick",
+      "input": "1× minecraft:clay_ball",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-netherrack",
+      "identifier": "better_smelters:process/furnace/minecraft-netherrack",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:netherrack",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:netherrack",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:netherbrick",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:netherbrick",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:netherbrick",
+      "input": "1× minecraft:netherrack",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-nether-brick",
+      "identifier": "better_smelters:process/furnace/minecraft-nether-brick",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:nether_brick",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:nether_brick",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:cracked_nether_bricks",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:cracked_nether_bricks",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:cracked_nether_bricks",
+      "input": "1× minecraft:nether_brick",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-basalt",
+      "identifier": "better_smelters:process/furnace/minecraft-basalt",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:basalt",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:basalt",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:smooth_basalt",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:smooth_basalt",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:smooth_basalt",
+      "input": "1× minecraft:basalt",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-clay",
+      "identifier": "better_smelters:process/furnace/minecraft-clay",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:clay",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:clay",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:hardened_clay",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:hardened_clay",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:hardened_clay",
+      "input": "1× minecraft:clay",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-stonebrick",
+      "identifier": "better_smelters:process/furnace/minecraft-stonebrick",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:stonebrick",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:stonebrick",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:stonebrick",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:stonebrick",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:stonebrick",
+      "input": "1× minecraft:stonebrick",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-polished-blackstone-bricks",
+      "identifier": "better_smelters:process/furnace/minecraft-polished-blackstone-bricks",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:polished_blackstone_bricks",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:polished_blackstone_bricks",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:cracked_polished_blackstone_bricks",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:cracked_polished_blackstone_bricks",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:cracked_polished_blackstone_bricks",
+      "input": "1× minecraft:polished_blackstone_bricks",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-coobled-deepslate",
+      "identifier": "better_smelters:process/furnace/minecraft-coobled-deepslate",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:coobled_deepslate",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:coobled_deepslate",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:deepslate",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:deepslate",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:deepslate",
+      "input": "1× minecraft:coobled_deepslate",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-deepslate-bricks",
+      "identifier": "better_smelters:process/furnace/minecraft-deepslate-bricks",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:deepslate_bricks",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:deepslate_bricks",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:cracked_deepslate_bricks",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:cracked_deepslate_bricks",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:cracked_deepslate_bricks",
+      "input": "1× minecraft:deepslate_bricks",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-deepslate-tiles",
+      "identifier": "better_smelters:process/furnace/minecraft-deepslate-tiles",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:deepslate_tiles",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:deepslate_tiles",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:cracked_deepslate_tiles",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:cracked_deepslate_tiles",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:cracked_deepslate_tiles",
+      "input": "1× minecraft:deepslate_tiles",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-cactus",
+      "identifier": "better_smelters:process/furnace/minecraft-cactus",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:cactus",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:cactus",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:green_dye",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:green_dye",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:green_dye",
+      "input": "1× minecraft:cactus",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-oak-log",
+      "identifier": "better_smelters:process/furnace/minecraft-oak-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:oak_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:oak_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:oak_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-spruce-log",
+      "identifier": "better_smelters:process/furnace/minecraft-spruce-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:spruce_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:spruce_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:spruce_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-birch-log",
+      "identifier": "better_smelters:process/furnace/minecraft-birch-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:birch_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:birch_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:birch_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-jungle-log",
+      "identifier": "better_smelters:process/furnace/minecraft-jungle-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:jungle_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:jungle_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:jungle_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-acacia-log",
+      "identifier": "better_smelters:process/furnace/minecraft-acacia-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:acacia_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:acacia_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:acacia_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-dark-oak-log",
+      "identifier": "better_smelters:process/furnace/minecraft-dark-oak-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:dark_oak_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:dark_oak_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:dark_oak_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-cherry-log",
+      "identifier": "better_smelters:process/furnace/minecraft-cherry-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:cherry_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:cherry_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:cherry_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-mangrove-log",
+      "identifier": "better_smelters:process/furnace/minecraft-mangrove-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:mangrove_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:mangrove_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:mangrove_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-stripped-oak-log",
+      "identifier": "better_smelters:process/furnace/minecraft-stripped-oak-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:stripped_oak_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:stripped_oak_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:stripped_oak_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-stripped-spruce-log",
+      "identifier": "better_smelters:process/furnace/minecraft-stripped-spruce-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:stripped_spruce_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:stripped_spruce_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:stripped_spruce_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-stripped-birch-log",
+      "identifier": "better_smelters:process/furnace/minecraft-stripped-birch-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:stripped_birch_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:stripped_birch_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:stripped_birch_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-stripped-jungle-log",
+      "identifier": "better_smelters:process/furnace/minecraft-stripped-jungle-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:stripped_jungle_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:stripped_jungle_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:stripped_jungle_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-stripped-acacia-log",
+      "identifier": "better_smelters:process/furnace/minecraft-stripped-acacia-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:stripped_acacia_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:stripped_acacia_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:stripped_acacia_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-stripped-dark-oak-log",
+      "identifier": "better_smelters:process/furnace/minecraft-stripped-dark-oak-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:stripped_dark_oak_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:stripped_dark_oak_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:stripped_dark_oak_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-stripped-cherry-log",
+      "identifier": "better_smelters:process/furnace/minecraft-stripped-cherry-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:stripped_cherry_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:stripped_cherry_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:stripped_cherry_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-stripped-mangrove-log",
+      "identifier": "better_smelters:process/furnace/minecraft-stripped-mangrove-log",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:stripped_mangrove_log",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:stripped_mangrove_log",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:stripped_mangrove_log",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-wood",
+      "identifier": "better_smelters:process/furnace/minecraft-wood",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:wood",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:wood",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:charcoal",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:charcoal",
+      "input": "1× minecraft:wood",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-chorus-fruit",
+      "identifier": "better_smelters:process/furnace/minecraft-chorus-fruit",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:chorus_fruit",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:chorus_fruit",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:popped_chorus_fruit",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:popped_chorus_fruit",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:popped_chorus_fruit",
+      "input": "1× minecraft:chorus_fruit",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    },
+    {
+      "id": "better-smelters-furnace-minecraft-sea-pickle",
+      "identifier": "better_smelters:process/furnace/minecraft-sea-pickle",
+      "type": "machine",
+      "station": "better_smelters_furnace",
+      "category": "Furnace recipes",
+      "recipeKind": "processing",
+      "slotCount": 1,
+      "slots": [
+        {
+          "id": "minecraft:sea_pickle",
+          "count": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inputs": [
+        {
+          "id": "minecraft:sea_pickle",
+          "count": 1
+        }
+      ],
+      "result": {
+        "id": "minecraft:lime_dye",
+        "count": 1
+      },
+      "results": [
+        {
+          "id": "minecraft:lime_dye",
+          "count": 1
+        }
+      ],
+      "output": "1× minecraft:lime_dye",
+      "input": "1× minecraft:sea_pickle",
+      "origin": {
+        "id": "smelters",
+        "label": "Better Smelters",
+        "accent": "#d78c55",
+        "category": "Base"
+      },
+      "originId": "smelters"
+    }
+  ]
+}

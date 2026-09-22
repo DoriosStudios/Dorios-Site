@@ -1,0 +1,14 @@
+{
+  "link.title.Community": {
+    "message": "Comunidad",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "copyright": {
+    "message": "\n        © 2026 Dorios Studios — Creando mundos, un addon a la vez.<br/>\n        Sitio desarrollado por <strong>Milo504</strong> with ❤️.\n        ",
+    "description": "The footer copyright"
+  },
+  "logo.alt": {
+    "message": "Dorios Studios Logo",
+    "description": "The alt text of footer logo"
+  }
+}

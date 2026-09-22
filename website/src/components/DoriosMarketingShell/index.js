@@ -2,6 +2,8 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import { useColorMode } from "@docusaurus/theme-common";
 import { IconBrandDiscord } from "@tabler/icons-react";
+import LocaleCycleButton from "../LocaleCycleButton";
+import { useSiteI18n } from "../../i18n/site";
 import "@fontsource-variable/league-spartan";
 import "@fontsource-variable/space-grotesk";
 import styles from "./styles.module.css";
@@ -24,27 +26,27 @@ function writeCookie(name, value) {
   document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}; Max-Age=${THEME_COOKIE_MAX_AGE}; Path=/; SameSite=Lax`;
 }
 
-function navigationFor(project) {
+function navigationFor(project, t) {
   return [
-    { label: "Projects", to: "/projects", key: "projects" },
-    project && { label: "Project", to: project.routes.project, key: "project" },
-    { label: "Wiki", to: project?.routes.wiki ?? "/wiki", key: "wiki" },
+    { label: t("projects"), to: "/projects", key: "projects" },
+    { label: t("wiki"), to: project?.routes.wiki ?? "/wiki", key: "wiki" },
     {
-      label: "Documentation",
+      label: t("documentation"),
       to: "/documentation/dorios_core/",
       key: "documentation",
     },
-    { label: "Studio", to: "/studio", key: "studio" },
-    { label: "Support", to: "/support", key: "support" },
+    { label: t("studio"), to: "/studio", key: "studio" },
+    { label: t("support"), to: "/support", key: "support" },
   ].filter(Boolean);
 }
 
 function ThemeToggle() {
+  const { t } = useSiteI18n();
   const { colorMode, setColorMode } = useColorMode();
   const restoredTheme = React.useRef(false);
   const isDarkTheme = colorMode === "dark";
   const nextTheme = isDarkTheme ? "light" : "dark";
-  const nextThemeLabel = isDarkTheme ? "Light" : "Dark";
+  const nextThemeLabel = isDarkTheme ? t("light") : t("dark");
 
   React.useEffect(() => {
     const savedTheme = readCookie(THEME_COOKIE);
@@ -68,8 +70,8 @@ function ThemeToggle() {
       type="button"
       className={styles.themeToggle}
       onClick={changeTheme}
-      aria-label={`Switch to ${nextTheme} theme`}
-      title={`Switch to ${nextTheme} theme`}
+      aria-label={t("switchTheme", {theme: nextThemeLabel})}
+      title={t("switchTheme", {theme: nextThemeLabel})}
     >
       <span className={styles.actionIcon} aria-hidden="true">
         {isDarkTheme ? (
@@ -110,17 +112,18 @@ function DoriosMark({ footer = false }) {
 }
 
 export function DoriosHeader({ activePage, project }) {
-  const navigation = navigationFor(project);
+  const { t } = useSiteI18n();
+  const navigation = navigationFor(project, t);
   return (
     <header className={styles.siteHeader}>
-      <Link className={styles.brand} to="/" aria-label="Dorios Studios home">
+      <Link className={styles.brand} to="/" aria-label={t("homeLabel")}>
         <DoriosMark />
         <span className={styles.brandLabel}>
           Dorios <em>Studios</em>
         </span>
       </Link>
 
-      <nav className={styles.primaryNav} aria-label="Primary navigation">
+      <nav className={styles.primaryNav} aria-label={t("primaryNavigation")}>
         {navigation.map((item) => (
           <Link
             key={item.key}
@@ -134,13 +137,14 @@ export function DoriosHeader({ activePage, project }) {
 
       <div className={styles.headerActions}>
         <ThemeToggle />
+        <LocaleCycleButton className={styles.localeSwitcher} />
         <a
           className={styles.discordLink}
           href="https://discord.gg/x36H3ZtmK5"
           target="_blank"
           rel="noreferrer"
         >
-          <span>Join Discord</span>
+          <span>{t("joinDiscord")}</span>
           <span className={styles.actionSeparator} aria-hidden="true" />
           <span className={styles.actionIcon} aria-hidden="true">
             <IconBrandDiscord role="presentation" />
@@ -152,17 +156,18 @@ export function DoriosHeader({ activePage, project }) {
 }
 
 export function DoriosFooter() {
+  const { t } = useSiteI18n();
   return (
     <footer className={styles.siteFooter}>
       <Link className={styles.footerBrand} to="/">
         <DoriosMark footer />
         <span>Dorios Studios</span>
       </Link>
-      <p>Creating bigger worlds, one addon at a time.</p>
+      <p>{t("footerTagline")}</p>
       <div className={styles.footerLinks}>
-        <Link to="/projects">Projects</Link>
-        <Link to="/studio">Studio</Link>
-        <Link to="/support">Support</Link>
+        <Link to="/projects">{t("projects")}</Link>
+        <Link to="/studio">{t("studio")}</Link>
+        <Link to="/support">{t("support")}</Link>
         <a
           href="https://github.com/DoriosStudios"
           target="_blank"

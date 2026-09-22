@@ -1,0 +1,41 @@
+.localeCycle {
+  min-height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42rem;
+  padding: 0 0.72rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 0.7rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+  transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease;
+}
+
+.localeCycle:hover,
+.localeCycle:focus-visible {
+  border-color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 9%, transparent);
+  color: var(--ifm-color-primary);
+}
+
+.localeCycle:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.localeCycle strong {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.mobile {
+  width: 100%;
+  justify-content: flex-start;
+  min-height: 2.75rem;
+  border: 0;
+  border-radius: 0.25rem;
+}

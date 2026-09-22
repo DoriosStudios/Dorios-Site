@@ -2,35 +2,25 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import '@fontsource-variable/space-grotesk';
 import DoriosMarketingShell from '../components/DoriosMarketingShell';
+import {useSiteI18n} from '../i18n/site';
+import {getPageCopy} from '../i18n/pages';
 import styles from './support.module.css';
 
 const communityLinks = [
   {
     id: 'discord',
-    eyebrow: 'Community',
-    title: 'Join our Discord',
-    action: 'Meet the community',
     href: 'https://discord.gg/x36H3ZtmK5',
   },
   {
     id: 'youtube',
-    eyebrow: 'Updates',
-    title: 'Watch on YouTube',
-    action: 'Watch the latest',
     href: 'https://www.youtube.com/@doriosstudios',
   },
   {
     id: 'github',
-    eyebrow: 'Open work',
-    title: 'Visit GitHub',
-    action: 'Explore repositories',
     href: 'https://github.com/DoriosStudios',
   },
   {
     id: 'patreon',
-    eyebrow: 'Support Dorios',
-    title: 'Become a Patron',
-    action: 'Help keep addons free',
     href: 'https://www.patreon.com/DoriosStudios',
   },
 ];
@@ -77,18 +67,22 @@ function PatreonIcon() {
 }
 
 export default function SupportPage() {
+  const {locale} = useSiteI18n();
+  const copy = getPageCopy(locale, 'support');
   return (
-    <Layout title="Support Dorios" description="Join and support the Dorios Studios community." noFooter>
+    <Layout title={copy.title} description={copy.description} noFooter>
       <DoriosMarketingShell activePage="support">
         <main className={styles.page}>
           <section className={styles.hero}>
-            <p className={styles.kicker}>Community & support</p>
-            <h1>The best worlds are <span>shared.</span></h1>
-            <p className={styles.lead}>Follow the work, meet other players, and help keep Dorios addons free for everyone who wants to play.</p>
+            <p className={styles.kicker}>{copy.kicker}</p>
+            <h1>{copy.headingBefore}<span>{copy.headingAccent}</span></h1>
+            <p className={styles.lead}>{copy.lead}</p>
           </section>
 
-          <section className={styles.communityCards} aria-label="Community links">
-            {communityLinks.map((link) => (
+          <section className={styles.communityCards} aria-label={copy.linksLabel}>
+            {communityLinks.map((link) => {
+              const [eyebrow, title, action] = copy.links[link.id];
+              return (
               <a
                 className={styles.communityCard}
                 data-platform={link.id}
@@ -96,21 +90,22 @@ export default function SupportPage() {
                 key={link.id}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={`${link.title} (opens in a new tab)`}
+                aria-label={`${title} (${copy.opensNewTab})`}
               >
                 <div className={styles.cardTopline}>
                   <span className={styles.brandIcon}><BrandIcon brand={link.id} /></span>
                 </div>
                 <div className={styles.communityCopy}>
-                  <span>{link.eyebrow}</span>
-                  <h2>{link.title}</h2>
+                  <span>{eyebrow}</span>
+                  <h2>{title}</h2>
                 </div>
                 <strong className={styles.cardAction}>
-                  {link.action}
+                  {action}
                   <ExternalIcon />
                 </strong>
               </a>
-            ))}
+              );
+            })}
           </section>
         </main>
       </DoriosMarketingShell>

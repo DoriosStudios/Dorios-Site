@@ -1,0 +1,174 @@
+{
+  "version.label": {
+    "message": "Atual",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.UtilityCraft": {
+    "message": "UtilityCraft",
+    "description": "The label for category UtilityCraft in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Guide": {
+    "message": "Guia",
+    "description": "The label for category Guide in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.utilitycraft-wiki": {
+    "message": "Wiki",
+    "description": "The label for category Wiki in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Blocks": {
+    "message": "Blocos",
+    "description": "The label for category Blocks in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Basic": {
+    "message": "Básico",
+    "description": "The label for category Basic in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Machinery": {
+    "message": "Maquinário",
+    "description": "The label for category Machinery in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Generators": {
+    "message": "Geradores",
+    "description": "The label for category Generators in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.utilitycraft-machines": {
+    "message": "Máquinas",
+    "description": "The label for category Machines in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Mob Grinding": {
+    "message": "Processamento de criaturas",
+    "description": "The label for category Mob Grinding in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Transport": {
+    "message": "Transporte",
+    "description": "The label for category Transport in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Upgrades": {
+    "message": "Melhorias",
+    "description": "The label for category Upgrades in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Ascendant Technology": {
+    "message": "Ascendant Technology",
+    "description": "The label for category Ascendant Technology in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.ascendant-technology-wiki": {
+    "message": "Wiki",
+    "description": "The label for category Wiki in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Equipment": {
+    "message": "Equipamento",
+    "description": "The label for category Equipment in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Armor": {
+    "message": "Armaduras",
+    "description": "The label for category Armor in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tools": {
+    "message": "Ferramentas",
+    "description": "The label for category Tools in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.ascendant-technology-machines": {
+    "message": "Máquinas",
+    "description": "The label for category Machines in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Resources": {
+    "message": "Recursos",
+    "description": "The label for category Resources in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Fluids": {
+    "message": "Fluidos",
+    "description": "The label for category Fluids in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Ores": {
+    "message": "Minérios",
+    "description": "The label for category Ores in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Bountiful Bonsais": {
+    "message": "Bountiful Bonsais",
+    "description": "The label for category Bountiful Bonsais in sidebar tutorialSidebar"
+  },
+  "sidebar.documentationSidebar.category.UtilityCraft": {
+    "message": "UtilityCraft",
+    "description": "The label for category UtilityCraft in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Guide": {
+    "message": "Guia",
+    "description": "The label for category Guide in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.utilitycraft-wiki": {
+    "message": "Wiki",
+    "description": "The label for category Wiki in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Blocks": {
+    "message": "Blocos",
+    "description": "The label for category Blocks in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Basic": {
+    "message": "Básico",
+    "description": "The label for category Basic in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Machinery": {
+    "message": "Maquinário",
+    "description": "The label for category Machinery in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Generators": {
+    "message": "Geradores",
+    "description": "The label for category Generators in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.utilitycraft-machines": {
+    "message": "Máquinas",
+    "description": "The label for category Machines in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Mob Grinding": {
+    "message": "Processamento de criaturas",
+    "description": "The label for category Mob Grinding in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Transport": {
+    "message": "Transporte",
+    "description": "The label for category Transport in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Upgrades": {
+    "message": "Melhorias",
+    "description": "The label for category Upgrades in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Ascendant Technology": {
+    "message": "Ascendant Technology",
+    "description": "The label for category Ascendant Technology in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.ascendant-technology-wiki": {
+    "message": "Wiki",
+    "description": "The label for category Wiki in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Equipment": {
+    "message": "Equipamento",
+    "description": "The label for category Equipment in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Armor": {
+    "message": "Armaduras",
+    "description": "The label for category Armor in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Tools": {
+    "message": "Ferramentas",
+    "description": "The label for category Tools in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.ascendant-technology-machines": {
+    "message": "Máquinas",
+    "description": "The label for category Machines in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Resources": {
+    "message": "Recursos",
+    "description": "The label for category Resources in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Fluids": {
+    "message": "Fluidos",
+    "description": "The label for category Fluids in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Ores": {
+    "message": "Minérios",
+    "description": "The label for category Ores in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Bountiful Bonsais": {
+    "message": "Bountiful Bonsais",
+    "description": "The label for category Bountiful Bonsais in sidebar documentationSidebar"
+  }
+}
