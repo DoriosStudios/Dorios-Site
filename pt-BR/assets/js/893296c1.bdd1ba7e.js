@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[751976],{42812:e=>{e.exports=JSON.parse('{"projectId":"tiered-machinery","entryType":"recipes","slug":"crafting-basic_incinerator"}')}}]);

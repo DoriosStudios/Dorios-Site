@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[412087],{452720:e=>{e.exports=JSON.parse('{"projectId":"excavate","entryType":"recipes","slug":"crafting-excavate_settings"}')}}]);

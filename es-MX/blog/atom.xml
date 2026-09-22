@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://doriosstudios.com/es-MX/blog</id>
+    <title>Dorios Studios Blog</title>
+    <updated>2025-10-07T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://doriosstudios.com/es-MX/blog"/>
+    <subtitle>Dorios Studios Blog</subtitle>
+    <icon>https://doriosstudios.com/es-MX/img/dorios_logo.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Dorios Excavate - Release]]></title>
+        <id>https://doriosstudios.com/es-MX/blog/dorios-excavate-release</id>
+        <link href="https://doriosstudios.com/es-MX/blog/dorios-excavate-release"/>
+        <updated>2025-10-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Dorios Excavate is now available — a smarter, achievement-compatible way to mine, chop, and dig in Minecraft Bedrock. Automate your excavation and customize every detail to fit your playstyle.
+]]></summary>
+        <content type="html"><![CDATA[<p align="center"><iframe width="70%" height="400" src="https://www.youtube.com/embed/c-IrGsnSO04" title="Dorios Excavate – Smart Vein Miner (Minecraft Bedrock Add-On)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.25)"></iframe></p>
+<p>Tired of chopping trees or mining ores one block at a time?<br>
+<strong>Dorios Excavate</strong> introduces a smarter, faster, and achievement-friendly way to dig through Minecraft Bedrock.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="smarter-mining">Smarter Mining<a href="https://doriosstudios.com/es-MX/blog/dorios-excavate-release#smarter-mining" class="hash-link" aria-label="Enlace directo al Smarter Mining" title="Enlace directo al Smarter Mining" translate="no">​</a></h2>
+<p>This addon reimagines how players mine and gather resources.<br>
+<!-- -->Instead of breaking blocks one by one, Excavate lets you instantly mine entire <strong>veins</strong>, <strong>trees</strong>, or <strong>tunnels</strong> — all while keeping lag to a minimum.</p>
+<p>Each block is processed with a short delay to maintain smooth performance even during large excavations, making it ideal for both survival and multiplayer servers.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="full-control-your-way">Full Control, Your Way<a href="https://doriosstudios.com/es-MX/blog/dorios-excavate-release#full-control-your-way" class="hash-link" aria-label="Enlace directo al Full Control, Your Way" title="Enlace directo al Full Control, Your Way" translate="no">​</a></h2>
+<p>Every player can fully customize their excavation experience:</p>
+<ul>
+<li>Add or remove blocks from your whitelist</li>
+<li>Toggle the excavate ability on or off</li>
+<li>Change your <strong>Shape Mode</strong> (Line, Tunnel, Vein, etc.)</li>
+<li>Adjust your <strong>Block Limit</strong> for performance and balance</li>
+</ul>
+<p align="center"><img src="https://media.forgecdn.net/attachments/description/1316262/description_2f550cd4-d5d3-4c89-81ac-c3d45e499f5c.png" alt="Dorios Excavate Configuration Menu" width="70%" style="border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.25)"></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="works-with-achievements">Works With Achievements<a href="https://doriosstudios.com/es-MX/blog/dorios-excavate-release#works-with-achievements" class="hash-link" aria-label="Enlace directo al Works With Achievements" title="Enlace directo al Works With Achievements" translate="no">​</a></h2>
+<p>One of Dorios Excavate’s strongest features is its <strong>compatibility with achievements</strong>.<br>
+<!-- -->That means you can use it in your survival worlds without disabling Xbox Live achievements — making it perfect for both casual and competitive players.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="performance-focused">Performance-Focused<a href="https://doriosstudios.com/es-MX/blog/dorios-excavate-release#performance-focused" class="hash-link" aria-label="Enlace directo al Performance-Focused" title="Enlace directo al Performance-Focused" translate="no">​</a></h2>
+<p>Unlike traditional vein miners, Dorios Excavate was designed to be <strong>lag-friendly</strong>.<br>
+<!-- -->By spreading block-breaking operations over short intervals, it ensures stable tick performance even when excavating massive areas.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="available-commands">Available Commands<a href="https://doriosstudios.com/es-MX/blog/dorios-excavate-release#available-commands" class="hash-link" aria-label="Enlace directo al Available Commands" title="Enlace directo al Available Commands" translate="no">​</a></h2>
+<div class="language-plaintext codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-plaintext codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">excavateadd              – Adds a block to your personal excavate whitelist.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">excavateblacklistadd     – Adds a block to the global blacklist. (Admin only)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">excavateblacklistremove  – Removes a block from the global blacklist. (Admin only)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">excavatedefaultadd       – Adds a block to the global default list. (Admin only)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">excavatedefaultremove    – Removes a block from the global default list. (Admin only)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">excavatelimit            – Sets your personal block limit for excavate.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">excavateopenmenu         – Opens your personal excavate configuration menu.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">excavateremove           – Removes a block from your personal excavate whitelist.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">excavateshape            – Changes your current excavate shape or pattern.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">excavatetoggle           – Toggles your excavate ability on or off.```</span><br></span></code></pre></div></div>]]></content>
+        <author>
+            <name>Milo504</name>
+            <uri>https://doriosstudios.com</uri>
+        </author>
+        <category label="Dorios Studios" term="Dorios Studios"/>
+        <category label="addon" term="addon"/>
+        <category label="Release" term="Release"/>
+        <category label="excavate" term="excavate"/>
+        <category label="minecraft-bedrock" term="minecraft-bedrock"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[UtilityCraft 3.2 — The Automation Update]]></title>
+        <id>https://doriosstudios.com/es-MX/blog/2025/11/01/utilitycraft-3.2.0</id>
+        <link href="https://doriosstudios.com/es-MX/blog/2025/11/01/utilitycraft-3.2.0"/>
+        <updated>2025-10-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[UtilityCraft 3.2 introduces advanced automation, refined energy systems, and expanded compatibility with a complete overhaul to machines, generators, and transfer mechanics.]]></summary>
+        <content type="html"><![CDATA[<p align="center"><img src="https://media.forgecdn.net/attachments/1378/192/image_2025-11-01_122442622-png.png" alt="UtilityCraft 3.2.0" width="70%" style="border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.25)"></p>
+<p><strong>Release Date:</strong> October 7, 2025<br>
+<strong>Developed by:</strong> Dorios Studios<br>
+<strong>Download:</strong> <a href="https://github.com/DoriosStudios/UtilityCraft/releases/tag/v3.2.0" target="_blank" rel="noopener noreferrer">UtilityCraft v3.2.0 on GitHub</a></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="https://doriosstudios.com/es-MX/blog/2025/11/01/utilitycraft-3.2.0#overview" class="hash-link" aria-label="Enlace directo al Overview" title="Enlace directo al Overview" translate="no">​</a></h2>
+<p>UtilityCraft 3.2 delivers one of the most extensive updates to date, focusing on deeper automation, improved stability, and technical reworks for long-term addon compatibility.<br>
+<!-- -->This release rebuilds core systems for machines, energy transfer, and fluid management, while introducing a new generator, refined UIs, and developer integration through ScriptEvents.<br>
+<!-- -->Players can now enjoy more control, faster performance, and flexible automation that scales with their world.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="major-additions--changes">Major Additions &amp; Changes<a href="https://doriosstudios.com/es-MX/blog/2025/11/01/utilitycraft-3.2.0#major-additions--changes" class="hash-link" aria-label="Enlace directo al Major Additions &amp; Changes" title="Enlace directo al Major Additions &amp; Changes" translate="no">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="machines">Machines<a href="https://doriosstudios.com/es-MX/blog/2025/11/01/utilitycraft-3.2.0#machines" class="hash-link" aria-label="Enlace directo al Machines" title="Enlace directo al Machines" translate="no">​</a></h3>
+<ul>
+<li>Reworked sieving system with tiered meshes and balanced drop progression.</li>
+<li>Added Copper Cobblestone Generator as the first tier in a six-level structure.</li>
+<li>Rebalanced energy and speed across multiple machines including Crusher, Infuser, Digitizer, and Induction Anvil.</li>
+<li>New unified machine interface with progress display, upgrade slots, and information area.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="generators">Generators<a href="https://doriosstudios.com/es-MX/blog/2025/11/01/utilitycraft-3.2.0#generators" class="hash-link" aria-label="Enlace directo al Generators" title="Enlace directo al Generators" translate="no">​</a></h3>
+<ul>
+<li>Added the Wind Turbine, a passive generator whose efficiency varies with height.</li>
+<li>Generators now show detailed information such as time of day, remaining fuel, and efficiency.</li>
+<li>Introduced transfer modes for energy, items, and fluids: Nearest, Farthest, and Round.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tools-and-items">Tools and Items<a href="https://doriosstudios.com/es-MX/blog/2025/11/01/utilitycraft-3.2.0#tools-and-items" class="hash-link" aria-label="Enlace directo al Tools and Items" title="Enlace directo al Tools and Items" translate="no">​</a></h3>
+<ul>
+<li>Added Steel and Copper AiOTs, Hammers, and Paxels.</li>
+<li>Added Copper Mesh and new compressed item families.</li>
+<li>Updated textures for tools, machines, and Mob Grinder.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mob-grinding">Mob Grinding<a href="https://doriosstudios.com/es-MX/blog/2025/11/01/utilitycraft-3.2.0#mob-grinding" class="hash-link" aria-label="Enlace directo al Mob Grinding" title="Enlace directo al Mob Grinding" translate="no">​</a></h3>
+<ul>
+<li>Mob Grinders are now upgradeable with Damage and Range modules.</li>
+<li>Can be toggled on or off for improved control.</li>
+<li>Enhanced entity detection and performance.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="technical-overhaul">Technical Overhaul<a href="https://doriosstudios.com/es-MX/blog/2025/11/01/utilitycraft-3.2.0#technical-overhaul" class="hash-link" aria-label="Enlace directo al Technical Overhaul" title="Enlace directo al Technical Overhaul" translate="no">​</a></h2>
+<ul>
+<li>Full rewrite of machine, generator, and fluid systems for efficiency and modular design.</li>
+<li>Introduced ScriptEvent integration to allow external addons to register, replace, or modify recipes dynamically:<!-- -->
+<ul>
+<li><code>utilitycraft:register_crusher_recipe</code></li>
+<li><code>utilitycraft:register_infuser_recipe</code></li>
+<li><code>utilitycraft:register_melter_recipe</code></li>
+<li><code>utilitycraft:register_crafter_recipe</code></li>
+<li><code>utilitycraft:register_fuel</code></li>
+<li><code>utilitycraft:register_sieve_drop</code></li>
+</ul>
+</li>
+<li>Added <code>utilitycraft:mesh</code> component for defining custom sieve meshes.</li>
+<li>Updated rate speed settings:<!-- -->
+<ul>
+<li>Super Fast → 2 ticks</li>
+<li>Fast → 4 ticks</li>
+<li>Normal → 10 ticks</li>
+<li>Slow (Default) → 20 ticks</li>
+<li>Super Slow → 40 ticks</li>
+</ul>
+</li>
+<li>Reduced maximum stack size of upgrades to 8.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="compatibility">Compatibility<a href="https://doriosstudios.com/es-MX/blog/2025/11/01/utilitycraft-3.2.0#compatibility" class="hash-link" aria-label="Enlace directo al Compatibility" title="Enlace directo al Compatibility" translate="no">​</a></h2>
+<p>UtilityCraft 3.2 maintains full compatibility with other Dorios Studios projects and popular technical addons such as <strong>Integrated Storage</strong> and <strong>Drawers</strong>, ensuring a seamless automation network between systems.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="full-changelog">Full Changelog<a href="https://doriosstudios.com/es-MX/blog/2025/11/01/utilitycraft-3.2.0#full-changelog" class="hash-link" aria-label="Enlace directo al Full Changelog" title="Enlace directo al Full Changelog" translate="no">​</a></h2>
+<p>For a detailed list of every addition, fix, and rework, visit the full changelog:<br>
+<a href="https://github.com/DoriosStudios/UtilityCraft/releases/tag/v3.2.0" target="_blank" rel="noopener noreferrer">UtilityCraft 3.2.0 | Full Changelog on GitHub</a></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="more-information">More Information<a href="https://doriosstudios.com/es-MX/blog/2025/11/01/utilitycraft-3.2.0#more-information" class="hash-link" aria-label="Enlace directo al More Information" title="Enlace directo al More Information" translate="no">​</a></h2>
+<p>For documentation, setup guides, and detailed explanations, visit the official Dorios Studios Wiki:<br>
+<a href="https://doriosstudios.com/docs/utilitycraft" target="_blank" rel="noopener noreferrer">doriosstudios.com/docs/utilitycraft</a></p>
+<p>For updates, announcements, betas, and community discussions, join the Dorios Studios Discord:<br>
+<a href="https://discord.gg/YvzPqJZTNd" target="_blank" rel="noopener noreferrer">discord.gg/YvzPqJZTNd</a></p>]]></content>
+        <author>
+            <name>Milo504</name>
+            <uri>https://doriosstudios.com</uri>
+        </author>
+        <category label="UtilityCraft" term="UtilityCraft"/>
+        <category label="Update" term="Update"/>
+        <category label="automation" term="automation"/>
+        <category label="energy" term="energy"/>
+        <category label="minecraft-bedrock" term="minecraft-bedrock"/>
+        <category label="Dorios Studios" term="Dorios Studios"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Welcome]]></title>
+        <id>https://doriosstudios.com/es-MX/blog/welcome</id>
+        <link href="https://doriosstudios.com/es-MX/blog/welcome"/>
+        <updated>2025-10-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Welcome to Dorios Studios — after days of work, our official website is finally live. Here we’ll be completing the full wiki for our addons, detailed guides, and everything you might need to solve your questions. This is just the start — we hope you enjoy what’s coming and join us in this new stage for the Minecraft Bedrock community.
+]]></summary>
+        <content type="html"><![CDATA[<p align="center"><img src="https://doriosstudios.com/img/dorios_logo.png" alt="Dorios Studios Banner" width="25%" style="border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.25)"></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-welcome-to-dorios-studios">🔥 Welcome to Dorios Studios<a href="https://doriosstudios.com/es-MX/blog/welcome#-welcome-to-dorios-studios" class="hash-link" aria-label="Enlace directo al 🔥 Welcome to Dorios Studios" title="Enlace directo al 🔥 Welcome to Dorios Studios" translate="no">​</a></h2>
+<p>After days of work, we’re happy to finally open our official website.<br>
+<!-- -->Here we’ll be completing the full wiki for our addons, detailed guides, and everything you might need to solve your questions.</p>
+<p>This is just the start — we hope you enjoy what’s coming ❤️</p>
+<hr>
+<p align="center"></p><p><b>Welcome to Dorios Studios.</b><br>
+Let’s keep building.</p><p></p>]]></content>
+        <author>
+            <name>Milo504</name>
+            <uri>https://doriosstudios.com</uri>
+        </author>
+        <category label="Dorios Studios" term="Dorios Studios"/>
+        <category label="Community" term="Community"/>
+        <category label="Announcement" term="Announcement"/>
+        <category label="Projects" term="Projects"/>
+    </entry>
+</feed>

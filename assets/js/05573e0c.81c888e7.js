@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[917885],{60588:e=>{e.exports=JSON.parse('{"projectId":"smelters","entryType":"recipes","slug":"processing-better-smelters-furnace-minecraft-stripped-jungle-log"}')}}]);

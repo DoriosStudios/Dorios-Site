@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[637388],{438109:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-heavy-machinery-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-deepslate-uranium-chunk-4-9-0p01-1"}')}}]);

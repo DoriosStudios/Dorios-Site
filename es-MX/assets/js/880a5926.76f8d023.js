@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[835508],{689593:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"crafting-minecraft-chiseled-deepslate-from-cobbled-deepslate-stonecutting"}')}}]);

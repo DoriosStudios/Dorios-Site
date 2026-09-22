@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[893549],{495206:e=>{e.exports=JSON.parse('{"projectId":"smelters","entryType":"recipes","slug":"crafting-iron_furnace"}')}}]);

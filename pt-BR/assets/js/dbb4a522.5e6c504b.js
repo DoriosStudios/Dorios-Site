@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[887121],{990700:e=>{e.exports=JSON.parse('{"projectId":"smelters","entryType":"recipes","slug":"crafting-nether_star_furnace"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[331530],{858212:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"smelting-pickaxe"}')}}]);

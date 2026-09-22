@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[1767],{900883:e=>{e.exports=JSON.parse('{"projectId":"smelters","entryType":"recipes","slug":"processing-better-smelters-furnace-minecraft-deepslate-redstone-ore"}')}}]);

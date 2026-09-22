@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[632184],{337697:e=>{e.exports=JSON.parse('{"projectId":"smelters","entryType":"recipes","slug":"crafting-netherite_furnacev1"}')}}]);

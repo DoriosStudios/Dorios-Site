@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[337687],{414040:e=>{e.exports=JSON.parse('{"projectId":"tiered-machinery","entryType":"recipes","slug":"crafting-ultimate_crusher"}')}}]);

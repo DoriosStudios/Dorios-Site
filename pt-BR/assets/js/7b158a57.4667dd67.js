@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[354643],{465587:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"items","slug":"hazmat_leggings"}')}}]);

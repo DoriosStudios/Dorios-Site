@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[959027],{538050:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"bionic-arm"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[439471],{564721:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"absolute-chip"}')}}]);

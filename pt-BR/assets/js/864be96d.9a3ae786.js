@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[747691],{869493:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"machines","slug":"arc_press_forge"}')}}]);

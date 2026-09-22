@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[493833],{754639:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"stone-aiot"}')}}]);

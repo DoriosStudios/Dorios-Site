@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[589722],{859086:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-heavy-machinery-catalyst-weaver-utilitycraft-diamond-dust-utilitycraft-darloonite-crystal-converted"}')}}]);

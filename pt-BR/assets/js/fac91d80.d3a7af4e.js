@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[34391],{842049:e=>{e.exports=JSON.parse('{"projectId":"smelters","entryType":"recipes","slug":"processing-better-smelters-furnace-minecraft-lapis-ore"}')}}]);

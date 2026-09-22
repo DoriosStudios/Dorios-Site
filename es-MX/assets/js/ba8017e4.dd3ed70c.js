@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[851467],{976950:e=>{e.exports=JSON.parse('{"projectId":"trinkets","entryType":"items","slug":"strong-ancient-ring"}')}}]);

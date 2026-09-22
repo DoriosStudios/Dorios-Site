@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[280442],{482886:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","section":"how-to-play/drop-tables"}')}}]);

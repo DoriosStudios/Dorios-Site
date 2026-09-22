@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[519114],{822776:e=>{e.exports=JSON.parse('{"projectId":"smelters","entryType":"recipes","slug":"processing-better-smelters-furnace-minecraft-nether-brick"}')}}]);

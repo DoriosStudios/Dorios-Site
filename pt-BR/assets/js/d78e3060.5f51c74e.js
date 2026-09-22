@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[422426],{492418:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-heavy-machinery-autosieve-utilitycraft-compressed-crushed-cobbled-deepslate-utilitycraft-fluorite-crystal-5-9-0p015-2-dual-siever"}')}}]);

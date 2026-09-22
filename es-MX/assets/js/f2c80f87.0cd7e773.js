@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[93983],{636744:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"steam-capsule"}')}}]);

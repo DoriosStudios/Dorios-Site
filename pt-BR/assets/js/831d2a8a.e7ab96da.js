@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[372033],{937076:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-catalyst-weaver-utilitycraft-aetherium-ingot-from-mixed-dust-and-shards"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[61930],{49863:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"generators","slug":"ultimate_energy_transmitter"}')}}]);

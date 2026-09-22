@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[81204],{194699:e=>{e.exports=JSON.parse('{"projectId":"smelters","section":"machines"}')}}]);

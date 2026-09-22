@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[64354],{401631:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"dark-matter-liquid-capsule"}')}}]);

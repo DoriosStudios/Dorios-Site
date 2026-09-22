@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[210736],{465362:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"creeper-essence"}')}}]);

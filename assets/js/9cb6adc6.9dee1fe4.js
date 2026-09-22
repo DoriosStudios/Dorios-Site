@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[450139],{709838:e=>{e.exports=JSON.parse('{"projectId":"smelters","entryType":"blocks","slug":"nether-star-furnace"}')}}]);

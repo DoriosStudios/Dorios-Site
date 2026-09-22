@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[85869],{989555:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-heavy-machinery-autosieve-utilitycraft-compressed-gravel-utilitycraft-tin-chunk-4-9-0p05-0"}')}}]);

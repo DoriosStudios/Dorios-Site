@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[351850],{319447:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"emerald-fishing-net"}')}}]);

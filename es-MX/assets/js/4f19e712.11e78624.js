@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[300250],{752688:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"energized-iron-plate"}')}}]);

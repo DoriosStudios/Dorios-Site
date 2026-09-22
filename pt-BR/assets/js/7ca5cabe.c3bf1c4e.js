@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[361180],{536641:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"xp-capsule"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[705102],{514881:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"blocks","slug":"spawner-core"}')}}]);

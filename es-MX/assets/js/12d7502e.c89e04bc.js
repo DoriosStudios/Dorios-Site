@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[681181],{986032:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","section":"how-to-play/generators"}')}}]);

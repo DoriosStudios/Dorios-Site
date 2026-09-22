@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[613960],{939036:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"shulker-shell-shard"}')}}]);

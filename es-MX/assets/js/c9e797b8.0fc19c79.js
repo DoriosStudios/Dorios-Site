@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[254829],{247454:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"absolute-drill"}')}}]);

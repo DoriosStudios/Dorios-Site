@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[142940],{843503:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"smeltflare"}')}}]);
