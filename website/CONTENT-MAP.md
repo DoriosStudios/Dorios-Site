@@ -48,7 +48,7 @@ Edite `src/data/projectCatalog.json`.
 | `media.cover`, `media.icon`, `media.alt` | Arte principal e thumbnail |
 | `metrics` | Items, Blocks, Machines, Recipes e outras métricas |
 
-Paletas visuais dos projetos ficam em `src/data/cardPalettes.js`. Paletas dos previews sociais ficam em `src/data/socialPreviewPalettes.json`.
+Paletas visuais dos projetos e dos previews sociais ficam em `src/data/cardPalettes.js`.
 
 Downloads do Ascendant Technology são atualizados por `scripts/refresh-github-release-stats.mjs` e gravados em `src/data/githubReleaseStats.json`.
 
@@ -155,7 +155,6 @@ Metadados específicos ficam em `src/components/SocialMetadata/index.js`; o fall
 1. Criar validação de cobertura entre chaves de `machineProfiles` e máquinas detectadas no manifest.
 2. Validar automaticamente imagens quebradas e identifiers sem rota de detalhe.
 3. Criar um glossário único para labels técnicas antes da internacionalização.
-4. Evitar duplicação entre `cardPalettes.js` e `socialPreviewPalettes.json` usando uma única fonte serializável.
 
 ## Validação antes de publicar
 

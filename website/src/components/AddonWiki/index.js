@@ -123,7 +123,56 @@ function blockRenderCandidates(project, entry) {
 }
 
 function socialRender(source) {
-  return source?.replace(/^\/img\/wiki\/([^/]+)\/renders\//, '/img/social/wiki/$1/renders/');
+  return source?.replace(/^\/img\/wiki\/([^/]+)\/(.+\.png)$/i, '/img/social/wiki/$1/$2');
+}
+
+function generatedEntrySocialImage(project, source) {
+  return socialRender(source) ?? `/img/social/wiki/${project.id}/fallback.png`;
+}
+
+const MACHINE_SECTION_IDS = ['details', 'specs', 'drops'];
+const MINING_SECTION_IDS = ['drops', 'locations', 'modifiers'];
+
+function hashSection(hash) {
+  try {
+    return decodeURIComponent(String(hash ?? '').replace(/^#/, ''));
+  } catch {
+    return String(hash ?? '').replace(/^#/, '');
+  }
+}
+
+function useHashSection(validSections, defaultSection) {
+  const location = useLocation();
+  const history = useHistory();
+  const requestedSection = hashSection(location.hash);
+  const resolvedSection = validSections.includes(requestedSection) ? requestedSection : defaultSection;
+  const [activeSection, setActiveSection] = useState(resolvedSection);
+
+  useEffect(() => {
+    setActiveSection(resolvedSection);
+  }, [resolvedSection]);
+
+  useEffect(() => {
+    if (location.hash) return;
+    history.replace({
+      pathname: location.pathname,
+      search: location.search,
+      hash: `#${defaultSection}`,
+    });
+  }, [defaultSection, history, location.hash, location.pathname, location.search]);
+
+  const selectSection = useCallback((section) => {
+    if (!validSections.includes(section)) return;
+    setActiveSection(section);
+    if (hashSection(location.hash) === section) return;
+    history.push({
+      pathname: location.pathname,
+      search: location.search,
+      hash: `#${section}`,
+    });
+  }, [history, location.hash, location.pathname, location.search, validSections]);
+
+  return [activeSection, selectSection];
 }
 
 function entrySocialImage(project, entryType, entry, controller, recipe) {
@@ -2201,7 +2250,7 @@ function romanNumeral(value) {
 }
 
 function MiningReference({mining}) {
-  const [activeTab, setActiveTab] = useState('drops');
+  const [activeTab, setActiveTab] = useHashSection(MINING_SECTION_IDS, 'drops');
   if (!mining) return null;
   const tabs = [
     {id: 'drops', label: 'Drops by enchantment'},
@@ -3437,25 +3486,25 @@ function MachineRecipes({machine, recipes}) {
 
 function MachineDocumentationTabs({machine, controller, blockDetails, specifications}) {
   const project = useWikiProject();
-  const [activeTab, setActiveTab] = useState('block-details');
+  const [activeTab, setActiveTab] = useHashSection(MACHINE_SECTION_IDS, 'details');
   const recipes = machineRecipeSets(project, machine, controller);
   const tabs = [
     {
-      id: 'block-details',
+      id: 'details',
       label: 'Block Details',
       content: <div className={styles.machineReferenceGrid}>
         <MachineReferencePanel index={1} title="Block Details" copy="Minecraft block properties, mining requirements and applicable categories." items={blockDetails.items} tags={blockDetails.tags} />
       </div>,
     },
     {
-      id: 'machine-specifications',
+      id: 'specs',
       label: 'Machine Specifications',
       content: <div className={styles.machineReferenceGrid}>
         <MachineReferencePanel index={2} title="Machine Specifications" copy="Capacity, operating values, interfaces and machine-specific limits." items={specifications} />
       </div>,
     },
     {
-      id: 'recipes',
+      id: 'drops',
       label: 'Recipes',
       content: <MachineRecipes machine={machine} recipes={recipes} />,
     },
@@ -3599,7 +3648,7 @@ function AddonWikiEntryContent({entryType, slug}) {
     const controller = (allBlocks ?? blocks).find((candidate) => candidate.slug === (entry.blockSlug ?? machineControllerIds[entry.id]));
     const sequence = Math.max(1, machines.findIndex((machine) => machine.id === entry.id) + 1);
     const originalSocialImage = entrySocialImage(project, entryType, entry, controller);
-    const machineSocialImage = socialRender(originalSocialImage);
+    const machineSocialImage = generatedEntrySocialImage(project, originalSocialImage);
     const hasGeneratedSocialImage = machineSocialImage !== originalSocialImage;
     return (
       <Layout title={`${title} — ${project.wikiName}`} description={entry.description} noFooter>
@@ -3624,6 +3673,9 @@ function AddonWikiEntryContent({entryType, slug}) {
 
   if (entryType === 'items') {
     const itemVisual = <TierFlipbook entry={entry} className={styles.detailItemVisual} />;
+    const originalSocialImage = entrySocialImage(project, entryType, entry);
+    const itemSocialImage = generatedEntrySocialImage(project, originalSocialImage);
+    const hasGeneratedSocialImage = itemSocialImage !== originalSocialImage;
     return (
       <Layout title={`${title} — ${project.wikiName}`} description={entry.documentation?.description || entry.description || `${title} item in ${project.wikiName}.`} noFooter>
         <SocialMetadata
@@ -3632,8 +3684,10 @@ function AddonWikiEntryContent({entryType, slug}) {
           type={entryTypeLabel}
           description={entry.documentation?.description || entry.description}
           path={`${project.basePath}/${entryType}/${slug}`}
-          image={entrySocialImage(project, entryType, entry)}
-          imageAlt={`${title} from ${project.name}`}
+          image={itemSocialImage}
+          imageAlt={`${title} render from ${project.name}`}
+          imageWidth={hasGeneratedSocialImage ? 512 : undefined}
+          imageHeight={hasGeneratedSocialImage ? 512 : undefined}
         />
         <WikiFrame active={activeSection} query={query} setQuery={setQuery}>
           <div className={styles.detailBack}><Link to={backHref}>← Back to {backLabel}</Link></div>
@@ -3678,6 +3732,11 @@ function AddonWikiEntryContent({entryType, slug}) {
     facts = [['Entry type', 'Mechanic'], ['System', entry.name]];
   }
 
+  const originalSocialImage = entrySocialImage(project, entryType, entry, undefined, recipe);
+  const supportsGeneratedSocialImage = ['blocks', 'generators'].includes(entryType);
+  const detailSocialImage = supportsGeneratedSocialImage ? generatedEntrySocialImage(project, originalSocialImage) : originalSocialImage;
+  const hasGeneratedSocialImage = detailSocialImage !== originalSocialImage;
+
   return (
     <Layout title={`${title} — ${project.wikiName}`} description={recipe ? `Recipe for ${title}.` : (entry.description || `${title} entry in the ${project.wikiName}.`)} noFooter>
       <SocialMetadata
@@ -3686,8 +3745,10 @@ function AddonWikiEntryContent({entryType, slug}) {
         type={entryTypeLabel}
         description={recipe ? `Recipe for ${title}.` : entry.description}
         path={`${project.basePath}/${entryType}/${slug}`}
-        image={entrySocialImage(project, entryType, entry, undefined, recipe)}
-        imageAlt={`${title} from ${project.name}`}
+        image={detailSocialImage}
+        imageAlt={`${title}${hasGeneratedSocialImage ? ' render' : ''} from ${project.name}`}
+        imageWidth={hasGeneratedSocialImage ? 512 : undefined}
+        imageHeight={hasGeneratedSocialImage ? 512 : undefined}
       />
       <WikiFrame active={activeSection} query={query} setQuery={setQuery}>
         <div className={styles.detailBack}><Link to={backHref}>← Back to {backLabel}</Link></div>

@@ -2,13 +2,80 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import sharp from 'sharp';
-import palettes from '../src/data/socialPreviewPalettes.json' with {type: 'json'};
+import {projectCardPalettes} from '../src/data/cardPalettes.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const wikiRoot = path.join(root, 'static', 'img', 'wiki');
 const outputRoot = path.join(root, 'static', 'img', 'social', 'wiki');
+const projectSourceRoot = path.join(root, 'src', 'wiki', 'projects');
+const projectCatalogPath = path.join(root, 'src', 'data', 'projectCatalog.json');
 const logoPath = path.join(root, 'static', 'img', 'dorios_logo.png');
 const fallbackPalette = ['#ff6d18', '#211006'];
+const concurrency = 8;
+
+function isEntryAsset(relative, projectId) {
+  const segments = relative.split(path.sep).map((segment) => segment.toLowerCase());
+  const [topLevelDirectory, assetType] = segments;
+  if (projectId === 'vanilla') return topLevelDirectory === 'renders';
+  if (topLevelDirectory === 'textures') return ['blocks', 'items'].includes(assetType);
+  return ['blocks', 'equipment', 'guide', 'items', 'renders', 'showcase'].includes(topLevelDirectory);
+}
+
+function manifestEntryAssets(manifest) {
+  const assets = new Set();
+  const addItem = (entry) => {
+    if (entry?.image) assets.add(entry.image);
+    entry?.variants?.forEach(addItem);
+  };
+  const addBlock = (entry) => {
+    if (entry?.render) {
+      assets.add(entry.render);
+      return;
+    }
+    [
+      entry?.itemImage,
+      entry?.image,
+      entry?.faces?.north,
+      entry?.faces?.right,
+      Object.values(entry?.faces ?? {}).find(Boolean),
+    ].filter(Boolean).forEach((image) => assets.add(image));
+  };
+  manifest.content?.items?.forEach(addItem);
+  manifest.catalog?.items?.forEach(addItem);
+  manifest.content?.blocks?.forEach(addBlock);
+  return [...assets];
+}
+
+function relativeEntryAsset(projectId, source) {
+  const assetPrefix = `/img/wiki/${projectId}/`;
+  const relative = String(source).startsWith(assetPrefix) ? String(source).slice(assetPrefix.length) : String(source);
+  if (/^(?:https?:)?\/\//.test(relative) || path.isAbsolute(relative)) return null;
+  return relative.replaceAll('/', path.sep);
+}
+
+async function projectEntryImages(projectId, projectRoot) {
+  const manifestPath = path.join(projectSourceRoot, projectId, 'manifest.json');
+  try {
+    const manifest = JSON.parse(await fs.readFile(manifestPath, 'utf8'));
+    const referencedImages = manifestEntryAssets(manifest)
+      .map((source) => relativeEntryAsset(projectId, source))
+      .filter(Boolean)
+      .map((relative) => path.join(projectRoot, relative));
+    const supportingImages = [];
+    for (const directory of ['guide', 'renders', 'showcase']) {
+      try {
+        supportingImages.push(...await pngFiles(path.join(projectRoot, directory)));
+      } catch (error) {
+        if (error.code !== 'ENOENT') throw error;
+      }
+    }
+    return [...new Set([...referencedImages, ...supportingImages])];
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+    const images = await pngFiles(projectRoot);
+    return images.filter((source) => isEntryAsset(path.relative(projectRoot, source), projectId));
+  }
+}
 
 async function pngFiles(directory) {
   const entries = await fs.readdir(directory, {withFileTypes: true});
@@ -58,21 +125,41 @@ async function generatePreview(source, destination, palette, logo) {
 
 const logo = await sharp(logoPath).resize(48, 48, {fit: 'contain'}).png().toBuffer();
 const projects = await fs.readdir(wikiRoot, {withFileTypes: true});
-let generated = 0;
+const projectCatalog = JSON.parse(await fs.readFile(projectCatalogPath, 'utf8'));
+const jobs = [];
 
 for (const project of projects.filter((entry) => entry.isDirectory())) {
-  const renderRoot = path.join(wikiRoot, project.name, 'renders');
-  try {
-    const renders = await pngFiles(renderRoot);
-    for (const source of renders) {
-      const relative = path.relative(renderRoot, source);
-      const destination = path.join(outputRoot, project.name, 'renders', relative);
-      await generatePreview(source, destination, palettes[project.name], logo);
-      generated += 1;
-    }
-  } catch (error) {
-    if (error.code !== 'ENOENT') throw error;
+  const projectRoot = path.join(wikiRoot, project.name);
+  const images = await projectEntryImages(project.name, projectRoot);
+  for (const source of images) {
+    const relative = path.relative(projectRoot, source);
+    jobs.push({
+      source,
+      destination: path.join(outputRoot, project.name, relative),
+      palette: projectCardPalettes[project.name],
+    });
   }
+  const catalogProject = projectCatalog.projects.find(({id}) => id === project.name);
+  const fallbackSource = catalogProject?.media?.icon
+    ? path.join(root, 'static', catalogProject.media.icon.replace(/^\//, '').replaceAll('/', path.sep))
+    : logoPath;
+  jobs.push({
+    source: fallbackSource,
+    destination: path.join(outputRoot, project.name, 'fallback.png'),
+    palette: projectCardPalettes[project.name],
+  });
 }
 
-console.log(`[social-previews] Generated ${generated} render cards.`);
+await fs.rm(outputRoot, {recursive: true, force: true});
+
+for (let index = 0; index < jobs.length; index += concurrency) {
+  await Promise.all(jobs.slice(index, index + concurrency).map(async ({source, destination, palette}) => {
+    try {
+      await generatePreview(source, destination, palette, logo);
+    } catch (error) {
+      throw new Error(`[social-previews] Failed to process ${path.relative(wikiRoot, source)}: ${error.message}`, {cause: error});
+    }
+  }));
+}
+
+console.log(`[social-previews] Generated ${jobs.length} item, block and machine cards.`);
