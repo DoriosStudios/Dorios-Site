@@ -44,7 +44,7 @@
         "cover": "/img/addons/utilitycraft/MCPEDL.png",
         "icon": "/img/projects/utilitycraft/pack_icon.png",
         "coverFit": "cover",
-        "alt": "UtilityCraft project artwork"
+        "alt": "UtilityCraft resource pack icon"
       },
       "metrics": {
         "items": 263,
@@ -96,7 +96,7 @@
         "cover": "/img/addons/heavy/MCPEDL.png",
         "icon": "/img/projects/heavy-machinery/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Heavy Machinery pack icon"
+        "alt": "Heavy Machinery resource pack icon"
       },
       "metrics": {
         "items": 28,
@@ -149,7 +149,7 @@
         "cover": "/img/addons/ascendant/MCPEDL.png",
         "icon": "/img/projects/ascendant-technology/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Ascendant Technology project artwork"
+        "alt": "Ascendant Technology resource pack icon"
       },
       "metrics": {
         "items": 68,
@@ -198,7 +198,7 @@
         "cover": null,
         "icon": "/img/projects/better-containers/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Better Containers project artwork"
+        "alt": "Better Containers resource pack icon"
       },
       "metrics": {
         "items": 5,
@@ -249,7 +249,7 @@
         "cover": "/img/addons/smelters/MCPEDL.png",
         "icon": "/img/projects/smelters/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Better Smelters project artwork"
+        "alt": "Better Smelters resource pack icon"
       },
       "metrics": {
         "items": 61,
@@ -298,7 +298,7 @@
         "cover": "/img/addons/bonsais/MCPEDL.png",
         "icon": "/img/projects/bonsais/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Bountiful Bonsais project artwork"
+        "alt": "Bountiful Bonsais resource pack icon"
       },
       "metrics": {
         "items": 1,
@@ -341,13 +341,15 @@
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/bountiful-crops",
-        "mcpedl": "https://mcpedl.com/bountiful-crops/"
+        "mcpedl": "https://mcpedl.com/bountiful-crops/",
+        "repository": "https://github.com/DoriosStudios/Bountiful-Crops",
+        "releases": "https://github.com/DoriosStudios/Bountiful-Crops/releases"
       },
       "media": {
         "cover": "/img/addons/crops/MCPEDL.png",
-        "icon": "/img/dorios_logo_blackbg.png",
+        "icon": "/img/projects/crops/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Bountiful Crops project artwork"
+        "alt": "Bountiful Crops resource pack icon"
       },
       "metrics": {},
       "source": {
@@ -382,13 +384,15 @@
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/bountiful-trees",
-        "mcpedl": "https://mcpedl.com/bountiful-trees/"
+        "mcpedl": "https://mcpedl.com/bountiful-trees/",
+        "repository": "https://github.com/DoriosStudios/Bountiful-Trees",
+        "releases": "https://github.com/DoriosStudios/Bountiful-Trees/releases"
       },
       "media": {
         "cover": "/img/addons/trees/MCPEDL.png",
-        "icon": "/img/dorios_logo_blackbg.png",
+        "icon": "/img/projects/trees/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Bountiful Trees project artwork"
+        "alt": "Bountiful Trees resource pack icon"
       },
       "metrics": {},
       "source": {
@@ -425,13 +429,15 @@
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/cobblestone-generators",
-        "mcpedl": "https://mcpedl.com/cobblestone-generators/"
+        "mcpedl": "https://mcpedl.com/cobblestone-generators/",
+        "repository": "https://github.com/DoriosStudios/Cobble-Gens",
+        "releases": "https://github.com/DoriosStudios/Cobble-Gens/releases"
       },
       "media": {
         "cover": "/img/addons/cobble_gens/MCPEDL.png",
-        "icon": "/img/dorios_logo_blackbg.png",
+        "icon": "/img/projects/cobblestone-generators/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Cobblestone Generators project artwork"
+        "alt": "Cobblestone Generators resource pack icon"
       },
       "metrics": {},
       "source": {
@@ -466,13 +472,15 @@
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/compressy",
-        "mcpedl": "https://mcpedl.com/compressy/"
+        "mcpedl": "https://mcpedl.com/compressy/",
+        "repository": "https://github.com/DoriosStudios/Compressy",
+        "releases": "https://github.com/DoriosStudios/Compressy/releases"
       },
       "media": {
         "cover": "/img/addons/compressy/MCPEDL.png",
-        "icon": "/img/dorios_logo_blackbg.png",
+        "icon": "/img/projects/compressy/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Compressy project artwork"
+        "alt": "Compressy resource pack icon"
       },
       "metrics": {},
       "source": {
@@ -517,7 +525,7 @@
         "cover": "/img/projects/digital-storage/MCPEDL.png",
         "icon": "/img/projects/digital-storage/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Digital Storage project artwork"
+        "alt": "Digital Storage resource pack icon"
       },
       "metrics": {
         "items": 18,
@@ -568,7 +576,7 @@
         "cover": "/img/addons/atelier/MCPEDL.png",
         "icon": "/img/projects/atelier/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Dorios' Atelier project artwork"
+        "alt": "Dorios' Atelier resource pack icon"
       },
       "metrics": {
         "items": 22,
@@ -610,13 +618,15 @@
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/dorios-basics",
-        "mcpedl": "https://mcpedl.com/dorios-basics/"
+        "mcpedl": "https://mcpedl.com/dorios-basics/",
+        "repository": "https://github.com/DoriosStudios/Dorios-Basics",
+        "releases": "https://github.com/DoriosStudios/Dorios-Basics/releases"
       },
       "media": {
         "cover": "/img/addons/basics/MCPEDL.png",
-        "icon": "/img/dorios_logo_blackbg.png",
+        "icon": "/img/projects/basics/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Dorios' Basics project artwork"
+        "alt": "Dorios' Basics resource pack icon"
       },
       "metrics": {},
       "source": {
@@ -659,7 +669,7 @@
         "cover": "/img/addons/excavate/MCPEDL.png",
         "icon": "/img/projects/excavate/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Dorios' Excavate project artwork"
+        "alt": "Dorios' Excavate resource pack icon"
       },
       "metrics": {
         "items": 1,
@@ -707,7 +717,7 @@
         "cover": "/img/addons/insight/MCPEDL.png",
         "icon": "/img/projects/insight/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Dorios' Insight project artwork"
+        "alt": "Dorios' Insight resource pack icon"
       },
       "source": {
         "kind": "bridge",
@@ -752,7 +762,7 @@
         "cover": "/img/addons/trinkets/MCPEDL.png",
         "icon": "/img/projects/trinkets/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Dorios' Trinkets project artwork"
+        "alt": "Dorios' Trinkets resource pack icon"
       },
       "metrics": {
         "items": 92,
@@ -793,13 +803,15 @@
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/effect-pillars",
-        "mcpedl": "https://mcpedl.com/effect-pillars/"
+        "mcpedl": "https://mcpedl.com/effect-pillars/",
+        "repository": "https://github.com/DoriosStudios/Effect-Pillars",
+        "releases": "https://github.com/DoriosStudios/Effect-Pillars/releases"
       },
       "media": {
         "cover": "/img/addons/pillars/MCPEDL.png",
-        "icon": "/img/dorios_logo_blackbg.png",
+        "icon": "/img/projects/pillars/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Effect Pillars project artwork"
+        "alt": "Effect Pillars resource pack icon"
       },
       "metrics": {},
       "source": {
@@ -834,13 +846,15 @@
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/paxels-aiots",
-        "mcpedl": "https://mcpedl.com/paxels-aiots/"
+        "mcpedl": "https://mcpedl.com/paxels-aiots/",
+        "repository": "https://github.com/DoriosStudios/Paxels-and-AIOTs",
+        "releases": "https://github.com/DoriosStudios/Paxels-and-AIOTs/releases"
       },
       "media": {
         "cover": "/img/addons/paxels/MCPEDL.png",
-        "icon": "/img/dorios_logo_blackbg.png",
+        "icon": "/img/projects/paxels/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Paxels & AIOTs project artwork"
+        "alt": "Paxels & AIOTs resource pack icon"
       },
       "metrics": {},
       "source": {
@@ -879,9 +893,9 @@
       },
       "media": {
         "cover": "/img/addons/lamps/MCPEDL.png",
-        "icon": "/img/dorios_logo_blackbg.png",
+        "icon": "/img/projects/lamps/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Redstone Lamps Plus project artwork"
+        "alt": "Redstone Lamps Plus resource pack icon"
       },
       "metrics": {},
       "source": {
@@ -925,7 +939,7 @@
         "cover": null,
         "icon": "/img/projects/tiered-machinery/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Tiered Machinery project artwork"
+        "alt": "Tiered Machinery resource pack icon"
       },
       "metrics": {
         "blocks": 12,
@@ -966,13 +980,15 @@
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/training-dummy",
-        "mcpedl": "https://mcpedl.com/training-dummy/"
+        "mcpedl": "https://mcpedl.com/training-dummy/",
+        "repository": "https://github.com/DoriosStudios/Training-Dummy",
+        "releases": "https://github.com/DoriosStudios/Training-Dummy/releases"
       },
       "media": {
         "cover": "/img/addons/dummy/MCPEDL.png",
-        "icon": "/img/dorios_logo_blackbg.png",
+        "icon": "/img/projects/dummy/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Training Dummy project artwork"
+        "alt": "Training Dummy resource pack icon"
       },
       "metrics": {},
       "source": {
@@ -1010,7 +1026,7 @@
         "cover": null,
         "icon": "/img/projects/chests/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Dorios' Chests project artwork"
+        "alt": "Dorios' Chests resource pack icon"
       },
       "metrics": {
         "items": 16,
@@ -1059,7 +1075,7 @@
         "cover": null,
         "icon": "/img/projects/enchants/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Dorios' Enchants project artwork"
+        "alt": "Dorios' Enchants resource pack icon"
       },
       "metrics": {
         "items": 1,
@@ -1100,7 +1116,7 @@
         "cover": null,
         "icon": "/img/projects/lucky-tools/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Lucky Tools project artwork"
+        "alt": "Lucky Tools resource pack icon"
       },
       "metrics": {
         "items": 16,
@@ -1144,7 +1160,7 @@
         "cover": null,
         "icon": "/img/projects/project-u/pack_icon.png",
         "coverFit": "cover",
-        "alt": "ProjectU project artwork"
+        "alt": "ProjectU resource pack icon"
       },
       "metrics": {
         "items": 51,
@@ -1184,7 +1200,7 @@
         "cover": null,
         "icon": "/img/projects/remix-attributes/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Remix's Attributes project artwork"
+        "alt": "Remix's Attributes resource pack icon"
       },
       "metrics": {
         "items": 28,
@@ -1226,7 +1242,7 @@
         "cover": null,
         "icon": "/img/projects/too-many-trinkets/pack_icon.png",
         "coverFit": "cover",
-        "alt": "Too Many Trinkets project artwork"
+        "alt": "Too Many Trinkets resource pack icon"
       },
       "metrics": {
         "items": 97,
@@ -1270,7 +1286,7 @@
         "cover": null,
         "icon": "/img/projects/utilitycraft-quarry/pack_icon.png",
         "coverFit": "cover",
-        "alt": "UtilityCraft Quarry project artwork"
+        "alt": "UtilityCraft Quarry resource pack icon"
       },
       "metrics": {
         "blocks": 3,

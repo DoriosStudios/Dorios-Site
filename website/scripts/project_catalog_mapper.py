@@ -195,13 +195,8 @@ def _fingerprint(paths: list[Path], base: Path) -> str:
 
 
 def _copy_icon(project_root: Path, behavior_pack: Path | None, resource_pack: Path | None, destination: Path) -> str | None:
-    candidates = [
-        resource_pack / "pack_icon.png" if resource_pack else None,
-        behavior_pack / "pack_icon.png" if behavior_pack else None,
-        project_root / "pack_icon.png",
-    ]
-    source = next((candidate for candidate in candidates if candidate and candidate.is_file()), None)
-    if not source:
+    source = resource_pack / "pack_icon.png" if resource_pack else None
+    if not source or not source.is_file():
         return None
     destination.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(source, destination)
@@ -244,7 +239,7 @@ def _project_from_bridge(
     )
     metrics = {**_metrics(behavior_pack), **override.get("metrics", {})}
     summary = override.get("summary") or _readme_summary(project_root) or f"A Minecraft Bedrock project from the Dorios Studios workspace: {name}."
-    icon_destination = assets_root / slug / "icon.png"
+    icon_destination = assets_root / slug / "pack_icon.png"
     icon_name = _copy_icon(project_root, behavior_pack, resource_pack, icon_destination)
     cover = override.get("cover")
     icon = f"/img/projects/{slug}/{icon_name}" if icon_name else "/img/dorios_logo_blackbg.png"

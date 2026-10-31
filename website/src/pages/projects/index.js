@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import {IconArrowUpRight, IconDownload, IconSortAscendingLetters, IconTrendingUp} from '@tabler/icons-react';
@@ -94,20 +94,109 @@ function FeaturedCarousel({projects}) {
   const {t} = useSiteI18n();
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [dragging, setDragging] = useState(false);
+  const carouselRef = useRef(null);
+  const gestureRef = useRef(null);
+  const suppressClickUntil = useRef(0);
 
   useEffect(() => {
-    if (paused || projects.length < 2) return undefined;
+    const carousel = carouselRef.current;
+    if (!carousel || projects.length < 2) return undefined;
+    let accumulated = 0;
+    let lastWheelAt = 0;
+    let changed = false;
+    const onWheel = (event) => {
+      // Ctrl + wheel also represents trackpad pinch zoom.
+      if (event.ctrlKey) return;
+      const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+      if (!delta) return;
+      event.preventDefault();
+      const now = Date.now();
+      if (now - lastWheelAt > 180) {
+        accumulated = 0;
+        changed = false;
+      }
+      lastWheelAt = now;
+      if (changed) return;
+      const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? carousel.clientHeight : 1;
+      if (Math.sign(delta) !== Math.sign(accumulated)) accumulated = 0;
+      accumulated += delta * unit;
+      if (Math.abs(accumulated) < 40) return;
+      const direction = Math.sign(accumulated);
+      changed = true;
+      setActiveIndex((current) => (current + direction + projects.length) % projects.length);
+    };
+    // A non-passive listener lets the carousel consume the wheel gesture.
+    carousel.addEventListener('wheel', onWheel, {passive: false});
+    return () => carousel.removeEventListener('wheel', onWheel);
+  }, [projects.length]);
+
+  useEffect(() => {
+    if (paused || dragging || projects.length < 2) return undefined;
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % projects.length);
     }, 5200);
     return () => window.clearInterval(timer);
-  }, [paused, projects.length]);
+  }, [paused, dragging, projects.length]);
+
+  const startDrag = (event) => {
+    if (projects.length < 2 || event.pointerType === 'mouse' || event.isPrimary === false
+      || event.target.closest('button')) return;
+    gestureRef.current = {id: event.pointerId, x: event.clientX, y: event.clientY, horizontal: false};
+    setDragging(true);
+  };
+
+  const moveDrag = (event) => {
+    const gesture = gestureRef.current;
+    if (!gesture || gesture.id !== event.pointerId) return;
+    const dx = event.clientX - gesture.x;
+    const dy = event.clientY - gesture.y;
+    if (!gesture.horizontal) {
+      if (Math.abs(dy) > 10 && Math.abs(dy) >= Math.abs(dx)) {
+        gestureRef.current = null;
+        setDragging(false);
+        return;
+      }
+      if (Math.abs(dx) <= 10 || Math.abs(dx) <= Math.abs(dy)) return;
+      gesture.horizontal = true;
+      event.currentTarget.setPointerCapture(event.pointerId);
+    }
+    event.preventDefault();
+    suppressClickUntil.current = Date.now() + 400;
+  };
+
+  const finishDrag = (event, cancelled = false) => {
+    const gesture = gestureRef.current;
+    if (!gesture || gesture.id !== event.pointerId) return;
+    gestureRef.current = null;
+    setDragging(false);
+    if (!gesture.horizontal) return;
+    // Do not open the project link when the browser dispatches a click after a swipe.
+    suppressClickUntil.current = Date.now() + 400;
+    const dx = event.clientX - gesture.x;
+    if (!cancelled && Math.abs(dx) >= 40) {
+      const direction = dx < 0 ? 1 : -1;
+      setActiveIndex((current) => (current + direction + projects.length) % projects.length);
+    }
+  };
 
   if (!projects.length) return null;
   const activeProject = projects[activeIndex];
   return (
     <div
+      ref={carouselRef}
       className={styles.primaryCarousel}
+      onPointerDown={startDrag}
+      onPointerMove={moveDrag}
+      onPointerUp={(event) => finishDrag(event)}
+      onPointerCancel={(event) => finishDrag(event, true)}
+      onLostPointerCapture={(event) => finishDrag(event, true)}
+      onClickCapture={(event) => {
+        if (event.detail !== 0 && Date.now() < suppressClickUntil.current) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}

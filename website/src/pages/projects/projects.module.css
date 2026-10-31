@@ -55,6 +55,7 @@
 	min-width: 0;
 	position: relative;
 	display: flex;
+	touch-action: pan-y pinch-zoom;
 }
 .primaryCarousel .utilityCard { width: 100%; animation: carouselCardIn 320ms ease both; }
 .carouselPager {

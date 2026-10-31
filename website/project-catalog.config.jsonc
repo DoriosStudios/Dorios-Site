@@ -263,6 +263,8 @@
   "legacyProjects": [
     {
       "slug": "basics",
+      "icon": "/img/projects/basics/pack_icon.png",
+      "repository": "https://github.com/DoriosStudios/Dorios-Basics",
       "name": "Dorios' Basics",
       "kind": "Add-On",
       "category": "Utility",
@@ -276,6 +278,8 @@
     },
     {
       "slug": "cobblestone-generators",
+      "icon": "/img/projects/cobblestone-generators/pack_icon.png",
+      "repository": "https://github.com/DoriosStudios/Cobble-Gens",
       "aliases": ["cobble_gens"],
       "name": "Cobblestone Generators",
       "kind": "Add-On",
@@ -290,6 +294,8 @@
     },
     {
       "slug": "compressy",
+      "icon": "/img/projects/compressy/pack_icon.png",
+      "repository": "https://github.com/DoriosStudios/Compressy",
       "name": "Compressy",
       "kind": "Add-On",
       "category": "Utility",
@@ -302,6 +308,8 @@
     },
     {
       "slug": "crops",
+      "icon": "/img/projects/crops/pack_icon.png",
+      "repository": "https://github.com/DoriosStudios/Bountiful-Crops",
       "name": "Bountiful Crops",
       "kind": "Add-On",
       "category": "Nature",
@@ -315,6 +323,8 @@
     },
     {
       "slug": "dummy",
+      "icon": "/img/projects/dummy/pack_icon.png",
+      "repository": "https://github.com/DoriosStudios/Training-Dummy",
       "name": "Training Dummy",
       "kind": "Add-On",
       "category": "Adventure",
@@ -328,6 +338,7 @@
     },
     {
       "slug": "lamps",
+      "icon": "/img/projects/lamps/pack_icon.png",
       "name": "Redstone Lamps Plus",
       "kind": "Extension",
       "category": "Building",
@@ -341,6 +352,8 @@
     },
     {
       "slug": "paxels",
+      "icon": "/img/projects/paxels/pack_icon.png",
+      "repository": "https://github.com/DoriosStudios/Paxels-and-AIOTs",
       "name": "Paxels & AIOTs",
       "kind": "Add-On",
       "category": "Utility",
@@ -353,6 +366,8 @@
     },
     {
       "slug": "pillars",
+      "icon": "/img/projects/pillars/pack_icon.png",
+      "repository": "https://github.com/DoriosStudios/Effect-Pillars",
       "name": "Effect Pillars",
       "kind": "Add-On",
       "category": "Adventure",
@@ -366,6 +381,8 @@
     },
     {
       "slug": "trees",
+      "icon": "/img/projects/trees/pack_icon.png",
+      "repository": "https://github.com/DoriosStudios/Bountiful-Trees",
       "name": "Bountiful Trees",
       "kind": "Add-On",
       "category": "Nature",

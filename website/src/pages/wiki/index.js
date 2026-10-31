@@ -25,9 +25,8 @@ function cardImages(wiki) {
   const source = project?.overview?.cardImage;
   const resolvedSource = source && (source.startsWith('/') ? source : `${project.assetRoot}/${source}`);
   return [...new Set([
-    wiki.id === 'bonsais' && '/img/wiki/utilitycraft/renders/bonsai.png',
-    resolvedSource,
     wiki.media.icon,
+    resolvedSource,
     project?.fallbackImage && (project.fallbackImage.startsWith('/') ? project.fallbackImage : `${project.assetRoot}/${project.fallbackImage}`),
     wiki.media.cover,
   ].filter(Boolean))];
