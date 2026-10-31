@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[231079],{198526:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-compactor-utilitycraft-compressed-cry-obsidian-3-utilitycraft-compressed-cry-obsidian-4-9-1","detailSection":"details"}')}}]);

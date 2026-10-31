@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[955191],{81932:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"blocks","slug":"cobble-gen-5","detailSection":"recipes"}')}}]);

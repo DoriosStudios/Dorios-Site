@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[295125],{842789:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"machines","slug":"catalyst_weaver","detailSection":"details"}')}}]);

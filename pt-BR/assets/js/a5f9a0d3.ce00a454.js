@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[588566],{216251:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"flint-knife","detailSection":"related"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[887587],{4461:e=>{e.exports=JSON.parse('{"projectId":"trinkets","entryType":"items","slug":"dead-abyssal-orb","detailSection":"drops"}')}}]);

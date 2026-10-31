@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[581667],{856207:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-utilitycraft-primitive-forge-utilitycraft-compressed-raw-gold-block-3","detailSection":"details"}')}}]);

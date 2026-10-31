@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[461394],{956413:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"compressed-charcoal-block","detailSection":"related"}')}}]);

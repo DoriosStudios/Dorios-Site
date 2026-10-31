@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[890924],{168956:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"slime-essence","detailSection":"uses"}')}}]);

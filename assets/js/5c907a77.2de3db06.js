@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[616838],{193182:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"refined-aetherium-crystal","detailSection":"details"}')}}]);

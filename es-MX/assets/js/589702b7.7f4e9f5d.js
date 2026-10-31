@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[814479],{151832:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"hoglin-essence","detailSection":"related"}')}}]);

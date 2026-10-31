@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[718340],{235808:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"runic-core","detailSection":"details"}')}}]);

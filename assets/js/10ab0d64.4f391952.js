@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[60963],{417646:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"lucky-fishing-rod-item","detailSection":"drops"}')}}]);

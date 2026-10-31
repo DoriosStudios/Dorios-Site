@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[315250],{429083:e=>{e.exports=JSON.parse('{"projectId":"digital-storage","entryType":"items","slug":"wireless-crafting-panel-on"}')}}]);

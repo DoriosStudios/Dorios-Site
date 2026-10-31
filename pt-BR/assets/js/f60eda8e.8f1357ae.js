@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[845586],{261258:e=>{e.exports=JSON.parse('{"projectId":"trinkets","entryType":"items","slug":"blood-pact","detailSection":"related"}')}}]);

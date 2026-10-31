@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[255166],{905702:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-heavy-machinery-electro-press-utilitycraft-bronze-ingot-arc-press-forge","detailSection":"details"}')}}]);

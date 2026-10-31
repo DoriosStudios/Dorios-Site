@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[658263],{967264:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-utilitycraft-autosieve-utilitycraft-crushed-blackstone-utilitycraft-gilded-blackstone-pebble-3-1-0p33-4","detailSection":"details"}')}}]);

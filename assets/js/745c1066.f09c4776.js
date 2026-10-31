@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[362237],{471137:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"machines","slug":"cryofluid_synthesizer"}')}}]);

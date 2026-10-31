@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[785594],{257561:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"gravel-fragments","detailSection":"recipes"}')}}]);

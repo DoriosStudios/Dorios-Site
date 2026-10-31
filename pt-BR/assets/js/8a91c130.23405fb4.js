@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[96697],{332623:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"generators","slug":"thermal-reactor","detailSection":"recipes"}')}}]);

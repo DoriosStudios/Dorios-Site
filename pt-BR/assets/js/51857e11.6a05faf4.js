@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[337558],{390079:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"piglin-essence","detailSection":"uses"}')}}]);

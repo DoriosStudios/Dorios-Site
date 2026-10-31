@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[410958],{325241:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-compactor-minecraft-breeze-rod-utilitycraft-bundle-of-breeze-rods-9-1","detailSection":"details"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[742320],{418250:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"curse-protection-module"}')}}]);

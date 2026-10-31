@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[13542],{795922:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"generators","slug":"ultimate_power_beacon","detailSection":"details"}')}}]);

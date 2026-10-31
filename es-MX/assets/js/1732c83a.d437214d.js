@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[718797],{540828:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-catalyst-weaver-minecraft-glowstone-dust-utilitycraft-crying-obsidian-dust-converted","detailSection":"details"}')}}]);

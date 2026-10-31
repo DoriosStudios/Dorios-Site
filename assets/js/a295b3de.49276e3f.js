@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[436e3],{202317:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"flint-mesh","detailSection":"notes"}')}}]);

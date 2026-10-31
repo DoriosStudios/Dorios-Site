@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[849197],{867281:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"blocks","slug":"xp-magnet","detailSection":"drops"}')}}]);

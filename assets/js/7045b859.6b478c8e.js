@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[356855],{801023:e=>{e.exports=JSON.parse('{"projectId":"trinkets","entryType":"items","slug":"night-vision-goggles","detailSection":"recipes"}')}}]);

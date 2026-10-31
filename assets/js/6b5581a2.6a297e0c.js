@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[416833],{414488:e=>{e.exports=JSON.parse('{"projectId":"smelters","entryType":"machines","slug":"netherrack_furnace","detailSection":"specs"}')}}]);

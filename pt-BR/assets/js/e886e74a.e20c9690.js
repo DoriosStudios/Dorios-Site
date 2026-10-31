@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[368159],{719756:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"dyes-seeds","detailSection":"uses"}')}}]);

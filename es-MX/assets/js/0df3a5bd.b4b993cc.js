@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[15142],{70119:e=>{e.exports=JSON.parse('{"projectSlug":"cobblestone-generators"}')}}]);

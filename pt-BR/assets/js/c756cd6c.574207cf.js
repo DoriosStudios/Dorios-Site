@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[883544],{79503:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"antidote-potion","detailSection":"related"}')}}]);

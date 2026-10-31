@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[989579],{637729:e=>{e.exports=JSON.parse('{"projectId":"trinkets","entryType":"items","slug":"bloodtide-chalice","detailSection":"drops"}')}}]);

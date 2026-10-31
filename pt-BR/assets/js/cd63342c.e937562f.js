@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[191907],{548555:e=>{e.exports=JSON.parse('{"projectId":"smelters","entryType":"items","slug":"netherite-upgrade-to-blazing"}')}}]);

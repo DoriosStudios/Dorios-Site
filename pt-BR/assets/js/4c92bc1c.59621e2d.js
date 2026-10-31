@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[352216],{993858:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-compactor-utilitycraft-compressed-pale-oak-wood-3-utilitycraft-compressed-pale-oak-wood-4-9-1","detailSection":"details"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[457044],{888472:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"raw-tungsten-dust","detailSection":"notes"}')}}]);

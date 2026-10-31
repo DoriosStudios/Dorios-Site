@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[71753],{753454:e=>{e.exports=JSON.parse('{"projectId":"smelters","entryType":"items","slug":"iron-upgrade-to-gold"}')}}]);

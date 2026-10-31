@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[174228],{880242:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"blocks","slug":"nether-star-block","detailSection":"recipes"}')}}]);

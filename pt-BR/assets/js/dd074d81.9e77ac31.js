@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[993905],{890302:e=>{e.exports=JSON.parse('{"projectId":"trinkets","entryType":"mechanics","slug":"effects-and-immunities","detailSection":"details"}')}}]);

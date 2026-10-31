@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[601832],{627043:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-infuser-utilitycraft-titanium-dust-utilitycraft-tungsten-dust","detailSection":"details"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[857753],{808836:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"blocks","slug":"totem-seeds","detailSection":"modifiers"}')}}]);

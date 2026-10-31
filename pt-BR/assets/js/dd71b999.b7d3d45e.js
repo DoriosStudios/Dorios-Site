@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[524350],{715623:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"mechanics","slug":"dorios-energy"}')}}]);

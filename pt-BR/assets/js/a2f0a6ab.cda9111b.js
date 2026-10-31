@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[942116],{808826:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"magma-cube-essence"}')}}]);

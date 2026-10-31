@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[178700],{530594:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"blackstone-pebble"}')}}]);

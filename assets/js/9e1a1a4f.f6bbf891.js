@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[636519],{578804:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"generators","slug":"cobble_gen_6","detailSection":"specs"}')}}]);

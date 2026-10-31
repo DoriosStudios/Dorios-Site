@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[417318],{725826:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"blocks","slug":"deepslate-uranium-ore","detailSection":"recipes"}')}}]);

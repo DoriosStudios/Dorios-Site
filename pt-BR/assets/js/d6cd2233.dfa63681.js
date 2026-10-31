@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[971630],{149905:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-utilitycraft-chemical-converter-utilitycraft-charcoal-dust-empty-hydrogen-gas","detailSection":"details"}')}}]);

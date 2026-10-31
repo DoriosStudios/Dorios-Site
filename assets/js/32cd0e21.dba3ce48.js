@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[936815],{576407:e=>{e.exports=JSON.parse('{"projectId":"digital-storage","entryType":"items","slug":"storage-filler","detailSection":"recipes"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[779414],{694231:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"sulfuric-acid-bucket","detailSection":"specs"}')}}]);

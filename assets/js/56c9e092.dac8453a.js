@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[146108],{509014:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"generators","slug":"power-condenser","detailSection":"specs"}')}}]);

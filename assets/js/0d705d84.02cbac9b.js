@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[623297],{841674:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"glowstone-seeds"}')}}]);

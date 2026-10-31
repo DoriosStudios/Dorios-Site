@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[257163],{239466:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"recipes","slug":"processing-ascendant-technology-infuser-minecraft-glowstone-dust-utilitycraft-crying-obsidian-dust","detailSection":"details"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[851016],{116742:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"machines","slug":"magmatic-chamber","detailSection":"recipes"}')}}]);

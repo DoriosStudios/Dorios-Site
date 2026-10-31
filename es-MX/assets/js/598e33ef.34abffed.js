@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[524411],{137676:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"enchantability-module","detailSection":"specs"}')}}]);

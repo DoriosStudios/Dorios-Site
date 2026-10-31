@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[764793],{817124:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"diorite-pebble","detailSection":"uses"}')}}]);

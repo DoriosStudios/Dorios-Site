@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[668846],{230239:e=>{e.exports=JSON.parse('{"projectId":"trinkets","entryType":"items","slug":"cloud-steps-boots","detailSection":"recipes"}')}}]);

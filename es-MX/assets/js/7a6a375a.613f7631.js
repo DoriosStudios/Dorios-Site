@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[742180],{20733:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"items","slug":"charged_darloonite_crystal","detailSection":"specs"}')}}]);

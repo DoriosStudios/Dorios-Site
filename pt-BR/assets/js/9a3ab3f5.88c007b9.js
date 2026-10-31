@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[574963],{384832:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"mooshroom-essence"}')}}]);

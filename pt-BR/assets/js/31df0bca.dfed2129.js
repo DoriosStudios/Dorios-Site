@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[967711],{16879:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"resource-efficiency-upgrade","detailSection":"notes"}')}}]);

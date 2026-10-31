@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[118412],{281664:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"apple-sapling"}')}}]);

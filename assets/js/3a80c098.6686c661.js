@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[785497],{180932:e=>{e.exports=JSON.parse('{"projectId":"trinkets","entryType":"items","slug":"molten-quiver"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[408296],{119436:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"hyper-processing-upgrade","detailSection":"details"}')}}]);

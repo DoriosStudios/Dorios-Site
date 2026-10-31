@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[548426],{398935:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"ream-of-paper","detailSection":"uses"}')}}]);

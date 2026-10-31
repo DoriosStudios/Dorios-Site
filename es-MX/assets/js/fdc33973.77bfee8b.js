@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[134449],{437962:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"blocks","slug":"advanced-gas-tank","detailSection":"locations"}')}}]);

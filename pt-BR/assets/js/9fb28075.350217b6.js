@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[140042],{477487:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"lingering-potion","detailSection":"specs"}')}}]);

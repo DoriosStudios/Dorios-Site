@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[585783],{466034:e=>{e.exports=JSON.parse('{"projectSlug":"remix-attributes"}')}}]);

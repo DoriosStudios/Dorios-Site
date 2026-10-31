@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[461371],{794155:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"enderman-essence","detailSection":"specs"}')}}]);

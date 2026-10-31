@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[225833],{48545:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"copy-paste-tool","detailSection":"uses"}')}}]);

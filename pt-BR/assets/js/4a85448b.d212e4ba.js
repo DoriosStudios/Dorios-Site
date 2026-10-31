@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[282853],{506498:e=>{e.exports=JSON.parse('{"projectSlug":"ascendant-technology"}')}}]);

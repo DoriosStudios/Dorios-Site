@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[166361],{963519:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"blocks","slug":"flint-block","detailSection":"recipes"}')}}]);

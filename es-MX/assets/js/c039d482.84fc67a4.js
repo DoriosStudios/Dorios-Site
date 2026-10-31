@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[534908],{306301:e=>{e.exports=JSON.parse('{"projectId":"bonsais","entryType":"recipes","slug":"crafting-apple_sapling"}')}}]);
