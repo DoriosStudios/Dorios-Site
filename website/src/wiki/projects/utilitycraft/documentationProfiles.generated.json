@@ -4276,7 +4276,23 @@
         }
       }
     },
+    "utilitycraft:crude_oil_bucket": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
     "utilitycraft:diamond_accelerator_clock": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:diesel_bucket": {
       "documentation": {
         "basic": {
           "itemType": "Item",
@@ -4289,6 +4305,14 @@
         "basic": {
           "itemType": "Item",
           "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:heavy_water_bucket": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
         }
       }
     },
@@ -4316,6 +4340,14 @@
         }
       }
     },
+    "utilitycraft:petroleum_bucket": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
     "utilitycraft:raw_leather": {
       "documentation": {
         "basic": {
@@ -4324,11 +4356,27 @@
         }
       }
     },
+    "utilitycraft:saline_coolant_bucket": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
     "utilitycraft:smeltflare": {
       "documentation": {
         "basic": {
           "itemType": "Item",
           "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:sulfuric_acid_bucket": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
         }
       }
     },
@@ -4365,6 +4413,14 @@
       }
     },
     "utilitycraft:wrench": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 1
+        }
+      }
+    },
+    "utilitycraft:xp_bucket": {
       "documentation": {
         "basic": {
           "itemType": "Item",

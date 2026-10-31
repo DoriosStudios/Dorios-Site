@@ -286,7 +286,11 @@
         "statistics": [
           [
             "Durability",
-            "50"
+            "10,200"
+          ],
+          [
+            "Protection",
+            3
           ]
         ],
         "sections": [
@@ -317,7 +321,11 @@
         "statistics": [
           [
             "Durability",
-            "10,000"
+            "10,200"
+          ],
+          [
+            "Protection",
+            8
           ]
         ],
         "sections": [
@@ -348,7 +356,11 @@
         "statistics": [
           [
             "Durability",
-            "10,000"
+            "10,200"
+          ],
+          [
+            "Protection",
+            3
           ]
         ],
         "sections": [
@@ -379,7 +391,11 @@
         "statistics": [
           [
             "Durability",
-            "10,000"
+            "10,200"
+          ],
+          [
+            "Protection",
+            6
           ]
         ],
         "sections": [
@@ -448,6 +464,14 @@
       }
     },
     "utilitycraft:spent_uranium_pellet": {
+      "documentation": {
+        "basic": {
+          "itemType": "Item",
+          "maximumStack": 64
+        }
+      }
+    },
+    "utilitycraft:stabilized_nuclear_matter": {
       "documentation": {
         "basic": {
           "itemType": "Item",
@@ -599,7 +623,7 @@
         }
       }
     },
-    "utilitycraft:saline_coolant_bucket": {
+    "utilitycraft:nether_star_essence_bucket": {
       "documentation": {
         "basic": {
           "itemType": "Item",

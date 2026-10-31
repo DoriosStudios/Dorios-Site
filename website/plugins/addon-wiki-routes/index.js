@@ -1,12 +1,15 @@
 const path = require('node:path');
 const {pathToFileURL} = require('node:url');
 const {normalizeUrl} = require('@docusaurus/utils');
+const {registerRoutes} = require('./route-data');
+const {sectionsForEntry, detailSectionPath} = require('../../src/wiki/detailSections');
 
 module.exports = function doriosGeneratedRoutesPlugin(context) {
   return {
     name: 'dorios-generated-routes',
     async contentLoaded({actions}) {
-      const addLocalizedRoute = (route) => actions.addRoute({
+      const routes = [];
+      const addLocalizedRoute = (route) => routes.push({
         ...route,
         path: normalizeUrl([context.siteConfig.baseUrl, route.path]),
       });
@@ -30,6 +33,7 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
         'how-to-play/getting-started',
         'how-to-play/expanding-resources',
         'how-to-play/water-and-lava',
+        'how-to-play/primitive-forge',
         'how-to-play/first-steps-to-steel',
         'how-to-play/machines',
         'how-to-play/generators',
@@ -38,13 +42,13 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
       const slugify = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
       const addEntryRoutes = (projectId, routeGroups) => {
         Object.entries(routeGroups).forEach(([entryType, slugs]) => {
-          slugs.forEach((slug) => addLocalizedRoute({
-            path: `/wiki/${projectId}/${entryType}/${slug}`,
+          slugs.forEach((slug) => sectionsForEntry(entryType).forEach((detailSection) => addLocalizedRoute({
+            path: detailSectionPath(`/wiki/${projectId}/${entryType}/${slug}`, detailSection),
             component: entryComponent,
             exact: true,
             priority: 20,
-            props: {projectId, entryType, slug},
-          }));
+            props: {projectId, entryType, slug, detailSection},
+          })));
         });
       };
       const addSectionRoutes = (projectId, sections) => {
@@ -92,7 +96,7 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
           id: 'utilitycraft',
           manifest: require(path.join(projectRoot, 'utilitycraft', 'manifest.json')),
           processingRecipes: require(path.join(projectRoot, 'utilitycraft', 'processingRecipes.json')),
-          machineFilter: (block) => block.componentKeys?.includes('tag:dorios:machine'),
+          machineFilter: (block) => block.componentKeys?.includes('tag:dorios:machine') || block.id === 'primitive_forge',
           generatorFilter: (block) => block.componentKeys?.includes('tag:dorios:generator'),
           mechanics: ['dorios-energy', 'gas-management', 'machines', 'generators'],
           extraSections: utilityHowToPlaySections,
@@ -180,6 +184,7 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
           mechanics: project.mechanics,
         });
       });
+      await registerRoutes(actions, routes);
     },
   };
 };

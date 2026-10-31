@@ -1,4 +1,14 @@
 const machineProfiles = {
+  primitive_forge: {
+    category: 'Processing', tier: 'Primitive', primaryResource: 'Solid fuel',
+    description: 'A solid-fuel forge assembled from eight blocks in a 2×2×2 structure. Smelts registered materials and combines iron dust with carbon sources to prepare raw steel.',
+    input: 'Smeltable material or two recipe ingredients + solid fuel',
+    output: 'Smelted material or raw steel',
+    energy: 'Solid fuel; no Dorios Energy input',
+    io: [['Ingredients', '2 input slots'], ['Fuel', '1 solid-fuel slot'], ['Items', '4 output slots in a 2×2 grid']],
+    specifications: [['Structure', '2×2×2 · 8 Primitive Forge blocks'], ['Batch size', '1 recipe per input or 1 combined recipe'], ['Smelting cycle', '40 ticks · 2 s'], ['Raw steel cycle', '160 ticks · 8 s'], ['Output storage', '4 slots shared by processing and automatic extraction']],
+    howItWorks: ['Assemble eight Primitive Forge blocks into a 2×2×2 structure.', 'Add compatible materials and solid fuel.', 'Collect the products from the four-slot output inventory.'],
+  },
   assembler: {
     category: 'Processing',
     description: 'Automatically crafts the item recorded in a Digitizer blueprint from materials stored in its 3×3 input grid.',

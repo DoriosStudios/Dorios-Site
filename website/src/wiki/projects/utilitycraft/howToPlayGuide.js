@@ -1,3 +1,5 @@
+import {primitiveForgeGuide} from './primitiveForgeGuide';
+
 const guideAsset = (name) => `how-to-play/${name}.png`;
 
 const machine = (id, title, copy) => ({
@@ -184,6 +186,7 @@ export const howToPlayGuide = {
         },
       ],
     },
+    primitiveForgeGuide,
     {
       id: 'first-steps-to-steel',
       label: 'First Steps to Steel',
@@ -192,6 +195,11 @@ export const howToPlayGuide = {
       intro: 'Turn renewable early resources into Steel, unlock the Workbench, and prepare the materials needed for powered production.',
       hero: guideAsset('workbench_render'),
       sections: [
+        {
+          title: 'Make Steel with the Primitive Forge',
+          paragraphs: ['Follow the Primitive Forge tutorial to combine Iron Dust with carbon, then smelt the Raw Steel into Steel Ingots. The SmeltFlare method below is another route to Steel.'],
+          links: [{label: 'Build a Primitive Forge and make Steel.', href: '/wiki/utilitycraft/how-to-play/primitive-forge'}],
+        },
         {
           title: '1. Craft the SmeltFlare',
           paragraphs: ['The SmeltFlare combines raw materials directly in your inventory. Obtain Paper by sieving Dirt for Sugar Cane, then craft the Sugar Cane into Paper.'],
@@ -316,7 +324,7 @@ export const howToPlayGuide = {
               ['Ender Pearl', '1', '16%', 'Diamond'], ['Shulker Shell Shard', '1', '0.5%', 'Diamond'],
             ]},
           ],
-          links: [{label: 'Open every Autosieve recipe', href: '/wiki/utilitycraft/machines/autosieve'}],
+          links: [{label: 'Open every Autosieve recipe', href: '/wiki/utilitycraft/machines/autosieve/drops'}],
         },
         {
           title: 'Autofisher Nets',
@@ -328,7 +336,7 @@ export const howToPlayGuide = {
               ['Netherite', '6', '4.00×', '4'],
             ],
           },
-          links: [{label: 'Open the complete Autofisher loot table', href: '/wiki/utilitycraft/machines/autofisher'}],
+          links: [{label: 'Open the complete Autofisher loot table', href: '/wiki/utilitycraft/machines/autofisher/drops'}],
         },
       ],
     },

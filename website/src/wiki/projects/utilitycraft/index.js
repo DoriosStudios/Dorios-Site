@@ -146,6 +146,7 @@ const utilitycraft = createGeneratedProject({
   name: 'UtilityCraft',
   repository: 'https://github.com/DoriosStudios/UtilityCraft',
   machineProfiles,
+  additionalMachineIds: ['primitive_forge'],
   blockProfiles,
   itemProfiles,
   howToPlay: howToPlayGuide,

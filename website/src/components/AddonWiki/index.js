@@ -35,10 +35,30 @@ import {fluidVisualFor, MACHINE_RESOURCE_ICONS} from '../../data/resourceVisuals
 import {getProjectByWikiPath} from '../../data/projects';
 import {projectCardPalette} from '../../data/cardPalettes';
 import {useSiteI18n} from '../../i18n/site';
+import {wikiText} from '../../i18n/wiki';
+import {sectionsForEntry, detailSectionPath, legacyDetailSection} from '../../wiki/detailSections';
 import vanillaAssetIndex from '../../data/vanillaAssetIndex.json';
 import styles from './styles.module.css';
 
 const WikiProjectContext = createContext(null);
+const WikiDetailContext = createContext({section: 'details', basePath: '', entryType: ''});
+
+function useWikiText() {
+  const {locale} = useSiteI18n();
+  return (text, values) => {
+    if (typeof text === 'number') return text.toLocaleString(locale);
+    const translated = wikiText(locale, text, values);
+    if (typeof translated !== 'string' || locale === 'en') return translated;
+    const formatted = translated.replace(/\b\d{1,3}(?:,\d{3})+(?:\.\d+)?\b/g, (number) => Number(number.replaceAll(',', '')).toLocaleString(locale));
+    return locale === 'pt-BR' ? formatted.replace(/\b(\d+)\.(\d{1,2})(?=%|s\b|×)/g, '$1,$2') : formatted;
+  };
+}
+
+function useIngredientLabel() {
+  const project = useWikiProject();
+  const w = useWikiText();
+  return (ingredient) => w(catalogEntryFor(project, ingredient)?.name ?? ingredientLabel(ingredient));
+}
 
 const WIKI_ICONS = {
   battery: IconBattery,
@@ -149,49 +169,29 @@ function generatedEntrySocialImage(project, source) {
   return socialRender(source) ?? `/img/social/wiki/${project.id}/fallback.png`;
 }
 
-const MACHINE_SECTION_IDS = ['details', 'specs', 'drops'];
+const MACHINE_SECTION_IDS = ['details', 'specs', 'recipes', 'drops'];
 const MINING_SECTION_IDS = ['drops', 'locations', 'modifiers'];
+const DETAIL_LABEL_KEYS = {
+  details: 'overview', specs: 'detailSpecs', recipes: 'recipes', drops: 'detailDrops',
+  uses: 'detailUses', related: 'detailRelated', notes: 'detailNotes',
+  locations: 'detailLocations', modifiers: 'detailModifiers', sieving: 'detailSieving',
+};
 
-function hashSection(hash) {
-  try {
-    return decodeURIComponent(String(hash ?? '').replace(/^#/, ''));
-  } catch {
-    return String(hash ?? '').replace(/^#/, '');
-  }
+function EntrySectionNavigation({sections}) {
+  const {section, basePath, entryType} = useContext(WikiDetailContext);
+  const {t} = useSiteI18n();
+  const {search} = useLocation();
+  const entries = sections ?? sectionsForEntry(entryType);
+  if (entries.length < 2) return null;
+  return <nav className={styles.detailSectionNav} aria-label={t('detailSections')}>
+    {entries.map((id) => <Link key={id} to={`${detailSectionPath(basePath, id)}${search}`} aria-current={section === id ? 'page' : undefined}>{t(DETAIL_LABEL_KEYS[id])}</Link>)}
+  </nav>;
 }
 
-function useHashSection(validSections, defaultSection) {
-  const location = useLocation();
-  const history = useHistory();
-  const requestedSection = hashSection(location.hash);
-  const resolvedSection = validSections.includes(requestedSection) ? requestedSection : defaultSection;
-  const [activeSection, setActiveSection] = useState(resolvedSection);
-
-  useEffect(() => {
-    setActiveSection(resolvedSection);
-  }, [resolvedSection]);
-
-  useEffect(() => {
-    if (location.hash) return;
-    history.replace({
-      pathname: location.pathname,
-      search: location.search,
-      hash: `#${defaultSection}`,
-    });
-  }, [defaultSection, history, location.hash, location.pathname, location.search]);
-
-  const selectSection = useCallback((section) => {
-    if (!validSections.includes(section)) return;
-    setActiveSection(section);
-    if (hashSection(location.hash) === section) return;
-    history.push({
-      pathname: location.pathname,
-      search: location.search,
-      hash: `#${section}`,
-    });
-  }, [history, location.hash, location.pathname, location.search, validSections]);
-
-  return [activeSection, selectSection];
+function EmptyDetailSection() {
+  const {section} = useContext(WikiDetailContext);
+  const {t} = useSiteI18n();
+  return <p className={styles.empty}>{t('detailNoData', {section: t(DETAIL_LABEL_KEYS[section])})}</p>;
 }
 
 function entrySocialImage(project, entryType, entry, controller, recipe) {
@@ -230,6 +230,7 @@ function sectionSocialImage(project, section, itemCategory) {
 }
 
 function WikiSearch({query, setQuery, placeholder, compact = false}) {
+  const w = useWikiText();
   const {t} = useSiteI18n();
   const inputRef = useRef(null);
 
@@ -255,12 +256,13 @@ function WikiSearch({query, setQuery, placeholder, compact = false}) {
         onChange={(event) => setQuery(event.target.value)}
         placeholder={placeholder ?? t('searchWiki')}
       />
-      <kbd>Ctrl K</kbd>
+      <kbd>{w("Ctrl K")}</kbd>
     </label>
   );
 }
 
 function WikiFrame({active, query, setQuery, children}) {
+  const w = useWikiText();
   const {t} = useSiteI18n();
   const project = useWikiProject();
   const catalogProject = getProjectByWikiPath(project.basePath);
@@ -327,7 +329,7 @@ function WikiFrame({active, query, setQuery, children}) {
         title={section.label}
       >
         <span className={styles.navIcon}><WikiIcon name={section.icon} /></span>
-        <span className={styles.navLabel}>{section.label}</span>
+        <span className={styles.navLabel}>{w(section.label)}</span>
       </Link>
     );
 
@@ -343,11 +345,11 @@ function WikiFrame({active, query, setQuery, children}) {
             title={section.label}
           >
             <span className={styles.navIcon}><WikiIcon name={section.icon} /></span>
-            <span className={styles.navLabel}>{section.label}</span>
+            <span className={styles.navLabel}>{w(section.label)}</span>
           </Link>
           <button
             type="button"
-            aria-label={`${expanded ? 'Collapse' : 'Expand'} ${section.label} pages`}
+            aria-label={w(`${expanded ? 'Collapse' : 'Expand'} ${section.label} pages`)}
             aria-expanded={expanded}
             aria-controls={`wiki-nav-${section.id}`}
             onClick={() => toggleSection(section.id)}
@@ -382,7 +384,7 @@ function WikiFrame({active, query, setQuery, children}) {
         </div>
 
         <div className={`${styles.wikiLayout} ${sidebarCollapsed ? styles.sidebarCollapsed : ''}`}>
-          <aside className={styles.sidebar} aria-label={`${project.name} wiki sections`}>
+          <aside className={styles.sidebar} aria-label={w(`${project.name} wiki sections`)}>
             <div className={styles.mobileSidebarBar}>
               <div className={styles.mobileSidebarCurrent}>
                 <span className={styles.navIcon}><WikiIcon name={activeRootSection?.icon ?? 'book'} /></span>
@@ -394,11 +396,11 @@ function WikiFrame({active, query, setQuery, children}) {
                 className={styles.mobileSidebarToggle}
                 data-wiki-menu
                 onClick={() => setMobileNavigationOpen((current) => !current)}
-                aria-label={mobileNavigationOpen ? t('closeWikiNavigation') : t('openWikiNavigation')}
+                aria-label={w(mobileNavigationOpen ? t('closeWikiNavigation') : t('openWikiNavigation'))}
                 aria-expanded={mobileNavigationOpen}
                 aria-controls="wiki-navigation"
               >
-                <span>{mobileNavigationOpen ? t('close') : t('browse')}</span>
+                <span>{w(mobileNavigationOpen ? t('close') : t('browse'))}</span>
                 <IconChevronDown aria-hidden="true" size={18} stroke={2} />
               </button>
             </div>
@@ -408,9 +410,9 @@ function WikiFrame({active, query, setQuery, children}) {
                 type="button"
                 className={styles.sidebarToggle}
                 onClick={toggleSidebar}
-                aria-label={sidebarCollapsed ? t('expandSidebar') : t('collapseSidebar')}
+                aria-label={w(sidebarCollapsed ? t('expandSidebar') : t('collapseSidebar'))}
                 aria-expanded={!sidebarCollapsed}
-                title={sidebarCollapsed ? t('expandSidebar') : t('collapseSidebar')}
+                title={w(sidebarCollapsed ? t('expandSidebar') : t('collapseSidebar'))}
               >
                 {sidebarCollapsed
                   ? <IconChevronRight aria-hidden="true" size={18} stroke={1.9} />
@@ -421,7 +423,7 @@ function WikiFrame({active, query, setQuery, children}) {
               <nav>
                 {groupedWikiSections(project.wikiSections, t).map((group) => (
                   <section className={styles.navSection} key={group.id} aria-label={group.label}>
-                    <p className={styles.navSectionLabel}>{group.label}</p>
+                    <p className={styles.navSectionLabel}>{w(group.label)}</p>
                     <div>{group.sections.map(renderWikiSection)}</div>
                   </section>
                 ))}
@@ -443,13 +445,15 @@ function WikiFrame({active, query, setQuery, children}) {
 }
 
 function PageIntro({section, count, countLabel, eyebrow}) {
+  const w = useWikiText();
+  const {t} = useSiteI18n();
   const project = useWikiProject();
   return (
     <header className={styles.pageIntro}>
-      <p className={styles.eyebrow}>{eyebrow ?? `${project.name} index`}</p>
+      <p className={styles.eyebrow}>{w(eyebrow ?? `${project.name} index`)}</p>
       <div>
-        <h1>{project.pageMeta[section][0].replace(`${project.name} `, '')}</h1>
-        {count !== undefined && <span><strong>{count}</strong> {countLabel}</span>}
+        <h1>{SECTION_LABEL_KEYS[section] ? t(SECTION_LABEL_KEYS[section]) : w(project.pageMeta[section][0].replace(`${project.name} `, ''))}</h1>
+        {count !== undefined && <span><strong>{w(count)}</strong> {w(countLabel)}</span>}
       </div>
       <p>{project.sectionDescriptions[section]}</p>
     </header>
@@ -457,6 +461,7 @@ function PageIntro({section, count, countLabel, eyebrow}) {
 }
 
 function FilterChips({categories, active, setActive, ariaLabel}) {
+  const w = useWikiText();
   const {t} = useSiteI18n();
   return (
     <div className={styles.filterChips} aria-label={ariaLabel ?? t('filterCategories')}>
@@ -472,7 +477,7 @@ function FilterChips({categories, active, setActive, ariaLabel}) {
           data-origin={origin ? 'true' : undefined}
           style={origin ? {'--filter-origin-accent': origin.accent} : undefined}
         >
-          {name} <span>{count}</span>
+          {w(name)} <span>{count}</span>
         </button>
         );
       })}
@@ -493,6 +498,7 @@ function catalogPageNumbers(currentPage, totalPages) {
 }
 
 function CatalogPagination({page, totalItems, onPageChange, targetId}) {
+  const w = useWikiText();
   const totalPages = Math.max(1, Math.ceil(totalItems / CATALOG_PAGE_SIZE));
   if (totalPages <= 1) return null;
 
@@ -506,8 +512,8 @@ function CatalogPagination({page, totalItems, onPageChange, targetId}) {
   };
 
   return (
-    <nav className={styles.catalogPagination} aria-label="Catalog pages">
-      <button type="button" onClick={() => changePage(page - 1)} disabled={page === 1} aria-label="Previous page">←</button>
+    <nav className={styles.catalogPagination} aria-label={w("Catalog pages")}>
+      <button type="button" onClick={() => changePage(page - 1)} disabled={page === 1} aria-label={w("Previous page")}>←</button>
       <div>
         {catalogPageNumbers(page, totalPages).map((value) => typeof value === 'string'
           ? <span key={value} aria-hidden="true">…</span>
@@ -516,11 +522,11 @@ function CatalogPagination({page, totalItems, onPageChange, targetId}) {
             key={value}
             className={value === page ? styles.activeCatalogPage : undefined}
             aria-current={value === page ? 'page' : undefined}
-            aria-label={`Page ${value}`}
+            aria-label={w(`Page ${value}`)}
             onClick={() => changePage(value)}
-          >{value}</button>)}
+          >{w(value)}</button>)}
       </div>
-      <button type="button" onClick={() => changePage(page + 1)} disabled={page === totalPages} aria-label="Next page">→</button>
+      <button type="button" onClick={() => changePage(page + 1)} disabled={page === totalPages} aria-label={w("Next page")}>→</button>
     </nav>
   );
 }
@@ -601,6 +607,7 @@ function sectionForItemCategory(project, category) {
 }
 
 function TierFlipbook({entry, className}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const variants = entry.variants?.filter((variant) => variant.image) ?? [];
   const fallbackImage = entry.image ?? project.fallbackImage;
@@ -648,7 +655,7 @@ function TierFlipbook({entry, className}) {
   return (
     <div
       className={`${className} ${variants.length > 1 ? styles.tierFlipbook : ''}`}
-      aria-label={variants.length > 1 ? `${entry.name}, ${variants.length} levels shown in ascending order` : undefined}
+      aria-label={w(variants.length > 1 ? `${entry.name}, ${variants.length} levels shown in ascending order` : undefined)}
     >
       {frame?.image ? <img
         className={styles.tierFlipbookFrame}
@@ -658,19 +665,20 @@ function TierFlipbook({entry, className}) {
         loading="lazy"
         aria-hidden="true"
       /> : <span className={styles.visualFallback} aria-hidden="true">◇</span>}
-      {variants.length > 1 && <span className={styles.tierCount}>{variants.length} levels</span>}
+      {variants.length > 1 && <span className={styles.tierCount}>{variants.length} {w("levels")}</span>}
     </div>
   );
 }
 
 function FilterSelect({label, categories, active, setActive, ariaLabel = label}) {
+  const w = useWikiText();
   return (
     <label className={styles.filterSelect}>
-      <span>{label}</span>
+      <span>{w(label)}</span>
       <select value={active} onChange={(event) => setActive(event.target.value)} aria-label={ariaLabel}>
         {categories.map(({id, name, count}) => {
           const value = id ?? name;
-          return <option key={value} value={value}>{name} ({count})</option>;
+          return <option key={value} value={value}>{w(name)} ({count})</option>;
         })}
       </select>
     </label>
@@ -678,6 +686,7 @@ function FilterSelect({label, categories, active, setActive, ariaLabel = label})
 }
 
 function ItemCard({entry}) {
+  const w = useWikiText();
   const project = useWikiProject();
   return (
     <li className={styles.catalogListItem}>
@@ -685,11 +694,11 @@ function ItemCard({entry}) {
         <article className={`${styles.catalogRow} ${entry.summaryFacts ? styles.richCatalogRow : ''}`}>
         <TierFlipbook entry={entry} className={styles.itemImage} />
         <div className={styles.itemCopy}>
-          <span>{entry.category}</span>
+          <span>{w(entry.category)}</span>
           <h2>{entry.name}</h2>
           <code>{entry.identifier ?? entry.id}</code>
         </div>
-          {entry.summaryFacts && <dl className={styles.itemSummary}>{entry.summaryFacts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}
+          {entry.summaryFacts && <dl className={styles.itemSummary}>{entry.summaryFacts.map(([label, value]) => <div key={label}><dt>{w(label)}</dt><dd>{w(value)}</dd></div>)}</dl>}
           <i className={styles.catalogArrow} aria-hidden="true">→</i>
         </article>
       </Link>
@@ -720,6 +729,7 @@ function BlockPreview({entry, size = 'min(100%, 7rem)'}) {
 }
 
 function BlockCard({entry, tags = []}) {
+  const w = useWikiText();
   const project = useWikiProject();
   return (
     <li className={styles.catalogListItem}>
@@ -727,9 +737,9 @@ function BlockCard({entry, tags = []}) {
         <article className={styles.catalogRow}>
         <BlockPreview entry={entry} size="4.5rem" />
         <div className={styles.blockCopy}>
-          <span>{entry.category}</span>
+          <span>{w(entry.category)}</span>
           <h2>{entry.name}</h2>
-          {tags.length > 0 && <div className={styles.blockTags}>{tags.slice(0, 4).map((tag) => <b key={tag}>{tag}</b>)}</div>}
+          {tags.length > 0 && <div className={styles.blockTags}>{tags.slice(0, 4).map((tag) => <b key={tag}>{w(tag)}</b>)}</div>}
         </div>
           <i className={styles.catalogArrow} aria-hidden="true">→</i>
         </article>
@@ -772,7 +782,7 @@ function catalogEntryFor(project, value) {
   ];
   return localEntries.find((entry) => (
     entry.id === identifier || entry.identifier === identifier || entry.shortId === identifier
-  )) ?? localEntries.find((entry) => entry.name?.toLowerCase() === normalized) ?? findGlobalCatalogEntry(identifier);
+  )) ?? localEntries.find((entry) => entry.name?.toLowerCase() === normalized) ?? findGlobalCatalogEntry(identifier, project.locale);
 }
 
 const VANILLA_ASSET_ALIASES = {
@@ -860,6 +870,7 @@ function detailLinkFor(project, value) {
 }
 
 function RecipeSlot({ingredient, result = false}) {
+  const w = useWikiText();
   const project = useWikiProject();
   if (!ingredient) return <span className={styles.emptySlot} aria-hidden="true" />;
   const resourceKind = ingredient.kind ?? ingredient.resourceType;
@@ -868,7 +879,7 @@ function RecipeSlot({ingredient, result = false}) {
   const fluidVisual = isFluid ? fluidVisualFor(ingredient.id ?? ingredient.resourceId ?? ingredient.label) : null;
   const resourceIcon = fluidVisual?.icon ?? (isGas ? MACHINE_RESOURCE_ICONS.gas : null);
   const image = resourceIcon ?? visualFor(project, ingredient.id ?? ingredient.label);
-  const name = ingredient.label ?? formatIdentifier(ingredient.id);
+  const name = catalogEntryFor(project, ingredient)?.name ?? w(ingredient.label ?? formatIdentifier(ingredient.id));
   const description = ingredient.description ?? fluidVisual?.description;
   const tooltip = description ? `${name} — ${description}` : name;
   const link = detailLinkFor(project, ingredient.id ?? ingredient.label);
@@ -882,7 +893,7 @@ function RecipeSlot({ingredient, result = false}) {
       {image ? <img className={isFluid || isGas ? styles.resourceSlotIcon : undefined} src={image} alt="" loading="lazy" />
         : isFluid ? <span className={styles.fluidSlotGlyph} aria-hidden="true">≋</span>
           : isGas ? <span className={styles.gasSlotGlyph} aria-hidden="true">◌</span>
-            : <span className={styles.slotFallback}>{name}</span>}
+            : <span className={styles.slotFallback}>{w(name)}</span>}
       {(ingredient.count ?? 1) > 1 && <b className={styles.slotCount}>{ingredient.count}</b>}
     </>
   );
@@ -912,15 +923,16 @@ function recipeOriginFor(recipe, project) {
 }
 
 function RecipeOriginBadge({recipe, compact = false}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const origin = recipeOriginFor(recipe, project);
   const originProject = getProjectByWikiPath(`/wiki/${origin.id}`);
   const className = `${styles.recipeOriginBadge} ${compact ? styles.compactRecipeOriginBadge : ''}`;
   const style = {'--recipe-origin-accent': origin.accent};
-  const content = <><i aria-hidden="true" /><span>{origin.category}</span></>;
+  const content = <><i aria-hidden="true" /><span>{w(origin.category)}</span></>;
   return originProject
-    ? <Link className={className} style={style} to={originProject.routes.project} title={`Open ${origin.addonLabel} project`}>{content}</Link>
-    : <span className={className} style={style} title={`Recipe added by ${origin.addonLabel}`}>{content}</span>;
+    ? <Link className={className} style={style} to={originProject.routes.project} title={w(`Open ${origin.addonLabel} project`)}>{content}</Link>
+    : <span className={className} style={style} title={w(`Recipe added by ${origin.addonLabel}`)}>{content}</span>;
 }
 
 function normalizedResourceIngredient(resource, defaultResourceType = 'fluid') {
@@ -1129,6 +1141,7 @@ function processingMetric(recipe, machine) {
 }
 
 function RecipeCard({recipe}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const station = project.stationMeta[recipe.station] ?? {
     label: formatIdentifier(recipe.station),
@@ -1150,7 +1163,7 @@ function RecipeCard({recipe}) {
 
   return (
     <article className={`${styles.recipeCard} ${linear ? styles.linearRecipeCard : ''}`} style={{'--recipe-origin-accent': origin.accent}}>
-      <Link className={styles.recipeCardTarget} to={detailHref} aria-label={`Open recipe for ${outputName}`} />
+      <Link className={styles.recipeCardTarget} to={detailHref} aria-label={w(`Open recipe for ${outputName}`)} />
       <header>
         {station.face
           ? <img src={resolveAsset(project, station.face)} alt="" />
@@ -1197,7 +1210,7 @@ function RecipeCard({recipe}) {
               </React.Fragment>)}
             </div>
             <strong title={outputName}>{outputName}</strong>
-            {recipeDrops(recipe).length > 0 && <small className={styles.recipeDropSummary}>{recipeDrops(recipe).length} possible drops</small>}
+            {recipeDrops(recipe).length > 0 && <small className={styles.recipeDropSummary}>{recipeDrops(recipe).length} {w("possible drops")}</small>}
           </div>
         </div>
       )}
@@ -1206,6 +1219,7 @@ function RecipeCard({recipe}) {
 }
 
 function OverviewPage({query}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const {
     assetRoot, blocks, craftingRecipeDetails = [], craftingRecipes, entities = [], generators, items, machines, mechanics,
@@ -1296,7 +1310,7 @@ function OverviewPage({query}) {
 
       {normalized && (
         <section className={styles.searchResults} aria-live="polite">
-          <p>{searchMatches.length} results for “{query}”</p>
+          <p>{searchMatches.length} {w("results for “")}{query}”</p>
           <div>
             {searchMatches.map((entry) => <Link key={`${entry.section}-${entry.name}`} to={entry.href}><span>{entry.section}</span><strong>{entry.name}</strong></Link>)}
           </div>
@@ -1305,13 +1319,13 @@ function OverviewPage({query}) {
 
       {overview.dependencyName && (
         <section className={styles.requirement}>
-          <div><span>Required dependency</span><strong>{overview.dependencyName}</strong></div>
+          <div><span>{w("Required dependency")}</span><strong>{overview.dependencyName}</strong></div>
           <p>{overview.dependencyCopy}</p>
-          {project.repository && <a href={project.repository} target="_blank" rel="noreferrer">Official repo <span aria-hidden="true">↗</span></a>}
+          {project.repository && <a href={project.repository} target="_blank" rel="noreferrer">{w("Official repo")} <span aria-hidden="true">↗</span></a>}
         </section>
       )}
 
-      <section className={styles.categoryGrid} aria-label="Wiki categories">
+      <section className={styles.categoryGrid} aria-label={w("Wiki categories")}>
         {categoryCards.map((card) => {
           const section = wikiSections.find((entry) => entry.id === card.id);
           return (
@@ -1319,7 +1333,7 @@ function OverviewPage({query}) {
               {card.image
                 ? <img src={resolveAsset(project, card.image)} alt="" />
                 : <span className={styles.categoryFallback}><WikiIcon name={section.icon} size={30} stroke={1.6} /></span>}
-              <div><strong>{section.label}</strong><span>{card.count}</span></div>
+              <div><strong>{w(section.label)}</strong><span>{card.count}</span></div>
               <p>{card.copy}</p><b aria-hidden="true">→</b>
             </Link>
           );
@@ -1330,10 +1344,10 @@ function OverviewPage({query}) {
         <section className={styles.overviewShortcuts} aria-labelledby="overview-shortcuts-title">
           <header>
             <div>
-              <p className={styles.eyebrow}>Browse by type</p>
-              <h2 id="overview-shortcuts-title">Trinket categories</h2>
+              <p className={styles.eyebrow}>{w("Browse by type")}</p>
+              <h2 id="overview-shortcuts-title">{w("Trinket categories")}</h2>
             </div>
-            <p>Jump directly to the equipment slot or supporting item group you need.</p>
+            <p>{w("Jump directly to the equipment slot or supporting item group you need.")}</p>
           </header>
           <div>
             {overview.shortcuts.map((shortcut) => (
@@ -1342,7 +1356,7 @@ function OverviewPage({query}) {
                   ? <img src={resolveAsset(project, shortcut.image)} alt="" />
                   : <span aria-hidden="true">{shortcut.icon ?? '◇'}</span>}
                 <strong>{shortcut.label}</strong>
-                <small>{shortcut.count} {shortcut.count === 1 ? 'entry' : 'entries'}</small>
+                <small>{shortcut.count} {w(shortcut.count === 1 ? 'entry' : 'entries')}</small>
                 <b aria-hidden="true">→</b>
               </Link>
             ))}
@@ -1352,7 +1366,7 @@ function OverviewPage({query}) {
 
       {overview.steps?.length > 0 && (
         <section className={styles.getStarted}>
-          <div><p className={styles.eyebrow}>Start here</p><h2>{overview.stepsTitle ?? 'Build your progression.'}</h2></div>
+          <div><p className={styles.eyebrow}>{w("Start here")}</p><h2>{overview.stepsTitle ?? 'Build your progression.'}</h2></div>
           <ol>
             {overview.steps.map((step, index) => (
               <li key={step.title}><span>{String(index + 1).padStart(2, '0')}</span><div><strong>{step.title}</strong><p>{step.copy}</p></div></li>
@@ -1398,6 +1412,7 @@ function GuideImages({images, title}) {
 }
 
 function GuideCards({cards}) {
+  const w = useWikiText();
   const project = useWikiProject();
   if (!cards?.length) return null;
   return (
@@ -1407,7 +1422,7 @@ function GuideCards({cards}) {
         <div>
           <h3>{card.title}</h3>
           <p>{card.copy}</p>
-          {card.stats?.length > 0 && <dl>{card.stats.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}
+          {card.stats?.length > 0 && <dl>{card.stats.map(([label, value]) => <div key={label}><dt>{w(label)}</dt><dd>{w(value)}</dd></div>)}</dl>}
         </div>
       </article>)}
     </div>
@@ -1429,6 +1444,7 @@ function StepListForSection({section, sectionNumber, embedded = false}) {
 }
 
 function GuideSection({section, index}) {
+  const w = useWikiText();
   const images = section.images ?? (section.image ? [section.image] : []);
   const hasSupportingContent = Boolean(section.paragraphs?.length || images.length || section.table || section.tables?.length || section.cards?.length || section.links?.length);
   if (section.steps?.length && !hasSupportingContent) {
@@ -1438,7 +1454,7 @@ function GuideSection({section, index}) {
     <section className={styles.guideSection} aria-labelledby={`guide-section-${index}`}>
       <header>
         <span>{String(index + 1).padStart(2, '0')}</span>
-        <h2 id={`guide-section-${index}`}>{section.title}</h2>
+        <h2 id={`guide-section-${index}`}>{w(section.title)}</h2>
       </header>
       {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
       <StepListForSection section={section} sectionNumber={index + 1} embedded />
@@ -1452,6 +1468,7 @@ function GuideSection({section, index}) {
 }
 
 function HowToPlayPage({section, query}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const guide = project.howToPlay;
   const requestedId = section.split('/')[1] ?? 'introduction';
@@ -1472,14 +1489,14 @@ function HowToPlayPage({section, query}) {
       <header className={styles.guideHero}>
         <div>
           <p className={styles.eyebrow}>{page.eyebrow}</p>
-          <span>Step {String(pageIndex + 1).padStart(2, '0')} of {String(guide.pages.length).padStart(2, '0')}</span>
+          <span>{w("Step")} {String(pageIndex + 1).padStart(2, '0')} {w("of")} {String(guide.pages.length).padStart(2, '0')}</span>
           <h1>{page.title}</h1>
           <p>{page.intro}</p>
         </div>
         {page.hero && <img src={resolveAsset(project, page.hero)} alt={`${page.label} guide`} />}
       </header>
 
-      <nav className={styles.guideProgress} aria-label="How To Play progression">
+      <nav className={styles.guideProgress} aria-label={w("How To Play progression")}>
         {guide.pages.map((entry, index) => <Link
           key={entry.id}
           to={pageHref(entry, index)}
@@ -1490,18 +1507,19 @@ function HowToPlayPage({section, query}) {
 
       <div className={styles.guideSections}>
         {visibleSections.map((entry, index) => <GuideSection key={entry.title} section={entry} index={index} />)}
-        {normalizedQuery && visibleSections.length === 0 && <p className={styles.empty}>No tutorial sections match “{query}”.</p>}
+        {normalizedQuery && visibleSections.length === 0 && <p className={styles.empty}>{w("No tutorial sections match “")}{query}”.</p>}
       </div>
 
-      <nav className={styles.guidePager} aria-label="Tutorial pages">
-        {previous ? <Link to={pageHref(previous, pageIndex - 1)}><span>Previous</span><strong>← {previous.label}</strong></Link> : <span />}
-        {next ? <Link to={pageHref(next, pageIndex + 1)}><span>Next step</span><strong>{next.label} →</strong></Link> : <Link to={`${project.basePath}/machines`}><span>Continue exploring</span><strong>Machine catalog →</strong></Link>}
+      <nav className={styles.guidePager} aria-label={w("Tutorial pages")}>
+        {previous ? <Link to={pageHref(previous, pageIndex - 1)}><span>{w("Previous")}</span><strong>← {previous.label}</strong></Link> : <span />}
+        {next ? <Link to={pageHref(next, pageIndex + 1)}><span>{w("Next step")}</span><strong>{next.label} →</strong></Link> : <Link to={`${project.basePath}/machines`}><span>{w("Continue exploring")}</span><strong>{w("Machine catalog →")}</strong></Link>}
       </nav>
     </article>
   );
 }
 
 function ItemsPage({query, categorySection}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const {items} = project;
   const itemCatalogClass = project.itemCatalogColumns === 1 ? styles.simpleCatalogList : `${styles.simpleCatalogList} ${styles.itemCatalogList}`;
@@ -1545,16 +1563,16 @@ function ItemsPage({query, categorySection}) {
       <CatalogResultBar id="items-page-results" totalItems={visible.length} page={currentPage} setPage={setPage} />
       {project.groupItemsByCategory ? <div className={styles.itemGroups}>{groupedEntries.map(([groupName, entries]) => (
         <section className={styles.itemGroup} key={groupName}>
-          <header><div><span>Item category</span><h2>{groupName}</h2></div><b>{entries.length}</b></header>
-          <ul className={itemCatalogClass} aria-label={`${groupName} item catalog`}>
+          <header><div><span>{w("Item category")}</span><h2>{w(groupName)}</h2></div><b>{entries.length}</b></header>
+          <ul className={itemCatalogClass} aria-label={w(`${groupName} item catalog`)}>
             {entries.map((entry) => <ItemCard key={entry.id} entry={entry} />)}
           </ul>
         </section>
-      ))}</div> : <ul className={itemCatalogClass} aria-label={`${project.name} item catalog`}>
+      ))}</div> : <ul className={itemCatalogClass} aria-label={w(`${project.name} item catalog`)}>
         {pageEntries.map((entry) => <ItemCard key={entry.id} entry={entry} />)}
       </ul>}
       <CatalogPagination page={currentPage} totalItems={visible.length} onPageChange={setPage} targetId="items-page-results" />
-      {!visible.length && <p className={styles.empty}>No items match the current filters.</p>}
+      {!visible.length && <p className={styles.empty}>{w("No items match the current filters.")}</p>}
     </>
   );
 }
@@ -1606,6 +1624,7 @@ function blockTagsFor(entry, sieveGroup) {
 }
 
 function BlocksPage({query}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const {blocks, machines = [], generators = [], processingRecipes = []} = project;
   const specializedBlockSlugs = new Set([
@@ -1646,11 +1665,11 @@ function BlocksPage({query}) {
       <PageIntro section="blocks" count={blocks.length} countLabel="blocks found" />
       <FilterChips categories={filters} active={tag} setActive={setTag} ariaLabel="Filter blocks by tag" />
       <CatalogResultBar id="blocks-page-results" totalItems={visible.length} page={currentPage} setPage={setPage} />
-      <ul className={`${styles.simpleCatalogList} ${styles.blockCatalogList}`} aria-label={`${project.name} block catalog`}>
+      <ul className={`${styles.simpleCatalogList} ${styles.blockCatalogList}`} aria-label={w(`${project.name} block catalog`)}>
         {pageEntries.map(({entry, tags}) => <BlockCard key={entry.id} entry={entry} tags={tags} />)}
       </ul>
       <CatalogPagination page={currentPage} totalItems={visible.length} onPageChange={setPage} targetId="blocks-page-results" />
-      {!visible.length && <p className={styles.empty}>No blocks match the current filters.</p>}
+      {!visible.length && <p className={styles.empty}>{w("No blocks match the current filters.")}</p>}
     </>
   );
 }
@@ -1804,6 +1823,7 @@ function machineRecipeSets(project, machine, controller) {
 }
 
 function MachinesPage({query}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const {machineControllerIds = {}, machines} = project;
   const blocks = project.allBlocks ?? project.blocks;
@@ -1833,14 +1853,14 @@ function MachinesPage({query}) {
   });
   return (
     <>
-      <PageIntro section="machines" count={machines.length} countLabel="documented machines" eyebrow="Technical machine catalog" />
+      <PageIntro section="machines" count={machines.length} countLabel="documented machines" eyebrow={w("Technical machine catalog")} />
       {project.machineNotice && <div className={styles.technologyNotice}><strong>{project.machineNotice.title}</strong><p>{project.machineNotice.copy}</p></div>}
       <FilterChips categories={categoryFilters} active={category} setActive={setCategory} />
-      <p className={styles.resultCount}>{visible.length} machines shown</p>
+      <p className={styles.resultCount}>{visible.length} {w("machines shown")}</p>
       <div className={styles.machineGroups}>
         {groupedEntries.map(([groupName, groupMachines]) => (
           <section className={styles.machineGroup} data-category={groupName.toLowerCase()} key={groupName}>
-            <header><div><span>Machine category</span><h2>{groupName}</h2></div><b>{groupMachines.length}</b></header>
+            <header><div><span>{w("Machine category")}</span><h2>{groupName}</h2></div><b>{groupMachines.length}</b></header>
             <div className={styles.machineList}>
               {groupMachines.map((machine) => {
                 const sequence = documentedMachines.findIndex((entry) => entry.id === machine.id) + 1;
@@ -1850,16 +1870,16 @@ function MachinesPage({query}) {
                     <article className={styles.machineCard}>
                       <div className={styles.machineVisual}>
                         {controller && <BlockPreview entry={controller} size="min(100%, 10rem)" />}
-                        <span>Machine {String(sequence).padStart(2, '0')}</span>
+                        <span>{w("Machine")} {String(sequence).padStart(2, '0')}</span>
                       </div>
                       <div className={styles.machineContent}>
-                        <div className={styles.machineHeading}><div><span>{machine.category} · {machine.tier} tier</span><h3>{machine.name}</h3></div><b>{machine.primaryResource}</b></div>
+                        <div className={styles.machineHeading}><div><span>{machine.category} · {machine.tier} {w("tier")}</span><h3>{machine.name}</h3></div><b>{machine.primaryResource}</b></div>
                         <p className={styles.machineDescription}>{machine.description}</p>
                         <dl className={styles.machineSummary}>
-                          <div><dt>Base consumption</dt><dd>{machine.baseConsumption}</dd></div>
-                          <div><dt>Energy capacity</dt><dd>{machine.energyCapacity}</dd></div>
-                          <div><dt>Production type</dt><dd>{machine.productionType}</dd></div>
-                          <div><dt>Upgrades</dt><dd>{machine.modules?.length ? machine.modules.join(', ') : 'None'}</dd></div>
+                          <div><dt>{w("Base consumption")}</dt><dd>{machine.baseConsumption}</dd></div>
+                          <div><dt>{w("Energy capacity")}</dt><dd>{machine.energyCapacity}</dd></div>
+                          <div><dt>{w("Production type")}</dt><dd>{w(machine.productionType)}</dd></div>
+                          <div><dt>{w("Upgrades")}</dt><dd>{w(machine.modules?.length ? machine.modules.join(', ') : 'None')}</dd></div>
                         </dl>
                       </div>
                       <i className={styles.machineArrow} aria-hidden="true">→</i>
@@ -1871,12 +1891,13 @@ function MachinesPage({query}) {
           </section>
         ))}
       </div>
-      {!visible.length && <p className={styles.empty}>No machines match “{query}”.</p>}
+      {!visible.length && <p className={styles.empty}>{w("No machines match “")}{query}”.</p>}
     </>
   );
 }
 
 function GeneratorsPage({query}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const {generators, generatorCategoryOrder = []} = project;
   const normalized = query.trim().toLowerCase();
@@ -1898,11 +1919,11 @@ function GeneratorsPage({query}) {
     ))]);
   return (
     <>
-      <PageIntro section="generators" count={generators.length} countLabel="energy systems" eyebrow="Technology add-on section" />
+      <PageIntro section="generators" count={generators.length} countLabel="energy systems" eyebrow={w("Technology add-on section")} />
       <div className={styles.generatorGroups}>
         {sortedGroups.map(([family, entries]) => (
           <section className={styles.generatorGroup} key={family}>
-            <header><div><span>{entries[0].systemType === 'Generation' ? 'Generation family' : 'Energy infrastructure'}</span><h2>{family}</h2></div><b>{entries.length}</b></header>
+            <header><div><span>{w(entries[0].systemType === 'Generation' ? 'Generation family' : 'Energy infrastructure')}</span><h2>{family}</h2></div><b>{entries.length}</b></header>
             <div className={styles.generatorTierList}>
               {entries.map((generator) => (
                 <Link className={styles.selectableCard} to={`${project.basePath}/generators/${generator.id}`} key={generator.id}>
@@ -1919,15 +1940,15 @@ function GeneratorsPage({query}) {
                       <dl>
                         {generator.systemType === 'Generation' && <>
                           <div>
-                            <dt><span className={styles.generatorFullLabel}>Base generation</span><span className={styles.generatorCompactLabel}>Rate</span></dt>
+                            <dt><span className={styles.generatorFullLabel}>{w("Base generation")}</span><span className={styles.generatorCompactLabel}>{w("Rate")}</span></dt>
                             <dd><span className={styles.generatorFullValue}>{generator.baseGeneration}</span><span className={styles.generatorCompactValue}>{compactEnergy(generator.baseGeneration)}</span></dd>
                           </div>
                           <div>
-                            <dt><span className={styles.generatorFullLabel}>Energy capacity</span><span className={styles.generatorCompactLabel}>Capacity</span></dt>
+                            <dt><span className={styles.generatorFullLabel}>{w("Energy capacity")}</span><span className={styles.generatorCompactLabel}>{w("Capacity")}</span></dt>
                             <dd><span className={styles.generatorFullValue}>{generator.energyCapacity}</span><span className={styles.generatorCompactValue}>{compactEnergy(generator.energyCapacity)}</span></dd>
                           </div>
                         </>}
-                        <div><dt>{generator.systemType === 'Generation' ? 'Generation type' : 'System type'}</dt><dd>{generator.generationType ?? generator.systemType}</dd></div>
+                        <div><dt>{w(generator.systemType === 'Generation' ? 'Generation type' : 'System type')}</dt><dd>{generator.generationType ?? generator.systemType}</dd></div>
                       </dl>
                     </div>
                     <i className={styles.machineArrow} aria-hidden="true">→</i>
@@ -1938,19 +1959,20 @@ function GeneratorsPage({query}) {
           </section>
         ))}
       </div>
-      {!visible.length && <p className={styles.empty}>No generators match “{query}”.</p>}
+      {!visible.length && <p className={styles.empty}>{w("No generators match “")}{query}”.</p>}
     </>
   );
 }
 
 function EntitiesPage({query}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const {entities} = project;
   const normalized = query.trim().toLowerCase();
   const visible = entities.filter((entry) => `${entry.name} ${entry.identifier} ${entry.category} ${entry.description ?? ''}`.toLowerCase().includes(normalized));
   return (
     <>
-      <PageIntro section="entities" count={entities.length} countLabel="runtime entities" eyebrow="Implementation reference" />
+      <PageIntro section="entities" count={entities.length} countLabel="runtime entities" eyebrow={w("Implementation reference")} />
       <section className={styles.entityGrid}>
         {visible.map((entry) => (
           <Link className={styles.selectableCard} to={`${project.basePath}/entities/${entry.slug ?? entry.id}`} key={entry.id}>
@@ -1958,17 +1980,18 @@ function EntitiesPage({query}) {
               <div>{entry.image
                 ? <img src={resolveAsset(project, entry.image)} alt="" loading="lazy" />
                 : <span className={styles.visualFallback} aria-hidden="true">⊙</span>}</div>
-              <span>{entry.category}</span><h2>{entry.name}</h2>
+              <span>{w(entry.category)}</span><h2>{entry.name}</h2>
             </article>
           </Link>
         ))}
       </section>
-      {!visible.length && <p className={styles.empty}>No entities match “{query}”.</p>}
+      {!visible.length && <p className={styles.empty}>{w("No entities match “")}{query}”.</p>}
     </>
   );
 }
 
 function RecipesPage({query}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const {craftingRecipeDetails, processingRecipes, stationMeta} = project;
   const [stationFilter, setStationFilter] = useState('All');
@@ -2070,8 +2093,8 @@ function RecipesPage({query}) {
           onClick={() => setFiltersOpen(true)}
         >
           <IconAdjustmentsHorizontal aria-hidden="true" size={20} stroke={1.8} />
-          <span><strong>Filters</strong><small>{filterSummary}</small></span>
-          {activeFilterCount > 0 && <b aria-label={`${activeFilterCount} active filters`}>{activeFilterCount}</b>}
+          <span><strong>{w("Filters")}</strong><small>{filterSummary}</small></span>
+          {activeFilterCount > 0 && <b aria-label={w(`${activeFilterCount} active filters`)}>{activeFilterCount}</b>}
         </button>
       </div>
       {filtersOpen && <div className={styles.recipeFilterOverlay} onMouseDown={(event) => {
@@ -2087,29 +2110,29 @@ function RecipesPage({query}) {
           tabIndex={-1}
         >
           <header>
-            <div><span>Recipe catalog</span><h2 id="recipe-filter-title">Filters</h2></div>
-            <button type="button" onClick={closeFilters} aria-label="Close recipe filters"><IconX aria-hidden="true" size={21} /></button>
+            <div><span>{w("Recipe catalog")}</span><h2 id="recipe-filter-title">{w("Filters")}</h2></div>
+            <button type="button" onClick={closeFilters} aria-label={w("Close recipe filters")}><IconX aria-hidden="true" size={21} /></button>
           </header>
           <div className={styles.recipeFilterContent}>
             <div className={styles.recipeFilterFields}>
-              <FilterSelect label="Recipe station" categories={stationFilters} active={stationFilter} setActive={setStationFilter} />
-              {originFilters.length > 2 && <FilterSelect label="Added by" categories={originFilters} active={originFilter} setActive={setOriginFilter} ariaLabel="Filter recipes by add-on origin" />}
+              <FilterSelect label={w("Recipe station")} categories={stationFilters} active={stationFilter} setActive={setStationFilter} />
+              {originFilters.length > 2 && <FilterSelect label={w("Added by")} categories={originFilters} active={originFilter} setActive={setOriginFilter} ariaLabel="Filter recipes by add-on origin" />}
             </div>
             {catalystRecipeCount > 0 && <section className={styles.recipeFamilyFilter}>
-              <div><span>Recipe family</span><p>Catalyst Weaver recipes stay hidden until selected and are shown separately from every other station.</p></div>
-              <div role="radiogroup" aria-label="Choose which recipe family is shown">
+              <div><span>{w("Recipe family")}</span><p>{w("Catalyst Weaver recipes stay hidden until selected and are shown separately from every other station.")}</p></div>
+              <div role="radiogroup" aria-label={w("Choose which recipe family is shown")}>
                 <button type="button" role="radio" aria-checked={recipeMode === 'standard'} onClick={() => selectRecipeMode('standard')}>
-                  <i aria-hidden="true" /><span><strong>Standard recipes</strong><small>{standardRecipeCount.toLocaleString('en-US')} entries</small></span>
+                  <i aria-hidden="true" /><span><strong>{w("Standard recipes")}</strong><small>{standardRecipeCount.toLocaleString('en-US')} {w("entries")}</small></span>
                 </button>
                 <button type="button" role="radio" aria-checked={recipeMode === 'catalyst'} onClick={() => selectRecipeMode('catalyst')}>
-                  <i aria-hidden="true" /><span><strong>Catalyst Weaver</strong><small>{catalystRecipeCount.toLocaleString('en-US')} entries</small></span>
+                  <i aria-hidden="true" /><span><strong>{w("Catalyst Weaver")}</strong><small>{catalystRecipeCount.toLocaleString('en-US')} {w("entries")}</small></span>
                 </button>
               </div>
             </section>}
           </div>
           <footer>
-            <button type="button" className={styles.resetRecipeFilters} onClick={resetFilters} disabled={activeFilterCount === 0}>Reset</button>
-            <button type="button" className={styles.applyRecipeFilters} onClick={closeFilters}>Show {visible.length.toLocaleString('en-US')} recipes</button>
+            <button type="button" className={styles.resetRecipeFilters} onClick={resetFilters} disabled={activeFilterCount === 0}>{w("Reset")}</button>
+            <button type="button" className={styles.applyRecipeFilters} onClick={closeFilters}>{w("Show")} {visible.length.toLocaleString('en-US')} {w("recipes")}</button>
           </footer>
         </section>
       </div>}
@@ -2118,7 +2141,7 @@ function RecipesPage({query}) {
         {pageRecipes.map((recipe) => <RecipeCard key={`${recipe.station}-${recipe.id}`} recipe={recipe} />)}
       </section>
       <CatalogPagination page={currentPage} totalItems={visible.length} onPageChange={setPage} targetId="recipes-page-results" />
-      {!visible.length && <p className={styles.empty}>No recipes match the current search.</p>}
+      {!visible.length && <p className={styles.empty}>{w("No recipes match the current search.")}</p>}
     </>
   );
 }
@@ -2148,9 +2171,10 @@ function MechanicsPage({query}) {
 }
 
 function DetailFacts({facts}) {
+  const w = useWikiText();
   return (
     <dl className={styles.detailFacts}>
-      {facts.filter(([, value]) => value).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{Array.isArray(value) ? value.join(', ') : value}</dd></div>)}
+      {facts.filter(([, value]) => value).map(([label, value]) => <div key={label}><dt>{w(label)}</dt><dd>{w(Array.isArray(value) ? value.join(', ') : value)}</dd></div>)}
     </dl>
   );
 }
@@ -2230,6 +2254,7 @@ function entryReferenceGroups(entryType, entry) {
 }
 
 function EntryReference({entryType, groups}) {
+  const w = useWikiText();
   const isBlock = entryType === 'blocks';
   const title = isBlock ? 'Block Details' : 'Generator Specifications';
   const copy = isBlock
@@ -2238,15 +2263,15 @@ function EntryReference({entryType, groups}) {
   return (
     <section className={`${styles.machineReference} ${styles.entryReference}`} aria-labelledby="entry-reference">
       <header>
-        <div><p className={styles.eyebrow}>Technical reference</p><h2 id="entry-reference">{title}</h2></div>
-        <p>{copy}</p>
+        <div><p className={styles.eyebrow}>{w("Technical reference")}</p><h2 id="entry-reference">{w(title)}</h2></div>
+        <p>{w(copy)}</p>
       </header>
       <div className={styles.machineReferenceGrid}>
         {groups.map((group, index) => (
           <section className={styles.machineReferenceGroup} data-group={group.id} key={group.id}>
             <div className={styles.machineReferenceHeading}>
               <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-              <div><h3>{group.title}</h3><p>{group.copy}</p></div>
+              <div><h3>{w(group.title)}</h3><p>{w(group.copy)}</p></div>
             </div>
             <MachinePropertyList items={group.items} />
             <PropertyTags tags={group.tags} />
@@ -2272,52 +2297,46 @@ function romanNumeral(value) {
 }
 
 function MiningReference({mining}) {
-  const [activeTab, setActiveTab] = useHashSection(MINING_SECTION_IDS, 'drops');
-  if (!mining) return null;
-  const tabs = [
-    {id: 'drops', label: 'Drops by enchantment'},
-    {id: 'locations', label: 'Where to find'},
-    {id: 'modifiers', label: 'Modifiers'},
-  ];
+  const labelIngredient = useIngredientLabel();
+  const w = useWikiText();
+  const {section: activeTab} = useContext(WikiDetailContext);
+  if (!mining) return <EmptyDetailSection />;
   return (
     <section className={styles.oreMiningReference} aria-labelledby="ore-mining-reference">
       <header>
-        <div><p className={styles.eyebrow}>Resource reference</p><h2 id="ore-mining-reference">Mining &amp; drops</h2></div>
-        <p>Base loot is listed separately from optional StatsCore effects, so tool-specific drops remain clear.</p>
+        <div><p className={styles.eyebrow}>{w("Resource reference")}</p><h2 id="ore-mining-reference">{w("Mining & drops")}</h2></div>
+        <p>{w("Base loot is listed separately from optional StatsCore effects, so tool-specific drops remain clear.")}</p>
       </header>
       <div className={styles.oreMiningFacts}>
-        <span><small>Required tool</small><strong>{mining.requiredTool}</strong></span>
-        {mining.silkDrop && <span><small>Silk Touch</small><strong>{formatIdentifier(mining.silkDrop.id)} {mining.silkDrop.amount}</strong></span>}
+        <span><small>{w("Required tool")}</small><strong>{w(mining.requiredTool)}</strong></span>
+        {mining.silkDrop && <span><small>{w("Silk Touch")}</small><strong>{labelIngredient({id: mining.silkDrop.id})} {mining.silkDrop.amount}</strong></span>}
       </div>
-      <div className={styles.oreMiningTabs} role="tablist" aria-label="Mining documentation sections">
-        {tabs.map((tab) => <button key={tab.id} type="button" role="tab" aria-selected={activeTab === tab.id} className={activeTab === tab.id ? styles.activeOreMiningTab : undefined} onClick={() => setActiveTab(tab.id)}>{tab.label}</button>)}
-      </div>
-      {activeTab === 'drops' && <div className={styles.oreDropTable} role="table" aria-label="Drops by mining enchantment">
-        <div className={styles.oreDropHeader} role="row"><span>Enchantment</span><span>Drop</span><span>Amount</span></div>
+      {activeTab === 'drops' && <div className={styles.oreDropTable} role="table" aria-label={w("Drops by mining enchantment")}>
+        <div className={styles.oreDropHeader} role="row"><span>{w("Enchantment")}</span><span>{w("Drop")}</span><span>{w("Amount")}</span></div>
         <div className={styles.oreDropRows}>
           {mining.silkDrop && <div className={styles.oreDropRow} role="row" key="silk-touch">
-            <strong>Silk Touch</strong>
-            <span className={styles.oreDropItem}><RecipeSlot ingredient={{id: mining.silkDrop.id, label: formatIdentifier(mining.silkDrop.id)}} /><em>{formatIdentifier(mining.silkDrop.id)}</em></span>
+            <strong>{w("Silk Touch")}</strong>
+            <span className={styles.oreDropItem}><RecipeSlot ingredient={{id: mining.silkDrop.id, label: formatIdentifier(mining.silkDrop.id)}} /><em>{labelIngredient({id: mining.silkDrop.id})}</em></span>
             <span>{mining.silkDrop.amount ?? '×1'}</span>
           </div>}
           {mining.drops.map((drop) => <div className={styles.oreDropRow} role="row" key={drop.fortune}>
-          <strong>Fortune {romanNumeral(drop.fortune)}</strong>
-          <span className={styles.oreDropItem}><RecipeSlot ingredient={{id: drop.id, label: formatIdentifier(drop.id)}} /><em>{formatIdentifier(drop.id)}</em></span>
+          <strong>{w("Fortune")} {romanNumeral(drop.fortune)}</strong>
+          <span className={styles.oreDropItem}><RecipeSlot ingredient={{id: drop.id, label: formatIdentifier(drop.id)}} /><em>{labelIngredient({id: drop.id})}</em></span>
           <span>{drop.amount}</span>
         </div>)}
         </div>
       </div>}
       {activeTab === 'locations' && <div className={styles.oreLocationList}>{mining.locations.map((location, index) => <article key={`${location.dimension}-${location.height}-${index}`}>
-        <strong>{location.dimension}</strong><span>{location.height}</span><small>Replaces {location.replace} · {location.detail}</small>
+        <strong>{w(location.dimension)}</strong><span>{location.height}</span><small>{w("Replaces")} {location.replace} · {w(location.detail)}</small>
       </article>)}</div>}
-      {activeTab === 'modifiers' && <div className={`${styles.oreDropTable} ${styles.oreModifierTable}`} role="table" aria-label="Drops changed by special mining abilities">
-        <div className={styles.oreModifierHeader} role="row"><span>Special ability</span><span>Possible drop</span><span>Loot behavior</span></div>
+      {activeTab === 'modifiers' && <div className={`${styles.oreDropTable} ${styles.oreModifierTable}`} role="table" aria-label={w("Drops changed by special mining abilities")}>
+        <div className={styles.oreModifierHeader} role="row"><span>{w("Special ability")}</span><span>{w("Possible drop")}</span><span>{w("Loot behavior")}</span></div>
         <div className={styles.oreModifierRows}>{mining.modifiers.map((modifier) => <div className={styles.oreModifierRow} role="row" key={modifier.title}>
-          <strong>{modifier.title}</strong>
+          <strong>{w(modifier.title)}</strong>
           <span className={styles.oreModifierDrops}>{modifier.dropLabel
-            ? <span className={styles.oreModifierTextDrop}>{modifier.dropLabel}</span>
-            : meaningfulList(modifier.drops).map((drop, index) => <span className={styles.oreDropItem} key={`${drop.id}-${index}`}><RecipeSlot ingredient={{id: drop.id, label: formatIdentifier(drop.id)}} /><span><em>{formatIdentifier(drop.id)}</em>{drop.amount && <small>{drop.amount}</small>}</span></span>)}</span>
-          <p>{modifier.copy}</p>
+            ? <span className={styles.oreModifierTextDrop}>{w(modifier.dropLabel)}</span>
+            : meaningfulList(modifier.drops).map((drop, index) => <span className={styles.oreDropItem} key={`${drop.id}-${index}`}><RecipeSlot ingredient={{id: drop.id, label: formatIdentifier(drop.id)}} /><span><em>{labelIngredient({id: drop.id})}</em>{drop.amount && <small>{drop.amount}</small>}</span></span>)}</span>
+          <p>{w(modifier.copy)}</p>
         </div>)}</div>
       </div>}
     </section>
@@ -2351,6 +2370,7 @@ function ItemSectionHeading({id, icon, children}) {
 }
 
 function CopyIdentifierButton({identifier}) {
+  const w = useWikiText();
   const [copied, setCopied] = useState(false);
   async function copyIdentifier() {
     try {
@@ -2372,9 +2392,9 @@ function CopyIdentifierButton({identifier}) {
     }
   }
   return (
-    <button type="button" className={styles.copyIdentifier} onClick={copyIdentifier} aria-label={`Copy identifier ${identifier}`} title="Copy identifier">
+    <button type="button" className={styles.copyIdentifier} onClick={copyIdentifier} aria-label={w(`Copy identifier ${identifier}`)} title={w("Copy identifier")}>
       <DetailIcon name={copied ? 'check' : 'copy'} />
-      <span className={styles.srOnly} aria-live="polite">{copied ? 'Identifier copied' : 'Copy identifier'}</span>
+      <span className={styles.srOnly} aria-live="polite">{w(copied ? 'Identifier copied' : 'Copy identifier')}</span>
     </button>
   );
 }
@@ -2456,11 +2476,12 @@ function capabilityGroups(capabilities) {
 }
 
 function CapabilityGroup({group}) {
+  const w = useWikiText();
   return (
     <section className={styles.capabilityGroup}>
-      <header><DetailIcon name={group.icon} /><h3>{group.title}</h3></header>
+      <header><DetailIcon name={group.icon} /><h3>{w(group.title)}</h3></header>
       <ul>{group.entries.map((item, index) => <li key={`${item.name}-${index}`}>
-        {group.attributes ? <><strong>{item.modifier}</strong><span>{item.name}</span></> : <><strong>{item.name}</strong>{item.description && <p>{item.description}</p>}{item.cooldown && <small>Cooldown: {item.cooldown}</small>}</>}
+        {group.attributes ? <><strong>{item.modifier}</strong><span>{item.name}</span></> : <><strong>{item.name}</strong>{item.description && <p>{w(item.description)}</p>}{item.cooldown && <small>{w("Cooldown:")} {item.cooldown}</small>}</>}
       </li>)}</ul>
     </section>
   );
@@ -2476,6 +2497,8 @@ function obtainingRecipes(project, entry) {
 }
 
 function SiftableBlockReference({entry, group, hammer}) {
+  const labelIngredient = useIngredientLabel();
+  const w = useWikiText();
   const [expanded, setExpanded] = useState(false);
   if (!group?.drops?.length) return null;
   const contentId = `block-${autosieveContentId(entry.id ?? entry.slug)}`;
@@ -2484,17 +2507,17 @@ function SiftableBlockReference({entry, group, hammer}) {
     <section className={styles.siftableBlockReference} aria-labelledby="siftable-block-reference">
       <header>
         <SieveItemVisual ingredient={group.input} className={styles.autosieveInputVisual} />
-        <div><p className={styles.eyebrow}>Sifting reference</p><h2 id="siftable-block-reference">Siftable block</h2><p>{group.drops.length} possible drops, each rolled independently.</p></div>
+        <div><p className={styles.eyebrow}>{w("Sifting reference")}</p><h2 id="siftable-block-reference">{w("Siftable block")}</h2><p>{group.drops.length} {w("possible drops, each rolled independently.")}</p></div>
       </header>
       <div className={styles.siftableBlockFacts}>
-        {hammer && <span><small>Required hammer</small><strong>{hammer.label}</strong>{hammer.source && <em>Created from {ingredientLabel(hammer.source)}</em>}</span>}
-        <span><small>Minimum mesh</small><SieveMeshBadge tier={minimumTier} /></span>
+        {hammer && <span><small>{w("Required hammer")}</small><strong>{hammer.label}</strong>{hammer.source && <em>{w("Created from")} {labelIngredient(hammer.source)}</em>}</span>}
+        <span><small>{w("Minimum mesh")}</small><SieveMeshBadge tier={minimumTier} /></span>
         <button type="button" aria-expanded={expanded} aria-controls={contentId} onClick={() => setExpanded((current) => !current)}>
-          <span>{expanded ? 'Hide drop table' : 'Show drop table'}</span><b aria-hidden="true">{expanded ? '−' : '+'}</b>
+          <span>{w(expanded ? 'Hide drop table' : 'Show drop table')}</span><b aria-hidden="true">{w(expanded ? '−' : '+')}</b>
         </button>
       </div>
       {expanded && <div id={contentId} className={styles.autosieveDropList}>
-        <div className={styles.autosieveDropHeader} aria-hidden="true"><span>Drop</span><span>Chance</span><span>Amount</span><span>Min. tier</span></div>
+        <div className={styles.autosieveDropHeader} aria-hidden="true"><span>{w("Drop")}</span><span>{w("Chance")}</span><span>{w("Amount")}</span><span>{w("Min. tier")}</span></div>
         <AutoSieveDropRows drops={group.drops} />
       </div>}
     </section>
@@ -2511,6 +2534,7 @@ function useWikiQuery() {
 }
 
 function DocumentationSection({section}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const facts = meaningfulList(section.facts).filter((fact) => Array.isArray(fact) && fact[1] !== undefined && fact[1] !== null && fact[1] !== '');
   const entries = meaningfulList(section.entries);
@@ -2527,7 +2551,7 @@ function DocumentationSection({section}) {
     const available = new Set(entries);
     const groupsByFirstEntry = new Map();
     enchantmentGroups.forEach((group) => {
-      const names = group.names.filter((name) => available.has(name));
+      const names = group.names.map(w).filter((name) => available.has(name));
       if (names.length > 1) {
         names.forEach((name) => available.delete(name));
         groupsByFirstEntry.set(Math.min(...names.map((name) => entries.indexOf(name))), {...group, names});
@@ -2542,19 +2566,19 @@ function DocumentationSection({section}) {
   })();
   return (
     <section className={`${styles.itemEditorialSection} ${styles.documentationSection}`} aria-labelledby={`item-section-${section.id}`}>
-      <ItemSectionHeading id={`item-section-${section.id}`} icon="capabilities">{section.title ?? section.label}</ItemSectionHeading>
-      {section.copy && <p className={styles.documentationCopy}>{section.copy}</p>}
-      {facts.length > 0 && <dl className={styles.itemBasicList}>{facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{Array.isArray(value) ? value.join(', ') : value}</dd></div>)}</dl>}
-      {repairs.length > 0 && <ul className={styles.repairItemList} aria-label="Repair materials">{repairs.map((repair, index) => {
+      <ItemSectionHeading id={`item-section-${section.id}`} icon="capabilities">{w(section.title ?? section.label)}</ItemSectionHeading>
+      {section.copy && <p className={styles.documentationCopy}>{w(section.copy)}</p>}
+      {facts.length > 0 && <dl className={styles.itemBasicList}>{facts.map(([label, value]) => <div key={label}><dt>{w(label)}</dt><dd>{w(Array.isArray(value) ? value.join(', ') : value)}</dd></div>)}</dl>}
+      {repairs.length > 0 && <ul className={styles.repairItemList} aria-label={w("Repair materials")}>{repairs.map((repair, index) => {
         const target = catalogEntryFor(project, repair.id);
         const href = detailLinkFor(project, repair.id);
         const image = visualFor(project, repair.id);
-        const content = <>{image && <img src={image} alt="" loading="lazy" />}<strong>{repair.label ?? target?.name ?? formatIdentifier(repair.id)}</strong>{repair.value && <q>{repair.value}</q>}</>;
+        const content = <>{image && <img src={image} alt="" loading="lazy" />}<strong>{target?.name ?? repair.label ?? formatIdentifier(repair.id)}</strong>{repair.value && <q>{w(repair.value)}</q>}</>;
         return <li key={`${repair.id}-${index}`}>{href ? <Link to={href}>{content}</Link> : <span>{content}</span>}</li>;
       })}</ul>}
       {entries.length > 0 && <ul className={styles.documentationList} data-layout={section.id === 'enchantments' ? 'list' : undefined}>{groupedEntries.map((item, index) => item.group
-        ? <li className={styles.enchantmentGroup} key={item.group.label}><strong>{item.group.label}</strong><ul>{item.group.names.map((name) => <li key={name}>{name}</li>)}</ul></li>
-        : <li key={`${item.entry}-${index}`}>{item.entry}</li>)}</ul>}
+        ? <li className={styles.enchantmentGroup} key={item.group.label}><strong>{w(item.group.label)}</strong><ul>{item.group.names.map((name) => <li key={name}>{w(name)}</li>)}</ul></li>
+        : <li key={`${item.entry}-${index}`}>{w(item.entry)}</li>)}</ul>}
     </section>
   );
 }
@@ -2631,17 +2655,21 @@ function aggregateIngredients(ingredients) {
 }
 
 function ItemRecipeGroup({label, ingredients, result = false}) {
+  const labelIngredient = useIngredientLabel();
+  const w = useWikiText();
   if (!ingredients.length) return null;
   return <div className={styles.itemRecipeGroup}>
-    <small>{label}</small>
+    <small>{w(label)}</small>
     <div>{aggregateIngredients(ingredients).map((ingredient, index) => <div className={styles.itemRecipeIngredient} key={`${ingredient.id ?? ingredient.label}-${index}`}>
       <RecipeSlot ingredient={ingredient} result={result} />
-      <span><strong>{ingredientLabel(ingredient)}</strong>{(ingredient.count ?? 1) > 1 && <small>×{ingredient.count}</small>}</span>
+      <span><strong>{labelIngredient(ingredient)}</strong>{(ingredient.count ?? 1) > 1 && <small>×{ingredient.count}</small>}</span>
     </div>)}</div>
   </div>;
 }
 
 function ItemCraftingRecipeGroup({recipe}) {
+  const labelIngredient = useIngredientLabel();
+  const w = useWikiText();
   const {twoByTwo, slots} = craftingGridFor(recipe);
   const ingredients = aggregateIngredients(slots);
   if (!ingredients.length) return null;
@@ -2650,9 +2678,9 @@ function ItemCraftingRecipeGroup({recipe}) {
       {slots.map((ingredient, slot) => <RecipeSlot key={slot} ingredient={ingredient} />)}
     </div>
     <div className={styles.itemCraftingRecipeLegend}>
-      <small>Input</small>
+      <small>{w("Input")}</small>
       <div>{ingredients.map((ingredient, index) => <span key={`${ingredient.id ?? ingredient.label}-${index}`}>
-        <strong>{ingredientLabel(ingredient)}</strong>
+        <strong>{labelIngredient(ingredient)}</strong>
         {(ingredient.count ?? 1) > 1 && <em>×{ingredient.count}</em>}
       </span>)}</div>
     </div>
@@ -2660,6 +2688,7 @@ function ItemCraftingRecipeGroup({recipe}) {
 }
 
 function ItemRecipeCard({recipe}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const station = project.stationMeta[recipe.station] ?? {label: formatIdentifier(recipe.station), face: project.recipeFallbackFace};
   const outputs = recipeOutputs(recipe);
@@ -2672,31 +2701,33 @@ function ItemRecipeCard({recipe}) {
   ].filter(([condition]) => condition !== undefined && condition !== null);
   return <article className={styles.itemRecipeCard}>
     <header>{station.face ? <img src={resolveAsset(project, station.face)} alt="" /> : <span className={styles.stationFallback} aria-hidden="true">▦</span>}
-      <div><small>Station</small><strong>{station.label}</strong></div>
-      <Link to={itemRecipeHref(project, recipe)} aria-label={`Open full ${station.label} recipe`}>Full recipe →</Link>
+      <div><small>{w("Station")}</small><strong>{station.label}</strong></div>
+      <Link to={itemRecipeHref(project, recipe)} aria-label={w(`Open full ${station.label} recipe`)}>{w("Full recipe →")}</Link>
     </header>
     <div className={styles.itemRecipeFlow}>
       {hasCraftingGrid
         ? <ItemCraftingRecipeGroup recipe={recipe} />
-        : <ItemRecipeGroup label="Input" ingredients={recipePrimaryInputs(recipe)} />}
-      <ItemRecipeGroup label="Catalysts" ingredients={recipeCatalysts(recipe)} />
-      <ItemRecipeGroup label={recipe.inputFluid ? 'Fluid input' : 'Fluid'} ingredients={recipeFluidInputs(recipe)} />
+        : <ItemRecipeGroup label={w("Input")} ingredients={recipePrimaryInputs(recipe)} />}
+      <ItemRecipeGroup label={w("Catalysts")} ingredients={recipeCatalysts(recipe)} />
+      <ItemRecipeGroup label={w(recipe.inputFluid ? 'Fluid input' : 'Fluid')} ingredients={recipeFluidInputs(recipe)} />
       <span className={styles.itemRecipeArrow} aria-hidden="true">↓</span>
-      <ItemRecipeGroup label="Output" ingredients={outputs} result />
-      <ItemRecipeGroup label="Secondary output" ingredients={byproducts} result />
+      <ItemRecipeGroup label={w("Output")} ingredients={outputs} result />
+      <ItemRecipeGroup label={w("Secondary output")} ingredients={byproducts} result />
     </div>
-    {metrics.length > 0 && <dl className={styles.itemRecipeMetrics}>{metrics.map(([, label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}
+    {metrics.length > 0 && <dl className={styles.itemRecipeMetrics}>{metrics.map(([, label, value]) => <div key={label}><dt>{w(label)}</dt><dd>{w(value)}</dd></div>)}</dl>}
   </article>;
 }
 
 function ItemSection({id, title, children, className = ''}) {
+  const w = useWikiText();
   return <section className={`${styles.itemWikiSection} ${className}`} aria-labelledby={id}>
-    <header><h2 id={id}>{title}</h2></header>
+    <header><h2 id={id}>{w(title)}</h2></header>
     {children}
   </section>;
 }
 
 function SourceMethod({source, recipe}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const sourceItems = [...(source.items ?? []), ...(source.item ? [source.item] : [])];
   const visuals = sourceItems.map((item) => {
@@ -2739,37 +2770,39 @@ function SourceMethod({source, recipe}) {
   const hasProcess = outputVisuals.length > 0 || source.minimumMeshTier !== undefined;
   return <article className={styles.sourceMethod} data-source-type={String(source.type ?? '').toLowerCase().replace(/\s+/g, '-')}>
     <div className={styles.sourceMethodHeading}>
-      <div><small>{source.type ?? 'Primary source'}</small><h3>{source.title}</h3>{source.description && <p>{source.description}</p>}</div>
+      <div><small>{w(source.type ?? 'Primary source')}</small><h3>{source.title}</h3>{source.description && <p>{source.description}</p>}</div>
       {!hasProcess && visuals.some(({image}) => image) && <div className={styles.sourceVisuals}>{visuals.filter(({image}) => image).map(renderVisual)}</div>}
     </div>
     {hasProcess && <div className={styles.sourceProcess}>
       {visuals.some(({image}) => image) && <div className={styles.sourceVisuals}>{visuals.filter(({image}) => image).map(renderVisual)}</div>}
       {outputVisuals.length > 0 && <><b className={styles.sourceProcessArrow} aria-hidden="true">→</b><div className={`${styles.sourceVisuals} ${styles.sourceOutputs}`}>{outputVisuals.filter(({image}) => image).map(renderVisual)}</div></>}
-      {source.minimumMeshTier !== undefined && <div className={styles.sourceMesh}><small>Minimum mesh</small><SieveMeshBadge tier={source.minimumMeshTier} /></div>}
+      {source.minimumMeshTier !== undefined && <div className={styles.sourceMesh}><small>{w("Minimum mesh")}</small><SieveMeshBadge tier={source.minimumMeshTier} /></div>}
     </div>}
-    {source.facts?.length > 0 && <dl>{source.facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{source.emphasizeFacts ? <strong>{value}</strong> : value}</dd></div>)}</dl>}
+    {source.facts?.length > 0 && <dl>{source.facts.map(([label, value]) => <div key={label}><dt>{w(label)}</dt><dd>{source.emphasizeFacts ? <strong>{w(value)}</strong> : value}</dd></div>)}</dl>}
     {recipe && <ItemRecipeCard recipe={recipe} />}
   </article>;
 }
 
 function MainUse({use, recipe}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const target = catalogEntryFor(project, use.item ?? recipe?.result);
   const href = target ? detailLinkFor(project, target) : null;
   const image = target ? visualFor(project, target) : null;
-  const heading = <>{image && <img src={image} alt="" />}<span><small>Main use</small><strong>{use.title ?? target?.name ?? formatIdentifier(recipe?.result?.id)}</strong></span></>;
+  const heading = <>{image && <img src={image} alt="" />}<span><small>{w("Main use")}</small><strong>{use.title ?? target?.name ?? formatIdentifier(recipe?.result?.id)}</strong></span></>;
   return <article className={styles.mainUse}>
     {href ? <Link className={styles.mainUseHeading} to={href}>{heading}<b aria-hidden="true">→</b></Link> : <div className={styles.mainUseHeading}>{heading}</div>}
-    {use.description && <p>{use.description}</p>}
+    {use.description && <p>{w(use.description)}</p>}
     {recipe && <ItemRecipeCard recipe={recipe} />}
   </article>;
 }
 
 function AcquisitionCard({icon, eyebrow, title, chance, quantity, note}) {
+  const w = useWikiText();
   return (
     <article className={styles.acquisitionCard}>
       <span className={styles.acquisitionIcon}><DetailIcon name={icon} /></span>
-      <div><small>{eyebrow}</small><h3>{title}</h3>{note && <p>{note}</p>}<footer>{chance && <strong>{chance}</strong>}{quantity && <span>{quantity}</span>}</footer></div>
+      <div><small>{w(eyebrow)}</small><h3>{w(title)}</h3>{note && <p>{w(note)}</p>}<footer>{chance && <strong>{w(chance)}</strong>}{quantity && <span>{w(quantity)}</span>}</footer></div>
     </article>
   );
 }
@@ -2783,22 +2816,27 @@ function RecipeResultLink({project, recipe}) {
 }
 
 function RelatedItemCard({project, item}) {
+  const w = useWikiText();
   const href = detailLinkFor(project, item);
   const image = visualFor(project, item);
-  const content = <><span className={styles.relatedItemVisual}>{image ? <img src={image} alt="" loading="lazy" /> : <span aria-hidden="true">◇</span>}</span><span><strong>{item.name}</strong><small>{item.itemType ?? item.category ?? 'Item'}</small></span></>;
+  const content = <><span className={styles.relatedItemVisual}>{image ? <img src={image} alt="" loading="lazy" /> : <span aria-hidden="true">◇</span>}</span><span><strong>{item.name}</strong><small>{w(item.itemType ?? item.category ?? 'Item')}</small></span></>;
   return href ? <Link className={styles.relatedItemCard} to={href}>{content}</Link> : <div className={styles.relatedItemCard}>{content}</div>;
 }
 
 function SourceGroup({icon, title, children}) {
+  const w = useWikiText();
   return (
     <section className={styles.sourceGroup}>
-      <header><DetailIcon name={icon} /><h3>{title}</h3></header>
+      <header><DetailIcon name={icon} /><h3>{w(title)}</h3></header>
       <div className={styles.acquisitionGrid}>{children}</div>
     </section>
   );
 }
 
 function ItemDocumentation({entry, project, documentation, properties, groups, recipes, usedIn, relatedItems}) {
+  const w = useWikiText();
+  const {section} = useContext(WikiDetailContext);
+  const {t} = useSiteI18n();
   const recipeCount = recipes.crafting.length + recipes.machine.length;
   const hasSources = documentation.acquisition.entityDrops.length > 0
     || documentation.acquisition.structures.length > 0
@@ -2816,47 +2854,54 @@ function ItemDocumentation({entry, project, documentation, properties, groups, r
   const additionalUses = Math.max(0, usedIn.length - visibleUses.length);
   const recipeHref = `${project.basePath}/recipes?q=${encodeURIComponent(entry.identifier ?? entry.id)}`;
   return <div className={styles.itemArticleBody}>
-    <ItemSection id="item-properties" eyebrow="Reference" title="Properties">
-      <dl className={styles.itemProperties}>{properties.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+    {section === 'details' && <ItemSection id="item-overview" title={t('overview')}>
+      <dl className={styles.itemProperties}>{properties.slice(0, 4).map(([label, value]) => <div key={label}><dt>{w(label)}</dt><dd>{w(value)}</dd></div>)}</dl>
+      {documentation.usage && <p className={styles.itemUsageCopy}>{documentation.usage}</p>}
+    </ItemSection>}
+    {section === 'specs' && <ItemSection id="item-properties" eyebrow={w("Reference")} title={w("Properties")}>
+      <dl className={styles.itemProperties}>{properties.map(([label, value]) => <div key={label}><dt>{w(label)}</dt><dd>{w(value)}</dd></div>)}</dl>
       {documentation.sections.map((section) => <DocumentationSection section={section} key={section.id} />)}
-    </ItemSection>
+    </ItemSection>}
 
-    {(selectedPrimary.length > 0 || visibleRecipes.length > 0 || hasSources) && <ItemSection id="item-obtain" eyebrow="Sources" title="How to Obtain">
-      {selectedPrimary.length > 0 && <><h3 className={styles.itemSubheading}>Primary Sources</h3><div className={styles.primarySources}>{selectedPrimary.map(({source, recipe}) => <SourceMethod key={source.id ?? source.title} source={source} recipe={recipe} />)}</div></>}
+    {section === 'recipes' && <ItemSection id="item-obtain" eyebrow={w("Sources")} title={w("How to Obtain")}>
+      {selectedPrimary.length > 0 && <><h3 className={styles.itemSubheading}>{w("Primary Sources")}</h3><div className={styles.primarySources}>{selectedPrimary.map(({source, recipe}) => <SourceMethod key={source.id ?? source.title} source={source} recipe={recipe} />)}</div></>}
       {visibleRecipes.length > 0 && <div className={styles.primaryRecipes}>{visibleRecipes.map((recipe) => <ItemRecipeCard key={`${recipe.type ?? 'crafting'}-${recipe.id}`} recipe={recipe} />)}</div>}
-      {hasSources && <div className={styles.sourceGroups}>
-          {documentation.acquisition.entityDrops.length > 0 && <SourceGroup icon="entity" title="Entity Drops">
-            {documentation.acquisition.entityDrops.map((drop, index) => <AcquisitionCard key={`${drop.entity}-${index}`} icon="entity" eyebrow="Entity Drop" title={formatIdentifier(drop.entity)} chance={formatChance(drop.chance)} quantity={quantityLabel(drop)} />)}
+      {!selectedPrimary.length && !visibleRecipes.length && <EmptyDetailSection />}
+      {(otherMethodCount > 0 || recipeCount > 0) && <div className={styles.itemMoreLink}><span><strong>{w("Other Methods")}</strong>{w(otherMethodCount > 0 ? `${otherMethodCount} additional documented recipe${otherMethodCount === 1 ? '' : 's'} and conversion${otherMethodCount === 1 ? '' : 's'}.` : 'See this method in the complete recipe catalog.')}</span><Link to={recipeHref}>{w("View all recipes →")}</Link></div>}
+    </ItemSection>}
+
+    {section === 'drops' && <ItemSection id="item-drops" title={t('detailDrops')}>
+      {hasSources ? <div className={styles.sourceGroups}>
+          {documentation.acquisition.entityDrops.length > 0 && <SourceGroup icon="entity" title={w("Entity Drops")}>
+            {documentation.acquisition.entityDrops.map((drop, index) => <AcquisitionCard key={`${drop.entity}-${index}`} icon="entity" eyebrow={w("Entity Drop")} title={formatIdentifier(drop.entity)} chance={formatChance(drop.chance)} quantity={quantityLabel(drop)} />)}
           </SourceGroup>}
-          {documentation.acquisition.structures.length > 0 && <SourceGroup icon="structure" title="Structure Loot">
+          {documentation.acquisition.structures.length > 0 && <SourceGroup icon="structure" title={w("Structure Loot")}>
             {documentation.acquisition.structures.map((loot, index) => {
               const dimension = loot.conditions?.dimension ? formatIdentifier(loot.conditions.dimension) : null;
               const structure = loot.structure === 'default' ? (dimension ? `${dimension} Loot` : 'World Loot') : formatIdentifier(loot.structure);
-              return <AcquisitionCard key={`${loot.structure}-${index}`} icon="structure" eyebrow="Structure Loot" title={structure} chance={formatChance(loot.chance)} note={loot.table ?? loot.category} />;
+              return <AcquisitionCard key={`${loot.structure}-${index}`} icon="structure" eyebrow={w("Structure Loot")} title={structure} chance={formatChance(loot.chance)} note={loot.table ?? loot.category} />;
             })}
           </SourceGroup>}
-          {documentation.acquisition.biomes.length > 0 && <SourceGroup icon="biome" title="Biome Loot">
-            {documentation.acquisition.biomes.map((loot, index) => <AcquisitionCard key={`${loot.biome}-${index}`} icon="biome" eyebrow="Biome Loot" title={formatIdentifier(loot.biome)} chance={formatChance(loot.chance)} />)}
+          {documentation.acquisition.biomes.length > 0 && <SourceGroup icon="biome" title={w("Biome Loot")}>
+            {documentation.acquisition.biomes.map((loot, index) => <AcquisitionCard key={`${loot.biome}-${index}`} icon="biome" eyebrow={w("Biome Loot")} title={formatIdentifier(loot.biome)} chance={formatChance(loot.chance)} />)}
           </SourceGroup>}
-      </div>}
-      {(otherMethodCount > 0 || recipeCount > 0) && <div className={styles.itemMoreLink}><span><strong>Other Methods</strong>{otherMethodCount > 0 ? `${otherMethodCount} additional documented recipe${otherMethodCount === 1 ? '' : 's'} and conversion${otherMethodCount === 1 ? '' : 's'}.` : 'See this method in the complete recipe catalog.'}</span><Link to={recipeHref}>View all recipes →</Link></div>}
+      </div> : <EmptyDetailSection />}
     </ItemSection>}
 
-    {visibleUses.length > 0 && <ItemSection id="item-main-uses" eyebrow="Progression" title="Main Uses">
+    {section === 'uses' && <ItemSection id="item-main-uses" eyebrow={w("Progression")} title={w("Main Uses")}>
+      {!visibleUses.length && <EmptyDetailSection />}
       <div className={styles.mainUses}>{visibleUses.map(({use, recipe}) => <MainUse key={use.id ?? recipe?.id} use={use} recipe={recipe} />)}</div>
-      {(additionalUses > 0 || usedIn.length > 0) && <div className={styles.itemMoreLink}><span><strong>Additional uses</strong>{additionalUses > 0 ? `${additionalUses} more documented use${additionalUses === 1 ? '' : 's'}.` : 'Explore every documented use in the recipe catalog.'}</span><Link to={recipeHref}>View all uses →</Link></div>}
+      {(additionalUses > 0 || usedIn.length > 0) && <div className={styles.itemMoreLink}><span><strong>{w("Additional uses")}</strong>{w(additionalUses > 0 ? `${additionalUses} more documented use${additionalUses === 1 ? '' : 's'}.` : 'Explore every documented use in the recipe catalog.')}</span><Link to={recipeHref}>{w("View all uses →")}</Link></div>}
     </ItemSection>}
 
-    {groups.length > 0 && <ItemSection id="item-capabilities" eyebrow="Equipment" title="Trinket Capabilities"><div className={styles.capabilityGrid}>{groups.map((group) => <CapabilityGroup key={group.id} group={group} />)}</div></ItemSection>}
-    {documentation.usage && <ItemSection id="item-usage" eyebrow="Gameplay" title="Usage"><p className={styles.itemUsageCopy}>{documentation.usage}</p></ItemSection>}
-    {(relatedItems.length > 0 || documentation.trivia.length > 0) && <div className={styles.itemClosingGrid}>
-      {relatedItems.length > 0 && <ItemSection id="item-related" eyebrow="Continue reading" title="Related Items"><div className={styles.relatedItemGrid}>{relatedItems.map((item) => <RelatedItemCard project={project} item={item} key={item.identifier ?? item.id} />)}</div></ItemSection>}
-      {documentation.trivia.length > 0 && <ItemSection id="item-trivia" eyebrow="Notes" title="Trivia"><ul className={styles.itemTrivia}>{documentation.trivia.map((note, index) => <li key={index}>{note}</li>)}</ul></ItemSection>}
-    </div>}
+    {section === 'specs' && groups.length > 0 && <ItemSection id="item-capabilities" eyebrow={w("Equipment")} title={w("Trinket Capabilities")}><div className={styles.capabilityGrid}>{groups.map((group) => <CapabilityGroup key={group.id} group={group} />)}</div></ItemSection>}
+    {section === 'related' && <ItemSection id="item-related" eyebrow={w("Continue reading")} title={w("Related Items")}>{relatedItems.length ? <div className={styles.relatedItemGrid}>{relatedItems.map((item) => <RelatedItemCard project={project} item={item} key={item.identifier ?? item.id} />)}</div> : <EmptyDetailSection />}</ItemSection>}
+    {section === 'notes' && <ItemSection id="item-trivia" eyebrow={w("Notes")} title={w("Trivia")}>{documentation.trivia.length ? <ul className={styles.itemTrivia}>{documentation.trivia.map((note, index) => <li key={index}>{w(note)}</li>)}</ul> : <EmptyDetailSection />}</ItemSection>}
   </div>;
 }
 
 function ItemDetail({entry, visual}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const documentation = normalizedItemDocumentation(entry);
   const groups = capabilityGroups(documentation.capabilities);
@@ -2874,20 +2919,29 @@ function ItemDetail({entry, visual}) {
     ...statistics,
   ].filter(([, value]) => value !== undefined && value !== null && value !== '');
   const properties = [...new Map(rawProperties.map((property) => [property[0].toLowerCase(), property])).values()];
-  const typeLabel = String(documentation.basic.itemType ?? entry.category ?? 'Item').toUpperCase();
+  const typeLabel = String(w(documentation.basic.itemType ?? entry.category ?? 'Item')).toUpperCase();
+  const sections = [
+    'details', 'specs',
+    (recipes.crafting.length || recipes.machine.length || documentation.primarySources.length) && 'recipes',
+    (documentation.acquisition.entityDrops.length || documentation.acquisition.structures.length || documentation.acquisition.biomes.length) && 'drops',
+    (usedIn.length || documentation.mainUses.length) && 'uses',
+    relatedItems.length && 'related',
+    documentation.trivia.length && 'notes',
+  ].filter(Boolean);
   return (
     <article className={styles.itemDetailPage}>
       <header className={styles.itemDetailHero}>
         <div className={styles.itemDetailVisual}>{visual}</div>
         <div className={styles.itemDetailHeading}>
-          <p className={styles.eyebrow}>Item · {typeLabel}</p><h1>{entry.name}</h1>
-          <div className={styles.itemHeaderMeta}><span>{documentation.basic.itemType}</span>{documentation.tier && <span>{documentation.tier} tier</span>}<span>{project.name}</span></div>
+          <p className={styles.eyebrow}>{w("Item ·")} {w(typeLabel)}</p><h1>{entry.name}</h1>
+          <div className={styles.itemHeaderMeta}><span>{w(documentation.basic.itemType)}</span>{documentation.tier && <span>{w(documentation.tier)} {w("tier")}</span>}<span>{project.name}</span></div>
         </div>
         <div className={styles.itemDetailCopy}>
           <p>{compactItemDescription(entry, documentation)}</p>
-          {documentation.basic.identifier && <div className={styles.itemIdentifier}><span>Identifier</span><code>{documentation.basic.identifier}</code><CopyIdentifierButton identifier={documentation.basic.identifier} /></div>}
+          {documentation.basic.identifier && <div className={styles.itemIdentifier}><span>{w("Identifier")}</span><code>{documentation.basic.identifier}</code><CopyIdentifierButton identifier={documentation.basic.identifier} /></div>}
         </div>
       </header>
+      <EntrySectionNavigation sections={sections} />
       <ItemDocumentation
         entry={entry}
         project={project}
@@ -2903,27 +2957,30 @@ function ItemDetail({entry, visual}) {
 }
 
 function MachinePropertyList({items, className = ''}) {
+  const w = useWikiText();
   return (
     <dl className={`${styles.machinePropertyList} ${className}`}>
       {items.filter(([, value]) => value !== undefined && value !== null && value !== '').map(([label, value], index) => (
-        <div key={`${label}-${index}`}><dt>{label}</dt><dd>{Array.isArray(value) ? value.join(', ') : value}</dd></div>
+        <div key={`${label}-${index}`}><dt>{w(label)}</dt><dd>{w(Array.isArray(value) ? value.join(', ') : value)}</dd></div>
       ))}
     </dl>
   );
 }
 
 function PropertyTags({tags}) {
+  const w = useWikiText();
   if (!tags?.length) return null;
-  return <div className={styles.propertyTags} aria-label="Category tags">{tags.map((tag) => <span key={tag}>{tag}</span>)}</div>;
+  return <div className={styles.propertyTags} aria-label={w("Category tags")}>{tags.map((tag) => <span key={tag}>{w(tag)}</span>)}</div>;
 }
 
 function MachineReferencePanel({index, title, copy, items, tags}) {
+  const w = useWikiText();
   if (!items.length && !tags?.length) return null;
   return (
     <section className={styles.machineReferenceGroup} data-group={title.toLowerCase().replace(/\s+/g, '-')}>
       <div className={styles.machineReferenceHeading}>
         <span aria-hidden="true">{String(index).padStart(2, '0')}</span>
-        <div><h3>{title}</h3><p>{copy}</p></div>
+        <div><h3>{w(title)}</h3><p>{w(copy)}</p></div>
       </div>
       <MachinePropertyList items={items} />
       <PropertyTags tags={tags} />
@@ -2938,18 +2995,19 @@ function dropQuantityLabel(drop) {
 }
 
 function RecipeDropTable({drops}) {
+  const w = useWikiText();
   const [expanded, setExpanded] = useState(false);
   const visible = expanded ? drops : drops.slice(0, 4);
   return (
     <div className={styles.machineProcessRequirement}>
-      <small>Possible drops</small>
+      <small>{w("Possible drops")}</small>
       <div className={styles.machineDropTable}>
         {visible.map((drop, index) => <span className={styles.machineDropSlot} key={`${drop.id ?? drop.label}-${index}`}>
           <RecipeSlot ingredient={drop} result />
           <em>{dropQuantityLabel(drop)}{drop.chance !== undefined && Number(drop.chance) < 1 ? ` · ${formatChance(drop.chance)}` : ''}</em>
         </span>)}
         {drops.length > 4 && <button type="button" className={styles.machineDropToggle} onClick={() => setExpanded((current) => !current)} aria-expanded={expanded}>
-          {expanded ? 'Show less' : `+${drops.length - 4} more`}
+          {w(expanded ? 'Show less' : `+${drops.length - 4} more`)}
         </button>}
       </div>
     </div>
@@ -2957,12 +3015,13 @@ function RecipeDropTable({drops}) {
 }
 
 function RecipeValueInputGroups({groups}) {
+  const w = useWikiText();
   return (
     <div className={styles.machineProcessRequirement}>
-      <small>Value inputs</small>
+      <small>{w("Value inputs")}</small>
       <div className={styles.machineValueGroups}>{groups.map((group) => (
         <section className={styles.machineValueGroup} key={group.id ?? group.label}>
-          <strong>{group.label ?? 'Input group'}{group.requiredValue ? ` · ${group.requiredValue} value` : ''}</strong>
+          <strong>{group.label ?? 'Input group'}{w(group.requiredValue ? ` · ${group.requiredValue} value` : '')}</strong>
           <div>{(group.alternatives ?? []).map((alternative, index) => <span className={styles.machineValueAlternative} key={`${alternative.id ?? alternative.label}-${index}`}>
             <RecipeSlot ingredient={{...alternative, count: 1}} />
             {alternative.value !== undefined && <em>{alternative.value}</em>}
@@ -2975,6 +3034,7 @@ function RecipeValueInputGroups({groups}) {
 }
 
 function RecipeProcessRequirements({recipe, embeddedCatalysts = false, embeddedFluids = false, embeddedByproducts = false}) {
+  const w = useWikiText();
   const groups = recipeInputGroups(recipe).filter(({label}) => (
     label !== 'Input'
     && !(embeddedCatalysts && label === 'Catalysts')
@@ -2990,7 +3050,7 @@ function RecipeProcessRequirements({recipe, embeddedCatalysts = false, embeddedF
     <div className={styles.machineProcessRequirements}>
       {groups.map(({label, ingredients}) => (
         <div className={styles.machineProcessRequirement} key={label}>
-          <small>{label}</small>
+          <small>{w(label)}</small>
           <div>{ingredients.map((ingredient, index) => <React.Fragment key={`${ingredient.id ?? ingredient.label}-${index}`}>
             <RecipeSlot ingredient={ingredient} />
             {ingredient.kind === 'fluid' && <em className={styles.fluidRequirementLabel}>{ingredient.label}</em>}
@@ -2998,7 +3058,7 @@ function RecipeProcessRequirements({recipe, embeddedCatalysts = false, embeddedF
         </div>
       ))}
       {visibleByproducts.length > 0 && <div className={styles.machineProcessRequirement}>
-        <small>Byproducts</small>
+        <small>{w("Byproducts")}</small>
         <div>{visibleByproducts.map((ingredient, index) => <span className={styles.byproductSlot} key={`${ingredient.id ?? ingredient.label}-${index}`}>
           <RecipeSlot ingredient={ingredient} result />
           {ingredient.chance !== undefined && <em>{formatChance(ingredient.chance)}</em>}
@@ -3007,7 +3067,7 @@ function RecipeProcessRequirements({recipe, embeddedCatalysts = false, embeddedF
       {drops.length > 0 && <RecipeDropTable drops={drops} />}
       {inputGroups.length > 0 && <RecipeValueInputGroups groups={inputGroups} />}
       {conditions.length > 0 && <div className={styles.machineProcessRequirement}>
-        <small>Conditions</small>
+        <small>{w("Conditions")}</small>
         <div className={styles.machineProcessConditions}>{conditions.map((condition) => <span key={condition}>{condition}</span>)}</div>
       </div>}
       {recipe.note && <p className={styles.machineProcessNote}>{recipe.note}</p>}
@@ -3023,6 +3083,7 @@ function isCatalystWeaverRecipe(recipe, machine) {
 }
 
 function CatalystWeaverRecipeFlow({recipe, machine, showMetric = true}) {
+  const w = useWikiText();
   const inputs = recipePrimaryInputs(recipe);
   const catalysts = recipeCatalysts(recipe);
   const fluids = recipeFluidInputs(recipe);
@@ -3037,7 +3098,7 @@ function CatalystWeaverRecipeFlow({recipe, machine, showMetric = true}) {
   const fluidAmount = fluid?.amount ? `${Number(fluid.amount).toLocaleString('en-US')} ${fluid.unit ?? 'mB'}` : null;
   return (
     <div className={styles.catalystWeaverRecipeFlow}>
-      <div className={styles.catalystWeaverInputMatrix} aria-label="Catalyst Weaver inputs">
+      <div className={styles.catalystWeaverInputMatrix} aria-label={w("Catalyst Weaver inputs")}>
         {Array.from({length: 6}, (_, index) => <span className={styles.catalystWeaverCatalyst} key={`catalyst-${index}`}>
           <RecipeSlot ingredient={catalysts[index]} />
         </span>)}
@@ -3054,7 +3115,7 @@ function CatalystWeaverRecipeFlow({recipe, machine, showMetric = true}) {
         <div className={styles.catalystWeaverSecondaryOutputs}>
           {byproducts.slice(0, 1).map((ingredient, index) => <span className={styles.catalystWeaverByproduct} key={`${ingredient.id ?? ingredient.label}-${index}`}>
             <RecipeSlot ingredient={{...ingredient, count: 1}} result />
-            <em>{dropQuantityLabel(ingredient)}{ingredient.chance !== undefined ? ` · ${formatSieveChance(ingredient.chance)}` : ''}</em>
+            <em>{dropQuantityLabel(ingredient)}{w(ingredient.chance !== undefined ? ` · ${formatSieveChance(ingredient.chance)}` : '')}</em>
           </span>)}
           {secondaryResult.map((ingredient, index) => <span className={styles.catalystWeaverByproduct} key={`${ingredient.id ?? ingredient.label}-${index}`}>
             <RecipeSlot ingredient={{...ingredient, count: 1}} result />
@@ -3071,6 +3132,7 @@ function CatalystWeaverRecipeFlow({recipe, machine, showMetric = true}) {
 }
 
 function ProcessingCatalogCard({recipe, machine}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const origin = recipeOriginFor(recipe, project);
   const inputs = recipePrimaryInputs(recipe);
@@ -3080,7 +3142,7 @@ function ProcessingCatalogCard({recipe, machine}) {
   const catalystWeaver = isCatalystWeaverRecipe(recipe, machine);
   return (
     <article className={`${styles.machineProcessCard} ${catalystWeaver ? styles.catalystWeaverProcessCard : ''}`} style={{'--recipe-origin-accent': recipeOriginFor(recipe, project).accent}}>
-      <header><h4 title={title}>{title}</h4>{origin.id !== project.id && <RecipeOriginBadge recipe={recipe} compact />}</header>
+      <header><h4 title={title}>{w(title)}</h4>{origin.id !== project.id && <RecipeOriginBadge recipe={recipe} compact />}</header>
       {catalystWeaver ? <CatalystWeaverRecipeFlow recipe={recipe} machine={machine} /> : <div className={styles.machineProcessFlow}>
         <div className={styles.machineProcessInputs}>
           {inputs.map((ingredient, index) => <React.Fragment key={`${ingredient.id ?? ingredient.label}-${index}`}>
@@ -3174,9 +3236,10 @@ function autosieveRecipeGroups(recipes) {
 }
 
 function SieveItemVisual({ingredient, className}) {
+  const labelIngredient = useIngredientLabel();
   const project = useWikiProject();
   const value = ingredient?.id ?? ingredient?.label;
-  const name = ingredientLabel(ingredient);
+  const name = labelIngredient(ingredient);
   const image = visualFor(project, value);
   const href = detailLinkFor(project, value);
   const content = image ? <img src={image} alt="" loading="lazy" /> : <span aria-hidden="true">◇</span>;
@@ -3186,25 +3249,27 @@ function SieveItemVisual({ingredient, className}) {
 }
 
 function SieveMeshBadge({tier, className = ''}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const name = SIEVE_MESH_TIERS[tier] ?? SIEVE_MESH_TIERS[0];
   const identifier = `utilitycraft:${name.toLowerCase()}_mesh`;
   const image = visualFor(project, identifier);
   const href = detailLinkFor(project, identifier);
-  const content = <>{image ? <img src={image} alt="" loading="lazy" /> : <span aria-hidden="true">▧</span>}<span>{name}</span></>;
+  const content = <>{image ? <img src={image} alt="" loading="lazy" /> : <span aria-hidden="true">▧</span>}<span>{w(name)}</span></>;
   const classes = `${styles.sieveMeshBadge} ${className}`.trim();
   return href
-    ? <Link className={classes} to={href} title={`Open ${name} Mesh`}>{content}</Link>
-    : <span className={classes} title={`${name} mesh`}>{content}</span>;
+    ? <Link className={classes} to={href} title={w(`Open ${name} Mesh`)}>{content}</Link>
+    : <span className={classes} title={w(`${name} mesh`)}>{content}</span>;
 }
 
 function AutoSieveDropRows({drops}) {
+  const labelIngredient = useIngredientLabel();
   const project = useWikiProject();
   return (
     <div className={styles.autosieveDropRows}>
       {drops.map((drop) => (
         <div className={styles.autosieveDropRow} key={drop.id} style={{'--recipe-origin-accent': drop.origin.accent}}>
-          <div className={styles.autosieveDropName}><SieveItemVisual ingredient={drop.result} className={styles.autosieveDropVisual} /><strong>{ingredientLabel(drop.result)}</strong>{drop.origin.id !== project.id && <RecipeOriginBadge recipe={{origin: drop.origin}} compact />}</div>
+          <div className={styles.autosieveDropName}><SieveItemVisual ingredient={drop.result} className={styles.autosieveDropVisual} /><strong>{labelIngredient(drop.result)}</strong>{drop.origin.id !== project.id && <RecipeOriginBadge recipe={{origin: drop.origin}} compact />}</div>
           <span>{formatSieveChance(drop.chance)}</span>
           <span>{formatSieveAmount(drop.amount)}</span>
           <SieveMeshBadge tier={drop.tier} />
@@ -3215,6 +3280,8 @@ function AutoSieveDropRows({drops}) {
 }
 
 function AutoSieveSiftCard({group}) {
+  const labelIngredient = useIngredientLabel();
+  const w = useWikiText();
   const project = useWikiProject();
   const [expanded, setExpanded] = useState(false);
   const contentId = autosieveContentId(group.id);
@@ -3228,18 +3295,18 @@ function AutoSieveSiftCard({group}) {
         <SieveItemVisual ingredient={group.input} className={styles.autosieveInputVisual} />
         <div className={styles.autosieveSiftCopy}>
           <div className={styles.autosieveSiftTitleRow}>
-            <h4>{ingredientLabel(group.input)}</h4>
+            <h4>{labelIngredient(group.input)}</h4>
             <button type="button" className={styles.autosieveToggle} aria-expanded={expanded} aria-controls={contentId} onClick={() => setExpanded((current) => !current)}>
-              <span>{expanded ? 'Hide drops' : 'Show drops'}</span><b aria-hidden="true">{expanded ? '−' : '+'}</b>
+              <span>{w(expanded ? 'Hide drops' : 'Show drops')}</span><b aria-hidden="true">{w(expanded ? '−' : '+')}</b>
             </button>
           </div>
-          <p>Sieveable block <span aria-hidden="true">·</span> {group.drops.length} possible drop{group.drops.length === 1 ? '' : 's'}</p>
-          <div className={styles.autosieveMinTier}><small>Minimum mesh</small><SieveMeshBadge tier={minimumTier} /></div>
+          <p>{w("Sieveable block")} <span aria-hidden="true">·</span> {w(`${group.drops.length} possible drops`)}</p>
+          <div className={styles.autosieveMinTier}><small>{w("Minimum mesh")}</small><SieveMeshBadge tier={minimumTier} /></div>
           {externalOrigins.length > 0 && <div className={styles.autosieveOriginBadges}>{externalOrigins.map((origin) => <RecipeOriginBadge key={origin.id} recipe={{origin}} compact />)}</div>}
         </div>
       </header>
       {expanded && <div id={contentId} className={styles.autosieveDropList}>
-        <div className={styles.autosieveDropHeader} aria-hidden="true"><span>Drop</span><span>Chance</span><span>Amount</span><span>Min. tier</span></div>
+        <div className={styles.autosieveDropHeader} aria-hidden="true"><span>{w("Drop")}</span><span>{w("Chance")}</span><span>{w("Amount")}</span><span>{w("Min. tier")}</span></div>
         <AutoSieveDropRows drops={group.drops} />
       </div>}
     </article>
@@ -3247,19 +3314,20 @@ function AutoSieveSiftCard({group}) {
 }
 
 function SiftingRecipeCatalog({machine, recipes}) {
+  const w = useWikiText();
   const groups = autosieveRecipeGroups(recipes);
   const machineName = machine?.name ?? 'Autosieve';
   return (
     <section className={`${styles.machineRecipeSubsection} ${styles.autosieveRecipeSection}`} aria-labelledby="machine-autosieve-recipes">
       <div>
-        <p className={styles.eyebrow}>02 / Processing</p>
-        <h3 id="machine-autosieve-recipes">Sifting Results</h3>
-        <p className={styles.autosieveRecipeDescription}>The {machineName} rolls each sieveable block into its available drops. Results depend on the supplied block and the minimum mesh tier shown for each drop.</p>
+        <p className={styles.eyebrow}>{w("02 / Processing")}</p>
+        <h3 id="machine-autosieve-recipes">{w("Sifting Results")}</h3>
+        <p className={styles.autosieveRecipeDescription}>{w("The")} {machineName} {w("rolls each sieveable block into its available drops. Results depend on the supplied block and the minimum mesh tier shown for each drop.")}</p>
       </div>
       <div className={styles.autosieveSiftGrid}>
         {groups.map((group) => <AutoSieveSiftCard group={group} key={group.id} />)}
       </div>
-      <p className={styles.autosieveRecipeNote}>Chances are evaluated independently for every {machineName} roll.</p>
+      <p className={styles.autosieveRecipeNote}>{w("Chances are evaluated independently for every")} {machineName} {w("roll.")}</p>
     </section>
   );
 }
@@ -3326,14 +3394,16 @@ function abyssalDropSpecial(drop) {
 }
 
 function AbyssalFisherDropRows({drops}) {
+  const labelIngredient = useIngredientLabel();
+  const w = useWikiText();
   return (
     <div className={styles.abyssalDropRows}>
       {drops.map((drop) => (
         <div className={styles.abyssalDropRow} key={drop.id}>
-          <div className={styles.abyssalDropName}><SieveItemVisual ingredient={drop.result} className={styles.autosieveDropVisual} /><strong>{ingredientLabel(drop.result)}</strong></div>
-          <span>Tier {drop.tier}</span>
+          <div className={styles.abyssalDropName}><SieveItemVisual ingredient={drop.result} className={styles.autosieveDropVisual} /><strong>{labelIngredient(drop.result)}</strong></div>
+          <span>{w("Tier")} {drop.tier}</span>
           <span>{formatAbyssalAmount(drop)}</span>
-          <span title="Relative weight within this category">{formatAbyssalRelativeWeight(drop.weight)}</span>
+          <span title={w("Relative weight within this category")}>{formatAbyssalRelativeWeight(drop.weight)}</span>
           <small>{abyssalDropSpecial(drop) || '—'}</small>
         </div>
       ))}
@@ -3342,6 +3412,7 @@ function AbyssalFisherDropRows({drops}) {
 }
 
 function AbyssalFisherLootCard({group}) {
+  const w = useWikiText();
   const [expanded, setExpanded] = useState(false);
   const contentId = abyssalContentId(group.id);
   const minimumTier = Math.min(...group.drops.map((drop) => drop.tier));
@@ -3352,17 +3423,17 @@ function AbyssalFisherLootCard({group}) {
         <SieveItemVisual ingredient={{id: group.icon, label: group.label}} className={styles.autosieveInputVisual} />
         <div className={styles.autosieveSiftCopy}>
           <div className={styles.autosieveSiftTitleRow}>
-            <h4>{group.label}</h4>
+            <h4>{w(group.label)}</h4>
             <button type="button" className={styles.autosieveToggle} aria-expanded={expanded} aria-controls={contentId} onClick={() => setExpanded((current) => !current)}>
-              <span>{expanded ? 'Hide loot' : 'Show loot'}</span><b aria-hidden="true">{expanded ? '−' : '+'}</b>
+              <span>{w(expanded ? 'Hide loot' : 'Show loot')}</span><b aria-hidden="true">{w(expanded ? '−' : '+')}</b>
             </button>
           </div>
-          <p>{group.drops.length} possible catch{group.drops.length === 1 ? '' : 'es'} <span aria-hidden="true">·</span> tier {minimumTier}+</p>
-          <div className={styles.abyssalCategoryMeta}><span>Base category roll <b>{formatAbyssalWeight(categoryWeight)}</b></span><span>{group.description}</span></div>
+          <p>{w(`${group.drops.length} possible catches`)} <span aria-hidden="true">·</span> {w("tier")} {minimumTier}+</p>
+          <div className={styles.abyssalCategoryMeta}><span>{w("Base category roll")} <b>{formatAbyssalWeight(categoryWeight)}</b></span><span>{w(group.description)}</span></div>
         </div>
       </header>
       {expanded && <div id={contentId} className={styles.abyssalDropList}>
-        <div className={styles.abyssalDropHeader} aria-hidden="true"><span>Catch</span><span>Tier</span><span>Amount</span><span>Weight</span><span>Variant</span></div>
+        <div className={styles.abyssalDropHeader} aria-hidden="true"><span>{w("Catch")}</span><span>{w("Tier")}</span><span>{w("Amount")}</span><span>{w("Weight")}</span><span>{w("Variant")}</span></div>
         <AbyssalFisherDropRows drops={group.drops} />
       </div>}
     </article>
@@ -3370,16 +3441,17 @@ function AbyssalFisherLootCard({group}) {
 }
 
 function AbyssalFisherRecipeCatalog({recipes}) {
+  const w = useWikiText();
   const groups = abyssalFisherGroups(recipes);
   return (
     <section className={`${styles.machineRecipeSubsection} ${styles.abyssalRecipeSection}`} aria-labelledby="machine-abyssal-fisher-recipes">
       <div>
-        <p className={styles.eyebrow}>02 / Abyssal fishing</p>
-        <h3 id="machine-abyssal-fisher-recipes">Fishing Loot</h3>
-        <p className={styles.autosieveRecipeDescription}>Each attempt rolls a loot category first, then picks a weighted catch that is available at the machine tier. The weights below only compare catches inside their own category.</p>
+        <p className={styles.eyebrow}>{w("02 / Abyssal fishing")}</p>
+        <h3 id="machine-abyssal-fisher-recipes">{w("Fishing Loot")}</h3>
+        <p className={styles.autosieveRecipeDescription}>{w("Each attempt rolls a loot category first, then picks a weighted catch that is available at the machine tier. The weights below only compare catches inside their own category.")}</p>
       </div>
       <div className={styles.abyssalLootGrid}>{groups.map((group) => <AbyssalFisherLootCard group={group} key={group.id} />)}</div>
-      <p className={styles.autosieveRecipeNote}>Base category rolls are Fish 85%, Junk 10%, and Treasure 5%. Luck of the Sea and machine upgrades can change category weights and the number of attempts.</p>
+      <p className={styles.autosieveRecipeNote}>{w("Base category rolls are Fish 85%, Junk 10%, and Treasure 5%. Luck of the Sea and machine upgrades can change category weights and the number of attempts.")}</p>
     </section>
   );
 }
@@ -3470,31 +3542,40 @@ const DYNAMIC_MACHINE_OPERATIONS = {
 };
 
 function DynamicMachineOperation({machine}) {
+  const w = useWikiText();
   const operation = DYNAMIC_MACHINE_OPERATIONS[machine.id];
   if (!operation) return null;
   return (
     <section className={styles.machineRecipeSubsection} aria-labelledby="machine-dynamic-operation">
-      <div><p className={styles.eyebrow}>02 / Dynamic operation</p><h3 id="machine-dynamic-operation">{operation.title}</h3><p className={styles.autosieveRecipeDescription}>{operation.description}</p></div>
-      <dl className={styles.dynamicOperationList}>{operation.steps.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+      <div><p className={styles.eyebrow}>{w("02 / Dynamic operation")}</p><h3 id="machine-dynamic-operation">{operation.title}</h3><p className={styles.autosieveRecipeDescription}>{operation.description}</p></div>
+      <dl className={styles.dynamicOperationList}>{operation.steps.map(([label, value]) => <div key={label}><dt>{w(label)}</dt><dd>{w(value)}</dd></div>)}</dl>
     </section>
   );
 }
 
-function MachineRecipes({machine, recipes}) {
+const DROP_CATALOG_MACHINE_IDS = new Set(['autosieve', 'centrifugal_siever', 'autofisher', 'abyssal_fisher']);
+
+function MachineRecipes({machine, recipes, dropsOnly = false}) {
   const {t} = useSiteI18n();
   const usesSiftingCatalog = ['autosieve', 'centrifugal_siever'].includes(machine.id);
   const usesAbyssalFisherCatalog = machine.id === 'abyssal_fisher';
   const [originFilter, setOriginFilter] = useState('All');
   const project = useWikiProject();
+  const detailPage = useContext(WikiDetailContext);
   const visibleCatalog = recipes.catalog.filter((recipe) => recipeMatchesOrigin(recipe, originFilter, project));
+  const hasDropCatalog = DROP_CATALOG_MACHINE_IDS.has(machine.id);
+  const showCatalog = dropsOnly ? hasDropCatalog : !hasDropCatalog;
+  if (dropsOnly && !hasDropCatalog) return <EmptyDetailSection />;
   return (
     <div className={styles.machineRecipes}>
-      <section className={styles.machineRecipeSubsection} aria-labelledby="machine-obtain">
+      {!dropsOnly && <section className={styles.machineRecipeSubsection} aria-labelledby="machine-obtain">
         <div><p className={styles.eyebrow}>01 / {t('acquisition')}</p><h3 id="machine-obtain">{t('howToObtain')}</h3></div>
         {recipes.obtain.length ? <div className={styles.machineObtainGrid}>{recipes.obtain.map((recipe) => <RecipeCard recipe={recipe} key={`obtain-${recipe.id}`} />)}</div>
           : <p className={styles.machineRecipeEmpty}>{t('noCraftingRecipe')}</p>}
-      </section>
-      {recipes.catalog.length > 0 && <RecipeOriginFilters recipes={recipes.catalog} active={originFilter} setActive={setOriginFilter} />}
+      </section>}
+      {!dropsOnly && hasDropCatalog && <Link className={styles.itemMoreLink} to={detailSectionPath(detailPage.basePath, 'drops')}>{t('detailDrops')} →</Link>}
+      {showCatalog && recipes.catalog.length > 0 && <RecipeOriginFilters recipes={recipes.catalog} active={originFilter} setActive={setOriginFilter} />}
+      {showCatalog && <>
       {visibleCatalog.length > 0 && usesSiftingCatalog ? <SiftingRecipeCatalog machine={machine} recipes={visibleCatalog} />
         : visibleCatalog.length > 0 && usesAbyssalFisherCatalog ? <AbyssalFisherRecipeCatalog recipes={visibleCatalog} />
         : visibleCatalog.length > 0 && <section className={styles.machineRecipeSubsection} aria-labelledby="machine-recipes-catalog">
@@ -3503,6 +3584,7 @@ function MachineRecipes({machine, recipes}) {
       </section>}
       {!recipes.catalog.length && <DynamicMachineOperation machine={machine} />}
       {recipes.catalog.length > 0 && !visibleCatalog.length && <p className={styles.machineRecipeEmpty}>{t('noOriginRecipes')}</p>}
+      </>}
     </div>
   );
 }
@@ -3510,7 +3592,7 @@ function MachineRecipes({machine, recipes}) {
 function MachineDocumentationTabs({machine, controller, blockDetails, specifications}) {
   const {t} = useSiteI18n();
   const project = useWikiProject();
-  const [activeTab, setActiveTab] = useHashSection(MACHINE_SECTION_IDS, 'details');
+  const {section: activeTab} = useContext(WikiDetailContext);
   const recipes = machineRecipeSets(project, machine, controller);
   const tabs = [
     {
@@ -3528,10 +3610,11 @@ function MachineDocumentationTabs({machine, controller, blockDetails, specificat
       </div>,
     },
     {
-      id: 'drops',
+      id: 'recipes',
       label: t('recipes'),
       content: <MachineRecipes machine={machine} recipes={recipes} />,
     },
+    {id: 'drops', label: t('detailDrops'), content: <MachineRecipes machine={machine} recipes={recipes} dropsOnly />},
   ];
   return (
     <section className={styles.machineReference} aria-labelledby="machine-reference">
@@ -3542,31 +3625,14 @@ function MachineDocumentationTabs({machine, controller, blockDetails, specificat
         </div>
         <p>{t('machineSectionPrompt')}</p>
       </header>
-      <div className={styles.machineTabs} role="tablist" aria-label={t('machineDocumentationSections')}>
-        {tabs.map((tab) => <button
-          key={tab.id}
-          id={`machine-tab-${tab.id}`}
-          type="button"
-          role="tab"
-          aria-selected={activeTab === tab.id}
-          aria-controls={`machine-panel-${tab.id}`}
-          className={activeTab === tab.id ? styles.activeMachineTab : undefined}
-          onClick={() => setActiveTab(tab.id)}
-        >{tab.label}</button>)}
-      </div>
-      {tabs.map((tab) => <div
-        key={tab.id}
-        id={`machine-panel-${tab.id}`}
-        role="tabpanel"
-        aria-labelledby={`machine-tab-${tab.id}`}
-        className={styles.machineTabPanel}
-        hidden={activeTab !== tab.id}
-      >{tab.content}</div>)}
+      <div className={styles.machineTabPanel}>{tabs.find((tab) => tab.id === activeTab)?.content ?? <EmptyDetailSection />}</div>
+      {(activeTab === 'details' || activeTab === 'specs') && machine.transport && <DocumentationSection section={machine.transport} />}
     </section>
   );
 }
 
 function MachineDetail({entry, controller, sequence}) {
+  const w = useWikiText();
   const machine = documentedMachine(entry);
   const blockDetails = machineBlockDetails(machine, controller);
   const specifications = machineSpecificationFacts(machine);
@@ -3577,16 +3643,17 @@ function MachineDetail({entry, controller, sequence}) {
           {controller ? <BlockPreview entry={controller} size="min(100%, 14rem)" /> : <span className={styles.visualFallback} aria-hidden="true">▦</span>}
         </div>
         <div className={styles.machineDetailHeading}>
-          <p className={styles.eyebrow}>Machine {String(sequence).padStart(2, '0')} / {machine.category}</p>
+          <p className={styles.eyebrow}>{w("Machine")} {String(sequence).padStart(2, '0')} / {w(machine.category)}</p>
           <h1>{machine.name}</h1>
           <p>{machine.description}</p>
           <div className={styles.machineHeroMeta}>
-            <span><small>Tier</small>{machine.tier}</span>
-            <span><small>Primary resource</small>{machine.primaryResource}</span>
+            <span><small>{w("Tier")}</small>{w(machine.tier)}</span>
+            <span><small>{w("Primary resource")}</small>{w(machine.primaryResource)}</span>
           </div>
         </div>
       </article>
 
+      <EntrySectionNavigation sections={MACHINE_SECTION_IDS.filter((section) => section !== 'drops' || DROP_CATALOG_MACHINE_IDS.has(machine.id))} />
       <MachineDocumentationTabs machine={machine} controller={controller} blockDetails={blockDetails} specifications={specifications} />
     </>
   );
@@ -3613,12 +3680,13 @@ function recipesRelatedTo(project, entry) {
 }
 
 function RelatedRecipes({entry}) {
+  const w = useWikiText();
   const project = useWikiProject();
   const related = recipesRelatedTo(project, entry);
-  if (!related.length) return null;
+  if (!related.length) return <EmptyDetailSection />;
   return (
     <section className={styles.relatedSection}>
-      <div><p className={styles.eyebrow}>Connected production</p><h2>Related recipes</h2></div>
+      <div><p className={styles.eyebrow}>{w("Connected production")}</p><h2>{w("Related recipes")}</h2></div>
       <div className={styles.relatedLinks}>
         {related.map((recipe) => <Link key={recipe.href} to={recipe.href}><span>{recipe.type ?? project.stationMeta[recipe.station]?.label ?? 'Crafting'}</span><strong>{formatIdentifier(recipe.result?.id ?? recipe.output ?? recipe.identifier)}</strong><b aria-hidden="true">→</b></Link>)}
       </div>
@@ -3627,7 +3695,11 @@ function RelatedRecipes({entry}) {
 }
 
 function AddonWikiEntryContent({entryType, slug}) {
+  const w = useWikiText();
   const project = useWikiProject();
+  const {section: detailSection, basePath: entryBasePath} = useContext(WikiDetailContext);
+  const {t} = useSiteI18n();
+  const canonicalPath = detailSectionPath(entryBasePath, detailSection);
   const {
     assetRoot, blocks, allBlocks, craftingRecipeDetails, entities = [], generators, machineControllerIds,
     machines, mechanics, items, processingRecipes, stationMeta, wikiSections,
@@ -3650,7 +3722,7 @@ function AddonWikiEntryContent({entryType, slug}) {
   }
 
   if (!entry) {
-    return <Layout title="Entry not found"><WikiFrame active="overview" query={query} setQuery={setQuery}><p className={styles.empty}>This wiki entry could not be found.</p></WikiFrame></Layout>;
+    return <Layout title={w("Entry not found")}><WikiFrame active="overview" query={query} setQuery={setQuery}><p className={styles.empty}>{w("This wiki entry could not be found.")}</p></WikiFrame></Layout>;
   }
 
   const itemCategorySection = entryType === 'items'
@@ -3658,6 +3730,7 @@ function AddonWikiEntryContent({entryType, slug}) {
     : undefined;
   const activeSection = itemCategorySection?.id ?? (entryType === 'mechanics' ? 'mechanics' : entryType);
   const title = recipe ? (recipe.result.label ?? formatIdentifier(recipe.result.id)) : entry.name;
+  const pageTitle = detailSection === 'details' ? title : `${title} · ${t(DETAIL_LABEL_KEYS[detailSection])}`;
   const entryTypeLabel = {items: 'Item', blocks: 'Block', machines: 'Machine', generators: 'Generator', entities: 'Entity', mechanics: 'Mechanic'}[entryType] ?? 'Wiki';
   const backHref = `${project.basePath}/${entryType === 'recipes' ? 'recipes' : activeSection}`;
   const backLabel = entryType === 'recipes' ? 'Recipes' : wikiSections.find((section) => section.id === activeSection)?.label;
@@ -3675,20 +3748,20 @@ function AddonWikiEntryContent({entryType, slug}) {
     const machineSocialImage = generatedEntrySocialImage(project, originalSocialImage);
     const hasGeneratedSocialImage = machineSocialImage !== originalSocialImage;
     return (
-      <Layout title={`${title} — ${project.wikiName}`} description={entry.description} noFooter>
+      <Layout title={w(`${pageTitle} — ${project.wikiName}`)} description={entry.description} noFooter>
         <SocialMetadata
-          title={title}
+          title={pageTitle}
           parent={project.name}
           type={entryTypeLabel}
           description={entry.description}
-          path={`${project.basePath}/${entryType}/${slug}`}
+          path={canonicalPath}
           image={machineSocialImage}
           imageAlt={`${title} render from ${project.name}`}
           imageWidth={hasGeneratedSocialImage ? 512 : undefined}
           imageHeight={hasGeneratedSocialImage ? 512 : undefined}
         />
         <WikiFrame active="machines" query={query} setQuery={setQuery}>
-          <div className={styles.detailBack}><Link to={backHref}>← Back to {backLabel}</Link></div>
+          <div className={styles.detailBack}><Link to={backHref}>{w("← Back to")} {w(backLabel)}</Link></div>
           <MachineDetail entry={entry} controller={controller} sequence={sequence} />
         </WikiFrame>
       </Layout>
@@ -3701,20 +3774,20 @@ function AddonWikiEntryContent({entryType, slug}) {
     const itemSocialImage = generatedEntrySocialImage(project, originalSocialImage);
     const hasGeneratedSocialImage = itemSocialImage !== originalSocialImage;
     return (
-      <Layout title={`${title} — ${project.wikiName}`} description={entry.documentation?.description || entry.description || `${title} item in ${project.wikiName}.`} noFooter>
+      <Layout title={w(`${pageTitle} — ${project.wikiName}`)} description={entry.documentation?.description || entry.description || `${title} item in ${project.wikiName}.`} noFooter>
         <SocialMetadata
-          title={title}
+          title={pageTitle}
           parent={project.name}
           type={entryTypeLabel}
           description={entry.documentation?.description || entry.description}
-          path={`${project.basePath}/${entryType}/${slug}`}
+          path={canonicalPath}
           image={itemSocialImage}
           imageAlt={`${title} render from ${project.name}`}
           imageWidth={hasGeneratedSocialImage ? 512 : undefined}
           imageHeight={hasGeneratedSocialImage ? 512 : undefined}
         />
         <WikiFrame active={activeSection} query={query} setQuery={setQuery}>
-          <div className={styles.detailBack}><Link to={backHref}>← Back to {backLabel}</Link></div>
+          <div className={styles.detailBack}><Link to={backHref}>{w("← Back to")} {w(backLabel)}</Link></div>
           <ItemDetail entry={entry} visual={itemVisual} />
         </WikiFrame>
       </Layout>
@@ -3762,23 +3835,23 @@ function AddonWikiEntryContent({entryType, slug}) {
   const hasGeneratedSocialImage = detailSocialImage !== originalSocialImage;
 
   return (
-    <Layout title={`${title} — ${project.wikiName}`} description={recipe ? `Recipe for ${title}.` : (entry.description || `${title} entry in the ${project.wikiName}.`)} noFooter>
+    <Layout title={w(`${pageTitle} — ${project.wikiName}`)} description={recipe ? `Recipe for ${title}.` : (entry.description || `${title} entry in the ${project.wikiName}.`)} noFooter>
       <SocialMetadata
-        title={title}
+        title={pageTitle}
         parent={project.name}
         type={entryTypeLabel}
         description={recipe ? `Recipe for ${title}.` : entry.description}
-        path={`${project.basePath}/${entryType}/${slug}`}
+        path={canonicalPath}
         image={detailSocialImage}
         imageAlt={`${title}${hasGeneratedSocialImage ? ' render' : ''} from ${project.name}`}
         imageWidth={hasGeneratedSocialImage ? 512 : undefined}
         imageHeight={hasGeneratedSocialImage ? 512 : undefined}
       />
       <WikiFrame active={activeSection} query={query} setQuery={setQuery}>
-        <div className={styles.detailBack}><Link to={backHref}>← Back to {backLabel}</Link></div>
+        <div className={styles.detailBack}><Link to={backHref}>{w("← Back to")} {w(backLabel)}</Link></div>
         {recipe ? (
           <section className={styles.recipeDetail}>
-            <div className={styles.detailHeading}><p className={styles.eyebrow}>Recipe entry</p><h1>{title}</h1><code>{recipe.identifier}</code></div>
+            <div className={styles.detailHeading}><p className={styles.eyebrow}>{w("Recipe entry")}</p><h1>{w(title)}</h1><code>{recipe.identifier}</code></div>
             <RecipeCard recipe={recipe} />
             <DetailFacts facts={[
               ['Station', stationMeta[recipe.station]?.label ?? formatIdentifier(recipe.station)],
@@ -3799,12 +3872,20 @@ function AddonWikiEntryContent({entryType, slug}) {
           <>
             <article className={`${styles.detailHero} ${entryType === 'blocks' ? styles.blockDetailHero : ''}`}>
               {visual}
-              <div className={styles.detailHeading}><p className={styles.eyebrow}>{entryTypeLabel} entry</p><h1>{entry.name}</h1>{entry.description && <p>{entry.description}</p>}{blockTags.length > 0 && <div className={styles.detailBlockTags}>{blockTags.map((tag) => <span key={tag}>{tag}</span>)}</div>}</div>
+              <div className={styles.detailHeading}><p className={styles.eyebrow}>{w(entryTypeLabel)} {w("entry")}</p><h1>{entry.name}</h1>{entry.description && <p>{entry.description}</p>}{blockTags.length > 0 && <div className={styles.detailBlockTags}>{blockTags.map((tag) => <span key={tag}>{w(tag)}</span>)}</div>}</div>
             </article>
-            {referenceGroups?.length ? <EntryReference entryType={entryType} groups={referenceGroups} /> : <DetailFacts facts={facts} />}
-            {entryType === 'blocks' && <MiningReference mining={entry.mining} />}
-            {entryType === 'blocks' && <SiftableBlockReference entry={entry} group={blockSieveGroup} hammer={blockHammer} />}
-            {entryType === 'blocks' && <RelatedRecipes entry={entry} />}
+            <EntrySectionNavigation sections={sectionsForEntry(entryType).filter((section) => {
+              if (entryType !== 'blocks') return true;
+              if (MINING_SECTION_IDS.includes(section)) return Boolean(entry.mining);
+              if (section === 'sieving') return Boolean(blockSieveGroup || blockHammer);
+              return true;
+            })} />
+            {detailSection === 'details' && <DetailFacts facts={facts.slice(0, 4)} />}
+            {(detailSection === 'details' || detailSection === 'specs') && entry.transport && <DocumentationSection section={entry.transport} />}
+            {detailSection === 'specs' && (referenceGroups?.length ? <EntryReference entryType={entryType} groups={referenceGroups} /> : <DetailFacts facts={facts} />)}
+            {entryType === 'blocks' && MINING_SECTION_IDS.includes(detailSection) && <MiningReference mining={entry.mining} />}
+            {entryType === 'blocks' && detailSection === 'sieving' && (blockSieveGroup || blockHammer ? <SiftableBlockReference entry={entry} group={blockSieveGroup} hammer={blockHammer} /> : <EmptyDetailSection />)}
+            {detailSection === 'recipes' && <RelatedRecipes entry={entry} />}
           </>
         )}
       </WikiFrame>
@@ -3812,12 +3893,23 @@ function AddonWikiEntryContent({entryType, slug}) {
   );
 }
 
-export function AddonWikiEntryPage({projectId = 'heavy-machinery', ...props}) {
+export function AddonWikiEntryPage({projectId = 'heavy-machinery', detailSection = 'details', entryType, slug}) {
   const {i18n: {currentLocale}} = useDocusaurusContext();
   const project = useMemo(() => getWikiProject(projectId, currentLocale), [projectId, currentLocale]);
+  const location = useLocation();
+  const history = useHistory();
+  useEffect(() => {
+    const legacySection = legacyDetailSection(entryType, location.hash);
+    if (!legacySection) return;
+    let basePath = location.pathname.replace(/\/$/, '');
+    if (detailSection !== 'details' && basePath.endsWith(`/${detailSection}`)) basePath = basePath.slice(0, -detailSection.length - 1);
+    history.replace({pathname: detailSectionPath(basePath, legacySection), search: location.search, hash: ''});
+  }, [entryType, detailSection, history, location.pathname, location.search, location.hash]);
   return (
     <WikiProjectContext.Provider value={project}>
-      <AddonWikiEntryContent {...props} />
+      <WikiDetailContext.Provider value={{section: detailSection, entryType, basePath: `${project.basePath}/${entryType}/${slug}`}}>
+        <AddonWikiEntryContent entryType={entryType} slug={slug} />
+      </WikiDetailContext.Provider>
     </WikiProjectContext.Provider>
   );
 }

@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import vm from 'node:vm';
+import {utilitycraftSourcePath} from './wiki-source-paths.mjs';
 
 const originDefinitionsPath = path.join(path.resolve(import.meta.dirname, '..'), 'src', 'wiki', 'recipeOrigins.json');
 const recipeOrigins = JSON.parse(fs.readFileSync(originDefinitionsPath, 'utf8'));
@@ -39,9 +40,7 @@ function recipeOriginFor(origin) {
 //   static recipe catalogue. The Duplicator follows the same rule.
 const siteRoot = path.resolve(import.meta.dirname, '..');
 const projectRoots = {
-  utilitycraft: process.env.UTILITYCRAFT_PROJECT_PATH ?? path.join(
-    os.homedir(), 'AppData', 'Local', 'com.bridge.dev', 'bridge', 'projects', 'UtilityCraft',
-  ),
+  utilitycraft: utilitycraftSourcePath(),
   'ascendant-technology': process.env.ASCENDANT_TECHNOLOGY_PROJECT_PATH ?? path.join(
     os.homedir(), 'AppData', 'Local', 'com.bridge.dev', 'bridge', 'projects', 'Ascendant-Technology',
   ),
@@ -61,6 +60,8 @@ const outputPaths = {
   'ascendant-technology': path.join(siteRoot, 'src', 'wiki', 'projects', 'ascendant-technology', 'processingRecipes.json'),
   'heavy-machinery': path.join(siteRoot, 'src', 'wiki', 'projects', 'heavy-machinery', 'processingRecipes.json'),
 };
+const selectedProject = process.argv.includes('--project') ? process.argv[process.argv.indexOf('--project') + 1] : null;
+if (process.argv.includes('--project') && !Object.hasOwn(outputPaths, selectedProject)) throw new Error(`Unknown project: ${selectedProject}`);
 
 function slugify(value) {
   return String(value).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -481,7 +482,17 @@ function bonsaiRecipes(plants) {
 }
 
 function furnatorFuelRecipes(root) {
-  const fuels = readLiteral(root, 'fuel.js', 'solidFuels');
+  const source = readSource(root, 'fuel.js');
+  const declaredFuels = readLiteral(root, 'fuel.js', 'solidFuels');
+  // Current packs queue defaults through registerFuel instead of filling the array.
+  const registration = /DoriosLib\.registry\.registerFuel\s*\(/.exec(source);
+  const defaults = registration && literalFor(
+    `const defaults = ${source.slice(registration.index + registration[0].length)}`, 'defaults',
+  );
+  const fuels = defaults
+    ? Object.entries(vm.runInNewContext(`(${defaults})`))
+      .map(([id, de]) => ({id, de}))
+    : declaredFuels;
   return fuels.flatMap((fuel, index) => {
     if (!isConcreteIdentifier(fuel?.id) || !Number.isFinite(Number(fuel.de))) return [];
     const isRule = /[*_]/.test(fuel.id) || !fuel.id.includes(':');
@@ -593,10 +604,73 @@ function baseRecipeData() {
       ...bonsaiRecipes(plants),
       ...furnatorFuelRecipes(root),
       ...crafterGridRecipes(root, 'utilitycraft'),
+      ...primitiveForgeRecipes(root),
+      ...coreGasProcessingRecipes(root),
     ],
     infuser,
     melter: melterRecipes(readLiteral(root, 'melter.js', 'melterRecipesRegister'), 'utilitycraft'),
   };
+}
+
+function primitiveForgeRecipes(root) {
+  if (!fs.existsSync(sourceFile(root, 'primitiveForge.js'))) return [];
+  const entries = {
+    ...readLiteral(root, 'furnace.js', 'furnaceRecipesRegister'),
+    ...readLiteral(root, 'primitiveForge.js', 'primitiveForgeRecipes'),
+  };
+  return Object.entries(entries).flatMap(([key, definition]) => {
+    const [primary, secondary] = key.split('|');
+    if (!isConcreteIdentifier(primary) || !isConcreteIdentifier(definition.output)) return [];
+    return [machineRecipe({
+      originId: 'utilitycraft', station: 'primitive_forge', category: 'Primitive Forge recipe', key,
+      inputs: [
+        {id: primary, amount: definition.required ?? 1},
+        ...(secondary ? [{id: secondary, amount: definition.secondary_required ?? 1}] : []),
+      ],
+      result: {id: definition.output, amount: definition.amount ?? 1},
+      ticks: secondary && definition.output === 'utilitycraft:raw_steel' ? 160 : 40,
+      note: 'Requires a formed 2×2×2 Primitive Forge and solid fuel. Processes one recipe per input per cycle, or one combined recipe using both inputs; four output slots are available.',
+    })];
+  });
+}
+
+function coreGasProcessingRecipes(root) {
+  const recipes = [];
+  if (fs.existsSync(sourceFile(root, 'electrolyzer.js'))) {
+    const entries = readLiteral(root, 'electrolyzer.js', 'defaultRecipes');
+    for (const [key, definition] of Object.entries(entries)) {
+      const [liquid, gas] = key.split('|');
+      const outputs = [definition.output1, definition.output2].filter((output) => output?.type && output.type !== 'empty')
+        .map((output) => resourceStack('gas', output.type, output.amount));
+      if (!outputs.length) continue;
+      recipes.push(machineRecipe({originId: 'utilitycraft', station: 'electrolyzer', category: 'Electrolyzer recipe', key,
+        inputs: gas && gas !== 'empty' ? [resourceStack('gas', gas, definition.required_gas)] : [],
+        inputFluid: liquid && liquid !== 'empty' ? {type: liquid, amount: definition.required_liquid} : undefined,
+        results: outputs, cost: definition.cost,
+      }));
+    }
+  }
+  if (fs.existsSync(sourceFile(root, 'chemical_converter.js'))) {
+    const entries = readLiteral(root, 'chemical_converter.js', 'defaultRecipes');
+    for (const [key, definition] of Object.entries(entries)) {
+      const [item, liquid, gas] = key.split('|');
+      const outputs = [
+        definition.output_item?.id && {id: definition.output_item.id, amount: definition.output_item.amount},
+        definition.output_liquid?.type && resourceStack('fluid', definition.output_liquid.type, definition.output_liquid.amount),
+        definition.output_gas?.type && resourceStack('gas', definition.output_gas.type, definition.output_gas.amount),
+      ].filter(Boolean);
+      if (!outputs.length) continue;
+      recipes.push(machineRecipe({originId: 'utilitycraft', station: 'chemical_converter', category: 'Chemical Converter recipe', key,
+        inputs: [
+          ...(isConcreteIdentifier(item) ? [{id: item, amount: definition.required_items ?? 1}] : []),
+          ...(gas && gas !== 'empty' ? [resourceStack('gas', gas, definition.required_gas)] : []),
+        ],
+        inputFluid: liquid && liquid !== 'empty' ? {type: liquid, amount: definition.required_liquid} : undefined,
+        results: outputs, cost: definition.cost,
+      }));
+    }
+  }
+  return recipes;
 }
 
 function coreAdditions(root, originId, layout) {
@@ -1226,7 +1300,9 @@ function originRecipes(recipes, originId) {
   return recipes.filter((recipe) => (recipe.origin?.id ?? recipe.originId) === originId);
 }
 
-const sourceAvailable = Object.fromEntries(Object.entries(recipeRoots).map(([id, directory]) => [id, fs.existsSync(directory)]));
+const sourceAvailable = Object.fromEntries(Object.entries(recipeRoots).map(([id, directory]) => [id,
+  (selectedProject !== 'utilitycraft' || id === 'utilitycraft') && fs.existsSync(directory),
+]));
 if (!Object.values(sourceAvailable).some(Boolean)) {
   process.stdout.write('No recipe source projects were found; preserving generated machine recipe catalogs.\n');
   process.exit(0);
@@ -1255,10 +1331,12 @@ const heavyCatalog = sourceAvailable['heavy-machinery']
   ? [...heavyCore.core, ...heavySpecializedRecipes(), ...base.melter]
   : existing['heavy-machinery'];
 
-writeRecipes(outputPaths.utilitycraft, utilitycraftCatalog);
-writeRecipes(outputPaths['ascendant-technology'], ascendantCatalog);
-writeRecipes(outputPaths['heavy-machinery'], heavyCatalog);
+if (!selectedProject || selectedProject === 'utilitycraft') writeRecipes(outputPaths.utilitycraft, utilitycraftCatalog);
+if (!selectedProject || selectedProject === 'ascendant-technology') writeRecipes(outputPaths['ascendant-technology'], ascendantCatalog);
+if (!selectedProject || selectedProject === 'heavy-machinery') writeRecipes(outputPaths['heavy-machinery'], heavyCatalog);
 
 process.stdout.write(
-  `Wrote ${utilitycraftCatalog.length} UtilityCraft, ${ascendantCatalog.length} Ascendant Technology, and ${heavyCatalog.length} Heavy Machinery machine recipes.\n`,
+  selectedProject
+    ? `Wrote ${{utilitycraft: utilitycraftCatalog, 'ascendant-technology': ascendantCatalog, 'heavy-machinery': heavyCatalog}[selectedProject].length} ${selectedProject} machine recipes.\n`
+    : `Wrote ${utilitycraftCatalog.length} UtilityCraft, ${ascendantCatalog.length} Ascendant Technology, and ${heavyCatalog.length} Heavy Machinery machine recipes.\n`,
 );

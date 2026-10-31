@@ -3,6 +3,8 @@ import generatedProjects from './generatedProjects';
 import heavyMachinery from './heavy-machinery';
 import utilitycraft from './utilitycraft';
 import localizedWikiNames from '../../i18n/wikiNames.generated.json';
+import {translatePresentation, wikiText} from '../../i18n/wiki';
+import {resourceOrigin, transportDocumentation} from '../editorialContent';
 
 const projects = {
   [ascendantTechnology.id]: ascendantTechnology,
@@ -52,17 +54,40 @@ const globalCatalogEntries = Object.values(projects).flatMap((project) => [
   ...globalBlockEntriesFor(project),
 ]);
 
+const nameMaps = new Map();
+const localizedProjects = new WeakMap();
 function localeNameMap(locale) {
+  if (nameMaps.has(locale)) return nameMaps.get(locale);
   const localeProjects = localizedWikiNames.locales?.[locale] ?? {};
-  return Object.values(localeProjects).reduce((result, project) => Object.assign(result, project.names), {});
+  const names = Object.values(localeProjects).reduce((result, project) => Object.assign(result, project.names), {});
+  nameMaps.set(locale, names);
+  return names;
 }
 
-function localizeEntry(entry, names) {
+function localizeEntry(entry, names, project, locale) {
   if (!entry) return entry;
   const localizedName = names[entry.identifier] ?? names[entry.id];
+  const entries = project.allItems ?? project.items ?? [];
+  const nameFor = (id) => names[id] ?? entries.find((candidate) => candidate.identifier === id || candidate.id === id)?.name
+    ?? wikiText(locale, id.replace(/^.*:/, '').replace(/[_-]/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase()));
+  const origin = entry.entryType === 'items' || entries.includes(entry)
+    ? resourceOrigin(entry, project, locale, nameFor) : null;
+  const transport = transportDocumentation(entry, project, locale);
+  const documentation = translatePresentation(entry.documentation ?? {}, locale);
+  if (localizedName && entry.name && documentation.description) {
+    documentation.description = documentation.description.replaceAll(entry.name, localizedName);
+  }
   return {
     ...entry,
     name: localizedName ?? entry.name,
+    description: origin ?? transport?.description ?? translatePresentation(entry.description, locale),
+    documentation: entry.documentation || origin ? {
+      ...documentation,
+      ...(origin ? {description: origin} : {}),
+    } : undefined,
+    transport: transport?.section,
+    blockDetails: translatePresentation(entry.blockDetails, locale),
+    mining: translatePresentation(entry.mining, locale),
     variants: entry.variants?.map((variant) => ({
       ...variant,
       name: names[variant.identifier] ?? names[variant.id] ?? variant.name,
@@ -71,9 +96,11 @@ function localizeEntry(entry, names) {
 }
 
 export function localizeWikiProject(project, locale) {
-  if (!project || locale === 'en') return project;
+  if (!project) return project;
+  const cache = localizedProjects.get(project) ?? new Map();
+  if (cache.has(locale)) return cache.get(locale);
   const names = localeNameMap(locale);
-  const localizedBlocks = (project.allBlocks ?? project.blocks ?? []).map((entry) => localizeEntry(entry, names));
+  const localizedBlocks = (project.allBlocks ?? project.blocks ?? []).map((entry) => localizeEntry(entry, names, project, locale));
   const blocksById = new Map(localizedBlocks.flatMap((entry) => [
     [entry.shortId, entry],
     [entry.slug, entry],
@@ -81,12 +108,23 @@ export function localizeWikiProject(project, locale) {
   ]));
   const localizeMachine = (entry) => {
     const controller = blocksById.get(entry.blockSlug) ?? blocksById.get(entry.id);
-    return {...entry, name: controller?.name ?? names[entry.identifier] ?? entry.name, controller: controller?.name ?? entry.controller};
+    return {...entry, description: controller?.transport?.copy ?? translatePresentation(entry.description, locale), transport: controller?.transport,
+      specifications: translatePresentation(entry.specifications, locale), io: translatePresentation(entry.io, locale),
+      howItWorks: translatePresentation(entry.howItWorks, locale),
+      name: controller?.name ?? names[entry.identifier] ?? entry.name, controller: controller?.name ?? entry.controller};
   };
-  const localizeArray = (entries) => entries?.map((entry) => localizeEntry(entry, names));
-  return {
+  const localizeArray = (entries) => entries?.map((entry) => localizeEntry(entry, names, project, locale));
+  const result = {
     ...project,
     locale,
+    pageMeta: translatePresentation(project.pageMeta, locale),
+    sectionDescriptions: translatePresentation(project.sectionDescriptions, locale),
+    overview: translatePresentation(project.overview, locale),
+    howToPlay: translatePresentation(project.howToPlay, locale),
+    stationMeta: Object.fromEntries(Object.entries(project.stationMeta ?? {}).map(([id, station]) => [id, {...station,
+      label: names[`utilitycraft:${id}`] ?? wikiText(locale, station.label),
+    }])),
+    mechanics: project.mechanics?.map((entry) => ({...entry, description: translatePresentation(entry.description, locale)})),
     items: localizeArray(project.items),
     allItems: localizeArray(project.allItems),
     lookupItems: localizeArray(project.lookupItems),
@@ -97,15 +135,21 @@ export function localizeWikiProject(project, locale) {
     machines: project.machines?.map(localizeMachine),
     generators: project.generators?.map(localizeMachine),
   };
+  cache.set(locale, result);
+  localizedProjects.set(project, cache);
+  return result;
 }
 
-export function findGlobalCatalogEntry(value) {
+export function findGlobalCatalogEntry(value, locale = 'en') {
   const identifier = catalogSource(value);
   if (!identifier) return null;
   const normalizedName = identifier.replace(/\s+\([^)]*\).*$/, '').trim().toLowerCase();
-  return globalCatalogEntries.find((entry) => (
+  const entry = globalCatalogEntries.find((entry) => (
     entry.id === identifier || entry.identifier === identifier || entry.shortId === identifier
   )) ?? globalCatalogEntries.find((entry) => entry.name?.toLowerCase() === normalizedName) ?? null;
+  if (!entry) return null;
+  const names = localeNameMap(locale);
+  return {...entry, name: names[entry.identifier] ?? names[entry.id] ?? entry.name};
 }
 
 export function getWikiProject(projectId, locale = 'en') {

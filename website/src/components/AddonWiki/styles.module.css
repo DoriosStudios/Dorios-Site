@@ -2709,6 +2709,40 @@
 }
 .machineTabPanel,
 .itemTabPanel { min-width: 0; }
+.detailSectionNav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .4rem;
+	margin: 1rem 0 1.5rem;
+	padding-bottom: .65rem;
+	border-bottom: 1px solid var(--ds-border);
+}
+.detailSectionNav a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 42px;
+	padding: .55rem .9rem;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	color: var(--ds-muted);
+	font-family: var(--wiki-ui-font);
+	font-size: .85rem;
+	font-weight: 750;
+	text-decoration: none;
+}
+.detailSectionNav a:hover,
+.detailSectionNav a:focus-visible { color: var(--ds-text); border-color: var(--ds-border); }
+.detailSectionNav a[aria-current="page"] {
+	color: var(--ds-text);
+	border-color: color-mix(in srgb, var(--ds-accent) 48%, var(--ds-border));
+	background: color-mix(in srgb, var(--ds-accent) 13%, var(--ds-surface-raised));
+	box-shadow: inset 0 -2px var(--ds-accent);
+}
+@media (max-width: 600px) {
+	.detailSectionNav { flex-wrap: nowrap; overflow-x: auto; }
+	.detailSectionNav a { flex: 0 0 auto; }
+}
 .machineRecipeSubsection + .machineRecipeSubsection {
 	margin-top: 1.5rem;
 	padding-top: 1.5rem;

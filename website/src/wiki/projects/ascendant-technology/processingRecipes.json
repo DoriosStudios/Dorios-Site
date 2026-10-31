@@ -7779,12 +7779,8 @@
     "station": "catalyst_weaver",
     "category": "Catalyst Weaver recipe",
     "recipeKind": "catalyst",
-    "slotCount": 4,
+    "slotCount": 3,
     "slots": [
-      {
-        "id": "utilitycraft:steel_plate",
-        "count": 1
-      },
       {
         "id": "minecraft:redstone_block",
         "count": 1
@@ -7801,19 +7797,16 @@
       null,
       null,
       null,
+      null,
       null
     ],
     "inputs": [
       {
-        "id": "utilitycraft:steel_plate",
+        "id": "minecraft:redstone_block",
         "count": 1
       }
     ],
     "catalysts": [
-      {
-        "id": "minecraft:redstone_block",
-        "count": 1
-      },
       {
         "id": "utilitycraft:gold_dust",
         "count": 1
@@ -7842,7 +7835,7 @@
       "category": "Ascendant Technology"
     },
     "originId": "ascendant-technology",
-    "input": "utilitycraft:steel_plate + minecraft:redstone_block + utilitycraft:gold_dust + utilitycraft:energized_iron_dust",
+    "input": "minecraft:redstone_block + utilitycraft:gold_dust + utilitycraft:energized_iron_dust",
     "output": "utilitycraft:base_upgrade"
   },
   {
@@ -7986,7 +7979,7 @@
     "slots": [
       {
         "id": "utilitycraft:range_upgrade",
-        "count": 8
+        "count": 1
       },
       {
         "id": "minecraft:nether_star",
@@ -8003,7 +7996,7 @@
     "inputs": [
       {
         "id": "utilitycraft:range_upgrade",
-        "count": 8
+        "count": 1
       }
     ],
     "catalysts": [
@@ -8032,7 +8025,7 @@
       "category": "Ascendant Technology"
     },
     "originId": "ascendant-technology",
-    "input": "8× utilitycraft:range_upgrade + minecraft:nether_star",
+    "input": "utilitycraft:range_upgrade + minecraft:nether_star",
     "output": "utilitycraft:dimensional_range_upgrade"
   },
   {
@@ -8106,15 +8099,11 @@
     "station": "catalyst_weaver",
     "category": "Catalyst Weaver recipe",
     "recipeKind": "catalyst",
-    "slotCount": 5,
+    "slotCount": 4,
     "slots": [
       {
         "id": "utilitycraft:base_upgrade",
         "count": 1
-      },
-      {
-        "id": "utilitycraft:steel_plate",
-        "count": 4
       },
       {
         "id": "minecraft:yellow_dye",
@@ -8122,12 +8111,13 @@
       },
       {
         "id": "minecraft:redstone_block",
-        "count": 2
+        "count": 1
       },
       {
         "id": "minecraft:diamond_block",
         "count": 1
       },
+      null,
       null,
       null,
       null,
@@ -8141,16 +8131,12 @@
     ],
     "catalysts": [
       {
-        "id": "utilitycraft:steel_plate",
-        "count": 4
-      },
-      {
         "id": "minecraft:yellow_dye",
         "count": 1
       },
       {
         "id": "minecraft:redstone_block",
-        "count": 2
+        "count": 1
       },
       {
         "id": "minecraft:diamond_block",
@@ -8177,7 +8163,7 @@
       "category": "Ascendant Technology"
     },
     "originId": "ascendant-technology",
-    "input": "utilitycraft:base_upgrade + 4× utilitycraft:steel_plate + minecraft:yellow_dye + 2× minecraft:redstone_block + minecraft:diamond_block",
+    "input": "utilitycraft:base_upgrade + minecraft:yellow_dye + minecraft:redstone_block + minecraft:diamond_block",
     "output": "utilitycraft:energy_capacity_upgrade"
   },
   {
@@ -8187,7 +8173,7 @@
     "station": "catalyst_weaver",
     "category": "Catalyst Weaver recipe",
     "recipeKind": "catalyst",
-    "slotCount": 4,
+    "slotCount": 3,
     "slots": [
       {
         "id": "utilitycraft:base_upgrade",
@@ -8201,10 +8187,7 @@
         "id": "minecraft:redstone_block",
         "count": 1
       },
-      {
-        "id": "minecraft:redstone_block",
-        "count": 1
-      },
+      null,
       null,
       null,
       null,
@@ -8329,15 +8312,11 @@
     "station": "catalyst_weaver",
     "category": "Catalyst Weaver recipe",
     "recipeKind": "catalyst",
-    "slotCount": 5,
+    "slotCount": 4,
     "slots": [
       {
         "id": "utilitycraft:base_upgrade",
         "count": 1
-      },
-      {
-        "id": "utilitycraft:steel_plate",
-        "count": 4
       },
       {
         "id": "minecraft:lime_dye",
@@ -8345,12 +8324,13 @@
       },
       {
         "id": "minecraft:redstone_block",
-        "count": 2
+        "count": 1
       },
       {
         "id": "utilitycraft:expert_gas_tank",
         "count": 1
       },
+      null,
       null,
       null,
       null,
@@ -8364,16 +8344,12 @@
     ],
     "catalysts": [
       {
-        "id": "utilitycraft:steel_plate",
-        "count": 4
-      },
-      {
         "id": "minecraft:lime_dye",
         "count": 1
       },
       {
         "id": "minecraft:redstone_block",
-        "count": 2
+        "count": 1
       },
       {
         "id": "utilitycraft:expert_gas_tank",
@@ -8400,7 +8376,7 @@
       "category": "Ascendant Technology"
     },
     "originId": "ascendant-technology",
-    "input": "utilitycraft:base_upgrade + 4× utilitycraft:steel_plate + minecraft:lime_dye + 2× minecraft:redstone_block + utilitycraft:expert_gas_tank",
+    "input": "utilitycraft:base_upgrade + minecraft:lime_dye + minecraft:redstone_block + utilitycraft:expert_gas_tank",
     "output": "utilitycraft:gas_capacity_upgrade"
   },
   {
@@ -8418,7 +8394,7 @@
       },
       {
         "id": "utilitycraft:energized_iron_dust",
-        "count": 2
+        "count": 1
       },
       {
         "id": "utilitycraft:aetherium_crystal_dust",
@@ -8443,7 +8419,7 @@
     "catalysts": [
       {
         "id": "utilitycraft:energized_iron_dust",
-        "count": 2
+        "count": 1
       },
       {
         "id": "utilitycraft:aetherium_crystal_dust",
@@ -8474,7 +8450,7 @@
       "category": "Ascendant Technology"
     },
     "originId": "ascendant-technology",
-    "input": "utilitycraft:speed_upgrade + 2× utilitycraft:energized_iron_dust + utilitycraft:aetherium_crystal_dust + utilitycraft:titanium_dust",
+    "input": "utilitycraft:speed_upgrade + utilitycraft:energized_iron_dust + utilitycraft:aetherium_crystal_dust + utilitycraft:titanium_dust",
     "output": "utilitycraft:hyper_processing_upgrade"
   },
   {
@@ -8492,7 +8468,7 @@
       },
       {
         "id": "utilitycraft:energized_iron_dust",
-        "count": 2
+        "count": 1
       },
       {
         "id": "utilitycraft:aetherium_dust",
@@ -8517,7 +8493,7 @@
     "catalysts": [
       {
         "id": "utilitycraft:energized_iron_dust",
-        "count": 2
+        "count": 1
       },
       {
         "id": "utilitycraft:aetherium_dust",
@@ -8548,7 +8524,7 @@
       "category": "Ascendant Technology"
     },
     "originId": "ascendant-technology",
-    "input": "utilitycraft:speed_upgrade + 2× utilitycraft:energized_iron_dust + utilitycraft:aetherium_dust + utilitycraft:titanium_dust",
+    "input": "utilitycraft:speed_upgrade + utilitycraft:energized_iron_dust + utilitycraft:aetherium_dust + utilitycraft:titanium_dust",
     "output": "utilitycraft:hyper_processing_upgrade"
   },
   {
@@ -8558,15 +8534,11 @@
     "station": "catalyst_weaver",
     "category": "Catalyst Weaver recipe",
     "recipeKind": "catalyst",
-    "slotCount": 5,
+    "slotCount": 4,
     "slots": [
       {
         "id": "utilitycraft:base_upgrade",
         "count": 1
-      },
-      {
-        "id": "utilitycraft:steel_plate",
-        "count": 4
       },
       {
         "id": "minecraft:cyan_dye",
@@ -8574,12 +8546,13 @@
       },
       {
         "id": "minecraft:redstone_block",
-        "count": 2
+        "count": 1
       },
       {
         "id": "utilitycraft:expert_fluid_tank",
         "count": 1
       },
+      null,
       null,
       null,
       null,
@@ -8593,16 +8566,12 @@
     ],
     "catalysts": [
       {
-        "id": "utilitycraft:steel_plate",
-        "count": 4
-      },
-      {
         "id": "minecraft:cyan_dye",
         "count": 1
       },
       {
         "id": "minecraft:redstone_block",
-        "count": 2
+        "count": 1
       },
       {
         "id": "utilitycraft:expert_fluid_tank",
@@ -8629,7 +8598,7 @@
       "category": "Ascendant Technology"
     },
     "originId": "ascendant-technology",
-    "input": "utilitycraft:base_upgrade + 4× utilitycraft:steel_plate + minecraft:cyan_dye + 2× minecraft:redstone_block + utilitycraft:expert_fluid_tank",
+    "input": "utilitycraft:base_upgrade + minecraft:cyan_dye + minecraft:redstone_block + utilitycraft:expert_fluid_tank",
     "output": "utilitycraft:liquid_capacity_upgrade"
   },
   {
@@ -8639,15 +8608,11 @@
     "station": "catalyst_weaver",
     "category": "Catalyst Weaver recipe",
     "recipeKind": "catalyst",
-    "slotCount": 5,
+    "slotCount": 4,
     "slots": [
       {
         "id": "utilitycraft:base_upgrade",
         "count": 1
-      },
-      {
-        "id": "utilitycraft:steel_plate",
-        "count": 4
       },
       {
         "id": "minecraft:red_dye",
@@ -8655,12 +8620,13 @@
       },
       {
         "id": "minecraft:redstone_block",
-        "count": 2
+        "count": 1
       },
       {
         "id": "utilitycraft:aetherium_block",
         "count": 1
       },
+      null,
       null,
       null,
       null,
@@ -8674,16 +8640,12 @@
     ],
     "catalysts": [
       {
-        "id": "utilitycraft:steel_plate",
-        "count": 4
-      },
-      {
         "id": "minecraft:red_dye",
         "count": 1
       },
       {
         "id": "minecraft:redstone_block",
-        "count": 2
+        "count": 1
       },
       {
         "id": "utilitycraft:aetherium_block",
@@ -8710,7 +8672,7 @@
       "category": "Ascendant Technology"
     },
     "originId": "ascendant-technology",
-    "input": "utilitycraft:base_upgrade + 4× utilitycraft:steel_plate + minecraft:red_dye + 2× minecraft:redstone_block + utilitycraft:aetherium_block",
+    "input": "utilitycraft:base_upgrade + minecraft:red_dye + minecraft:redstone_block + utilitycraft:aetherium_block",
     "output": "utilitycraft:multi_processing_upgrade"
   },
   {
@@ -8994,15 +8956,11 @@
     "station": "catalyst_weaver",
     "category": "Catalyst Weaver recipe",
     "recipeKind": "catalyst",
-    "slotCount": 5,
+    "slotCount": 4,
     "slots": [
       {
         "id": "utilitycraft:base_upgrade",
         "count": 1
-      },
-      {
-        "id": "utilitycraft:steel_plate",
-        "count": 4
       },
       {
         "id": "minecraft:green_dye",
@@ -9010,12 +8968,13 @@
       },
       {
         "id": "minecraft:redstone_block",
-        "count": 2
+        "count": 1
       },
       {
         "id": "utilitycraft:refined_aetherium_crystal",
         "count": 1
       },
+      null,
       null,
       null,
       null,
@@ -9029,16 +8988,12 @@
     ],
     "catalysts": [
       {
-        "id": "utilitycraft:steel_plate",
-        "count": 4
-      },
-      {
         "id": "minecraft:green_dye",
         "count": 1
       },
       {
         "id": "minecraft:redstone_block",
-        "count": 2
+        "count": 1
       },
       {
         "id": "utilitycraft:refined_aetherium_crystal",
@@ -9065,7 +9020,7 @@
       "category": "Ascendant Technology"
     },
     "originId": "ascendant-technology",
-    "input": "utilitycraft:base_upgrade + 4× utilitycraft:steel_plate + minecraft:green_dye + 2× minecraft:redstone_block + utilitycraft:refined_aetherium_crystal",
+    "input": "utilitycraft:base_upgrade + minecraft:green_dye + minecraft:redstone_block + utilitycraft:refined_aetherium_crystal",
     "output": "utilitycraft:resource_efficiency_upgrade"
   },
   {
@@ -9083,11 +9038,11 @@
       },
       {
         "id": "utilitycraft:basic_chip",
-        "count": 4
+        "count": 1
       },
       {
         "id": "utilitycraft:gold_dust",
-        "count": 3
+        "count": 1
       },
       {
         "id": "minecraft:ender_pearl",
@@ -9108,11 +9063,11 @@
     "catalysts": [
       {
         "id": "utilitycraft:basic_chip",
-        "count": 4
+        "count": 1
       },
       {
         "id": "utilitycraft:gold_dust",
-        "count": 3
+        "count": 1
       },
       {
         "id": "minecraft:ender_pearl",
@@ -9138,7 +9093,7 @@
       "category": "Ascendant Technology"
     },
     "originId": "ascendant-technology",
-    "input": "utilitycraft:base_upgrade + 4× utilitycraft:basic_chip + 3× utilitycraft:gold_dust + minecraft:ender_pearl",
+    "input": "utilitycraft:base_upgrade + utilitycraft:basic_chip + utilitycraft:gold_dust + minecraft:ender_pearl",
     "output": "utilitycraft:size_upgrade"
   },
   {
@@ -9221,15 +9176,11 @@
     "station": "catalyst_weaver",
     "category": "Catalyst Weaver recipe",
     "recipeKind": "catalyst",
-    "slotCount": 5,
+    "slotCount": 4,
     "slots": [
       {
         "id": "utilitycraft:base_upgrade",
         "count": 1
-      },
-      {
-        "id": "utilitycraft:steel_plate",
-        "count": 4
       },
       {
         "id": "minecraft:orange_dye",
@@ -9237,12 +9188,13 @@
       },
       {
         "id": "minecraft:redstone_block",
-        "count": 2
+        "count": 1
       },
       {
         "id": "utilitycraft:aetherium_block",
         "count": 1
       },
+      null,
       null,
       null,
       null,
@@ -9256,16 +9208,12 @@
     ],
     "catalysts": [
       {
-        "id": "utilitycraft:steel_plate",
-        "count": 4
-      },
-      {
         "id": "minecraft:orange_dye",
         "count": 1
       },
       {
         "id": "minecraft:redstone_block",
-        "count": 2
+        "count": 1
       },
       {
         "id": "utilitycraft:aetherium_block",
@@ -9292,7 +9240,7 @@
       "category": "Ascendant Technology"
     },
     "originId": "ascendant-technology",
-    "input": "utilitycraft:base_upgrade + 4× utilitycraft:steel_plate + minecraft:orange_dye + 2× minecraft:redstone_block + utilitycraft:aetherium_block",
+    "input": "utilitycraft:base_upgrade + minecraft:orange_dye + minecraft:redstone_block + utilitycraft:aetherium_block",
     "output": "utilitycraft:stack_upgrade"
   },
   {
@@ -9604,6 +9552,67 @@
     "machineAddon": "ascendant-technology"
   },
   {
+    "id": "heavy-machinery-catalyst-weaver-utilitycraft-netherite-dust-utilitycraft-compressed-glass-converted",
+    "identifier": "heavy-machinery:process/catalyst-weaver/utilitycraft-netherite-dust-utilitycraft-compressed-glass-converted",
+    "type": "machine",
+    "station": "catalyst_weaver",
+    "category": "Catalyst Weaver · Infuser conversion",
+    "recipeKind": "converted",
+    "slotCount": 2,
+    "slots": [
+      {
+        "id": "utilitycraft:netherite_dust",
+        "count": 8
+      },
+      {
+        "id": "utilitycraft:compressed_glass",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "utilitycraft:compressed_glass",
+        "count": 1
+      }
+    ],
+    "catalysts": [
+      {
+        "id": "utilitycraft:netherite_dust",
+        "count": 8
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tempered_netherite_glass",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tempered_netherite_glass",
+        "count": 1
+      }
+    ],
+    "derivedFrom": "infuser",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "utilitycraft:compressed_glass + 8× utilitycraft:netherite_dust",
+    "output": "utilitycraft:tempered_netherite_glass",
+    "cost": 1280,
+    "energyCost": 1280,
+    "machineAddon": "ascendant-technology"
+  },
+  {
     "id": "heavy-machinery-catalyst-weaver-utilitycraft-steel-dust-minecraft-glass-converted",
     "identifier": "heavy-machinery:process/catalyst-weaver/utilitycraft-steel-dust-minecraft-glass-converted",
     "type": "machine",
@@ -9723,6 +9732,67 @@
     "originId": "heavy-machinery",
     "input": "2× minecraft:copper_ingot + 5× utilitycraft:tin_dust",
     "output": "utilitycraft:brute_bronze",
+    "machineAddon": "ascendant-technology"
+  },
+  {
+    "id": "heavy-machinery-catalyst-weaver-utilitycraft-tin-dust-minecraft-glass-converted",
+    "identifier": "heavy-machinery:process/catalyst-weaver/utilitycraft-tin-dust-minecraft-glass-converted",
+    "type": "machine",
+    "station": "catalyst_weaver",
+    "category": "Catalyst Weaver · Infuser conversion",
+    "recipeKind": "converted",
+    "slotCount": 2,
+    "slots": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 8
+      },
+      {
+        "id": "minecraft:glass",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "minecraft:glass",
+        "count": 1
+      }
+    ],
+    "catalysts": [
+      {
+        "id": "utilitycraft:tin_dust",
+        "count": 8
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tempered_tin_glass",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tempered_tin_glass",
+        "count": 1
+      }
+    ],
+    "derivedFrom": "infuser",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "minecraft:glass + 8× utilitycraft:tin_dust",
+    "output": "utilitycraft:tempered_tin_glass",
+    "cost": 1280,
+    "energyCost": 1280,
     "machineAddon": "ascendant-technology"
   },
   {

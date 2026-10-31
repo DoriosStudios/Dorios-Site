@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import {utilitycraftSourcePath} from './wiki-source-paths.mjs';
 
 const siteRoot = path.resolve(import.meta.dirname, '..');
 const bridgeRoot = process.env.BRIDGE_PROJECTS_PATH ?? path.join(
@@ -10,6 +11,8 @@ const projectRoot = path.join(siteRoot, 'src', 'wiki', 'projects');
 const catalog = JSON.parse(fs.readFileSync(path.join(siteRoot, 'src', 'data', 'projectCatalog.json'), 'utf8'));
 const outputPath = path.join(siteRoot, 'src', 'i18n', 'wikiNames.generated.json');
 const localeFiles = {'pt-BR': 'pt_BR.lang', 'es-MX': 'es_MX.lang'};
+const selectedProject = process.argv.includes('--project') ? process.argv[process.argv.indexOf('--project') + 1] : null;
+if (process.argv.includes('--project') && !catalog.projects.some(({id}) => id === selectedProject)) throw new Error(`Unknown project: ${selectedProject}`);
 
 function parseLang(file) {
   if (!fs.existsSync(file)) return new Map();
@@ -38,16 +41,19 @@ function localizedName(table, identifier, entryType) {
   return candidates.map((key) => table.get(key)).find(Boolean) ?? null;
 }
 
-const output = {generatedAt: new Date().toISOString(), locales: {}};
+const previous = selectedProject && fs.existsSync(outputPath) ? JSON.parse(fs.readFileSync(outputPath, 'utf8')) : {};
+const output = {...previous, generatedAt: new Date().toISOString(), locales: {...previous.locales}};
 
 for (const [locale, fileName] of Object.entries(localeFiles)) {
-  const projects = {};
+  const projects = {...(selectedProject ? previous.locales?.[locale] : {})};
   for (const catalogProject of catalog.projects) {
+    if (selectedProject && catalogProject.id !== selectedProject) continue;
     const manifestPath = path.join(projectRoot, catalogProject.id, 'manifest.json');
     const bridgeProject = catalogProject.source?.bridgeProject;
     if (!bridgeProject || !fs.existsSync(manifestPath)) continue;
 
-    const table = parseLang(path.join(bridgeRoot, bridgeProject, 'RP', 'texts', fileName));
+    const sourceRoot = catalogProject.id === 'utilitycraft' ? utilitycraftSourcePath() : path.join(bridgeRoot, bridgeProject);
+    const table = parseLang(path.join(sourceRoot, 'RP', 'texts', fileName));
     const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
     const names = {};
     let total = 0;

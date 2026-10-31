@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import {utilitycraftSourcePath} from './wiki-source-paths.mjs';
 
 const siteRoot = path.resolve(import.meta.dirname, '..');
 const bridgeRoot = process.env.BRIDGE_PROJECTS_PATH ?? path.join(
@@ -12,6 +13,9 @@ const projects = [
   {id: 'heavy-machinery', name: 'Heavy Machinery', source: 'UtilityCraft-Heavy-Machinery'},
   {id: 'digital-storage', name: 'Digital Storage', source: 'UtilityCraft-Digital-Storage'},
 ];
+const requestedProject = process.argv[process.argv.indexOf('--project') + 1];
+const selectedProject = process.argv.includes('--project') ? requestedProject : null;
+if (process.argv.includes('--project') && !projects.some(({id}) => id === selectedProject)) throw new Error(`Unknown project: ${selectedProject}`);
 
 const ENCHANTMENT_PRESETS = {
   pickaxe: ['Efficiency', 'Fortune', 'Silk Touch', 'Unbreaking', 'Mending', 'Curse of Vanishing'],
@@ -210,7 +214,8 @@ function profileFor(project, identifier, components) {
 }
 
 for (const project of projects) {
-  const root = path.join(bridgeRoot, project.source);
+  if (selectedProject && project.id !== selectedProject) continue;
+  const root = project.id === 'utilitycraft' ? utilitycraftSourcePath() : path.join(bridgeRoot, project.source);
   const output = path.join(siteRoot, 'src', 'wiki', 'projects', project.id, 'documentationProfiles.generated.json');
   if (!fs.existsSync(root)) {
     console.warn(`${project.name} source was not found; preserving ${path.relative(siteRoot, output)}.`);

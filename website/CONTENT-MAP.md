@@ -15,6 +15,10 @@ Projeto bridge. (BP/RP)
 
 Não edite manualmente um `manifest.json` para corrigir conteúdo originado no add-on: ele é regenerado. Corrija o BP/RP ou o mapper e execute novamente o mapeamento. Use o `index.js`, perfis e configurações locais para conteúdo editorial que não existe de forma estruturada no add-on.
 
+Resumos de obtenção dos recursos e funcionamento dos transportes ficam em `src/wiki/editorialContent.js`. As traduções compartilhadas da wiki ficam em `src/i18n/wiki.js` e `wikiEditorial.js`. Consulte [`docs/wiki-editorial.md`](../docs/wiki-editorial.md) para fontes, limites das velocidades e manutenção dos três idiomas.
+
+A atualização do UtilityCraft a partir de um clone limpo está registrada em [`docs/utilitycraft-data-sync.md`](../docs/utilitycraft-data-sync.md). Os geradores priorizam o clone separado em `../../wiki-sources/UtilityCraft`, com substituição explícita por `UTILITYCRAFT_PROJECT_PATH`; `--project utilitycraft` permite atualizar somente esse projeto.
+
 ## Páginas principais
 
 | Área | Conteúdo/JSX | Estilos |
@@ -88,6 +92,7 @@ O mapper está em `scripts/addon_wiki_mapper/`. A cópia de assets, registro do 
 - Labels e comportamento compartilhado de catálogos/detalhes: `src/components/AddonWiki/index.js`.
 - Aparência compartilhada de cards, filtros, sidebar e detalhes: `src/components/AddonWiki/styles.module.css`.
 - Rotas e aliases estáticos: `plugins/addon-wiki-routes/index.js`.
+- Parâmetros internos de rotas usam IDs curtos; URLs públicas continuam legíveis. Cada setor de detalhe (`specs`, `recipes`, `drops` e outros) possui página estática própria. Contrato e migração de hashes: `../docs/wiki-routing.md`.
 
 O detalhe editorial de item (`Hero -> Basic Information -> Trinket Capabilities -> How to Obtain -> Usage`) é renderizado pelo componente `ItemDetail` em `src/components/AddonWiki/index.js`. Para enriquecer um item sem alterar o layout compartilhado, forneça `documentation` no overlay do projeto:
 

@@ -27,7 +27,7 @@
       "lifecycle": "Released",
       "featuredRank": 1,
       "free": true,
-      "version": "3.5.1",
+      "version": "3.6.2",
       "minecraftVersion": "1.20.80",
       "requires": [],
       "routes": {
@@ -47,16 +47,17 @@
         "alt": "UtilityCraft project artwork"
       },
       "metrics": {
-        "items": 239,
-        "blocks": 432,
-        "recipes": 1205,
-        "machines": 16
+        "items": 263,
+        "blocks": 510,
+        "entities": 115,
+        "recipes": 1443,
+        "structures": 3
       },
       "source": {
         "kind": "bridge",
         "bridgeProject": "UtilityCraft",
-        "revision": "1f449fe5cb3c",
-        "fingerprint": "c85354a48389c737"
+        "revision": "3d888eada613",
+        "fingerprint": "8ee8a116894f7468"
       }
     },
     {

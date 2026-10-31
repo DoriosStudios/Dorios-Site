@@ -3,8 +3,8 @@
     "id": "ascendant-technology",
     "repository": "DoriosStudios/Ascendant-Technology",
     "endpoint": "https://api.github.com/repos/DoriosStudios/Ascendant-Technology/releases",
-    "downloads": 5296,
-    "display": "5.2K+",
+    "downloads": 5671,
+    "display": "5.6K+",
     "releases": 18,
     "assets": 24,
     "version": "0.9.1",
@@ -12,14 +12,14 @@
     "latestReleaseName": "v0.9.1",
     "latestReleaseUrl": "https://github.com/DoriosStudios/Ascendant-Technology/releases/tag/v0.9.1-beta",
     "latestReleasePublishedAt": "2026-08-11T23:56:38Z",
-    "updatedAt": "2026-09-11T23:30:38.463Z"
+    "updatedAt": "2026-09-25T20:59:12.625Z"
   },
   "heavy-machinery": {
     "id": "heavy-machinery",
     "repository": "DoriosStudios/UtilityCraft-Heavy-Machinery",
     "endpoint": "https://api.github.com/repos/DoriosStudios/UtilityCraft-Heavy-Machinery/releases",
-    "downloads": 4590,
-    "display": "4.5K+",
+    "downloads": 5039,
+    "display": "5K+",
     "releases": 8,
     "assets": 14,
     "version": "0.5.2",
@@ -27,29 +27,29 @@
     "latestReleaseName": "UtilityCraft: Heavy Machinery v0.5.2",
     "latestReleaseUrl": "https://github.com/DoriosStudios/UtilityCraft-Heavy-Machinery/releases/tag/v0.5.2",
     "latestReleasePublishedAt": "2026-08-22T07:33:32Z",
-    "updatedAt": "2026-09-11T23:30:38.009Z"
+    "updatedAt": "2026-09-25T20:59:12.214Z"
   },
   "utilitycraft": {
     "id": "utilitycraft",
     "repository": "DoriosStudios/UtilityCraft",
     "endpoint": "https://api.github.com/repos/DoriosStudios/UtilityCraft/releases",
-    "downloads": 2291,
-    "display": "2.2K+",
-    "releases": 33,
-    "assets": 61,
-    "version": "3.5.4",
-    "latestReleaseTag": "v3.5.4",
-    "latestReleaseName": "UtilityCraft v3.5.4",
-    "latestReleaseUrl": "https://github.com/DoriosStudios/UtilityCraft/releases/tag/v3.5.4",
-    "latestReleasePublishedAt": "2026-08-21T06:38:08Z",
-    "updatedAt": "2026-09-11T23:30:37.636Z"
+    "downloads": 2685,
+    "display": "2.6K+",
+    "releases": 34,
+    "assets": 63,
+    "version": "3.6.0",
+    "latestReleaseTag": "v3.6.0",
+    "latestReleaseName": "UtilityCraft v3.6.0",
+    "latestReleaseUrl": "https://github.com/DoriosStudios/UtilityCraft/releases/tag/v3.6.0",
+    "latestReleasePublishedAt": "2026-10-23T19:07:33Z",
+    "updatedAt": "2026-10-25T22:44:19.104Z"
   },
   "better-containers": {
     "id": "better-containers",
     "repository": "DoriosStudios/Better-Containers",
     "endpoint": "https://api.github.com/repos/DoriosStudios/Better-Containers/releases",
-    "downloads": 265,
-    "display": "200+",
+    "downloads": 333,
+    "display": "300+",
     "releases": 1,
     "assets": 2,
     "version": "1.0.0",
@@ -57,13 +57,13 @@
     "latestReleaseName": "Better Containers v1.0.0",
     "latestReleaseUrl": "https://github.com/DoriosStudios/Better-Containers/releases/tag/v1.0.0",
     "latestReleasePublishedAt": "2026-07-25T19:00:43Z",
-    "updatedAt": "2026-09-11T23:30:38.779Z"
+    "updatedAt": "2026-09-25T20:59:12.980Z"
   },
   "smelters": {
     "id": "smelters",
     "repository": "DoriosStudios/Better-Smelters",
     "endpoint": "https://api.github.com/repos/DoriosStudios/Better-Smelters/releases",
-    "downloads": 260,
+    "downloads": 272,
     "display": "200+",
     "releases": 9,
     "assets": 17,
@@ -72,13 +72,13 @@
     "latestReleaseName": "Better Smelters v1.5.4",
     "latestReleaseUrl": "https://github.com/DoriosStudios/Better-Smelters/releases/tag/v1.5.4",
     "latestReleasePublishedAt": "2026-08-25T15:16:34Z",
-    "updatedAt": "2026-09-11T23:30:39.129Z"
+    "updatedAt": "2026-09-25T20:59:13.331Z"
   },
   "digital-storage": {
     "id": "digital-storage",
     "repository": "DoriosStudios/UtilityCraft-Digital-Storage",
     "endpoint": "https://api.github.com/repos/DoriosStudios/UtilityCraft-Digital-Storage/releases",
-    "downloads": 336,
+    "downloads": 368,
     "display": "300+",
     "releases": 8,
     "assets": 11,
@@ -87,13 +87,13 @@
     "latestReleaseName": "UtilityCraft: Digital Storage v1.0.1",
     "latestReleaseUrl": "https://github.com/DoriosStudios/UtilityCraft-Digital-Storage/releases/tag/v1.0.1",
     "latestReleasePublishedAt": "2026-08-16T19:41:02Z",
-    "updatedAt": "2026-09-11T23:30:39.478Z"
+    "updatedAt": "2026-09-25T20:59:13.674Z"
   },
   "atelier": {
     "id": "atelier",
     "repository": "DoriosStudios/Dorios-Atelier",
     "endpoint": "https://api.github.com/repos/DoriosStudios/Dorios-Atelier/releases",
-    "downloads": 265,
+    "downloads": 273,
     "display": "200+",
     "releases": 3,
     "assets": 3,
@@ -102,13 +102,13 @@
     "latestReleaseName": "Dorios Atelier v1.1.0.02",
     "latestReleaseUrl": "https://github.com/DoriosStudios/Dorios-Atelier/releases/tag/v1.1.0-beta2",
     "latestReleasePublishedAt": "2026-03-02T07:50:42Z",
-    "updatedAt": "2026-09-11T23:30:39.792Z"
+    "updatedAt": "2026-09-25T20:59:13.997Z"
   },
   "excavate": {
     "id": "excavate",
     "repository": "DoriosStudios/Dorios-Excavate",
     "endpoint": "https://api.github.com/repos/DoriosStudios/Dorios-Excavate/releases",
-    "downloads": 263,
+    "downloads": 281,
     "display": "200+",
     "releases": 7,
     "assets": 10,
@@ -117,13 +117,13 @@
     "latestReleaseName": "Dorios' Excavate v1.3.3",
     "latestReleaseUrl": "https://github.com/DoriosStudios/Dorios-Excavate/releases/tag/v1.3.3",
     "latestReleasePublishedAt": "2026-08-20T05:47:15Z",
-    "updatedAt": "2026-09-11T23:30:40.108Z"
+    "updatedAt": "2026-09-25T20:59:14.400Z"
   },
   "insight": {
     "id": "insight",
     "repository": "DoriosStudios/Dorios-Insight",
     "endpoint": "https://api.github.com/repos/DoriosStudios/Dorios-Insight/releases",
-    "downloads": 1509,
+    "downloads": 1577,
     "display": "1.5K+",
     "releases": 4,
     "assets": 5,
@@ -132,13 +132,13 @@
     "latestReleaseName": "Dorios' Insight v1.2.1",
     "latestReleaseUrl": "https://github.com/DoriosStudios/Dorios-Insight/releases/tag/v1.2.1",
     "latestReleasePublishedAt": "2026-08-10T18:32:47Z",
-    "updatedAt": "2026-09-11T23:30:40.446Z"
+    "updatedAt": "2026-09-25T20:59:14.831Z"
   },
   "trinkets": {
     "id": "trinkets",
     "repository": "DoriosStudios/Dorios-Trinkets",
     "endpoint": "https://api.github.com/repos/DoriosStudios/Dorios-Trinkets/releases",
-    "downloads": 126,
+    "downloads": 133,
     "display": "100+",
     "releases": 4,
     "assets": 8,
@@ -147,14 +147,14 @@
     "latestReleaseName": "Dorios' Trinkets v2.1.2",
     "latestReleaseUrl": "https://github.com/DoriosStudios/Dorios-Trinkets/releases/tag/v2.1.2",
     "latestReleasePublishedAt": "2026-08-16T17:12:23Z",
-    "updatedAt": "2026-09-11T23:30:40.798Z"
+    "updatedAt": "2026-09-25T20:59:15.189Z"
   },
   "tiered-machinery": {
     "id": "tiered-machinery",
     "repository": "DoriosStudios/UtilityCraft-Tiered-Machinery",
     "endpoint": "https://api.github.com/repos/DoriosStudios/UtilityCraft-Tiered-Machinery/releases",
-    "downloads": 575,
-    "display": "500+",
+    "downloads": 601,
+    "display": "600+",
     "releases": 11,
     "assets": 22,
     "version": "1.2.1",
@@ -162,7 +162,7 @@
     "latestReleaseName": "UtilityCraft: Tiered Machinery v1.2.1",
     "latestReleaseUrl": "https://github.com/DoriosStudios/UtilityCraft-Tiered-Machinery/releases/tag/v1.2.1",
     "latestReleasePublishedAt": "2026-08-13T18:10:03Z",
-    "updatedAt": "2026-09-11T23:30:41.151Z"
+    "updatedAt": "2026-09-25T20:59:15.566Z"
   },
   "enchants": {
     "id": "enchants",
