@@ -1052,7 +1052,16 @@ function processingInputSlots(recipe) {
   return groups.flatMap(({ingredients}) => ingredients).slice(0, 9);
 }
 
+// Static generation mounts a fresh React tree for every page. Reuse immutable
+// recipe data across those renders instead of normalizing the catalog per tab.
+const processingRecipeCache = new WeakMap();
+
 function normalizedProcessingRecipe(recipe) {
+  if (!processingRecipeCache.has(recipe)) processingRecipeCache.set(recipe, computeNormalizedProcessingRecipe(recipe));
+  return processingRecipeCache.get(recipe);
+}
+
+function computeNormalizedProcessingRecipe(recipe) {
   const sourceSlots = recipe.slots ?? processingInputSlots(recipe);
   const sourceResult = recipe.result ?? (typeof recipe.output === 'object' ? recipe.output : null);
   if (sourceSlots.length && sourceResult) {
@@ -2487,7 +2496,26 @@ function CapabilityGroup({group}) {
   );
 }
 
+const itemRecipeCache = new WeakMap();
+
+function itemRecipeRelations(project, entry) {
+  let entries = itemRecipeCache.get(project);
+  if (!entries) {
+    entries = new WeakMap();
+    itemRecipeCache.set(project, entries);
+  }
+  if (!entries.has(entry)) entries.set(entry, {
+    obtaining: computeObtainingRecipes(project, entry),
+    usedIn: computeRecipesUsingItem(project, entry),
+  });
+  return entries.get(entry);
+}
+
 function obtainingRecipes(project, entry) {
+  return itemRecipeRelations(project, entry).obtaining;
+}
+
+function computeObtainingRecipes(project, entry) {
   const identifiers = itemIdentifiers(entry);
   const crafting = project.craftingRecipeDetails.filter((recipe) => identifiers.has(recipe.result?.id));
   const machine = project.processingRecipes
@@ -2588,6 +2616,10 @@ function itemIdentifiers(entry) {
 }
 
 function recipesUsingItem(project, entry) {
+  return itemRecipeRelations(project, entry).usedIn;
+}
+
+function computeRecipesUsingItem(project, entry) {
   const identifiers = itemIdentifiers(entry);
   const recipes = [
     ...project.craftingRecipeDetails,
