@@ -1,6 +1,13 @@
 const recipe = (station, result, input) => ({station, result, input});
 
 const itemEditorialProfiles = {
+  'utilitycraft:enderling_tear': {
+    documentation: {
+      description: 'Enderling Tear has a 0.01% drop chance from Endermen and a 1% drop chance from compatible Enderling mobs. Enderman Essence also provides a source. Used to brew Soul Collector potions in the Alchemical Station.',
+      basic: {itemType: 'Brewing ingredient'},
+      properties: [['Enderman drop chance', '0.01%'], ['Compatible Enderling drop chance', '1%']],
+    },
+  },
   'utilitycraft:aetherium_crystal': {
     documentation: {
       description: 'Aetherium Crystal is obtained directly by mining Aetherium Ore without Silk Touch or assembled from Aetherium Shards recovered through high-tier sieving. The crystal is a key ingredient for Aetherium metal and refined crystal technology.',

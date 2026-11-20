@@ -38,6 +38,11 @@ function resourceOrigin(entry, project, locale, nameFor) {
   if (!isResource(entry)) return null;
   const id = (entry.identifier ?? entry.id).split(':').pop();
   const explicit = {
+    refined_aetherium_shard: [
+      'A legacy Refined Aetherium Crystal kept for existing worlds. Convert it into the current Refined Aetherium Crystal through the Workbench or Crafter recipe.',
+      'Um Cristal de Aetherium Refinado antigo, mantido para mundos existentes. Converta-o no Cristal de Aetherium Refinado atual pela receita da Bancada ou do Fabricador.',
+      'Un antiguo Cristal de Aetherium Refinado conservado para mundos existentes. Conviértelo en el Cristal de Aetherium Refinado actual mediante la receta de la Mesa de Trabajo o el Fabricador.',
+    ],
     aetherium_crystal: [
       'Found by mining Aetherium Ore in the End or deep in the Overworld, or assembled from shards recovered by advanced sieving. A crystalline starting point for Aetherium technology.',
       'Encontrado ao minerar Aetherium no End ou nas profundezas do Overworld, ou montado com fragmentos recuperados por peneiramento avançado. É um ponto de partida para a tecnologia de Aetherium.',

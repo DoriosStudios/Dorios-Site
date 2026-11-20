@@ -14,6 +14,12 @@ export const MACHINE_RESOURCE_ICONS = Object.freeze({
 });
 
 const FLUID_VISUALS = Object.freeze({
+  blaze_essence: {
+    label: 'Blaze Essence',
+    description: 'Brewing fuel supplied by Blaze Powder in the Alchemical Station.',
+    icon: ascendantGlyph('brew'),
+    palette: {primary: '#f59e0b', secondary: '#92400e', glow: '#fcd34d'},
+  },
   water: {
     label: 'Water',
     description: 'A basic coolant and process liquid used by several machines.',
@@ -40,7 +46,7 @@ const FLUID_VISUALS = Object.freeze({
   },
   cryofluid: {
     label: 'Cryofluid',
-    description: 'A sub-zero coolant for cryogenic machines and precision processes.',
+    description: 'A tier 4 coolant with 2.5× cooling efficiency, also used by cryogenic machines and Steam production.',
     icon: ascendantGlyph('cryofluid'),
     palette: {primary: '#22d3ee', secondary: '#155e75', glow: '#67e8f9'},
   },

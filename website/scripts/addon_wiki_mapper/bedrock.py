@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import fnmatch
 import re
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
@@ -614,12 +615,30 @@ def build_manifest(
     blocks = _parse_blocks(project_root, behavior_pack, resource_pack, lang, config, dependency_resource_packs, items)
     entities = _parse_entities(project_root, behavior_pack, resource_pack, lang, config)
     recipes = _parse_recipes(project_root, behavior_pack, config)
+    if config.get('identifierSlugs'):
+        for entry in [*items, *blocks, *entities]:
+            entry['slug'] = entry['id']
     catalog_items, variant_groups = group_variants(items)
+    pack_manifest = load(behavior_pack / 'manifest.json') if (behavior_pack / 'manifest.json').is_file() else {}
+    version = '.'.join(map(str, pack_manifest.get('header', {}).get('version', []))) or None
+    revision = subprocess.run(
+        ['git', '-C', str(project_root), 'rev-parse', '--short=12', 'HEAD'],
+        capture_output=True, text=True, check=False,
+    )
+    changes = subprocess.run(
+        ['git', '-C', str(project_root), 'status', '--porcelain', '--', 'BP', 'RP', 'Assets'],
+        capture_output=True, text=True, check=False,
+    )
 
     return {
         "schemaVersion": 1,
         "generatedAt": datetime.now(timezone.utc).isoformat(),
-        "project": {"id": project_id, "name": project_name},
+        "project": {"id": project_id, "name": project_name, "version": version},
+        "source": {
+            "bridgeProject": project_root.name,
+            "revision": revision.stdout.strip() if revision.returncode == 0 else None,
+            "dirty": bool(changes.stdout.strip()) if changes.returncode == 0 else None,
+        },
         "counts": {
             "items": len(items),
             "catalogItems": len(catalog_items),

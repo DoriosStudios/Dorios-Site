@@ -1,16 +1,8 @@
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
+import {projectSourcePath} from './wiki-source-paths.mjs';
 
-const projectRoot = process.env.HEAVY_MACHINERY_PROJECT ?? path.join(
-  os.homedir(),
-  'AppData',
-  'Local',
-  'com.bridge.dev',
-  'bridge',
-  'projects',
-  'UtilityCraft-Heavy-Machinery',
-);
+const projectRoot = projectSourcePath('UtilityCraft-Heavy-Machinery', 'HEAVY_MACHINERY_PROJECT_PATH', 'HEAVY_MACHINERY_PROJECT');
 const recipesRoot = path.join(projectRoot, 'BP', 'recipes');
 
 function walk(directory) {

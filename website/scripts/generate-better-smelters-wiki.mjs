@@ -1,11 +1,9 @@
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
+import {projectSourcePath} from './wiki-source-paths.mjs';
 
 const siteRoot = path.resolve(import.meta.dirname, '..');
-const addonRoot = process.env.BETTER_SMELTERS_PROJECT_PATH ?? path.join(
-  os.homedir(), 'AppData', 'Local', 'com.bridge.dev', 'bridge', 'projects', 'Better-Smelters',
-);
+const addonRoot = projectSourcePath('Better-Smelters', 'BETTER_SMELTERS_PROJECT_PATH');
 const blocksRoot = path.join(addonRoot, 'BP', 'blocks');
 const configPath = path.join(addonRoot, 'BP', 'scripts', 'config.js');
 const outputPath = path.join(siteRoot, 'src', 'wiki', 'projects', 'smelters', 'furnaceData.generated.json');

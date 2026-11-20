@@ -73,7 +73,7 @@
       "wikiPath": "/wiki/ascendant-technology",
       "contentManifest": "src/wiki/projects/ascendant-technology/manifest.json",
       "metrics": {"machines": 30, "energySystems": 12},
-      "requires": ["UtilityCraft 3.5+"],
+      "requires": ["UtilityCraft 3.6.3+"],
       "tags": ["End Game", "Machines", "Optimization"]
     },
     "UtilityCraft-Heavy-Machinery": {
@@ -89,7 +89,7 @@
       "description": "Heavy Machinery is not standalone. It uses the public UtilityCraft core for energy, machines, fluids, and multiblock systems while expanding the end game with larger factories and optimization-driven production chains.",
       "wikiPath": "/wiki/heavy-machinery",
       "metrics": {"items": 28, "blocks": 64, "machines": 7, "energySystems": 3, "entities": 4, "recipes": 99},
-      "requires": ["UtilityCraft"],
+      "requires": ["UtilityCraft 3.6.2+"],
       "tags": ["Multiblock", "Industry", "End Game"]
     },
     "UtilityCraft-Digital-Storage": {

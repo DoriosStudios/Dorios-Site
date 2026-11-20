@@ -1,12 +1,9 @@
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
-import {utilitycraftSourcePath} from './wiki-source-paths.mjs';
+import {bridgeProjectsPath, utilitycraftSourcePath} from './wiki-source-paths.mjs';
 
 const siteRoot = path.resolve(import.meta.dirname, '..');
-const bridgeRoot = process.env.BRIDGE_PROJECTS_PATH ?? path.join(
-  os.homedir(), 'AppData', 'Local', 'com.bridge.dev', 'bridge', 'projects',
-);
+const bridgeRoot = bridgeProjectsPath();
 const projectRoot = path.join(siteRoot, 'src', 'wiki', 'projects');
 const catalog = JSON.parse(fs.readFileSync(path.join(siteRoot, 'src', 'data', 'projectCatalog.json'), 'utf8'));
 const outputPath = path.join(siteRoot, 'src', 'i18n', 'wikiNames.generated.json');

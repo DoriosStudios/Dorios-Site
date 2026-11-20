@@ -1,22 +1,24 @@
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
+import {projectSourcePath} from './wiki-source-paths.mjs';
 
 const siteRoot = path.resolve(import.meta.dirname, '..');
-const addonRoot = process.env.ASCENDANT_TECHNOLOGY_PROJECT_PATH ?? path.join(
-  os.homedir(), 'AppData', 'Local', 'com.bridge.dev', 'bridge', 'projects', 'Ascendant-Technology',
-);
-const sourceDirectory = path.join(addonRoot, 'RP', 'font', 'glyph_F5_icons');
+const addonRoot = projectSourcePath('Ascendant-Technology', 'ASCENDANT_TECHNOLOGY_PROJECT_PATH');
+const sourceDirectory = [
+  path.join(addonRoot, 'RP', 'textures', 'ui', 'at_icons'),
+  path.join(addonRoot, 'RP', 'font', 'glyph_F5_icons'),
+].find((directory) => fs.existsSync(directory));
 const destinationDirectory = path.join(siteRoot, 'static', 'img', 'addons', 'ascendant', 'resources', 'glyphs');
 const iconNames = [
+  'brew',
   'water', 'lava', 'steam', 'xp', 'cryofluid', 'liquified_aetherium', 'dark_matter', 'milk', 'blood', 'generic_fluid',
   'energy', 'pressure_meter', 'generic_speed', 'energy_upgrade', 'speed_upgrade', 'filter_upgrade',
   'quantity_upgrade', 'range_upgrade', 'stack_upgrade',
 ];
 
-if (!fs.existsSync(sourceDirectory)) {
+if (!sourceDirectory) {
   process.stdout.write(
-    `Ascendant Technology glyph source was not found at ${sourceDirectory}; preserving committed glyph icons.\n`,
+    `Ascendant Technology glyph source was not found in ${addonRoot}; preserving committed glyph icons.\n`,
   );
   process.exit(0);
 }

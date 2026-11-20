@@ -1,8 +1,7 @@
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import vm from 'node:vm';
-import {utilitycraftSourcePath} from './wiki-source-paths.mjs';
+import {projectSourcePath, utilitycraftSourcePath} from './wiki-source-paths.mjs';
 
 const originDefinitionsPath = path.join(path.resolve(import.meta.dirname, '..'), 'src', 'wiki', 'recipeOrigins.json');
 const recipeOrigins = JSON.parse(fs.readFileSync(originDefinitionsPath, 'utf8'));
@@ -41,12 +40,8 @@ function recipeOriginFor(origin) {
 const siteRoot = path.resolve(import.meta.dirname, '..');
 const projectRoots = {
   utilitycraft: utilitycraftSourcePath(),
-  'ascendant-technology': process.env.ASCENDANT_TECHNOLOGY_PROJECT_PATH ?? path.join(
-    os.homedir(), 'AppData', 'Local', 'com.bridge.dev', 'bridge', 'projects', 'Ascendant-Technology',
-  ),
-  'heavy-machinery': process.env.HEAVY_MACHINERY_PROJECT_PATH ?? process.env.HEAVY_MACHINERY_PROJECT ?? path.join(
-    os.homedir(), 'AppData', 'Local', 'com.bridge.dev', 'bridge', 'projects', 'UtilityCraft-Heavy-Machinery',
-  ),
+  'ascendant-technology': projectSourcePath('Ascendant-Technology', 'ASCENDANT_TECHNOLOGY_PROJECT_PATH'),
+  'heavy-machinery': projectSourcePath('UtilityCraft-Heavy-Machinery', 'HEAVY_MACHINERY_PROJECT_PATH', 'HEAVY_MACHINERY_PROJECT'),
 };
 
 const recipeRoots = {
@@ -150,6 +145,17 @@ function readLiteral(root, file, variable, context = {}) {
   const source = readSource(root, file);
   return vm.runInNewContext(`(${literalFor(source, variable)})`, {...context}, {
     filename: sourceFile(root, file),
+  });
+}
+
+// These source modules contain only declarative configuration and pure helpers.
+// Resolve their generated tables in isolation, without importing game APIs.
+function readConfiguration(root, file, exports, context = {}) {
+  const source = readSource(root, file)
+    .replace(/^import\s+[\s\S]*?;\s*/gm, '')
+    .replace(/\bexport\s+(?=(?:const|let|function)\b)/g, '');
+  return vm.runInNewContext(`${source}\n;({${exports.join(',')}});`, context, {
+    filename: sourceFile(root, file), timeout: 1000,
   });
 }
 
@@ -741,10 +747,79 @@ function sharedStationAliases(recipes) {
     })));
 }
 
+function alchemicalRecipes() {
+  const root = path.dirname(recipeRoots['ascendant-technology']);
+  const config = readConfiguration(root, 'alchemy.js', [
+    'ALCHEMY', 'POTION_FAMILIES', 'POTION_FORMS', 'CUSTOM_POTIONS', 'NATIVE_POTIONS', 'potionItemId', 'potionEffects', 'potionDescriptionEffects',
+  ]);
+  const {resolveBrew, resolvePotionUpgrade, BREWING_RECIPES} = readConfiguration(
+    path.join(projectRoots['ascendant-technology'], 'BP', 'scripts', 'ATCore', 'alchemy'),
+    'recipes.js', ['resolveBrew', 'resolvePotionUpgrade', 'BREWING_RECIPES'], config,
+  );
+  const families = new Map(config.POTION_FAMILIES.map((family) => [family.id, family]));
+  const signature = (p) => `${p.family}-${p.level}-${p.extent}-${p.form}-${p.duration ?? 'default'}`;
+  const states = new Map();
+  for (const p of [
+    ...Object.values(config.CUSTOM_POTIONS),
+    ...Object.values(config.NATIVE_POTIONS).flatMap((p) => config.POTION_FORMS.map((form) => ({...p, form}))),
+    ...['water', 'awkward', 'thick', 'mundane'].flatMap((family) => config.POTION_FORMS.map((form) => (
+      {family, level: 1, extent: 'normal', form}
+    ))),
+  ]) states.set(signature(p), p);
+
+  const stack = (p) => {
+    const family = families.get(p.family);
+    const native = !family || (family.native && p.extent !== 'maximum' && (
+      (p.level === 1 && (p.extent === 'normal' || family.nativeLong !== false))
+      || (p.extent === 'normal' && family.strong !== undefined && p.level === (family.strongLevel ?? 2) && p.duration === family.strong)
+    ) && (p.duration === undefined || p.duration === (
+      p.extent === 'long' ? family.long : p.level === (family.strongLevel ?? 2) ? family.strong : family.normal
+    )));
+    const seconds = config.potionDescriptionEffects(p)[0]?.duration;
+    return {
+      id: native ? {drink: 'minecraft:potion', splash: 'minecraft:splash_potion', lingering: 'minecraft:lingering_potion'}[p.form]
+        : config.potionItemId(p),
+      label: `${titleize(p.family)} ${p.level} · ${titleize(p.extent)} · ${titleize(p.form)}${seconds ? ` · ${seconds} s` : ''}`,
+    };
+  };
+  const recipes = [];
+  const ingredients = new Set(BREWING_RECIPES.map((recipe) => recipe.ingredient));
+  for (const p of states.values()) {
+    for (const ingredient of ingredients) {
+      const output = resolveBrew(p, ingredient);
+      if (!output) continue;
+      recipes.push(machineRecipe({
+        originId: 'ascendant-technology', station: 'alchemical_station', category: 'Alchemical brewing',
+        key: `brew-${signature(p)}-${ingredient}`, recipeKind: 'brewing',
+        inputs: [stack(p), {id: ingredient}], result: stack(output),
+        ...(ingredient === 'minecraft:dragon_breath' ? {byproducts: [{id: 'minecraft:glass_bottle'}]} : {}),
+        fluid: {type: 'blaze_essence', amount: config.ALCHEMY.blazePerBrew},
+        cost: config.ALCHEMY.brewEnergy, ticks: config.ALCHEMY.brewTicks,
+        note: 'One reagent processes up to six compatible bottles per batch. Costs are per batch; empty or incompatible slots are skipped. Dragon Breath returns one Glass Bottle per batch.',
+      }));
+    }
+    for (const operation of ['amplify', 'extend']) {
+      const output = resolvePotionUpgrade(p, operation);
+      if (!output) continue;
+      recipes.push(machineRecipe({
+        originId: 'ascendant-technology', station: 'alchemical_station', category: `Alchemical ${operation}`,
+        key: `${operation}-${signature(p)}`, recipeKind: 'potion-upgrade',
+        inputs: [stack(p)], result: stack(output),
+        fluid: {type: 'liquified_aetherium', amount: config.ALCHEMY[`${operation}Cost`]},
+        cost: config.ALCHEMY.upgradeEnergy, ticks: config.ALCHEMY.upgradeTicks,
+        note: operation === 'amplify'
+          ? 'Raises the level by one while preserving the exact duration and delivery form. Use the shared central potion slot and Amplify button.'
+          : 'Extends the duration while preserving the level and delivery form. Instant effects cannot be extended. Use the shared central potion slot and Extend button.',
+      }));
+    }
+  }
+  return recipes;
+}
+
 function ascendantSpecializedRecipes(baseInfuser, ascendantInfuser, heavyInfuser) {
   const root = recipeRoots['ascendant-technology'];
   const read = (file, variable, context) => readLiteral(root, file, variable, context);
-  const recipes = [];
+  const recipes = alchemicalRecipes();
 
   const catalystDefinitions = read('catalystWeaver.js', 'catalystWeaverRecipeDefinitions');
   for (const [id, definition] of Object.entries(catalystDefinitions)) {
@@ -854,14 +929,20 @@ function ascendantSpecializedRecipes(baseInfuser, ascendantInfuser, heavyInfuser
     }));
   }
 
-  const vaporworks = read('vaporworksProcessor.js', 'vaporworksRecipeDefinitions');
-  for (const [id, definition] of Object.entries(vaporworks)) {
+  const steamConfigRoot = path.dirname(root);
+  const vaporworks = readLiteral(steamConfigRoot, 'steamProcessing.js', 'VAPORIZER_RECIPES');
+  const boiler = readLiteral(steamConfigRoot, 'steamProcessing.js', 'STEAM_BOILER_RECIPE');
+  for (const [station, definitions] of [
+    ['steam_boiler', {[boiler.id]: boiler}],
+    ['vaporizer', vaporworks],
+    ['vaporworks_processor', vaporworks],
+  ]) for (const [id, definition] of Object.entries(definitions)) {
     if (!definition?.inputFluid?.type || !definition?.outputGas?.type) continue;
     const output = resourceStack('gas', definition.outputGas.type, definition.outputGas.amount);
     recipes.push(machineRecipe({
       originId: 'ascendant-technology',
-      station: 'vaporworks_processor',
-      category: 'Vaporworks Processor recipe',
+      station,
+      category: `${titleize(station)} recipe`,
       key: id,
       recipeKind: 'fluid-to-gas',
       result: output,
@@ -1159,27 +1240,8 @@ function compactorRecipes(root) {
 }
 
 function verdantCultivatorRecipes(root) {
-  const definitions = readLiteral(root, 'verdantCultivator.js', 'verdantCropDefinitions');
-  const utilityTiers = readLiteral(root, 'verdantCultivator.js', 'utilityTiers');
-  const utilityProduce = readLiteral(root, 'verdantCultivator.js', 'utilityProduce');
-  const cropNameOverrides = readLiteral(root, 'verdantCultivator.js', 'cropNameOverrides');
-  const biomeProfiles = readLiteral(root, 'verdantCultivator.js', 'biomeProfiles');
-  for (const tier of Object.values(utilityTiers)) {
-    for (const rawName of tier.seeds ?? []) {
-      const seedId = `utilitycraft:${rawName}_seeds`;
-      const biome = biomeProfiles[rawName];
-      definitions[seedId] = {
-        cropBlockId: `utilitycraft:${cropNameOverrides[rawName] ?? `${rawName}_crop`}`,
-        ageState: 'utilitycraft:age',
-        maxAge: 5,
-        validSoils: [tier.soil],
-        bonusExclusions: [seedId],
-        biomeTokens: biome?.tokens ?? [],
-        biomeTitle: biome?.title ?? null,
-        pickupItemIds: [seedId, ...(utilityProduce[seedId] ?? [])],
-      };
-    }
-  }
+  const {verdantCropDefinitions: definitions} = readConfiguration(root, 'verdantCultivator.js',
+    ['verdantCropDefinitions'], {registerVerdantCrops() {}});
 
   return Object.entries(definitions).flatMap(([inputId, definition]) => {
     const targets = (definition.pickupItemIds ?? []).filter(isConcreteIdentifier);
@@ -1248,8 +1310,33 @@ function abyssalFisherRecipes(root) {
 
 function heavySpecializedRecipes() {
   const root = recipeRoots['heavy-machinery'];
+  const chemical = readLiteral(root, 'chemicalProcessor.js', 'chemicalProcessorRecipes');
+  const chemicalRecipes = Object.entries(chemical).map(([key, definition]) => {
+    const [gas, liquid] = key.split('|');
+    const item = normalizedStack(definition.output_item);
+    const outputGas = definition.output_gas
+      ? resourceStack('gas', definition.output_gas.type, definition.output_gas.amount) : null;
+    return machineRecipe({
+      originId: 'heavy-machinery', station: 'chemical-processor', category: 'Chemical Processor recipe', key,
+      inputs: [resourceStack('gas', gas, definition.required_gas)],
+      fluid: {type: liquid, amount: definition.required_liquid},
+      result: item ?? outputGas, results: [item, outputGas].filter(Boolean),
+      ...(definition.output_gas ? {outputGas: definition.output_gas} : {}), cost: definition.cost,
+    });
+  });
+  const isotope = readLiteral(root, 'isotopeCentrifuge.js', 'isotopeCentrifugeRecipes');
+  const isotopeRecipes = Object.entries(isotope).map(([key, definition]) => {
+    const outputs = [definition.output1, definition.output2].filter(Boolean)
+      .map((output) => resourceStack('gas', output.type, output.amount));
+    return machineRecipe({
+      originId: 'heavy-machinery', station: 'isotope-centrifuge', category: 'Isotope Centrifuge recipe', key,
+      inputs: [resourceStack('gas', key, definition.required_gas)],
+      result: outputs[0], results: outputs, cost: definition.cost,
+      note: 'Both gas outputs require compatible storage space.',
+    });
+  });
   const definitions = readLiteral(root, 'reactionChamber.js', 'reactionRecipes');
-  return Object.entries(definitions ?? {}).flatMap(([key, definition]) => {
+  const reactionRecipes = Object.entries(definitions ?? {}).flatMap(([key, definition]) => {
     const [inputId, fluidType] = key.split('|');
     if (!isConcreteIdentifier(inputId) || !fluidType) return [];
     const outputItem = normalizedStack(definition.output_item);
@@ -1274,6 +1361,7 @@ function heavySpecializedRecipes() {
       cost: definition.cost,
     })];
   });
+  return [...reactionRecipes, ...chemicalRecipes, ...isotopeRecipes];
 }
 
 function sortRecipes(recipes) {

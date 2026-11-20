@@ -1,17 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-31T02:22:00.839704+00:00",
+  "generatedAt": "2026-11-20T00:11:16.607100+00:00",
   "project": {
     "id": "utilitycraft",
-    "name": "UtilityCraft"
+    "name": "UtilityCraft",
+    "version": "3.6.3"
+  },
+  "source": {
+    "bridgeProject": "UtilityCraft",
+    "revision": "d02253eab305",
+    "dirty": false
   },
   "counts": {
-    "items": 273,
-    "catalogItems": 263,
+    "items": 260,
+    "catalogItems": 256,
     "blocks": 510,
-    "entities": 115,
-    "recipes": 1443,
-    "variantGroups": 3
+    "entities": 113,
+    "recipes": 1431,
+    "variantGroups": 1
   },
   "content": {
     "items": [
@@ -376,15 +382,6 @@
         "source": "BP/items/materials/pebbles/blackstone_pebble.json"
       },
       {
-        "id": "blaze_block",
-        "slug": "blaze-block",
-        "identifier": "utilitycraft:blaze_block",
-        "name": "Blaze Core",
-        "category": "Blocks",
-        "image": null,
-        "source": "BP/items/blocks/blaze_block.json"
-      },
-      {
         "id": "blaze_essence",
         "slug": "blaze-essence",
         "identifier": "utilitycraft:blaze_essence",
@@ -475,15 +472,6 @@
         "source": "BP/items/materials/pebbles/calcite_pebble.json"
       },
       {
-        "id": "charcoal_block",
-        "slug": "charcoal-block",
-        "identifier": "utilitycraft:charcoal_block",
-        "name": "Charcoal Block",
-        "category": "Blocks",
-        "image": null,
-        "source": "BP/items/blocks/charcoal_block.json"
-      },
-      {
         "id": "charcoal_dust",
         "slug": "charcoal-dust",
         "identifier": "utilitycraft:charcoal_dust",
@@ -536,24 +524,6 @@
         "category": "Seeds",
         "image": "textures/items/seeds/coal_seeds.png",
         "source": "BP/items/seeds/tier_1/coal_seeds.json"
-      },
-      {
-        "id": "compressed_charcoal_block",
-        "slug": "compressed-charcoal-block",
-        "identifier": "utilitycraft:compressed_charcoal_block",
-        "name": "Compressed Charcoal Block",
-        "category": "Blocks",
-        "image": null,
-        "source": "BP/items/blocks/compressed_charcoal_block.json"
-      },
-      {
-        "id": "compressed_coal_block",
-        "slug": "compressed-coal-block",
-        "identifier": "utilitycraft:compressed_coal_block",
-        "name": "Compressed Coal Block",
-        "category": "Blocks",
-        "image": null,
-        "source": "BP/items/blocks/compressed_coal_block.json"
       },
       {
         "id": "copper_aiot",
@@ -851,24 +821,6 @@
         "category": "Materials",
         "image": "textures/items/pebbles/dirt_handful.png",
         "source": "BP/items/materials/pebbles/dirt_handful.json"
-      },
-      {
-        "id": "compressed_charcoal_block_2",
-        "slug": "compressed-charcoal-block-2",
-        "identifier": "utilitycraft:compressed_charcoal_block_2",
-        "name": "Double Compressed Charcoal Block",
-        "category": "Blocks",
-        "image": null,
-        "source": "BP/items/blocks/compressed_charcoal_block_2.json"
-      },
-      {
-        "id": "compressed_coal_block_2",
-        "slug": "compressed-coal-block-2",
-        "identifier": "utilitycraft:compressed_coal_block_2",
-        "name": "Double Compressed Coal Block",
-        "category": "Blocks",
-        "image": null,
-        "source": "BP/items/blocks/compressed_coal_block_2.json"
       },
       {
         "id": "drill",
@@ -1519,15 +1471,6 @@
         "source": "BP/items/seeds/tier_1/leather_seeds.json"
       },
       {
-        "id": "lingering_potion",
-        "slug": "lingering-potion",
-        "identifier": "minecraft:lingering_potion",
-        "name": "Lingering Potion",
-        "category": "Vanilla",
-        "image": null,
-        "source": "BP/items/vanilla/source/lingering_potion.json"
-      },
-      {
         "id": "xp_bucket",
         "slug": "xp-bucket",
         "identifier": "utilitycraft:xp_bucket",
@@ -1789,15 +1732,6 @@
         "source": "BP/items/materials/essences/piglin_essence.json"
       },
       {
-        "id": "potion",
-        "slug": "potion",
-        "identifier": "minecraft:potion",
-        "name": "Potion",
-        "category": "Vanilla",
-        "image": null,
-        "source": "BP/items/vanilla/source/potion.json"
-      },
-      {
         "id": "prismarine_crystals_seeds",
         "slug": "prismarine-crystals-seeds",
         "identifier": "utilitycraft:prismarine_crystals_seeds",
@@ -1814,24 +1748,6 @@
         "category": "Seeds",
         "image": "textures/items/seeds/prismarine_shards_seeds.png",
         "source": "BP/items/seeds/tier_1/prismarine_shards_seeds.json"
-      },
-      {
-        "id": "compressed_charcoal_block_4",
-        "slug": "compressed-charcoal-block-4",
-        "identifier": "utilitycraft:compressed_charcoal_block_4",
-        "name": "Quadruple Compressed Charcoal Block",
-        "category": "Blocks",
-        "image": null,
-        "source": "BP/items/blocks/compressed_charcoal_block_4.json"
-      },
-      {
-        "id": "compressed_coal_block_4",
-        "slug": "compressed-coal-block-4",
-        "identifier": "utilitycraft:compressed_coal_block_4",
-        "name": "Quadruple Compressed Coal Block",
-        "category": "Blocks",
-        "image": null,
-        "source": "BP/items/blocks/compressed_coal_block_4.json"
       },
       {
         "id": "quantity_upgrade",
@@ -2059,15 +1975,6 @@
         "source": "BP/items/materials/essences/spider_essence.json"
       },
       {
-        "id": "splash_potion",
-        "slug": "splash-potion",
-        "identifier": "minecraft:splash_potion",
-        "name": "Splash Potion",
-        "category": "Vanilla",
-        "image": null,
-        "source": "BP/items/vanilla/source/splash_potion.json"
-      },
-      {
         "id": "spool_of_strings",
         "slug": "spool-of-strings",
         "identifier": "utilitycraft:spool_of_strings",
@@ -2273,24 +2180,6 @@
         "category": "Materials",
         "image": "textures/items/pebbles/totem_shard.png",
         "source": "BP/items/materials/pebbles/totem_shard.json"
-      },
-      {
-        "id": "compressed_charcoal_block_3",
-        "slug": "compressed-charcoal-block-3",
-        "identifier": "utilitycraft:compressed_charcoal_block_3",
-        "name": "Triple Compressed Charcoal Block",
-        "category": "Blocks",
-        "image": null,
-        "source": "BP/items/blocks/compressed_charcoal_block_3.json"
-      },
-      {
-        "id": "compressed_coal_block_3",
-        "slug": "compressed-coal-block-3",
-        "identifier": "utilitycraft:compressed_coal_block_3",
-        "name": "Triple Compressed Coal Block",
-        "category": "Blocks",
-        "image": null,
-        "source": "BP/items/blocks/compressed_coal_block_3.json"
       },
       {
         "id": "tuff_pebble",
@@ -13614,7 +13503,7 @@
         "id": "primitive_forge",
         "slug": "primitive-forge",
         "identifier": "utilitycraft:primitive_forge",
-        "name": "Primitive Forge",
+        "name": "Primitive Forge Bricks",
         "category": "General",
         "render": null,
         "itemImage": null,
@@ -13627,6 +13516,7 @@
           "minecraft:destructible_by_explosion",
           "minecraft:destructible_by_mining",
           "minecraft:geometry",
+          "minecraft:item_visual",
           "minecraft:material_instances",
           "minecraft:movable",
           "minecraft:tick",
@@ -19651,15 +19541,6 @@
         "source": "BP/entities/machines/machine.json"
       },
       {
-        "id": "machine_area_outline",
-        "slug": "machine-area-outline",
-        "identifier": "utilitycraft:machine_area_outline",
-        "name": "Machine Area Outline",
-        "category": "Machines",
-        "image": "textures/entity/pedestal_area_outline.png",
-        "source": "BP/entities/machines/machine_area_outline.json"
-      },
-      {
         "id": "machine_entity",
         "slug": "machine-entity",
         "identifier": "utilitycraft:machine_entity",
@@ -19930,15 +19811,6 @@
         "source": "BP/entities/bonsais/pale_oak_tree.json"
       },
       {
-        "id": "pedestal_area_outline",
-        "slug": "pedestal-area-outline",
-        "identifier": "utilitycraft:pedestal_area_outline",
-        "name": "Pedestal Area Outline",
-        "category": "General",
-        "image": "textures/entity/pedestal_area_outline.png",
-        "source": "BP/entities/pedestal_area_outline.json"
-      },
-      {
         "id": "pipe",
         "slug": "pipe",
         "identifier": "utilitycraft:pipe",
@@ -19960,7 +19832,7 @@
         "id": "primitive_forge",
         "slug": "primitive-forge",
         "identifier": "utilitycraft:primitive_forge",
-        "name": "Primitive Forge",
+        "name": "Primitive Forge Bricks",
         "category": "Machines",
         "image": null,
         "source": "BP/entities/machines/primitive_forge.json"
@@ -23943,7 +23815,7 @@
           null,
           null,
           {
-            "id": "log",
+            "id": "minecraft:logs",
             "count": 1
           },
           null
@@ -24848,7 +24720,7 @@
             "count": 1
           },
           {
-            "id": "log",
+            "id": "minecraft:logs_that_burn",
             "count": 1
           },
           null,
@@ -24865,32 +24737,6 @@
           "count": 1
         },
         "source": "BP/recipes/useful/smelt_flare/smelt_log.json"
-      },
-      {
-        "id": "charcoal_to_black_dye",
-        "identifier": "utilitycraft:charcoal_to_black_dye",
-        "kind": "shapeless",
-        "station": "crafting_table",
-        "slots": [
-          {
-            "id": "minecraft:charcoal",
-            "count": 1
-          },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "slotCount": 1,
-        "result": {
-          "id": "minecraft:black_dye",
-          "count": 1
-        },
-        "source": "BP/recipes/useful/black_dye_from_charcoal.json"
       },
       {
         "id": "chemical_converter",
@@ -25360,7 +25206,7 @@
         "station": "crafting_table",
         "slots": [
           {
-            "id": "minecraft:coal",
+            "id": "minecraft:coals",
             "count": 1
           },
           null,
@@ -47706,7 +47552,7 @@
             "count": 1
           },
           {
-            "id": "minecraft:log",
+            "id": "minecraft:logs",
             "count": 1
           },
           {
@@ -47718,7 +47564,7 @@
             "count": 1
           },
           {
-            "id": "minecraft:log",
+            "id": "minecraft:logs",
             "count": 1
           },
           {
@@ -50923,36 +50769,36 @@
         "station": "crafting_table",
         "slots": [
           {
-            "id": "log",
+            "id": "minecraft:logs",
             "count": 1
           },
           {
-            "id": "log",
+            "id": "minecraft:logs",
             "count": 1
           },
           {
-            "id": "log",
+            "id": "minecraft:logs",
             "count": 1
           },
           {
-            "id": "log",
+            "id": "minecraft:logs",
             "count": 1
           },
           null,
           {
-            "id": "log",
+            "id": "minecraft:logs",
             "count": 1
           },
           {
-            "id": "log",
+            "id": "minecraft:logs",
             "count": 1
           },
           {
-            "id": "log",
+            "id": "minecraft:logs",
             "count": 1
           },
           {
-            "id": "log",
+            "id": "minecraft:logs",
             "count": 1
           }
         ],
@@ -50964,254 +50810,19 @@
         "source": "BP/recipes/useful/logs_to_chests/logs_to_chests_1.json"
       },
       {
-        "id": "logs_to_chests_2",
-        "identifier": "utilitycraft:logs_to_chests_2",
-        "kind": "shaped",
-        "station": "crafting_table",
-        "slots": [
-          {
-            "id": "log2",
-            "count": 1
-          },
-          {
-            "id": "log2",
-            "count": 1
-          },
-          {
-            "id": "log2",
-            "count": 1
-          },
-          {
-            "id": "log2",
-            "count": 1
-          },
-          null,
-          {
-            "id": "log2",
-            "count": 1
-          },
-          {
-            "id": "log2",
-            "count": 1
-          },
-          {
-            "id": "log2",
-            "count": 1
-          },
-          {
-            "id": "log2",
-            "count": 1
-          }
-        ],
-        "slotCount": 8,
-        "result": {
-          "id": "chest",
-          "count": 4
-        },
-        "source": "BP/recipes/useful/logs_to_chests/logs_to_chests_2.json"
-      },
-      {
-        "id": "logs_to_chests_cherry",
-        "identifier": "utilitycraft:logs_to_chests_cherry",
-        "kind": "shaped",
-        "station": "crafting_table",
-        "slots": [
-          {
-            "id": "cherry_log",
-            "count": 1
-          },
-          {
-            "id": "cherry_log",
-            "count": 1
-          },
-          {
-            "id": "cherry_log",
-            "count": 1
-          },
-          {
-            "id": "cherry_log",
-            "count": 1
-          },
-          null,
-          {
-            "id": "cherry_log",
-            "count": 1
-          },
-          {
-            "id": "cherry_log",
-            "count": 1
-          },
-          {
-            "id": "cherry_log",
-            "count": 1
-          },
-          {
-            "id": "cherry_log",
-            "count": 1
-          }
-        ],
-        "slotCount": 8,
-        "result": {
-          "id": "chest",
-          "count": 4
-        },
-        "source": "BP/recipes/useful/logs_to_chests/logs_to_chests_cherry.json"
-      },
-      {
-        "id": "logs_to_chests_crimson",
-        "identifier": "utilitycraft:logs_to_chests_crimson",
-        "kind": "shaped",
-        "station": "crafting_table",
-        "slots": [
-          {
-            "id": "crimson_stem",
-            "count": 1
-          },
-          {
-            "id": "crimson_stem",
-            "count": 1
-          },
-          {
-            "id": "crimson_stem",
-            "count": 1
-          },
-          {
-            "id": "crimson_stem",
-            "count": 1
-          },
-          null,
-          {
-            "id": "crimson_stem",
-            "count": 1
-          },
-          {
-            "id": "crimson_stem",
-            "count": 1
-          },
-          {
-            "id": "crimson_stem",
-            "count": 1
-          },
-          {
-            "id": "crimson_stem",
-            "count": 1
-          }
-        ],
-        "slotCount": 8,
-        "result": {
-          "id": "chest",
-          "count": 4
-        },
-        "source": "BP/recipes/useful/logs_to_chests/logs_to_chests_crimson.json"
-      },
-      {
-        "id": "logs_to_chests_mangrove",
-        "identifier": "utilitycraft:logs_to_chests_mangrove",
-        "kind": "shaped",
-        "station": "crafting_table",
-        "slots": [
-          {
-            "id": "mangrove_log",
-            "count": 1
-          },
-          {
-            "id": "mangrove_log",
-            "count": 1
-          },
-          {
-            "id": "mangrove_log",
-            "count": 1
-          },
-          {
-            "id": "mangrove_log",
-            "count": 1
-          },
-          null,
-          {
-            "id": "mangrove_log",
-            "count": 1
-          },
-          {
-            "id": "mangrove_log",
-            "count": 1
-          },
-          {
-            "id": "mangrove_log",
-            "count": 1
-          },
-          {
-            "id": "mangrove_log",
-            "count": 1
-          }
-        ],
-        "slotCount": 8,
-        "result": {
-          "id": "chest",
-          "count": 4
-        },
-        "source": "BP/recipes/useful/logs_to_chests/logs_to_chests_mangrove.json"
-      },
-      {
-        "id": "logs_to_chests_warped",
-        "identifier": "utilitycraft:logs_to_chests_warped",
-        "kind": "shaped",
-        "station": "crafting_table",
-        "slots": [
-          {
-            "id": "warped_stem",
-            "count": 1
-          },
-          {
-            "id": "warped_stem",
-            "count": 1
-          },
-          {
-            "id": "warped_stem",
-            "count": 1
-          },
-          {
-            "id": "warped_stem",
-            "count": 1
-          },
-          null,
-          {
-            "id": "warped_stem",
-            "count": 1
-          },
-          {
-            "id": "warped_stem",
-            "count": 1
-          },
-          {
-            "id": "warped_stem",
-            "count": 1
-          },
-          {
-            "id": "warped_stem",
-            "count": 1
-          }
-        ],
-        "slotCount": 8,
-        "result": {
-          "id": "chest",
-          "count": 4
-        },
-        "source": "BP/recipes/useful/logs_to_chests/logs_to_chests_warped.json"
-      },
-      {
         "id": "logs_to_sticks_1",
         "identifier": "utilitycraft:logs_to_sticks_1",
         "kind": "shaped",
         "station": "crafting_table",
         "slots": [
           {
-            "id": "log",
+            "id": "minecraft:logs",
             "count": 1
           },
           null,
           null,
           {
-            "id": "log",
+            "id": "minecraft:logs",
             "count": 1
           },
           null,
@@ -51226,151 +50837,6 @@
           "count": 16
         },
         "source": "BP/recipes/useful/logs_to_sticks/logs_to_sticks_1.json"
-      },
-      {
-        "id": "logs_to_sticks_2",
-        "identifier": "utilitycraft:logs_to_sticks_2",
-        "kind": "shaped",
-        "station": "crafting_table",
-        "slots": [
-          {
-            "id": "log2",
-            "count": 1
-          },
-          null,
-          null,
-          {
-            "id": "log2",
-            "count": 1
-          },
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "slotCount": 2,
-        "result": {
-          "id": "stick",
-          "count": 16
-        },
-        "source": "BP/recipes/useful/logs_to_sticks/logs_to_sticks_2.json"
-      },
-      {
-        "id": "logs_to_sticks_cherry",
-        "identifier": "utilitycraft:logs_to_sticks_cherry",
-        "kind": "shaped",
-        "station": "crafting_table",
-        "slots": [
-          {
-            "id": "cherry_log",
-            "count": 1
-          },
-          null,
-          null,
-          {
-            "id": "cherry_log",
-            "count": 1
-          },
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "slotCount": 2,
-        "result": {
-          "id": "stick",
-          "count": 16
-        },
-        "source": "BP/recipes/useful/logs_to_sticks/logs_to_sticks_cherry.json"
-      },
-      {
-        "id": "logs_to_sticks_crimson",
-        "identifier": "utilitycraft:logs_to_sticks_crimson",
-        "kind": "shaped",
-        "station": "crafting_table",
-        "slots": [
-          {
-            "id": "crimson_stem",
-            "count": 1
-          },
-          null,
-          null,
-          {
-            "id": "crimson_stem",
-            "count": 1
-          },
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "slotCount": 2,
-        "result": {
-          "id": "stick",
-          "count": 16
-        },
-        "source": "BP/recipes/useful/logs_to_sticks/logs_to_sticks_crimson.json"
-      },
-      {
-        "id": "logs_to_sticks_mangrove",
-        "identifier": "utilitycraft:logs_to_sticks_mangrove",
-        "kind": "shaped",
-        "station": "crafting_table",
-        "slots": [
-          {
-            "id": "mangrove_log",
-            "count": 1
-          },
-          null,
-          null,
-          {
-            "id": "mangrove_log",
-            "count": 1
-          },
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "slotCount": 2,
-        "result": {
-          "id": "stick",
-          "count": 16
-        },
-        "source": "BP/recipes/useful/logs_to_sticks/logs_to_sticks_mangrove.json"
-      },
-      {
-        "id": "logs_to_sticks_warped",
-        "identifier": "utilitycraft:logs_to_sticks_warped",
-        "kind": "shaped",
-        "station": "crafting_table",
-        "slots": [
-          {
-            "id": "warped_stem",
-            "count": 1
-          },
-          null,
-          null,
-          {
-            "id": "warped_stem",
-            "count": 1
-          },
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "slotCount": 2,
-        "result": {
-          "id": "stick",
-          "count": 16
-        },
-        "source": "BP/recipes/useful/logs_to_sticks/logs_to_sticks_warped.json"
       },
       {
         "id": "lucky_fishing_rod",
@@ -60713,24 +60179,24 @@
         "station": "crafting_table",
         "slots": [
           {
-            "id": "planks",
+            "id": "minecraft:planks",
             "count": 1
           },
           null,
           {
-            "id": "planks",
+            "id": "minecraft:planks",
             "count": 1
           },
           {
-            "id": "planks",
+            "id": "minecraft:planks",
             "count": 1
           },
           {
-            "id": "wooden_slab",
+            "id": "minecraft:wooden_slabs",
             "count": 1
           },
           {
-            "id": "planks",
+            "id": "minecraft:planks",
             "count": 1
           },
           {
@@ -60859,7 +60325,7 @@
             "count": 1
           },
           {
-            "id": "planks",
+            "id": "minecraft:planks",
             "count": 1
           },
           {
@@ -60867,7 +60333,7 @@
             "count": 1
           },
           {
-            "id": "planks",
+            "id": "minecraft:planks",
             "count": 1
           }
         ],
@@ -60909,7 +60375,7 @@
             "count": 1
           },
           {
-            "id": "planks",
+            "id": "minecraft:planks",
             "count": 1
           },
           {
@@ -60917,7 +60383,7 @@
             "count": 1
           },
           {
-            "id": "planks",
+            "id": "minecraft:planks",
             "count": 1
           }
         ],
@@ -61131,7 +60597,7 @@
             "count": 2
           },
           {
-            "id": "minecraft:coal",
+            "id": "minecraft:coals",
             "count": 1
           },
           {
@@ -61151,38 +60617,6 @@
           "count": 8
         },
         "source": "BP/recipes/items/utility_items/smeltflare.json"
-      },
-      {
-        "id": "smeltflare2",
-        "identifier": "utilitycraft:smeltflare2",
-        "kind": "shapeless",
-        "station": "crafting_table",
-        "slots": [
-          {
-            "id": "minecraft:paper",
-            "count": 2
-          },
-          {
-            "id": "minecraft:charcoal",
-            "count": 1
-          },
-          {
-            "id": "flint",
-            "count": 1
-          },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "slotCount": 3,
-        "result": {
-          "id": "utilitycraft:smeltflare",
-          "count": 8
-        },
-        "source": "BP/recipes/items/utility_items/smeltflare2.json"
       },
       {
         "id": "smelting_pickaxe",
@@ -62086,7 +61520,7 @@
         "station": "crafting_table",
         "slots": [
           {
-            "id": "minecraft:cobblestone",
+            "id": "minecraft:stone_tool_materials",
             "count": 1
           },
           {
@@ -62094,7 +61528,7 @@
             "count": 1
           },
           {
-            "id": "minecraft:cobblestone",
+            "id": "minecraft:stone_tool_materials",
             "count": 1
           },
           {
@@ -62118,7 +61552,7 @@
             "count": 1
           },
           {
-            "id": "minecraft:cobblestone",
+            "id": "minecraft:stone_tool_materials",
             "count": 1
           }
         ],
@@ -62136,7 +61570,7 @@
         "station": "crafting_table",
         "slots": [
           {
-            "id": "minecraft:cobblestone",
+            "id": "minecraft:stone_tool_materials",
             "count": 1
           },
           {
@@ -62144,11 +61578,11 @@
             "count": 1
           },
           {
-            "id": "minecraft:cobblestone",
+            "id": "minecraft:stone_tool_materials",
             "count": 1
           },
           {
-            "id": "minecraft:cobblestone",
+            "id": "minecraft:stone_tool_materials",
             "count": 1
           },
           {
@@ -62156,7 +61590,7 @@
             "count": 1
           },
           {
-            "id": "minecraft:cobblestone",
+            "id": "minecraft:stone_tool_materials",
             "count": 1
           },
           null,
@@ -63902,19 +63336,19 @@
         "station": "crafting_table",
         "slots": [
           {
-            "id": "planks",
+            "id": "minecraft:planks",
             "count": 1
           },
           {
-            "id": "log",
+            "id": "minecraft:logs",
             "count": 1
           },
           {
-            "id": "planks",
+            "id": "minecraft:planks",
             "count": 1
           },
           {
-            "id": "planks",
+            "id": "minecraft:planks",
             "count": 1
           },
           {
@@ -63922,7 +63356,7 @@
             "count": 1
           },
           {
-            "id": "planks",
+            "id": "minecraft:planks",
             "count": 1
           },
           null,
@@ -63946,19 +63380,19 @@
         "station": "crafting_table",
         "slots": [
           {
-            "id": "wool",
+            "id": "minecraft:wool",
             "count": 1
           },
           {
-            "id": "wool",
+            "id": "minecraft:wool",
             "count": 1
           },
           {
-            "id": "wool",
+            "id": "minecraft:wool",
             "count": 1
           },
           {
-            "id": "wool",
+            "id": "minecraft:wool",
             "count": 1
           },
           {
@@ -63966,19 +63400,19 @@
             "count": 1
           },
           {
-            "id": "wool",
+            "id": "minecraft:wool",
             "count": 1
           },
           {
-            "id": "wool",
+            "id": "minecraft:wool",
             "count": 1
           },
           {
-            "id": "wool",
+            "id": "minecraft:wool",
             "count": 1
           },
           {
-            "id": "wool",
+            "id": "minecraft:wool",
             "count": 1
           }
         ],
@@ -64732,15 +64166,6 @@
         "source": "BP/items/materials/pebbles/blackstone_pebble.json"
       },
       {
-        "id": "blaze_block",
-        "slug": "blaze-block",
-        "identifier": "utilitycraft:blaze_block",
-        "name": "Blaze Core",
-        "category": "Blocks",
-        "image": null,
-        "source": "BP/items/blocks/blaze_block.json"
-      },
-      {
         "id": "blaze_essence",
         "slug": "blaze-essence",
         "identifier": "utilitycraft:blaze_essence",
@@ -64829,15 +64254,6 @@
         "category": "Materials",
         "image": "textures/items/pebbles/calcite_pebble.png",
         "source": "BP/items/materials/pebbles/calcite_pebble.json"
-      },
-      {
-        "id": "charcoal_block",
-        "slug": "charcoal-block",
-        "identifier": "utilitycraft:charcoal_block",
-        "name": "Charcoal Block",
-        "category": "Blocks",
-        "image": null,
-        "source": "BP/items/blocks/charcoal_block.json"
       },
       {
         "id": "charcoal_dust",
@@ -64929,84 +64345,6 @@
         "category": "Seeds",
         "image": "textures/items/seeds/coal_seeds.png",
         "source": "BP/items/seeds/tier_1/coal_seeds.json"
-      },
-      {
-        "id": "compressed_charcoal_block",
-        "slug": "compressed-charcoal-block",
-        "identifier": "utilitycraft:compressed_charcoal_block",
-        "name": "Compressed Charcoal Block",
-        "category": "Blocks",
-        "image": null,
-        "source": "BP/items/blocks/compressed_charcoal_block.json",
-        "variants": [
-          {
-            "id": "compressed_charcoal_block",
-            "identifier": "utilitycraft:compressed_charcoal_block",
-            "name": "Compressed Charcoal Block",
-            "tier": "1",
-            "image": null
-          },
-          {
-            "id": "compressed_charcoal_block_2",
-            "identifier": "utilitycraft:compressed_charcoal_block_2",
-            "name": "Double Compressed Charcoal Block",
-            "tier": "2",
-            "image": null
-          },
-          {
-            "id": "compressed_charcoal_block_3",
-            "identifier": "utilitycraft:compressed_charcoal_block_3",
-            "name": "Triple Compressed Charcoal Block",
-            "tier": "3",
-            "image": null
-          },
-          {
-            "id": "compressed_charcoal_block_4",
-            "identifier": "utilitycraft:compressed_charcoal_block_4",
-            "name": "Quadruple Compressed Charcoal Block",
-            "tier": "4",
-            "image": null
-          }
-        ]
-      },
-      {
-        "id": "compressed_coal_block",
-        "slug": "compressed-coal-block",
-        "identifier": "utilitycraft:compressed_coal_block",
-        "name": "Compressed Coal Block",
-        "category": "Blocks",
-        "image": null,
-        "source": "BP/items/blocks/compressed_coal_block.json",
-        "variants": [
-          {
-            "id": "compressed_coal_block",
-            "identifier": "utilitycraft:compressed_coal_block",
-            "name": "Compressed Coal Block",
-            "tier": "1",
-            "image": null
-          },
-          {
-            "id": "compressed_coal_block_2",
-            "identifier": "utilitycraft:compressed_coal_block_2",
-            "name": "Double Compressed Coal Block",
-            "tier": "2",
-            "image": null
-          },
-          {
-            "id": "compressed_coal_block_3",
-            "identifier": "utilitycraft:compressed_coal_block_3",
-            "name": "Triple Compressed Coal Block",
-            "tier": "3",
-            "image": null
-          },
-          {
-            "id": "compressed_coal_block_4",
-            "identifier": "utilitycraft:compressed_coal_block_4",
-            "name": "Quadruple Compressed Coal Block",
-            "tier": "4",
-            "image": null
-          }
-        ]
       },
       {
         "id": "copper_aiot",
@@ -65945,15 +65283,6 @@
         "source": "BP/items/seeds/tier_1/leather_seeds.json"
       },
       {
-        "id": "lingering_potion",
-        "slug": "lingering-potion",
-        "identifier": "minecraft:lingering_potion",
-        "name": "Lingering Potion",
-        "category": "Vanilla",
-        "image": null,
-        "source": "BP/items/vanilla/source/lingering_potion.json"
-      },
-      {
         "id": "xp_bucket",
         "slug": "xp-bucket",
         "identifier": "utilitycraft:xp_bucket",
@@ -66215,15 +65544,6 @@
         "source": "BP/items/materials/essences/piglin_essence.json"
       },
       {
-        "id": "potion",
-        "slug": "potion",
-        "identifier": "minecraft:potion",
-        "name": "Potion",
-        "category": "Vanilla",
-        "image": null,
-        "source": "BP/items/vanilla/source/potion.json"
-      },
-      {
         "id": "prismarine_crystals_seeds",
         "slug": "prismarine-crystals-seeds",
         "identifier": "utilitycraft:prismarine_crystals_seeds",
@@ -66465,15 +65785,6 @@
         "category": "Materials",
         "image": "textures/items/essences/spider_essence.png",
         "source": "BP/items/materials/essences/spider_essence.json"
-      },
-      {
-        "id": "splash_potion",
-        "slug": "splash-potion",
-        "identifier": "minecraft:splash_potion",
-        "name": "Splash Potion",
-        "category": "Vanilla",
-        "image": null,
-        "source": "BP/items/vanilla/source/splash_potion.json"
       },
       {
         "id": "spool_of_strings",
@@ -66896,79 +66207,6 @@
           "image": "textures/items/machinery/ultimate_chip.png"
         }
       ]
-    },
-    {
-      "id": "compressed_charcoal_block",
-      "identifier": "utilitycraft:compressed_charcoal_block",
-      "variants": [
-        {
-          "id": "compressed_charcoal_block",
-          "identifier": "utilitycraft:compressed_charcoal_block",
-          "name": "Compressed Charcoal Block",
-          "tier": "1",
-          "image": null
-        },
-        {
-          "id": "compressed_charcoal_block_2",
-          "identifier": "utilitycraft:compressed_charcoal_block_2",
-          "name": "Double Compressed Charcoal Block",
-          "tier": "2",
-          "image": null
-        },
-        {
-          "id": "compressed_charcoal_block_3",
-          "identifier": "utilitycraft:compressed_charcoal_block_3",
-          "name": "Triple Compressed Charcoal Block",
-          "tier": "3",
-          "image": null
-        },
-        {
-          "id": "compressed_charcoal_block_4",
-          "identifier": "utilitycraft:compressed_charcoal_block_4",
-          "name": "Quadruple Compressed Charcoal Block",
-          "tier": "4",
-          "image": null
-        }
-      ]
-    },
-    {
-      "id": "compressed_coal_block",
-      "identifier": "utilitycraft:compressed_coal_block",
-      "variants": [
-        {
-          "id": "compressed_coal_block",
-          "identifier": "utilitycraft:compressed_coal_block",
-          "name": "Compressed Coal Block",
-          "tier": "1",
-          "image": null
-        },
-        {
-          "id": "compressed_coal_block_2",
-          "identifier": "utilitycraft:compressed_coal_block_2",
-          "name": "Double Compressed Coal Block",
-          "tier": "2",
-          "image": null
-        },
-        {
-          "id": "compressed_coal_block_3",
-          "identifier": "utilitycraft:compressed_coal_block_3",
-          "name": "Triple Compressed Coal Block",
-          "tier": "3",
-          "image": null
-        },
-        {
-          "id": "compressed_coal_block_4",
-          "identifier": "utilitycraft:compressed_coal_block_4",
-          "name": "Quadruple Compressed Coal Block",
-          "tier": "4",
-          "image": null
-        }
-      ]
     }
-  ],
-  "source": {
-    "repository": "https://github.com/DoriosStudios/UtilityCraft",
-    "revision": "3d888eada613",
-    "version": "3.6.2"
-  }
+  ]
 }

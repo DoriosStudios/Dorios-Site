@@ -1,9 +1,15 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-11T17:30:39.270906+00:00",
+  "generatedAt": "2026-11-20T00:11:29.358414+00:00",
   "project": {
     "id": "smelters",
-    "name": "Better Smelters"
+    "name": "Better Smelters",
+    "version": "1.5.4"
+  },
+  "source": {
+    "bridgeProject": "Better-Smelters",
+    "revision": "87b41fbf9e55",
+    "dirty": false
   },
   "counts": {
     "items": 61,

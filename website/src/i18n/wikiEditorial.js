@@ -1,5 +1,6 @@
 module.exports = {
   ...require('./wikiPrimitiveForge'),
+  ...require('./wikiProjectUpdates'),
   'Hydrogen Gas': ['Gás Hidrogênio', 'Gas Hidrógeno'],
   'Oxygen Gas': ['Gás Oxigênio', 'Gas Oxígeno'],
   'Methane Gas': ['Gás Metano', 'Gas Metano'],

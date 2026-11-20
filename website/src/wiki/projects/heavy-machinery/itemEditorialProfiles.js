@@ -55,9 +55,9 @@ const itemEditorialProfiles = {
 
 for (const piece of ['helmet', 'chestplate', 'leggings', 'boots']) {
   itemEditorialProfiles[`utilitycraft:utility_exo_${piece}`] = profile(
-    `The Utility Exo ${piece[0].toUpperCase() + piece.slice(1)} is part of the extremely durable Utility Exo equipment set. The current item provides wearable durability and damage-absorption behavior; no extra scripted ability is claimed until one is implemented.`,
+    `The Utility Exo ${piece[0].toUpperCase() + piece.slice(1)} stores up to 1,000,000,000 DE. The powered set absorbs 95% of eligible incoming damage across its four pieces, spending 100,000 DE per absorbed damage point. Powered boots also cancel fall damage. Recharge it in the Reinforced Induction Anvil.`,
     'Utility Exo armor',
-    [['Maximum stack', '1'], ['Durability', '10,000'], ['Current behavior', 'Wearable equipment and damage absorption']],
+    [['Maximum stack', '1'], ['Durability', '10,200'], ['Energy capacity', '1,000,000,000 DE'], ['Absorption share', {helmet: '12.5%', chestplate: '40%', leggings: '30%', boots: '12.5%'}[piece]], ['Recharge', 'Reinforced Induction Anvil']],
   );
   itemEditorialProfiles[`utilitycraft:hazmat_${piece}`] = profile(
     `The Hazmat ${piece[0].toUpperCase() + piece.slice(1)} is repairable protective equipment tagged for shared hazard-system integration.`,

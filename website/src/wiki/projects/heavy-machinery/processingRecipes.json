@@ -472,6 +472,142 @@
     "output": "utilitycraft:fluorite_crystal (1.5%)"
   },
   {
+    "id": "heavy-machinery-chemical-processor-enriched-uranium-hexafluoride-gas-water",
+    "identifier": "heavy-machinery:process/chemical-processor/enriched-uranium-hexafluoride-gas-water",
+    "type": "machine",
+    "station": "chemical-processor",
+    "category": "Chemical Processor recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "gas:enriched_uranium_hexafluoride_gas",
+        "count": 250,
+        "label": "Enriched Uranium Hexafluoride Gas",
+        "unit": "mB",
+        "resourceType": "gas",
+        "resourceId": "enriched_uranium_hexafluoride_gas"
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "gas:enriched_uranium_hexafluoride_gas",
+        "count": 250,
+        "label": "Enriched Uranium Hexafluoride Gas",
+        "unit": "mB",
+        "resourceType": "gas",
+        "resourceId": "enriched_uranium_hexafluoride_gas"
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:enriched_uranium_oxide",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:enriched_uranium_oxide",
+        "count": 1
+      },
+      {
+        "id": "gas:hydrogen_fluoride_gas",
+        "count": 800,
+        "label": "Hydrogen Fluoride Gas",
+        "unit": "mB",
+        "resourceType": "gas",
+        "resourceId": "hydrogen_fluoride_gas"
+      }
+    ],
+    "fluid": {
+      "type": "water",
+      "amount": 1000
+    },
+    "outputGas": {
+      "type": "hydrogen_fluoride_gas",
+      "amount": 800
+    },
+    "cost": 256000,
+    "energyCost": 256000,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "250× Enriched Uranium Hexafluoride Gas",
+    "output": "utilitycraft:enriched_uranium_oxide + 800× Hydrogen Fluoride Gas"
+  },
+  {
+    "id": "heavy-machinery-chemical-processor-nuclear-waste-gas-water",
+    "identifier": "heavy-machinery:process/chemical-processor/nuclear-waste-gas-water",
+    "type": "machine",
+    "station": "chemical-processor",
+    "category": "Chemical Processor recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "gas:nuclear_waste_gas",
+        "count": 1000,
+        "label": "Nuclear Waste Gas",
+        "unit": "mB",
+        "resourceType": "gas",
+        "resourceId": "nuclear_waste_gas"
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "gas:nuclear_waste_gas",
+        "count": 1000,
+        "label": "Nuclear Waste Gas",
+        "unit": "mB",
+        "resourceType": "gas",
+        "resourceId": "nuclear_waste_gas"
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:spent_uranium_pellet",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:spent_uranium_pellet",
+        "count": 1
+      }
+    ],
+    "fluid": {
+      "type": "water",
+      "amount": 1000
+    },
+    "cost": 32000000,
+    "energyCost": 32000000,
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "1000× Nuclear Waste Gas",
+    "output": "utilitycraft:spent_uranium_pellet"
+  },
+  {
     "id": "heavy-machinery-crafter-0-0-utilitycraft-reinforced-induction-anvil",
     "identifier": "heavy-machinery:process/crafter/0-0-utilitycraft-reinforced-induction-anvil",
     "type": "machine",
@@ -2762,445 +2898,8 @@
     "output": "utilitycraft:crusher_controller"
   },
   {
-    "id": "heavy-machinery-crafter-11-10-utilitycraft-processing-module",
-    "identifier": "heavy-machinery:process/crafter/11-10-utilitycraft-processing-module",
-    "type": "machine",
-    "station": "crafter",
-    "category": "Crafter grid recipe",
-    "recipeKind": "craft-grid",
-    "slotCount": 9,
-    "slots": [
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "expert_chip",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      },
-      {
-        "id": "controller_case",
-        "count": 1
-      },
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "expert_chip",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      }
-    ],
-    "inputs": [
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "expert_chip",
-        "count": 1
-      },
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      },
-      {
-        "id": "controller_case",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:processing_module",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:processing_module",
-        "count": 1
-      }
-    ],
-    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "tin_plate + expert_chip + charged_darloonite_crystal + controller_case",
-    "output": "utilitycraft:processing_module"
-  },
-  {
-    "id": "heavy-machinery-crafter-11-11-utilitycraft-speed-module",
-    "identifier": "heavy-machinery:process/crafter/11-11-utilitycraft-speed-module",
-    "type": "machine",
-    "station": "crafter",
-    "category": "Crafter grid recipe",
-    "recipeKind": "craft-grid",
-    "slotCount": 9,
-    "slots": [
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "emerald_dust",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "speed_upgrade",
-        "count": 1
-      },
-      {
-        "id": "steel_case",
-        "count": 1
-      },
-      {
-        "id": "speed_upgrade",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      }
-    ],
-    "inputs": [
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "emerald_dust",
-        "count": 1
-      },
-      {
-        "id": "speed_upgrade",
-        "count": 1
-      },
-      {
-        "id": "steel_case",
-        "count": 1
-      },
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:speed_module",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:speed_module",
-        "count": 1
-      }
-    ],
-    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "tin_plate + emerald_dust + speed_upgrade + steel_case + charged_darloonite_crystal",
-    "output": "utilitycraft:speed_module"
-  },
-  {
-    "id": "heavy-machinery-crafter-11-12-utilitycraft-thermo-core",
-    "identifier": "heavy-machinery:process/crafter/11-12-utilitycraft-thermo-core",
-    "type": "machine",
-    "station": "crafter",
-    "category": "Crafter grid recipe",
-    "recipeKind": "craft-grid",
-    "slotCount": 9,
-    "slots": [
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "control_panel",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "netherite_plate",
-        "count": 1
-      },
-      {
-        "id": "steel_case",
-        "count": 1
-      },
-      {
-        "id": "netherite_plate",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "netherite_plate",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      }
-    ],
-    "inputs": [
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "control_panel",
-        "count": 1
-      },
-      {
-        "id": "netherite_plate",
-        "count": 1
-      },
-      {
-        "id": "steel_case",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:thermo_core",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:thermo_core",
-        "count": 1
-      }
-    ],
-    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "tin_plate + control_panel + netherite_plate + steel_case",
-    "output": "utilitycraft:thermo_core"
-  },
-  {
-    "id": "heavy-machinery-crafter-11-13-utilitycraft-power-condenser-controller",
-    "identifier": "heavy-machinery:process/crafter/11-13-utilitycraft-power-condenser-controller",
-    "type": "machine",
-    "station": "crafter",
-    "category": "Crafter grid recipe",
-    "recipeKind": "craft-grid",
-    "slotCount": 9,
-    "slots": [
-      {
-        "id": "steel_plate",
-        "count": 1
-      },
-      {
-        "id": "control_panel",
-        "count": 1
-      },
-      {
-        "id": "steel_plate",
-        "count": 1
-      },
-      {
-        "id": "tin_ingot",
-        "count": 1
-      },
-      {
-        "id": "controller_case",
-        "count": 1
-      },
-      {
-        "id": "tin_ingot",
-        "count": 1
-      },
-      {
-        "id": "steel_plate",
-        "count": 1
-      },
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      },
-      {
-        "id": "steel_plate",
-        "count": 1
-      }
-    ],
-    "inputs": [
-      {
-        "id": "steel_plate",
-        "count": 1
-      },
-      {
-        "id": "control_panel",
-        "count": 1
-      },
-      {
-        "id": "tin_ingot",
-        "count": 1
-      },
-      {
-        "id": "controller_case",
-        "count": 1
-      },
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:power_condenser_controller",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:power_condenser_controller",
-        "count": 1
-      }
-    ],
-    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "steel_plate + control_panel + tin_ingot + controller_case + charged_darloonite_crystal",
-    "output": "utilitycraft:power_condenser_controller"
-  },
-  {
-    "id": "heavy-machinery-crafter-11-14-utilitycraft-reaction-chamber-controller",
-    "identifier": "heavy-machinery:process/crafter/11-14-utilitycraft-reaction-chamber-controller",
-    "type": "machine",
-    "station": "crafter",
-    "category": "Crafter grid recipe",
-    "recipeKind": "craft-grid",
-    "slotCount": 9,
-    "slots": [
-      {
-        "id": "steel_plate",
-        "count": 1
-      },
-      {
-        "id": "control_panel",
-        "count": 1
-      },
-      {
-        "id": "steel_plate",
-        "count": 1
-      },
-      {
-        "id": "stabilized_obsidian_dust",
-        "count": 1
-      },
-      {
-        "id": "controller_case",
-        "count": 1
-      },
-      {
-        "id": "stabilized_obsidian_dust",
-        "count": 1
-      },
-      {
-        "id": "steel_plate",
-        "count": 1
-      },
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      },
-      {
-        "id": "steel_plate",
-        "count": 1
-      }
-    ],
-    "inputs": [
-      {
-        "id": "steel_plate",
-        "count": 1
-      },
-      {
-        "id": "control_panel",
-        "count": 1
-      },
-      {
-        "id": "stabilized_obsidian_dust",
-        "count": 1
-      },
-      {
-        "id": "controller_case",
-        "count": 1
-      },
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:reaction_chamber_controller",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:reaction_chamber_controller",
-        "count": 1
-      }
-    ],
-    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "steel_plate + control_panel + stabilized_obsidian_dust + controller_case + charged_darloonite_crystal",
-    "output": "utilitycraft:reaction_chamber_controller"
-  },
-  {
-    "id": "heavy-machinery-crafter-11-15-utilitycraft-thermo-reactor-controller",
-    "identifier": "heavy-machinery:process/crafter/11-15-utilitycraft-thermo-reactor-controller",
+    "id": "heavy-machinery-crafter-11-10-utilitycraft-thermo-reactor-controller",
+    "identifier": "heavy-machinery:process/crafter/11-10-utilitycraft-thermo-reactor-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -3288,8 +2987,8 @@
     "output": "utilitycraft:thermo_reactor_controller"
   },
   {
-    "id": "heavy-machinery-crafter-11-16-utilitycraft-advanced-power-condenser-unit",
-    "identifier": "heavy-machinery:process/crafter/11-16-utilitycraft-advanced-power-condenser-unit",
+    "id": "heavy-machinery-crafter-11-11-utilitycraft-advanced-power-condenser-unit",
+    "identifier": "heavy-machinery:process/crafter/11-11-utilitycraft-advanced-power-condenser-unit",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -3369,8 +3068,8 @@
     "output": "utilitycraft:advanced_power_condenser_unit"
   },
   {
-    "id": "heavy-machinery-crafter-11-17-utilitycraft-basic-power-condenser-unit",
-    "identifier": "heavy-machinery:process/crafter/11-17-utilitycraft-basic-power-condenser-unit",
+    "id": "heavy-machinery-crafter-11-12-utilitycraft-basic-power-condenser-unit",
+    "identifier": "heavy-machinery:process/crafter/11-12-utilitycraft-basic-power-condenser-unit",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -3450,8 +3149,8 @@
     "output": "utilitycraft:basic_power_condenser_unit"
   },
   {
-    "id": "heavy-machinery-crafter-11-18-utilitycraft-expert-power-condenser-unit",
-    "identifier": "heavy-machinery:process/crafter/11-18-utilitycraft-expert-power-condenser-unit",
+    "id": "heavy-machinery-crafter-11-13-utilitycraft-expert-power-condenser-unit",
+    "identifier": "heavy-machinery:process/crafter/11-13-utilitycraft-expert-power-condenser-unit",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -3531,8 +3230,8 @@
     "output": "utilitycraft:expert_power_condenser_unit"
   },
   {
-    "id": "heavy-machinery-crafter-11-19-utilitycraft-ultimate-power-condenser-unit",
-    "identifier": "heavy-machinery:process/crafter/11-19-utilitycraft-ultimate-power-condenser-unit",
+    "id": "heavy-machinery-crafter-11-14-utilitycraft-ultimate-power-condenser-unit",
+    "identifier": "heavy-machinery:process/crafter/11-14-utilitycraft-ultimate-power-condenser-unit",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -3610,6 +3309,83 @@
     "originId": "heavy-machinery",
     "input": "charged_darloonite_crystal + expert_power_condenser_unit + ultimate_chip",
     "output": "utilitycraft:ultimate_power_condenser_unit"
+  },
+  {
+    "id": "heavy-machinery-crafter-11-15-utilitycraft-tin-plated-block",
+    "identifier": "heavy-machinery:process/crafter/11-15-utilitycraft-tin-plated-block",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:tin_plated_block",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:tin_plated_block",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "tin_plate + tin_ingot",
+    "output": "utilitycraft:tin_plated_block"
   },
   {
     "id": "heavy-machinery-crafter-11-2-utilitycraft-electro-press-controller",
@@ -3701,166 +3477,8 @@
     "output": "utilitycraft:electro_press_controller"
   },
   {
-    "id": "heavy-machinery-crafter-11-20-utilitycraft-tin-plated-block",
-    "identifier": "heavy-machinery:process/crafter/11-20-utilitycraft-tin-plated-block",
-    "type": "machine",
-    "station": "crafter",
-    "category": "Crafter grid recipe",
-    "recipeKind": "craft-grid",
-    "slotCount": 9,
-    "slots": [
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "tin_ingot",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "tin_ingot",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "tin_ingot",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "tin_ingot",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      }
-    ],
-    "inputs": [
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "tin_ingot",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:tin_plated_block",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:tin_plated_block",
-        "count": 1
-      }
-    ],
-    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "tin_plate + tin_ingot",
-    "output": "utilitycraft:tin_plated_block"
-  },
-  {
-    "id": "heavy-machinery-crafter-11-3-utilitycraft-energy-cell",
-    "identifier": "heavy-machinery:process/crafter/11-3-utilitycraft-energy-cell",
-    "type": "machine",
-    "station": "crafter",
-    "category": "Crafter grid recipe",
-    "recipeKind": "craft-grid",
-    "slotCount": 9,
-    "slots": [
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      },
-      {
-        "id": "expert_battery",
-        "count": 1
-      },
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      },
-      {
-        "id": "expert_battery",
-        "count": 1
-      },
-      {
-        "id": "steel_case",
-        "count": 1
-      },
-      {
-        "id": "expert_battery",
-        "count": 1
-      },
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      },
-      {
-        "id": "expert_battery",
-        "count": 1
-      },
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      }
-    ],
-    "inputs": [
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      },
-      {
-        "id": "expert_battery",
-        "count": 1
-      },
-      {
-        "id": "steel_case",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:energy_cell",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:energy_cell",
-        "count": 1
-      }
-    ],
-    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "charged_darloonite_crystal + expert_battery + steel_case",
-    "output": "utilitycraft:energy_cell"
-  },
-  {
-    "id": "heavy-machinery-crafter-11-4-utilitycraft-incinerator-controller",
-    "identifier": "heavy-machinery:process/crafter/11-4-utilitycraft-incinerator-controller",
+    "id": "heavy-machinery-crafter-11-3-utilitycraft-incinerator-controller",
+    "identifier": "heavy-machinery:process/crafter/11-3-utilitycraft-incinerator-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -3948,8 +3566,8 @@
     "output": "utilitycraft:incinerator_controller"
   },
   {
-    "id": "heavy-machinery-crafter-11-5-utilitycraft-infuser-controller",
-    "identifier": "heavy-machinery:process/crafter/11-5-utilitycraft-infuser-controller",
+    "id": "heavy-machinery-crafter-11-4-utilitycraft-infuser-controller",
+    "identifier": "heavy-machinery:process/crafter/11-4-utilitycraft-infuser-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -4037,8 +3655,8 @@
     "output": "utilitycraft:infuser_controller"
   },
   {
-    "id": "heavy-machinery-crafter-11-6-utilitycraft-magmatic-chamber-controller",
-    "identifier": "heavy-machinery:process/crafter/11-6-utilitycraft-magmatic-chamber-controller",
+    "id": "heavy-machinery-crafter-11-5-utilitycraft-magmatic-chamber-controller",
+    "identifier": "heavy-machinery:process/crafter/11-5-utilitycraft-magmatic-chamber-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -4126,182 +3744,8 @@
     "output": "utilitycraft:magmatic_chamber_controller"
   },
   {
-    "id": "heavy-machinery-crafter-11-7-utilitycraft-efficiency-module",
-    "identifier": "heavy-machinery:process/crafter/11-7-utilitycraft-efficiency-module",
-    "type": "machine",
-    "station": "crafter",
-    "category": "Crafter grid recipe",
-    "recipeKind": "craft-grid",
-    "slotCount": 9,
-    "slots": [
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "emerald_dust",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "energy_upgrade",
-        "count": 1
-      },
-      {
-        "id": "steel_case",
-        "count": 1
-      },
-      {
-        "id": "energy_upgrade",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      }
-    ],
-    "inputs": [
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "emerald_dust",
-        "count": 1
-      },
-      {
-        "id": "energy_upgrade",
-        "count": 1
-      },
-      {
-        "id": "steel_case",
-        "count": 1
-      },
-      {
-        "id": "charged_darloonite_crystal",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:efficiency_module",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:efficiency_module",
-        "count": 1
-      }
-    ],
-    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "tin_plate + emerald_dust + energy_upgrade + steel_case + charged_darloonite_crystal",
-    "output": "utilitycraft:efficiency_module"
-  },
-  {
-    "id": "heavy-machinery-crafter-11-8-utilitycraft-fluid-cell",
-    "identifier": "heavy-machinery:process/crafter/11-8-utilitycraft-fluid-cell",
-    "type": "machine",
-    "station": "crafter",
-    "category": "Crafter grid recipe",
-    "recipeKind": "craft-grid",
-    "slotCount": 9,
-    "slots": [
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "fluid_pipe",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "expert_fluid_tank",
-        "count": 1
-      },
-      {
-        "id": "steel_fluid_port",
-        "count": 1
-      },
-      {
-        "id": "expert_fluid_tank",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "fluid_pipe",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      }
-    ],
-    "inputs": [
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "fluid_pipe",
-        "count": 1
-      },
-      {
-        "id": "expert_fluid_tank",
-        "count": 1
-      },
-      {
-        "id": "steel_fluid_port",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:fluid_cell",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:fluid_cell",
-        "count": 1
-      }
-    ],
-    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "tin_plate + fluid_pipe + expert_fluid_tank + steel_fluid_port",
-    "output": "utilitycraft:fluid_cell"
-  },
-  {
-    "id": "heavy-machinery-crafter-11-9-utilitycraft-heat-conductor",
-    "identifier": "heavy-machinery:process/crafter/11-9-utilitycraft-heat-conductor",
+    "id": "heavy-machinery-crafter-11-6-utilitycraft-heat-conductor",
+    "identifier": "heavy-machinery:process/crafter/11-6-utilitycraft-heat-conductor",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -4379,6 +3823,269 @@
     "originId": "heavy-machinery",
     "input": "netherite_plate + tin_ingot + steel_case",
     "output": "utilitycraft:heat_conductor"
+  },
+  {
+    "id": "heavy-machinery-crafter-11-7-utilitycraft-thermo-core",
+    "identifier": "heavy-machinery:process/crafter/11-7-utilitycraft-thermo-core",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "tin_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "netherite_plate",
+        "count": 1
+      },
+      {
+        "id": "steel_case",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:thermo_core",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:thermo_core",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "tin_plate + control_panel + netherite_plate + steel_case",
+    "output": "utilitycraft:thermo_core"
+  },
+  {
+    "id": "heavy-machinery-crafter-11-8-utilitycraft-power-condenser-controller",
+    "identifier": "heavy-machinery:process/crafter/11-8-utilitycraft-power-condenser-controller",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "tin_ingot",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:power_condenser_controller",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:power_condenser_controller",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "steel_plate + control_panel + tin_ingot + controller_case + charged_darloonite_crystal",
+    "output": "utilitycraft:power_condenser_controller"
+  },
+  {
+    "id": "heavy-machinery-crafter-11-9-utilitycraft-reaction-chamber-controller",
+    "identifier": "heavy-machinery:process/crafter/11-9-utilitycraft-reaction-chamber-controller",
+    "type": "machine",
+    "station": "crafter",
+    "category": "Crafter grid recipe",
+    "recipeKind": "craft-grid",
+    "slotCount": 9,
+    "slots": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      },
+      {
+        "id": "steel_plate",
+        "count": 1
+      }
+    ],
+    "inputs": [
+      {
+        "id": "steel_plate",
+        "count": 1
+      },
+      {
+        "id": "control_panel",
+        "count": 1
+      },
+      {
+        "id": "stabilized_obsidian_dust",
+        "count": 1
+      },
+      {
+        "id": "controller_case",
+        "count": 1
+      },
+      {
+        "id": "charged_darloonite_crystal",
+        "count": 1
+      }
+    ],
+    "result": {
+      "id": "utilitycraft:reaction_chamber_controller",
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "utilitycraft:reaction_chamber_controller",
+        "count": 1
+      }
+    ],
+    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "steel_plate + control_panel + stabilized_obsidian_dust + controller_case + charged_darloonite_crystal",
+    "output": "utilitycraft:reaction_chamber_controller"
   },
   {
     "id": "heavy-machinery-crafter-2-0-utilitycraft-hazmat-helmet",
@@ -6376,93 +6083,8 @@
     "output": "utilitycraft:netherite_gas_port"
   },
   {
-    "id": "heavy-machinery-crafter-8-6-utilitycraft-gas-cell",
-    "identifier": "heavy-machinery:process/crafter/8-6-utilitycraft-gas-cell",
-    "type": "machine",
-    "station": "crafter",
-    "category": "Crafter grid recipe",
-    "recipeKind": "craft-grid",
-    "slotCount": 9,
-    "slots": [
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "gas_pipe",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "expert_gas_tank",
-        "count": 1
-      },
-      {
-        "id": "steel_gas_port",
-        "count": 1
-      },
-      {
-        "id": "expert_gas_tank",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "gas_pipe",
-        "count": 1
-      },
-      {
-        "id": "tin_plate",
-        "count": 1
-      }
-    ],
-    "inputs": [
-      {
-        "id": "tin_plate",
-        "count": 1
-      },
-      {
-        "id": "gas_pipe",
-        "count": 1
-      },
-      {
-        "id": "expert_gas_tank",
-        "count": 1
-      },
-      {
-        "id": "steel_gas_port",
-        "count": 1
-      }
-    ],
-    "result": {
-      "id": "utilitycraft:gas_cell",
-      "count": 1
-    },
-    "results": [
-      {
-        "id": "utilitycraft:gas_cell",
-        "count": 1
-      }
-    ],
-    "note": "Grid ingredient IDs intentionally omit namespaces because the in-game Crafter compares their short item IDs.",
-    "origin": {
-      "id": "heavy-machinery",
-      "label": "Heavy Machinery",
-      "accent": "#f59e0b",
-      "category": "Heavy Machinery"
-    },
-    "originId": "heavy-machinery",
-    "input": "tin_plate + gas_pipe + expert_gas_tank + steel_gas_port",
-    "output": "utilitycraft:gas_cell"
-  },
-  {
-    "id": "heavy-machinery-crafter-8-7-utilitycraft-liquid-tank-controller",
-    "identifier": "heavy-machinery:process/crafter/8-7-utilitycraft-liquid-tank-controller",
+    "id": "heavy-machinery-crafter-8-6-utilitycraft-liquid-tank-controller",
+    "identifier": "heavy-machinery:process/crafter/8-6-utilitycraft-liquid-tank-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -6550,8 +6172,8 @@
     "output": "utilitycraft:liquid_tank_controller"
   },
   {
-    "id": "heavy-machinery-crafter-8-8-utilitycraft-gas-tank-controller",
-    "identifier": "heavy-machinery:process/crafter/8-8-utilitycraft-gas-tank-controller",
+    "id": "heavy-machinery-crafter-8-7-utilitycraft-gas-tank-controller",
+    "identifier": "heavy-machinery:process/crafter/8-7-utilitycraft-gas-tank-controller",
     "type": "machine",
     "station": "crafter",
     "category": "Crafter grid recipe",
@@ -8663,6 +8285,81 @@
     "originId": "heavy-machinery",
     "input": "2× utilitycraft:copper_dust + 5× utilitycraft:tin_dust",
     "output": "utilitycraft:brute_bronze"
+  },
+  {
+    "id": "heavy-machinery-isotope-centrifuge-natural-uranium-hexafluoride-gas",
+    "identifier": "heavy-machinery:process/isotope-centrifuge/natural-uranium-hexafluoride-gas",
+    "type": "machine",
+    "station": "isotope-centrifuge",
+    "category": "Isotope Centrifuge recipe",
+    "recipeKind": "processing",
+    "slotCount": 1,
+    "slots": [
+      {
+        "id": "gas:natural_uranium_hexafluoride_gas",
+        "count": 1000,
+        "label": "Natural Uranium Hexafluoride Gas",
+        "unit": "mB",
+        "resourceType": "gas",
+        "resourceId": "natural_uranium_hexafluoride_gas"
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "inputs": [
+      {
+        "id": "gas:natural_uranium_hexafluoride_gas",
+        "count": 1000,
+        "label": "Natural Uranium Hexafluoride Gas",
+        "unit": "mB",
+        "resourceType": "gas",
+        "resourceId": "natural_uranium_hexafluoride_gas"
+      }
+    ],
+    "result": {
+      "id": "gas:enriched_uranium_hexafluoride_gas",
+      "count": 250,
+      "label": "Enriched Uranium Hexafluoride Gas",
+      "unit": "mB",
+      "resourceType": "gas",
+      "resourceId": "enriched_uranium_hexafluoride_gas"
+    },
+    "results": [
+      {
+        "id": "gas:enriched_uranium_hexafluoride_gas",
+        "count": 250,
+        "label": "Enriched Uranium Hexafluoride Gas",
+        "unit": "mB",
+        "resourceType": "gas",
+        "resourceId": "enriched_uranium_hexafluoride_gas"
+      },
+      {
+        "id": "gas:depleted_uranium_hexafluoride_gas",
+        "count": 750,
+        "label": "Depleted Uranium Hexafluoride Gas",
+        "unit": "mB",
+        "resourceType": "gas",
+        "resourceId": "depleted_uranium_hexafluoride_gas"
+      }
+    ],
+    "cost": 4096000,
+    "energyCost": 4096000,
+    "note": "Both gas outputs require compatible storage space.",
+    "origin": {
+      "id": "heavy-machinery",
+      "label": "Heavy Machinery",
+      "accent": "#f59e0b",
+      "category": "Heavy Machinery"
+    },
+    "originId": "heavy-machinery",
+    "input": "1000× Natural Uranium Hexafluoride Gas",
+    "output": "250× Enriched Uranium Hexafluoride Gas + 750× Depleted Uranium Hexafluoride Gas"
   },
   {
     "id": "utilitycraft-magmatic-chamber-minecraft-blackstone",

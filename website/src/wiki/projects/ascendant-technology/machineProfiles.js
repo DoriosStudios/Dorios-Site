@@ -17,6 +17,7 @@ const machineProfiles = {
     verdant_cultivator: 'Item',
   }),
   ...withCategory('Unique Machines', {
+    alchemical_station: 'Item',
     catalyst_weaver: 'Item',
     cryo_chamber: 'Fluid',
     cryo_freezer: 'Fluid',
@@ -30,6 +31,10 @@ const machineProfiles = {
     residue_processor: 'Item',
     singularity_fabricator: 'Item',
     vaporworks_processor: 'Fluid',
+    steam_boiler: 'Fluid',
+    vaporizer: 'Fluid',
+    compactor: 'Item',
+    network_center: 'Other',
   }),
   ...withCategory('Equipment Management Machines', {
     arcane_enchanter: 'Item',
@@ -67,6 +72,63 @@ const machineProfiles = {
 };
 
 Object.assign(machineProfiles, {
+  alchemical_station: {
+    ...machineProfiles.alchemical_station,
+    description: 'Brews up to six compatible bottles with one reagent per batch. Amplify raises supported levels; Extend increases supported durations. Both upgrades use the shared central potion slot and preserve delivery forms.',
+    input: 'Up to 6 bottles + 1 reagent + Blaze Essence',
+    output: 'Brewed or upgraded potions; collect finished potions manually',
+    baseConsumption: '12,000 DE per brewing batch',
+    specifications: [
+      ['Brewing cycle', '400 ticks · 20 s · 250 mB Blaze Essence'],
+      ['Upgrade cycle', '200 ticks · 10 s · 16,000 DE'],
+      ['Amplify', '1,000 mB Liquified Aetherium'],
+      ['Extend', '750 mB Liquified Aetherium; instant effects cannot be extended'],
+      ['Blaze Essence tank', '64,000 mB; 1 Blaze Powder supplies 1,000 mB'],
+      ['Liquified Aetherium tank', '128,000 mB'],
+      ['Potion families', '35'],
+    ],
+    howItWorks: [
+      'Supply Blaze Powder and Dorios Energy, then place compatible bottles and a reagent in the brewing slots.',
+      'Brewing skips empty or incompatible slots and consumes one reagent per batch, for up to six bottles.',
+      'For Amplify or Extend, supply Liquified Aetherium, place one potion in the central upgrade slot and press the corresponding button.',
+      'Collect finished potions manually. Automatic extraction handles returned empty bottles.',
+    ],
+  },
+  steam_boiler: {
+    ...machineProfiles.steam_boiler,
+    description: 'Converts Water into Steam for early steam production. Liquid input, liquid recovery and gas output faces are configurable.',
+    input: '1,000 mB Water', output: '1,000 mB Steam',
+    specifications: [['Recipe cycle', '160 ticks · 8 s · 2,400 DE'], ['Resource tanks', '32,000 mB Water + 32,000 mB Steam']],
+  },
+  vaporizer: {
+    ...machineProfiles.vaporizer,
+    description: 'Produces Steam from Water, Cryofluid or Saline Coolant. Converts whole container stacks when tank space and stored resources allow; liquid recovery faces can drain the input tank.',
+    input: 'Water, Cryofluid or Saline Coolant', output: 'Steam',
+    specifications: [
+      ['Water recipe', '1,000 mB → 1,000 mB Steam · 1,600 DE · 4 s'],
+      ['Cryofluid recipe', '1,000 mB → 3,000 mB Steam · 2,400 DE · 4 s'],
+      ['Saline Coolant recipe', '1,000 mB → 1,500 mB Steam · 2,000 DE · 5 s'],
+      ['Resource tanks', '128,000 mB liquid + 128,000 mB Steam'],
+    ],
+  },
+  vaporworks_processor: {
+    ...machineProfiles.vaporworks_processor,
+    description: 'Legacy steam processor retained for existing worlds. New crafting progression uses Steam Boiler and Vaporizer; existing inventories and stored resources remain supported.',
+    input: 'Water, Cryofluid or Saline Coolant', output: 'Steam',
+  },
+  network_center: {
+    ...machineProfiles.network_center,
+    description: 'Passively monitors connected energy networks through Overview, Gains, Losses and Capacity tabs. Paged device lists distinguish generation, consumption, batteries and wireless distribution.',
+    baseConsumption: 'Not required', energyCapacity: 'Not applicable',
+    input: 'Connected energy network', output: 'Network statistics and device pages',
+    specifications: [['Operation', 'Passive monitoring; no energy storage or scan cost']],
+  },
+  genetic_seed_synthesizer: {
+    ...machineProfiles.genetic_seed_synthesizer,
+    description: 'Runs independent synthesis rolls for each input, scaled by installed Stack Upgrades and available coolant. Completed batches keep their paid costs and rolls while waiting for output space, including after world reloads.',
+    input: 'Registered seed or plant + compatible soil + coolant',
+    output: 'Independent recipe drops; pending results wait for inventory space',
+  },
   catalyst_weaver: {
     ...machineProfiles.catalyst_weaver,
     description: 'Fuses one primary material with up to six catalysts and a registered fluid. Recipes may also produce an independently rolled byproduct.',

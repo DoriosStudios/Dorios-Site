@@ -1,16 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-09T05:33:03.558467+00:00",
+  "generatedAt": "2026-11-20T00:11:35.054648+00:00",
   "project": {
     "id": "trinkets",
-    "name": "Dorios' Trinkets"
+    "name": "Dorios' Trinkets",
+    "version": "2.1.2"
+  },
+  "source": {
+    "bridgeProject": "Dorios-Trinkets",
+    "revision": "b8edd7c6eb33",
+    "dirty": false
   },
   "counts": {
-    "items": 92,
-    "catalogItems": 92,
+    "items": 91,
+    "catalogItems": 91,
     "blocks": 6,
     "entities": 2,
-    "recipes": 13,
+    "recipes": 10,
     "variantGroups": 0
   },
   "content": {
@@ -511,15 +517,6 @@
         "source": "BP/items/rabbit_rush.json"
       },
       {
-        "id": "recover_scroll",
-        "slug": "recover-scroll",
-        "identifier": "dorios:recover_scroll",
-        "name": "Recover Scroll",
-        "category": "Core",
-        "image": "textures/items/recover_scroll.png",
-        "source": "BP/items/core/recover_scroll.json"
-      },
-      {
         "id": "repair_talis",
         "slug": "repair-talis",
         "identifier": "dorios:repair_talis",
@@ -592,13 +589,13 @@
         "source": "BP/items/hearts/soul_heart.json"
       },
       {
-        "id": "stats_scroll",
-        "slug": "stats-scroll",
-        "identifier": "dorios:stats_scroll",
-        "name": "Stats Scroll",
+        "id": "stat_display",
+        "slug": "stat-display",
+        "identifier": "dorios:stat_display",
+        "name": "Stat Display",
         "category": "Core",
-        "image": "textures/items/stats_scroll.png",
-        "source": "BP/items/core/stats_scroll.json"
+        "image": "textures/items/scroll.png",
+        "source": "BP/items/core/stat_display.json"
       },
       {
         "id": "strong_abyssal_ring",
@@ -863,7 +860,10 @@
           "minecraft:tick"
         ],
         "machineData": null,
-        "source": "BP/blocks/lava_flow_0.json"
+        "source": "BP/blocks/lava_flow_0.json",
+        "blockData": {
+          "directional": false
+        }
       },
       {
         "id": "lava_flow_1",
@@ -883,7 +883,10 @@
           "minecraft:tick"
         ],
         "machineData": null,
-        "source": "BP/blocks/lava_flow_1.json"
+        "source": "BP/blocks/lava_flow_1.json",
+        "blockData": {
+          "directional": false
+        }
       },
       {
         "id": "lava_flow_2",
@@ -903,7 +906,10 @@
           "minecraft:tick"
         ],
         "machineData": null,
-        "source": "BP/blocks/lava_flow_2.json"
+        "source": "BP/blocks/lava_flow_2.json",
+        "blockData": {
+          "directional": false
+        }
       },
       {
         "id": "lava_solid_0",
@@ -923,7 +929,10 @@
           "minecraft:tick"
         ],
         "machineData": null,
-        "source": "BP/blocks/lava_solid_0.json"
+        "source": "BP/blocks/lava_solid_0.json",
+        "blockData": {
+          "directional": false
+        }
       },
       {
         "id": "lava_solid_1",
@@ -943,7 +952,10 @@
           "minecraft:tick"
         ],
         "machineData": null,
-        "source": "BP/blocks/lava_solid_1.json"
+        "source": "BP/blocks/lava_solid_1.json",
+        "blockData": {
+          "directional": false
+        }
       },
       {
         "id": "lava_solid_2",
@@ -963,7 +975,10 @@
           "minecraft:tick"
         ],
         "machineData": null,
-        "source": "BP/blocks/lava_solid_2.json"
+        "source": "BP/blocks/lava_solid_2.json",
+        "blockData": {
+          "directional": false
+        }
       }
     ],
     "entities": [
@@ -1311,32 +1326,6 @@
         "source": "BP/recipes/obsidian_skull.json"
       },
       {
-        "id": "recover_scroll",
-        "identifier": "dorios:recover_scroll",
-        "kind": "shapeless",
-        "station": "crafting_table",
-        "slots": [
-          {
-            "id": "dorios:stats_scroll",
-            "count": 1
-          },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "slotCount": 1,
-        "result": {
-          "id": "dorios:recover_scroll",
-          "count": 1
-        },
-        "source": "BP/recipes/core/recover_scroll.json"
-      },
-      {
         "id": "runner_ring",
         "identifier": "dorios:runner_ring",
         "kind": "shaped",
@@ -1411,58 +1400,6 @@
           "count": 1
         },
         "source": "BP/recipes/core/scroll.json"
-      },
-      {
-        "id": "scrollv2",
-        "identifier": "dorios:scrollv2",
-        "kind": "shapeless",
-        "station": "crafting_table",
-        "slots": [
-          {
-            "id": "dorios:recover_scroll",
-            "count": 1
-          },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "slotCount": 1,
-        "result": {
-          "id": "dorios:scroll",
-          "count": 1
-        },
-        "source": "BP/recipes/core/scrollv2.json"
-      },
-      {
-        "id": "stats_scroll",
-        "identifier": "dorios:stats_scroll",
-        "kind": "shapeless",
-        "station": "crafting_table",
-        "slots": [
-          {
-            "id": "dorios:scroll",
-            "count": 1
-          },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "slotCount": 1,
-        "result": {
-          "id": "dorios:stats_scroll",
-          "count": 1
-        },
-        "source": "BP/recipes/core/stats_scroll.json"
       },
       {
         "id": "warden_heart",
@@ -2014,15 +1951,6 @@
         "source": "BP/items/rabbit_rush.json"
       },
       {
-        "id": "recover_scroll",
-        "slug": "recover-scroll",
-        "identifier": "dorios:recover_scroll",
-        "name": "Recover Scroll",
-        "category": "Core",
-        "image": "textures/items/recover_scroll.png",
-        "source": "BP/items/core/recover_scroll.json"
-      },
-      {
         "id": "repair_talis",
         "slug": "repair-talis",
         "identifier": "dorios:repair_talis",
@@ -2095,13 +2023,13 @@
         "source": "BP/items/hearts/soul_heart.json"
       },
       {
-        "id": "stats_scroll",
-        "slug": "stats-scroll",
-        "identifier": "dorios:stats_scroll",
-        "name": "Stats Scroll",
+        "id": "stat_display",
+        "slug": "stat-display",
+        "identifier": "dorios:stat_display",
+        "name": "Stat Display",
         "category": "Core",
-        "image": "textures/items/stats_scroll.png",
-        "source": "BP/items/core/stats_scroll.json"
+        "image": "textures/items/scroll.png",
+        "source": "BP/items/core/stat_display.json"
       },
       {
         "id": "strong_abyssal_ring",

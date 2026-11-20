@@ -241,7 +241,7 @@ const config = {
         },
         copyright: `
         © ${new Date().getFullYear()} Dorios Studios — Creating worlds, one addon at a time.<br/>
-        Website built by <strong>Milo504</strong> with ❤️.
+        Website built by <strong>Milo504</strong> and redesigned by <strong>Kauziin</strong> with ❤️.
         `,
       },
 

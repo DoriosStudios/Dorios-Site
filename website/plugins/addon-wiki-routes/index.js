@@ -22,10 +22,9 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
       const entryComponent = path.join(__dirname, '..', '..', 'src', 'components', 'AddonWiki', 'entryPage.js');
       const pageComponent = path.join(__dirname, '..', '..', 'src', 'components', 'AddonWiki', 'page.js');
       const dataPath = path.join(projectRoot, 'heavy-machinery', 'data.js');
-      const recipePath = path.join(projectRoot, 'heavy-machinery', 'recipeData.js');
+      const heavyManifest = require(path.join(projectRoot, 'heavy-machinery', 'manifest.json'));
       const heavyProcessingRecipes = require(path.join(projectRoot, 'heavy-machinery', 'processingRecipes.json'));
       const data = await import(`${pathToFileURL(dataPath).href}?wiki-routes`);
-      const recipeData = await import(`${pathToFileURL(recipePath).href}?wiki-routes`);
       const staffData = await import(`${pathToFileURL(staffProfilesPath).href}?staff-routes`);
       const trinketCategorySections = require(path.join(projectRoot, 'trinkets', 'categorySections.json'));
       const utilityHowToPlaySections = [
@@ -80,13 +79,13 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
       }));
 
       addEntryRoutes('heavy-machinery', {
-        items: data.items.map((entry) => entry.slug),
-        blocks: data.blocks.map((entry) => entry.slug),
-        machines: data.machines.map((entry) => entry.id),
+        items: heavyManifest.catalog.items.map((entry) => entry.slug),
+        blocks: heavyManifest.content.blocks.map((entry) => entry.slug),
+        machines: [...data.machines.map((entry) => entry.id), 'reinforced_induction_anvil'],
         generators: data.generators.map((entry) => entry.id),
         mechanics: data.mechanics.map((entry) => slugify(entry.name)),
         recipes: [
-          ...recipeData.craftingRecipeDetails.map((entry) => `crafting-${entry.id}`),
+          ...heavyManifest.content.recipes.map((entry) => `crafting-${entry.id}`),
           ...heavyProcessingRecipes.map((entry) => `processing-${entry.id}`),
         ],
       });

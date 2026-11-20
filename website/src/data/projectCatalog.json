@@ -27,8 +27,8 @@
       "lifecycle": "Released",
       "featuredRank": 1,
       "free": true,
-      "version": "3.6.2",
-      "minecraftVersion": "1.20.80",
+      "version": "3.6.3",
+      "minecraftVersion": "1.26.60",
       "requires": [],
       "routes": {
         "project": "/projects/utilitycraft",
@@ -47,17 +47,19 @@
         "alt": "UtilityCraft resource pack icon"
       },
       "metrics": {
-        "items": 263,
+        "items": 256,
         "blocks": 510,
-        "entities": 115,
-        "recipes": 1443,
-        "structures": 3
+        "entities": 113,
+        "recipes": 1431,
+        "structures": 3,
+        "machines": 19,
+        "energySystems": 37
       },
       "source": {
         "kind": "bridge",
         "bridgeProject": "UtilityCraft",
-        "revision": "3d888eada613",
-        "fingerprint": "8ee8a116894f7468"
+        "revision": "d02253eab305",
+        "fingerprint": "863b7fca2537e68a"
       }
     },
     {
@@ -79,10 +81,10 @@
       "lifecycle": "Beta",
       "featuredRank": 2,
       "free": true,
-      "version": "0.5.2",
-      "minecraftVersion": "1.26.30",
+      "version": "0.6.0",
+      "minecraftVersion": "1.26.60",
       "requires": [
-        "UtilityCraft"
+        "UtilityCraft 3.6.2+"
       ],
       "routes": {
         "project": "/projects/heavy-machinery",
@@ -99,16 +101,18 @@
         "alt": "Heavy Machinery resource pack icon"
       },
       "metrics": {
-        "items": 28,
-        "blocks": 64,
-        "recipes": 99,
-        "machines": 7
+        "items": 35,
+        "blocks": 78,
+        "entities": 9,
+        "recipes": 96,
+        "machines": 12,
+        "energySystems": 5
       },
       "source": {
         "kind": "bridge",
         "bridgeProject": "UtilityCraft-Heavy-Machinery",
-        "revision": "5cbc90ea1cdc",
-        "fingerprint": "055aa00aadaddaa3"
+        "revision": "cab67c0d3b4d",
+        "fingerprint": "d0a6f680cb68e07c"
       }
     },
     {
@@ -132,10 +136,10 @@
       "lifecycle": "Beta",
       "featuredRank": 3,
       "free": true,
-      "version": "0.9.1",
-      "minecraftVersion": "1.21.130",
+      "version": "0.9.4",
+      "minecraftVersion": "1.26.60",
       "requires": [
-        "UtilityCraft 3.5+"
+        "UtilityCraft 3.6.3+"
       ],
       "routes": {
         "project": "/projects/ascendant-technology",
@@ -152,16 +156,18 @@
         "alt": "Ascendant Technology resource pack icon"
       },
       "metrics": {
-        "items": 68,
-        "blocks": 89,
-        "recipes": 133,
-        "machines": 30
+        "items": 788,
+        "blocks": 143,
+        "entities": 8,
+        "recipes": 233,
+        "machines": 36,
+        "energySystems": 12
       },
       "source": {
         "kind": "bridge",
         "bridgeProject": "Ascendant-Technology",
-        "revision": "43515ec993b2",
-        "fingerprint": "1c27d1dede13695f"
+        "revision": "21294c82146e",
+        "fingerprint": "fa76d040794f6c37"
       }
     },
     {
@@ -202,15 +208,15 @@
       },
       "metrics": {
         "items": 5,
-        "blocks": 15,
-        "entities": 20,
-        "recipes": 15
+        "blocks": 22,
+        "entities": 21,
+        "recipes": 22
       },
       "source": {
         "kind": "bridge",
         "bridgeProject": "Better-Containers",
-        "revision": "e26574a49dc3",
-        "fingerprint": "2d3aa0c78f456bdc"
+        "revision": "16b7d2b9c4a8",
+        "fingerprint": "a63c7a9d597358a9"
       }
     },
     {
@@ -232,7 +238,7 @@
       "lifecycle": "Released",
       "featuredRank": 4,
       "free": true,
-      "version": "1.5.0",
+      "version": "1.5.4",
       "minecraftVersion": "1.21.60",
       "requires": [],
       "routes": {
@@ -252,16 +258,17 @@
         "alt": "Better Smelters resource pack icon"
       },
       "metrics": {
-        "items": 61,
+        "items": 13,
         "blocks": 11,
         "entities": 1,
-        "recipes": 23
+        "recipes": 23,
+        "machines": 11
       },
       "source": {
         "kind": "bridge",
         "bridgeProject": "Better-Smelters",
-        "revision": "cf60f1a5e6a9",
-        "fingerprint": "1a4a2e33ff46c48b"
+        "revision": "87b41fbf9e55",
+        "fingerprint": "bf9435a8e22bcabe"
       }
     },
     {
@@ -506,7 +513,7 @@
       "lifecycle": "Released",
       "featuredRank": null,
       "free": true,
-      "version": "1.0.107",
+      "version": "1.1.1",
       "minecraftVersion": "1.21.120",
       "requires": [
         "UtilityCraft 3.5.1+"
@@ -528,16 +535,17 @@
         "alt": "Digital Storage resource pack icon"
       },
       "metrics": {
-        "items": 18,
+        "items": 11,
         "blocks": 10,
-        "entities": 8,
-        "recipes": 30
+        "entities": 10,
+        "recipes": 33,
+        "machines": 8
       },
       "source": {
         "kind": "bridge",
         "bridgeProject": "UtilityCraft-Digital-Storage",
-        "revision": "c739f7beb9fa",
-        "fingerprint": "fdc8aad9e88f861b"
+        "revision": "803d3db0d489",
+        "fingerprint": "a193bacf36172708"
       }
     },
     {
@@ -559,8 +567,8 @@
       "lifecycle": "Released",
       "featuredRank": null,
       "free": true,
-      "version": "1.1.1",
-      "minecraftVersion": "1.20.80",
+      "version": "1.1.14",
+      "minecraftVersion": "1.26.40",
       "requires": [],
       "routes": {
         "project": "/projects/atelier",
@@ -579,15 +587,15 @@
         "alt": "Dorios' Atelier resource pack icon"
       },
       "metrics": {
-        "items": 22,
-        "blocks": 590,
-        "recipes": 1259
+        "items": 104,
+        "blocks": 916,
+        "recipes": 1764
       },
       "source": {
         "kind": "bridge",
         "bridgeProject": "Dorios' Atelier",
-        "revision": "11bd4c33ef2b",
-        "fingerprint": "80d518ad5d1ff560"
+        "revision": "116d65d2edc7",
+        "fingerprint": "878c2db68c4d8590"
       }
     },
     {
@@ -652,7 +660,7 @@
       "lifecycle": "Released",
       "featuredRank": null,
       "free": true,
-      "version": "1.3.0",
+      "version": "1.3.3",
       "minecraftVersion": "1.21.90",
       "requires": [],
       "routes": {
@@ -674,13 +682,14 @@
       "metrics": {
         "items": 1,
         "entities": 1,
-        "recipes": 1
+        "recipes": 1,
+        "blocks": 0
       },
       "source": {
         "kind": "bridge",
         "bridgeProject": "Dorios-Excavate",
-        "revision": "db58bba54507",
-        "fingerprint": "040421b455cdaf64"
+        "revision": "2ff5310769fe",
+        "fingerprint": "f215002990062083"
       }
     },
     {
@@ -702,7 +711,7 @@
       "lifecycle": "Released",
       "featuredRank": null,
       "free": true,
-      "version": "1.2.0",
+      "version": "1.2.2",
       "minecraftVersion": "1.21.120",
       "requires": [],
       "routes": {
@@ -722,8 +731,12 @@
       "source": {
         "kind": "bridge",
         "bridgeProject": "Dorios' Insight",
-        "revision": "51569b31b2ad",
-        "fingerprint": "8f1bc19661c033db"
+        "revision": "751a50091181",
+        "fingerprint": "c3306970dad5d471"
+      },
+      "metrics": {
+        "items": 1,
+        "recipes": 1
       }
     },
     {
@@ -745,7 +758,7 @@
       "lifecycle": "Released",
       "featuredRank": 5,
       "free": true,
-      "version": "2.0.0",
+      "version": "2.1.2",
       "minecraftVersion": "1.21.0",
       "requires": [],
       "routes": {
@@ -765,14 +778,16 @@
         "alt": "Dorios' Trinkets resource pack icon"
       },
       "metrics": {
-        "items": 92,
-        "recipes": 13
+        "items": 91,
+        "blocks": 6,
+        "entities": 2,
+        "recipes": 10
       },
       "source": {
         "kind": "bridge",
         "bridgeProject": "Dorios-Trinkets",
-        "revision": "943362704f26",
-        "fingerprint": "97c6cba720a0815d"
+        "revision": "b8edd7c6eb33",
+        "fingerprint": "6329eddf65c149ea"
       }
     },
     {
@@ -921,7 +936,7 @@
       "lifecycle": "Released",
       "featuredRank": null,
       "free": true,
-      "version": "1.2.0",
+      "version": "1.2.1",
       "minecraftVersion": "1.21.120",
       "requires": [
         "UtilityCraft 3.5+"
@@ -943,13 +958,16 @@
       },
       "metrics": {
         "blocks": 12,
-        "recipes": 12
+        "recipes": 12,
+        "items": 0,
+        "entities": 0,
+        "machines": 12
       },
       "source": {
         "kind": "bridge",
         "bridgeProject": "UtilityCraft-Tiered-Machinery",
-        "revision": "00b25ffaf3f9",
-        "fingerprint": "a103a3b97707663d"
+        "revision": "1c636f146d1d",
+        "fingerprint": "11cd20790014301c"
       }
     },
     {
@@ -1169,8 +1187,8 @@
       "source": {
         "kind": "bridge",
         "bridgeProject": "UtilityCraft-ProjectU",
-        "revision": "6eba7a015b32",
-        "fingerprint": "e9f6ccba7c53d768"
+        "revision": "307a370343c4",
+        "fingerprint": "ae11a07df7bb456d"
       }
     },
     {
@@ -1252,8 +1270,8 @@
       "source": {
         "kind": "bridge",
         "bridgeProject": "Too Many Trinkets",
-        "revision": null,
-        "fingerprint": "03d990825b0ca280"
+        "revision": "9cbe71ed686f",
+        "fingerprint": "75a116c345c2a424"
       }
     },
     {
@@ -1295,8 +1313,8 @@
       "source": {
         "kind": "bridge",
         "bridgeProject": "UtilityCraft-Quarry",
-        "revision": "6de99fe2f6a7",
-        "fingerprint": "3768e19bee62e620"
+        "revision": "0bd2f4ea1160",
+        "fingerprint": "2250b13fb788a47e"
       }
     },
     {
@@ -1331,12 +1349,17 @@
         "coverFit": "cover",
         "alt": "UtilitySky project artwork"
       },
-      "metrics": {},
+      "metrics": {
+        "items": 1,
+        "blocks": 7,
+        "entities": 9,
+        "structures": 15
+      },
       "source": {
         "kind": "bridge",
         "bridgeProject": "UtilitySky-Core",
-        "revision": "4c09a9428072",
-        "fingerprint": "9bcfb7b116234182"
+        "revision": "6a7e20119b18",
+        "fingerprint": "56e3f5fb8e27ce6c"
       }
     }
   ]

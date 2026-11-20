@@ -1,12 +1,9 @@
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
-import {utilitycraftSourcePath} from './wiki-source-paths.mjs';
+import {bridgeProjectsPath, utilitycraftSourcePath} from './wiki-source-paths.mjs';
 
 const siteRoot = path.resolve(import.meta.dirname, '..');
-const bridgeRoot = process.env.BRIDGE_PROJECTS_PATH ?? path.join(
-  os.homedir(), 'AppData', 'Local', 'com.bridge.dev', 'bridge', 'projects',
-);
+const bridgeRoot = bridgeProjectsPath();
 
 const projects = [
   {id: 'utilitycraft', name: 'UtilityCraft', source: 'UtilityCraft'},

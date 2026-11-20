@@ -2,12 +2,15 @@ import React from 'react';
 import '@fontsource-variable/space-grotesk';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import {IconArrowRight, IconBrandGithub, IconExternalLink} from '@tabler/icons-react';
 import DoriosMarketingShell from '../DoriosMarketingShell';
 import SocialMetadata from '../SocialMetadata';
+import AtelierBuilder, {AtelierBuilderLink} from '../AtelierBuilder';
 import {projectCardPalette} from '../../data/cardPalettes';
 import {formatDownloadCount, projectCatalog, relatedProjects} from '../../data/projects';
 import {useSiteI18n} from '../../i18n/site';
 import {localizeProject} from '../../i18n/projects';
+import {CurseForgeIcon, McpedlIcon} from './PlatformIcons';
 import styles from './styles.module.css';
 
 const metricLabels = {
@@ -106,9 +109,10 @@ function Tags({project}) {
   );
 }
 
-function ProjectAction({href, children, variant = 'neutral', internal = false}) {
+function ProjectAction({href, children, variant = 'neutral', internal = false, icon}) {
   const className = `${styles.projectAction} ${styles[`${variant}Action`]}`;
-  const content = <>{children}<span aria-hidden="true">{internal ? '→' : '↗'}</span></>;
+  const ActionIcon = icon ?? (internal ? IconArrowRight : IconExternalLink);
+  const content = <>{children}<ActionIcon className={styles.actionIcon} size={16} stroke={1.9} aria-hidden="true" focusable="false" /></>;
   return internal
     ? <Link className={className} to={href}>{content}</Link>
     : <a className={className} href={href} target="_blank" rel="noreferrer">{content}</a>;
@@ -137,18 +141,21 @@ function PrimaryActions({project}) {
     ? `${project.routes.wiki}/how-to-play`
     : null;
   const actions = [
-    project.links.curseforge && {href: project.links.curseforge, label: 'CurseForge', variant: 'curseforge'},
-    project.links.mcpedl && {href: project.links.mcpedl, label: 'MCPEDL', variant: 'mcpedl'},
+    project.links.curseforge && {href: project.links.curseforge, label: 'CurseForge', variant: 'curseforge', icon: CurseForgeIcon},
+    project.links.mcpedl && {href: project.links.mcpedl, label: 'MCPEDL', variant: 'mcpedl', icon: McpedlIcon},
     howToPlayHref && {href: howToPlayHref, label: t('howToPlay'), variant: 'guide', internal: true},
     project.routes.wiki && {href: project.routes.wiki, label: 'Wiki', variant: 'neutral', internal: true},
-    project.links.repository && {href: project.links.repository, label: 'GitHub', variant: 'neutral'},
-    !project.links.repository && project.links.releases && {href: project.links.releases, label: t('githubReleases'), variant: 'neutral'},
   ].filter(Boolean);
+  const githubAction = project.links.repository
+    ? {href: project.links.repository, label: 'GitHub', icon: IconBrandGithub}
+    : project.links.releases ? {href: project.links.releases, label: t('githubReleases'), icon: IconBrandGithub} : null;
 
   return (
     <div className={styles.actions}>
       {actions.map((action) => <ProjectAction key={action.label} {...action}>{action.label}</ProjectAction>)}
-      {!actions.length && <ProjectAction href="/support" variant="accent" internal>{t('followDevelopment')}</ProjectAction>}
+      {project.id === 'atelier' && <AtelierBuilderLink className={`${styles.projectAction} ${styles.guideAction}`} />}
+      {githubAction && <ProjectAction {...githubAction}>{githubAction.label}</ProjectAction>}
+      {!actions.length && !githubAction && <ProjectAction href="/support" variant="accent" internal>{t('followDevelopment')}</ProjectAction>}
     </div>
   );
 }
@@ -314,6 +321,7 @@ export default function ProjectDetailPage({project: sourceProject}) {
             <ProjectArtwork project={project} />
           </section>
 
+          {project.id === 'atelier' && <AtelierBuilder />}
           <ProjectHighlights project={project} />
           <ProjectFacts project={project} />
 

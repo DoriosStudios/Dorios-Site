@@ -1,9 +1,15 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-22T20:56:09.145793+00:00",
+  "generatedAt": "2026-11-20T00:11:36.549540+00:00",
   "project": {
     "id": "tiered-machinery",
-    "name": "Tiered Machinery"
+    "name": "Tiered Machinery",
+    "version": "1.2.1"
+  },
+  "source": {
+    "bridgeProject": "UtilityCraft-Tiered-Machinery",
+    "revision": "1c636f146d1d",
+    "dirty": false
   },
   "counts": {
     "items": 0,

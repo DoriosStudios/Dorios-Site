@@ -1,16 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-22T20:55:32.214018+00:00",
+  "generatedAt": "2026-11-20T00:11:31.041739+00:00",
   "project": {
     "id": "digital-storage",
-    "name": "Digital Storage"
+    "name": "Digital Storage",
+    "version": "1.1.1"
+  },
+  "source": {
+    "bridgeProject": "UtilityCraft-Digital-Storage",
+    "revision": "803d3db0d489",
+    "dirty": false
   },
   "counts": {
-    "items": 18,
-    "catalogItems": 10,
+    "items": 19,
+    "catalogItems": 11,
     "blocks": 10,
     "entities": 10,
-    "recipes": 30,
+    "recipes": 33,
     "variantGroups": 2
   },
   "content": {
@@ -59,6 +65,15 @@
         "category": "Cells",
         "image": "textures/items/cells/cell_casing.png",
         "source": "BP/items/cells/cell_casing.json"
+      },
+      {
+        "id": "dimensional_range_upgrade",
+        "slug": "dimensional-range-upgrade",
+        "identifier": "utilitycraft:dimensional_range_upgrade",
+        "name": "Dimensional Range Upgrade",
+        "category": "Wireless",
+        "image": "textures/items/dimensional_range_upgrade.png",
+        "source": "BP/items/wireless/dimensional_range_upgrade.json"
       },
       {
         "id": "expert_storage_cell",
@@ -514,14 +529,25 @@
           "tag:minecraft:is_pickaxe_item_destructible",
           "tag:ucds:network",
           "tag:ucds:network_machine",
+          "utilitycraft:machine_upgrades",
           "utilitycraft:storage_center"
         ],
         "machineData": {
           "component": "utilitycraft:storage_center",
-          "inventorySize": 2,
+          "inventorySize": 3,
           "systemKind": "machine",
           "energyCapacity": 512000,
           "baseRate": 0,
+          "upgradeSlots": [
+            2
+          ],
+          "upgrades": [
+            {
+              "type": "range",
+              "slot": 2,
+              "max": 8
+            }
+          ],
           "tickInterval": [
             4,
             4
@@ -991,6 +1017,56 @@
           "count": 1
         },
         "source": "BP/recipes/items/digital_storage/crafting_terminal.json"
+      },
+      {
+        "id": "dimensional_range_upgrade",
+        "identifier": "utilitycraft:dimensional_range_upgrade",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:range_upgrade",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:range_upgrade",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:range_upgrade",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:range_upgrade",
+            "count": 1
+          },
+          {
+            "id": "minecraft:nether_star",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:range_upgrade",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:range_upgrade",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:range_upgrade",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:range_upgrade",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:dimensional_range_upgrade",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/dimensional_range_upgrade.json"
       },
       {
         "id": "expert_storage_cell",
@@ -2062,6 +2138,106 @@
           "count": 1
         },
         "source": "BP/recipes/items/digital_storage/ultimate_storage_part.json"
+      },
+      {
+        "id": "wireless_crafting_panel",
+        "identifier": "utilitycraft:wireless_crafting_panel",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:crafter",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:gold_dust",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:wireless_panel_off",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:gold_dust",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:wireless_crafting_panel_off",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/wireless_crafting_panel.json"
+      },
+      {
+        "id": "wireless_panel",
+        "identifier": "utilitycraft:wireless_panel",
+        "kind": "shaped",
+        "station": "utilitycraft_workbench",
+        "slots": [
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:range_upgrade",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ender_eye",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:storage_terminal",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ender_eye",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:way_chip",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fluxite",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:wireless_panel_off",
+          "count": 1
+        },
+        "source": "BP/recipes/items/digital_storage/wireless_panel.json"
       }
     ]
   },
@@ -2075,6 +2251,15 @@
         "category": "Cells",
         "image": "textures/items/cells/cell_casing.png",
         "source": "BP/items/cells/cell_casing.json"
+      },
+      {
+        "id": "dimensional_range_upgrade",
+        "slug": "dimensional-range-upgrade",
+        "identifier": "utilitycraft:dimensional_range_upgrade",
+        "name": "Dimensional Range Upgrade",
+        "category": "Wireless",
+        "image": "textures/items/dimensional_range_upgrade.png",
+        "source": "BP/items/wireless/dimensional_range_upgrade.json"
       },
       {
         "id": "fluxite",

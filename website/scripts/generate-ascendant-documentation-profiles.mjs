@@ -1,14 +1,13 @@
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
+import vm from 'node:vm';
+import {projectSourcePath} from './wiki-source-paths.mjs';
 
 // This generator deliberately reads the add-on's authoritative item, block,
 // world-generation and drop configuration.  The site only stores the rendered
 // profile so its client bundle never needs access to a local add-on checkout.
 const siteRoot = path.resolve(import.meta.dirname, '..');
-const addonRoot = process.env.ASCENDANT_TECHNOLOGY_PROJECT_PATH ?? path.join(
-  os.homedir(), 'AppData', 'Local', 'com.bridge.dev', 'bridge', 'projects', 'Ascendant-Technology',
-);
+const addonRoot = projectSourcePath('Ascendant-Technology', 'ASCENDANT_TECHNOLOGY_PROJECT_PATH');
 const outputPath = path.join(siteRoot, 'src', 'wiki', 'projects', 'ascendant-technology', 'documentationProfiles.generated.json');
 const manifestPath = path.join(siteRoot, 'src', 'wiki', 'projects', 'ascendant-technology', 'manifest.json');
 
@@ -464,6 +463,34 @@ const manifest = readJson(manifestPath).content ?? {};
 const knownItems = new Set((manifest.items ?? []).map((entry) => entry.identifier));
 const knownBlocks = new Set((manifest.blocks ?? []).map((entry) => entry.identifier));
 const itemProfiles = {};
+const alchemyPath = path.join(addonRoot, 'BP', 'scripts', 'config', 'alchemy.js');
+if (fs.existsSync(alchemyPath)) {
+  const config = vm.runInNewContext(`${fs.readFileSync(alchemyPath, 'utf8')
+    .replace(/\bexport\s+(?=(?:const|let|function)\b)/g, '')}
+    ;({CUSTOM_POTIONS, POTION_FAMILIES, potionDescriptionEffects});`, {}, {timeout: 1000});
+  for (const [identifier, potion] of Object.entries(config.CUSTOM_POTIONS)) {
+    if (!knownItems.has(identifier)) continue;
+    const family = config.POTION_FAMILIES.find((entry) => entry.id === potion.family);
+    const effects = config.potionDescriptionEffects(potion);
+    itemProfiles[identifier] = {documentation: {
+      description: 'A potion brewed or upgraded in the Alchemical Station. Effect levels, duration and delivery form are documented below.',
+      basic: {itemType: 'Alchemical potion', maximumStack: 1},
+      statisticsTitle: 'Potion properties',
+      statistics: [
+        ['Potion level', potion.level],
+        ['Delivery form', {drink: 'Drinkable', splash: 'Splash', lingering: 'Lingering'}[potion.form]],
+        ['Effect duration', family.instant ? 'Instant' : `${effects[0].duration} s`],
+        ['Maximum potion level', family.maxLevel],
+        ...effects.map((effect) => [formatIdentifier(effect.id), effect.amplifier + 1]),
+      ],
+      usage: potion.form === 'lingering'
+        ? 'Lingering clouds apply one quarter of the listed drinkable duration and use a reapplication cooldown. The duration shown here already includes that reduction.'
+        : potion.form === 'splash'
+          ? 'Throw to apply the effect around the impact. Splash strength decreases with distance.'
+          : 'Drink to apply the listed effects to the user.',
+    }};
+  }
+}
 for (const file of walk(path.join(addonRoot, 'BP', 'items')).filter((file) => file.endsWith('.json'))) {
   const item = readJson(file)['minecraft:item'];
   const identifier = item?.description?.identifier;

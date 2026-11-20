@@ -5,9 +5,11 @@
 /build
 /build.previous-*
 /static/img/social/wiki/
+/static/atelier-builder/
 
 # Generated files
 .docusaurus
+.docusaurus-dev
 .cache-loader
 
 # Misc

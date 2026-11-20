@@ -18,6 +18,51 @@ const {wikiProjects, getWikiProject} = require('../src/wiki/projects');
 const {isResource, resourceOrigin, transportDocumentation} = require('../src/wiki/editorialContent');
 const {wikiText, translatePresentation, copy} = require('../src/i18n/wiki');
 
+test('current Ascendant steam and alchemy recipes retain their resource costs and restrictions', () => {
+  const project = wikiProjects['ascendant-technology'];
+  for (const id of ['alchemical_station', 'steam_boiler', 'vaporizer', 'network_center']) {
+    assert.ok(project.machines.some((machine) => machine.id === id), id);
+  }
+  const boiler = project.processingRecipes.find((recipe) => recipe.station === 'steam_boiler');
+  assert.equal(boiler.inputFluid.type, 'water');
+  assert.equal(boiler.outputGas.amount, 1000);
+  assert.equal(boiler.ticks, 160);
+  assert.equal(boiler.cost, 2400);
+  const cryofluid = project.processingRecipes.find((recipe) => recipe.station === 'vaporizer' && recipe.inputFluid?.type === 'cryofluid');
+  assert.equal(cryofluid.outputGas.amount, 3000);
+  assert.equal(cryofluid.ticks, 80);
+  const alchemy = project.processingRecipes.filter((recipe) => recipe.station === 'alchemical_station');
+  assert.ok(alchemy.some((recipe) => recipe.recipeKind === 'brewing' && recipe.fluid.type === 'blaze_essence'));
+  assert.ok(alchemy.some((recipe) => recipe.category === 'Alchemical amplify' && recipe.fluid.amount === 1000));
+  assert.ok(alchemy.some((recipe) => recipe.category === 'Alchemical extend' && recipe.fluid.amount === 750));
+  assert.equal(alchemy.some((recipe) => recipe.category === 'Alchemical extend' && /extend-(healing|harming|saturation)-/.test(recipe.id)), false);
+  const lingeringHaste = project.allItems.find((entry) => entry.id === 'utilitycraft:alchemical_haste_1_normal_lingering');
+  assert.equal(lingeringHaste.documentation.statistics.find(([label]) => label === 'Effect duration')[1], '45 s');
+  for (const locale of ['pt-BR', 'es-MX']) {
+    const localized = getWikiProject(project.id, locale);
+    for (const id of ['alchemical_station', 'steam_boiler', 'vaporizer', 'network_center']) {
+      assert.notEqual(localized.machines.find((machine) => machine.id === id).description,
+        project.machines.find((machine) => machine.id === id).description, `${locale}: ${id}`);
+    }
+  }
+});
+
+test('Heavy Machinery uses current source entries while retaining existing URLs and nuclear recovery outputs', () => {
+  const project = wikiProjects['heavy-machinery'];
+  assert.ok(project.items.some((entry) => entry.slug === 'utility_exo_boots'));
+  assert.ok(project.items.some((entry) => entry.id === 'utilitycraft:stabilized_nuclear_matter'));
+  assert.equal(project.items.some((entry) => entry.id === 'utilitycraft:saline_coolant_bucket'), false);
+  assert.equal(project.blocks.some((entry) => entry.id === 'utilitycraft:fluid_controller'), false);
+  assert.ok(project.machines.some((entry) => entry.id === 'reinforced_induction_anvil'));
+  assert.ok(project.generators.some((entry) => entry.id === 'combustion-chamber'));
+  const recovery = project.processingRecipes.find((recipe) => recipe.station === 'chemical-processor'
+    && recipe.result.id === 'utilitycraft:spent_uranium_pellet');
+  assert.equal(recovery.cost, 32000000);
+  assert.equal(recovery.outputGas, undefined, 'nuclear recovery has no gas byproduct');
+  assert.equal(project.allItems.find((entry) => entry.id === 'utilitycraft:utility_exo_boots')
+    .documentation.properties.find(([label]) => label === 'Durability')[1], '10,200');
+});
+
 test('Primitive Forge tutorial is localized without changing navigation or assets', () => {
   const original = getWikiProject('utilitycraft', 'en').howToPlay.pages.find(({id}) => id === 'primitive-forge');
   assert.ok(original);

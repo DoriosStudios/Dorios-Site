@@ -64,6 +64,15 @@ test('the actual project catalogs generate direct sector pages using short inter
   }
   assert.ok(byPath.has('/pt-BR/projects/utilitycraft'));
   assert.ok(byPath.has('/pt-BR/wiki/utilitycraft/how-to-play/primitive-forge'));
+  for (const route of [
+    '/wiki/ascendant-technology/machines/alchemical_station/specs',
+    '/wiki/ascendant-technology/machines/steam_boiler/recipes',
+    '/wiki/ascendant-technology/machines/vaporizer/recipes',
+    '/wiki/ascendant-technology/machines/network_center/specs',
+    '/wiki/heavy-machinery/machines/reinforced_induction_anvil/specs',
+    '/wiki/heavy-machinery/generators/combustion-chamber/specs',
+    '/wiki/heavy-machinery/items/stabilized_nuclear_matter/recipes',
+  ]) assert.ok(byPath.has(`/pt-BR${route}`), `missing current project route: ${route}`);
   assert.ok(recorded.routes.every((route) => !route.path.includes('#')));
   console.log(`${recorded.routes.length} public routes; ${recorded.data.size} short parameter modules`);
 });

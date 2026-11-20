@@ -40,7 +40,7 @@ const itemEditorialProfiles = {
       ['Filter requirement', 'The destination needs a Filter Upgrade before filters can be pasted'],
       ['Compatibility', 'Only settings supported by the destination are applied'],
     ],
-    'Use the tool menu to choose which settings are included. Copy from the configured source block, switch to paste mode, then use it on the destination. Clear the stored profile before copying a different setup.',
+    'Sneak and interact in the air to open the settings menu. Use the tool on a compatible block while standing or sneaking to copy or paste without opening its inventory. The held tool shows the selected mode in the action bar. Choose the included settings, copy the source, switch to Paste and apply them to the destination.',
     ['utilitycraft:wrench', 'utilitycraft:filter_upgrade'],
   ),
   ...Object.fromEntries(Object.entries(upgradeProfiles).map(([id, [type, itemType, description]]) => [
