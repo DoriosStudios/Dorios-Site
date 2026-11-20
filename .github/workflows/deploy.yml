@@ -52,6 +52,8 @@ jobs:
         working-directory: website
         run: npm run build
         env:
+          NODE_OPTIONS: --max-old-space-size=6144
+          TERSER_PARALLEL: 2
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ATELIER_PROJECT_PATH: ${{ github.workspace }}/atelier-source
 
