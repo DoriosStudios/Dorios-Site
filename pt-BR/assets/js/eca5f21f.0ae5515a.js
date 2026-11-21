@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[22960],{468161:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"alchemical-absorption-2-normal-drink","detailSection":"details"}')}}]);

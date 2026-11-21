@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[178531],{291877:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-alchemical-station-brew-weakness-1-normal-splash-default-minecraft-glowstone-dust","detailSection":"details"}')}}]);

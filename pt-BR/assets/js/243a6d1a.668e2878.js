@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[37001],{323733:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"alchemical-resistance-3-normal-drink","detailSection":"uses"}')}}]);

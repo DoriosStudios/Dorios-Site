@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[699084],{268130:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"alchemical-healing-3-normal-splash","detailSection":"recipes"}')}}]);

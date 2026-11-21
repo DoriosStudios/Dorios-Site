@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[61329],{708808:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-alchemical-station-brew-regeneration-1-normal-lingering-default-minecraft-glowstone-dust","detailSection":"details"}')}}]);

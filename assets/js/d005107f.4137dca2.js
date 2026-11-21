@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[660458],{504794:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"recipes","slug":"processing-ascendant-technology-alchemical-station-brew-nightvision-1-long-lingering-default-minecraft-fermented-spider-eye","detailSection":"details"}')}}]);

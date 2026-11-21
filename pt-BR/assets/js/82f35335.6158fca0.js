@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[676728],{395318:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"items","slug":"spent_uranium_pellet","detailSection":"related"}')}}]);

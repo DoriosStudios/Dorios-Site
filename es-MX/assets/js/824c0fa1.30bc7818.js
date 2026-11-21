@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[288166],{488614:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"items","slug":"fluorite_dust","detailSection":"drops"}')}}]);

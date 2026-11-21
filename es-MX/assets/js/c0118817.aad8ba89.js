@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[608224],{910016:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"items","slug":"splash-potion","detailSection":"uses"}')}}]);

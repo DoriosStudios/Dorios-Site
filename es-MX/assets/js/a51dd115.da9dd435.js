@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[166153],{582761:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"items","slug":"saline_coolant_bucket","detailSection":"recipes"}')}}]);

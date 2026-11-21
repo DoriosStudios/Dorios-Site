@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[471629],{802979:e=>{e.exports=JSON.parse('{"projectId":"heavy-machinery","entryType":"items","slug":"nether_star_essence_bucket","detailSection":"notes"}')}}]);
