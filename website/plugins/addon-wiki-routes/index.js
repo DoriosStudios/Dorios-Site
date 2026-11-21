@@ -81,7 +81,7 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
       addEntryRoutes('heavy-machinery', {
         items: heavyManifest.catalog.items.map((entry) => entry.slug),
         blocks: heavyManifest.content.blocks.map((entry) => entry.slug),
-        machines: [...data.machines.map((entry) => entry.id), 'reinforced_induction_anvil'],
+        machines: [...data.machines.map((entry) => entry.id), 'reaction_chamber', 'reinforced_induction_anvil'],
         generators: data.generators.map((entry) => entry.id),
         mechanics: data.mechanics.map((entry) => slugify(entry.name)),
         recipes: [

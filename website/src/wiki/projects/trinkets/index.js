@@ -189,7 +189,7 @@ function acquisitionSummary(profile) {
 function auxiliaryCategory(item) {
   if (/_(?:helmet|chestplate|leggings|boots)$/.test(item.shortId)) return 'Armor Sets';
   if (/empty_ring/.test(item.shortId)) return 'Ring Materials';
-  if (/scroll/.test(item.shortId)) return 'Utility Items';
+  if (/scroll/.test(item.shortId) || item.shortId === 'stat_display') return 'Utility Items';
   return item.category || 'Materials';
 }
 

@@ -93,7 +93,7 @@ const reference = createGeneratedProject({
 const blocksById = new Map(reference.allBlocks.map((block) => [block.shortId, block]));
 const machines = [
   ...data.machines,
-  ...reference.machines.filter((machine) => machine.id === 'reinforced_induction_anvil'),
+  ...reference.machines.filter((machine) => ['reaction_chamber', 'reinforced_induction_anvil'].includes(machine.id)),
 ].map((machine) => {
   const blockSlug = machine.blockSlug ?? machineControllerIds[machine.id];
   const block = blocksById.get(blockSlug);
@@ -107,6 +107,15 @@ const generators = data.generators.map((generator) => {
   }[generator.id];
   const block = blocksById.get(blockSlug);
   return {...generator, blockSlug, image: block?.render ?? block?.itemImage ?? block?.faces?.right ?? generator.image};
+});
+const controllerPages = new Map([
+  ...machines.map((machine) => [machine.blockSlug, {entryType: 'machines', catalogSlug: machine.id}]),
+  ...generators.map((generator) => [generator.blockSlug, {entryType: 'generators', catalogSlug: generator.id}]),
+].filter(([blockSlug]) => blockSlug));
+const lookupBlocks = reference.lookupBlocks.map((block) => {
+  if (block.basePath && block.basePath !== '/wiki/heavy-machinery') return block;
+  const page = controllerPages.get(block.slug) ?? controllerPages.get(block.shortId);
+  return page ? {...block, ...page} : block;
 });
 
 const heavyMachineryProject = {
@@ -124,7 +133,7 @@ const heavyMachineryProject = {
   items: reference.items,
   allItems: reference.allItems,
   lookupItems: reference.lookupItems,
-  lookupBlocks: reference.lookupBlocks,
+  lookupBlocks,
   blocks: reference.allBlocks,
   allBlocks: reference.allBlocks,
   machines,
