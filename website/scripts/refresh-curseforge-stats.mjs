@@ -7,7 +7,10 @@ import catalog from '../src/data/projectCatalog.json' with {type: 'json'};
 
 const scriptPath = fileURLToPath(import.meta.url);
 const scriptDirectory = path.dirname(scriptPath);
-const outputPath = path.join(scriptDirectory, '..', 'src', 'data', 'curseForgeStats.json');
+const outputArgument = process.argv.indexOf('--output');
+if (outputArgument >= 0 && !process.argv[outputArgument + 1]) throw new Error('Missing --output path');
+const outputPath = outputArgument >= 0 ? path.resolve(process.argv[outputArgument + 1])
+  : path.join(scriptDirectory, '..', 'src', 'data', 'curseForgeStats.json');
 const requestHeaders = {
   Accept: 'text/html,application/xhtml+xml',
   'Accept-Language': 'en-US,en;q=0.9',
@@ -149,6 +152,7 @@ async function main() {
     }
   }
 
+  await fs.mkdir(path.dirname(outputPath), {recursive: true});
   await fs.writeFile(outputPath, `${JSON.stringify(next, null, 2)}\n`, 'utf8');
   console.log(
     `[curseforge-stats] Updated ${refreshed}/${projects.length} projects; `

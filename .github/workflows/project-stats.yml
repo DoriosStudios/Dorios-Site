@@ -1,0 +1,81 @@
+name: Refresh project download statistics
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/project-stats.yml'
+      - 'website/scripts/collect-project-stats.mjs'
+      - 'website/scripts/refresh-github-release-stats.mjs'
+      - 'website/scripts/refresh-curseforge-stats.mjs'
+      - 'website/src/data/projectStatistics.mjs'
+      - 'website/src/data/projectCatalog.json'
+      - 'website/src/data/githubReleaseStats.json'
+      - 'website/src/data/curseForgeStats.json'
+  workflow_run:
+    workflows: ['Deploy Docusaurus to GitHub Pages']
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dorios-project-statistics
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event != 'pull_request')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - name: Checkout statistics collectors
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            website/scripts/collect-project-stats.mjs
+            website/scripts/refresh-github-release-stats.mjs
+            website/scripts/refresh-curseforge-stats.mjs
+            website/src/data/projectStatistics.mjs
+            website/src/data/projectCatalog.json
+            website/src/data/githubReleaseStats.json
+            website/src/data/curseForgeStats.json
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Restore last published counters
+        run: |
+          mkdir -p .cache-loader
+          if git fetch --depth=1 origin site-stats; then
+            git show FETCH_HEAD:project-stats.json > .cache-loader/project-stats-previous.json
+          fi
+
+      - name: Collect GitHub and CurseForge statistics
+        run: node scripts/collect-project-stats.mjs --previous .cache-loader/project-stats-previous.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # This is a tiny data branch, not the gh-pages deployment branch.
+      # Publishing it neither builds Docusaurus nor replaces website files.
+      - name: Publish statistics feed
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: site-stats
+          publish_dir: website/.cache-loader/project-stats
+          force_orphan: true
+          commit_message: Refresh public project statistics

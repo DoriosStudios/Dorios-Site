@@ -4,6 +4,7 @@ import Layout from '@theme/Layout';
 import DoriosMarketingShell from '../components/DoriosMarketingShell';
 import {projectCardPalette} from '../data/cardPalettes';
 import {getProject} from '../data/projects';
+import {useLiveProjects} from '../hooks/useProjectStatistics';
 import {useSiteI18n} from '../i18n/site';
 import {localizeProject} from '../i18n/projects';
 import styles from './home.module.css';
@@ -46,9 +47,10 @@ export default function Home() {
   const [hoveredDestination, setHoveredDestination] = useState(null);
   const [focusedDestination, setFocusedDestination] = useState(null);
   const activeDestination = hoveredDestination ?? focusedDestination;
+  const liveFeaturedShortcuts = useLiveProjects(featuredShortcuts);
   const localizedFeaturedShortcuts = React.useMemo(
-    () => featuredShortcuts.map((project) => localizeProject(project, locale)),
-    [locale],
+    () => liveFeaturedShortcuts.map((project) => localizeProject(project, locale)),
+    [liveFeaturedShortcuts, locale],
   );
 
   const destinations = [

@@ -5,6 +5,7 @@ import {IconArrowUpRight, IconDownload, IconSortAscendingLetters, IconTrendingUp
 import DoriosMarketingShell from '../../components/DoriosMarketingShell';
 import {projectCardPalette} from '../../data/cardPalettes';
 import {listedProjects} from '../../data/projects';
+import {useLiveProjects} from '../../hooks/useProjectStatistics';
 import {useSiteI18n} from '../../i18n/site';
 import {localizeProjects} from '../../i18n/projects';
 import styles from './projects.module.css';
@@ -259,7 +260,8 @@ export default function ProjectsPage() {
   const {t, locale} = useSiteI18n();
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [sortMode, setSortMode] = useState('downloads');
-  const localizedProjects = React.useMemo(() => localizeProjects(listedProjects, locale), [locale]);
+  const liveProjects = useLiveProjects(listedProjects);
+  const localizedProjects = React.useMemo(() => localizeProjects(liveProjects, locale), [liveProjects, locale]);
   const byId = React.useMemo(() => new Map(localizedProjects.map((project) => [project.id, project])), [localizedProjects]);
   const primaryCarouselProjects = primaryCarouselProjectIds.map((projectId) => byId.get(projectId)).filter(Boolean);
   const heavyMachinery = byId.get('heavy-machinery');

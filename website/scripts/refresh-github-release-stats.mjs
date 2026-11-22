@@ -6,7 +6,10 @@ import {fileURLToPath} from 'node:url';
 import catalog from '../src/data/projectCatalog.json' with {type: 'json'};
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
-const outputPath = path.join(scriptDirectory, '..', 'src', 'data', 'githubReleaseStats.json');
+const outputArgument = process.argv.indexOf('--output');
+if (outputArgument >= 0 && !process.argv[outputArgument + 1]) throw new Error('Missing --output path');
+const outputPath = outputArgument >= 0 ? path.resolve(process.argv[outputArgument + 1])
+  : path.join(scriptDirectory, '..', 'src', 'data', 'githubReleaseStats.json');
 const selectedProject = process.argv.includes('--project') ? process.argv[process.argv.indexOf('--project') + 1] : null;
 if (process.argv.includes('--project') && !catalog.projects.some(({id}) => id === selectedProject)) throw new Error(`Unknown project: ${selectedProject}`);
 const projects = catalog.projects
@@ -113,6 +116,7 @@ for (const project of projects) {
   }
 }
 
+await fs.mkdir(path.dirname(outputPath), {recursive: true});
 await fs.writeFile(outputPath, `${JSON.stringify(next, null, 2)}\n`, 'utf8');
 console.log(`[github-stats] Refreshed ${refreshed}/${projects.length} projects.`);
 Object.values(next).filter((stats) => !selectedProject || stats.id === selectedProject)

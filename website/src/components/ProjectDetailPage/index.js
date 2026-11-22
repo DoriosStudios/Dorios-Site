@@ -8,6 +8,7 @@ import SocialMetadata from '../SocialMetadata';
 import AtelierBuilder, {AtelierBuilderLink} from '../AtelierBuilder';
 import {projectCardPalette} from '../../data/cardPalettes';
 import {formatDownloadCount, projectCatalog, relatedProjects} from '../../data/projects';
+import {useLiveProject} from '../../hooks/useProjectStatistics';
 import {useSiteI18n} from '../../i18n/site';
 import {localizeProject} from '../../i18n/projects';
 import {CurseForgeIcon, McpedlIcon} from './PlatformIcons';
@@ -283,7 +284,8 @@ function ProjectHighlights({project}) {
 
 export default function ProjectDetailPage({project: sourceProject}) {
   const {t, formatNumber, locale} = useSiteI18n();
-  const project = React.useMemo(() => localizeProject(sourceProject, locale), [sourceProject, locale]);
+  const liveProject = useLiveProject(sourceProject);
+  const project = React.useMemo(() => localizeProject(liveProject, locale), [liveProject, locale]);
   if (!project) {
     return <Layout title={t('projectNotFound')}><DoriosMarketingShell activePage="projects"><main className={styles.notFound}><h1>{t('projectNotFound')}</h1><Link to="/projects">{t('returnProjects')}</Link></main></DoriosMarketingShell></Layout>;
   }

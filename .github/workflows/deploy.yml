@@ -4,11 +4,25 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'website/**'
+      - '.github/workflows/deploy.yml'
+      - '!website/src/data/githubReleaseStats.json'
+      - '!website/src/data/curseForgeStats.json'
+      - '!website/scripts/collect-project-stats.mjs'
+      - '!website/scripts/refresh-github-release-stats.mjs'
+      - '!website/scripts/refresh-curseforge-stats.mjs'
   pull_request:
     branches:
       - main
-  schedule:
-    - cron: '17 */6 * * *'
+    paths:
+      - 'website/**'
+      - '.github/workflows/deploy.yml'
+      - '!website/src/data/githubReleaseStats.json'
+      - '!website/src/data/curseForgeStats.json'
+      - '!website/scripts/collect-project-stats.mjs'
+      - '!website/scripts/refresh-github-release-stats.mjs'
+      - '!website/scripts/refresh-curseforge-stats.mjs'
   workflow_dispatch:
 
 permissions:
@@ -71,7 +85,7 @@ jobs:
           if-no-files-found: error
 
   deploy:
-    if: github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     needs: build
     runs-on: ubuntu-latest
     permissions:
