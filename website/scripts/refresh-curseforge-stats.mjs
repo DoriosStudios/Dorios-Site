@@ -108,7 +108,29 @@ function publicCurseForgeUrl(project) {
   return url.href;
 }
 
-async function fetchProject(project) {
+async function fetchProject(project, cached) {
+  const modId = project.curseforgeProjectId ?? cached?.modId;
+  const apiKeys = [...new Set([process.env.CURSEFORGE_API_KEY, process.env.CURSEFORGE_API_TOKEN].filter(Boolean))];
+  if (apiKeys.length && Number.isSafeInteger(modId)) {
+    let status;
+    for (const apiKey of apiKeys) {
+      const response = await fetch(`https://api.curseforge.com/v1/mods/${modId}`, {
+        headers: {Accept: 'application/json', 'x-api-key': apiKey}, signal: AbortSignal.timeout(15_000),
+      });
+      status = response.status;
+      if (!response.ok) {
+        if (status === 401 || status === 403) continue;
+        throw new Error(`CurseForge API returned HTTP ${status}`);
+      }
+      const {data} = await response.json();
+      if (data?.id !== modId || !Number.isSafeInteger(data.downloadCount) || data.downloadCount < 0) {
+        throw new Error('CurseForge API returned an invalid download counter');
+      }
+      return {modId, downloads: data.downloadCount, display: abbreviatedDownloadCount(data.downloadCount),
+        source: 'curseforge-api', updatedAt: new Date().toISOString()};
+    }
+    throw new Error(`CurseForge API authentication failed (HTTP ${status})`);
+  }
   const pageUrl = publicCurseForgeUrl(project);
   const response = await fetch(pageUrl, {
     headers: requestHeaders,
@@ -118,6 +140,7 @@ async function fetchProject(project) {
 
   const downloads = extractDetailsDownloadCount(await response.text());
   return {
+    ...(Number.isSafeInteger(modId) ? {modId} : {}),
     downloads,
     display: abbreviatedDownloadCount(downloads),
     source: 'curseforge',
@@ -134,7 +157,7 @@ async function main() {
 
   for (const project of projects) {
     try {
-      next[project.id] = await fetchProject(project);
+      next[project.id] = await fetchProject(project, previous[project.id]);
       refreshed += 1;
       console.log(
         `[curseforge-stats] ${project.id} updated: ${next[project.id].downloads.toLocaleString('en-US')} downloads.`,

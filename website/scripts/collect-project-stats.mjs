@@ -24,9 +24,11 @@ if (previousFile) {
 
 await fs.mkdir(working, {recursive: true});
 const sources = [['githubReleaseStats', 'refresh-github-release-stats.mjs'], ['curseForgeStats', 'refresh-curseforge-stats.mjs']];
+const seeds = {};
 for (const [key] of sources) {
   const fallback = await readJson(path.join(website, 'src/data', `${key}.json`));
-  await fs.writeFile(path.join(working, `${key}.json`), JSON.stringify({...fallback, ...previous?.[key]}));
+  seeds[key] = {...fallback, ...previous?.[key]};
+  await fs.writeFile(path.join(working, `${key}.json`), JSON.stringify(seeds[key]));
 }
 
 await Promise.all(sources.map(([key, script]) => new Promise((resolve, reject) => {
@@ -43,3 +45,13 @@ await fs.mkdir(output, {recursive: true});
 const bytes = JSON.stringify(payload);
 await fs.writeFile(path.join(output, 'project-stats.json'), bytes + '\n');
 console.log(`[project-stats] Published payload prepared: ${Buffer.byteLength(bytes)} bytes; no website build required.`);
+const summary = ['## Project download statistics', '', '| Provider | Refreshed | Kept cached |', '| --- | ---: | ---: |'];
+for (const [key, label] of [['githubReleaseStats', 'GitHub'], ['curseForgeStats', 'CurseForge']]) {
+  const records = Object.entries(payload[key]);
+  const refreshed = records.filter(([id, record]) => record.available !== false && record.updatedAt !== seeds[key][id]?.updatedAt).length;
+  const cached = records.length - refreshed;
+  summary.push(`| ${label} | ${refreshed} | ${cached} |`);
+  if (cached && process.env.GITHUB_ACTIONS === 'true') console.warn(`::warning title=${label} statistics::${cached} projects kept cached counters; see provider logs for details.`);
+}
+summary.push('', `Published ${Buffer.byteLength(bytes)} bytes to the statistics feed. No Docusaurus build was run.`);
+if (process.env.GITHUB_STEP_SUMMARY) await fs.appendFile(process.env.GITHUB_STEP_SUMMARY, summary.join('\n') + '\n');

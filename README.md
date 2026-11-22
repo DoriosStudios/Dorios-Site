@@ -18,3 +18,5 @@ Project listings, project pages and home-page shortcuts read the public feed aft
 The main Pages workflow builds on website changes or manual dispatch, with no scheduled full rebuild. Changes limited to the statistics collectors or cached counters run only the statistics workflow. The initial deployment of this feature still requires one full site build; later counter updates do not.
 
 Run `node scripts/collect-project-stats.mjs` from `website` to prepare the feed locally. The ignored output is `.cache-loader/project-stats/project-stats.json`; `--previous <file>` can supply the last published feed and `--output <directory>` changes the output folder. `GITHUB_TOKEN` is optional locally and supplied by Actions in CI.
+
+The statistics workflow uses the existing `CURSEFORGE_API_KEY` / `CURSEFORGE_API_TOKEN` Actions secrets and cached project IDs to read the official CurseForge API. Local runs without a key retain the public-page collector. Workflow summaries distinguish refreshed records from cached fallbacks, with warnings when provider requests fail.
