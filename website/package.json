@@ -49,6 +49,7 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.9.1",
     "@docusaurus/types": "3.9.1",
+    "baseline-browser-mapping": "^2.11.39",
     "sharp": "^0.34.5"
   },
   "browserslist": {
