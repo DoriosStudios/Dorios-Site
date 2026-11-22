@@ -63,6 +63,11 @@
 .materialIcon, .materialHero { display: grid; place-items: center; flex-shrink: 0; border: 1px solid var(--ds-border); border-radius: 7px; color: var(--ds-muted); background: var(--ds-surface); }
 .materialIcon { width: 30px; height: 30px; }
 .materialHero { width: 48px; height: 48px; border-radius: 12px; }
+.blockPreview { display: block; width: 64px; height: 64px; object-fit: contain; image-rendering: pixelated; flex-shrink: 0; }
+.materialIcon:has(.blockPreview), .materialHero:has(.blockPreview) { border: 0; background: transparent; }
+.materialIcon:has(.blockPreview) { width: 40px; height: 40px; }
+.materialIcon .blockPreview { width: 40px; height: 40px; }
+.materialHero:has(.blockPreview), .materialHero .blockPreview { width: 64px; height: 64px; }
 .materialIcon[data-material='wood'], .materialHero[data-material='wood'] { color: #ba976a; }
 .materialIcon[data-material='colored'], .materialHero[data-material='colored'] { color: #b18bbc; }
 .materialIcon[data-material='nature'], .materialHero[data-material='nature'] { color: #82a57b; }
@@ -80,6 +85,7 @@
 .smallActions { display: flex; flex-wrap: wrap; gap: .3rem; }
 .builder .smallActions button { min-height: 32px; border-color: transparent; padding: .2rem .4rem; background: transparent; color: var(--ds-muted); font-size: .875rem; }
 .choices { display: flex; flex-wrap: wrap; gap: .4rem; max-height: 270px; overflow-y: auto; padding: 3px; margin: -3px; scrollbar-width: thin; }
+.imageChoices { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: .5rem; max-height: 390px; overflow-y: auto; padding: 3px; margin: -3px; scrollbar-width: thin; }
 .optionChoice, .shapeChoice { position: relative; display: inline-flex; align-items: center; gap: .45rem; min-height: 38px; padding: .45rem .65rem; border: 1px solid var(--ds-border); border-radius: 8px; background: var(--ds-surface-raised); font-size: .875rem; cursor: pointer; }
 :is(.optionChoice, .shapeChoice, .toolCard):focus-within { outline: 2px solid var(--builder-accent); outline-offset: 2px; }
 :is(.optionChoice, .shapeChoice, .toolCard)[data-checked='true'] { border-color: var(--builder-accent); background: var(--builder-soft); }
@@ -89,6 +95,9 @@
 .colorCheck { width: 12px; height: 12px; flex-shrink: 0; display: grid; place-items: center; color: var(--builder-accent); }
 .shapeGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
 .shapeChoice { display: grid; justify-items: start; gap: .5rem; min-height: 88px; padding: .8rem; line-height: 1.25; }
+.optionChoice[data-preview='true'], .shapeChoice[data-preview='true'] { display: grid; justify-items: center; align-content: start; gap: .35rem; min-height: 120px; padding: .65rem .5rem; text-align: center; line-height: 1.3; }
+.optionChoice[data-preview='true'] > .colorCheck { position: absolute; top: .5rem; right: .5rem; }
+.shapeChoice[data-preview='true'] .blockPreview { width: 80px; height: 80px; }
 .shapeIcon { color: var(--ds-muted); }
 .shapeChoice[data-checked='true'] .shapeIcon { color: var(--builder-accent); }
 .shapeCheck { position: absolute; top: .5rem; right: .5rem; color: var(--builder-accent); }

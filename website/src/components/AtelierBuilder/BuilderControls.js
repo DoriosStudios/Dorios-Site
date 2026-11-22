@@ -7,6 +7,7 @@ import {
 import {applyPreset, CATEGORIES, defaultSelection, familyCategory, familySelection,
   fullBlockSelection, nameOf, PRESETS, selectedRecords, selectionKey, SHAPES, toggle} from './selection.mjs';
 import styles from './styles.module.css';
+import BlockPreview, {representativeBlock} from './BlockPreview';
 
 const categoryIcons = {all: IconLayoutGrid, stone: IconMountain, wood: IconTrees,
   colored: IconPalette, nature: IconLeaf, tools: IconTools};
@@ -30,6 +31,7 @@ function Check({mixed = false, ...props}) {
 
 function OptionGroup({title, values, options, enabled, onToggle, onAll, onNone, t, shapes = false}) {
   const id = useId();
+  const illustrated = options.some(option => option.record?.preview);
   return <section className={styles.optionGroup} aria-labelledby={id}>
     <div className={styles.groupHeading}>
       <h4 id={id}>{title}<span>{enabled ? options.filter(option => values.includes(option.id)).length : 0} / {options.length}</span></h4>
@@ -38,17 +40,18 @@ function OptionGroup({title, values, options, enabled, onToggle, onAll, onNone, 
         <button type="button" onClick={onNone}>{t('groupNone')}</button>
       </div>
     </div>
-    <div className={shapes ? styles.shapeGrid : styles.choices}>
+    <div className={shapes ? styles.shapeGrid : illustrated ? styles.imageChoices : styles.choices}>
       {options.map(option => {
         const checked = enabled && values.includes(option.id);
         const Icon = shapeIcons[option.id];
-        return <label key={option.id} className={shapes ? styles.shapeChoice : styles.optionChoice} data-checked={checked}>
+        return <label key={option.id} className={shapes ? styles.shapeChoice : styles.optionChoice} data-checked={checked} data-preview={Boolean(option.record?.preview)}>
           <input className={styles.optionInput} type="checkbox" checked={checked} onChange={() => onToggle(option.id)} />
-          {shapes && Icon ? <Icon className={styles.shapeIcon} size={26} stroke={1.5} aria-hidden="true" />
+          {option.record?.preview ? <BlockPreview record={option.record} className={styles.blockPreview} />
+            : shapes && Icon ? <Icon className={styles.shapeIcon} size={26} stroke={1.5} aria-hidden="true" />
             : option.hex ? <i className={styles.colorSwatch} style={{backgroundColor: option.hex}} aria-hidden="true" />
               : <span className={styles.checkMark} aria-hidden="true">{checked && <IconCheck size={12} stroke={2.5} />}</span>}
           <span>{option.label}</span>
-          {!shapes && option.hex && <span className={styles.colorCheck} aria-hidden="true">{checked && <IconCheck size={12} stroke={2.5} />}</span>}
+          {!shapes && (option.hex || illustrated) && <span className={styles.colorCheck} aria-hidden="true">{checked && <IconCheck size={12} stroke={2.5} />}</span>}
           {shapes && <span className={styles.shapeCheck} aria-hidden="true">{checked && <IconCheck size={12} stroke={2.5} />}</span>}
         </label>;
       })}
@@ -63,6 +66,9 @@ export default function BuilderControls({catalog, selection, onChange, busy, loc
   const records = useMemo(() => selectedRecords(catalog, selection), [catalog, selection]);
   const familyRecords = useMemo(() => Object.fromEntries(catalog.families.map(family =>
     [family.id, catalog.records.filter(record => record.kind === 'block' && record.family === family.id)])), [catalog]);
+  const previewFor = (id, required = {}) => representativeBlock(familyRecords[id], {
+    variant: selection.families[id]?.variants[0], color: selection.families[id]?.colors[0],
+  }, required);
   const counts = useMemo(() => {
     const result = {};
     records.forEach(record => { if (record.family) result[record.family] = (result[record.family] ?? 0) + 1; });
@@ -157,7 +163,9 @@ export default function BuilderControls({catalog, selection, onChange, busy, loc
                 <Check aria-label={t('selectFamily', {family: nameOf(entry, locale)})} checked={count > 0} mixed={count > 0 && count < total}
                   onChange={event => toggleFamily(entry, event.target.checked)} />
                 <button type="button" onClick={() => setActiveId(entry.id)} aria-pressed={family?.id === entry.id}>
-                  <span className={styles.materialIcon} data-material={familyCategory(entry)}><Icon size={20} stroke={1.6} aria-hidden="true" /></span>
+                  <span className={styles.materialIcon} data-material={familyCategory(entry)}>{previewFor(entry.id)?.preview
+                    ? <BlockPreview record={previewFor(entry.id)} className={styles.blockPreview} />
+                    : <Icon size={20} stroke={1.6} aria-hidden="true" />}</span>
                   <span className={styles.familyName}>{nameOf(entry, locale)}<small>{formatNumber(count)} / {formatNumber(total)}</small></span>
                 </button>
               </div>;
@@ -183,7 +191,9 @@ export default function BuilderControls({catalog, selection, onChange, busy, loc
           })}</div>
         </> : family ? <>
           <div className={styles.editorHeading}>
-            <div className={styles.materialTitle}><span className={styles.materialHero} data-material={familyIconCategory}><MaterialIcon size={29} stroke={1.4} aria-hidden="true" /></span>
+            <div className={styles.materialTitle}><span className={styles.materialHero} data-material={familyIconCategory}>{previewFor(family.id)?.preview
+              ? <BlockPreview record={previewFor(family.id)} className={styles.blockPreview} />
+              : <MaterialIcon size={29} stroke={1.4} aria-hidden="true" />}</span>
               <div><p className={styles.eyebrow}>{t(`category_${familyIconCategory}`)}</p><h3>{nameOf(family, locale)}</h3></div></div>
             <label className={styles.includeFamily}><Check checked={options.enabled && (counts[family.id] ?? 0) > 0}
               onChange={event => toggleFamily(family, event.target.checked)} />{t('includeFamily')}</label>
@@ -194,15 +204,15 @@ export default function BuilderControls({catalog, selection, onChange, busy, loc
             {family.shapes.includes('block') && <button type="button" onClick={() => updateFamily(family.id, fullBlockSelection(catalog, family))}><IconCube size={15} aria-hidden="true" />{t('full')}</button>}
             <button type="button" onClick={() => updateFamily(family.id, {enabled: false})}>{t('familyNone')}</button>
           </div>
-          <OptionGroup title={t('shapes')} options={SHAPES.filter(shape => family.shapes.includes(shape)).map(id => ({id, label: t(id)}))}
+          <OptionGroup title={t('shapes')} options={SHAPES.filter(shape => family.shapes.includes(shape)).map(id => ({id, label: t(id), record: previewFor(family.id, {shape: id})}))}
             values={options.shapes} enabled={options.enabled} shapes t={t} onToggle={id => changeOption('shapes', id)}
             onAll={() => updateFamily(family.id, {enabled: true, shapes: [...family.shapes]})} onNone={() => updateFamily(family.id, {shapes: []})} />
           {family.variants.length > 1 && <OptionGroup title={t('variants')}
-            options={family.variants.map(value => ({id: value.id, label: nameOf(value, locale)}))} values={options.variants} enabled={options.enabled} t={t}
+            options={family.variants.map(value => ({id: value.id, label: nameOf(value, locale), record: previewFor(family.id, {variant: value.id})}))} values={options.variants} enabled={options.enabled} t={t}
             onToggle={id => changeOption('variants', id)} onAll={() => updateFamily(family.id, {enabled: true, variants: family.variants.map(value => value.id)})}
             onNone={() => updateFamily(family.id, {variants: []})} />}
           {family.colors.length > 1 && <OptionGroup title={t('colors')}
-            options={family.colors.map(value => ({id: value.id, label: nameOf(value, locale), hex: value.hex ?? nativeSwatches[value.id]}))} values={options.colors} enabled={options.enabled} t={t}
+            options={family.colors.map(value => ({id: value.id, label: nameOf(value, locale), hex: value.hex ?? nativeSwatches[value.id], record: previewFor(family.id, {color: value.id})}))} values={options.colors} enabled={options.enabled} t={t}
             onToggle={id => changeOption('colors', id)} onAll={() => updateFamily(family.id, {enabled: true, colors: family.colors.map(value => value.id)})}
             onNone={() => updateFamily(family.id, {colors: []})} />}
         </> : <div className={styles.editorEmpty}><IconSearch size={32} aria-hidden="true" /><p>{t('noMatch')}</p></div>}
