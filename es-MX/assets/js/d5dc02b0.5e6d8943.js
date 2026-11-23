@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[738673],{226721:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"entities","slug":"prismarine-shards-bonsai","detailSection":"details"}')}}]);

@@ -1,0 +1,2662 @@
+{
+  "schemaVersion": 1,
+  "entityRendererVersion": 1,
+  "counts": {
+    "generated": 0,
+    "reused": 206,
+    "ignored": 2,
+    "error": 131
+  },
+  "coverage": {
+    "entitiesFound": 113,
+    "missingGeometry": 0,
+    "missingTexture": 0,
+    "unresolvedController": 3,
+    "unsupportedVariant": 0,
+    "renderFailure": 1,
+    "headNotResolved": 102,
+    "missingClient": 25
+  },
+  "results": [
+    {
+      "entity": "utilitycraft:acacia_tree",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_acacia_tree-68f2b666a13c/fullBody-01416ac222d0d59d5d723456.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:acacia_tree",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_acacia_tree-68f2b666a13c/portrait-b08852500737f895b778aad4.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:acacia_tree",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_acacia_tree; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:amethyst_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_amethyst_bonsai-86b850aeb428/fullBody-27428e0c435511137be6d636.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:amethyst_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_amethyst_bonsai-86b850aeb428/portrait-c7e825355ff67394554d2822.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:amethyst_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:apple_tree",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_apple_tree-dbdfd3488561/fullBody-7b53387600a35749dd3dbf91.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:apple_tree",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_apple_tree-dbdfd3488561/portrait-eac94a56b433e8b26c7f95cb.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:apple_tree",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_apple_tree; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:azalea_tree",
+      "format": "fullBody",
+      "status": "error",
+      "code": "unresolvedController",
+      "message": "Unsupported Molang: q.property('utilitycraft:azalea_flowering') ? 1 : 0; Unsupported Molang expression: false ? 1 : 0. Supply queries/expressions or explicit layers."
+    },
+    {
+      "entity": "utilitycraft:azalea_tree",
+      "format": "portrait",
+      "status": "error",
+      "code": "unresolvedController",
+      "message": "Unsupported Molang: q.property('utilitycraft:azalea_flowering') ? 1 : 0; Unsupported Molang expression: false ? 1 : 0. Supply queries/expressions or explicit layers."
+    },
+    {
+      "entity": "utilitycraft:azalea_tree",
+      "format": "face",
+      "status": "error",
+      "code": "unresolvedController",
+      "message": "Unsupported Molang: q.property('utilitycraft:azalea_flowering') ? 1 : 0; Unsupported Molang expression: false ? 1 : 0. Supply queries/expressions or explicit layers."
+    },
+    {
+      "entity": "utilitycraft:bamboo",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_bamboo-dcbf3794b72b/fullBody-bc796e630e0299d140199b7c.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:bamboo",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_bamboo-dcbf3794b72b/portrait-b2b99c0a00ff21eac0d88de3.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:bamboo",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_bamboo; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:beetroot",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_beetroot-e7c9df477159/fullBody-6f8ffc0a8fabc207492cffbf.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:beetroot",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_beetroot-e7c9df477159/portrait-30f32b13b74c376477eaa107.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:beetroot",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_sugarcane; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:birch_tree",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_birch_tree-05572bed7736/fullBody-a0ca80b69e8bd43a47fcdf0e.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:birch_tree",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_birch_tree-05572bed7736/portrait-0b16808c3b4386ac82f5c843.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:birch_tree",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_birch_tree; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:blaze_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_blaze_bonsai-36f6684180c8/fullBody-964ebc5e345b6a1de888bd5a.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:blaze_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_blaze_bonsai-36f6684180c8/portrait-46f4cc7288e765d0f8e82e8e.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:blaze_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:block_container_outline",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_block_container_outline-4afafce7da96/fullBody-34efabb400fb0ed873a0951c.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:block_container_outline",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_block_container_outline-4afafce7da96/portrait-d26c0f301a68d5be6dbd90c7.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:block_container_outline",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_block_container_outline; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:bomb",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_bomb-a9adb2119e12/fullBody-8dc4995e0015db64b170079b.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:bomb",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_bomb-a9adb2119e12/portrait-4bf9083704d24983e277ca7e.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:bomb",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_explosives; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:cactus",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_cactus-fb7ce9e599d0/fullBody-b95df324f242daa26bf3bf98.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:cactus",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_cactus-fb7ce9e599d0/portrait-279ebb1b7b46585cb6191b3b.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:cactus",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_cactus; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:carrot",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_carrot-d461b2fbdd32/fullBody-0219ec292cffa142e2b14edc.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:carrot",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_carrot-d461b2fbdd32/portrait-f6360a7911b23206daa2fb07.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:carrot",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_sugarcane; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:cherry_tree",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_cherry_tree-873f5a48130d/fullBody-3f55c9bd3127a09122f2ce3e.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:cherry_tree",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_cherry_tree-873f5a48130d/portrait-3e8a63d17bc541a2ef679bc6.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:cherry_tree",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_cherry_tree; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:chorus_fruit",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_chorus_fruit-f0c13c5df5fa/fullBody-e244f68e12e82fbe799bf49c.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:chorus_fruit",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_chorus_fruit-f0c13c5df5fa/portrait-80ebe53f11828b990140ae81.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:chorus_fruit",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_block_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:coal_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_coal_bonsai-d5dfa94a8d2e/fullBody-8d01d8986a854a2ec79ad9c7.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:coal_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_coal_bonsai-d5dfa94a8d2e/portrait-f30e1b50da602772d229d94a.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:coal_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:copper_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_copper_bonsai-f1f03c2dc8d8/fullBody-c8299ab9e2f6491fe656872d.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:copper_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_copper_bonsai-f1f03c2dc8d8/portrait-ea728a7e662d8e15c6e248c7.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:copper_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:crimson_tree",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_crimson_tree-7fae989dfa5f/fullBody-eedd49bb49411dca2c948986.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:crimson_tree",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_crimson_tree-7fae989dfa5f/portrait-2bb80c2f3c7b2f30d77cd2b6.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:crimson_tree",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_nether_tree; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:darkoak_tree",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_darkoak_tree-818f271ca3eb/fullBody-711e4546a015af63ac49130e.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:darkoak_tree",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_darkoak_tree-818f271ca3eb/portrait-484d7e1664f4cc0065f5c680.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:darkoak_tree",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_darkoak_tree; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:gas_tank_depleted_uranium_hexafluoride_gas",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_depleted_uranium_hexafluoride_gas-ef886a92b901/fullBody-dc70bcc59e3e190935e3f4ce.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_depleted_uranium_hexafluoride_gas",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_depleted_uranium_hexafluoride_gas-ef886a92b901/portrait-3b96c9ed1de7b9fcd164c0e5.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_depleted_uranium_hexafluoride_gas",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_gas_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:diamond_accelerator_clock",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_diamond_accelerator_clock-29c40e2d40c8/fullBody-9670c2029e3f626e50f8e627.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:diamond_accelerator_clock",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_diamond_accelerator_clock-29c40e2d40c8/portrait-eccaf15669552801abb99082.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:diamond_accelerator_clock",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_accelerator_clock; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:diamond_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_diamond_bonsai-84a386954ef6/fullBody-df6058d685ea285226ba2925.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:diamond_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_diamond_bonsai-84a386954ef6/portrait-d95a525bf540f2976b0c0d05.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:diamond_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:dyes_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_dyes_bonsai-c974b543fef9/fullBody-abb9d9ccf38ab6da9fb45267.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:dyes_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_dyes_bonsai-c974b543fef9/portrait-c2867d311cc77838573c4141.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:dyes_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:dynamite",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_dynamite-a319565f24b9/fullBody-67f8089cf951c1109eba1dbe.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:dynamite",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_dynamite-a319565f24b9/portrait-4b6939b01530c04d4345c88d.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:dynamite",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_explosives; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:emerald_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_emerald_bonsai-ce28de1ba71f/fullBody-f38537f94606d7acb7efd412.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:emerald_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_emerald_bonsai-ce28de1ba71f/portrait-1b7601e9198bc7ca5ed022d8.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:emerald_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:ender_pearl_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_ender_pearl_bonsai-ad6e23427a6f/fullBody-e60c4d78feb1c17e0a482f6f.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:ender_pearl_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_ender_pearl_bonsai-ad6e23427a6f/portrait-c1279705a984638f2aae4a29.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:ender_pearl_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:gas_tank_enriched_uranium_hexafluoride_gas",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_enriched_uranium_hexafluoride_gas-a6a6fd72fb1b/fullBody-54159025346084b7227bcc41.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_enriched_uranium_hexafluoride_gas",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_enriched_uranium_hexafluoride_gas-a6a6fd72fb1b/portrait-3f8e8d208c2467d85ed8b35d.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_enriched_uranium_hexafluoride_gas",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_gas_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_crude_oil",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_crude_oil-508a816e1219/fullBody-002a1da1d238a6a9127ee2d4.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_crude_oil",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_crude_oil-508a816e1219/portrait-74e3b722b6e16879cd4b47df.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_crude_oil",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_fluid_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_diesel",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_diesel-9f7cddfeece0/fullBody-82238e46ef52c5468e0a0ee9.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_diesel",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_diesel-9f7cddfeece0/portrait-3a752c556607e5173ae56bc5.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_diesel",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_fluid_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_lava",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_lava-3d7923a4c808/fullBody-09de55213c4cf3fa9d80787a.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_lava",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_lava-3d7923a4c808/portrait-b9cd4b4cbbf2ffb1208d5704.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_lava",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_fluid_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_milk",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_milk-978ce81815da/fullBody-effd934d69487931036dc55e.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_milk",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_milk-978ce81815da/portrait-54ad577451a5158db2408413.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_milk",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_fluid_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_petroleum",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_petroleum-8f3ecb30c625/fullBody-6cb69b719a4b56100b3bc6f8.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_petroleum",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_petroleum-8f3ecb30c625/portrait-cb7a23449decac30485cfb09.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_petroleum",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_fluid_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_water",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_water-4038b6afa8c0/fullBody-136ce5732978740e3e3e7131.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_water",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_water-4038b6afa8c0/portrait-61b4218813816d0c93718774.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_water",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_fluid_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_xp",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_xp-e2d9f49c16a0/fullBody-ccaf557a7e89b8ef77aed1e4.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_xp",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_xp-e2d9f49c16a0/portrait-0d9064d08b712fd9ebff51d3.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_xp",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_fluid_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:gas_tank_fluorine_gas",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_fluorine_gas-9657f214af04/fullBody-96b955e8a290436e25394996.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_fluorine_gas",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_fluorine_gas-9657f214af04/portrait-56ec64563bc2bd5d30e1b2b3.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_fluorine_gas",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_gas_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:gas_tank_steam",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_steam-89ce5f46b9d3/fullBody-813a3236637ee9fc7dfebe21.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_steam",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_steam-89ce5f46b9d3/portrait-2ab2513378e4c97c286384fd.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_steam",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_gas_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:ghast_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_ghast_bonsai-6c9a9696a1f5/fullBody-d86c2049bcee768f470dfde0.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:ghast_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_ghast_bonsai-6c9a9696a1f5/portrait-268c856d1d7a528680931b45.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:ghast_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:glass_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_glass_bonsai-0dced79ce7d9/fullBody-2fbd54661d53f25b591925f5.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:glass_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_glass_bonsai-0dced79ce7d9/portrait-3d43efd8b2c89b17edf80919.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:glass_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:glow_berries",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_glow_berries-9d39bae18861/fullBody-12ea878c634b40da7abd0e45.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:glow_berries",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_glow_berries-9d39bae18861/portrait-c53349719ea7c9b6a0c9abcd.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:glow_berries",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_sugarcane; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:glowstone_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_glowstone_bonsai-a779c33a5456/fullBody-24d8273d517112676cab65dc.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:glowstone_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_glowstone_bonsai-a779c33a5456/portrait-678586ac7e93e9bf9bbde854.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:glowstone_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:accelerator_clock",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_accelerator_clock-220f07d6f711/fullBody-3b5bdb61ea62bf02de9cb6ee.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:accelerator_clock",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_accelerator_clock-220f07d6f711/portrait-243d3c36f1981fcdad766ac2.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:accelerator_clock",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_accelerator_clock; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:gold_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gold_bonsai-7cbc5da4a5a9/fullBody-4f2218d19d37ac1536ed537d.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:gold_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gold_bonsai-7cbc5da4a5a9/portrait-a811a96c2b233145dffef821.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:gold_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:grenade",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_grenade-4a2cd9fb6c51/fullBody-6a8d938fe51d40ceb48b5dca.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:grenade",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_grenade-4a2cd9fb6c51/portrait-cf302ce0dcd6c88b8b492a54.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:grenade",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_explosives; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:gunpowder_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gunpowder_bonsai-e1f32c0df0c7/fullBody-3a8288beaa0f030de3ef5ca1.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:gunpowder_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gunpowder_bonsai-e1f32c0df0c7/portrait-50fadd989dd195ac33d03c96.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:gunpowder_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:gas_tank_heated_saline_coolant_gas",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_heated_saline_coolant_gas-57545deaefac/fullBody-92424a3523d9f5683df34ae9.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_heated_saline_coolant_gas",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_heated_saline_coolant_gas-57545deaefac/portrait-b1b674fcb8c27261db22ffca.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_heated_saline_coolant_gas",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_gas_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_heavy_water",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_heavy_water-07945092f44e/fullBody-5f19705fc60dfc4f3f8edf34.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_heavy_water",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_heavy_water-07945092f44e/portrait-da9c828e7a12facc4121d527.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_heavy_water",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_fluid_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:honey_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_honey_bonsai-577ce5ae9ab7/fullBody-13a33ed21d64741884693d22.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:honey_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_honey_bonsai-577ce5ae9ab7/portrait-cc206c1068647d4bb8a9057a.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:honey_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:hopper",
+      "format": "fullBody",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:hopper"
+    },
+    {
+      "entity": "utilitycraft:hopper",
+      "format": "portrait",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:hopper"
+    },
+    {
+      "entity": "utilitycraft:hopper",
+      "format": "face",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:hopper"
+    },
+    {
+      "entity": "utilitycraft:gas_tank_hydrogen_fluoride_gas",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_hydrogen_fluoride_gas-496d69186880/fullBody-3ca061832844720622ebe13f.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_hydrogen_fluoride_gas",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_hydrogen_fluoride_gas-496d69186880/portrait-315c50d52033a65af4e82208.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_hydrogen_fluoride_gas",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_gas_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:gas_tank_hydrogen_gas",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_hydrogen_gas-615d73ddd9a5/fullBody-5a8119490e6cd3549b24fbfa.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_hydrogen_gas",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_hydrogen_gas-615d73ddd9a5/portrait-02cb40e3e5b18974c9f51266.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_hydrogen_gas",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_gas_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:infinite_tank",
+      "format": "fullBody",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:infinite_tank"
+    },
+    {
+      "entity": "utilitycraft:infinite_tank",
+      "format": "portrait",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:infinite_tank"
+    },
+    {
+      "entity": "utilitycraft:infinite_tank",
+      "format": "face",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:infinite_tank"
+    },
+    {
+      "entity": "utilitycraft:iron_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_iron_bonsai-45ae9dfeb127/fullBody-412bff6364fc6dcfc3ff8997.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:iron_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_iron_bonsai-45ae9dfeb127/portrait-3c3566a434edbf5dfac05193.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:iron_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:jungle_tree",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_jungle_tree-b6823623f055/fullBody-0444715f6a67313f909fd13b.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:jungle_tree",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_jungle_tree-b6823623f055/portrait-9a27948d94fbcd4d710cd6a1.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:jungle_tree",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_jungle_tree; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:kelp",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_kelp-885915d5ddcd/fullBody-e14d414b598cb2cbe87a4f6f.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:kelp",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_kelp-885915d5ddcd/portrait-7635d97b76077ffcb0c75b40.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:kelp",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_kelp; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:lapis_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_lapis_bonsai-afb1118082d0/fullBody-b29849b7217173c379373d63.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:lapis_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_lapis_bonsai-afb1118082d0/portrait-e03ce519fabd5cadc64cc21d.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:lapis_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:lava_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_lava_bonsai-c1bedeb5faf5/fullBody-a5948c88a023d60ac58c76e1.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:lava_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_lava_bonsai-c1bedeb5faf5/portrait-965dc96072082840a0eaddec.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:lava_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:leather_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_leather_bonsai-bd1673f0b20d/fullBody-79e52cd7c64594c0d40869c9.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:leather_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_leather_bonsai-bd1673f0b20d/portrait-d4f7bee999675e9508cbbfb3.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:leather_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:machine",
+      "format": "fullBody",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:machine"
+    },
+    {
+      "entity": "utilitycraft:machine",
+      "format": "portrait",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:machine"
+    },
+    {
+      "entity": "utilitycraft:machine",
+      "format": "face",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:machine"
+    },
+    {
+      "entity": "utilitycraft:machine_entity",
+      "format": "fullBody",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:machine_entity"
+    },
+    {
+      "entity": "utilitycraft:machine_entity",
+      "format": "portrait",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:machine_entity"
+    },
+    {
+      "entity": "utilitycraft:machine_entity",
+      "format": "face",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:machine_entity"
+    },
+    {
+      "entity": "utilitycraft:mangrove_tree",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mangrove_tree-82d25908870b/fullBody-026b5a1de7fd281201b29881.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:mangrove_tree",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mangrove_tree-82d25908870b/portrait-93f26a7d5793d2cf02499db4.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:mangrove_tree",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_mangrove_tree; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_blaze",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_blaze-f98a9427125e/fullBody-26516df77b232ca9d6b16a40.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_blaze",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_blaze-f98a9427125e/portrait-aae5c898ad39712d40632c8b.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_blaze",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_spawner_type; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_chicken",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_chicken-3a1809a83a37/fullBody-3a7edd5b7ffe4481fd02ccde.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_chicken",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_chicken-3a1809a83a37/portrait-7c028942525fad12eb7aa1ae.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_chicken",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_spawner_type; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_cow",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_cow-21bde4bd2157/fullBody-410523909b43dfb95de56676.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_cow",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_cow-21bde4bd2157/portrait-3f15e3d12f16fb5a286eda13.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_cow",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_spawner_type; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_creeper",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_creeper-5b57c8a0692e/fullBody-f2d7dd7379ea0d5bdd445a81.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_creeper",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_creeper-5b57c8a0692e/portrait-061abdea63fc382d10a9b4c9.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_creeper",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_spawner_type; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_enderman",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_enderman-3a4489bfaef2/fullBody-ccea93d145b44b026180a836.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_enderman",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_enderman-3a4489bfaef2/portrait-a058e72a6e4c1ec2af645458.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_enderman",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_spawner_type; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_hoglin",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_hoglin-94f987826c4a/fullBody-5b3fb5dfb9481af3da57c507.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_hoglin",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_hoglin-94f987826c4a/portrait-1be47c9bf9b06bc1ba8d085c.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_hoglin",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_spawner_type; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_magma_cube",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_magma_cube-7b28041851b3/fullBody-c1f089a93b4708e5b6fd77ab.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_magma_cube",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_magma_cube-7b28041851b3/portrait-0ba1a7c48f9b882d5ac7d680.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_magma_cube",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_spawner_type; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_mooshroom",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_mooshroom-6250580d51e4/fullBody-a7508707f9955e4dcbd817d2.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_mooshroom",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_mooshroom-6250580d51e4/portrait-db24d98274d4ae02372d83af.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_mooshroom",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_spawner_type; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_pig",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_pig-789810c9780c/fullBody-d52b9807e91d88ee7abd57f1.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_pig",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_pig-789810c9780c/portrait-329b869d6eecee3cc41177d7.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_pig",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_spawner_type; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_sheep",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_sheep-92a2c6c5d351/fullBody-f78f1f13f5d2e8c61062a5a1.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_sheep",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_sheep-92a2c6c5d351/portrait-4647ee7cb6249041c1f27559.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_sheep",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_spawner_type; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_skeleton",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_skeleton-8430a9d61354/fullBody-6a61375e93867f5df5f6db1f.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_skeleton",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_skeleton-8430a9d61354/portrait-ca06c4b20fde867fe30aaf8c.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_skeleton",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_spawner_type; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_slime",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_slime-018a94fa1006/fullBody-e3c44b4f81e484e8dc5a031a.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_slime",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_slime-018a94fa1006/portrait-352a8ba25b51268b526040de.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_slime",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_spawner_type; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_spider",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_spider-24397ea203dd/fullBody-c8c72dc4794f4199fca9308b.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_spider",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_spider-24397ea203dd/portrait-76a5314df28a317669d30b31.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_spider",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_spawner_type; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_wither_skeleton",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_wither_skeleton-13c8f5c639bf/fullBody-5c5828ccd75b2fafb10a43df.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_wither_skeleton",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_wither_skeleton-13c8f5c639bf/portrait-c6204f25a68009978ea4d4dd.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_wither_skeleton",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_spawner_type; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_zombie",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_zombie-a72e4b4ec175/fullBody-aab180b756dbb7d039a7805c.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_zombie",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_zombie-a72e4b4ec175/portrait-1449cc2c9efc53415977bac7.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:mechanical_spawner_zombie",
+      "format": "face",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mechanical_spawner_zombie-a72e4b4ec175/face-c69b413bc96390d029a26ebb.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:melon",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_melon-32377dbdc8ef/fullBody-cb4c2f1fb8f1ebe70798d855.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:melon",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_melon-32377dbdc8ef/portrait-36e86b55ba007add7a1ac0b0.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:melon",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_block_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:gas_tank_methane_gas",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_methane_gas-2491334e0b59/fullBody-e7546653accb32804e33d220.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_methane_gas",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_methane_gas-2491334e0b59/portrait-5c99abeb51bec7cf72fc5a5b.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_methane_gas",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_gas_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:mushroom",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mushroom-33931e82ae63/fullBody-bf42e96a9bfea64da7d5ecd1.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:mushroom",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_mushroom-33931e82ae63/portrait-983f045281a8cb3a150c433d.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:mushroom",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_mushroom; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:gas_tank_natural_uranium_hexafluoride_gas",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_natural_uranium_hexafluoride_gas-6bbeb615c112/fullBody-abfd2d4d54c6c5e04137fe7a.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_natural_uranium_hexafluoride_gas",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_natural_uranium_hexafluoride_gas-6bbeb615c112/portrait-563799e851e88abad159a86c.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_natural_uranium_hexafluoride_gas",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_gas_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:nether_star_accelerator_clock",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_nether_star_accelerator_clock-ed4b6dfd5df2/fullBody-4d1109b3b544a28908dac304.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:nether_star_accelerator_clock",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_nether_star_accelerator_clock-ed4b6dfd5df2/portrait-d3aa223790b07eb8397d6308.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:nether_star_accelerator_clock",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_accelerator_clock; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:nether_star_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_nether_star_bonsai-08afe80fb995/fullBody-e019d35bfa866e7e32585cc8.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:nether_star_bonsai",
+      "format": "portrait",
+      "status": "error",
+      "code": "renderFailure",
+      "message": "No visible geometry for utilitycraft:nether_star_bonsai/portrait"
+    },
+    {
+      "entity": "utilitycraft:nether_star_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_special_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:nether_wart",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_nether_wart-f0e72156910b/fullBody-adcc1171bdfb545a007d3dee.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:nether_wart",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_nether_wart-f0e72156910b/portrait-c526eab7b80c39df6db779a2.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:nether_wart",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_sugarcane; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:netherite_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_netherite_bonsai-d35d5eefbe5c/fullBody-1f22270bccf0bb5024375d39.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:netherite_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_netherite_bonsai-d35d5eefbe5c/portrait-39cc504fefe687edde6183c9.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:netherite_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:gas_tank_nuclear_waste_gas",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_nuclear_waste_gas-6f6f489fb77f/fullBody-a525375aceb05f3bbf6f0b6f.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_nuclear_waste_gas",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_nuclear_waste_gas-6f6f489fb77f/portrait-880fd1dcd9e04005a3178ba0.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_nuclear_waste_gas",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_gas_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:oak_tree",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_oak_tree-2f4ebf2d9925/fullBody-e8954d4bac6e3a4fcd5d4a24.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:oak_tree",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_oak_tree-2f4ebf2d9925/portrait-4f0fb34091f7f6235559bb74.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:oak_tree",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_oak_tree; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:obsidian_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_obsidian_bonsai-88bdf98f8d5e/fullBody-27a23abd0f41093a213041e6.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:obsidian_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_obsidian_bonsai-88bdf98f8d5e/portrait-14bd02a4936197e70a8615b1.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:obsidian_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:gas_tank_oxygen_gas",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_oxygen_gas-c0649472642b/fullBody-f8e608c65a462fd51979e9df.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_oxygen_gas",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_gas_tank_oxygen_gas-c0649472642b/portrait-76d2c4fa48e61feb914affba.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:gas_tank_oxygen_gas",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_gas_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:pale_oak_tree",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_pale_oak_tree-715955812bd1/fullBody-7b381019517591f7cac19635.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:pale_oak_tree",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_pale_oak_tree-715955812bd1/portrait-564917cfc5bac9c7b8bf7ef2.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:pale_oak_tree",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_darkoak_tree; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:pipe",
+      "format": "fullBody",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:pipe"
+    },
+    {
+      "entity": "utilitycraft:pipe",
+      "format": "portrait",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:pipe"
+    },
+    {
+      "entity": "utilitycraft:pipe",
+      "format": "face",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:pipe"
+    },
+    {
+      "entity": "utilitycraft:potato",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_potato-f601fa395c7b/fullBody-bbba4ef4cfe5f44320678cfa.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:potato",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_potato-f601fa395c7b/portrait-69a7d35d1c4ef76ec5cb14a0.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:potato",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_sugarcane; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:primitive_forge",
+      "format": "fullBody",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:primitive_forge"
+    },
+    {
+      "entity": "utilitycraft:primitive_forge",
+      "format": "portrait",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:primitive_forge"
+    },
+    {
+      "entity": "utilitycraft:primitive_forge",
+      "format": "face",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:primitive_forge"
+    },
+    {
+      "entity": "utilitycraft:prismarine_crystals_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_prismarine_crystals_bonsai-cdf422c62a5d/fullBody-9595e289429ed4dd68d2aa50.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:prismarine_crystals_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_prismarine_crystals_bonsai-cdf422c62a5d/portrait-ecb0c498e292ac93e47e18ec.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:prismarine_crystals_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:prismarine_shards_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_prismarine_shards_bonsai-1bef4ae73709/fullBody-5a56018431bcc93564a6bad1.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:prismarine_shards_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_prismarine_shards_bonsai-1bef4ae73709/portrait-ba3bacebc1041be5a455b4cd.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:prismarine_shards_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:pumpkin",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_pumpkin-b408b8706285/fullBody-0bde85c3f701cb0798349e64.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:pumpkin",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_pumpkin-b408b8706285/portrait-69592e188d0d0b6161332176.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:pumpkin",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_block_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:quartz_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_quartz_bonsai-52fa3b498832/fullBody-2006417132912b8c6bf5615d.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:quartz_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_quartz_bonsai-52fa3b498832/portrait-93b0e4c6bae0830237d0ed0c.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:quartz_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:redstone_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_redstone_bonsai-8922c909dd33/fullBody-b6ad34ca044755f3ff02e08c.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:redstone_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_redstone_bonsai-8922c909dd33/portrait-5a70a33c02934c35c27c11cc.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:redstone_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:resin_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_resin_bonsai-68f3d5772557/fullBody-fec6dab7b5c5884ba42a5c62.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:resin_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_resin_bonsai-68f3d5772557/portrait-80f07be3402f2fbffc1f79be.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:resin_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_saline_coolant",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_saline_coolant-85db1bbd444b/fullBody-18850ee62c578e0315306460.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_saline_coolant",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_saline_coolant-85db1bbd444b/portrait-5e91ca05257823bc1f85c44b.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_saline_coolant",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_fluid_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:sea_pickle",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_sea_pickle-f3b1091ac90e/fullBody-6b092a04e24dfb1b507a91d5.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:sea_pickle",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_sea_pickle-f3b1091ac90e/portrait-b08f0a7ff8a58004766d16a2.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:sea_pickle",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_sea_pickle; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:shulker_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_shulker_bonsai-53cec9e61c0e/fullBody-31f82dfd7ec39c356eb52c5d.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:shulker_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_shulker_bonsai-53cec9e61c0e/portrait-21aabfbe641c39acc2c26b4f.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:shulker_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_block_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:slime_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_slime_bonsai-ec2a00952002/fullBody-3835725585069cb1e21922c6.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:slime_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_slime_bonsai-ec2a00952002/portrait-1ddfa583375b1d3237c2c48b.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:slime_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:spruce_tree",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_spruce_tree-40ffe0aae724/fullBody-9092855e3f70f1c92b766e43.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:spruce_tree",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_spruce_tree-40ffe0aae724/portrait-92aab099a961825f80e442ad.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:spruce_tree",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_spruce_tree; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:sugarcane",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_sugarcane-da33aa080b76/fullBody-ac39c4d66ba8e4a329103469.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:sugarcane",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_sugarcane-da33aa080b76/portrait-abc7383439e6332afe8887f3.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:sugarcane",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_sugarcane; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_sulfuric_acid",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_sulfuric_acid-4b91f0f771b4/fullBody-188509c83e6e617733a74431.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_sulfuric_acid",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_sulfuric_acid-4b91f0f771b4/portrait-809f1e710676c48ac9e09dd5.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_sulfuric_acid",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_fluid_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:sweet_berries",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_sweet_berries-dd9be603bb82/fullBody-a440edffcc0e9d9cd53aac85.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:sweet_berries",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_sweet_berries-dd9be603bb82/portrait-ba0b3656bc2c2f8cb0ead773.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:sweet_berries",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_sugarcane; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:totem_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_totem_bonsai-593ba527bbdb/fullBody-580a774368e39fba56438fbe.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:totem_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_totem_bonsai-593ba527bbdb/portrait-328a787887189956c292bea6.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:totem_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:resource_trash_can",
+      "format": "fullBody",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:resource_trash_can"
+    },
+    {
+      "entity": "utilitycraft:resource_trash_can",
+      "format": "portrait",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:resource_trash_can"
+    },
+    {
+      "entity": "utilitycraft:resource_trash_can",
+      "format": "face",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:resource_trash_can"
+    },
+    {
+      "entity": "utilitycraft:warped_tree",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_warped_tree-b99f6cb502a3/fullBody-7df0b0f7e72c9f15beff793c.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:warped_tree",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_warped_tree-b99f6cb502a3/portrait-49e776a45560ea4f94ff452f.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:warped_tree",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_nether_tree; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:water_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_water_bonsai-c679feb3420f/fullBody-a5de9d8db943c4a4d73599bc.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:water_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_water_bonsai-c679feb3420f/portrait-5201431db6e57b7f11d67906.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:water_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:waycenter",
+      "format": "fullBody",
+      "status": "ignored",
+      "reason": "valid manual render",
+      "path": "renders/entities/utilitycraft_waycenter-42bea622ea29/fullBody.png"
+    },
+    {
+      "entity": "utilitycraft:waycenter",
+      "format": "portrait",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:waycenter"
+    },
+    {
+      "entity": "utilitycraft:waycenter",
+      "format": "face",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:waycenter"
+    },
+    {
+      "entity": "utilitycraft:wheat",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_wheat-d12f911ba55c/fullBody-e4bd991b9842c74772781338.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:wheat",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_wheat-d12f911ba55c/portrait-472ba95c89bcf22fc937f2d3.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:wheat",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_sugarcane; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:wither_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_wither_bonsai-6453c9f02f0b/fullBody-b5e03b2acd0773a5aaa812b9.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:wither_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_wither_bonsai-6453c9f02f0b/portrait-9f11ef5058621492e1f15043.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:wither_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_wither_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:wool_bonsai",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_wool_bonsai-023cd53c55b8/fullBody-178accbef601faca66c097d9.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:wool_bonsai",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_wool_bonsai-023cd53c55b8/portrait-6e43d325c2248bb0c9a553f5.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured."
+      ]
+    },
+    {
+      "entity": "utilitycraft:wool_bonsai",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_crop_bonsai; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:xp_condenser",
+      "format": "fullBody",
+      "status": "ignored",
+      "reason": "valid manual render",
+      "path": "renders/entities/utilitycraft_xp_condenser-e633e667d2e8/fullBody.png"
+    },
+    {
+      "entity": "utilitycraft:xp_condenser",
+      "format": "portrait",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:xp_condenser"
+    },
+    {
+      "entity": "utilitycraft:xp_condenser",
+      "format": "face",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:xp_condenser"
+    }
+  ],
+  "resourceIssues": []
+}

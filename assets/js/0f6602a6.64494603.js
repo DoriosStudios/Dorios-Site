@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[367286],{802765:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"entities","slug":"prismarine-crystals-bonsai","detailSection":"details"}')}}]);

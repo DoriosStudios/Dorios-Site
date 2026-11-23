@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "entityRendererVersion": 1,
+  "counts": {
+    "generated": 0,
+    "reused": 8,
+    "ignored": 0,
+    "error": 16
+  },
+  "coverage": {
+    "entitiesFound": 8,
+    "missingGeometry": 0,
+    "missingTexture": 0,
+    "unresolvedController": 0,
+    "unsupportedVariant": 0,
+    "renderFailure": 2,
+    "headNotResolved": 5,
+    "missingClient": 9
+  },
+  "results": [
+    {
+      "entity": "utilitycraft:alchemical_potion_cloud",
+      "format": "fullBody",
+      "status": "error",
+      "code": "renderFailure",
+      "message": "No visible geometry for utilitycraft:alchemical_potion_cloud/fullBody"
+    },
+    {
+      "entity": "utilitycraft:alchemical_potion_cloud",
+      "format": "portrait",
+      "status": "error",
+      "code": "renderFailure",
+      "message": "No visible geometry for utilitycraft:alchemical_potion_cloud/portrait"
+    },
+    {
+      "entity": "utilitycraft:alchemical_potion_cloud",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.alchemical_cloud; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:alchemical_potion_projectile",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_alchemical_potion_projectile-1e5d75a39083/fullBody-6be9652e3ef1965512d24763.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured.",
+        "Client scripts.scale is not evaluated; neutral model units and automatic framing are used."
+      ]
+    },
+    {
+      "entity": "utilitycraft:alchemical_potion_projectile",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_alchemical_potion_projectile-1e5d75a39083/portrait-26f8830d6dedb5e9a8bc1e2e.png",
+      "warnings": [
+        "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured.",
+        "Client scripts.scale is not evaluated; neutral model units and automatic framing are used."
+      ]
+    },
+    {
+      "entity": "utilitycraft:alchemical_potion_projectile",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.alchemical_potion; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_cryofluid",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_cryofluid-14a1333fd46f/fullBody-072189640bfeb7ab08b7c502.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_cryofluid",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_cryofluid-14a1333fd46f/portrait-c381b1efca7c2b4708c29204.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_cryofluid",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_fluid_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_dark_matter",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_dark_matter-ee5785049e4f/fullBody-c1d4859a8750ddca3158c395.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_dark_matter",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_dark_matter-ee5785049e4f/portrait-ece8df92eb891135d3d7e3a8.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_dark_matter",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_fluid_tank_entity; configure headBones"
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_liquified_aetherium",
+      "format": "fullBody",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_liquified_aetherium-414272c6c1d2/fullBody-570e603af00c38996587d84d.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_liquified_aetherium",
+      "format": "portrait",
+      "status": "reused",
+      "path": "auto-entities/utilitycraft_fluid_tank_liquified_aetherium-414272c6c1d2/portrait-3c34bf119bc5d47d895a5132.png",
+      "warnings": []
+    },
+    {
+      "entity": "utilitycraft:fluid_tank_liquified_aetherium",
+      "format": "face",
+      "status": "error",
+      "code": "headNotResolved",
+      "message": "Cannot identify a unique head in geometry.utilitycraft_fluid_tank_entity; configure headBones"
+    },
+    {
+      "entity": "at:mob_chamber_machine",
+      "format": "fullBody",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier at:mob_chamber_machine"
+    },
+    {
+      "entity": "at:mob_chamber_machine",
+      "format": "portrait",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier at:mob_chamber_machine"
+    },
+    {
+      "entity": "at:mob_chamber_machine",
+      "format": "face",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier at:mob_chamber_machine"
+    },
+    {
+      "entity": "utilitycraft:mob_chamber_staging",
+      "format": "fullBody",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:mob_chamber_staging"
+    },
+    {
+      "entity": "utilitycraft:mob_chamber_staging",
+      "format": "portrait",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:mob_chamber_staging"
+    },
+    {
+      "entity": "utilitycraft:mob_chamber_staging",
+      "format": "face",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:mob_chamber_staging"
+    },
+    {
+      "entity": "utilitycraft:power_beacon_entity",
+      "format": "fullBody",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:power_beacon_entity"
+    },
+    {
+      "entity": "utilitycraft:power_beacon_entity",
+      "format": "portrait",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:power_beacon_entity"
+    },
+    {
+      "entity": "utilitycraft:power_beacon_entity",
+      "format": "face",
+      "status": "error",
+      "code": "missingClient",
+      "message": "No client entity matching full identifier utilitycraft:power_beacon_entity"
+    }
+  ],
+  "resourceIssues": []
+}

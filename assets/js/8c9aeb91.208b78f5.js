@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[578949],{342382:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"entities","slug":"fluid-tank-saline-coolant","detailSection":"details"}')}}]);
