@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/DoriosStudios/UtilityCraft",
+  "revision": "d02253eab3050842fed440e378ded455292626f8",
+  "files": [
+    {
+      "path": "BP/blocks/utility_blocks/workbench.json",
+      "sha256": "8aabb9215ee8846ca47439d20f82e6f18b44f2786bc8485b7cf2cba8e4b43954"
+    },
+    {
+      "path": "RP/models/blocks/workbench.geo.json",
+      "sha256": "9bda8d430da25909ac23197a0fe3f59965fdc99c3683c8d5330c9600bb791bb9"
+    },
+    {
+      "path": "RP/textures/blocks/utility/workbench.png",
+      "sha256": "b5807ea26737784cf751abaacc91a64fbddbc7db099e473c941f7d2b5bcb635c"
+    }
+  ],
+  "atlas": "The terrain atlas contains only the original utilitycraft_workbench entry."
+}

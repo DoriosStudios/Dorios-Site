@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import shutil
+import subprocess
 from pathlib import Path
 
 from .bedrock import build_manifest
@@ -20,7 +21,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output", required=True, type=Path, help="Destination manifest JSON")
     parser.add_argument("--assets-dir", type=Path, help="Copy referenced RP assets into this public project directory")
     parser.add_argument("--dependency-project", action="append", default=[], type=Path, help="Fallback bridge. project for shared RP assets")
+    parser.add_argument("--no-renders", action="store_true", help="Skip automatic CPU block renders")
     return parser.parse_args()
+
+
+def render_missing_assets(project_root: Path, manifest_path: Path, destination: Path, dependencies: list[Path]) -> None:
+    """Fill the existing manifest render field; manual images keep precedence."""
+    script = Path(__file__).resolve().parents[1] / "generate-bedrock-renders.mjs"
+    arguments = ["node", str(script), "--source", str(project_root), "--manifest", str(manifest_path),
+        "--output", str(destination), "--allow-errors"]
+    for dependency in dependencies:
+        arguments.extend(["--dependency", str(dependency.resolve())])
+    subprocess.run(arguments, check=True)
 
 
 def export_assets(manifest: dict, project_root: Path, destination: Path, dependency_projects: list[Path]) -> int:
@@ -50,6 +62,10 @@ def export_assets(manifest: dict, project_root: Path, destination: Path, depende
         if source is None:
             continue
         target = destination / Path(reference)
+        if reference.startswith("renders/") and target.is_file():
+            # Keep site-owned manual images. The CPU renderer can recover an
+            # invalid target from its source after validating the actual bytes.
+            continue
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, target)
         copied += 1
@@ -74,6 +90,8 @@ def main() -> None:
         args.assets_dir.resolve(),
         args.dependency_project,
     ) if args.assets_dir else 0
+    if args.assets_dir and not args.no_renders:
+        render_missing_assets(args.project.resolve(), args.output.resolve(), args.assets_dir.resolve(), args.dependency_project)
     counts = manifest["counts"]
     print(
         f"Wrote {args.output}: {counts['items']} items, {counts['blocks']} blocks, "

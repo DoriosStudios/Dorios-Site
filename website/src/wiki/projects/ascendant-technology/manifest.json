@@ -8501,7 +8501,7 @@
         "identifier": "utilitycraft:aetherium_crystal_block",
         "name": "Aetherium Crystal Block",
         "category": "Ores",
-        "render": null,
+        "render": "renders/Vanilla/aetherium_crystal_block.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/ores/aetherium_crystal_block.png",
@@ -8534,7 +8534,7 @@
         "identifier": "utilitycraft:aetherium_crystal_seeds",
         "name": "Aetherium Crystal Seeds",
         "category": "Addons",
-        "render": null,
+        "render": "renders/Vanilla/aetherium_crystal_seeds.png",
         "itemImage": "textures/items/ores/aetherium_crystal_seeds.png",
         "faces": {
           "top": "textures/blocks/crops/crop_0.png",
@@ -8564,7 +8564,7 @@
         "identifier": "utilitycraft:alchemical_station",
         "name": "Alchemical Station",
         "category": "Machinery",
-        "render": null,
+        "render": "renders/Vanilla/alchemical_station.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/machines/alchemical_station_off_up.png",
@@ -9048,7 +9048,7 @@
         "identifier": "utilitycraft:compactor",
         "name": "Compactor",
         "category": "Machinery",
-        "render": null,
+        "render": "renders/Vanilla/compactor.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/machines/faces/compactor/off/up.png",
@@ -9125,7 +9125,7 @@
         "identifier": "utilitycraft:compressed_aetherium_block",
         "name": "Compressed Aetherium Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_aetherium_block.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/aetherium.png",
@@ -9154,7 +9154,7 @@
         "identifier": "utilitycraft:compressed_aetherium_crystal_block",
         "name": "Compressed Aetherium Crystal Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_aetherium_crystal_block.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/aetherium_crystal.png",
@@ -9183,7 +9183,7 @@
         "identifier": "utilitycraft:compressed_raw_titanium_block",
         "name": "Compressed Raw Titanium Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_raw_titanium_block.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/raw_titanium.png",
@@ -9212,7 +9212,7 @@
         "identifier": "utilitycraft:compressed_raw_tungsten_block",
         "name": "Compressed Raw Tungsten Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_raw_tungsten_block.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/raw_tungsten.png",
@@ -9241,7 +9241,7 @@
         "identifier": "utilitycraft:compressed_titanium_block",
         "name": "Compressed Titanium Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_titanium_block.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/titanium.png",
@@ -9270,7 +9270,7 @@
         "identifier": "utilitycraft:compressed_tungsten_block",
         "name": "Compressed Tungsten Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_tungsten_block.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/tungsten.png",
@@ -9497,7 +9497,7 @@
         "identifier": "utilitycraft:conveyor_table",
         "name": "Conveyor Table",
         "category": "General",
-        "render": null,
+        "render": "renders/Vanilla/conveyor_table.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/conveyor_table_top.png",
@@ -10087,7 +10087,7 @@
         "identifier": "utilitycraft:decompactor",
         "name": "Decompactor",
         "category": "Machinery",
-        "render": null,
+        "render": "renders/Vanilla/decompactor.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/machines/decompactor_off_up.png",
@@ -10340,7 +10340,7 @@
         "identifier": "utilitycraft:compressed_aetherium_block_2",
         "name": "Double Compressed Aetherium Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_aetherium_block_2.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/aetherium_2.png",
@@ -10369,7 +10369,7 @@
         "identifier": "utilitycraft:compressed_aetherium_crystal_block_2",
         "name": "Double Compressed Aetherium Crystal Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_aetherium_crystal_block_2.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/aetherium_crystal_2.png",
@@ -10398,7 +10398,7 @@
         "identifier": "utilitycraft:compressed_raw_titanium_block_2",
         "name": "Double Compressed Raw Titanium Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_raw_titanium_block_2.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/raw_titanium_2.png",
@@ -10427,7 +10427,7 @@
         "identifier": "utilitycraft:compressed_raw_tungsten_block_2",
         "name": "Double Compressed Raw Tungsten Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_raw_tungsten_block_2.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/raw_tungsten_2.png",
@@ -10456,7 +10456,7 @@
         "identifier": "utilitycraft:compressed_titanium_block_2",
         "name": "Double Compressed Titanium Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_titanium_block_2.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/titanium_2.png",
@@ -10485,7 +10485,7 @@
         "identifier": "utilitycraft:compressed_tungsten_block_2",
         "name": "Double Compressed Tungsten Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_tungsten_block_2.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/tungsten_2.png",
@@ -10792,7 +10792,7 @@
         "identifier": "utilitycraft:end_sand",
         "name": "End Sand",
         "category": "Nature",
-        "render": null,
+        "render": "renders/Vanilla/end_sand.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/nature/end_sand.png",
@@ -10903,7 +10903,7 @@
         "identifier": "utilitycraft:essence_module",
         "name": "Essence Module",
         "category": "Multiblock",
-        "render": null,
+        "render": "renders/Vanilla/essence_module.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/multiblock/titanium_plate_block.png",
@@ -11500,7 +11500,7 @@
         "identifier": "utilitycraft:mob_chamber_controller",
         "name": "Mob Chamber Controller",
         "category": "Multiblock",
-        "render": null,
+        "render": "renders/Vanilla/mob_chamber_controller.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/multiblock/titanium_case.png",
@@ -11534,7 +11534,7 @@
         "identifier": "utilitycraft:mob_chamber_core",
         "name": "Mob Chamber Core",
         "category": "Multiblock",
-        "render": null,
+        "render": "renders/Vanilla/mob_chamber_core.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/multiblock/titanium_plate_block.png",
@@ -11598,7 +11598,7 @@
         "identifier": "utilitycraft:mob_slasher",
         "name": "Mob Slasher",
         "category": "Machinery",
-        "render": null,
+        "render": "renders/Vanilla/mob_slasher.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/mob_slasher_v2.png",
@@ -11928,7 +11928,7 @@
         "identifier": "utilitycraft:pink_soil",
         "name": "Pink Soil",
         "category": "Addons",
-        "render": null,
+        "render": "renders/Vanilla/pink_soil.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/soil_5.png",
@@ -12037,7 +12037,7 @@
         "identifier": "utilitycraft:compressed_aetherium_block_4",
         "name": "Quadruple Compressed Aetherium Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_aetherium_block_4.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/aetherium_4.png",
@@ -12066,7 +12066,7 @@
         "identifier": "utilitycraft:compressed_aetherium_crystal_block_4",
         "name": "Quadruple Compressed Aetherium Crystal Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_aetherium_crystal_block_4.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/aetherium_crystal_4.png",
@@ -12095,7 +12095,7 @@
         "identifier": "utilitycraft:compressed_raw_titanium_block_4",
         "name": "Quadruple Compressed Raw Titanium Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_raw_titanium_block_4.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/raw_titanium_4.png",
@@ -12124,7 +12124,7 @@
         "identifier": "utilitycraft:compressed_raw_tungsten_block_4",
         "name": "Quadruple Compressed Raw Tungsten Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_raw_tungsten_block_4.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/raw_tungsten_4.png",
@@ -12153,7 +12153,7 @@
         "identifier": "utilitycraft:compressed_titanium_block_4",
         "name": "Quadruple Compressed Titanium Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_titanium_block_4.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/titanium_4.png",
@@ -12182,7 +12182,7 @@
         "identifier": "utilitycraft:compressed_tungsten_block_4",
         "name": "Quadruple Compressed Tungsten Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_tungsten_block_4.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/tungsten_4.png",
@@ -12422,7 +12422,7 @@
         "identifier": "utilitycraft:reinforced_titanium_glass",
         "name": "Reinforced Titanium Glass",
         "category": "Multiblock",
-        "render": null,
+        "render": "renders/Vanilla/reinforced_titanium_glass.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/multiblock/reinforced_titanium_glass.png",
@@ -12795,7 +12795,7 @@
         "identifier": "utilitycraft:steam_boiler",
         "name": "Steam Boiler",
         "category": "Machinery",
-        "render": null,
+        "render": "renders/Vanilla/steam_boiler.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/machines/steam_boiler_off_up.png",
@@ -12904,7 +12904,7 @@
         "identifier": "utilitycraft:tempered_titanium_glass",
         "name": "Tempered Titanium Glass",
         "category": "Multiblock",
-        "render": null,
+        "render": "renders/Vanilla/tempered_titanium_glass.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/multiblock/titanium_glass.png",
@@ -12969,7 +12969,7 @@
         "identifier": "utilitycraft:titanium_bricks",
         "name": "Titanium Bricks",
         "category": "Multiblock",
-        "render": null,
+        "render": "renders/Vanilla/titanium_bricks.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/multiblock/titanium_bricks.png",
@@ -13098,7 +13098,7 @@
         "identifier": "utilitycraft:titanium_case",
         "name": "Titanium Casing",
         "category": "Multiblock",
-        "render": null,
+        "render": "renders/Vanilla/titanium_case.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/multiblock/titanium_case.png",
@@ -13266,7 +13266,7 @@
         "identifier": "utilitycraft:titanium_energy_port",
         "name": "Titanium Energy Port",
         "category": "Multiblock",
-        "render": null,
+        "render": "renders/Vanilla/titanium_energy_port.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/multiblock/titanium_energy_port.png",
@@ -13299,7 +13299,7 @@
         "identifier": "utilitycraft:titanium_fluid_port",
         "name": "Titanium Fluid Port",
         "category": "Multiblock",
-        "render": null,
+        "render": "renders/Vanilla/titanium_fluid_port.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/multiblock/titanium_fluid_port.png",
@@ -13333,7 +13333,7 @@
         "identifier": "utilitycraft:titanium_hazard_block",
         "name": "Titanium Hazard Block",
         "category": "Multiblock",
-        "render": null,
+        "render": "renders/Vanilla/titanium_hazard_block.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/multiblock/titanium_plate_block.png",
@@ -13365,7 +13365,7 @@
         "identifier": "utilitycraft:titanium_item_port",
         "name": "Titanium Item Port",
         "category": "Multiblock",
-        "render": null,
+        "render": "renders/Vanilla/titanium_item_port.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/multiblock/titanium_item_port.png",
@@ -13399,7 +13399,7 @@
         "identifier": "utilitycraft:titanium_plated_block",
         "name": "Titanium Plated Block",
         "category": "Multiblock",
-        "render": null,
+        "render": "renders/Vanilla/titanium_plated_block.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/multiblock/titanium_plate_block.png",
@@ -13431,7 +13431,7 @@
         "identifier": "utilitycraft:titanium_seeds",
         "name": "Titanium Seeds",
         "category": "Addons",
-        "render": null,
+        "render": "renders/Vanilla/titanium_seeds.png",
         "itemImage": "textures/items/ores/titanium_seeds.png",
         "faces": {
           "top": "textures/blocks/crops/crop_0.png",
@@ -13461,7 +13461,7 @@
         "identifier": "utilitycraft:titanium_vent_panel",
         "name": "Titanium Vent Panel",
         "category": "Multiblock",
-        "render": null,
+        "render": "renders/Vanilla/titanium_vent_panel.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/multiblock/titanium_vent.png",
@@ -13494,7 +13494,7 @@
         "identifier": "utilitycraft:compressed_aetherium_block_3",
         "name": "Triple Compressed Aetherium Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_aetherium_block_3.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/aetherium_3.png",
@@ -13523,7 +13523,7 @@
         "identifier": "utilitycraft:compressed_aetherium_crystal_block_3",
         "name": "Triple Compressed Aetherium Crystal Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_aetherium_crystal_block_3.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/aetherium_crystal_3.png",
@@ -13552,7 +13552,7 @@
         "identifier": "utilitycraft:compressed_raw_titanium_block_3",
         "name": "Triple Compressed Raw Titanium Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_raw_titanium_block_3.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/raw_titanium_3.png",
@@ -13581,7 +13581,7 @@
         "identifier": "utilitycraft:compressed_raw_tungsten_block_3",
         "name": "Triple Compressed Raw Tungsten Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_raw_tungsten_block_3.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/raw_tungsten_3.png",
@@ -13610,7 +13610,7 @@
         "identifier": "utilitycraft:compressed_titanium_block_3",
         "name": "Triple Compressed Titanium Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_titanium_block_3.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/titanium_3.png",
@@ -13639,7 +13639,7 @@
         "identifier": "utilitycraft:compressed_tungsten_block_3",
         "name": "Triple Compressed Tungsten Block",
         "category": "Compressed",
-        "render": null,
+        "render": "renders/Vanilla/compressed_tungsten_block_3.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/compressed/tungsten_3.png",
@@ -13701,7 +13701,7 @@
         "identifier": "utilitycraft:tungsten_seeds",
         "name": "Tungsten Seeds",
         "category": "Addons",
-        "render": null,
+        "render": "renders/Vanilla/tungsten_seeds.png",
         "itemImage": "textures/items/ores/tungsten_seeds.png",
         "faces": {
           "top": "textures/blocks/crops/crop_0.png",
@@ -13815,7 +13815,7 @@
         "identifier": "utilitycraft:universal_cable",
         "name": "Universal Cable",
         "category": "Machinery",
-        "render": null,
+        "render": "renders/Vanilla/universal_cable.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/transportation/universal_tube.png",
@@ -13857,7 +13857,7 @@
         "identifier": "utilitycraft:universal_exporter",
         "name": "Universal Exporter",
         "category": "Machinery",
-        "render": null,
+        "render": "renders/Vanilla/universal_exporter.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/transportation/universal_tube.png",
@@ -13901,7 +13901,7 @@
         "identifier": "utilitycraft:universal_importer",
         "name": "Universal Importer",
         "category": "Machinery",
-        "render": null,
+        "render": "renders/Vanilla/universal_importer.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/transportation/universal_tube.png",
@@ -13944,7 +13944,7 @@
         "identifier": "utilitycraft:vaporizer",
         "name": "Vaporizer",
         "category": "Machinery",
-        "render": null,
+        "render": "renders/Vanilla/vaporizer.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/machines/vaporizer_off_up.png",
