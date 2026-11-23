@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[693494],{417981:e=>{e.exports=JSON.parse('{"materialId":"acacia_wood"}')}}]);

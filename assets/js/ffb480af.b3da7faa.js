@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[403512],{199077:e=>{e.exports=JSON.parse('{"materialId":"andesite"}')}}]);

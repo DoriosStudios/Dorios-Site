@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[901816],{963381:e=>{e.exports=JSON.parse('{"blockId":"minecraft:cracked_nether_bricks"}')}}]);

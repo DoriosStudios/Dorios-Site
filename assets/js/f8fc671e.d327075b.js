@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[986187],{510666:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:basalt_pillar_wall"}')}}]);

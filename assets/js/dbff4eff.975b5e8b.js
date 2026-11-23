@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[598332],{906254:e=>{e.exports=JSON.parse('{"blockId":"minecraft:purpur_block"}')}}]);

@@ -1,0 +1,4085 @@
+{
+  "schemaVersion": 1,
+  "rendererVersion": 4,
+  "blocks": {
+    "utilitycraft:advanced_battery": {
+      "identifier": "utilitycraft:advanced_battery",
+      "kind": "manual",
+      "path": "renders/advanced_battery.png"
+    },
+    "utilitycraft:advanced_energy_receiver": {
+      "identifier": "utilitycraft:advanced_energy_receiver",
+      "kind": "manual",
+      "path": "renders/advanced_energy_receiver.png"
+    },
+    "utilitycraft:advanced_energy_transmitter": {
+      "identifier": "utilitycraft:advanced_energy_transmitter",
+      "kind": "manual",
+      "path": "renders/advanced_energy_transmitter.png"
+    },
+    "utilitycraft:advanced_furnator": {
+      "identifier": "utilitycraft:advanced_furnator",
+      "kind": "manual",
+      "path": "renders/advanced_furnator.png"
+    },
+    "utilitycraft:advanced_gas_generator": {
+      "identifier": "utilitycraft:advanced_gas_generator",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_advanced_gas_generator-143da9974e95-99f7047a6e48ff0047edd512.png",
+      "hash": "99f7047a6e48ff0047edd512fee6ac5b447ce65979203860867f5cb2b77b464b",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:advanced_gas_tank": {
+      "identifier": "utilitycraft:advanced_gas_tank",
+      "kind": "manual",
+      "path": "renders/advanced_gas_tank.png"
+    },
+    "utilitycraft:advanced_fluid_tank": {
+      "identifier": "utilitycraft:advanced_fluid_tank",
+      "kind": "manual",
+      "path": "renders/advanced_fluid_tank.png"
+    },
+    "utilitycraft:advanced_magmator": {
+      "identifier": "utilitycraft:advanced_magmator",
+      "kind": "manual",
+      "path": "renders/advanced_magmator.png"
+    },
+    "utilitycraft:advanced_solar_panel": {
+      "identifier": "utilitycraft:advanced_solar_panel",
+      "kind": "manual",
+      "path": "renders/advanced_solar_panel.png"
+    },
+    "utilitycraft:advanced_thermo_generator": {
+      "identifier": "utilitycraft:advanced_thermo_generator",
+      "kind": "manual",
+      "path": "renders/advanced_thermo_generator.png"
+    },
+    "utilitycraft:advanced_wind_turbine": {
+      "identifier": "utilitycraft:advanced_wind_turbine",
+      "kind": "manual",
+      "path": "renders/advanced_wind_turbine.png"
+    },
+    "utilitycraft:amethyst_seeds": {
+      "identifier": "utilitycraft:amethyst_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_amethyst_seeds-3bb2044ca6b5-8a10f2ad7cde4ca07a657191.png",
+      "hash": "8a10f2ad7cde4ca07a657191ba67145394b238ade3b9882872807d47b95ce049",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 2
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:asphalt": {
+      "identifier": "utilitycraft:asphalt",
+      "kind": "manual",
+      "path": "renders/asphalt.png"
+    },
+    "utilitycraft:assembler": {
+      "identifier": "utilitycraft:assembler",
+      "kind": "manual",
+      "path": "renders/assembler.png"
+    },
+    "utilitycraft:autofisher": {
+      "identifier": "utilitycraft:autofisher",
+      "kind": "manual",
+      "path": "renders/autofisher.png"
+    },
+    "utilitycraft:autosieve": {
+      "identifier": "utilitycraft:autosieve",
+      "kind": "manual",
+      "path": "renders/autosieve.png"
+    },
+    "utilitycraft:basic_battery": {
+      "identifier": "utilitycraft:basic_battery",
+      "kind": "manual",
+      "path": "renders/basic_battery.png"
+    },
+    "utilitycraft:basic_energy_receiver": {
+      "identifier": "utilitycraft:basic_energy_receiver",
+      "kind": "manual",
+      "path": "renders/basic_energy_receiver.png"
+    },
+    "utilitycraft:basic_energy_transmitter": {
+      "identifier": "utilitycraft:basic_energy_transmitter",
+      "kind": "manual",
+      "path": "renders/basic_energy_transmitter.png"
+    },
+    "utilitycraft:basic_furnator": {
+      "identifier": "utilitycraft:basic_furnator",
+      "kind": "manual",
+      "path": "renders/basic_furnator.png"
+    },
+    "utilitycraft:basic_gas_generator": {
+      "identifier": "utilitycraft:basic_gas_generator",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_basic_gas_generator-ab17efeb9b4b-48430b5264a2330690803af7.png",
+      "hash": "48430b5264a2330690803af73e8e20b534986d1a20624c1b61fffac63ef3008b",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:basic_gas_tank": {
+      "identifier": "utilitycraft:basic_gas_tank",
+      "kind": "manual",
+      "path": "renders/basic_gas_tank.png"
+    },
+    "utilitycraft:basic_fluid_tank": {
+      "identifier": "utilitycraft:basic_fluid_tank",
+      "kind": "manual",
+      "path": "renders/basic_fluid_tank.png"
+    },
+    "utilitycraft:basic_magmator": {
+      "identifier": "utilitycraft:basic_magmator",
+      "kind": "manual",
+      "path": "renders/basic_magmator.png"
+    },
+    "utilitycraft:basic_solar_panel": {
+      "identifier": "utilitycraft:basic_solar_panel",
+      "kind": "manual",
+      "path": "renders/basic_solar_panel.png"
+    },
+    "utilitycraft:basic_thermo_generator": {
+      "identifier": "utilitycraft:basic_thermo_generator",
+      "kind": "manual",
+      "path": "renders/basic_thermo_generator.png"
+    },
+    "utilitycraft:basic_wind_turbine": {
+      "identifier": "utilitycraft:basic_wind_turbine",
+      "kind": "manual",
+      "path": "renders/basic_wind_turbine.png"
+    },
+    "utilitycraft:big_torch": {
+      "identifier": "utilitycraft:big_torch",
+      "kind": "manual",
+      "path": "renders/big_torch.png"
+    },
+    "utilitycraft:black_elevator": {
+      "identifier": "utilitycraft:black_elevator",
+      "kind": "manual",
+      "path": "renders/black_elevator.png"
+    },
+    "utilitycraft:black_soil": {
+      "identifier": "utilitycraft:black_soil",
+      "kind": "manual",
+      "path": "renders/black_soil.png"
+    },
+    "utilitycraft:blaze_block": {
+      "identifier": "utilitycraft:blaze_block",
+      "kind": "manual",
+      "path": "renders/blaze_block.png"
+    },
+    "utilitycraft:blaze_seeds": {
+      "identifier": "utilitycraft:blaze_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_blaze_seeds-a2d17412b793-8a10f2ad7cde4ca07a657191.png",
+      "hash": "8a10f2ad7cde4ca07a657191ba67145394b238ade3b9882872807d47b95ce049",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 2
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:block_breaker": {
+      "identifier": "utilitycraft:block_breaker",
+      "kind": "manual",
+      "path": "renders/block_breaker.png"
+    },
+    "utilitycraft:lead_block": {
+      "identifier": "utilitycraft:lead_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_lead_block-0adb98f48285-ceab4b6581251e8f1dbd108e.png",
+      "hash": "ceab4b6581251e8f1dbd108eccdd899049cb7eacb0441118df553817d1a8e30f",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:raw_lead_block": {
+      "identifier": "utilitycraft:raw_lead_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_raw_lead_block-a55cb25f0eef-03d79c55bfee0a6d51f37ad8.png",
+      "hash": "03d79c55bfee0a6d51f37ad859619d82ee121575cc955899f5f5f2e86bde5da3",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:raw_uranium_block": {
+      "identifier": "utilitycraft:raw_uranium_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_raw_uranium_block-ec77d78e1ac5-bbb0c54cc24d44fd1e9b3812.png",
+      "hash": "bbb0c54cc24d44fd1e9b3812a604a0aedbb2e896f0cca0e14aecfa62b25aea72",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:silicon_block": {
+      "identifier": "utilitycraft:silicon_block",
+      "kind": "manual",
+      "path": "renders/silicon_block.png"
+    },
+    "utilitycraft:uranium_block": {
+      "identifier": "utilitycraft:uranium_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_uranium_block-d6249c73a47b-7e49817667e9fa4b20d1ed25.png",
+      "hash": "7e49817667e9fa4b20d1ed254192737bd6fb617c797561dc13183a7b770a45a2",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:block_placer": {
+      "identifier": "utilitycraft:block_placer",
+      "kind": "manual",
+      "path": "renders/block_placer.png"
+    },
+    "utilitycraft:blue_elevator": {
+      "identifier": "utilitycraft:blue_elevator",
+      "kind": "manual",
+      "path": "renders/blue_elevator.png"
+    },
+    "utilitycraft:blue_soil": {
+      "identifier": "utilitycraft:blue_soil",
+      "kind": "manual",
+      "path": "renders/blue_soil.png"
+    },
+    "utilitycraft:bonsai": {
+      "identifier": "utilitycraft:bonsai",
+      "kind": "manual",
+      "path": "renders/bonsai.png"
+    },
+    "utilitycraft:brown_elevator": {
+      "identifier": "utilitycraft:brown_elevator",
+      "kind": "manual",
+      "path": "renders/brown_elevator.png"
+    },
+    "utilitycraft:raw_energized_iron_block": {
+      "identifier": "utilitycraft:raw_energized_iron_block",
+      "kind": "manual",
+      "path": "renders/raw_energized_iron_block.png"
+    },
+    "utilitycraft:raw_steel_block": {
+      "identifier": "utilitycraft:raw_steel_block",
+      "kind": "manual",
+      "path": "renders/raw_steel_block.png"
+    },
+    "utilitycraft:charcoal_block": {
+      "identifier": "utilitycraft:charcoal_block",
+      "kind": "manual",
+      "path": "renders/charcoal_block.png"
+    },
+    "utilitycraft:chemical_converter": {
+      "identifier": "utilitycraft:chemical_converter",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_chemical_converter-1def52e45d96-770816b51d441cfdf4aa797e.png",
+      "hash": "770816b51d441cfdf4aa797e6f92f445f33e95eb1a413f103ea576a4922f938b",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:coal_seeds": {
+      "identifier": "utilitycraft:coal_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_coal_seeds-76f2a6620948-e6fe312f97f227d7e3ae8667.png",
+      "hash": "e6fe312f97f227d7e3ae866759e82611c11db14c663afb49b553d864d59b1b99",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:cobble_gen_0": {
+      "identifier": "utilitycraft:cobble_gen_0",
+      "kind": "manual",
+      "path": "renders/cobble_gen_0.png"
+    },
+    "utilitycraft:cobble_gen_1": {
+      "identifier": "utilitycraft:cobble_gen_1",
+      "kind": "manual",
+      "path": "renders/cobble_gen_1.png"
+    },
+    "utilitycraft:cobble_gen_2": {
+      "identifier": "utilitycraft:cobble_gen_2",
+      "kind": "manual",
+      "path": "renders/cobble_gen_2.png"
+    },
+    "utilitycraft:cobble_gen_3": {
+      "identifier": "utilitycraft:cobble_gen_3",
+      "kind": "manual",
+      "path": "renders/cobble_gen_3.png"
+    },
+    "utilitycraft:cobble_gen_4": {
+      "identifier": "utilitycraft:cobble_gen_4",
+      "kind": "manual",
+      "path": "renders/cobble_gen_4.png"
+    },
+    "utilitycraft:cobble_gen_5": {
+      "identifier": "utilitycraft:cobble_gen_5",
+      "kind": "manual",
+      "path": "renders/cobble_gen_5.png"
+    },
+    "utilitycraft:compressed_acacia_wood": {
+      "identifier": "utilitycraft:compressed_acacia_wood",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_acacia_wood.png"
+    },
+    "utilitycraft:compressed_amethyst_block": {
+      "identifier": "utilitycraft:compressed_amethyst_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_amethyst_block.png"
+    },
+    "utilitycraft:compressed_andesite": {
+      "identifier": "utilitycraft:compressed_andesite",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_andesite.png"
+    },
+    "utilitycraft:compressed_bamboo_block": {
+      "identifier": "utilitycraft:compressed_bamboo_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_bamboo_block-3f578d848477-8fe717f5aaa02eb095665cd8.png",
+      "hash": "8fe717f5aaa02eb095665cd81f221e3b2f216b401351f973163a8e75608bf9e7",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_basalt": {
+      "identifier": "utilitycraft:compressed_basalt",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_basalt-5cdfdc12d322-56097b74e7ea4e24718cd36f.png",
+      "hash": "56097b74e7ea4e24718cd36f94af49bb564152829e0168026497436a27893fd1",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_birch_wood": {
+      "identifier": "utilitycraft:compressed_birch_wood",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_birch_wood.png"
+    },
+    "utilitycraft:compressed_blackstone": {
+      "identifier": "utilitycraft:compressed_blackstone",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_blackstone.png"
+    },
+    "utilitycraft:compressed_blaze_block": {
+      "identifier": "utilitycraft:compressed_blaze_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_blaze_block-25ed9b84677a-19b6bce30fb42174ea972680.png",
+      "hash": "19b6bce30fb42174ea972680416d364dd0d7266b1f76c3c5a6742f22121161e3",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_brute_energized_iron_block": {
+      "identifier": "utilitycraft:compressed_brute_energized_iron_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_brute_energized_iron_block-0e943f80fe28-da613340366b324dac2902b1.png",
+      "hash": "da613340366b324dac2902b1fae55ef59ddf6e89431e72cae29879f1d6942846",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_brute_steel_block": {
+      "identifier": "utilitycraft:compressed_brute_steel_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_brute_steel_block.png"
+    },
+    "utilitycraft:compressed_calcite": {
+      "identifier": "utilitycraft:compressed_calcite",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_calcite-14402ba8169f-0adcc3e0e251388fe21ea200.png",
+      "hash": "0adcc3e0e251388fe21ea200933358f9266b109f5eec4a325a9a1f5692481075",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_charcoal_block": {
+      "identifier": "utilitycraft:compressed_charcoal_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_charcoal_block.png"
+    },
+    "utilitycraft:compressed_cherry_wood": {
+      "identifier": "utilitycraft:compressed_cherry_wood",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_cherry_wood.png"
+    },
+    "utilitycraft:compressed_clay": {
+      "identifier": "utilitycraft:compressed_clay",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_clay-92387ca77d72-ed3b6ac5ce5ae229efb1128d.png",
+      "hash": "ed3b6ac5ce5ae229efb1128d4128322023c215437ffc14ab6513499cea3636d3",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_coal_block": {
+      "identifier": "utilitycraft:compressed_coal_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_coal_block.png"
+    },
+    "utilitycraft:compressed_cobbled_deepslate": {
+      "identifier": "utilitycraft:compressed_cobbled_deepslate",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_cobbled_deepslate.png"
+    },
+    "utilitycraft:compressed_cobblestone": {
+      "identifier": "utilitycraft:compressed_cobblestone",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_cobblestone.png"
+    },
+    "utilitycraft:compressed_copper_block": {
+      "identifier": "utilitycraft:compressed_copper_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_copper_block.png"
+    },
+    "utilitycraft:compressed_crimson_wood": {
+      "identifier": "utilitycraft:compressed_crimson_wood",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crimson_wood.png"
+    },
+    "utilitycraft:compressed_crushed_blackstone": {
+      "identifier": "utilitycraft:compressed_crushed_blackstone",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_blackstone.png"
+    },
+    "utilitycraft:compressed_crushed_cobbled_deepslate": {
+      "identifier": "utilitycraft:compressed_crushed_cobbled_deepslate",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_cobbled_deepslate.png"
+    },
+    "utilitycraft:compressed_crushed_endstone": {
+      "identifier": "utilitycraft:compressed_crushed_endstone",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_endstone.png"
+    },
+    "utilitycraft:compressed_crushed_netherrack": {
+      "identifier": "utilitycraft:compressed_crushed_netherrack",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_netherrack.png"
+    },
+    "utilitycraft:compressed_cry_obsidian": {
+      "identifier": "utilitycraft:compressed_cry_obsidian",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_cry_obsidian.png"
+    },
+    "utilitycraft:compressed_dark_oak_wood": {
+      "identifier": "utilitycraft:compressed_dark_oak_wood",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_dark_oak_wood.png"
+    },
+    "utilitycraft:compressed_deepslate": {
+      "identifier": "utilitycraft:compressed_deepslate",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_deepslate.png"
+    },
+    "utilitycraft:compressed_diamond_block": {
+      "identifier": "utilitycraft:compressed_diamond_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_diamond_block.png"
+    },
+    "utilitycraft:compressed_diorite": {
+      "identifier": "utilitycraft:compressed_diorite",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_diorite.png"
+    },
+    "utilitycraft:compressed_dirt": {
+      "identifier": "utilitycraft:compressed_dirt",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_dirt.png"
+    },
+    "utilitycraft:compressed_dripstone_block": {
+      "identifier": "utilitycraft:compressed_dripstone_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_dripstone_block-98c50efb4ab9-fe526f5f8a906d842636a898.png",
+      "hash": "fe526f5f8a906d842636a898845f781a17da65295b9c35943e3e4c6daa252b27",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_emerald_block": {
+      "identifier": "utilitycraft:compressed_emerald_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_emerald_block.png"
+    },
+    "utilitycraft:compressed_endstone": {
+      "identifier": "utilitycraft:compressed_endstone",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_endstone.png"
+    },
+    "utilitycraft:compressed_energized_iron_block": {
+      "identifier": "utilitycraft:compressed_energized_iron_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_energized_iron_block.png"
+    },
+    "utilitycraft:compressed_flint_block": {
+      "identifier": "utilitycraft:compressed_flint_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_flint_block.png"
+    },
+    "utilitycraft:compressed_glass": {
+      "identifier": "utilitycraft:compressed_glass",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_glass.png"
+    },
+    "utilitycraft:compressed_gold_block": {
+      "identifier": "utilitycraft:compressed_gold_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_gold_block.png"
+    },
+    "utilitycraft:compressed_granite": {
+      "identifier": "utilitycraft:compressed_granite",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_granite.png"
+    },
+    "utilitycraft:compressed_gravel": {
+      "identifier": "utilitycraft:compressed_gravel",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_gravel.png"
+    },
+    "utilitycraft:compressed_honey_block": {
+      "identifier": "utilitycraft:compressed_honey_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_honey_block-4a870f034fef-68644b6ea1d30b1a84583872.png",
+      "hash": "68644b6ea1d30b1a84583872f859d12ae788f26134ea1851e4e6bcc060e92328",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:compressed_iron_block": {
+      "identifier": "utilitycraft:compressed_iron_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_iron_block.png"
+    },
+    "utilitycraft:compressed_jungle_wood": {
+      "identifier": "utilitycraft:compressed_jungle_wood",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_jungle_wood.png"
+    },
+    "utilitycraft:compressed_lapislazuli_block": {
+      "identifier": "utilitycraft:compressed_lapislazuli_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_lapislazuli_block.png"
+    },
+    "utilitycraft:compressed_mangrove_wood": {
+      "identifier": "utilitycraft:compressed_mangrove_wood",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_mangrove_wood.png"
+    },
+    "utilitycraft:compressed_moss_block": {
+      "identifier": "utilitycraft:compressed_moss_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_moss_block-e24aa749072c-a5beb61cc11c3097db966661.png",
+      "hash": "a5beb61cc11c3097db966661f772d66a780d2190e438e91803400d74756bc84b",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_mud": {
+      "identifier": "utilitycraft:compressed_mud",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_mud-866eeb0e3ea4-7de31bbdc84d73b394080424.png",
+      "hash": "7de31bbdc84d73b394080424106c955ddc638ee898d6e6f5c9f2017303bdc45a",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_nether_star_block": {
+      "identifier": "utilitycraft:compressed_nether_star_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_nether_star_block-7170c538ae9b-fb7b1a7003617aec9bb046b0.png",
+      "hash": "fb7b1a7003617aec9bb046b01232922e0a9fa2f1481073be79dcda8c7d2c0a74",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_netherite_block": {
+      "identifier": "utilitycraft:compressed_netherite_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_netherite_block.png"
+    },
+    "utilitycraft:compressed_netherrack": {
+      "identifier": "utilitycraft:compressed_netherrack",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_netherrack.png"
+    },
+    "utilitycraft:compressed_oak_wood": {
+      "identifier": "utilitycraft:compressed_oak_wood",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_oak_wood.png"
+    },
+    "utilitycraft:compressed_obsidian": {
+      "identifier": "utilitycraft:compressed_obsidian",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_obsidian.png"
+    },
+    "utilitycraft:compressed_pale_oak_wood": {
+      "identifier": "utilitycraft:compressed_pale_oak_wood",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_pale_oak_wood.png"
+    },
+    "utilitycraft:compressed_quartz_block": {
+      "identifier": "utilitycraft:compressed_quartz_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_quartz_block.png"
+    },
+    "utilitycraft:compressed_raw_copper_block": {
+      "identifier": "utilitycraft:compressed_raw_copper_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_raw_copper_block.png"
+    },
+    "utilitycraft:compressed_raw_gold_block": {
+      "identifier": "utilitycraft:compressed_raw_gold_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_raw_gold_block.png"
+    },
+    "utilitycraft:compressed_raw_iron_block": {
+      "identifier": "utilitycraft:compressed_raw_iron_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_raw_iron_block.png"
+    },
+    "utilitycraft:compressed_red_sand": {
+      "identifier": "utilitycraft:compressed_red_sand",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_red_sand-070fa5cf9ad7-ee26c4bda94db93c690d28ee.png",
+      "hash": "ee26c4bda94db93c690d28ee6a74c383c14d7e7c751281b22d5bfb375b389a39",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_redstone_block": {
+      "identifier": "utilitycraft:compressed_redstone_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_redstone_block.png"
+    },
+    "utilitycraft:compressed_sand": {
+      "identifier": "utilitycraft:compressed_sand",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_sand.png"
+    },
+    "utilitycraft:compressed_silicon_block": {
+      "identifier": "utilitycraft:compressed_silicon_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_silicon_block-147ce6d7b657-0e934ef1ff5f3ce71ba15c35.png",
+      "hash": "0e934ef1ff5f3ce71ba15c35c3a7d4db7ae7eca89f5666dea2c3c7431045bfa5",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_slime_block": {
+      "identifier": "utilitycraft:compressed_slime_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_slime_block-864a71e62ff7-cb342730d7b19e2c7fe8bfa7.png",
+      "hash": "cb342730d7b19e2c7fe8bfa702a54b509e19d043b238e721e71459305ae0cd93",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:compressed_soul_sand": {
+      "identifier": "utilitycraft:compressed_soul_sand",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_soul_sand-0e84a797a770-1b72a3ed2decc1af47988475.png",
+      "hash": "1b72a3ed2decc1af479884755b6eec93da1fd9adfd9b0be8542f2b889a569d1f",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_soul_soil": {
+      "identifier": "utilitycraft:compressed_soul_soil",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_soul_soil-6ce64a727367-0ab6fa18c8217eb3d65254d0.png",
+      "hash": "0ab6fa18c8217eb3d65254d07e8c16cb98527a7b1e76ea4606c577add5bddae9",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_spruce_wood": {
+      "identifier": "utilitycraft:compressed_spruce_wood",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_spruce_wood.png"
+    },
+    "utilitycraft:compressed_steel_block": {
+      "identifier": "utilitycraft:compressed_steel_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_steel_block.png"
+    },
+    "utilitycraft:compressed_stone": {
+      "identifier": "utilitycraft:compressed_stone",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_stone.png"
+    },
+    "utilitycraft:compressed_tuff": {
+      "identifier": "utilitycraft:compressed_tuff",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_tuff-1a83ffc6e937-86adfd712ac9a2b8bf5131f1.png",
+      "hash": "86adfd712ac9a2b8bf5131f188a67f8c2eee23638c0194cfe309ec3e231603af",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_warped_wood": {
+      "identifier": "utilitycraft:compressed_warped_wood",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_warped_wood.png"
+    },
+    "utilitycraft:copper_seeds": {
+      "identifier": "utilitycraft:copper_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_copper_seeds-d72bac1e1170-e6fe312f97f227d7e3ae8667.png",
+      "hash": "e6fe312f97f227d7e3ae866759e82611c11db14c663afb49b553d864d59b1b99",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:creative_battery": {
+      "identifier": "utilitycraft:creative_battery",
+      "kind": "manual",
+      "path": "renders/creative_battery.png"
+    },
+    "utilitycraft:creative_crude_oil_tank": {
+      "identifier": "utilitycraft:creative_crude_oil_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_crude_oil_tank-d5f503268b73-8e9d9b89d3479d1d8f50da3b.png",
+      "hash": "8e9d9b89d3479d1d8f50da3b5993e8d52742088a52d455d27fbfd0ffcab4a106",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "geometry.utilitycraft_creative_fluid_tank",
+      "stats": {
+        "bones": 2,
+        "cubes": 2,
+        "planes": 0,
+        "faces": 12
+      }
+    },
+    "utilitycraft:creative_depleted_uranium_hexafluoride_tank": {
+      "identifier": "utilitycraft:creative_depleted_uranium_hexafluoride_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_depleted_uranium_hexafluoride_tank-0c8a924357e5-c6a9ae54e2c8d167a9588583.png",
+      "hash": "c6a9ae54e2c8d167a9588583a733162ca36495ded9c0e2fb93aa8bd39cf1c235",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "geometry.utilitycraft_creative_gas_tank",
+      "stats": {
+        "bones": 4,
+        "cubes": 16,
+        "planes": 0,
+        "faces": 94
+      }
+    },
+    "utilitycraft:creative_diesel_tank": {
+      "identifier": "utilitycraft:creative_diesel_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_diesel_tank-1572c8f19e3e-719da1941894c2d16c839a3e.png",
+      "hash": "719da1941894c2d16c839a3e953d3659e9cdd7dae5838430bdc42af7559eb9cb",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "geometry.utilitycraft_creative_fluid_tank",
+      "stats": {
+        "bones": 2,
+        "cubes": 2,
+        "planes": 0,
+        "faces": 12
+      }
+    },
+    "utilitycraft:creative_enriched_uranium_hexafluoride_tank": {
+      "identifier": "utilitycraft:creative_enriched_uranium_hexafluoride_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_enriched_uranium_hexafluoride_tank-240ba143a257-b584b8259d7a2bf780ae00d2.png",
+      "hash": "b584b8259d7a2bf780ae00d2eabb06ce9c8b0f28fdf8b58b7215dc1addb64b60",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "geometry.utilitycraft_creative_gas_tank",
+      "stats": {
+        "bones": 4,
+        "cubes": 16,
+        "planes": 0,
+        "faces": 94
+      }
+    },
+    "utilitycraft:creative_fluorine_tank": {
+      "identifier": "utilitycraft:creative_fluorine_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_fluorine_tank-ec2e874d3b4b-d63d25bb32a6c80a4c640c97.png",
+      "hash": "d63d25bb32a6c80a4c640c970cb778e99160e15563ff49136149229a158e3c3d",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "geometry.utilitycraft_creative_gas_tank",
+      "stats": {
+        "bones": 4,
+        "cubes": 16,
+        "planes": 0,
+        "faces": 94
+      }
+    },
+    "utilitycraft:creative_heated_saline_coolant_tank": {
+      "identifier": "utilitycraft:creative_heated_saline_coolant_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_heated_saline_coolant_tank-754b43c1417a-3416ca53004088c625418c68.png",
+      "hash": "3416ca53004088c625418c68fc748822474c4d7959b36d3b35ecd51f4d448e95",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "geometry.utilitycraft_creative_gas_tank",
+      "stats": {
+        "bones": 4,
+        "cubes": 16,
+        "planes": 0,
+        "faces": 94
+      }
+    },
+    "utilitycraft:creative_heavy_water_tank": {
+      "identifier": "utilitycraft:creative_heavy_water_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_heavy_water_tank-5d6c009e6f13-71ab4c8eb0e922683dad560f.png",
+      "hash": "71ab4c8eb0e922683dad560ff071de99b714c6cc7b738353a90eda20a0dd982b",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "geometry.utilitycraft_creative_fluid_tank",
+      "stats": {
+        "bones": 2,
+        "cubes": 2,
+        "planes": 0,
+        "faces": 12
+      }
+    },
+    "utilitycraft:creative_hydrogen_fluoride_tank": {
+      "identifier": "utilitycraft:creative_hydrogen_fluoride_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_hydrogen_fluoride_tank-fc33b18594b5-88bcc4902a754ca285356e47.png",
+      "hash": "88bcc4902a754ca285356e478ab80d2463c60c9dc4a1da38246e1057564ea777",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "geometry.utilitycraft_creative_gas_tank",
+      "stats": {
+        "bones": 4,
+        "cubes": 16,
+        "planes": 0,
+        "faces": 94
+      }
+    },
+    "utilitycraft:creative_hydrogen_tank": {
+      "identifier": "utilitycraft:creative_hydrogen_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_hydrogen_tank-d7b7a74ba5c3-f28ed9889224b7c1dea6ff35.png",
+      "hash": "f28ed9889224b7c1dea6ff359dae72db5d50d05e3c4eca97045693113e672303",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "geometry.utilitycraft_creative_gas_tank",
+      "stats": {
+        "bones": 4,
+        "cubes": 16,
+        "planes": 0,
+        "faces": 94
+      }
+    },
+    "utilitycraft:creative_lava_tank": {
+      "identifier": "utilitycraft:creative_lava_tank",
+      "kind": "manual",
+      "path": "renders/creative_lava_tank.png"
+    },
+    "utilitycraft:creative_methane_tank": {
+      "identifier": "utilitycraft:creative_methane_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_methane_tank-f539e602a2cc-2cc9dcd2001c5c8124b04541.png",
+      "hash": "2cc9dcd2001c5c8124b04541194b7a67d38fb5692395a7414d052ba49644f957",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "geometry.utilitycraft_creative_gas_tank",
+      "stats": {
+        "bones": 4,
+        "cubes": 16,
+        "planes": 0,
+        "faces": 94
+      }
+    },
+    "utilitycraft:creative_milk_tank": {
+      "identifier": "utilitycraft:creative_milk_tank",
+      "kind": "manual",
+      "path": "renders/creative_milk_tank.png"
+    },
+    "utilitycraft:creative_natural_uranium_hexafluoride_tank": {
+      "identifier": "utilitycraft:creative_natural_uranium_hexafluoride_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_natural_uranium_hexafluoride_tank-5ff25900ab6f-3e10b504a97987014082c638.png",
+      "hash": "3e10b504a97987014082c638f62864a406c629b3e450e4b40879bb48ff9a9986",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "geometry.utilitycraft_creative_gas_tank",
+      "stats": {
+        "bones": 4,
+        "cubes": 16,
+        "planes": 0,
+        "faces": 94
+      }
+    },
+    "utilitycraft:creative_nuclear_waste_tank": {
+      "identifier": "utilitycraft:creative_nuclear_waste_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_nuclear_waste_tank-863ee9a6cf2f-7765694759094b4e963f5b93.png",
+      "hash": "7765694759094b4e963f5b93c5eacf95f99fe4db09cc1d434fbdd6215b372537",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "geometry.utilitycraft_creative_gas_tank",
+      "stats": {
+        "bones": 4,
+        "cubes": 16,
+        "planes": 0,
+        "faces": 94
+      }
+    },
+    "utilitycraft:creative_oxygen_tank": {
+      "identifier": "utilitycraft:creative_oxygen_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_oxygen_tank-71d53123c234-09bafc790974634afb98014d.png",
+      "hash": "09bafc790974634afb98014de420e42827f36bad896cc42f20631568bee19e2b",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "geometry.utilitycraft_creative_gas_tank",
+      "stats": {
+        "bones": 4,
+        "cubes": 16,
+        "planes": 0,
+        "faces": 94
+      }
+    },
+    "utilitycraft:creative_petroleum_tank": {
+      "identifier": "utilitycraft:creative_petroleum_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_petroleum_tank-f7d4262c5f39-5b599ac958671e042863ba53.png",
+      "hash": "5b599ac958671e042863ba534a0a5ffd99c79d566acb0ff590d03e267c06a5fe",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "geometry.utilitycraft_creative_fluid_tank",
+      "stats": {
+        "bones": 2,
+        "cubes": 2,
+        "planes": 0,
+        "faces": 12
+      }
+    },
+    "utilitycraft:creative_saline_coolant_tank": {
+      "identifier": "utilitycraft:creative_saline_coolant_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_saline_coolant_tank-fb2aa8ae2aab-1eccdd784702e3f32f59aa66.png",
+      "hash": "1eccdd784702e3f32f59aa661bb56f171d4a30affcc7c7905bd90decda642764",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "geometry.utilitycraft_creative_fluid_tank",
+      "stats": {
+        "bones": 2,
+        "cubes": 2,
+        "planes": 0,
+        "faces": 12
+      }
+    },
+    "utilitycraft:creative_steam_tank": {
+      "identifier": "utilitycraft:creative_steam_tank",
+      "kind": "manual",
+      "path": "renders/creative_steam_tank.png"
+    },
+    "utilitycraft:creative_sulfuric_acid_tank": {
+      "identifier": "utilitycraft:creative_sulfuric_acid_tank",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_creative_sulfuric_acid_tank-1a9b73ab341f-b41ffafafdd6ef3e0a567c95.png",
+      "hash": "b41ffafafdd6ef3e0a567c9518b153bf4fc13115bf2c568bf7c2867caa639b87",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "geometry.utilitycraft_creative_fluid_tank",
+      "stats": {
+        "bones": 2,
+        "cubes": 2,
+        "planes": 0,
+        "faces": 12
+      }
+    },
+    "utilitycraft:creative_water_tank": {
+      "identifier": "utilitycraft:creative_water_tank",
+      "kind": "manual",
+      "path": "renders/creative_water_tank.png"
+    },
+    "utilitycraft:creative_xp_tank": {
+      "identifier": "utilitycraft:creative_xp_tank",
+      "kind": "manual",
+      "path": "renders/creative_xp_tank.png"
+    },
+    "utilitycraft:crucible": {
+      "identifier": "utilitycraft:crucible",
+      "kind": "manual",
+      "path": "renders/crucible.png"
+    },
+    "utilitycraft:crushed_blackstone": {
+      "identifier": "utilitycraft:crushed_blackstone",
+      "kind": "manual",
+      "path": "renders/crushed_blackstone.png"
+    },
+    "utilitycraft:crushed_cobbled_deepslate": {
+      "identifier": "utilitycraft:crushed_cobbled_deepslate",
+      "kind": "manual",
+      "path": "renders/crushed_cobbled_deepslate.png"
+    },
+    "utilitycraft:crushed_endstone": {
+      "identifier": "utilitycraft:crushed_endstone",
+      "kind": "manual",
+      "path": "renders/crushed_endstone.png"
+    },
+    "utilitycraft:crushed_netherrack": {
+      "identifier": "utilitycraft:crushed_netherrack",
+      "kind": "manual",
+      "path": "renders/crushed_netherrack.png"
+    },
+    "utilitycraft:crusher": {
+      "identifier": "utilitycraft:crusher",
+      "kind": "manual",
+      "path": "renders/crusher.png"
+    },
+    "utilitycraft:cyan_elevator": {
+      "identifier": "utilitycraft:cyan_elevator",
+      "kind": "manual",
+      "path": "renders/cyan_elevator.png"
+    },
+    "utilitycraft:deepslate_lead_ore": {
+      "identifier": "utilitycraft:deepslate_lead_ore",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_deepslate_lead_ore-f8a0168f7e65-aca4fbd47967563a0f8ad9a2.png",
+      "hash": "aca4fbd47967563a0f8ad9a28380f37d86cda7f476fa59166ca306a38b601b22",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:deepslate_uranium_ore": {
+      "identifier": "utilitycraft:deepslate_uranium_ore",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_deepslate_uranium_ore-3afc1b8903c9-59213e4514e414cc00a221bc.png",
+      "hash": "59213e4514e414cc00a221bc868f2c5a2a8bd1a1a667f6e43ee9fb6e7e3c2c44",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:diamond_seeds": {
+      "identifier": "utilitycraft:diamond_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_diamond_seeds-d722d5e125c7-8a10f2ad7cde4ca07a657191.png",
+      "hash": "8a10f2ad7cde4ca07a657191ba67145394b238ade3b9882872807d47b95ce049",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 2
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:digitizer": {
+      "identifier": "utilitycraft:digitizer",
+      "kind": "manual",
+      "path": "renders/digitizer.png"
+    },
+    "utilitycraft:compressed_acacia_wood_2": {
+      "identifier": "utilitycraft:compressed_acacia_wood_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_acacia_wood_2.png"
+    },
+    "utilitycraft:compressed_amethyst_block_2": {
+      "identifier": "utilitycraft:compressed_amethyst_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_amethyst_block_2.png"
+    },
+    "utilitycraft:compressed_andesite_2": {
+      "identifier": "utilitycraft:compressed_andesite_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_andesite_2.png"
+    },
+    "utilitycraft:compressed_bamboo_block_2": {
+      "identifier": "utilitycraft:compressed_bamboo_block_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_bamboo_block_2-249f054e9353-886c81027394685ba3ea8293.png",
+      "hash": "886c81027394685ba3ea8293fb484cb8ac5da6028c9a7d247f8d23f770c10f37",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_basalt_2": {
+      "identifier": "utilitycraft:compressed_basalt_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_basalt_2-c2594c822418-c91b13bd8eca9be96bf44061.png",
+      "hash": "c91b13bd8eca9be96bf44061bb0f0e56fa09c7c1f6e4e59f82df51c71e3c43ca",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_birch_wood_2": {
+      "identifier": "utilitycraft:compressed_birch_wood_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_birch_wood_2.png"
+    },
+    "utilitycraft:compressed_blackstone_2": {
+      "identifier": "utilitycraft:compressed_blackstone_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_blackstone_2.png"
+    },
+    "utilitycraft:compressed_blaze_block_2": {
+      "identifier": "utilitycraft:compressed_blaze_block_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_blaze_block_2-a8878bb0a2be-24727751930e8e6f65c37bcd.png",
+      "hash": "24727751930e8e6f65c37bcd3780a3d1e246dd46b41ed83a9a7c8d00913eb153",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_brute_energized_iron_block_2": {
+      "identifier": "utilitycraft:compressed_brute_energized_iron_block_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_brute_energized_iron_block_2-8842d5bc5661-21fe6465d6e7de804f97d732.png",
+      "hash": "21fe6465d6e7de804f97d7321f4c3b42f1b707bbbde5784fb3f6c41d6588e713",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_brute_steel_block_2": {
+      "identifier": "utilitycraft:compressed_brute_steel_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_brute_steel_block_2.png"
+    },
+    "utilitycraft:compressed_calcite_2": {
+      "identifier": "utilitycraft:compressed_calcite_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_calcite_2-9d3971816ae6-dfead9b30fb413225afdf951.png",
+      "hash": "dfead9b30fb413225afdf95124a2c5ae9ead1be40a21e4ba441caa566f67e300",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_charcoal_block_2": {
+      "identifier": "utilitycraft:compressed_charcoal_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_charcoal_block_2.png"
+    },
+    "utilitycraft:compressed_cherry_wood_2": {
+      "identifier": "utilitycraft:compressed_cherry_wood_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_cherry_wood_2.png"
+    },
+    "utilitycraft:compressed_clay_2": {
+      "identifier": "utilitycraft:compressed_clay_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_clay_2-f84d8f769eee-cf53a0a73dc512523a86b087.png",
+      "hash": "cf53a0a73dc512523a86b087343e367df47e10a3a6dd3b6f42838c7b3c48f7cc",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_coal_block_2": {
+      "identifier": "utilitycraft:compressed_coal_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_coal_block_2.png"
+    },
+    "utilitycraft:compressed_cobbled_deepslate_2": {
+      "identifier": "utilitycraft:compressed_cobbled_deepslate_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_cobbled_deepslate_2.png"
+    },
+    "utilitycraft:double_compressed_cobblestone": {
+      "identifier": "utilitycraft:double_compressed_cobblestone",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/double_compressed_cobblestone.png"
+    },
+    "utilitycraft:compressed_copper_block_2": {
+      "identifier": "utilitycraft:compressed_copper_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_copper_block_2.png"
+    },
+    "utilitycraft:compressed_crimson_wood_2": {
+      "identifier": "utilitycraft:compressed_crimson_wood_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crimson_wood_2.png"
+    },
+    "utilitycraft:compressed_crushed_blackstone_2": {
+      "identifier": "utilitycraft:compressed_crushed_blackstone_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_blackstone_2.png"
+    },
+    "utilitycraft:compressed_crushed_cobbled_deepslate_2": {
+      "identifier": "utilitycraft:compressed_crushed_cobbled_deepslate_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_cobbled_deepslate_2.png"
+    },
+    "utilitycraft:compressed_crushed_endstone_2": {
+      "identifier": "utilitycraft:compressed_crushed_endstone_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_endstone_2.png"
+    },
+    "utilitycraft:compressed_crushed_netherrack_2": {
+      "identifier": "utilitycraft:compressed_crushed_netherrack_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_netherrack_2.png"
+    },
+    "utilitycraft:compressed_cry_obsidian_2": {
+      "identifier": "utilitycraft:compressed_cry_obsidian_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_cry_obsidian_2.png"
+    },
+    "utilitycraft:compressed_dark_oak_wood_2": {
+      "identifier": "utilitycraft:compressed_dark_oak_wood_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_dark_oak_wood_2.png"
+    },
+    "utilitycraft:compressed_deepslate_2": {
+      "identifier": "utilitycraft:compressed_deepslate_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_deepslate_2.png"
+    },
+    "utilitycraft:compressed_diamond_block_2": {
+      "identifier": "utilitycraft:compressed_diamond_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_diamond_block_2.png"
+    },
+    "utilitycraft:compressed_diorite_2": {
+      "identifier": "utilitycraft:compressed_diorite_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_diorite_2.png"
+    },
+    "utilitycraft:compressed_dirt_2": {
+      "identifier": "utilitycraft:compressed_dirt_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_dirt_2.png"
+    },
+    "utilitycraft:compressed_dripstone_block_2": {
+      "identifier": "utilitycraft:compressed_dripstone_block_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_dripstone_block_2-e1e32bef57e5-51197fd87be7618948b67510.png",
+      "hash": "51197fd87be7618948b67510f5c122f97296d5d0ba84d180a7adbc8b3ede46dc",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_emerald_block_2": {
+      "identifier": "utilitycraft:compressed_emerald_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_emerald_block_2.png"
+    },
+    "utilitycraft:compressed_endstone_2": {
+      "identifier": "utilitycraft:compressed_endstone_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_endstone_2.png"
+    },
+    "utilitycraft:compressed_energized_iron_block_2": {
+      "identifier": "utilitycraft:compressed_energized_iron_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_energized_iron_block_2.png"
+    },
+    "utilitycraft:compressed_flint_block_2": {
+      "identifier": "utilitycraft:compressed_flint_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_flint_block_2.png"
+    },
+    "utilitycraft:compressed_glass_2": {
+      "identifier": "utilitycraft:compressed_glass_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_glass_2.png"
+    },
+    "utilitycraft:compressed_gold_block_2": {
+      "identifier": "utilitycraft:compressed_gold_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_gold_block_2.png"
+    },
+    "utilitycraft:compressed_granite_2": {
+      "identifier": "utilitycraft:compressed_granite_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_granite_2.png"
+    },
+    "utilitycraft:compressed_gravel_2": {
+      "identifier": "utilitycraft:compressed_gravel_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_gravel_2.png"
+    },
+    "utilitycraft:compressed_honey_block_2": {
+      "identifier": "utilitycraft:compressed_honey_block_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_honey_block_2-47fdcc220b12-d87a5eeff1f72d2c729c6f3e.png",
+      "hash": "d87a5eeff1f72d2c729c6f3e5d12712d415e0f67cd511e530ad989813a385c6b",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:compressed_iron_block_2": {
+      "identifier": "utilitycraft:compressed_iron_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_iron_block_2.png"
+    },
+    "utilitycraft:compressed_jungle_wood_2": {
+      "identifier": "utilitycraft:compressed_jungle_wood_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_jungle_wood_2.png"
+    },
+    "utilitycraft:compressed_lapislazuli_block_2": {
+      "identifier": "utilitycraft:compressed_lapislazuli_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_lapislazuli_block_2.png"
+    },
+    "utilitycraft:compressed_mangrove_wood_2": {
+      "identifier": "utilitycraft:compressed_mangrove_wood_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_mangrove_wood_2.png"
+    },
+    "utilitycraft:compressed_moss_block_2": {
+      "identifier": "utilitycraft:compressed_moss_block_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_moss_block_2-6120167d7f15-cac5a4369562313e88381f8f.png",
+      "hash": "cac5a4369562313e88381f8f71aeb01e69798171414940261b84ecb34f0e9f6b",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_mud_2": {
+      "identifier": "utilitycraft:compressed_mud_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_mud_2-82fd8b2df99d-f6ac5522cf53e1e3416651d0.png",
+      "hash": "f6ac5522cf53e1e3416651d0107e54412f32e327958326ff72b9516869d071ac",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_nether_star_block_2": {
+      "identifier": "utilitycraft:compressed_nether_star_block_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_nether_star_block_2-98453c5389c9-4176ed1932a432917fa460f2.png",
+      "hash": "4176ed1932a432917fa460f25a530469d776a15b3d4759c09306c52cd9f6539a",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_netherite_block_2": {
+      "identifier": "utilitycraft:compressed_netherite_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_netherite_block_2.png"
+    },
+    "utilitycraft:compressed_netherrack_2": {
+      "identifier": "utilitycraft:compressed_netherrack_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_netherrack_2.png"
+    },
+    "utilitycraft:compressed_oak_wood_2": {
+      "identifier": "utilitycraft:compressed_oak_wood_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_oak_wood_2.png"
+    },
+    "utilitycraft:compressed_obsidian_2": {
+      "identifier": "utilitycraft:compressed_obsidian_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_obsidian_2.png"
+    },
+    "utilitycraft:compressed_pale_oak_wood_2": {
+      "identifier": "utilitycraft:compressed_pale_oak_wood_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_pale_oak_wood_2.png"
+    },
+    "utilitycraft:compressed_quartz_block_2": {
+      "identifier": "utilitycraft:compressed_quartz_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_quartz_block_2.png"
+    },
+    "utilitycraft:compressed_raw_copper_block_2": {
+      "identifier": "utilitycraft:compressed_raw_copper_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_raw_copper_block_2.png"
+    },
+    "utilitycraft:compressed_raw_gold_block_2": {
+      "identifier": "utilitycraft:compressed_raw_gold_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_raw_gold_block_2.png"
+    },
+    "utilitycraft:compressed_raw_iron_block_2": {
+      "identifier": "utilitycraft:compressed_raw_iron_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_raw_iron_block_2.png"
+    },
+    "utilitycraft:compressed_red_sand_2": {
+      "identifier": "utilitycraft:compressed_red_sand_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_red_sand_2-2071404287a9-6030531e29e5d633da8b7b3a.png",
+      "hash": "6030531e29e5d633da8b7b3ac99d3394b3e58abdac482aa5feb496fdba7ee84c",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_redstone_block_2": {
+      "identifier": "utilitycraft:compressed_redstone_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_redstone_block_2.png"
+    },
+    "utilitycraft:compressed_sand_2": {
+      "identifier": "utilitycraft:compressed_sand_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_sand_2.png"
+    },
+    "utilitycraft:compressed_silicon_block_2": {
+      "identifier": "utilitycraft:compressed_silicon_block_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_silicon_block_2-9e6d7224f26b-9e4ccac55f014ddc4b56743b.png",
+      "hash": "9e4ccac55f014ddc4b56743b63a494c1d668b79643cc45b34ae52ad7550cb690",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_slime_block_2": {
+      "identifier": "utilitycraft:compressed_slime_block_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_slime_block_2-c26bb40da1b5-76432f3fcb6de3bb55d61797.png",
+      "hash": "76432f3fcb6de3bb55d61797ec6698b9b3818d0ef968de109a23df67af1b26d2",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:compressed_soul_sand_2": {
+      "identifier": "utilitycraft:compressed_soul_sand_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_soul_sand_2-fa417a481348-72776d7455e159cb818eec9a.png",
+      "hash": "72776d7455e159cb818eec9a68244399d925109ac49b3d8bb220b96e1ef0e2b7",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_soul_soil_2": {
+      "identifier": "utilitycraft:compressed_soul_soil_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_soul_soil_2-b43a987f22b3-e12a9bd436085599cb3b632f.png",
+      "hash": "e12a9bd436085599cb3b632f7d38acf7857ff75a0d61c3a887868ea2ef881270",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_spruce_wood_2": {
+      "identifier": "utilitycraft:compressed_spruce_wood_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_spruce_wood_2.png"
+    },
+    "utilitycraft:compressed_steel_block_2": {
+      "identifier": "utilitycraft:compressed_steel_block_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_steel_block_2.png"
+    },
+    "utilitycraft:compressed_stone_2": {
+      "identifier": "utilitycraft:compressed_stone_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_stone_2.png"
+    },
+    "utilitycraft:compressed_tuff_2": {
+      "identifier": "utilitycraft:compressed_tuff_2",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_tuff_2-fcfbf2821408-f50f7b7c559c4dfa2865b827.png",
+      "hash": "f50f7b7c559c4dfa2865b827c554f30da3338b1263f5d9a3fd776494d37488a0",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_warped_wood_2": {
+      "identifier": "utilitycraft:compressed_warped_wood_2",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_warped_wood_2.png"
+    },
+    "utilitycraft:dyes_seeds": {
+      "identifier": "utilitycraft:dyes_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_dyes_seeds-6b6e767290dd-e6fe312f97f227d7e3ae8667.png",
+      "hash": "e6fe312f97f227d7e3ae866759e82611c11db14c663afb49b553d864d59b1b99",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:efficiency_module": {
+      "identifier": "utilitycraft:efficiency_module",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_efficiency_module-89af7c4a2bb5-8203059db68742b5ae0ae93c.png",
+      "hash": "8203059db68742b5ae0ae93cd07fe05fadc42832f29441db09b74584dfbed1f1",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:electro_press": {
+      "identifier": "utilitycraft:electro_press",
+      "kind": "manual",
+      "path": "renders/electro_press.png"
+    },
+    "utilitycraft:electrolyzer": {
+      "identifier": "utilitycraft:electrolyzer",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_electrolyzer-a5d8d1731990-972e03cf43b4145d0064b567.png",
+      "hash": "972e03cf43b4145d0064b56742f57aa964bfefb0d8ed16a17f415bee142b472c",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:elevator": {
+      "identifier": "utilitycraft:elevator",
+      "kind": "manual",
+      "path": "renders/elevator.png"
+    },
+    "utilitycraft:emerald_seeds": {
+      "identifier": "utilitycraft:emerald_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_emerald_seeds-87573340bf0e-8a10f2ad7cde4ca07a657191.png",
+      "hash": "8a10f2ad7cde4ca07a657191ba67145394b238ade3b9882872807d47b95ce049",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 2
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:ender_hopper": {
+      "identifier": "utilitycraft:ender_hopper",
+      "kind": "manual",
+      "path": "renders/ender_hopper.png"
+    },
+    "utilitycraft:enderpearl_seeds": {
+      "identifier": "utilitycraft:enderpearl_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_enderpearl_seeds-bf37ad60c317-8a10f2ad7cde4ca07a657191.png",
+      "hash": "8a10f2ad7cde4ca07a657191ba67145394b238ade3b9882872807d47b95ce049",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 2
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:energized_iron_block": {
+      "identifier": "utilitycraft:energized_iron_block",
+      "kind": "manual",
+      "path": "renders/energized_iron_block.png"
+    },
+    "utilitycraft:energy_cable": {
+      "identifier": "utilitycraft:energy_cable",
+      "kind": "manual",
+      "path": "renders/energy_cable.png"
+    },
+    "utilitycraft:energy_cell": {
+      "identifier": "utilitycraft:energy_cell",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_energy_cell-316cbecdecd1-61580427d06c28e2cf9c042d.png",
+      "hash": "61580427d06c28e2cf9c042d225ccd75f6b236421426da3c5cc310428fc01d1c",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:energy_trash_can": {
+      "identifier": "utilitycraft:energy_trash_can",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_energy_trash_can-97e20fd6ba8a-a8c58c44f14396ccf4c85375.png",
+      "hash": "a8c58c44f14396ccf4c8537520e09363850709a6f52d5d56985f75f8fe0b170b",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "geometry.basic_trash_can",
+      "stats": {
+        "bones": 1,
+        "cubes": 3,
+        "planes": 0,
+        "faces": 18
+      }
+    },
+    "utilitycraft:ehxibitor": {
+      "identifier": "utilitycraft:ehxibitor",
+      "kind": "manual",
+      "path": "renders/ehxibitor.png"
+    },
+    "utilitycraft:expert_battery": {
+      "identifier": "utilitycraft:expert_battery",
+      "kind": "manual",
+      "path": "renders/expert_battery.png"
+    },
+    "utilitycraft:expert_energy_receiver": {
+      "identifier": "utilitycraft:expert_energy_receiver",
+      "kind": "manual",
+      "path": "renders/expert_energy_receiver.png"
+    },
+    "utilitycraft:expert_energy_transmitter": {
+      "identifier": "utilitycraft:expert_energy_transmitter",
+      "kind": "manual",
+      "path": "renders/expert_energy_transmitter.png"
+    },
+    "utilitycraft:expert_furnator": {
+      "identifier": "utilitycraft:expert_furnator",
+      "kind": "manual",
+      "path": "renders/expert_furnator.png"
+    },
+    "utilitycraft:expert_gas_generator": {
+      "identifier": "utilitycraft:expert_gas_generator",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_expert_gas_generator-2bd54465793c-a10147c5a9d70392d7da8528.png",
+      "hash": "a10147c5a9d70392d7da8528b6924a4d7b9a810c627aa2a549d6637c4398a2e8",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:expert_gas_tank": {
+      "identifier": "utilitycraft:expert_gas_tank",
+      "kind": "manual",
+      "path": "renders/expert_gas_tank.png"
+    },
+    "utilitycraft:expert_fluid_tank": {
+      "identifier": "utilitycraft:expert_fluid_tank",
+      "kind": "manual",
+      "path": "renders/expert_fluid_tank.png"
+    },
+    "utilitycraft:expert_magmator": {
+      "identifier": "utilitycraft:expert_magmator",
+      "kind": "manual",
+      "path": "renders/expert_magmator.png"
+    },
+    "utilitycraft:expert_solar_panel": {
+      "identifier": "utilitycraft:expert_solar_panel",
+      "kind": "manual",
+      "path": "renders/expert_solar_panel.png"
+    },
+    "utilitycraft:expert_thermo_generator": {
+      "identifier": "utilitycraft:expert_thermo_generator",
+      "kind": "manual",
+      "path": "renders/expert_thermo_generator.png"
+    },
+    "utilitycraft:expert_wind_turbine": {
+      "identifier": "utilitycraft:expert_wind_turbine",
+      "kind": "manual",
+      "path": "renders/expert_wind_turbine.png"
+    },
+    "utilitycraft:fan": {
+      "identifier": "utilitycraft:fan",
+      "kind": "manual",
+      "path": "renders/fan.png"
+    },
+    "utilitycraft:flint_block": {
+      "identifier": "utilitycraft:flint_block",
+      "kind": "manual",
+      "path": "renders/flint_block.png"
+    },
+    "utilitycraft:compressed_block": {
+      "identifier": "utilitycraft:compressed_block",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_block.png"
+    },
+    "utilitycraft:gas_cell": {
+      "identifier": "utilitycraft:gas_cell",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_gas_cell-235a512754f3-46bcf58e6a981597626e59d9.png",
+      "hash": "46bcf58e6a981597626e59d9054415487815e1808555b0f1535b5e2b56cbbd93",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:gas_extractor": {
+      "identifier": "utilitycraft:gas_extractor",
+      "kind": "manual",
+      "path": "renders/gas_extractor.png"
+    },
+    "utilitycraft:gas_extractor_blue": {
+      "identifier": "utilitycraft:gas_extractor_blue",
+      "kind": "manual",
+      "path": "renders/gas_extractor_blue.png"
+    },
+    "utilitycraft:gas_extractor_green": {
+      "identifier": "utilitycraft:gas_extractor_green",
+      "kind": "manual",
+      "path": "renders/gas_extractor_green.png"
+    },
+    "utilitycraft:gas_extractor_orange": {
+      "identifier": "utilitycraft:gas_extractor_orange",
+      "kind": "manual",
+      "path": "renders/gas_extractor_orange.png"
+    },
+    "utilitycraft:gas_extractor_red": {
+      "identifier": "utilitycraft:gas_extractor_red",
+      "kind": "manual",
+      "path": "renders/gas_extractor_red.png"
+    },
+    "utilitycraft:gas_extractor_yellow": {
+      "identifier": "utilitycraft:gas_extractor_yellow",
+      "kind": "manual",
+      "path": "renders/gas_extractor_yellow.png"
+    },
+    "utilitycraft:gas_pipe": {
+      "identifier": "utilitycraft:gas_pipe",
+      "kind": "manual",
+      "path": "renders/gas_pipe.png"
+    },
+    "utilitycraft:gas_pipe_blue": {
+      "identifier": "utilitycraft:gas_pipe_blue",
+      "kind": "manual",
+      "path": "renders/gas_pipe_blue.png"
+    },
+    "utilitycraft:gas_pipe_green": {
+      "identifier": "utilitycraft:gas_pipe_green",
+      "kind": "manual",
+      "path": "renders/gas_pipe_green.png"
+    },
+    "utilitycraft:gas_pipe_orange": {
+      "identifier": "utilitycraft:gas_pipe_orange",
+      "kind": "manual",
+      "path": "renders/gas_pipe_orange.png"
+    },
+    "utilitycraft:gas_pipe_red": {
+      "identifier": "utilitycraft:gas_pipe_red",
+      "kind": "manual",
+      "path": "renders/gas_pipe_red.png"
+    },
+    "utilitycraft:gas_pipe_yellow": {
+      "identifier": "utilitycraft:gas_pipe_yellow",
+      "kind": "manual",
+      "path": "renders/gas_pipe_yellow.png"
+    },
+    "utilitycraft:gas_trash_can": {
+      "identifier": "utilitycraft:gas_trash_can",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_gas_trash_can-e19527969ef8-570eb340a9c2cc4ea1378428.png",
+      "hash": "570eb340a9c2cc4ea1378428cc090dda4db65b31051835ad89a4ca8125c16119",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "geometry.basic_trash_can",
+      "stats": {
+        "bones": 1,
+        "cubes": 3,
+        "planes": 0,
+        "faces": 18
+      }
+    },
+    "utilitycraft:ghast_seeds": {
+      "identifier": "utilitycraft:ghast_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_ghast_seeds-70fd6dd68d99-077e7959b5d90d3001461a28.png",
+      "hash": "077e7959b5d90d3001461a28aab8858b7a66856818561a321cd342c9b1c8b09a",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:glass_seeds": {
+      "identifier": "utilitycraft:glass_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_glass_seeds-cd0c2d3ebee5-dc4edd9cf1842872dc9784cd.png",
+      "hash": "dc4edd9cf1842872dc9784cd078a1ddef1f87dafa8c3ca296687a4c0d7ae99bb",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:glowstone_seeds": {
+      "identifier": "utilitycraft:glowstone_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_glowstone_seeds-619828cfcfca-077e7959b5d90d3001461a28.png",
+      "hash": "077e7959b5d90d3001461a28aab8858b7a66856818561a321cd342c9b1c8b09a",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:gold_seeds": {
+      "identifier": "utilitycraft:gold_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_gold_seeds-e3b14db02058-077e7959b5d90d3001461a28.png",
+      "hash": "077e7959b5d90d3001461a28aab8858b7a66856818561a321cd342c9b1c8b09a",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:gray_elevator": {
+      "identifier": "utilitycraft:gray_elevator",
+      "kind": "manual",
+      "path": "renders/gray_elevator.png"
+    },
+    "utilitycraft:green_elevator": {
+      "identifier": "utilitycraft:green_elevator",
+      "kind": "manual",
+      "path": "renders/green_elevator.png"
+    },
+    "utilitycraft:gunpowder_seeds": {
+      "identifier": "utilitycraft:gunpowder_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_gunpowder_seeds-a84548343f08-e6fe312f97f227d7e3ae8667.png",
+      "hash": "e6fe312f97f227d7e3ae866759e82611c11db14c663afb49b553d864d59b1b99",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:harvester": {
+      "identifier": "utilitycraft:harvester",
+      "kind": "manual",
+      "path": "renders/harvester.png"
+    },
+    "utilitycraft:honey_seeds": {
+      "identifier": "utilitycraft:honey_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_honey_seeds-9b272c34c214-077e7959b5d90d3001461a28.png",
+      "hash": "077e7959b5d90d3001461a28aab8858b7a66856818561a321cd342c9b1c8b09a",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:incinerator": {
+      "identifier": "utilitycraft:incinerator",
+      "kind": "manual",
+      "path": "renders/incinerator.png"
+    },
+    "utilitycraft:induction_anvil": {
+      "identifier": "utilitycraft:induction_anvil",
+      "kind": "manual",
+      "path": "renders/induction_anvil.png"
+    },
+    "utilitycraft:infuser": {
+      "identifier": "utilitycraft:infuser",
+      "kind": "manual",
+      "path": "renders/infuser.png"
+    },
+    "utilitycraft:iron_seeds": {
+      "identifier": "utilitycraft:iron_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_iron_seeds-9faabfd1c435-e6fe312f97f227d7e3ae8667.png",
+      "hash": "e6fe312f97f227d7e3ae866759e82611c11db14c663afb49b553d864d59b1b99",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:item_conduit_blue": {
+      "identifier": "utilitycraft:item_conduit_blue",
+      "kind": "manual",
+      "path": "renders/item_conduit_blue.png"
+    },
+    "utilitycraft:item_conduit": {
+      "identifier": "utilitycraft:item_conduit",
+      "kind": "manual",
+      "path": "renders/item_conduit.png"
+    },
+    "utilitycraft:item_conduit_purple": {
+      "identifier": "utilitycraft:item_conduit_purple",
+      "kind": "manual",
+      "path": "renders/item_conduit_purple.png"
+    },
+    "utilitycraft:item_conduit_red": {
+      "identifier": "utilitycraft:item_conduit_red",
+      "kind": "manual",
+      "path": "renders/item_conduit_red.png"
+    },
+    "utilitycraft:item_conduit_yellow": {
+      "identifier": "utilitycraft:item_conduit_yellow",
+      "kind": "manual",
+      "path": "renders/item_conduit_yellow.png"
+    },
+    "utilitycraft:item_exporter_blue": {
+      "identifier": "utilitycraft:item_exporter_blue",
+      "kind": "manual",
+      "path": "renders/item_exporter_blue.png"
+    },
+    "utilitycraft:item_exporter": {
+      "identifier": "utilitycraft:item_exporter",
+      "kind": "manual",
+      "path": "renders/item_exporter.png"
+    },
+    "utilitycraft:item_exporter_purple": {
+      "identifier": "utilitycraft:item_exporter_purple",
+      "kind": "manual",
+      "path": "renders/item_exporter_purple.png"
+    },
+    "utilitycraft:item_exporter_red": {
+      "identifier": "utilitycraft:item_exporter_red",
+      "kind": "manual",
+      "path": "renders/item_exporter_red.png"
+    },
+    "utilitycraft:item_exporter_yellow": {
+      "identifier": "utilitycraft:item_exporter_yellow",
+      "kind": "manual",
+      "path": "renders/item_exporter_yellow.png"
+    },
+    "utilitycraft:item_importer_blue": {
+      "identifier": "utilitycraft:item_importer_blue",
+      "kind": "manual",
+      "path": "renders/item_importer_blue.png"
+    },
+    "utilitycraft:item_importer": {
+      "identifier": "utilitycraft:item_importer",
+      "kind": "manual",
+      "path": "renders/item_importer.png"
+    },
+    "utilitycraft:item_importer_purple": {
+      "identifier": "utilitycraft:item_importer_purple",
+      "kind": "manual",
+      "path": "renders/item_importer_purple.png"
+    },
+    "utilitycraft:item_importer_red": {
+      "identifier": "utilitycraft:item_importer_red",
+      "kind": "manual",
+      "path": "renders/item_importer_red.png"
+    },
+    "utilitycraft:item_importer_yellow": {
+      "identifier": "utilitycraft:item_importer_yellow",
+      "kind": "manual",
+      "path": "renders/item_importer_yellow.png"
+    },
+    "utilitycraft:basic_trash_can": {
+      "identifier": "utilitycraft:basic_trash_can",
+      "kind": "manual",
+      "path": "renders/basic_trash_can.png"
+    },
+    "utilitycraft:lantern": {
+      "identifier": "utilitycraft:lantern",
+      "kind": "manual",
+      "path": "renders/lantern.png"
+    },
+    "utilitycraft:lapis_seeds": {
+      "identifier": "utilitycraft:lapis_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_lapis_seeds-6f38e912816f-077e7959b5d90d3001461a28.png",
+      "hash": "077e7959b5d90d3001461a28aab8858b7a66856818561a321cd342c9b1c8b09a",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:lava_seeds": {
+      "identifier": "utilitycraft:lava_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_lava_seeds-f0e59c42b54f-077e7959b5d90d3001461a28.png",
+      "hash": "077e7959b5d90d3001461a28aab8858b7a66856818561a321cd342c9b1c8b09a",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:lead_ore": {
+      "identifier": "utilitycraft:lead_ore",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_lead_ore-640a8c0afe6d-6ad541f2a7d664e1c8791cf7.png",
+      "hash": "6ad541f2a7d664e1c8791cf71898ed052ed701be3becb8eafb5b5a9b9ef39f77",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:leather_seeds": {
+      "identifier": "utilitycraft:leather_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_leather_seeds-c4f2661c94b1-e6fe312f97f227d7e3ae8667.png",
+      "hash": "e6fe312f97f227d7e3ae866759e82611c11db14c663afb49b553d864d59b1b99",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:light_blue_elevator": {
+      "identifier": "utilitycraft:light_blue_elevator",
+      "kind": "manual",
+      "path": "renders/light_blue_elevator.png"
+    },
+    "utilitycraft:light_gray_elevator": {
+      "identifier": "utilitycraft:light_gray_elevator",
+      "kind": "manual",
+      "path": "renders/light_gray_elevator.png"
+    },
+    "utilitycraft:lime_elevator": {
+      "identifier": "utilitycraft:lime_elevator",
+      "kind": "manual",
+      "path": "renders/lime_elevator.png"
+    },
+    "utilitycraft:fluid_cell": {
+      "identifier": "utilitycraft:fluid_cell",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_fluid_cell-8b5e5bac915e-a2de5a749b3eadae8b69b771.png",
+      "hash": "a2de5a749b3eadae8b69b7717d84f3dea8908acf49f56bf28e9e35945dbd5c47",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:fluid_extractor_blue": {
+      "identifier": "utilitycraft:fluid_extractor_blue",
+      "kind": "manual",
+      "path": "renders/fluid_extractor_blue.png"
+    },
+    "utilitycraft:fluid_extractor": {
+      "identifier": "utilitycraft:fluid_extractor",
+      "kind": "manual",
+      "path": "renders/fluid_extractor.png"
+    },
+    "utilitycraft:fluid_extractor_green": {
+      "identifier": "utilitycraft:fluid_extractor_green",
+      "kind": "manual",
+      "path": "renders/fluid_extractor_green.png"
+    },
+    "utilitycraft:fluid_extractor_purple": {
+      "identifier": "utilitycraft:fluid_extractor_purple",
+      "kind": "manual",
+      "path": "renders/fluid_extractor_purple.png"
+    },
+    "utilitycraft:fluid_extractor_red": {
+      "identifier": "utilitycraft:fluid_extractor_red",
+      "kind": "manual",
+      "path": "renders/fluid_extractor_red.png"
+    },
+    "utilitycraft:fluid_pipe_blue": {
+      "identifier": "utilitycraft:fluid_pipe_blue",
+      "kind": "manual",
+      "path": "renders/fluid_pipe_blue.png"
+    },
+    "utilitycraft:fluid_pipe": {
+      "identifier": "utilitycraft:fluid_pipe",
+      "kind": "manual",
+      "path": "renders/fluid_pipe.png"
+    },
+    "utilitycraft:fluid_pipe_green": {
+      "identifier": "utilitycraft:fluid_pipe_green",
+      "kind": "manual",
+      "path": "renders/fluid_pipe_green.png"
+    },
+    "utilitycraft:fluid_pipe_purple": {
+      "identifier": "utilitycraft:fluid_pipe_purple",
+      "kind": "manual",
+      "path": "renders/fluid_pipe_purple.png"
+    },
+    "utilitycraft:fluid_pipe_red": {
+      "identifier": "utilitycraft:fluid_pipe_red",
+      "kind": "manual",
+      "path": "renders/fluid_pipe_red.png"
+    },
+    "utilitycraft:liquid_trash_can": {
+      "identifier": "utilitycraft:liquid_trash_can",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_liquid_trash_can-d0d2cfb0ea01-623d2d090d0d00e49d915eb9.png",
+      "hash": "623d2d090d0d00e49d915eb91ff2626423eb845579dbbd1ffe2ddc90c36c94be",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "geometry.basic_trash_can",
+      "stats": {
+        "bones": 1,
+        "cubes": 3,
+        "planes": 0,
+        "faces": 18
+      }
+    },
+    "utilitycraft:machine_case": {
+      "identifier": "utilitycraft:machine_case",
+      "kind": "manual",
+      "path": "renders/machine_case.png"
+    },
+    "utilitycraft:magenta_elevator": {
+      "identifier": "utilitycraft:magenta_elevator",
+      "kind": "manual",
+      "path": "renders/magenta_elevator.png"
+    },
+    "utilitycraft:magmatic_chamber": {
+      "identifier": "utilitycraft:magmatic_chamber",
+      "kind": "manual",
+      "path": "renders/magmatic_chamber.png"
+    },
+    "utilitycraft:mechanic_hopper": {
+      "identifier": "utilitycraft:mechanic_hopper",
+      "kind": "manual",
+      "path": "renders/mechanic_hopper.png"
+    },
+    "utilitycraft:mechanic_upper": {
+      "identifier": "utilitycraft:mechanic_upper",
+      "kind": "manual",
+      "path": "renders/mechanic_upper.png"
+    },
+    "utilitycraft:mechanic_dropper": {
+      "identifier": "utilitycraft:mechanic_dropper",
+      "kind": "manual",
+      "path": "renders/mechanic_dropper.png"
+    },
+    "utilitycraft:mechanical_spawner": {
+      "identifier": "utilitycraft:mechanical_spawner",
+      "kind": "manual",
+      "path": "renders/mechanical_spawner.png"
+    },
+    "utilitycraft:mob_grinder": {
+      "identifier": "utilitycraft:mob_grinder",
+      "kind": "manual",
+      "path": "renders/mob_grinder.png"
+    },
+    "utilitycraft:mortar": {
+      "identifier": "utilitycraft:mortar",
+      "kind": "manual",
+      "path": "renders/mortar.png"
+    },
+    "utilitycraft:nether_star_block": {
+      "identifier": "utilitycraft:nether_star_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_nether_star_block-01c6a40fd6f9-1c3362f6726dd2cd2b9769b3.png",
+      "hash": "1c3362f6726dd2cd2b9769b39ef89ceeeafd60be7ba7775d3b3fb8254fe1e440",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:nether_star_seeds": {
+      "identifier": "utilitycraft:nether_star_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_nether_star_seeds-b1e1857d8050-ac95c71658349e9bd9d110e4.png",
+      "hash": "ac95c71658349e9bd9d110e421d2bb71909c75d923297c3a40e5053acec17516",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 3
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:netherite_seeds": {
+      "identifier": "utilitycraft:netherite_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_netherite_seeds-6276c2208880-ac95c71658349e9bd9d110e4.png",
+      "hash": "ac95c71658349e9bd9d110e421d2bb71909c75d923297c3a40e5053acec17516",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 3
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:nonuple_compressed_cobblestone": {
+      "identifier": "utilitycraft:nonuple_compressed_cobblestone",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/nonuple_compressed_cobblestone.png"
+    },
+    "utilitycraft:obsidian_seeds": {
+      "identifier": "utilitycraft:obsidian_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_obsidian_seeds-32b618504ca9-8a10f2ad7cde4ca07a657191.png",
+      "hash": "8a10f2ad7cde4ca07a657191ba67145394b238ade3b9882872807d47b95ce049",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 2
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:octuple_compressed_cobblestone": {
+      "identifier": "utilitycraft:octuple_compressed_cobblestone",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/octuple_compressed_cobblestone.png"
+    },
+    "utilitycraft:orange_elevator": {
+      "identifier": "utilitycraft:orange_elevator",
+      "kind": "manual",
+      "path": "renders/orange_elevator.png"
+    },
+    "utilitycraft:pedestal": {
+      "identifier": "utilitycraft:pedestal",
+      "kind": "manual",
+      "path": "renders/pedestal.png"
+    },
+    "utilitycraft:pink_elevator": {
+      "identifier": "utilitycraft:pink_elevator",
+      "kind": "manual",
+      "path": "renders/pink_elevator.png"
+    },
+    "utilitycraft:primitive_forge": {
+      "identifier": "utilitycraft:primitive_forge",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_primitive_forge-7cec4b35030b-014f2f4db4aaedea04fef009.png",
+      "hash": "014f2f4db4aaedea04fef00980a0aa35e0d32a3111d35b2b82b6448e39980919",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:formed": false,
+        "utilitycraft:on": false,
+        "utilitycraft:forge_part": 0,
+        "utilitycraft:forge_owner": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:prismarine_crystals_seeds": {
+      "identifier": "utilitycraft:prismarine_crystals_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_prismarine_crystals_seeds-9031b64a1eee-e6fe312f97f227d7e3ae8667.png",
+      "hash": "e6fe312f97f227d7e3ae866759e82611c11db14c663afb49b553d864d59b1b99",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:prismarine_shards_seeds": {
+      "identifier": "utilitycraft:prismarine_shards_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_prismarine_shards_seeds-d7d65c87e611-e6fe312f97f227d7e3ae8667.png",
+      "hash": "e6fe312f97f227d7e3ae866759e82611c11db14c663afb49b553d864d59b1b99",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:processing_module": {
+      "identifier": "utilitycraft:processing_module",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_processing_module-0111d72535ed-115d27703686063e29a3a0a8.png",
+      "hash": "115d27703686063e29a3a0a8bd221bd03b16fff79b01741864c063652d012b0b",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:purple_elevator": {
+      "identifier": "utilitycraft:purple_elevator",
+      "kind": "manual",
+      "path": "renders/purple_elevator.png"
+    },
+    "utilitycraft:compressed_acacia_wood_4": {
+      "identifier": "utilitycraft:compressed_acacia_wood_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_acacia_wood_4.png"
+    },
+    "utilitycraft:compressed_amethyst_block_4": {
+      "identifier": "utilitycraft:compressed_amethyst_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_amethyst_block_4.png"
+    },
+    "utilitycraft:compressed_andesite_4": {
+      "identifier": "utilitycraft:compressed_andesite_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_andesite_4.png"
+    },
+    "utilitycraft:compressed_bamboo_block_4": {
+      "identifier": "utilitycraft:compressed_bamboo_block_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_bamboo_block_4-5da7366bb15b-19ebd98094f5d42381887e13.png",
+      "hash": "19ebd98094f5d42381887e131fc4683943645a161733591b5f9dee6b55bbadc5",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_basalt_4": {
+      "identifier": "utilitycraft:compressed_basalt_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_basalt_4-a528c6c1e798-b4faaf50cf29f821afd84d67.png",
+      "hash": "b4faaf50cf29f821afd84d67ac1235a8412a7c66783aef10f0b8d6dbf23605e0",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_birch_wood_4": {
+      "identifier": "utilitycraft:compressed_birch_wood_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_birch_wood_4.png"
+    },
+    "utilitycraft:compressed_blackstone_4": {
+      "identifier": "utilitycraft:compressed_blackstone_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_blackstone_4.png"
+    },
+    "utilitycraft:compressed_blaze_block_4": {
+      "identifier": "utilitycraft:compressed_blaze_block_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_blaze_block_4-c4820cba84f1-3e05e379e3fd591ff2870fe0.png",
+      "hash": "3e05e379e3fd591ff2870fe001ecc0d17b4d5438256d169f3cd6a1a56ddaa5ec",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_brute_energized_iron_block_4": {
+      "identifier": "utilitycraft:compressed_brute_energized_iron_block_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_brute_energized_iron_block_4-d848f350cc11-beaf0b29ecde3483bd09d804.png",
+      "hash": "beaf0b29ecde3483bd09d804f7c75d2589961c4f88861870202045cc4ad9553c",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_brute_steel_block_4": {
+      "identifier": "utilitycraft:compressed_brute_steel_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_brute_steel_block_4.png"
+    },
+    "utilitycraft:compressed_calcite_4": {
+      "identifier": "utilitycraft:compressed_calcite_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_calcite_4-62db0a08338d-ac94ec391b7c46b25878e714.png",
+      "hash": "ac94ec391b7c46b25878e71497530cd2e24662a5dc47e50150af69cd00b0071e",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_charcoal_block_4": {
+      "identifier": "utilitycraft:compressed_charcoal_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_charcoal_block_4.png"
+    },
+    "utilitycraft:compressed_cherry_wood_4": {
+      "identifier": "utilitycraft:compressed_cherry_wood_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_cherry_wood_4.png"
+    },
+    "utilitycraft:compressed_clay_4": {
+      "identifier": "utilitycraft:compressed_clay_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_clay_4-1d2f2bace9c4-d68abd42b1f818c4af73771c.png",
+      "hash": "d68abd42b1f818c4af73771cdb6131c0c889fccde88f19690503d89450a8e629",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_coal_block_4": {
+      "identifier": "utilitycraft:compressed_coal_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_coal_block_4.png"
+    },
+    "utilitycraft:compressed_cobbled_deepslate_4": {
+      "identifier": "utilitycraft:compressed_cobbled_deepslate_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_cobbled_deepslate_4.png"
+    },
+    "utilitycraft:quadruple_compressed_cobblestone": {
+      "identifier": "utilitycraft:quadruple_compressed_cobblestone",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/quadruple_compressed_cobblestone.png"
+    },
+    "utilitycraft:compressed_copper_block_4": {
+      "identifier": "utilitycraft:compressed_copper_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_copper_block_4.png"
+    },
+    "utilitycraft:compressed_crimson_wood_4": {
+      "identifier": "utilitycraft:compressed_crimson_wood_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crimson_wood_4.png"
+    },
+    "utilitycraft:compressed_crushed_blackstone_4": {
+      "identifier": "utilitycraft:compressed_crushed_blackstone_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_blackstone_4.png"
+    },
+    "utilitycraft:compressed_crushed_cobbled_deepslate_4": {
+      "identifier": "utilitycraft:compressed_crushed_cobbled_deepslate_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_cobbled_deepslate_4.png"
+    },
+    "utilitycraft:compressed_crushed_endstone_4": {
+      "identifier": "utilitycraft:compressed_crushed_endstone_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_endstone_4.png"
+    },
+    "utilitycraft:compressed_crushed_netherrack_4": {
+      "identifier": "utilitycraft:compressed_crushed_netherrack_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_netherrack_4.png"
+    },
+    "utilitycraft:compressed_cry_obsidian_4": {
+      "identifier": "utilitycraft:compressed_cry_obsidian_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_cry_obsidian_4.png"
+    },
+    "utilitycraft:compressed_dark_oak_wood_4": {
+      "identifier": "utilitycraft:compressed_dark_oak_wood_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_dark_oak_wood_4.png"
+    },
+    "utilitycraft:compressed_deepslate_4": {
+      "identifier": "utilitycraft:compressed_deepslate_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_deepslate_4.png"
+    },
+    "utilitycraft:compressed_diamond_block_4": {
+      "identifier": "utilitycraft:compressed_diamond_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_diamond_block_4.png"
+    },
+    "utilitycraft:compressed_diorite_4": {
+      "identifier": "utilitycraft:compressed_diorite_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_diorite_4.png"
+    },
+    "utilitycraft:compressed_dirt_4": {
+      "identifier": "utilitycraft:compressed_dirt_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_dirt_4.png"
+    },
+    "utilitycraft:compressed_dripstone_block_4": {
+      "identifier": "utilitycraft:compressed_dripstone_block_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_dripstone_block_4-ac5082e466b3-a78feb5984542ae7a30cca6b.png",
+      "hash": "a78feb5984542ae7a30cca6b6769278dc3f83b192565fef3da77260f53eb0503",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_emerald_block_4": {
+      "identifier": "utilitycraft:compressed_emerald_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_emerald_block_4.png"
+    },
+    "utilitycraft:compressed_endstone_4": {
+      "identifier": "utilitycraft:compressed_endstone_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_endstone_4.png"
+    },
+    "utilitycraft:compressed_energized_iron_block_4": {
+      "identifier": "utilitycraft:compressed_energized_iron_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_energized_iron_block_4.png"
+    },
+    "utilitycraft:compressed_flint_block_4": {
+      "identifier": "utilitycraft:compressed_flint_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_flint_block_4.png"
+    },
+    "utilitycraft:compressed_glass_4": {
+      "identifier": "utilitycraft:compressed_glass_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_glass_4.png"
+    },
+    "utilitycraft:compressed_gold_block_4": {
+      "identifier": "utilitycraft:compressed_gold_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_gold_block_4.png"
+    },
+    "utilitycraft:compressed_granite_4": {
+      "identifier": "utilitycraft:compressed_granite_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_granite_4.png"
+    },
+    "utilitycraft:compressed_gravel_4": {
+      "identifier": "utilitycraft:compressed_gravel_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_gravel_4.png"
+    },
+    "utilitycraft:compressed_honey_block_4": {
+      "identifier": "utilitycraft:compressed_honey_block_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_honey_block_4-d0d38a5bb5a7-20e46a8db4a2ffda84ea2220.png",
+      "hash": "20e46a8db4a2ffda84ea2220a38676befd5f776ba671f2a43cb58094ecbf1353",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:compressed_iron_block_4": {
+      "identifier": "utilitycraft:compressed_iron_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_iron_block_4.png"
+    },
+    "utilitycraft:compressed_jungle_wood_4": {
+      "identifier": "utilitycraft:compressed_jungle_wood_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_jungle_wood_4.png"
+    },
+    "utilitycraft:compressed_lapislazuli_block_4": {
+      "identifier": "utilitycraft:compressed_lapislazuli_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_lapislazuli_block_4.png"
+    },
+    "utilitycraft:compressed_mangrove_wood_4": {
+      "identifier": "utilitycraft:compressed_mangrove_wood_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_mangrove_wood_4.png"
+    },
+    "utilitycraft:compressed_moss_block_4": {
+      "identifier": "utilitycraft:compressed_moss_block_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_moss_block_4-6ed55775ffd2-abb7a04e4a8a04677af23d72.png",
+      "hash": "abb7a04e4a8a04677af23d72f8d5ea9bab0f74076fea0be819ac294b74481d8a",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_mud_4": {
+      "identifier": "utilitycraft:compressed_mud_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_mud_4-7387adcece00-1dfd7f602a23fcb40b3f0379.png",
+      "hash": "1dfd7f602a23fcb40b3f03790d0d0ead891989f4e92f8af422d55b699c8c25d3",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_nether_star_block_4": {
+      "identifier": "utilitycraft:compressed_nether_star_block_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_nether_star_block_4-af6d91c5fbab-c6042774414f4535edf7d104.png",
+      "hash": "c6042774414f4535edf7d10460ab9bd7945d5694de9b2dff3ad8e9b194872fda",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_netherite_block_4": {
+      "identifier": "utilitycraft:compressed_netherite_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_netherite_block_4.png"
+    },
+    "utilitycraft:compressed_netherrack_4": {
+      "identifier": "utilitycraft:compressed_netherrack_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_netherrack_4.png"
+    },
+    "utilitycraft:compressed_oak_wood_4": {
+      "identifier": "utilitycraft:compressed_oak_wood_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_oak_wood_4.png"
+    },
+    "utilitycraft:compressed_obsidian_4": {
+      "identifier": "utilitycraft:compressed_obsidian_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_obsidian_4.png"
+    },
+    "utilitycraft:compressed_pale_oak_wood_4": {
+      "identifier": "utilitycraft:compressed_pale_oak_wood_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_pale_oak_wood_4.png"
+    },
+    "utilitycraft:compressed_quartz_block_4": {
+      "identifier": "utilitycraft:compressed_quartz_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_quartz_block_4.png"
+    },
+    "utilitycraft:compressed_raw_copper_block_4": {
+      "identifier": "utilitycraft:compressed_raw_copper_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_raw_copper_block_4.png"
+    },
+    "utilitycraft:compressed_raw_gold_block_4": {
+      "identifier": "utilitycraft:compressed_raw_gold_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_raw_gold_block_4.png"
+    },
+    "utilitycraft:compressed_raw_iron_block_4": {
+      "identifier": "utilitycraft:compressed_raw_iron_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_raw_iron_block_4.png"
+    },
+    "utilitycraft:compressed_red_sand_4": {
+      "identifier": "utilitycraft:compressed_red_sand_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_red_sand_4-37b83a743259-365986f16588c043bfbeec45.png",
+      "hash": "365986f16588c043bfbeec45d8a264c866bb8508e719feac045a3f3bda54582a",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_redstone_block_4": {
+      "identifier": "utilitycraft:compressed_redstone_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_redstone_block_4.png"
+    },
+    "utilitycraft:compressed_sand_4": {
+      "identifier": "utilitycraft:compressed_sand_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_sand_4.png"
+    },
+    "utilitycraft:compressed_silicon_block_4": {
+      "identifier": "utilitycraft:compressed_silicon_block_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_silicon_block_4-d77108ac27d3-8801663e5de7ab947e370566.png",
+      "hash": "8801663e5de7ab947e37056699678fa7223ca3da69d83645af523544bcbec966",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_slime_block_4": {
+      "identifier": "utilitycraft:compressed_slime_block_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_slime_block_4-492789dd5473-dd2821542c1d452a01888e19.png",
+      "hash": "dd2821542c1d452a01888e1950844f25da03e18d6380cbb8843d04ccdc4a0e4f",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:compressed_soul_sand_4": {
+      "identifier": "utilitycraft:compressed_soul_sand_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_soul_sand_4-d3621730d454-aaf958fb54eef7119315a431.png",
+      "hash": "aaf958fb54eef7119315a431b67835fc96f035ffc66b48141141cb0c08069353",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_soul_soil_4": {
+      "identifier": "utilitycraft:compressed_soul_soil_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_soul_soil_4-800ca14e45c9-1edac8b22a25407550ebb30f.png",
+      "hash": "1edac8b22a25407550ebb30f7d4116b7ffaffd20f7fbe0b0b2e08b7ecc6762b8",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_spruce_wood_4": {
+      "identifier": "utilitycraft:compressed_spruce_wood_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_spruce_wood_4.png"
+    },
+    "utilitycraft:compressed_steel_block_4": {
+      "identifier": "utilitycraft:compressed_steel_block_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_steel_block_4.png"
+    },
+    "utilitycraft:compressed_stone_4": {
+      "identifier": "utilitycraft:compressed_stone_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_stone_4.png"
+    },
+    "utilitycraft:compressed_tuff_4": {
+      "identifier": "utilitycraft:compressed_tuff_4",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_tuff_4-fa05208b9cb3-3d74597fd172d6dfe88ef93a.png",
+      "hash": "3d74597fd172d6dfe88ef93a5b82a93c1eea3819627dabcd7cd07ebafddaeca8",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_warped_wood_4": {
+      "identifier": "utilitycraft:compressed_warped_wood_4",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_warped_wood_4.png"
+    },
+    "utilitycraft:quartz_seeds": {
+      "identifier": "utilitycraft:quartz_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_quartz_seeds-fb56dc425ed5-077e7959b5d90d3001461a28.png",
+      "hash": "077e7959b5d90d3001461a28aab8858b7a66856818561a321cd342c9b1c8b09a",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:quintuple_compressed_cobblestone": {
+      "identifier": "utilitycraft:quintuple_compressed_cobblestone",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/quintuple_compressed_cobblestone.png"
+    },
+    "utilitycraft:red_elevator": {
+      "identifier": "utilitycraft:red_elevator",
+      "kind": "manual",
+      "path": "renders/red_elevator.png"
+    },
+    "utilitycraft:red_soil": {
+      "identifier": "utilitycraft:red_soil",
+      "kind": "manual",
+      "path": "renders/red_soil.png"
+    },
+    "utilitycraft:redstone_seeds": {
+      "identifier": "utilitycraft:redstone_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_redstone_seeds-377833057ef4-077e7959b5d90d3001461a28.png",
+      "hash": "077e7959b5d90d3001461a28aab8858b7a66856818561a321cd342c9b1c8b09a",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:resin_seeds": {
+      "identifier": "utilitycraft:resin_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_resin_seeds-90568c8f06a5-077e7959b5d90d3001461a28.png",
+      "hash": "077e7959b5d90d3001461a28aab8858b7a66856818561a321cd342c9b1c8b09a",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:seed_synthesizer": {
+      "identifier": "utilitycraft:seed_synthesizer",
+      "kind": "manual",
+      "path": "renders/seed_synthesizer.png"
+    },
+    "utilitycraft:septuple_compressed_cobblestone": {
+      "identifier": "utilitycraft:septuple_compressed_cobblestone",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/septuple_compressed_cobblestone.png"
+    },
+    "utilitycraft:sextuple_compressed_cobblestone": {
+      "identifier": "utilitycraft:sextuple_compressed_cobblestone",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/sextuple_compressed_cobblestone.png"
+    },
+    "utilitycraft:shulker_seeds": {
+      "identifier": "utilitycraft:shulker_seeds",
+      "kind": "manual",
+      "path": "renders/shulker_seeds.png"
+    },
+    "utilitycraft:sieve": {
+      "identifier": "utilitycraft:sieve",
+      "kind": "manual",
+      "path": "renders/sieve.png"
+    },
+    "utilitycraft:sink": {
+      "identifier": "utilitycraft:sink",
+      "kind": "manual",
+      "path": "renders/sink.png"
+    },
+    "utilitycraft:slime_seeds": {
+      "identifier": "utilitycraft:slime_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_slime_seeds-81c05bc12267-077e7959b5d90d3001461a28.png",
+      "hash": "077e7959b5d90d3001461a28aab8858b7a66856818561a321cd342c9b1c8b09a",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:spawner_core": {
+      "identifier": "utilitycraft:spawner_core",
+      "kind": "manual",
+      "path": "renders/spawner_core.png"
+    },
+    "utilitycraft:speed_module": {
+      "identifier": "utilitycraft:speed_module",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_speed_module-05a4f668b6d7-1ef00f0a09ef7e1ae5b42966.png",
+      "hash": "1ef00f0a09ef7e1ae5b429669023db3ac8b2b200059796908042b8057feaffeb",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:steel_block": {
+      "identifier": "utilitycraft:steel_block",
+      "kind": "manual",
+      "path": "renders/steel_block.png"
+    },
+    "utilitycraft:totem_seeds": {
+      "identifier": "utilitycraft:totem_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_totem_seeds-00c8b588280c-ac95c71658349e9bd9d110e4.png",
+      "hash": "ac95c71658349e9bd9d110e421d2bb71909c75d923297c3a40e5053acec17516",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 3
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:compressed_acacia_wood_3": {
+      "identifier": "utilitycraft:compressed_acacia_wood_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_acacia_wood_3.png"
+    },
+    "utilitycraft:compressed_amethyst_block_3": {
+      "identifier": "utilitycraft:compressed_amethyst_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_amethyst_block_3.png"
+    },
+    "utilitycraft:compressed_andesite_3": {
+      "identifier": "utilitycraft:compressed_andesite_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_andesite_3.png"
+    },
+    "utilitycraft:compressed_bamboo_block_3": {
+      "identifier": "utilitycraft:compressed_bamboo_block_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_bamboo_block_3-9a425282fce5-1a931e933a44a92425073e59.png",
+      "hash": "1a931e933a44a92425073e596e870de016f9b68a23e2930ff2c3d1a30b291518",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_basalt_3": {
+      "identifier": "utilitycraft:compressed_basalt_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_basalt_3-558b2fff031d-9ec105588dcf579e98331697.png",
+      "hash": "9ec105588dcf579e98331697d988f80736dad4a84217db90ce67c84b63db1fb6",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_birch_wood_3": {
+      "identifier": "utilitycraft:compressed_birch_wood_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_birch_wood_3.png"
+    },
+    "utilitycraft:compressed_blackstone_3": {
+      "identifier": "utilitycraft:compressed_blackstone_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_blackstone_3.png"
+    },
+    "utilitycraft:compressed_blaze_block_3": {
+      "identifier": "utilitycraft:compressed_blaze_block_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_blaze_block_3-0deccf70360a-a5c13144419ea4630be0a491.png",
+      "hash": "a5c13144419ea4630be0a49107dec8b64f1374198c203acf6d9bb078d74022a2",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_brute_energized_iron_block_3": {
+      "identifier": "utilitycraft:compressed_brute_energized_iron_block_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_brute_energized_iron_block_3-0bec9ad97a11-1ffa6d9037ad0c43a760c1a6.png",
+      "hash": "1ffa6d9037ad0c43a760c1a67197c9ca0dae1f38a40fb5149febd76f17fa8f84",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_brute_steel_block_3": {
+      "identifier": "utilitycraft:compressed_brute_steel_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_brute_steel_block_3.png"
+    },
+    "utilitycraft:compressed_calcite_3": {
+      "identifier": "utilitycraft:compressed_calcite_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_calcite_3-f27df889861f-8f9a42f0d07d27e163d615ef.png",
+      "hash": "8f9a42f0d07d27e163d615ef01b99aed48ce69040c4ef71b773bec5218bc6067",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_charcoal_block_3": {
+      "identifier": "utilitycraft:compressed_charcoal_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_charcoal_block_3.png"
+    },
+    "utilitycraft:compressed_cherry_wood_3": {
+      "identifier": "utilitycraft:compressed_cherry_wood_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_cherry_wood_3.png"
+    },
+    "utilitycraft:compressed_clay_3": {
+      "identifier": "utilitycraft:compressed_clay_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_clay_3-4c69b578a7ab-dcc3e6c316f4c8c79b0575b0.png",
+      "hash": "dcc3e6c316f4c8c79b0575b08d6598a7ff925d19ffb2f71b6c3ec188c243dae9",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_coal_block_3": {
+      "identifier": "utilitycraft:compressed_coal_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_coal_block_3.png"
+    },
+    "utilitycraft:compressed_cobbled_deepslate_3": {
+      "identifier": "utilitycraft:compressed_cobbled_deepslate_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_cobbled_deepslate_3.png"
+    },
+    "utilitycraft:triple_compressed_cobblestone": {
+      "identifier": "utilitycraft:triple_compressed_cobblestone",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/triple_compressed_cobblestone.png"
+    },
+    "utilitycraft:compressed_copper_block_3": {
+      "identifier": "utilitycraft:compressed_copper_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_copper_block_3.png"
+    },
+    "utilitycraft:compressed_crimson_wood_3": {
+      "identifier": "utilitycraft:compressed_crimson_wood_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crimson_wood_3.png"
+    },
+    "utilitycraft:compressed_crushed_blackstone_3": {
+      "identifier": "utilitycraft:compressed_crushed_blackstone_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_blackstone_3.png"
+    },
+    "utilitycraft:compressed_crushed_cobbled_deepslate_3": {
+      "identifier": "utilitycraft:compressed_crushed_cobbled_deepslate_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_cobbled_deepslate_3.png"
+    },
+    "utilitycraft:compressed_crushed_endstone_3": {
+      "identifier": "utilitycraft:compressed_crushed_endstone_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_endstone_3.png"
+    },
+    "utilitycraft:compressed_crushed_netherrack_3": {
+      "identifier": "utilitycraft:compressed_crushed_netherrack_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_crushed_netherrack_3.png"
+    },
+    "utilitycraft:compressed_cry_obsidian_3": {
+      "identifier": "utilitycraft:compressed_cry_obsidian_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_cry_obsidian_3.png"
+    },
+    "utilitycraft:compressed_dark_oak_wood_3": {
+      "identifier": "utilitycraft:compressed_dark_oak_wood_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_dark_oak_wood_3.png"
+    },
+    "utilitycraft:compressed_deepslate_3": {
+      "identifier": "utilitycraft:compressed_deepslate_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_deepslate_3.png"
+    },
+    "utilitycraft:compressed_diamond_block_3": {
+      "identifier": "utilitycraft:compressed_diamond_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_diamond_block_3.png"
+    },
+    "utilitycraft:compressed_diorite_3": {
+      "identifier": "utilitycraft:compressed_diorite_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_diorite_3.png"
+    },
+    "utilitycraft:compressed_dirt_3": {
+      "identifier": "utilitycraft:compressed_dirt_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_dirt_3.png"
+    },
+    "utilitycraft:compressed_dripstone_block_3": {
+      "identifier": "utilitycraft:compressed_dripstone_block_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_dripstone_block_3-f7646e0ded73-b0e964288d323e29a282b1f6.png",
+      "hash": "b0e964288d323e29a282b1f67a89bd14387526fc9eb9865b39daf5d77a6fe7bb",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_emerald_block_3": {
+      "identifier": "utilitycraft:compressed_emerald_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_emerald_block_3.png"
+    },
+    "utilitycraft:compressed_endstone_3": {
+      "identifier": "utilitycraft:compressed_endstone_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_endstone_3.png"
+    },
+    "utilitycraft:compressed_energized_iron_block_3": {
+      "identifier": "utilitycraft:compressed_energized_iron_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_energized_iron_block_3.png"
+    },
+    "utilitycraft:compressed_flint_block_3": {
+      "identifier": "utilitycraft:compressed_flint_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_flint_block_3.png"
+    },
+    "utilitycraft:compressed_glass_3": {
+      "identifier": "utilitycraft:compressed_glass_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_glass_3.png"
+    },
+    "utilitycraft:compressed_gold_block_3": {
+      "identifier": "utilitycraft:compressed_gold_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_gold_block_3.png"
+    },
+    "utilitycraft:compressed_granite_3": {
+      "identifier": "utilitycraft:compressed_granite_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_granite_3.png"
+    },
+    "utilitycraft:compressed_gravel_3": {
+      "identifier": "utilitycraft:compressed_gravel_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_gravel_3.png"
+    },
+    "utilitycraft:compressed_honey_block_3": {
+      "identifier": "utilitycraft:compressed_honey_block_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_honey_block_3-720b9ecd4e63-458ee169d5c7c64a693ba1ad.png",
+      "hash": "458ee169d5c7c64a693ba1ad50faae3c461152a1ada4d13298a7a49b1bf2d485",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:compressed_iron_block_3": {
+      "identifier": "utilitycraft:compressed_iron_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_iron_block_3.png"
+    },
+    "utilitycraft:compressed_jungle_wood_3": {
+      "identifier": "utilitycraft:compressed_jungle_wood_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_jungle_wood_3.png"
+    },
+    "utilitycraft:compressed_lapislazuli_block_3": {
+      "identifier": "utilitycraft:compressed_lapislazuli_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_lapislazuli_block_3.png"
+    },
+    "utilitycraft:compressed_mangrove_wood_3": {
+      "identifier": "utilitycraft:compressed_mangrove_wood_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_mangrove_wood_3.png"
+    },
+    "utilitycraft:compressed_moss_block_3": {
+      "identifier": "utilitycraft:compressed_moss_block_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_moss_block_3-18b7ff8e330d-171ba6f9b980c9cea9cfc8b0.png",
+      "hash": "171ba6f9b980c9cea9cfc8b0a4809270dc7a632a6440ba2d53995e43df208d04",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_mud_3": {
+      "identifier": "utilitycraft:compressed_mud_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_mud_3-246ef09153a3-b46ab1bb42ab526cee959537.png",
+      "hash": "b46ab1bb42ab526cee959537c00a26f677aab33ade8acb2310f69ecea10fc8a8",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_nether_star_block_3": {
+      "identifier": "utilitycraft:compressed_nether_star_block_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_nether_star_block_3-0707551eb20b-d6a9445f7e99195c904f704e.png",
+      "hash": "d6a9445f7e99195c904f704e26c90efe31214c97dfa51ae3e99273be57eb77ef",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_netherite_block_3": {
+      "identifier": "utilitycraft:compressed_netherite_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_netherite_block_3.png"
+    },
+    "utilitycraft:compressed_netherrack_3": {
+      "identifier": "utilitycraft:compressed_netherrack_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_netherrack_3.png"
+    },
+    "utilitycraft:compressed_oak_wood_3": {
+      "identifier": "utilitycraft:compressed_oak_wood_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_oak_wood_3.png"
+    },
+    "utilitycraft:compressed_obsidian_3": {
+      "identifier": "utilitycraft:compressed_obsidian_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_obsidian_3.png"
+    },
+    "utilitycraft:compressed_pale_oak_wood_3": {
+      "identifier": "utilitycraft:compressed_pale_oak_wood_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_pale_oak_wood_3.png"
+    },
+    "utilitycraft:compressed_quartz_block_3": {
+      "identifier": "utilitycraft:compressed_quartz_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_quartz_block_3.png"
+    },
+    "utilitycraft:compressed_raw_copper_block_3": {
+      "identifier": "utilitycraft:compressed_raw_copper_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_raw_copper_block_3.png"
+    },
+    "utilitycraft:compressed_raw_gold_block_3": {
+      "identifier": "utilitycraft:compressed_raw_gold_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_raw_gold_block_3.png"
+    },
+    "utilitycraft:compressed_raw_iron_block_3": {
+      "identifier": "utilitycraft:compressed_raw_iron_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_raw_iron_block_3.png"
+    },
+    "utilitycraft:compressed_red_sand_3": {
+      "identifier": "utilitycraft:compressed_red_sand_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_red_sand_3-4cfb762b7a89-15026de61eebf70d401d367d.png",
+      "hash": "15026de61eebf70d401d367d01e266ac37b5c5910cbacdfd641052e5cce845a5",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_redstone_block_3": {
+      "identifier": "utilitycraft:compressed_redstone_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_redstone_block_3.png"
+    },
+    "utilitycraft:compressed_sand_3": {
+      "identifier": "utilitycraft:compressed_sand_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_sand_3.png"
+    },
+    "utilitycraft:compressed_silicon_block_3": {
+      "identifier": "utilitycraft:compressed_silicon_block_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_silicon_block_3-90b6b7edb9b6-3674225db3b87bd0336d77fe.png",
+      "hash": "3674225db3b87bd0336d77fe7d388dfe779b98c0c0b46f6f9239b6d71b1f7a8c",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_slime_block_3": {
+      "identifier": "utilitycraft:compressed_slime_block_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_slime_block_3-8139ab369c3d-8c793a05933c690fa0c09d7b.png",
+      "hash": "8c793a05933c690fa0c09d7b00ea0ffd7a0f7cb7e8e169f4edd65f16afb6ee84",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:compressed_soul_sand_3": {
+      "identifier": "utilitycraft:compressed_soul_sand_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_soul_sand_3-dd6f967418e2-7fae6ef7fbf4bd9ab7c762bf.png",
+      "hash": "7fae6ef7fbf4bd9ab7c762bf4861482be6ff5c38fb40766facf0d44b1bcbd9ca",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_soul_soil_3": {
+      "identifier": "utilitycraft:compressed_soul_soil_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_soul_soil_3-0bad00eb5395-bbcd2cb5f61075b8d6915940.png",
+      "hash": "bbcd2cb5f61075b8d69159403e374c0873c6ae23e90c535899f1ccde41214621",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_spruce_wood_3": {
+      "identifier": "utilitycraft:compressed_spruce_wood_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_spruce_wood_3.png"
+    },
+    "utilitycraft:compressed_steel_block_3": {
+      "identifier": "utilitycraft:compressed_steel_block_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_steel_block_3.png"
+    },
+    "utilitycraft:compressed_stone_3": {
+      "identifier": "utilitycraft:compressed_stone_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_stone_3.png"
+    },
+    "utilitycraft:compressed_tuff_3": {
+      "identifier": "utilitycraft:compressed_tuff_3",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_compressed_tuff_3-7fbd3f3178b0-4c6d679430cd19cac1f483d9.png",
+      "hash": "4c6d679430cd19cac1f483d9a8d25b0a8639f55e4d60e36d2caebb316691eec3",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:compressed_warped_wood_3": {
+      "identifier": "utilitycraft:compressed_warped_wood_3",
+      "kind": "manual",
+      "path": "renders/compressed_blocks/compressed_warped_wood_3.png"
+    },
+    "utilitycraft:ultimate_battery": {
+      "identifier": "utilitycraft:ultimate_battery",
+      "kind": "manual",
+      "path": "renders/ultimate_battery.png"
+    },
+    "utilitycraft:ultimate_energy_receiver": {
+      "identifier": "utilitycraft:ultimate_energy_receiver",
+      "kind": "manual",
+      "path": "renders/ultimate_energy_receiver.png"
+    },
+    "utilitycraft:ultimate_energy_transmitter": {
+      "identifier": "utilitycraft:ultimate_energy_transmitter",
+      "kind": "manual",
+      "path": "renders/ultimate_energy_transmitter.png"
+    },
+    "utilitycraft:ultimate_furnator": {
+      "identifier": "utilitycraft:ultimate_furnator",
+      "kind": "manual",
+      "path": "renders/ultimate_furnator.png"
+    },
+    "utilitycraft:ultimate_gas_generator": {
+      "identifier": "utilitycraft:ultimate_gas_generator",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_ultimate_gas_generator-8e13edfea529-888c60b78fc72c989bdf39b5.png",
+      "hash": "888c60b78fc72c989bdf39b5067c661bc0e04ee7eb45db5e85b08c54f387895a",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:ultimate_gas_tank": {
+      "identifier": "utilitycraft:ultimate_gas_tank",
+      "kind": "manual",
+      "path": "renders/ultimate_gas_tank.png"
+    },
+    "utilitycraft:ultimate_fluid_tank": {
+      "identifier": "utilitycraft:ultimate_fluid_tank",
+      "kind": "manual",
+      "path": "renders/ultimate_fluid_tank.png"
+    },
+    "utilitycraft:ultimate_magmator": {
+      "identifier": "utilitycraft:ultimate_magmator",
+      "kind": "manual",
+      "path": "renders/ultimate_magmator.png"
+    },
+    "utilitycraft:ultimate_solar_panel": {
+      "identifier": "utilitycraft:ultimate_solar_panel",
+      "kind": "manual",
+      "path": "renders/ultimate_solar_panel.png"
+    },
+    "utilitycraft:ultimate_thermo_generator": {
+      "identifier": "utilitycraft:ultimate_thermo_generator",
+      "kind": "manual",
+      "path": "renders/ultimate_thermo_generator.png"
+    },
+    "utilitycraft:ultimate_trash_can": {
+      "identifier": "utilitycraft:ultimate_trash_can",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_ultimate_trash_can-fdc370e2c5e4-9d30fa222f140c6b10aabcf0.png",
+      "hash": "9d30fa222f140c6b10aabcf017ca220cc5779f4445802c077d6a690f1a382021",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {},
+      "geometry": "geometry.basic_trash_can",
+      "stats": {
+        "bones": 1,
+        "cubes": 3,
+        "planes": 0,
+        "faces": 18
+      }
+    },
+    "utilitycraft:ultimate_wind_turbine": {
+      "identifier": "utilitycraft:ultimate_wind_turbine",
+      "kind": "manual",
+      "path": "renders/ultimate_wind_turbine.png"
+    },
+    "utilitycraft:water_seeds": {
+      "identifier": "utilitycraft:water_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_water_seeds-749289f737ed-e6fe312f97f227d7e3ae8667.png",
+      "hash": "e6fe312f97f227d7e3ae866759e82611c11db14c663afb49b553d864d59b1b99",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:waycarpet": {
+      "identifier": "utilitycraft:waycarpet",
+      "kind": "manual",
+      "path": "renders/waycarpet.png"
+    },
+    "utilitycraft:waycenter": {
+      "identifier": "utilitycraft:waycenter",
+      "kind": "manual",
+      "path": "renders/waycenter.png"
+    },
+    "utilitycraft:wither_seeds": {
+      "identifier": "utilitycraft:wither_seeds",
+      "kind": "manual",
+      "path": "renders/wither_seeds.png"
+    },
+    "utilitycraft:wool_seeds": {
+      "identifier": "utilitycraft:wool_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_wool_seeds-19999dd26345-e6fe312f97f227d7e3ae8667.png",
+      "hash": "e6fe312f97f227d7e3ae866759e82611c11db14c663afb49b553d864d59b1b99",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:workbench": {
+      "identifier": "utilitycraft:workbench",
+      "kind": "manual",
+      "path": "renders/workbench.png"
+    },
+    "utilitycraft:xp_condenser": {
+      "identifier": "utilitycraft:xp_condenser",
+      "kind": "manual",
+      "path": "renders/xp_condenser.png"
+    },
+    "utilitycraft:xp_drain": {
+      "identifier": "utilitycraft:xp_drain",
+      "kind": "manual",
+      "path": "renders/xp_drain.png"
+    },
+    "utilitycraft:xp_magnet": {
+      "identifier": "utilitycraft:xp_magnet",
+      "kind": "manual",
+      "path": "renders/xp_magnet.png"
+    },
+    "utilitycraft:xp_spout": {
+      "identifier": "utilitycraft:xp_spout",
+      "kind": "manual",
+      "path": "renders/xp_spout.png"
+    },
+    "utilitycraft:yellow_elevator": {
+      "identifier": "utilitycraft:yellow_elevator",
+      "kind": "manual",
+      "path": "renders/yellow_elevator.png"
+    },
+    "utilitycraft:yellow_soil": {
+      "identifier": "utilitycraft:yellow_soil",
+      "kind": "manual",
+      "path": "renders/yellow_soil.png"
+    }
+  }
+}

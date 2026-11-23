@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[959929],{830905:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:glowing_obsidian"}')}}]);

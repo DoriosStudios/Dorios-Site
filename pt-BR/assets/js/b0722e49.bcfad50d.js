@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[272700],{664130:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:chiseled_end_stone_wall"}')}}]);

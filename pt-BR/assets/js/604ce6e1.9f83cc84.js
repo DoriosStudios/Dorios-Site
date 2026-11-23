@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[315253],{63410:e=>{e.exports=JSON.parse('{"blockId":"minecraft:netherrack"}')}}]);

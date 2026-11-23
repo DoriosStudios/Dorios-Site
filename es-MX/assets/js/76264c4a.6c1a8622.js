@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[908122],{350691:e=>{e.exports=JSON.parse('{"blockId":"minecraft:mud"}')}}]);

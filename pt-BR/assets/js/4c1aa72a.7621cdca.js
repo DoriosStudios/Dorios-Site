@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[383909],{380567:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:calcite_stairs"}')}}]);

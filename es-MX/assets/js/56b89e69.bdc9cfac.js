@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[656989],{853464:e=>{e.exports=JSON.parse('{"blockId":"minecraft:cobbled_deepslate"}')}}]);

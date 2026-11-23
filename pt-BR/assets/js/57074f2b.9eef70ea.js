@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[588142],{608621:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:mossy_cobblestone_vertical_slab"}')}}]);

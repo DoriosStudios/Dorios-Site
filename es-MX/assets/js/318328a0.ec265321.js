@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[386089],{591817:e=>{e.exports=JSON.parse('{"blockId":"minecraft:grass_block"}')}}]);

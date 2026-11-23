@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[265797],{266516:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:aqua_wool_vertical_slab"}')}}]);

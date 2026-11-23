@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[426615],{368098:e=>{e.exports=JSON.parse('{"blockId":"minecraft:dripstone_block"}')}}]);

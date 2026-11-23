@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[118434],{455311:e=>{e.exports=JSON.parse('{"materialId":"diorite"}')}}]);

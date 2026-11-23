@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[880328],{863054:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:sanded_dark_oak_wood"}')}}]);

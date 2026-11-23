@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[832888],{24159:e=>{e.exports=JSON.parse('{"blockId":"minecraft:andesite"}')}}]);

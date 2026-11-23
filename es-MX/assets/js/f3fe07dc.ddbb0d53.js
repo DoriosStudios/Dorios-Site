@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[671437],{73671:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:cracked_end_stone_tiles_vertical_slab"}')}}]);

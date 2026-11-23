@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[910265],{913222:e=>{e.exports=JSON.parse('{"materialId":"obsidian"}')}}]);

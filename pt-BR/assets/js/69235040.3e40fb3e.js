@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[441114],{811920:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:chiseled_end_stone_pillar_vertical_slab"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[445],{918630:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:smooth_andesite_wall"}')}}]);

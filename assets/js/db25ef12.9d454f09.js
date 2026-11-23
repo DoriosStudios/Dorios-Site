@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[713994],{410716:e=>{e.exports=JSON.parse('{"blockId":"minecraft:tuff_bricks"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[581360],{922764:e=>{e.exports=JSON.parse('{"blockId":"minecraft:stripped_bamboo_block"}')}}]);

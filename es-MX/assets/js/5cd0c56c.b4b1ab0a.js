@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[820906],{394946:e=>{e.exports=JSON.parse('{"materialId":"netherrack"}')}}]);

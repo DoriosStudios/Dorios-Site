@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[689038],{950007:e=>{e.exports=JSON.parse('{"blockId":"minecraft:lime_wool"}')}}]);

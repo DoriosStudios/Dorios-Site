@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[547600],{889197:e=>{e.exports=JSON.parse('{"blockId":"minecraft:stripped_crimson_hyphae"}')}}]);

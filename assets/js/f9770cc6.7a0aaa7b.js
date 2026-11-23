@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[663878],{298423:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:polished_dripstone_wall"}')}}]);

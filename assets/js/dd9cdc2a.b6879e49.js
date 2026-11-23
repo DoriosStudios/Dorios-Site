@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[798767],{245155:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:aqua_concrete_slab"}')}}]);

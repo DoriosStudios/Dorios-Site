@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[180767],{643751:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:cracked_hardened_netherrack_bricks_stairs"}')}}]);

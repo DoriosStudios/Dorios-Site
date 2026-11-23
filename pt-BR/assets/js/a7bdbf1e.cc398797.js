@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[336963],{380250:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:hardened_netherrack_bricks_vertical_slab"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[303295],{975505:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:lima_broadline_glass"}')}}]);

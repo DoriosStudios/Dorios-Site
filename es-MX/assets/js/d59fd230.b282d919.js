@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[799088],{801308:e=>{e.exports=JSON.parse('{"materialId":"crimson_wood"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[989124],{887148:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:teal_concrete_slab"}')}}]);

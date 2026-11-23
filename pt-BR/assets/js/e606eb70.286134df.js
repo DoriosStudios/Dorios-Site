@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[100400],{945:e=>{e.exports=JSON.parse('{"blockId":"minecraft:polished_diorite"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[844618],{664273:e=>{e.exports=JSON.parse('{"blockId":"minecraft:obsidian"}')}}]);

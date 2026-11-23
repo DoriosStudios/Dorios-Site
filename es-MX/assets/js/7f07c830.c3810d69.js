@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[565695],{490002:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"alchemical-slowness-4-maximum-lingering","detailSection":"uses"}')}}]);

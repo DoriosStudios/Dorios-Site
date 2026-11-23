@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[436925],{263518:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:hardened_netherrack_pillar_wall"}')}}]);

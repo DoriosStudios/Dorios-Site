@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[509725],{424945:e=>{e.exports=JSON.parse('{"blockId":"minecraft:stripped_birch_wood"}')}}]);

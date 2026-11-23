@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[717961],{378381:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:chiseled_dripstone_tiles_slab"}')}}]);

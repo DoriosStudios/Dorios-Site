@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[886742],{449762:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"items","slug":"alchemical-cursed-2-maximum-splash","detailSection":"drops"}')}}]);

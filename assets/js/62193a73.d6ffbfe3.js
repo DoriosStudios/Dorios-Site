@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[796847],{496073:e=>{e.exports=JSON.parse('{"blockId":"minecraft:basalt"}')}}]);

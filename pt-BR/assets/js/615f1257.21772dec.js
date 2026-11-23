@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[800524],{300094:s=>{s.exports=JSON.parse('{"blockId":"dorios_atelier:obsidian_bricks_stairs"}')}}]);

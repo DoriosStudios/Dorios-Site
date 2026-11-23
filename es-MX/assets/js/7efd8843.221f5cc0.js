@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[784534],{776732:e=>{e.exports=JSON.parse('{"blockId":"minecraft:smooth_quartz"}')}}]);

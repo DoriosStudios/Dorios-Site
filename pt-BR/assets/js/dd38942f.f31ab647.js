@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[432157],{189617:e=>{e.exports=JSON.parse('{"blockId":"minecraft:cracked_deepslate_tiles"}')}}]);

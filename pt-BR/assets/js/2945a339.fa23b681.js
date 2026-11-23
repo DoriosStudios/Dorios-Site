@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[11049],{293996:e=>{e.exports=JSON.parse('{"blockId":"minecraft:polished_deepslate"}')}}]);

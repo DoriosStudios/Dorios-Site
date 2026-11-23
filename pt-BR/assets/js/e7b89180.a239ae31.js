@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[550483],{452386:e=>{e.exports=JSON.parse('{"blockId":"minecraft:calcite"}')}}]);

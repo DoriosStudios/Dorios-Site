@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[838743],{231441:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:lavender_wool_vertical_slab"}')}}]);

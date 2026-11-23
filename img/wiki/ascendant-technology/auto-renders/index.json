@@ -1,0 +1,721 @@
+{
+  "schemaVersion": 1,
+  "rendererVersion": 4,
+  "blocks": {
+    "utilitycraft:absolute_battery": {
+      "identifier": "utilitycraft:absolute_battery",
+      "kind": "manual",
+      "path": "renders/absolute_battery.png"
+    },
+    "utilitycraft:absolute_container": {
+      "identifier": "utilitycraft:absolute_container",
+      "kind": "manual",
+      "path": "renders/absolute_container.png"
+    },
+    "utilitycraft:absolute_furnator": {
+      "identifier": "utilitycraft:absolute_furnator",
+      "kind": "manual",
+      "path": "renders/absolute_furnator.png"
+    },
+    "utilitycraft:absolute_magmator": {
+      "identifier": "utilitycraft:absolute_magmator",
+      "kind": "manual",
+      "path": "renders/absolute_magmator.png"
+    },
+    "utilitycraft:absolute_power_beacon": {
+      "identifier": "utilitycraft:absolute_power_beacon",
+      "kind": "manual",
+      "path": "renders/absolute_power_beacon.png"
+    },
+    "utilitycraft:absolute_solar_panel": {
+      "identifier": "utilitycraft:absolute_solar_panel",
+      "kind": "manual",
+      "path": "renders/absolute_solar_panel.png"
+    },
+    "utilitycraft:absolute_thermo_generator": {
+      "identifier": "utilitycraft:absolute_thermo_generator",
+      "kind": "manual",
+      "path": "renders/absolute_thermo_generator.png"
+    },
+    "utilitycraft:absolute_wind_turbine": {
+      "identifier": "utilitycraft:absolute_wind_turbine",
+      "kind": "manual",
+      "path": "renders/absolute_wind_turbine.png"
+    },
+    "utilitycraft:abyssal_fisher": {
+      "identifier": "utilitycraft:abyssal_fisher",
+      "kind": "manual",
+      "path": "renders/abyssal_fisher.png"
+    },
+    "utilitycraft:advanced_power_beacon": {
+      "identifier": "utilitycraft:advanced_power_beacon",
+      "kind": "manual",
+      "path": "renders/advanced_power_beacon.png"
+    },
+    "utilitycraft:aetherium_block": {
+      "identifier": "utilitycraft:aetherium_block",
+      "kind": "manual",
+      "path": "renders/aetherium_block.png"
+    },
+    "utilitycraft:aetherium_conveyor_bridge_path": {
+      "identifier": "utilitycraft:aetherium_conveyor_bridge_path",
+      "kind": "manual",
+      "path": "renders/aetherium_conveyor_bridge_path.png"
+    },
+    "utilitycraft:aetherium_conveyor_bridge_receiver": {
+      "identifier": "utilitycraft:aetherium_conveyor_bridge_receiver",
+      "kind": "manual",
+      "path": "renders/aetherium_conveyor_bridge_receiver.png"
+    },
+    "utilitycraft:aetherium_conveyor_bridge_transmitter": {
+      "identifier": "utilitycraft:aetherium_conveyor_bridge_transmitter",
+      "kind": "manual",
+      "path": "renders/aetherium_conveyor_bridge_transmitter.png"
+    },
+    "utilitycraft:aetherium_conveyor_horizontal": {
+      "identifier": "utilitycraft:aetherium_conveyor_horizontal",
+      "kind": "manual",
+      "path": "renders/aetherium_conveyor_horizontal.png"
+    },
+    "utilitycraft:aetherium_conveyor_declined": {
+      "identifier": "utilitycraft:aetherium_conveyor_declined",
+      "kind": "manual",
+      "path": "renders/aetherium_conveyor_declined.png"
+    },
+    "utilitycraft:aetherium_conveyor_inclined": {
+      "identifier": "utilitycraft:aetherium_conveyor_inclined",
+      "kind": "manual",
+      "path": "renders/aetherium_conveyor_inclined.png"
+    },
+    "utilitycraft:aetherium_conveyor_vertical": {
+      "identifier": "utilitycraft:aetherium_conveyor_vertical",
+      "kind": "manual",
+      "path": "renders/aetherium_conveyor_vertical.png"
+    },
+    "utilitycraft:aetherium_crystal_block": {
+      "identifier": "utilitycraft:aetherium_crystal_block",
+      "kind": "manual",
+      "path": "renders/Vanilla/aetherium_crystal_block.png"
+    },
+    "utilitycraft:aetherium_crystal_seeds": {
+      "identifier": "utilitycraft:aetherium_crystal_seeds",
+      "kind": "manual",
+      "path": "renders/Vanilla/aetherium_crystal_seeds.png"
+    },
+    "utilitycraft:alchemical_station": {
+      "identifier": "utilitycraft:alchemical_station",
+      "kind": "manual",
+      "path": "renders/Vanilla/alchemical_station.png"
+    },
+    "utilitycraft:arc_press_forge": {
+      "identifier": "utilitycraft:arc_press_forge",
+      "kind": "manual",
+      "path": "renders/arc_press_forge.png"
+    },
+    "utilitycraft:arcane_enchanter": {
+      "identifier": "utilitycraft:arcane_enchanter",
+      "kind": "manual",
+      "path": "renders/arcane_enchanter.png"
+    },
+    "utilitycraft:basic_power_beacon": {
+      "identifier": "utilitycraft:basic_power_beacon",
+      "kind": "manual",
+      "path": "renders/basic_power_beacon.png"
+    },
+    "utilitycraft:catalyst_weaver": {
+      "identifier": "utilitycraft:catalyst_weaver",
+      "kind": "manual",
+      "path": "renders/catalyst_weaver.png"
+    },
+    "utilitycraft:centrifugal_siever": {
+      "identifier": "utilitycraft:centrifugal_siever",
+      "kind": "manual",
+      "path": "renders/centrifugal_siever.png"
+    },
+    "utilitycraft:cobble_gen_6": {
+      "identifier": "utilitycraft:cobble_gen_6",
+      "kind": "manual",
+      "path": "renders/cobble_gen_6.png"
+    },
+    "utilitycraft:compactor": {
+      "identifier": "utilitycraft:compactor",
+      "kind": "manual",
+      "path": "renders/Vanilla/compactor.png"
+    },
+    "utilitycraft:compressed_aetherium_block": {
+      "identifier": "utilitycraft:compressed_aetherium_block",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_aetherium_block.png"
+    },
+    "utilitycraft:compressed_aetherium_crystal_block": {
+      "identifier": "utilitycraft:compressed_aetherium_crystal_block",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_aetherium_crystal_block.png"
+    },
+    "utilitycraft:compressed_raw_titanium_block": {
+      "identifier": "utilitycraft:compressed_raw_titanium_block",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_raw_titanium_block.png"
+    },
+    "utilitycraft:compressed_raw_tungsten_block": {
+      "identifier": "utilitycraft:compressed_raw_tungsten_block",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_raw_tungsten_block.png"
+    },
+    "utilitycraft:compressed_titanium_block": {
+      "identifier": "utilitycraft:compressed_titanium_block",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_titanium_block.png"
+    },
+    "utilitycraft:compressed_tungsten_block": {
+      "identifier": "utilitycraft:compressed_tungsten_block",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_tungsten_block.png"
+    },
+    "utilitycraft:conveyor_bridge_path": {
+      "identifier": "utilitycraft:conveyor_bridge_path",
+      "kind": "manual",
+      "path": "renders/conveyor_bridge_path.png"
+    },
+    "utilitycraft:conveyor_inverted_sorter": {
+      "identifier": "utilitycraft:conveyor_inverted_sorter",
+      "kind": "manual",
+      "path": "renders/conveyor_inverted_sorter.png"
+    },
+    "utilitycraft:conveyor_junction": {
+      "identifier": "utilitycraft:conveyor_junction",
+      "kind": "manual",
+      "path": "renders/conveyor_junction.png"
+    },
+    "utilitycraft:conveyor_network_updater": {
+      "identifier": "utilitycraft:conveyor_network_updater",
+      "kind": "manual",
+      "path": "renders/conveyor_network_updater.png"
+    },
+    "utilitycraft:conveyor_router": {
+      "identifier": "utilitycraft:conveyor_router",
+      "kind": "manual",
+      "path": "renders/conveyor_router.png"
+    },
+    "utilitycraft:conveyor_sorter": {
+      "identifier": "utilitycraft:conveyor_sorter",
+      "kind": "manual",
+      "path": "renders/conveyor_sorter.png"
+    },
+    "utilitycraft:conveyor_table": {
+      "identifier": "utilitycraft:conveyor_table",
+      "kind": "manual",
+      "path": "renders/Vanilla/conveyor_table.png"
+    },
+    "utilitycraft:copper_conveyor_bridge_path": {
+      "identifier": "utilitycraft:copper_conveyor_bridge_path",
+      "kind": "manual",
+      "path": "renders/copper_conveyor_bridge_path.png"
+    },
+    "utilitycraft:copper_conveyor_bridge_receiver": {
+      "identifier": "utilitycraft:copper_conveyor_bridge_receiver",
+      "kind": "manual",
+      "path": "renders/copper_conveyor_bridge_receiver.png"
+    },
+    "utilitycraft:copper_conveyor_bridge_transmitter": {
+      "identifier": "utilitycraft:copper_conveyor_bridge_transmitter",
+      "kind": "manual",
+      "path": "renders/copper_conveyor_bridge_transmitter.png"
+    },
+    "utilitycraft:copper_conveyor_horizontal": {
+      "identifier": "utilitycraft:copper_conveyor_horizontal",
+      "kind": "manual",
+      "path": "renders/copper_conveyor_horizontal.png"
+    },
+    "utilitycraft:copper_conveyor_declined": {
+      "identifier": "utilitycraft:copper_conveyor_declined",
+      "kind": "manual",
+      "path": "renders/copper_conveyor_declined.png"
+    },
+    "utilitycraft:copper_conveyor_inclined": {
+      "identifier": "utilitycraft:copper_conveyor_inclined",
+      "kind": "manual",
+      "path": "renders/copper_conveyor_inclined.png"
+    },
+    "utilitycraft:copper_conveyor_vertical": {
+      "identifier": "utilitycraft:copper_conveyor_vertical",
+      "kind": "manual",
+      "path": "renders/copper_conveyor_vertical.png"
+    },
+    "utilitycraft:cryo_chamber": {
+      "identifier": "utilitycraft:cryo_chamber",
+      "kind": "manual",
+      "path": "renders/cryo_chamber.png"
+    },
+    "utilitycraft:cryo_freezer": {
+      "identifier": "utilitycraft:cryo_freezer",
+      "kind": "manual",
+      "path": "renders/cryo_freezer.png"
+    },
+    "utilitycraft:cryo_stabilizer": {
+      "identifier": "utilitycraft:cryo_stabilizer",
+      "kind": "manual",
+      "path": "renders/cryo_stabilizer.png"
+    },
+    "utilitycraft:cryofluid_synthesizer": {
+      "identifier": "utilitycraft:cryofluid_synthesizer",
+      "kind": "manual",
+      "path": "renders/cryofluid_synthesizer.png"
+    },
+    "utilitycraft:decompactor": {
+      "identifier": "utilitycraft:decompactor",
+      "kind": "manual",
+      "path": "renders/Vanilla/decompactor.png"
+    },
+    "utilitycraft:deepslate_aetherium_ore": {
+      "identifier": "utilitycraft:deepslate_aetherium_ore",
+      "kind": "manual",
+      "path": "renders/deepslate_aetherium_ore.png"
+    },
+    "utilitycraft:deepslate_titanium_ore": {
+      "identifier": "utilitycraft:deepslate_titanium_ore",
+      "kind": "manual",
+      "path": "renders/deepslate_titanium_ore.png"
+    },
+    "utilitycraft:deepslate_tungsten_ore": {
+      "identifier": "utilitycraft:deepslate_tungsten_ore",
+      "kind": "manual",
+      "path": "renders/deepslate_tungsten_ore.png"
+    },
+    "utilitycraft:disenchanter": {
+      "identifier": "utilitycraft:disenchanter",
+      "kind": "manual",
+      "path": "renders/disenchanter.png"
+    },
+    "utilitycraft:compressed_aetherium_block_2": {
+      "identifier": "utilitycraft:compressed_aetherium_block_2",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_aetherium_block_2.png"
+    },
+    "utilitycraft:compressed_aetherium_crystal_block_2": {
+      "identifier": "utilitycraft:compressed_aetherium_crystal_block_2",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_aetherium_crystal_block_2.png"
+    },
+    "utilitycraft:compressed_raw_titanium_block_2": {
+      "identifier": "utilitycraft:compressed_raw_titanium_block_2",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_raw_titanium_block_2.png"
+    },
+    "utilitycraft:compressed_raw_tungsten_block_2": {
+      "identifier": "utilitycraft:compressed_raw_tungsten_block_2",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_raw_tungsten_block_2.png"
+    },
+    "utilitycraft:compressed_titanium_block_2": {
+      "identifier": "utilitycraft:compressed_titanium_block_2",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_titanium_block_2.png"
+    },
+    "utilitycraft:compressed_tungsten_block_2": {
+      "identifier": "utilitycraft:compressed_tungsten_block_2",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_tungsten_block_2.png"
+    },
+    "utilitycraft:dual_siever": {
+      "identifier": "utilitycraft:dual_siever",
+      "kind": "manual",
+      "path": "renders/dual_siever.png"
+    },
+    "utilitycraft:duplicator": {
+      "identifier": "utilitycraft:duplicator",
+      "kind": "manual",
+      "path": "renders/duplicator.png"
+    },
+    "utilitycraft:enchantment_station": {
+      "identifier": "utilitycraft:enchantment_station",
+      "kind": "manual",
+      "path": "renders/enchantment_station.png"
+    },
+    "utilitycraft:end_aetherium_ore": {
+      "identifier": "utilitycraft:end_aetherium_ore",
+      "kind": "manual",
+      "path": "renders/end_aetherium_ore.png"
+    },
+    "utilitycraft:end_sand": {
+      "identifier": "utilitycraft:end_sand",
+      "kind": "manual",
+      "path": "renders/Vanilla/end_sand.png"
+    },
+    "utilitycraft:energizer": {
+      "identifier": "utilitycraft:energizer",
+      "kind": "manual",
+      "path": "renders/energizer.png"
+    },
+    "utilitycraft:essence_module": {
+      "identifier": "utilitycraft:essence_module",
+      "kind": "manual",
+      "path": "renders/Vanilla/essence_module.png"
+    },
+    "utilitycraft:expert_power_beacon": {
+      "identifier": "utilitycraft:expert_power_beacon",
+      "kind": "manual",
+      "path": "renders/expert_power_beacon.png"
+    },
+    "utilitycraft:genetic_seed_synthesizer": {
+      "identifier": "utilitycraft:genetic_seed_synthesizer",
+      "kind": "manual",
+      "path": "renders/genetic_seed_synthesizer.png"
+    },
+    "utilitycraft:impact_crusher": {
+      "identifier": "utilitycraft:impact_crusher",
+      "kind": "manual",
+      "path": "renders/impact_crusher.png"
+    },
+    "utilitycraft:industrial_burner": {
+      "identifier": "utilitycraft:industrial_burner",
+      "kind": "manual",
+      "path": "renders/industrial_burner.png"
+    },
+    "utilitycraft:industrial_crucible": {
+      "identifier": "utilitycraft:industrial_crucible",
+      "kind": "manual",
+      "path": "renders/industrial_crucible.png"
+    },
+    "utilitycraft:laser_barrier": {
+      "identifier": "utilitycraft:laser_barrier",
+      "kind": "manual",
+      "path": "renders/laser_barrier.png"
+    },
+    "utilitycraft:laser_barrier_field": {
+      "identifier": "utilitycraft:laser_barrier_field",
+      "kind": "manual",
+      "path": "renders/laser_barrier_field.png"
+    },
+    "utilitycraft:liquifier": {
+      "identifier": "utilitycraft:liquifier",
+      "kind": "manual",
+      "path": "renders/liquifier.png"
+    },
+    "utilitycraft:mob_chamber_controller": {
+      "identifier": "utilitycraft:mob_chamber_controller",
+      "kind": "manual",
+      "path": "renders/Vanilla/mob_chamber_controller.png"
+    },
+    "utilitycraft:mob_chamber_core": {
+      "identifier": "utilitycraft:mob_chamber_core",
+      "kind": "manual",
+      "path": "renders/Vanilla/mob_chamber_core.png"
+    },
+    "utilitycraft:mob_magnet": {
+      "identifier": "utilitycraft:mob_magnet",
+      "kind": "manual",
+      "path": "renders/mob_magnet.png"
+    },
+    "utilitycraft:mob_slasher": {
+      "identifier": "utilitycraft:mob_slasher",
+      "kind": "manual",
+      "path": "renders/Vanilla/mob_slasher.png"
+    },
+    "utilitycraft:nether_tungsten_ore": {
+      "identifier": "utilitycraft:nether_tungsten_ore",
+      "kind": "manual",
+      "path": "renders/nether_tungsten_ore.png"
+    },
+    "utilitycraft:network_center": {
+      "identifier": "utilitycraft:network_center",
+      "kind": "manual",
+      "path": "renders/network_center.png"
+    },
+    "utilitycraft:overclock_relay": {
+      "identifier": "utilitycraft:overclock_relay",
+      "kind": "manual",
+      "path": "renders/overclock_relay.png"
+    },
+    "utilitycraft:overclock_tower": {
+      "identifier": "utilitycraft:overclock_tower",
+      "kind": "manual",
+      "path": "renders/overclock_tower.png"
+    },
+    "utilitycraft:conveyor_overflow": {
+      "identifier": "utilitycraft:conveyor_overflow",
+      "kind": "manual",
+      "path": "renders/conveyor_overflow.png"
+    },
+    "utilitycraft:pattern_placer": {
+      "identifier": "utilitycraft:pattern_placer",
+      "kind": "manual",
+      "path": "renders/pattern_placer.png"
+    },
+    "utilitycraft:pink_soil": {
+      "identifier": "utilitycraft:pink_soil",
+      "kind": "manual",
+      "path": "renders/Vanilla/pink_soil.png"
+    },
+    "utilitycraft:pulverizer": {
+      "identifier": "utilitycraft:pulverizer",
+      "kind": "manual",
+      "path": "renders/pulverizer.png"
+    },
+    "utilitycraft:compressed_aetherium_block_4": {
+      "identifier": "utilitycraft:compressed_aetherium_block_4",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_aetherium_block_4.png"
+    },
+    "utilitycraft:compressed_aetherium_crystal_block_4": {
+      "identifier": "utilitycraft:compressed_aetherium_crystal_block_4",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_aetherium_crystal_block_4.png"
+    },
+    "utilitycraft:compressed_raw_titanium_block_4": {
+      "identifier": "utilitycraft:compressed_raw_titanium_block_4",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_raw_titanium_block_4.png"
+    },
+    "utilitycraft:compressed_raw_tungsten_block_4": {
+      "identifier": "utilitycraft:compressed_raw_tungsten_block_4",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_raw_tungsten_block_4.png"
+    },
+    "utilitycraft:compressed_titanium_block_4": {
+      "identifier": "utilitycraft:compressed_titanium_block_4",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_titanium_block_4.png"
+    },
+    "utilitycraft:compressed_tungsten_block_4": {
+      "identifier": "utilitycraft:compressed_tungsten_block_4",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_tungsten_block_4.png"
+    },
+    "utilitycraft:raw_titanium_block": {
+      "identifier": "utilitycraft:raw_titanium_block",
+      "kind": "manual",
+      "path": "renders/raw_titanium_block.png"
+    },
+    "utilitycraft:raw_tungsten_block": {
+      "identifier": "utilitycraft:raw_tungsten_block",
+      "kind": "manual",
+      "path": "renders/raw_tungsten_block.png"
+    },
+    "utilitycraft:refining_table": {
+      "identifier": "utilitycraft:refining_table",
+      "kind": "manual",
+      "path": "renders/refining_table.png"
+    },
+    "utilitycraft:reinforced_cable": {
+      "identifier": "utilitycraft:reinforced_cable",
+      "kind": "manual",
+      "path": "renders/reinforced_cable.png"
+    },
+    "utilitycraft:reinforced_machine_case": {
+      "identifier": "utilitycraft:reinforced_machine_case",
+      "kind": "manual",
+      "path": "renders/reinforced_machine_case.png"
+    },
+    "utilitycraft:reinforced_titanium_glass": {
+      "identifier": "utilitycraft:reinforced_titanium_glass",
+      "kind": "manual",
+      "path": "renders/Vanilla/reinforced_titanium_glass.png"
+    },
+    "utilitycraft:reinforcement_anvil": {
+      "identifier": "utilitycraft:reinforcement_anvil",
+      "kind": "manual",
+      "path": "renders/reinforcement_anvil.png"
+    },
+    "utilitycraft:residue_processor": {
+      "identifier": "utilitycraft:residue_processor",
+      "kind": "manual",
+      "path": "renders/residue_processor.png"
+    },
+    "utilitycraft:seismic_breaker": {
+      "identifier": "utilitycraft:seismic_breaker",
+      "kind": "manual",
+      "path": "renders/seismic_breaker.png"
+    },
+    "utilitycraft:singularity_fabricator": {
+      "identifier": "utilitycraft:singularity_fabricator",
+      "kind": "manual",
+      "path": "renders/singularity_fabricator.png"
+    },
+    "utilitycraft:conveyor_smart_router": {
+      "identifier": "utilitycraft:conveyor_smart_router",
+      "kind": "manual",
+      "path": "renders/conveyor_smart_router.png"
+    },
+    "utilitycraft:steam_boiler": {
+      "identifier": "utilitycraft:steam_boiler",
+      "kind": "manual",
+      "path": "renders/Vanilla/steam_boiler.png"
+    },
+    "utilitycraft:superior_machine_case": {
+      "identifier": "utilitycraft:superior_machine_case",
+      "kind": "manual",
+      "path": "renders/superior_machine_case.png"
+    },
+    "utilitycraft:tempered_titanium_glass": {
+      "identifier": "utilitycraft:tempered_titanium_glass",
+      "kind": "manual",
+      "path": "renders/Vanilla/tempered_titanium_glass.png"
+    },
+    "utilitycraft:titanium_block": {
+      "identifier": "utilitycraft:titanium_block",
+      "kind": "manual",
+      "path": "renders/titanium_block.png"
+    },
+    "utilitycraft:titanium_bricks": {
+      "identifier": "utilitycraft:titanium_bricks",
+      "kind": "manual",
+      "path": "renders/Vanilla/titanium_bricks.png"
+    },
+    "utilitycraft:titanium_conveyor_bridge_path": {
+      "identifier": "utilitycraft:titanium_conveyor_bridge_path",
+      "kind": "manual",
+      "path": "renders/titanium_conveyor_bridge_path.png"
+    },
+    "utilitycraft:titanium_conveyor_bridge_receiver": {
+      "identifier": "utilitycraft:titanium_conveyor_bridge_receiver",
+      "kind": "manual",
+      "path": "renders/titanium_conveyor_bridge_receiver.png"
+    },
+    "utilitycraft:titanium_conveyor_bridge_transmitter": {
+      "identifier": "utilitycraft:titanium_conveyor_bridge_transmitter",
+      "kind": "manual",
+      "path": "renders/titanium_conveyor_bridge_transmitter.png"
+    },
+    "utilitycraft:titanium_case": {
+      "identifier": "utilitycraft:titanium_case",
+      "kind": "manual",
+      "path": "renders/Vanilla/titanium_case.png"
+    },
+    "utilitycraft:titanium_conveyor_horizontal": {
+      "identifier": "utilitycraft:titanium_conveyor_horizontal",
+      "kind": "manual",
+      "path": "renders/titanium_conveyor_horizontal.png"
+    },
+    "utilitycraft:titanium_conveyor_declined": {
+      "identifier": "utilitycraft:titanium_conveyor_declined",
+      "kind": "manual",
+      "path": "renders/titanium_conveyor_declined.png"
+    },
+    "utilitycraft:titanium_conveyor_inclined": {
+      "identifier": "utilitycraft:titanium_conveyor_inclined",
+      "kind": "manual",
+      "path": "renders/titanium_conveyor_inclined.png"
+    },
+    "utilitycraft:titanium_conveyor_vertical": {
+      "identifier": "utilitycraft:titanium_conveyor_vertical",
+      "kind": "manual",
+      "path": "renders/titanium_conveyor_vertical.png"
+    },
+    "utilitycraft:titanium_energy_port": {
+      "identifier": "utilitycraft:titanium_energy_port",
+      "kind": "manual",
+      "path": "renders/Vanilla/titanium_energy_port.png"
+    },
+    "utilitycraft:titanium_fluid_port": {
+      "identifier": "utilitycraft:titanium_fluid_port",
+      "kind": "manual",
+      "path": "renders/Vanilla/titanium_fluid_port.png"
+    },
+    "utilitycraft:titanium_hazard_block": {
+      "identifier": "utilitycraft:titanium_hazard_block",
+      "kind": "manual",
+      "path": "renders/Vanilla/titanium_hazard_block.png"
+    },
+    "utilitycraft:titanium_item_port": {
+      "identifier": "utilitycraft:titanium_item_port",
+      "kind": "manual",
+      "path": "renders/Vanilla/titanium_item_port.png"
+    },
+    "utilitycraft:titanium_plated_block": {
+      "identifier": "utilitycraft:titanium_plated_block",
+      "kind": "manual",
+      "path": "renders/Vanilla/titanium_plated_block.png"
+    },
+    "utilitycraft:titanium_seeds": {
+      "identifier": "utilitycraft:titanium_seeds",
+      "kind": "manual",
+      "path": "renders/Vanilla/titanium_seeds.png"
+    },
+    "utilitycraft:titanium_vent_panel": {
+      "identifier": "utilitycraft:titanium_vent_panel",
+      "kind": "manual",
+      "path": "renders/Vanilla/titanium_vent_panel.png"
+    },
+    "utilitycraft:compressed_aetherium_block_3": {
+      "identifier": "utilitycraft:compressed_aetherium_block_3",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_aetherium_block_3.png"
+    },
+    "utilitycraft:compressed_aetherium_crystal_block_3": {
+      "identifier": "utilitycraft:compressed_aetherium_crystal_block_3",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_aetherium_crystal_block_3.png"
+    },
+    "utilitycraft:compressed_raw_titanium_block_3": {
+      "identifier": "utilitycraft:compressed_raw_titanium_block_3",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_raw_titanium_block_3.png"
+    },
+    "utilitycraft:compressed_raw_tungsten_block_3": {
+      "identifier": "utilitycraft:compressed_raw_tungsten_block_3",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_raw_tungsten_block_3.png"
+    },
+    "utilitycraft:compressed_titanium_block_3": {
+      "identifier": "utilitycraft:compressed_titanium_block_3",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_titanium_block_3.png"
+    },
+    "utilitycraft:compressed_tungsten_block_3": {
+      "identifier": "utilitycraft:compressed_tungsten_block_3",
+      "kind": "manual",
+      "path": "renders/Vanilla/compressed_tungsten_block_3.png"
+    },
+    "utilitycraft:tungsten_block": {
+      "identifier": "utilitycraft:tungsten_block",
+      "kind": "manual",
+      "path": "renders/tungsten_block.png"
+    },
+    "utilitycraft:tungsten_seeds": {
+      "identifier": "utilitycraft:tungsten_seeds",
+      "kind": "manual",
+      "path": "renders/Vanilla/tungsten_seeds.png"
+    },
+    "utilitycraft:ultimate_power_beacon": {
+      "identifier": "utilitycraft:ultimate_power_beacon",
+      "kind": "manual",
+      "path": "renders/ultimate_power_beacon.png"
+    },
+    "utilitycraft:conveyor_underflow": {
+      "identifier": "utilitycraft:conveyor_underflow",
+      "kind": "manual",
+      "path": "renders/conveyor_underflow.png"
+    },
+    "utilitycraft:universal_cable": {
+      "identifier": "utilitycraft:universal_cable",
+      "kind": "manual",
+      "path": "renders/Vanilla/universal_cable.png"
+    },
+    "utilitycraft:universal_exporter": {
+      "identifier": "utilitycraft:universal_exporter",
+      "kind": "manual",
+      "path": "renders/Vanilla/universal_exporter.png"
+    },
+    "utilitycraft:universal_importer": {
+      "identifier": "utilitycraft:universal_importer",
+      "kind": "manual",
+      "path": "renders/Vanilla/universal_importer.png"
+    },
+    "utilitycraft:vaporizer": {
+      "identifier": "utilitycraft:vaporizer",
+      "kind": "manual",
+      "path": "renders/Vanilla/vaporizer.png"
+    },
+    "utilitycraft:vaporworks_processor": {
+      "identifier": "utilitycraft:vaporworks_processor",
+      "kind": "manual",
+      "path": "renders/vaporworks_processor.png"
+    },
+    "utilitycraft:verdant_cultivator": {
+      "identifier": "utilitycraft:verdant_cultivator",
+      "kind": "manual",
+      "path": "renders/verdant_cultivator.png"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[94102],{943586:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:basalt_bricks_vertical_slab"}')}}]);

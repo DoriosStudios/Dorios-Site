@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[472583],{808338:e=>{e.exports=JSON.parse('{"blockId":"minecraft:polished_blackstone"}')}}]);

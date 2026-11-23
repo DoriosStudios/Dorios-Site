@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[65290],{227891:e=>{e.exports=JSON.parse('{"blockId":"minecraft:stripped_warped_hyphae"}')}}]);

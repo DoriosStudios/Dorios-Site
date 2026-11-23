@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[956337],{758882:e=>{e.exports=JSON.parse('{"blockId":"dorios_atelier:magenta_hitch_cross_glass"}')}}]);

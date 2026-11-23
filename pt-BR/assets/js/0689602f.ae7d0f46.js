@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[801482],{449194:e=>{e.exports=JSON.parse('{"materialId":"prismarine"}')}}]);
