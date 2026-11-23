@@ -1,0 +1,4 @@
+.icon { position: relative; display: inline-flex; align-items: center; justify-content: center; width: var(--wiki-icon-size); height: var(--wiki-icon-size); flex: 0 0 var(--wiki-icon-size); vertical-align: middle; }
+.icon > img { display: block; width: 100%; height: 100%; max-width: none; object-fit: contain; image-rendering: pixelated; }
+.icon > svg { width: 100%; height: 100%; }
+.icon > .immunity { position: absolute; inset: 0; fill: none; stroke: var(--ds-text); stroke-width: 1.6; filter: drop-shadow(0 1px 1px var(--ds-bg)); }

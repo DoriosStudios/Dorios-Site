@@ -1,6 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {projectSourcePath} from './wiki-source-paths.mjs';
+import {ASCENDANT_UI_ICON_NAMES} from '../src/data/wikiUiIcons.mjs';
+import {syncVanillaUiIcons} from './sync-wiki-ui-icons.mjs';
 
 const siteRoot = path.resolve(import.meta.dirname, '..');
 const addonRoot = projectSourcePath('Ascendant-Technology', 'ASCENDANT_TECHNOLOGY_PROJECT_PATH');
@@ -9,12 +11,9 @@ const sourceDirectory = [
   path.join(addonRoot, 'RP', 'font', 'glyph_F5_icons'),
 ].find((directory) => fs.existsSync(directory));
 const destinationDirectory = path.join(siteRoot, 'static', 'img', 'addons', 'ascendant', 'resources', 'glyphs');
-const iconNames = [
-  'brew',
-  'water', 'lava', 'steam', 'xp', 'cryofluid', 'liquified_aetherium', 'dark_matter', 'milk', 'blood', 'generic_fluid',
-  'energy', 'pressure_meter', 'generic_speed', 'energy_upgrade', 'speed_upgrade', 'filter_upgrade',
-  'quantity_upgrade', 'range_upgrade', 'stack_upgrade',
-];
+const iconNames = ASCENDANT_UI_ICON_NAMES;
+
+syncVanillaUiIcons();
 
 if (!sourceDirectory) {
   process.stdout.write(

@@ -2,8 +2,21 @@ const assert = require('node:assert/strict');
 const {test} = require('node:test');
 const {registerRoutes} = require('./route-data');
 const plugin = require('./index');
-const {detailSectionPath, legacyDetailSection, sectionsForEntry} = require('../../src/wiki/detailSections');
+const {detailSectionPath, legacyDetailSection, sectionsForEntry,navigationSectionsForEntry,navigationDetailSection} = require('../../src/wiki/detailSections');
 const leafRoutes = routes => routes.flatMap(route => route.routes ? leafRoutes(route.routes) : [route]);
+
+test('identical item and machine overviews have one navigation entry while old specs URLs remain valid',()=>{
+  for(const type of ['items','machines']){
+    assert.ok(!navigationSectionsForEntry(type).includes('specs'));
+    assert.ok(navigationSectionsForEntry(type).includes('details'));
+    assert.ok(sectionsForEntry(type).includes('specs'));
+    assert.equal(navigationDetailSection(type,'specs'),'details');
+    assert.equal(navigationDetailSection(type,'recipes'),'recipes');
+    assert.equal(detailSectionPath('/wiki/project/'+type+'/example','specs'),'/wiki/project/'+type+'/example/specs');
+  }
+  assert.ok(navigationSectionsForEntry('blocks').includes('specs'));
+  assert.equal(navigationDetailSection('blocks','specs'),'specs');
+});
 
 function recorder() {
   const data = new Map();

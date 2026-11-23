@@ -11,6 +11,16 @@ function sectionsForEntry(entryType) {
   return DETAIL_SECTIONS[entryType] ?? ['details'];
 }
 
+// Items and machines share their overview and technical details. Keep /specs
+// routes for existing links, while presenting one entry in the navigation.
+function navigationSectionsForEntry(entryType) {
+  return sectionsForEntry(entryType).filter(section => !(['items','machines'].includes(entryType) && section === 'specs'));
+}
+
+function navigationDetailSection(entryType, section) {
+  return ['items','machines'].includes(entryType) && section === 'specs' ? 'details' : section;
+}
+
 function detailSectionPath(basePath, section = 'details') {
   const base = basePath.replace(/\/$/, '');
   return section === 'details' ? base : `${base}/${section}`;
@@ -31,4 +41,4 @@ function legacyDetailSection(entryType, hash) {
   return sectionsForEntry(entryType).includes(section) ? section : null;
 }
 
-module.exports = {sectionsForEntry, detailSectionPath, legacyDetailSection};
+module.exports = {sectionsForEntry, navigationSectionsForEntry, navigationDetailSection, detailSectionPath, legacyDetailSection};

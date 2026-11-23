@@ -2719,6 +2719,7 @@
 }
 .detailSectionNav a {
 	display: inline-flex;
+	gap: .5rem;
 	align-items: center;
 	justify-content: center;
 	min-height: 42px;
@@ -3684,6 +3685,7 @@
 .capabilityGroup ul { display: grid; gap: 0.75rem; margin: 0.9rem 0 0; padding: 0; list-style: none; }
 .capabilityGroup li { min-width: 0; color: var(--ds-muted); font-family: var(--wiki-ui-font); font-size: 0.91rem; }
 .capabilityGroup li strong { display: block; color: var(--ds-text); font-size: 1rem; }
+.capabilityTitle { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; }
 .capabilityGroup li > strong + span { margin-left: 0.35rem; }
 .capabilityGroup li p { margin: 0.25rem 0 0; line-height: 1.45; }
 .capabilityGroup li small { display: block; margin-top: 0.55rem; color: var(--ds-accent-light); }

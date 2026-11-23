@@ -1,11 +1,21 @@
 .playerGuide { display: grid; gap: 1.5rem; min-width: 0; padding: 1rem 0; }
 .playerStats { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,180px),1fr)); gap: .7rem; margin: .6rem 0 1.3rem; }
-.playerStats > div { min-width: 0; display: grid; grid-template-columns: 24px minmax(0,1fr); gap: .35rem .7rem; align-content: start; padding: 1rem; border: 1px solid var(--ds-border); border-radius: 12px; background: var(--ds-surface); }
-.playerStats svg { grid-row: 1 / 3; color: var(--wiki-project-accent); }
+.playerStats > div { min-width: 0; display: grid; grid-template-columns: minmax(0,1fr); gap: .35rem; align-content: start; padding: 1rem; border: 1px solid var(--ds-border); border-radius: 12px; background: var(--ds-surface); }
 .playerStats dt { font-size: .76rem; color: var(--ds-muted); }
 .playerStats dd { margin: 0; font-weight: 750; font-size: clamp(1.1rem,1.8vw,1.5rem); line-height: 1.25; overflow-wrap: anywhere; }
 .playerStats > div:only-child dd { font-size: 1.8rem; }
 .playerStats > div:only-child { grid-column: 1 / -1; }
+.inlineValue { display: inline-flex; max-width: 100%; color: inherit; vertical-align: middle; }
+.inlineValueContent { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .4em; min-width: 0; overflow-wrap: anywhere; }
+.heartIcons { display: inline-flex; flex-wrap: wrap; align-items: center; max-width: 100%; gap: 0; }
+/* Both source sprites use a 9x9 heart at (3,4) inside a 16x16 canvas.
+   Frame the visible pixels at 1em so transparent padding does not shrink it. */
+.heartIcons > .heartGlyph { width: 1em; height: 1em; flex: 0 0 1em; overflow: hidden; }
+.heartGlyph > img { position: absolute; width: calc(16em / 9); height: calc(16em / 9); left: calc(-3em / 9); top: calc(-4em / 9); max-width: none; object-fit: fill; }
+.screenReaderOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.propertyFlags { display: flex; flex-wrap: wrap; gap: .5rem; margin: -.5rem 0 1.2rem; padding: 0; list-style: none; }
+.propertyFlags li { display: inline-flex; align-items: center; gap: .6rem; padding: .5rem .7rem; border: 1px solid var(--ds-border); border-radius: 9px; font-size: .85rem; }
+.playerCatalogBenefits li > .inlineValue { color: var(--ds-text); font-weight: 750; }
 .playerTechnical { min-width: 0; margin: 1.2rem 0; border: 1px solid var(--ds-border); border-radius: 12px; }
 .playerTechnical summary { display: flex; gap: .7rem; align-items: center; padding: .9rem 1rem; cursor: pointer; font-weight: 700; }
 .playerTechnical summary::after { content: '+'; margin-left: auto; }
@@ -60,7 +70,6 @@
 @media(max-width:680px) {
   .playerStats { grid-template-columns: repeat(2,minmax(0,1fr)); gap: .5rem; }
   .playerStats > div { padding: .8rem; grid-template-columns: minmax(0,1fr); }
-  .playerStats svg { grid-row: auto; }
   .playerStats dd { font-size: 1.1rem; }
   .playerFlow { grid-template-columns: minmax(0,1fr); justify-items: center; gap: .5rem; }
   .playerFlowGroup { width: 100%; }

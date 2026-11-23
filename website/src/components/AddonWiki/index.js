@@ -32,14 +32,16 @@ import {StepAccordionList, StepCardList, StepCompactList, StepTimelineList} from
 import {findGlobalCatalogEntry, getWikiProject, wikiProjects} from '../../wiki/projects';
 import {findLocalCatalogEntry} from '../../wiki/catalogIndex.mjs';
 import {equipmentBenefits,itemHighlights,isSimpleEquipment,machinePlayerGuide,meaningfulValue} from '../../wiki/playerGuide.mjs';
-import {WikiStatGrid,WikiTechnicalDetails,WikiCatalogRows,MachinePlayerGuide} from './playerGuide';
+import {WikiStatGrid,WikiStatValue,WikiTechnicalDetails,WikiCatalogRows,MachinePlayerGuide} from './playerGuide';
+import WikiSpriteIcon from '../WikiIcon';
+import {WIKI_SECTION_ICONS} from '../../data/wikiUiIcons.mjs';
 import {RECIPE_ORIGINS, recipeOriginFor as resolveRecipeOrigin} from '../../wiki/recipeOrigins';
 import {fluidVisualFor, MACHINE_RESOURCE_ICONS} from '../../data/resourceVisuals';
 import {getProjectByWikiPath} from '../../data/projects';
 import {projectCardPalette} from '../../data/cardPalettes';
 import {useSiteI18n} from '../../i18n/site';
 import {wikiText} from '../../i18n/wiki';
-import {sectionsForEntry, detailSectionPath, legacyDetailSection} from '../../wiki/detailSections';
+import {sectionsForEntry, navigationSectionsForEntry, navigationDetailSection, detailSectionPath, legacyDetailSection} from '../../wiki/detailSections';
 import vanillaAssetIndex from '../../data/vanillaAssetIndex.json';
 import styles from './styles.module.css';
 
@@ -172,7 +174,7 @@ function generatedEntrySocialImage(project, source) {
   return socialRender(source) ?? `/img/social/wiki/${project.id}/fallback.png`;
 }
 
-const MACHINE_SECTION_IDS = ['details', 'specs', 'recipes', 'drops'];
+const MACHINE_SECTION_IDS = navigationSectionsForEntry('machines');
 const MINING_SECTION_IDS = ['drops', 'locations', 'modifiers'];
 const DETAIL_LABEL_KEYS = {
   details: 'overview', specs: 'detailSpecs', recipes: 'recipes', drops: 'detailDrops',
@@ -180,14 +182,14 @@ const DETAIL_LABEL_KEYS = {
   locations: 'detailLocations', modifiers: 'detailModifiers', sieving: 'detailSieving',
 };
 
-function EntrySectionNavigation({sections,mergeSpecifications = false}) {
+function EntrySectionNavigation({sections}) {
   const {section, basePath, entryType} = useContext(WikiDetailContext);
   const {t} = useSiteI18n();
   const {search} = useLocation();
-  const entries = sections ?? sectionsForEntry(entryType);
+  const entries = sections ?? navigationSectionsForEntry(entryType);
   if (entries.length < 2) return null;
   return <nav className={styles.detailSectionNav} aria-label={t('detailSections')}>
-    {entries.map((id) => <Link key={id} to={`${detailSectionPath(basePath, id)}${search}`} aria-current={(mergeSpecifications && section === 'specs' ? 'details' : section) === id ? 'page' : undefined}>{t(DETAIL_LABEL_KEYS[id])}</Link>)}
+    {entries.map((id) => <Link key={id} to={`${detailSectionPath(basePath, id)}${search}`} aria-current={navigationDetailSection(entryType,section) === id ? 'page' : undefined}><WikiSpriteIcon name={WIKI_SECTION_ICONS[id]} size={20}/>{t(DETAIL_LABEL_KEYS[id])}</Link>)}
   </nav>;
 }
 
@@ -1564,7 +1566,7 @@ function ItemsPage({query, categorySection}) {
   const catalog = entries => project.itemCategorySections?.length
     ? <WikiCatalogRows entries={entries} w={w} entryHref={entry=>`${project.basePath}/items/${entry.slug}`}
       renderVisual={entry=><TierFlipbook entry={entry} className={styles.itemImage}/>}
-      benefitsFor={entry=>equipmentBenefits(normalizedItemDocumentation(entry))}/>
+      benefitsFor={entry=>equipmentBenefits(normalizedItemDocumentation(findLocalCatalogEntry(wikiProjects[project.id]??project,entry.id)??entry))}/>
     : <ul className={itemCatalogClass} aria-label={w(`${project.name} item catalog`)}>{entries.map(entry=><ItemCard key={entry.id} entry={entry}/>)}</ul>;
   return (
     <>
@@ -2481,13 +2483,16 @@ function capabilityGroups(capabilities) {
   ].filter(Boolean);
 }
 
-function CapabilityGroup({group}) {
+function CapabilityGroup({group,sourceGroup = group}) {
   const w = useWikiText();
   return (
     <section className={styles.capabilityGroup}>
       <header><DetailIcon name={group.icon} /><h3>{w(group.title)}</h3></header>
       <ul>{group.entries.map((item, index) => <li key={`${item.name}-${index}`}>
-        {group.attributes ? <><strong>{item.modifier}</strong><span>{item.name}</span></> : <><strong>{item.name}</strong>{item.description && <p>{w(item.description)}</p>}{item.cooldown && <small>{w("Cooldown:")} {item.cooldown}</small>}</>}
+        <div className={styles.capabilityTitle}>{!group.attributes&&<WikiSpriteIcon label={sourceGroup.entries[index]?.name} kind={group.id==='immunities'?'immunity':'effect'} size={20}/>}
+          {group.attributes ? <WikiStatValue label={sourceGroup.entries[index]?.name??item.name} value={sourceGroup.entries[index]?.modifier??item.modifier} w={w} size={20}/> : <strong>{item.name}</strong>}{group.attributes && <span>{item.name}</span>}
+        </div>
+        {!group.attributes && <>{item.description && <p>{w(item.description)}</p>}{item.cooldown && <small>{w("Cooldown:")} {item.cooldown}</small>}</>}
       </li>)}</ul>
     </section>
   );
@@ -2848,8 +2853,9 @@ function RelatedItemCard({project, item}) {
   const w = useWikiText();
   const href = detailLinkFor(project, item);
   const image = visualFor(project, item);
-  const highlights = itemHighlights(normalizedItemDocumentation(item)).slice(0,2);
-  const summary = highlights.length ? highlights.map(([label,value])=>`${w(label)} ${w(value)}`).join(' · ') : w(item.itemType ?? item.category ?? 'Item');
+  const rawItem=findLocalCatalogEntry(wikiProjects[project.id]??project,item.id??item.identifier)??item;
+  const highlights = itemHighlights(normalizedItemDocumentation(rawItem)).slice(0,2);
+  const summary = highlights.length ? highlights.map(([label,value],index)=><React.Fragment key={label}>{index>0&&' · '}<WikiStatValue label={label} value={value} w={w} size={16} compact/></React.Fragment>) : w(item.itemType ?? item.category ?? 'Item');
   const content = <><span className={styles.relatedItemVisual}>{image ? <img src={image} alt="" loading="lazy" /> : <span aria-hidden="true">◇</span>}</span><span><strong>{item.name}</strong><small>{summary}</small></span></>;
   return href ? <Link className={styles.relatedItemCard} to={href}>{content}</Link> : <div className={styles.relatedItemCard}>{content}</div>;
 }
@@ -2885,20 +2891,21 @@ function ItemDocumentation({entry, project, documentation, properties, groups, r
   const additionalUses = Math.max(0, usedIn.length - visibleUses.length);
   const recipeHref = `${project.basePath}/recipes?q=${encodeURIComponent(entry.identifier ?? entry.id)}`;
   const rawEntry = wikiProjects[project.id]?.items.find(item => item.id === entry.id) ?? entry;
+  const sourceGroups = capabilityGroups(normalizedItemDocumentation(rawEntry).capabilities);
   const highlights = itemHighlights(normalizedItemDocumentation(rawEntry));
   const highlightLabels = new Set(highlights.map(([label])=>w(label)));
   const overview = section === 'details' || section === 'specs';
   return <div className={styles.itemArticleBody}>
     {overview && <ItemSection id="item-overview" title={isSimpleEquipment(documentation)?null:t('overview')}>
       <WikiStatGrid facts={highlights} w={w}/>
-      {groups.filter(group=>group.id!=='attributes').length>0&&<div className={styles.capabilityGrid}>{groups.filter(group=>group.id!=='attributes').map(group=><CapabilityGroup key={group.id} group={group}/>)}</div>}
+      {groups.filter(group=>group.id!=='attributes').length>0&&<div className={styles.capabilityGrid}>{groups.filter(group=>group.id!=='attributes').map(group=><CapabilityGroup key={group.id} group={group} sourceGroup={sourceGroups.find(source=>source.id===group.id)}/>)}</div>}
       {documentation.usage && <p className={styles.itemUsageCopy}>{documentation.usage}</p>}
       {documentation.sections.map(item=><DocumentationSection section={{...item,facts:item.facts?.filter(([label])=>!highlightLabels.has(label))}} key={item.id}/>)}
       {relatedItems.length>0&&isSimpleEquipment(documentation)&&<section className={styles.playerRelated}><h2>{w('Related Items')}</h2><div className={styles.relatedItemGrid}>{relatedItems.slice(0,4).map(item=><RelatedItemCard project={project} item={item} key={item.identifier??item.id}/>)}</div></section>}
       <WikiTechnicalDetails key={entry.id} w={w}>
         {documentation.basic.identifier&&<div className={styles.itemIdentifier}><span>{w('Identifier')}</span><code>{documentation.basic.identifier}</code><CopyIdentifierButton identifier={documentation.basic.identifier}/></div>}
         <dl className={styles.itemProperties}>{properties.map(([label,value])=><div key={label}><dt>{w(label)}</dt><dd>{w(value)}</dd></div>)}</dl>
-        {groups.filter(group=>group.id==='attributes').map(group=><CapabilityGroup key={group.id} group={group}/>)}
+        {groups.filter(group=>group.id==='attributes').map(group=><CapabilityGroup key={group.id} group={group} sourceGroup={sourceGroups.find(source=>source.id===group.id)}/>)}
       </WikiTechnicalDetails>
     </ItemSection>}
 
@@ -2958,9 +2965,8 @@ function ItemDetail({entry, visual}) {
   ].filter(([, value]) => value !== undefined && value !== null && value !== '');
   const properties = [...new Map(rawProperties.map((property) => [property[0].toLowerCase(), property])).values()];
   const typeLabel = String(w(documentation.basic.itemType ?? entry.category ?? 'Item')).toUpperCase();
-  const simpleEquipment = isSimpleEquipment(documentation);
   const sections = [
-    'details', !simpleEquipment && 'specs',
+    'details',
     (recipes.crafting.length || recipes.machine.length || documentation.primarySources.length) && 'recipes',
     (documentation.acquisition.entityDrops.length || documentation.acquisition.structures.length || documentation.acquisition.biomes.length) && 'drops',
     (usedIn.length || documentation.mainUses.length) && 'uses',
@@ -2979,7 +2985,7 @@ function ItemDetail({entry, visual}) {
           <p>{compactItemDescription(entry, documentation)}</p>
         </div>
       </header>
-      <EntrySectionNavigation sections={sections} mergeSpecifications={simpleEquipment}/>
+      <EntrySectionNavigation sections={sections}/>
       <ItemDocumentation
         entry={entry}
         project={project}
@@ -3627,7 +3633,7 @@ function MachineRecipes({machine, recipes, dropsOnly = false}) {
   );
 }
 
-function MachineDocumentationTabs({machine, controller, blockDetails, specifications}) {
+function MachineDocumentation({machine, controller, blockDetails, specifications}) {
   const {t} = useSiteI18n();
   const w = useWikiText();
   const project = useWikiProject();
@@ -3642,28 +3648,15 @@ function MachineDocumentationTabs({machine, controller, blockDetails, specificat
       <MachineReferencePanel index={1} title={t('blockDetails')} copy={t('blockDetailsCopy')} items={blockDetails.items} tags={blockDetails.tags}/>
       <MachineReferencePanel index={2} title={t('machineSpecifications')} copy={t('machineSpecificationsCopy')} items={specifications}/>
     </>}/>;
-  const tabs = [
-    {
-      id: 'details',
-      label: t('blockDetails'),
-      content: overview,
-    },
-    {
-      id: 'specs',
-      label: t('machineSpecifications'),
-      content: overview,
-    },
-    {
-      id: 'recipes',
-      label: t('recipes'),
-      content: <MachineRecipes machine={machine} recipes={recipes} />,
-    },
-    {id: 'drops', label: t('detailDrops'), content: <MachineRecipes machine={machine} recipes={recipes} dropsOnly />},
-  ];
+  const section=navigationDetailSection('machines',activeTab);
+  const content=section==='details'?overview
+    : section==='recipes'?<MachineRecipes machine={machine} recipes={recipes}/>
+    : section==='drops'?<MachineRecipes machine={machine} recipes={recipes} dropsOnly/>
+    : <EmptyDetailSection/>;
   return (
     <section className={styles.machineReference}>
-      <div className={styles.machineTabPanel}>{tabs.find((tab) => tab.id === activeTab)?.content ?? <EmptyDetailSection />}</div>
-      {(activeTab === 'details' || activeTab === 'specs') && machine.transport && <DocumentationSection section={machine.transport} />}
+      <div className={styles.machineTabPanel}>{content}</div>
+      {section === 'details' && machine.transport && <DocumentationSection section={machine.transport} />}
     </section>
   );
 }
@@ -3695,7 +3688,7 @@ function MachineDetail({entry, controller, sequence}) {
       </article>
 
       <EntrySectionNavigation sections={MACHINE_SECTION_IDS.filter((section) => section !== 'drops' || DROP_CATALOG_MACHINE_IDS.has(machine.id))} />
-      <MachineDocumentationTabs machine={machine} controller={controller} blockDetails={blockDetails} specifications={specifications} />
+      <MachineDocumentation machine={machine} controller={controller} blockDetails={blockDetails} specifications={specifications} />
     </>
   );
 }

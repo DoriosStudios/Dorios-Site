@@ -1,35 +1,55 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import {IconBolt,IconHeart,IconShield,IconTool,IconDroplet,IconClock,IconCube,IconArrowRight,IconSettings,IconAlertTriangle} from '@tabler/icons-react';
+import {IconCube,IconArrowRight,IconSettings,IconAlertTriangle} from '@tabler/icons-react';
+import WikiIcon from '../WikiIcon';
+import {WIKI_UPGRADE_ICONS,wikiStatValue,isWikiPropertyFlag,wikiHeartIcons} from '../../data/wikiUiIcons.mjs';
 import styles from './playerGuide.module.css';
 import {meaningfulValue} from '../../wiki/playerGuide.mjs';
 
-function MetricIcon({label}) {
-  const Icon = /health|heart|vida|saúde|salud/i.test(label) ? IconHeart
-    : /energy|consum|energ/i.test(label) ? IconBolt
-    : /fluid|gas|líquid|fluido/i.test(label) ? IconDroplet
-    : /time|cycle|tempo|ciclo/i.test(label) ? IconClock
-    : /durab|resist/i.test(label) ? IconShield : IconTool;
-  return <Icon size={22} stroke={1.6} aria-hidden="true"/>;
+export function WikiStatValue({label,value,w,size=24,compact=false}) {
+  const sourceValue=Array.isArray(value)?value.join(' · '):value;
+  const formatted = wikiStatValue(label,sourceValue);
+  const hearts=wikiHeartIcons(label,sourceValue);
+  const description = `${w(label)}: ${w(sourceValue)}`;
+  const display=hearts!==null&&formatted.value!==sourceValue
+    ? `${String(formatted.value).startsWith('+')?'+':''}${w(Number(String(formatted.value).replace(',','.')))}`
+    : w(formatted.value);
+  return <span className={styles.inlineValue} title={description} data-stat-label={label}>
+    <span className={styles.screenReaderOnly}>{description}</span>
+    <span className={styles.inlineValueContent} aria-hidden="true">{compact&&!formatted.icon&&`${w(label)} `}{hearts===null&&formatted.icon==='full_heart'?w(sourceValue):display}
+      {hearts!==null?<span className={styles.heartIcons}>{hearts.map((icon,index)=><WikiIcon key={index} name={icon} size={size} className={styles.heartGlyph}/>)}</span>
+        :formatted.icon&&formatted.icon!=='full_heart'&&<WikiIcon name={formatted.icon} size={size}/>}
+    </span>
+  </span>;
 }
 
 export function WikiStatGrid({facts,w}) {
   if (!facts.length) return null;
-  return <dl className={styles.playerStats}>{facts.map(([label,value])=><div key={label}>
-    <MetricIcon label={label}/><dt>{w(label)}</dt><dd>{w(Array.isArray(value)?value.join(' · '):value)}</dd>
-  </div>)}</dl>;
+  const values=facts.filter(([label,value])=>!isWikiPropertyFlag(label,value));
+  const flags=facts.filter(([label,value])=>isWikiPropertyFlag(label,value));
+  return <>
+    {values.length>0&&<dl className={styles.playerStats}>{values.map(([label,value])=><div key={label}>
+      <dt>{w(label)}</dt><dd><WikiStatValue label={label} value={value} w={w}/></dd>
+    </div>)}</dl>}
+    {flags.length>0&&<ul className={styles.propertyFlags}>{flags.map(([label])=><li key={label}>
+      <WikiIcon label={label}/><span>{w(label)}</span>
+    </li>)}</ul>}
+  </>;
 }
 
 export function WikiTechnicalDetails({w,children}) {
-  return <details className={styles.playerTechnical}><summary><IconSettings size={19} aria-hidden="true"/>{w('Technical details')}</summary>
+  return <details className={styles.playerTechnical}><summary><WikiIcon name="stats" size={20} fallback={IconSettings}/>{w('Technical details')}</summary>
     <div className={styles.playerTechnicalBody}>{children}</div>
   </details>;
 }
 
 export function WikiProcessFlow({inputs,outputs,visual,w}) {
   if (!inputs.length || !outputs.length) return null;
-  const parts = values => values.flatMap(value=>String(w(value)).split(/\s+\+\s+/));
-  const Part = ({value}) => {const Icon=/fluid|líquid|fluido/i.test(value)?IconDroplet:IconCube;return <p><Icon size={24} aria-hidden="true"/>{value}</p>;};
+  const parts = values => values.flatMap(value=>{
+    const sourceParts = String(value).split(/\s+\+\s+/);
+    return String(w(value)).split(/\s+\+\s+/).map((text,index)=>({text,source:sourceParts[index]}));
+  });
+  const Part = ({value}) => <p><WikiIcon name={/fluid/i.test(value.source)?'generic_fluid':/catalyst/i.test(value.source)?'catalyst':null} fallback={IconCube}/>{value.text}</p>;
   return <section className={styles.playerProcess} aria-label={w('Process schematic')}>
     <header><h2>{w('How it works')}</h2><small>{w('Process schematic — not a specific recipe')}</small></header>
     <div className={styles.playerFlow}>
@@ -46,11 +66,11 @@ export function MachinePlayerGuide({guide,visual,w,technical}) {
   return <div className={styles.playerGuide}>
     <WikiStatGrid facts={guide.metrics} w={w}/>
     {guide.features.length>0&&<div className={styles.playerFeatures}>{guide.features.map(([label,value])=><section key={label}>
-      <IconAlertTriangle size={23} aria-hidden="true"/><div><h3>{w(label)}</h3><p>{w(value)}</p></div>
+      <WikiIcon label={label} fallback={IconAlertTriangle}/><div><h3>{w(label)}</h3><p>{w(value)}</p></div>
     </section>)}</div>}
     <WikiProcessFlow inputs={guide.inputs} outputs={guide.outputs} visual={visual} w={w}/>
     {guide.steps.length>0&&<ol className={styles.playerSteps}>{guide.steps.map((step,index)=><li key={index}>{w(step)}</li>)}</ol>}
-    {guide.upgrades.length>0&&<section className={styles.playerUpgrades}><h2>{w('Supported upgrades')}</h2><ul>{guide.upgrades.map(type=><li key={type}><IconTool size={20} aria-hidden="true"/>{w(type.replace(/\b\w/g,c=>c.toUpperCase()))}</li>)}</ul></section>}
+    {guide.upgrades.length>0&&<section className={styles.playerUpgrades}><h2>{w('Supported upgrades')}</h2><ul>{guide.upgrades.map(type=><li key={type}><WikiIcon name={WIKI_UPGRADE_ICONS[type]} size={24}/>{w(type.replace(/\b\w/g,c=>c.toUpperCase()))}</li>)}</ul></section>}
     <WikiTechnicalDetails w={w}>{technical}</WikiTechnicalDetails>
   </div>;
 }
@@ -63,7 +83,7 @@ export function WikiCatalogRows({entries,renderVisual,entryHref,benefitsFor,w}) 
       <div className={styles.playerCatalogImage}>{renderVisual(entry)}</div>
       <h2>{entry.name}</h2>
       <ul className={styles.playerCatalogBenefits}>{benefits.map((benefit,index)=><li key={index} data-kind={benefit.kind}>
-        {benefit.kind==='attribute'?<><span>{w(benefit.label)}</span><strong>{w(benefit.value)}</strong></>:<span>{benefit.kind==='immunity'?`${w('Immunity')}: `:''}{w(benefit.label)}</span>}
+        {benefit.kind==='attribute'?<WikiStatValue label={benefit.label} value={benefit.value} w={w} size={18} compact/>:<><WikiIcon label={benefit.label} kind={benefit.kind} size={18}/><span>{benefit.kind==='immunity'?`${w('Immunity')}: `:''}{w(benefit.label)}</span></>}
       </li>)}</ul>
       {meaningfulValue(source)&&<div className={styles.playerCatalogSource}><small>{w('Best source')}</small><span>{w(source)}</span></div>}
       <IconArrowRight className={styles.playerCatalogArrow} size={18} aria-hidden="true"/>

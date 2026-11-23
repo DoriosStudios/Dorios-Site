@@ -4,6 +4,25 @@ require.extensions['.js']=(module,filename)=>{if(!filename.startsWith(root))retu
 const {wikiProjects,getWikiProject}=require('../src/wiki/projects');
 const {equipmentBenefits,itemHighlights,isSimpleEquipment,machinePlayerGuide,meaningfulValue}=require('../src/wiki/playerGuide.mjs');
 const {wikiText}=require('../src/i18n/wiki');
+const {wikiIconKey}=require('../src/data/wikiUiIcons.mjs');
+
+test('every documented trinket effect and immunity resolves from its canonical source label',()=>{
+ let checked=0;
+ for(const entry of wikiProjects.trinkets.items){
+  const capabilities=entry.documentation?.capabilities??{};
+  for(const item of [...(capabilities.passiveEffects??[]),...(capabilities.activeEffects??[]),...(capabilities.immunities??[])]){
+   assert.ok(wikiIconKey(item.name,'effect'),`${entry.id}: ${item.name}`);checked++;
+  }
+ }
+ assert.ok(checked>30);
+ for(const locale of ['pt-BR','es-MX']) {
+  const localized=getWikiProject('trinkets',locale);
+  for(const entry of localized.items){
+   const source=wikiProjects.trinkets.items.find(item=>item.id===entry.id);
+   assert.equal(equipmentBenefits(entry.documentation??{}).length,equipmentBenefits(source.documentation??{}).length,`${locale}: ${entry.id}`);
+  }
+ }
+});
 
 test('simple equipment exposes real bonuses; every Hearty Charm and secondary attribute survives',()=>{
  const hearts=wikiProjects.trinkets.items.filter(e=>e.category==='Hearty Charms');

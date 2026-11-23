@@ -5,7 +5,7 @@
   "scripts": {
     "optimize:brand-images": "node scripts/optimize-brand-images.mjs",
     "test:performance": "node --test scripts/navigation-performance.test.mjs",
-    "test:wiki": "node --test scripts/wiki-editorial.test.cjs scripts/wiki-redesign.test.cjs plugins/addon-wiki-routes/route-data.test.js",
+    "test:wiki": "node --test scripts/wiki-editorial.test.cjs scripts/wiki-redesign.test.cjs scripts/wiki-ui-icons.test.mjs plugins/addon-wiki-routes/route-data.test.js",
     "benchmark:navigation": "node scripts/benchmark-navigation.mjs",
     "sync:wiki": "python scripts/sync-project-wikis.py",
     "generate:bedrock-renders": "node scripts/generate-bedrock-renders.mjs",
@@ -22,6 +22,7 @@
     "generate:wiki-locales": "node scripts/generate-wiki-localized-names.mjs",
     "apply:site-translations": "node scripts/apply-site-translations.mjs",
     "generate:ascendant-glyph-icons": "node scripts/sync-ascendant-glyph-icons.mjs",
+    "generate:wiki-ui-icons": "node scripts/sync-ascendant-glyph-icons.mjs",
     "validate:machine-recipes": "node scripts/validate-machine-recipe-catalog.mjs",
     "generate:vanilla-assets": "node scripts/generate-vanilla-asset-index.mjs",
     "generate:social-previews": "node scripts/generate-social-previews.mjs",
