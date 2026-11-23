@@ -918,7 +918,7 @@
         "identifier": "better_smelters:oak_wood_furnace",
         "name": "Oak Wood Furnace",
         "category": "General",
-        "render": null,
+        "render": "auto-renders/better_smelters_oak_wood_furnace_10ddb4392361-93c7ee2081e1-fe4b442ffc518145405a257f.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/furnaces/oak_wood/up.png",

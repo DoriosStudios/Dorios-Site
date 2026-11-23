@@ -5,6 +5,7 @@
   "scripts": {
     "optimize:brand-images": "node scripts/optimize-brand-images.mjs",
     "test:performance": "node --test scripts/navigation-performance.test.mjs",
+    "test:wiki": "node --test scripts/wiki-editorial.test.cjs scripts/wiki-redesign.test.cjs plugins/addon-wiki-routes/route-data.test.js",
     "benchmark:navigation": "node scripts/benchmark-navigation.mjs",
     "sync:wiki": "python scripts/sync-project-wikis.py",
     "generate:bedrock-renders": "node scripts/generate-bedrock-renders.mjs",

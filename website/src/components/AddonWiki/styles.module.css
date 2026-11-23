@@ -4790,3 +4790,39 @@
 		animation: none;
 	}
 }
+
+/* Shared player guide: explicit square image stages prevent intrinsic-height
+   and old flipbook rules from stretching item artwork on mobile. */
+.itemDetailHero { grid-template-columns: 132px minmax(0,1fr); }
+.itemDetailVisual { width: 132px; height: 132px; min-height: 0; aspect-ratio: 1; align-self: start; grid-row: 1 / 3; }
+.itemDetailVisual > .detailItemVisual,
+.itemDetailVisual > .detailItemVisual.tierFlipbook { width: 100%; height: 100%; min-height: 0; aspect-ratio: 1; display: grid; place-items: center; }
+.itemDetailVisual .detailItemVisual img,
+.itemDetailVisual .detailItemVisual.tierFlipbook img { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; padding: 16%; box-sizing: border-box; object-fit: contain; aspect-ratio: 1; }
+.itemDetailHeading { min-width: 0; }
+.itemDetailHeading h1 { overflow-wrap: anywhere; }
+.playerRelated { margin-top: 1.7rem; }
+.playerRelated > h2 { font-size: 1.6rem; }
+.machineDetailHero { grid-template-columns: 180px minmax(0,1fr); align-items: center; }
+.machineDetailVisual { width: 180px; height: 180px; min-height: 0; aspect-ratio: 1; }
+.machineDetailVisual .blockPreview { --block-preview-size: 160px !important; }
+@media(max-width:760px) {
+  .itemDetailHero { grid-template-columns: 96px minmax(0,1fr); align-items: center; gap: .85rem; }
+  .itemDetailVisual { width: 96px; height: 96px; grid-row: 1; }
+  .itemDetailCopy { grid-column: 1 / -1; margin-top: .25rem; }
+  .itemDetailHeading h1 { font-size: clamp(1.8rem,6vw,2.6rem); line-height: 1.05; }
+  .machineDetailHero { grid-template-columns: 98px minmax(0,1fr); gap: .85rem; padding: .75rem; }
+  .machineDetailVisual { width: 98px; height: 98px; min-height: 0; }
+  .machineDetailVisual .blockPreview { --block-preview-size: 88px !important; }
+  .machineDetailHeading { min-width: 0; }
+  .machineDetailHeading h1 { font-size: clamp(1.7rem,6vw,2.5rem); overflow-wrap: anywhere; }
+  .machineDetailHeading > p:not(.eyebrow) { font-size: .85rem; line-height: 1.5; }
+  .machineHeroMeta { gap: .5rem; }
+}
+@media(max-width:420px) {
+  .itemDetailHero { grid-template-columns: 80px minmax(0,1fr); gap: .75rem; }
+  .itemDetailVisual { width: 80px; height: 80px; }
+}
+.machineDetailHero { min-height: 0; padding: 1.25rem; }
+.relatedItemVisual img { width: 70%; height: 70%; object-fit: contain; image-rendering: pixelated; }
+@media(max-width:760px) { .machineDetailHero { padding: .75rem; } }

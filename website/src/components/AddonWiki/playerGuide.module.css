@@ -1,0 +1,76 @@
+.playerGuide { display: grid; gap: 1.5rem; min-width: 0; padding: 1rem 0; }
+.playerStats { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,180px),1fr)); gap: .7rem; margin: .6rem 0 1.3rem; }
+.playerStats > div { min-width: 0; display: grid; grid-template-columns: 24px minmax(0,1fr); gap: .35rem .7rem; align-content: start; padding: 1rem; border: 1px solid var(--ds-border); border-radius: 12px; background: var(--ds-surface); }
+.playerStats svg { grid-row: 1 / 3; color: var(--wiki-project-accent); }
+.playerStats dt { font-size: .76rem; color: var(--ds-muted); }
+.playerStats dd { margin: 0; font-weight: 750; font-size: clamp(1.1rem,1.8vw,1.5rem); line-height: 1.25; overflow-wrap: anywhere; }
+.playerStats > div:only-child dd { font-size: 1.8rem; }
+.playerStats > div:only-child { grid-column: 1 / -1; }
+.playerTechnical { min-width: 0; margin: 1.2rem 0; border: 1px solid var(--ds-border); border-radius: 12px; }
+.playerTechnical summary { display: flex; gap: .7rem; align-items: center; padding: .9rem 1rem; cursor: pointer; font-weight: 700; }
+.playerTechnical summary::after { content: '+'; margin-left: auto; }
+.playerTechnical[open] > summary::after { content: '−'; }
+.playerTechnical summary:focus-visible { outline: 2px solid var(--wiki-project-accent); outline-offset: 3px; }
+.playerTechnicalBody { padding: 0 1rem 1rem; min-width: 0; overflow-wrap: anywhere; }
+.playerTechnicalBody > * { min-width: 0; }
+.playerTechnicalBody code { overflow-wrap: anywhere; white-space: normal; }
+.playerProcess { min-width: 0; }
+.playerProcess header { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline; gap: .5rem; margin-bottom: .8rem; }
+.playerProcess h2,.playerUpgrades h2 { margin: 0; font-size: 1.55rem; }
+.playerProcess small { color: var(--ds-muted); font-size: .72rem; }
+.playerFlow { display: grid; grid-template-columns: minmax(0,1fr) 24px 94px 24px minmax(0,1fr); gap: .8rem; align-items: center; }
+.playerFlowGroup { align-self: stretch; min-width: 0; border: 1px solid var(--ds-border); padding: .85rem; border-radius: 12px; }
+.playerFlowGroup h3 { margin: 0 0 .6rem; font-size: .9rem; }
+.playerFlowGroup p { display: flex; align-items: center; gap: .65rem; margin: 0; font-size: .8rem; line-height: 1.55; overflow-wrap: anywhere; }
+.playerFlowGroup svg { flex: 0 0 24px; color: var(--wiki-project-accent); }
+.playerFlowGroup p + p { margin-top: .65rem; padding-top: .65rem; border-top: 1px solid var(--ds-border); }
+.playerFlowMachine { display: grid; place-items: center; width: 94px; height: 94px; }
+.playerFlowMachine figure { margin: 0; }
+.playerFlowArrow { color: var(--wiki-project-accent); }
+.playerFeatures { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,230px),1fr)); gap: .7rem; }
+.playerFeatures > section { min-width: 0; display: flex; align-items: start; gap: .8rem; border: 1px solid color-mix(in srgb,var(--wiki-project-accent) 40%,var(--ds-border)); border-radius: 12px; padding: 1rem; background: color-mix(in srgb,var(--wiki-project-accent) 5%,var(--ds-bg)); }
+.playerFeatures svg { flex: 0 0 23px; color: var(--wiki-project-accent); }
+.playerFeatures h3 { margin: 0 0 .4rem; font-size: .95rem; }
+.playerFeatures p { margin: 0; color: var(--ds-muted); font-size: .84rem; line-height: 1.6; }
+.playerSteps { display: grid; gap: .6rem; padding-left: 1.5rem; margin: 0; color: var(--ds-muted); font-size: .88rem; line-height: 1.6; }
+.playerUpgrades ul { display: flex; flex-wrap: wrap; gap: .6rem; margin: .8rem 0 0; padding: 0; list-style: none; }
+.playerUpgrades li { display: flex; align-items: center; gap: .6rem; padding: .7rem 1rem; border: 1px solid var(--ds-border); border-radius: 10px; font-weight: 650; font-size: .85rem; }
+.playerUpgrades svg { color: var(--wiki-project-accent); }
+.playerCatalog { display: grid; grid-template-columns: minmax(0,1fr); gap: .65rem; margin: 0; padding: 0; list-style: none; }
+.playerCatalog > li { min-width: 0; }
+.playerCatalogRow { display: grid; grid-template-columns: 60px minmax(135px,.9fr) minmax(0,1.3fr) minmax(120px,.8fr) 18px; align-items: center; gap: 1rem; padding: .85rem 1rem; border: 1px solid var(--ds-border); border-radius: 12px; background: var(--ds-surface); color: var(--ds-text); }
+.playerCatalogRow:hover,.playerCatalogRow:focus-visible { border-color: var(--wiki-project-accent); text-decoration: none; }
+.playerCatalogRow:focus-visible { outline: 2px solid var(--wiki-project-accent); outline-offset: 2px; }
+.playerCatalogRow h2 { margin: 0; font-size: 1.1rem; overflow-wrap: anywhere; }
+.playerCatalogImage { width: 60px; height: 60px; display: grid; place-items: center; }
+.playerCatalogImage > div { width: 60px; height: 60px; min-height: 0; }
+.playerCatalogImage img { width: 60px; height: 60px; object-fit: contain; image-rendering: pixelated; }
+.playerCatalogBenefits { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0; padding: 0 1rem; border-left: 1px solid var(--ds-border); list-style: none; }
+.playerCatalogBenefits li { display: inline-flex; flex-wrap: wrap; gap: .3rem; align-items: center; font-size: .75rem; padding: .3rem .5rem; border-radius: 7px; background: color-mix(in srgb,var(--wiki-project-accent) 9%,var(--ds-surface-raised)); }
+.playerCatalogBenefits li[data-kind='attribute'] { color: var(--ds-text); }
+.playerCatalogBenefits li > span { color: var(--ds-muted); }
+.playerCatalogSource { display: grid; gap: .3rem; padding-left: 1rem; border-left: 1px solid var(--ds-border); font-size: .75rem; overflow-wrap: anywhere; }
+.playerCatalogSource small { color: color-mix(in srgb,var(--wiki-project-accent) 40%,var(--ds-text)); }
+.playerCatalogArrow { color: var(--wiki-project-accent); }
+@media(max-width:1100px) {
+  .playerCatalogRow { grid-template-columns: 56px minmax(0,1fr) minmax(0,1.3fr) 18px; gap: .7rem; }
+  .playerCatalogSource { grid-column: 2 / 4; padding-left: 0; border-left: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+  .playerCatalogArrow { grid-column: 4; grid-row: 1; }
+}
+@media(max-width:680px) {
+  .playerStats { grid-template-columns: repeat(2,minmax(0,1fr)); gap: .5rem; }
+  .playerStats > div { padding: .8rem; grid-template-columns: minmax(0,1fr); }
+  .playerStats svg { grid-row: auto; }
+  .playerStats dd { font-size: 1.1rem; }
+  .playerFlow { grid-template-columns: minmax(0,1fr); justify-items: center; gap: .5rem; }
+  .playerFlowGroup { width: 100%; }
+  .playerFlowArrow { transform: rotate(90deg); }
+  .playerFlowMachine { width: 80px; height: 80px; }
+  .playerCatalogRow { grid-template-columns: 52px minmax(0,1fr) 18px; padding: .75rem; gap: .55rem .75rem; }
+  .playerCatalogImage { grid-row: 1 / 3; width: 52px; height: 52px; }
+  .playerCatalogImage > div,.playerCatalogImage img { width: 52px; height: 52px; }
+  .playerCatalogBenefits { grid-column: 2; padding: 0; border: 0; }
+  .playerCatalogSource { grid-column: 2; }
+  .playerCatalogArrow { grid-column: 3; }
+  .playerCatalogRow h2 { font-size: 1rem; }
+}

@@ -29,8 +29,10 @@ import {
 import DoriosMarketingShell from '../DoriosMarketingShell';
 import SocialMetadata from '../SocialMetadata';
 import {StepAccordionList, StepCardList, StepCompactList, StepTimelineList} from './stepLists';
-import {findGlobalCatalogEntry, getWikiProject} from '../../wiki/projects';
+import {findGlobalCatalogEntry, getWikiProject, wikiProjects} from '../../wiki/projects';
 import {findLocalCatalogEntry} from '../../wiki/catalogIndex.mjs';
+import {equipmentBenefits,itemHighlights,isSimpleEquipment,machinePlayerGuide,meaningfulValue} from '../../wiki/playerGuide.mjs';
+import {WikiStatGrid,WikiTechnicalDetails,WikiCatalogRows,MachinePlayerGuide} from './playerGuide';
 import {RECIPE_ORIGINS, recipeOriginFor as resolveRecipeOrigin} from '../../wiki/recipeOrigins';
 import {fluidVisualFor, MACHINE_RESOURCE_ICONS} from '../../data/resourceVisuals';
 import {getProjectByWikiPath} from '../../data/projects';
@@ -178,14 +180,14 @@ const DETAIL_LABEL_KEYS = {
   locations: 'detailLocations', modifiers: 'detailModifiers', sieving: 'detailSieving',
 };
 
-function EntrySectionNavigation({sections}) {
+function EntrySectionNavigation({sections,mergeSpecifications = false}) {
   const {section, basePath, entryType} = useContext(WikiDetailContext);
   const {t} = useSiteI18n();
   const {search} = useLocation();
   const entries = sections ?? sectionsForEntry(entryType);
   if (entries.length < 2) return null;
   return <nav className={styles.detailSectionNav} aria-label={t('detailSections')}>
-    {entries.map((id) => <Link key={id} to={`${detailSectionPath(basePath, id)}${search}`} aria-current={section === id ? 'page' : undefined}>{t(DETAIL_LABEL_KEYS[id])}</Link>)}
+    {entries.map((id) => <Link key={id} to={`${detailSectionPath(basePath, id)}${search}`} aria-current={(mergeSpecifications && section === 'specs' ? 'details' : section) === id ? 'page' : undefined}>{t(DETAIL_LABEL_KEYS[id])}</Link>)}
   </nav>;
 }
 
@@ -1559,6 +1561,11 @@ function ItemsPage({query, categorySection}) {
     const rightIndex = categoryOrder.indexOf(right);
     return (leftIndex < 0 ? Number.MAX_SAFE_INTEGER : leftIndex) - (rightIndex < 0 ? Number.MAX_SAFE_INTEGER : rightIndex);
   });
+  const catalog = entries => project.itemCategorySections?.length
+    ? <WikiCatalogRows entries={entries} w={w} entryHref={entry=>`${project.basePath}/items/${entry.slug}`}
+      renderVisual={entry=><TierFlipbook entry={entry} className={styles.itemImage}/>}
+      benefitsFor={entry=>equipmentBenefits(normalizedItemDocumentation(entry))}/>
+    : <ul className={itemCatalogClass} aria-label={w(`${project.name} item catalog`)}>{entries.map(entry=><ItemCard key={entry.id} entry={entry}/>)}</ul>;
   return (
     <>
       <PageIntro section={categorySection?.id ?? 'items'} count={visible.length} countLabel="items found" />
@@ -1566,14 +1573,10 @@ function ItemsPage({query, categorySection}) {
       <CatalogResultBar id="items-page-results" totalItems={visible.length} page={currentPage} setPage={setPage} />
       {project.groupItemsByCategory ? <div className={styles.itemGroups}>{groupedEntries.map(([groupName, entries]) => (
         <section className={styles.itemGroup} key={groupName}>
-          <header><div><span>{w("Item category")}</span><h2>{w(groupName)}</h2></div><b>{entries.length}</b></header>
-          <ul className={itemCatalogClass} aria-label={w(`${groupName} item catalog`)}>
-            {entries.map((entry) => <ItemCard key={entry.id} entry={entry} />)}
-          </ul>
+          {!categorySection&&<header><div><span>{w("Item category")}</span><h2>{w(groupName)}</h2></div><b>{entries.length}</b></header>}
+          {catalog(entries)}
         </section>
-      ))}</div> : <ul className={itemCatalogClass} aria-label={w(`${project.name} item catalog`)}>
-        {pageEntries.map((entry) => <ItemCard key={entry.id} entry={entry} />)}
-      </ul>}
+      ))}</div> : catalog(pageEntries)}
       <CatalogPagination page={currentPage} totalItems={visible.length} onPageChange={setPage} targetId="items-page-results" />
       {!visible.length && <p className={styles.empty}>{w("No items match the current filters.")}</p>}
     </>
@@ -2746,8 +2749,8 @@ function ItemRecipeCard({recipe}) {
 
 function ItemSection({id, title, children, className = ''}) {
   const w = useWikiText();
-  return <section className={`${styles.itemWikiSection} ${className}`} aria-labelledby={id}>
-    <header><h2 id={id}>{w(title)}</h2></header>
+  return <section className={`${styles.itemWikiSection} ${className}`} aria-labelledby={title?id:undefined} aria-label={!title?w('Overview'):undefined}>
+    {title&&<header><h2 id={id}>{w(title)}</h2></header>}
     {children}
   </section>;
 }
@@ -2845,7 +2848,9 @@ function RelatedItemCard({project, item}) {
   const w = useWikiText();
   const href = detailLinkFor(project, item);
   const image = visualFor(project, item);
-  const content = <><span className={styles.relatedItemVisual}>{image ? <img src={image} alt="" loading="lazy" /> : <span aria-hidden="true">◇</span>}</span><span><strong>{item.name}</strong><small>{w(item.itemType ?? item.category ?? 'Item')}</small></span></>;
+  const highlights = itemHighlights(normalizedItemDocumentation(item)).slice(0,2);
+  const summary = highlights.length ? highlights.map(([label,value])=>`${w(label)} ${w(value)}`).join(' · ') : w(item.itemType ?? item.category ?? 'Item');
+  const content = <><span className={styles.relatedItemVisual}>{image ? <img src={image} alt="" loading="lazy" /> : <span aria-hidden="true">◇</span>}</span><span><strong>{item.name}</strong><small>{summary}</small></span></>;
   return href ? <Link className={styles.relatedItemCard} to={href}>{content}</Link> : <div className={styles.relatedItemCard}>{content}</div>;
 }
 
@@ -2879,14 +2884,22 @@ function ItemDocumentation({entry, project, documentation, properties, groups, r
   }));
   const additionalUses = Math.max(0, usedIn.length - visibleUses.length);
   const recipeHref = `${project.basePath}/recipes?q=${encodeURIComponent(entry.identifier ?? entry.id)}`;
+  const rawEntry = wikiProjects[project.id]?.items.find(item => item.id === entry.id) ?? entry;
+  const highlights = itemHighlights(normalizedItemDocumentation(rawEntry));
+  const highlightLabels = new Set(highlights.map(([label])=>w(label)));
+  const overview = section === 'details' || section === 'specs';
   return <div className={styles.itemArticleBody}>
-    {section === 'details' && <ItemSection id="item-overview" title={t('overview')}>
-      <dl className={styles.itemProperties}>{properties.slice(0, 4).map(([label, value]) => <div key={label}><dt>{w(label)}</dt><dd>{w(value)}</dd></div>)}</dl>
+    {overview && <ItemSection id="item-overview" title={isSimpleEquipment(documentation)?null:t('overview')}>
+      <WikiStatGrid facts={highlights} w={w}/>
+      {groups.filter(group=>group.id!=='attributes').length>0&&<div className={styles.capabilityGrid}>{groups.filter(group=>group.id!=='attributes').map(group=><CapabilityGroup key={group.id} group={group}/>)}</div>}
       {documentation.usage && <p className={styles.itemUsageCopy}>{documentation.usage}</p>}
-    </ItemSection>}
-    {section === 'specs' && <ItemSection id="item-properties" eyebrow={w("Reference")} title={w("Properties")}>
-      <dl className={styles.itemProperties}>{properties.map(([label, value]) => <div key={label}><dt>{w(label)}</dt><dd>{w(value)}</dd></div>)}</dl>
-      {documentation.sections.map((section) => <DocumentationSection section={section} key={section.id} />)}
+      {documentation.sections.map(item=><DocumentationSection section={{...item,facts:item.facts?.filter(([label])=>!highlightLabels.has(label))}} key={item.id}/>)}
+      {relatedItems.length>0&&isSimpleEquipment(documentation)&&<section className={styles.playerRelated}><h2>{w('Related Items')}</h2><div className={styles.relatedItemGrid}>{relatedItems.slice(0,4).map(item=><RelatedItemCard project={project} item={item} key={item.identifier??item.id}/>)}</div></section>}
+      <WikiTechnicalDetails key={entry.id} w={w}>
+        {documentation.basic.identifier&&<div className={styles.itemIdentifier}><span>{w('Identifier')}</span><code>{documentation.basic.identifier}</code><CopyIdentifierButton identifier={documentation.basic.identifier}/></div>}
+        <dl className={styles.itemProperties}>{properties.map(([label,value])=><div key={label}><dt>{w(label)}</dt><dd>{w(value)}</dd></div>)}</dl>
+        {groups.filter(group=>group.id==='attributes').map(group=><CapabilityGroup key={group.id} group={group}/>)}
+      </WikiTechnicalDetails>
     </ItemSection>}
 
     {section === 'recipes' && <ItemSection id="item-obtain" eyebrow={w("Sources")} title={w("How to Obtain")}>
@@ -2920,7 +2933,6 @@ function ItemDocumentation({entry, project, documentation, properties, groups, r
       {(additionalUses > 0 || usedIn.length > 0) && <div className={styles.itemMoreLink}><span><strong>{w("Additional uses")}</strong>{w(additionalUses > 0 ? `${additionalUses} more documented use${additionalUses === 1 ? '' : 's'}.` : 'Explore every documented use in the recipe catalog.')}</span><Link to={recipeHref}>{w("View all uses →")}</Link></div>}
     </ItemSection>}
 
-    {section === 'specs' && groups.length > 0 && <ItemSection id="item-capabilities" eyebrow={w("Equipment")} title={w("Trinket Capabilities")}><div className={styles.capabilityGrid}>{groups.map((group) => <CapabilityGroup key={group.id} group={group} />)}</div></ItemSection>}
     {section === 'related' && <ItemSection id="item-related" eyebrow={w("Continue reading")} title={w("Related Items")}>{relatedItems.length ? <div className={styles.relatedItemGrid}>{relatedItems.map((item) => <RelatedItemCard project={project} item={item} key={item.identifier ?? item.id} />)}</div> : <EmptyDetailSection />}</ItemSection>}
     {section === 'notes' && <ItemSection id="item-trivia" eyebrow={w("Notes")} title={w("Trivia")}>{documentation.trivia.length ? <ul className={styles.itemTrivia}>{documentation.trivia.map((note, index) => <li key={index}>{w(note)}</li>)}</ul> : <EmptyDetailSection />}</ItemSection>}
   </div>;
@@ -2946,8 +2958,9 @@ function ItemDetail({entry, visual}) {
   ].filter(([, value]) => value !== undefined && value !== null && value !== '');
   const properties = [...new Map(rawProperties.map((property) => [property[0].toLowerCase(), property])).values()];
   const typeLabel = String(w(documentation.basic.itemType ?? entry.category ?? 'Item')).toUpperCase();
+  const simpleEquipment = isSimpleEquipment(documentation);
   const sections = [
-    'details', 'specs',
+    'details', !simpleEquipment && 'specs',
     (recipes.crafting.length || recipes.machine.length || documentation.primarySources.length) && 'recipes',
     (documentation.acquisition.entityDrops.length || documentation.acquisition.structures.length || documentation.acquisition.biomes.length) && 'drops',
     (usedIn.length || documentation.mainUses.length) && 'uses',
@@ -2960,14 +2973,13 @@ function ItemDetail({entry, visual}) {
         <div className={styles.itemDetailVisual}>{visual}</div>
         <div className={styles.itemDetailHeading}>
           <p className={styles.eyebrow}>{w("Item ·")} {w(typeLabel)}</p><h1>{entry.name}</h1>
-          <div className={styles.itemHeaderMeta}><span>{w(documentation.basic.itemType)}</span>{documentation.tier && <span>{w(documentation.tier)} {w("tier")}</span>}<span>{project.name}</span></div>
+          <div className={styles.itemHeaderMeta}>{documentation.basic.equipSlot&&<span>{w(documentation.basic.equipSlot)}</span>}{documentation.tier && <span>{w(documentation.tier)} {w("tier")}</span>}</div>
         </div>
         <div className={styles.itemDetailCopy}>
           <p>{compactItemDescription(entry, documentation)}</p>
-          {documentation.basic.identifier && <div className={styles.itemIdentifier}><span>{w("Identifier")}</span><code>{documentation.basic.identifier}</code><CopyIdentifierButton identifier={documentation.basic.identifier} /></div>}
         </div>
       </header>
-      <EntrySectionNavigation sections={sections} />
+      <EntrySectionNavigation sections={sections} mergeSpecifications={simpleEquipment}/>
       <ItemDocumentation
         entry={entry}
         project={project}
@@ -3617,23 +3629,29 @@ function MachineRecipes({machine, recipes, dropsOnly = false}) {
 
 function MachineDocumentationTabs({machine, controller, blockDetails, specifications}) {
   const {t} = useSiteI18n();
+  const w = useWikiText();
   const project = useWikiProject();
   const {section: activeTab} = useContext(WikiDetailContext);
   const recipes = machineRecipeSets(project, machine, controller);
+  const raw = wikiProjects[project.id]?.machines.find(entry=>entry.id===machine.id) ?? machine;
+  const overview = <MachinePlayerGuide guide={machinePlayerGuide(raw)} w={w}
+    visual={controller?<BlockPreview entry={controller} size="80px"/>:null}
+    technical={<>
+      {machine.description&&<p>{machine.description}</p>}
+      {controller?.identifier&&<div className={styles.itemIdentifier}><code>{controller.identifier}</code><CopyIdentifierButton identifier={controller.identifier}/></div>}
+      <MachineReferencePanel index={1} title={t('blockDetails')} copy={t('blockDetailsCopy')} items={blockDetails.items} tags={blockDetails.tags}/>
+      <MachineReferencePanel index={2} title={t('machineSpecifications')} copy={t('machineSpecificationsCopy')} items={specifications}/>
+    </>}/>;
   const tabs = [
     {
       id: 'details',
       label: t('blockDetails'),
-      content: <div className={styles.machineReferenceGrid}>
-        <MachineReferencePanel index={1} title={t('blockDetails')} copy={t('blockDetailsCopy')} items={blockDetails.items} tags={blockDetails.tags} />
-      </div>,
+      content: overview,
     },
     {
       id: 'specs',
       label: t('machineSpecifications'),
-      content: <div className={styles.machineReferenceGrid}>
-        <MachineReferencePanel index={2} title={t('machineSpecifications')} copy={t('machineSpecificationsCopy')} items={specifications} />
-      </div>,
+      content: overview,
     },
     {
       id: 'recipes',
@@ -3643,14 +3661,7 @@ function MachineDocumentationTabs({machine, controller, blockDetails, specificat
     {id: 'drops', label: t('detailDrops'), content: <MachineRecipes machine={machine} recipes={recipes} dropsOnly />},
   ];
   return (
-    <section className={styles.machineReference} aria-labelledby="machine-reference">
-      <header>
-        <div>
-          <p className={styles.eyebrow}>{t('technicalReference')}</p>
-          <h2 id="machine-reference">{t('builtToUnderstand')}</h2>
-        </div>
-        <p>{t('machineSectionPrompt')}</p>
-      </header>
+    <section className={styles.machineReference}>
       <div className={styles.machineTabPanel}>{tabs.find((tab) => tab.id === activeTab)?.content ?? <EmptyDetailSection />}</div>
       {(activeTab === 'details' || activeTab === 'specs') && machine.transport && <DocumentationSection section={machine.transport} />}
     </section>
@@ -3659,7 +3670,11 @@ function MachineDocumentationTabs({machine, controller, blockDetails, specificat
 
 function MachineDetail({entry, controller, sequence}) {
   const w = useWikiText();
+  const project = useWikiProject();
   const machine = documentedMachine(entry);
+  const raw = wikiProjects[project.id]?.machines.find(value=>value.id===entry.id) ?? entry;
+  const hasBehaviorPanel = raw.specifications?.some(([label])=>/^special behavior$/i.test(label));
+  const heroDescription = hasBehaviorPanel ? machine.description?.split(/(?<=[.!?])\s+/)[0] : machine.description;
   const blockDetails = machineBlockDetails(machine, controller);
   const specifications = machineSpecificationFacts(machine);
   return (
@@ -3671,10 +3686,10 @@ function MachineDetail({entry, controller, sequence}) {
         <div className={styles.machineDetailHeading}>
           <p className={styles.eyebrow}>{w("Machine")} {String(sequence).padStart(2, '0')} / {w(machine.category)}</p>
           <h1>{machine.name}</h1>
-          <p>{machine.description}</p>
+          <p>{heroDescription}</p>
           <div className={styles.machineHeroMeta}>
-            <span><small>{w("Tier")}</small>{w(machine.tier)}</span>
-            <span><small>{w("Primary resource")}</small>{w(machine.primaryResource)}</span>
+            {meaningfulValue(machine.tier)&&machine.tier!=='Standard'&&<span><small>{w("Tier")}</small>{w(machine.tier)}</span>}
+            {meaningfulValue(machine.primaryResource)&&<span><small>{w("Primary resource")}</small>{w(machine.primaryResource)}</span>}
           </div>
         </div>
       </article>

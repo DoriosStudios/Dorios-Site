@@ -1,6 +1,18 @@
 // Shared wiki copy. Keys are the original editorial English text so generated
 // profiles can keep their stable schema and receive the same translations.
 const copy = {
+  'Technical details': ['Detalhes técnicos', 'Detalles técnicos'],
+  'Process schematic': ['Esquema de processamento', 'Esquema de procesamiento'],
+  'Process schematic — not a specific recipe': ['Esquema de processamento — consulte as receitas para ingredientes específicos', 'Esquema de procesamiento — consulta las recetas para ingredientes específicos'],
+  'How it works': ['Como funciona', 'Cómo funciona'],
+  'Immunity': ['Imunidade', 'Inmunidad'],
+  'Max health': ['Vida máxima', 'Salud máxima'],
+  'Bonus damage': ['Dano bônus', 'Daño adicional'],
+  'Special behavior': ['Comportamento especial', 'Comportamiento especial'],
+  'Catalyst slots': ['Espaços para catalisadores', 'Espacios para catalizadores'],
+  'Primary material + up to 6 catalysts + recipe fluid': ['Material principal + até 6 catalisadores + líquido da receita', 'Material principal + hasta 6 catalizadores + fluido de la receta'],
+  'Main result + optional byproduct': ['Resultado principal + subproduto opcional', 'Resultado principal + subproducto opcional'],
+  'While active, each two-tick work interval has a 1% chance to destroy the furnace and drop its inventory.': ['Enquanto estiver ativa, cada intervalo de trabalho de dois ticks tem 1% de chance de destruir a fornalha e derrubar seu inventário.', 'Mientras está activo, cada intervalo de trabajo de dos ticks tiene un 1% de probabilidad de destruir el horno y soltar su inventario.'],
   ...require('./wikiEditorial'),
   '02 / Abyssal fishing': ['02 / Pesca abissal', '02 / Pesca abisal'],
   '02 / Dynamic operation': ['02 / Operação dinâmica', '02 / Operación dinámica'],
@@ -329,6 +341,8 @@ function wikiText(locale, value, values = {}) {
     if (match) result = language === 0 ? `${match[1]}% de chance` : `${match[1]}% de probabilidad`;
     else {
       const patterns = [
+        [/^([+-]?[\d,.]+) hearts?$/, (n) => `${n.startsWith('+')?'+':''}${Number(n.replaceAll(',','')).toLocaleString(locale)} ${Number(n)===1 ? (language===0?'coração':'corazón') : (language===0?'corações':'corazones')}`],
+        [/^Up to (\d+)$/, (n) => language===0 ? `Até ${n}` : `Hasta ${n}`],
         [/^Tier (\d+)$/, (n) => language === 0 ? `Nível ${n}` : `Nivel ${n}`],
         [/^(.+) pickaxe$/, (material) => language === 0 ? `Picareta de ${wikiText(locale, material)}` : `Pico de ${wikiText(locale, material)}`],
         [/^(\d+) possible drops$/, (n) => language === 0 ? `${n} ${n === '1' ? 'drop possível' : 'drops possíveis'}` : `${n} ${n === '1' ? 'objeto posible' : 'objetos posibles'}`],
