@@ -108,13 +108,13 @@ function publicCurseForgeUrl(project) {
   return url.href;
 }
 
-async function fetchProject(project, cached) {
+export async function fetchProject(project, cached, request = fetch) {
   const modId = project.curseforgeProjectId ?? cached?.modId;
   const apiKeys = [...new Set([process.env.CURSEFORGE_API_KEY, process.env.CURSEFORGE_API_TOKEN].filter(Boolean))];
   if (apiKeys.length && Number.isSafeInteger(modId)) {
     let status;
     for (const apiKey of apiKeys) {
-      const response = await fetch(`https://api.curseforge.com/v1/mods/${modId}`, {
+      const response = await request(`https://api.curseforge.com/v1/mods/${modId}`, {
         headers: {Accept: 'application/json', 'x-api-key': apiKey}, signal: AbortSignal.timeout(15_000),
       });
       status = response.status;
@@ -132,7 +132,7 @@ async function fetchProject(project, cached) {
     throw new Error(`CurseForge API authentication failed (HTTP ${status})`);
   }
   const pageUrl = publicCurseForgeUrl(project);
-  const response = await fetch(pageUrl, {
+  const response = await request(pageUrl, {
     headers: requestHeaders,
     signal: AbortSignal.timeout(15_000),
   });
@@ -157,7 +157,9 @@ async function main() {
 
   for (const project of projects) {
     try {
-      next[project.id] = await fetchProject(project, previous[project.id]);
+      const record = await fetchProject(project, previous[project.id]);
+      if (Number.isSafeInteger(previous[project.id]?.downloads) && record.downloads < previous[project.id].downloads) throw new Error('counter regression');
+      next[project.id] = record;
       refreshed += 1;
       console.log(
         `[curseforge-stats] ${project.id} updated: ${next[project.id].downloads.toLocaleString('en-US')} downloads.`,

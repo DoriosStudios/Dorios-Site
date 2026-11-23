@@ -13,6 +13,7 @@ const config = {
 
   url: 'https://doriosstudios.com',
   baseUrl: '/',
+  customFields: {downloadCounterUrl: process.env.DOWNLOAD_COUNTER_URL ?? ''},
 
   headTags: [
     {

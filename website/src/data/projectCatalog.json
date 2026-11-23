@@ -572,8 +572,9 @@
       "requires": [],
       "routes": {
         "project": "/projects/atelier",
-        "wiki": null
+        "wiki": "/wiki/atelier"
       },
+      "statisticsSources": [{"id":"custom-install", "provider":"internal-downloads", "enabled":true, "event":"custom-install-started", "countingKey":"atelier:custom-install-started"}],
       "links": {
         "repository": "https://github.com/DoriosStudios/Dorios-Atelier",
         "releases": "https://github.com/DoriosStudios/Dorios-Atelier/releases",

@@ -285,6 +285,7 @@ def _project_from_bridge(
         "minecraftVersion": min_engine or target_version,
         "requires": override.get("requires", []),
         "routes": {"project": project_route, "wiki": wiki_path},
+        **({"statisticsSources": override["statisticsSources"]} if "statisticsSources" in override else {}),
         "links": {key: value for key, value in links.items() if value},
         "media": {
             "cover": cover,

@@ -3,6 +3,7 @@ const {test} = require('node:test');
 const {registerRoutes} = require('./route-data');
 const plugin = require('./index');
 const {detailSectionPath, legacyDetailSection, sectionsForEntry} = require('../../src/wiki/detailSections');
+const leafRoutes = routes => routes.flatMap(route => route.routes ? leafRoutes(route.routes) : [route]);
 
 function recorder() {
   const data = new Map();
@@ -27,9 +28,10 @@ test('internal IDs are stable, shared across locales, and independent of the pub
   const first = recorder();
   await registerRoutes(first.actions, paths.map((path) => ({path, component: 'entry.js', props})));
   assert.equal(first.data.size, 1);
-  assert.deepEqual(first.routes.map(({path}) => path), paths);
-  assert.equal(first.routes[0].modules.routeData, first.routes[1].modules.routeData);
-  assert.ok(first.routes.every((route) => !('props' in route)));
+  const leaves = leafRoutes(first.routes);
+  assert.deepEqual(leaves.map(({path}) => path), paths);
+  assert.equal(leaves[0].modules.routeData, leaves[1].modules.routeData);
+  assert.ok(leaves.every((route) => !('props' in route)));
   const second = recorder();
   await registerRoutes(second.actions, [{path: '/different-public-path', props}]);
   assert.deepEqual([...first.data.keys()], [...second.data.keys()]);
@@ -52,8 +54,10 @@ test('sectors have distinct static paths and migrate old hashes explicitly', () 
 test('the actual project catalogs generate direct sector pages using short internal modules', async () => {
   const recorded = recorder();
   await plugin({siteConfig: {baseUrl: '/pt-BR/'}}).contentLoaded({actions: recorded.actions});
-  const byPath = new Map(recorded.routes.map((route) => [route.path.replace(/\/$/, ''), route]));
-  assert.equal(byPath.size, recorded.routes.length, 'public routes must be unique');
+  const leaves = leafRoutes(recorded.routes);
+  const byPath = new Map(leaves.map((route) => [route.path.replace(/\/$/, ''), route]));
+  assert.equal(byPath.size, leaves.length, 'public routes must be unique');
+  for (const pathname of ['/wiki/atelier','/wiki/atelier/materials/andesite','/wiki/atelier/blocks/dorios_atelier/chiseled_andesite']) assert.ok(byPath.has('/pt-BR'+pathname),pathname);
   for (const section of ['specs', 'recipes', 'drops']) {
     const route = byPath.get(`/pt-BR/wiki/utilitycraft/machines/autosieve/${section}`);
     assert.ok(route, `missing Autosieve ${section} page`);
@@ -74,5 +78,5 @@ test('the actual project catalogs generate direct sector pages using short inter
     '/wiki/heavy-machinery/items/stabilized_nuclear_matter/recipes',
   ]) assert.ok(byPath.has(`/pt-BR${route}`), `missing current project route: ${route}`);
   assert.ok(recorded.routes.every((route) => !route.path.includes('#')));
-  console.log(`${recorded.routes.length} public routes; ${recorded.data.size} short parameter modules`);
+  console.log(`${leaves.length} public routes; ${recorded.data.size} short parameter modules`);
 });

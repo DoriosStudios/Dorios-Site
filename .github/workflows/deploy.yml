@@ -70,6 +70,7 @@ jobs:
           TERSER_PARALLEL: 2
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ATELIER_PROJECT_PATH: ${{ github.workspace }}/atelier-source
+          DOWNLOAD_COUNTER_URL: ${{ vars.DOWNLOAD_COUNTER_URL }}
 
       - name: Verify deploy artifact
         shell: bash

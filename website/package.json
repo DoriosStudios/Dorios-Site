@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "sync:wiki": "python scripts/sync-project-wikis.py",
+    "generate:bedrock-renders": "node scripts/generate-bedrock-renders.mjs",
+    "test:bedrock-renders": "node --test scripts/bedrock-renderer.test.mjs",
+    "test:site-features": "node --test scripts/project-statistics.test.mjs scripts/atelier-wiki.test.mjs ../services/download-counter/worker.test.mjs",
     "docusaurus": "docusaurus",
     "refresh:github-stats": "node scripts/refresh-github-release-stats.mjs",
     "refresh:curseforge-stats": "node scripts/refresh-curseforge-stats.mjs",

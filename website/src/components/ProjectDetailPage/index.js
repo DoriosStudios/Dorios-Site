@@ -5,6 +5,7 @@ import Layout from '@theme/Layout';
 import {IconArrowRight, IconBrandGithub, IconExternalLink} from '@tabler/icons-react';
 import DoriosMarketingShell from '../DoriosMarketingShell';
 import SocialMetadata from '../SocialMetadata';
+import DownloadStatistics from '../DownloadStatistics';
 import AtelierBuilder, {AtelierBuilderLink} from '../AtelierBuilder';
 import {projectCardPalette} from '../../data/cardPalettes';
 import {formatDownloadCount, projectCatalog, relatedProjects} from '../../data/projects';
@@ -30,11 +31,11 @@ const primaryMetricKeys = ['downloads', 'items', 'blocks', 'machines', 'recipes'
 
 function availableMetrics(project, t, formatNumber) {
   return Object.entries(project.metrics ?? {})
-    .filter(([, value]) => value !== null && value !== undefined)
+    .filter(([key, value]) => key === 'downloads' || (value !== null && value !== undefined))
     .map(([key, value]) => ({
       key,
       label: metricLabels[key] ? t(metricLabels[key]) : key,
-      value: key === 'downloads' ? formatDownloadCount(value) : formatNumber(value),
+      value: key === 'downloads' ? project.downloadStats?.display ?? '—' : formatNumber(value),
     }));
 }
 
@@ -185,12 +186,7 @@ function PrimaryMetrics({project}) {
     <dl className={styles.heroStats} aria-label={t('primaryProjectMetrics')} style={projectCardPalette(project)}>
       {metrics.map((metric) => <div key={metric.key}>
         <dt>{metric.label}</dt>
-        <dd>{metric.value}</dd>
-        {metric.key === 'downloads' && <small className={styles.downloadSources}>
-          {project.downloadStats.hasCurseForge ? `CurseForge ${formatNumber(project.downloadStats.curseForge)}` : 'CurseForge 0'}
-          <span>+</span>
-          {project.downloadStats.hasGitHub ? `GitHub ${formatNumber(project.downloadStats.github)}` : 'GitHub 0'}
-        </small>}
+        <dd>{metric.key === 'downloads' ? <DownloadStatistics statistics={project.downloadStats}>{metric.value}</DownloadStatistics> : metric.value}</dd>
       </div>)}
     </dl>
   );

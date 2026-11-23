@@ -1,0 +1,6 @@
+{
+  "github-releases": {"name": "GitHub Releases", "icon": "github", "adapter": "github-releases.mjs", "link": "repository", "metric": "downloads"},
+  "curseforge": {"name": "CurseForge", "icon": "curseforge", "adapter": "curseforge.mjs", "link": "curseforge", "metric": "downloads"},
+  "mcpedl": {"name": "MCPEDL", "icon": "mcpedl", "link": "mcpedl", "metric": "downloads", "countable": false},
+  "internal-downloads": {"name": "Custom Install", "icon": "package", "adapter": "internal-downloads.mjs", "metric": "download-starts"}
+}

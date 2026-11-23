@@ -48,7 +48,7 @@ async function cachedStats() {
   }
 }
 
-async function fetchReleaseStats({id, repository}) {
+export async function fetchReleaseStats({id, repository}, request = fetch) {
   const releases = [];
   const headers = {
     Accept: 'application/vnd.github+json',
@@ -59,15 +59,18 @@ async function fetchReleaseStats({id, repository}) {
 
   for (let page = 1; ; page += 1) {
     const endpoint = `https://api.github.com/repos/${repository}/releases?per_page=100&page=${page}`;
-    const response = await fetch(endpoint, {headers, signal: AbortSignal.timeout(15_000)});
+    const response = await request(endpoint, {headers, signal: AbortSignal.timeout(15_000)});
     if (!response.ok) throw new Error(`GitHub API returned ${response.status} for ${repository}`);
     const batch = await response.json();
+    if (!Array.isArray(batch)) throw new Error('Invalid GitHub release list');
     releases.push(...batch);
     if (batch.length < 100) break;
   }
 
   const assets = releases.flatMap((release) => release.assets ?? []);
-  const downloads = assets.reduce((total, asset) => total + (Number(asset.download_count) || 0), 0);
+  if (assets.some(asset => !Number.isSafeInteger(asset.download_count) || asset.download_count < 0)) throw new Error('Invalid GitHub asset counter');
+  const downloads = assets.reduce((total, asset) => total + asset.download_count, 0);
+  if (!Number.isSafeInteger(downloads)) throw new Error('GitHub counter overflow');
   const latestRelease = releases.find((release) => !release.draft) ?? null;
   return {
     id,
@@ -86,13 +89,16 @@ async function fetchReleaseStats({id, repository}) {
   };
 }
 
+async function main() {
 const previous = await cachedStats();
 const next = {...previous};
 let refreshed = 0;
 
 for (const project of projects) {
   try {
-    next[project.id] = await fetchReleaseStats(project);
+    const record = await fetchReleaseStats(project);
+    if (Number.isSafeInteger(previous[project.id]?.downloads) && record.downloads < previous[project.id].downloads) throw new Error('counter regression');
+    next[project.id] = record;
     refreshed += 1;
   } catch (error) {
     if (previous[project.id]) {
@@ -121,3 +127,5 @@ await fs.writeFile(outputPath, `${JSON.stringify(next, null, 2)}\n`, 'utf8');
 console.log(`[github-stats] Refreshed ${refreshed}/${projects.length} projects.`);
 Object.values(next).filter((stats) => !selectedProject || stats.id === selectedProject)
   .forEach((stats) => console.log(`[github-stats] ${stats.id}: ${stats.display} (${stats.downloads} asset downloads).`));
+}
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await main();

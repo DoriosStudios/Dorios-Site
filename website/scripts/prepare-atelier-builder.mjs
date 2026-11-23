@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {generateAtelierPreviews} from './atelier-previews.mjs';
+import {generateAtelierWiki} from './generate-atelier-wiki.mjs';
 
 // CI supplies the checkout. Local builds can use the sibling Atelier project.
 const website = path.resolve(import.meta.dirname, '..');
@@ -17,3 +18,4 @@ const result = spawnSync(process.execPath, [script, '--out', output], {cwd: sour
 if (result.error) throw result.error;
 if (result.status !== 0) process.exit(result.status ?? 1);
 await generateAtelierPreviews({source, output});
+await generateAtelierWiki({source, website});

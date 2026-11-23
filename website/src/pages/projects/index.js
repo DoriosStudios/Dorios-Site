@@ -8,6 +8,7 @@ import {listedProjects} from '../../data/projects';
 import {useLiveProjects} from '../../hooks/useProjectStatistics';
 import {useSiteI18n} from '../../i18n/site';
 import {localizeProjects} from '../../i18n/projects';
+import {statisticsCopy} from '../../components/DownloadStatistics/copy';
 import styles from './projects.module.css';
 
 const catalogPreviewSize = 8;
@@ -33,12 +34,12 @@ function Tags({project}) {
 }
 
 function DownloadBadge({project}) {
-  const {t, formatNumber} = useSiteI18n();
+  const {t, formatNumber, locale} = useSiteI18n();
   const {downloadStats} = project;
   return (
     <span
       className={styles.downloadBadge}
-      title={t('combinedDownloads', {count: formatNumber(downloadStats.total)})}>
+      title={downloadStats.available ? t('combinedDownloads', {count: formatNumber(downloadStats.total)}) : statisticsCopy(locale).unavailable}>
       <IconDownload aria-hidden="true" size={14} stroke={2} />
       <strong>{downloadStats.display}</strong>
       <span>{t('downloads')}</span>

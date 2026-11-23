@@ -16,6 +16,16 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
       const projectRoot = path.join(__dirname, '..', '..', 'src', 'wiki', 'projects');
       const genericProjectIds = require(path.join(projectRoot, 'generatedProjects.json'));
       const projectCatalog = require(path.join(__dirname, '..', '..', 'src', 'data', 'projectCatalog.json'));
+      const atelier = require('../../src/data/atelierWiki.json');
+      const atelierComponent = path.join(__dirname, '../../src/components/AtelierWiki/index.js');
+      addLocalizedRoute({path:'/wiki/atelier',component:atelierComponent,exact:true,props:{}});
+      atelier.materials.forEach(material => addLocalizedRoute({path:`/wiki/atelier/materials/${material.id}`,
+        component:atelierComponent,exact:true,props:{materialId:material.id}}));
+      atelier.records.forEach(record => {
+        const blockId = atelier.ids[record[0]];
+        addLocalizedRoute({path:`/wiki/atelier/blocks/${blockId.replace(':','/')}`,
+          component:atelierComponent,exact:true,props:{blockId}});
+      });
       const projectComponent = path.join(__dirname, '..', '..', 'src', 'components', 'ProjectDetailPage', 'route.js');
       const staffComponent = path.join(__dirname, '..', '..', 'src', 'components', 'StaffProfilePage', 'route.js');
       const staffProfilesPath = path.join(__dirname, '..', '..', 'src', 'data', 'staffProfiles.js');

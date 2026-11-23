@@ -1,7 +1,8 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import {spawn} from 'node:child_process';
+import catalog from '../src/data/projectCatalog.json' with {type: 'json'};
 import {validProjectStatistics} from '../src/data/projectStatistics.mjs';
+import {collectStatistics} from './statistics/collect.mjs';
 
 const website = path.resolve(import.meta.dirname, '..');
 const argument = name => {
@@ -11,47 +12,27 @@ const argument = name => {
   return path.resolve(process.argv[index + 1]);
 };
 const output = argument('--output') ?? path.join(website, '.cache-loader/project-stats');
-const previousFile = argument('--previous');
-const working = path.join(website, '.cache-loader/project-stats-source');
-const readJson = async file => JSON.parse(await fs.readFile(file, 'utf8'));
+const read = async file => JSON.parse(await fs.readFile(file, 'utf8'));
 let previous;
+const previousFile = argument('--previous');
 if (previousFile) {
-  try {
-    previous = await readJson(previousFile);
-    if (!validProjectStatistics(previous)) throw new Error('Previous published statistics are invalid');
-  } catch (error) { if (error.code !== 'ENOENT') throw error; }
+  try { previous = await read(previousFile); if (!validProjectStatistics(previous)) throw new Error('Invalid previous feed'); }
+  catch (error) { if (error.code !== 'ENOENT') throw error; }
 }
-
-await fs.mkdir(working, {recursive: true});
-const sources = [['githubReleaseStats', 'refresh-github-release-stats.mjs'], ['curseForgeStats', 'refresh-curseforge-stats.mjs']];
-const seeds = {};
-for (const [key] of sources) {
-  const fallback = await readJson(path.join(website, 'src/data', `${key}.json`));
-  seeds[key] = {...fallback, ...previous?.[key]};
-  await fs.writeFile(path.join(working, `${key}.json`), JSON.stringify(seeds[key]));
-}
-
-await Promise.all(sources.map(([key, script]) => new Promise((resolve, reject) => {
-  const child = spawn(process.execPath, [path.join(website, 'scripts', script), '--output', path.join(working, `${key}.json`)],
-    {cwd: website, env: process.env, stdio: 'inherit'});
-  child.once('error', reject);
-  child.once('exit', code => code === 0 ? resolve() : reject(new Error(`${script} exited with code ${code}`)));
-})));
-
-const payload = {schemaVersion: 1, generatedAt: new Date().toISOString()};
-for (const [key] of sources) payload[key] = await readJson(path.join(working, `${key}.json`));
+const fallback = {githubReleaseStats: await read(path.join(website, 'src/data/githubReleaseStats.json')),
+  curseForgeStats: await read(path.join(website, 'src/data/curseForgeStats.json'))};
+const payload = await collectStatistics({projects: catalog.projects, previous, fallback, offline: process.argv.includes('--offline')});
 if (!validProjectStatistics(payload)) throw new Error('Collected statistics are invalid');
 await fs.mkdir(output, {recursive: true});
-const bytes = JSON.stringify(payload);
-await fs.writeFile(path.join(output, 'project-stats.json'), bytes + '\n');
-console.log(`[project-stats] Published payload prepared: ${Buffer.byteLength(bytes)} bytes; no website build required.`);
-const summary = ['## Project download statistics', '', '| Provider | Refreshed | Kept cached |', '| --- | ---: | ---: |'];
-for (const [key, label] of [['githubReleaseStats', 'GitHub'], ['curseForgeStats', 'CurseForge']]) {
-  const records = Object.entries(payload[key]);
-  const refreshed = records.filter(([id, record]) => record.available !== false && record.updatedAt !== seeds[key][id]?.updatedAt).length;
-  const cached = records.length - refreshed;
-  summary.push(`| ${label} | ${refreshed} | ${cached} |`);
-  if (cached && process.env.GITHUB_ACTIONS === 'true') console.warn(`::warning title=${label} statistics::${cached} projects kept cached counters; see provider logs for details.`);
+await fs.writeFile(path.join(output, 'project-stats-v2.json'), JSON.stringify(payload) + '\n');
+// Keep the original schema/URL readable by websites deployed before schema 2.
+await fs.writeFile(path.join(output, 'project-stats.json'), JSON.stringify({schemaVersion:1,
+  generatedAt:payload.generatedAt,githubReleaseStats:payload.githubReleaseStats,curseForgeStats:payload.curseForgeStats}) + '\n');
+const summary = ['## Project download statistics', '', '| Project | Refreshed | Cached | Unavailable / excluded |', '| --- | ---: | ---: | ---: |'];
+for (const [id, {sources}] of Object.entries(payload.projects)) {
+  const counts = ['available', 'stale'].map(status => sources.filter(row => row.status === status).length);
+  summary.push(`| ${id} | ${counts[0]} | ${counts[1]} | ${sources.length - counts[0] - counts[1]} |`);
+  console.log(`[project-stats] ${id}: ${sources.map(row => `${row.id}=${row.value ?? 'unavailable'} (${row.status})`).join('; ')}`);
 }
-summary.push('', `Published ${Buffer.byteLength(bytes)} bytes to the statistics feed. No Docusaurus build was run.`);
+summary.push('', 'Feed prepared without a Docusaurus build.');
 if (process.env.GITHUB_STEP_SUMMARY) await fs.appendFile(process.env.GITHUB_STEP_SUMMARY, summary.join('\n') + '\n');

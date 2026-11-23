@@ -5,8 +5,7 @@ import {withProjectStatistics} from './projectStatistics.mjs';
 export {formatDownloadCount} from './projectStatistics.mjs';
 
 export const projectCatalog = catalog.projects.map(project => withProjectStatistics(
-  {...project, metrics: {downloads: 0, ...project.metrics},
-    downloadStats: {curseForge: 0, github: 0, total: 0, display: '0', hasCurseForge: false, hasGitHub: false, updatedAt: null}},
+  project,
   {githubReleaseStats, curseForgeStats},
 ));
 export const listedProjects = projectCatalog.filter((project) => project.visibility !== 'unlisted');

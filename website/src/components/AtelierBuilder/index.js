@@ -1,5 +1,7 @@
 import React, {useEffect, useMemo, useRef, useState} from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import {downloadAttempt, recordDownloadStarted} from '../../data/downloadEvents.mjs';
 import {IconChevronDown, IconDeviceFloppy, IconDownload, IconPackage, IconSettings, IconUpload} from '@tabler/icons-react';
 import {useSiteI18n} from '../../i18n/site';
 import {builderCopy} from './copy';
@@ -21,6 +23,9 @@ export function AtelierBuilderLink({className}) {
 }
 
 export default function AtelierBuilder() {
+  const {siteConfig} = useDocusaurusContext();
+  const countDownload = eventId => { void recordDownloadStarted({endpoint: siteConfig.customFields?.downloadCounterUrl,
+    project: 'atelier', event: 'custom-install-started', eventId}); };
   const {locale, formatNumber} = useSiteI18n();
   const t = builderCopy(locale);
   const base = useBaseUrl('/atelier-builder/');
@@ -85,12 +90,16 @@ export default function AtelierBuilder() {
     try {
       const job = new Worker(`${base}builder-worker.js?v=${catalog.fingerprint}`);
       worker.current = job;
+      const eventId = downloadAttempt();
+      let completed = false;
       const fail = code => { setError(code === 'VERSION_CHANGED' ? 'changed' : 'error'); setStage(null); job.terminate(); };
       job.onerror = () => fail('error');
       job.onmessage = ({data}) => {
+        if (worker.current !== job || completed) return;
         if (data.type === 'progress') setStage(data.stage);
         else if (data.type === 'error') fail(data.code);
         else if (data.type === 'complete') {
+          completed = true;
           const url = URL.createObjectURL(new Blob([data.bytes], {type: 'application/octet-stream'}));
           const filename = `Dorios-Atelier-${catalog.source.version}-Custom.mcaddon`;
           setDownload({url, filename, summary: data.summary});
@@ -98,6 +107,7 @@ export default function AtelierBuilder() {
           const link = document.createElement('a');
           link.href = url; link.download = filename;
           document.body.appendChild(link); link.click(); link.remove();
+          countDownload(eventId);
           job.terminate();
         }
       };
@@ -161,7 +171,7 @@ export default function AtelierBuilder() {
             {notice && <p>{t(notice)}</p>}
             {download && <div className={styles.success}>
               <p>{t('complete', Object.fromEntries(Object.entries(download.summary).map(([key, value]) => [key, typeof value === 'number' ? formatNumber(value) : value])))}</p>
-              <a href={download.url} download={download.filename}>{t('download')}</a>
+              <a href={download.url} download={download.filename} onClick={() => countDownload(downloadAttempt())}>{t('download')}</a>
               {download.summary.dependencies.length > 0 && <details><summary>{t('extras', {count: formatNumber(download.summary.dependencies.length)})}</summary>
                 <ul aria-label={t('details')}>{download.summary.dependencies.map(id => <li key={id}>{id.replace('dorios_atelier:', '').replaceAll('_', ' ')}</li>)}</ul>
               </details>}

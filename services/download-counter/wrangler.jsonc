@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dorios-download-counter",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-11-22",
+  "vars": {
+    "ALLOWED_ORIGINS": "https://doriosstudios.com,https://www.doriosstudios.com",
+    "ALLOWED_EVENTS": {"atelier": ["custom-install-started"]}
+  },
+  "d1_databases": [{"binding": "DB", "database_name": "dorios-downloads", "database_id": "REPLACE_WITH_CREATED_D1_ID"}],
+  "ratelimits": [{"name": "EVENT_LIMITER", "namespace_id": "1001", "simple": {"limit": 10, "period": 60}}],
+  "observability": {"enabled": false}
+}

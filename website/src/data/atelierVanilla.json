@@ -1,0 +1,3348 @@
+{
+  "schemaVersion": 1,
+  "source": "Local Mojang Bedrock samples; vanilla dependencies for Atelier",
+  "bases": {
+    "acacia_wood": {
+      "id": "minecraft:stripped_acacia_wood",
+      "labels": {
+        "pt-BR": "Acácia"
+      },
+      "texture": "/img/wiki/atelier/textures/stripped_acacia_log.png"
+    },
+    "andesite": {
+      "id": "minecraft:andesite",
+      "labels": {
+        "pt-BR": "Andesito"
+      },
+      "texture": "/img/wiki/atelier/textures/stone_andesite.png"
+    },
+    "bamboo_wood": {
+      "id": "minecraft:stripped_bamboo_block",
+      "labels": {
+        "en": "Block of Stripped Bamboo",
+        "pt-BR": "Bloco de Bambu Descascado",
+        "es-MX": "Bloque de bambú sin corteza"
+      },
+      "texture": "/img/wiki/atelier/textures/stripped_bamboo_block.png"
+    },
+    "basalt": {
+      "id": "minecraft:basalt",
+      "labels": {
+        "en": "Basalt",
+        "pt-BR": "Basalto",
+        "es-MX": "Basalto"
+      },
+      "texture": "/img/wiki/atelier/textures/basalt_side.png"
+    },
+    "birch_wood": {
+      "id": "minecraft:stripped_birch_wood",
+      "labels": {
+        "pt-BR": "Bétula"
+      },
+      "texture": "/img/wiki/atelier/textures/stripped_birch_log.png"
+    },
+    "blackstone": {
+      "id": "minecraft:blackstone",
+      "labels": {
+        "en": "Blackstone",
+        "pt-BR": "Pedra-Negra",
+        "es-MX": "Piedra negra"
+      },
+      "texture": "/img/wiki/atelier/textures/blackstone.png"
+    },
+    "calcite": {
+      "id": "minecraft:calcite",
+      "labels": {
+        "en": "Calcite",
+        "pt-BR": "Calcita",
+        "es-MX": "Calcita"
+      },
+      "texture": "/img/wiki/atelier/textures/calcite.png"
+    },
+    "cherry_wood": {
+      "id": "minecraft:stripped_cherry_wood",
+      "labels": {
+        "en": "Stripped Cherry Wood",
+        "pt-BR": "Madeira de Cerejeira Descascada",
+        "es-MX": "Leño de cerezo sin corteza"
+      },
+      "texture": "/img/wiki/atelier/textures/stripped_cherry_log_side.png"
+    },
+    "concrete": {
+      "id": "minecraft:white_concrete",
+      "labels": {
+        "pt-BR": "Concreto"
+      },
+      "texture": "/img/wiki/atelier/textures/concrete_white.png"
+    },
+    "crimson_wood": {
+      "id": "minecraft:stripped_crimson_hyphae",
+      "labels": {
+        "en": "Stripped Crimson Hyphae",
+        "pt-BR": "Hifas Carmesim Descascadas",
+        "es-MX": "Hifas carmesí sin corteza"
+      },
+      "texture": "/img/wiki/atelier/textures/stripped_crimson_stem_side.png"
+    },
+    "dark_oak_wood": {
+      "id": "minecraft:stripped_dark_oak_wood",
+      "labels": {
+        "pt-BR": "Carvalho Escuro"
+      },
+      "texture": "/img/wiki/atelier/textures/stripped_dark_oak_log.png"
+    },
+    "deepslate": {
+      "id": "minecraft:deepslate",
+      "labels": {
+        "en": "Deepslate",
+        "pt-BR": "Ardosiabissal",
+        "es-MX": "Pizarra profunda"
+      },
+      "texture": "/img/wiki/atelier/textures/deepslate.png"
+    },
+    "diorite": {
+      "id": "minecraft:diorite",
+      "labels": {
+        "pt-BR": "Diorito"
+      },
+      "texture": "/img/wiki/atelier/textures/stone_diorite.png"
+    },
+    "dripstone": {
+      "id": "minecraft:dripstone_block",
+      "labels": {
+        "en": "Dripstone Block",
+        "pt-BR": "Bloco de Espeleotema",
+        "es-MX": "Bloque de espeleotema"
+      },
+      "texture": "/img/wiki/atelier/textures/dripstone_block.png"
+    },
+    "end_stone": {
+      "id": "minecraft:end_stone",
+      "labels": {
+        "en": "End Stone",
+        "pt-BR": "Pedra do End",
+        "es-MX": "Piedra del End"
+      },
+      "texture": "/img/wiki/atelier/textures/end_stone.png"
+    },
+    "glass": {
+      "id": "minecraft:glass",
+      "labels": {
+        "en": "Glass",
+        "pt-BR": "Vidro",
+        "es-MX": "Cristal"
+      },
+      "texture": "/img/wiki/atelier/textures/glass.png"
+    },
+    "granite": {
+      "id": "minecraft:granite",
+      "labels": {
+        "pt-BR": "Granito"
+      },
+      "texture": "/img/wiki/atelier/textures/stone_granite.png"
+    },
+    "grass": {
+      "id": "minecraft:grass_block",
+      "labels": {
+        "pt-BR": "Grama"
+      },
+      "texture": "/img/wiki/atelier/textures/grass_side_carried.png"
+    },
+    "jungle_wood": {
+      "id": "minecraft:stripped_jungle_wood",
+      "labels": {
+        "pt-BR": "Selva"
+      },
+      "texture": "/img/wiki/atelier/textures/stripped_jungle_log.png"
+    },
+    "mangrove_wood": {
+      "id": "minecraft:stripped_mangrove_wood",
+      "labels": {
+        "en": "Stripped Mangrove Wood",
+        "pt-BR": "Madeira de Mangue Descascada",
+        "es-MX": "Madera de manglar pelada"
+      },
+      "texture": "/img/wiki/atelier/textures/stripped_mangrove_log_side.png"
+    },
+    "mud": {
+      "id": "minecraft:mud",
+      "labels": {
+        "en": "Mud",
+        "pt-BR": "Lama",
+        "es-MX": "Lodo"
+      },
+      "texture": "/img/wiki/atelier/textures/mud.png"
+    },
+    "nether": {
+      "id": "minecraft:nether_brick",
+      "labels": {
+        "en": "Nether Bricks",
+        "pt-BR": "Tijolos do Nether",
+        "es-MX": "Ladrillos del Nether"
+      },
+      "texture": "/img/wiki/atelier/textures/nether_brick.png"
+    },
+    "netherrack": {
+      "id": "minecraft:netherrack",
+      "labels": {
+        "en": "Netherrack",
+        "pt-BR": "Netherrack",
+        "es-MX": "Infiedra"
+      },
+      "texture": "/img/wiki/atelier/textures/netherrack.png"
+    },
+    "oak_wood": {
+      "id": "minecraft:stripped_oak_wood",
+      "labels": {
+        "pt-BR": "Carvalho"
+      },
+      "texture": "/img/wiki/atelier/textures/stripped_oak_log.png"
+    },
+    "obsidian": {
+      "id": "minecraft:obsidian",
+      "labels": {
+        "en": "Obsidian",
+        "pt-BR": "Obsidiana",
+        "es-MX": "Obsidiana"
+      },
+      "texture": "/img/wiki/atelier/textures/obsidian.png"
+    },
+    "pale_oak_wood": {
+      "id": "minecraft:stripped_pale_oak_wood",
+      "labels": {
+        "en": "Stripped Pale Oak Wood",
+        "pt-BR": "Madeira de Carvalho Pálido Descascada",
+        "es-MX": "Leño de roble pálido sin corteza"
+      },
+      "texture": "/img/wiki/atelier/textures/stripped_pale_oak_log_side.png"
+    },
+    "prismarine": {
+      "id": "minecraft:prismarine",
+      "labels": {
+        "pt-BR": "Prismarinho"
+      },
+      "texture": "/img/wiki/atelier/textures/prismarine_rough.png"
+    },
+    "purpur": {
+      "id": "minecraft:purpur_block",
+      "labels": {
+        "pt-BR": "Púrpura"
+      },
+      "texture": "/img/wiki/atelier/textures/purpur_block.png"
+    },
+    "quartz": {
+      "id": "minecraft:quartz_block",
+      "labels": {
+        "en": "Block of Quartz",
+        "pt-BR": "Bloco de Quartzo",
+        "es-MX": "Bloque de cuarzo"
+      },
+      "texture": "/img/wiki/atelier/textures/quartz_block_side.png"
+    },
+    "spruce_wood": {
+      "id": "minecraft:stripped_spruce_wood",
+      "labels": {
+        "pt-BR": "Pinheiro"
+      },
+      "texture": "/img/wiki/atelier/textures/stripped_spruce_log.png"
+    },
+    "stone": {
+      "id": "minecraft:stone",
+      "labels": {
+        "pt-BR": "Pedra"
+      },
+      "texture": "/img/wiki/atelier/textures/stone.png"
+    },
+    "tuff": {
+      "id": "minecraft:tuff",
+      "labels": {
+        "en": "Tuff",
+        "pt-BR": "Tufo",
+        "es-MX": "Toba volcánica"
+      },
+      "texture": "/img/wiki/atelier/textures/tuff.png"
+    },
+    "warped_wood": {
+      "id": "minecraft:stripped_warped_hyphae",
+      "labels": {
+        "en": "Stripped Warped Hyphae",
+        "pt-BR": "Hifas Distorcidas Descascadas",
+        "es-MX": "Hifas distorsionadas sin corteza"
+      },
+      "texture": "/img/wiki/atelier/textures/stripped_warped_stem_side.png"
+    },
+    "wool": {
+      "id": "minecraft:white_wool",
+      "labels": {
+        "pt-BR": "Lã"
+      },
+      "texture": "/img/wiki/atelier/textures/wool_colored_white.png"
+    }
+  },
+  "names": {
+    "minecraft:chorus_fruit_popped": {
+      "en": "Popped Chorus Fruit",
+      "pt-BR": "Fruta do Coro Estourada",
+      "es-MX": "Fruta coral horneada"
+    },
+    "minecraft:netherbrick": {
+      "en": "Nether Brick",
+      "pt-BR": "Tijolo do Nether",
+      "es-MX": "Ladrillo del Nether"
+    },
+    "minecraft:quartz": {
+      "en": "Nether Quartz",
+      "pt-BR": "Quartzo do Nether",
+      "es-MX": "Cuarzo del Nether"
+    },
+    "minecraft:prismarine_shard": {
+      "en": "Prismarine Shard",
+      "pt-BR": "Fragmento de Prismarinho",
+      "es-MX": "Fragmento de prismarina"
+    },
+    "minecraft:snowball": {
+      "en": "Snowball",
+      "pt-BR": "Bola de Neve",
+      "es-MX": "Bola de nieve"
+    },
+    "minecraft:string": {
+      "en": "String",
+      "pt-BR": "Linha",
+      "es-MX": "Cuerda"
+    },
+    "minecraft:wheat": {
+      "en": "Crops",
+      "pt-BR": "Plantação",
+      "es-MX": "Cultivos"
+    },
+    "minecraft:mud": {
+      "en": "Mud",
+      "pt-BR": "Lama",
+      "es-MX": "Lodo"
+    },
+    "minecraft:packed_mud": {
+      "en": "Packed Mud",
+      "pt-BR": "Lama Endurecida",
+      "es-MX": "Barro empaquetado"
+    },
+    "minecraft:mud_bricks": {
+      "en": "Mud Bricks",
+      "pt-BR": "Tijolos de Barro",
+      "es-MX": "Ladrillos de barro"
+    },
+    "minecraft:stripped_mangrove_log": {
+      "en": "Stripped Mangrove Log",
+      "pt-BR": "Tora de Mangue Descascada",
+      "es-MX": "Tronco de manglar pelado"
+    },
+    "minecraft:stripped_mangrove_wood": {
+      "en": "Stripped Mangrove Wood",
+      "pt-BR": "Madeira de Mangue Descascada",
+      "es-MX": "Madera de manglar pelada"
+    },
+    "minecraft:chiseled_tuff": {
+      "en": "Chiseled Tuff",
+      "pt-BR": "Tufo Cinzelado",
+      "es-MX": "Toba grabada"
+    },
+    "minecraft:chiseled_tuff_bricks": {
+      "en": "Chiseled Tuff Bricks",
+      "pt-BR": "Tijolos de Tufo Cinzelados",
+      "es-MX": "Ladrillos de toba grabados"
+    },
+    "minecraft:stripped_bamboo_block": {
+      "en": "Block of Stripped Bamboo",
+      "pt-BR": "Bloco de Bambu Descascado",
+      "es-MX": "Bloque de bambú sin corteza"
+    },
+    "minecraft:stripped_cherry_log": {
+      "en": "Stripped Cherry Log",
+      "pt-BR": "Tora de Cerejeira Descascada",
+      "es-MX": "Tronco de cerezo sin corteza"
+    },
+    "minecraft:stripped_cherry_wood": {
+      "en": "Stripped Cherry Wood",
+      "pt-BR": "Madeira de Cerejeira Descascada",
+      "es-MX": "Leño de cerezo sin corteza"
+    },
+    "minecraft:dirt_with_roots": {
+      "en": "Rooted Dirt",
+      "pt-BR": "Terra com Raiz",
+      "es-MX": "Tierra con raíces"
+    },
+    "minecraft:moss_block": {
+      "en": "Moss Block",
+      "pt-BR": "Bloco de Musgo",
+      "es-MX": "Bloque de musgo"
+    },
+    "minecraft:stripped_crimson_stem": {
+      "en": "Stripped Crimson Stem",
+      "pt-BR": "Caule Carmesim Descascado",
+      "es-MX": "Tallo escarlata sin corteza"
+    },
+    "minecraft:stripped_warped_stem": {
+      "en": "Stripped Warped Stem",
+      "pt-BR": "Caule Distorcido Descascado",
+      "es-MX": "Tallo distorsionado sin corteza"
+    },
+    "minecraft:stripped_crimson_hyphae": {
+      "en": "Stripped Crimson Hyphae",
+      "pt-BR": "Hifas Carmesim Descascadas",
+      "es-MX": "Hifas carmesí sin corteza"
+    },
+    "minecraft:stripped_warped_hyphae": {
+      "en": "Stripped Warped Hyphae",
+      "pt-BR": "Hifas Distorcidas Descascadas",
+      "es-MX": "Hifas distorsionadas sin corteza"
+    },
+    "minecraft:basalt": {
+      "en": "Basalt",
+      "pt-BR": "Basalto",
+      "es-MX": "Basalto"
+    },
+    "minecraft:polished_basalt": {
+      "en": "Polished Basalt",
+      "pt-BR": "Basalto Polido",
+      "es-MX": "Basalto pulido"
+    },
+    "minecraft:blackstone": {
+      "en": "Blackstone",
+      "pt-BR": "Pedra-Negra",
+      "es-MX": "Piedra negra"
+    },
+    "minecraft:polished_blackstone_bricks": {
+      "en": "Polished Blackstone Bricks",
+      "pt-BR": "Tijolos de Pedra-Negra Polida",
+      "es-MX": "Ladrillos de piedra negra pulida"
+    },
+    "minecraft:cracked_polished_blackstone_bricks": {
+      "en": "Cracked Polished Blackstone Bricks",
+      "pt-BR": "Tijolos de Pedra-Negra Polida Rachados",
+      "es-MX": "Ladrillos de piedra negra pulida rota"
+    },
+    "minecraft:chiseled_polished_blackstone": {
+      "en": "Chiseled Polished Blackstone",
+      "pt-BR": "Pedra-Negra Polida Cinzelada",
+      "es-MX": "Piedra negra pulida grabada"
+    },
+    "minecraft:gilded_blackstone": {
+      "en": "Gilded Blackstone",
+      "pt-BR": "Pedra-Negra Dourada",
+      "es-MX": "Piedra negra áurea"
+    },
+    "minecraft:polished_blackstone": {
+      "en": "Polished Blackstone",
+      "pt-BR": "Pedra-Negra Polida",
+      "es-MX": "Piedra negra pulida"
+    },
+    "minecraft:polished_blackstone_slab": {
+      "en": "Polished Blackstone Slab",
+      "pt-BR": "Laje de Pedra-Negra Polida",
+      "es-MX": "Losa de piedra negra pulida"
+    },
+    "minecraft:polished_tuff": {
+      "en": "Polished Tuff",
+      "pt-BR": "Tufo Polido",
+      "es-MX": "Toba pulida"
+    },
+    "minecraft:chiseled_nether_bricks": {
+      "en": "Chiseled Nether Bricks",
+      "pt-BR": "Tijolos do Nether Cinzelados",
+      "es-MX": "Ladrillos del Nether grabados"
+    },
+    "minecraft:cracked_nether_bricks": {
+      "en": "Cracked Nether Bricks",
+      "pt-BR": "Tijolos do Nether Rachados",
+      "es-MX": "Ladrillos del Nether rotos"
+    },
+    "minecraft:quartz_bricks": {
+      "en": "Quartz Bricks",
+      "pt-BR": "Tijolos de Quartzo",
+      "es-MX": "Ladrillos de cuarzo"
+    },
+    "minecraft:dirt": {
+      "en": "Dirt",
+      "pt-BR": "Terra",
+      "es-MX": "Tierra"
+    },
+    "minecraft:podzol": {
+      "en": "Podzol",
+      "pt-BR": "Podzol",
+      "es-MX": "Podsol"
+    },
+    "minecraft:farmland": {
+      "en": "Farmland",
+      "pt-BR": "Terra Arada",
+      "es-MX": "Tierra de cultivo"
+    },
+    "minecraft:glass": {
+      "en": "Glass",
+      "pt-BR": "Vidro",
+      "es-MX": "Cristal"
+    },
+    "minecraft:grass_path": {
+      "en": "Dirt Path",
+      "pt-BR": "Caminho de Terra",
+      "es-MX": "Camino de tierra"
+    },
+    "minecraft:netherrack": {
+      "en": "Netherrack",
+      "pt-BR": "Netherrack",
+      "es-MX": "Infiedra"
+    },
+    "minecraft:glowstone": {
+      "en": "Glowstone",
+      "pt-BR": "Pedra Luminosa",
+      "es-MX": "Piedra luminosa"
+    },
+    "minecraft:mycelium": {
+      "en": "Mycelium",
+      "pt-BR": "Micélio",
+      "es-MX": "Micelio"
+    },
+    "minecraft:nether_brick": {
+      "en": "Nether Bricks",
+      "pt-BR": "Tijolos do Nether",
+      "es-MX": "Ladrillos del Nether"
+    },
+    "minecraft:obsidian": {
+      "en": "Obsidian",
+      "pt-BR": "Obsidiana",
+      "es-MX": "Obsidiana"
+    },
+    "minecraft:quartz_block": {
+      "en": "Block of Quartz",
+      "pt-BR": "Bloco de Quartzo",
+      "es-MX": "Bloque de cuarzo"
+    },
+    "minecraft:sand": {
+      "en": "Sand",
+      "pt-BR": "Areia",
+      "es-MX": "Arena"
+    },
+    "minecraft:smooth_stone": {
+      "en": "Smooth Stone",
+      "pt-BR": "Pedra Lisa",
+      "es-MX": "Piedra lisa"
+    },
+    "minecraft:cobblestone": {
+      "en": "Cobblestone",
+      "pt-BR": "Pedregulho",
+      "es-MX": "Adoquín"
+    },
+    "minecraft:mossy_cobblestone": {
+      "en": "Mossy Cobblestone",
+      "pt-BR": "Pedregulho com Musgo",
+      "es-MX": "Piedra labrada musgosa"
+    },
+    "minecraft:tuff_bricks": {
+      "en": "Tuff Bricks",
+      "pt-BR": "Tijolos de Tufo",
+      "es-MX": "Ladrillos de toba"
+    },
+    "minecraft:vine": {
+      "en": "Vines",
+      "pt-BR": "Trepadeiras",
+      "es-MX": "Lianas"
+    },
+    "minecraft:end_stone": {
+      "en": "End Stone",
+      "pt-BR": "Pedra do End",
+      "es-MX": "Piedra del End"
+    },
+    "minecraft:end_bricks": {
+      "en": "End Stone Bricks",
+      "pt-BR": "Tijolos de pedra do End",
+      "es-MX": "Ladrillos de piedra del End"
+    },
+    "minecraft:stripped_pale_oak_log": {
+      "en": "Stripped Pale Oak Log",
+      "pt-BR": "Tora de Carvalho Pálido Descascada",
+      "es-MX": "Tronco de roble pálido sin corteza"
+    },
+    "minecraft:stripped_pale_oak_wood": {
+      "en": "Stripped Pale Oak Wood",
+      "pt-BR": "Madeira de Carvalho Pálido Descascada",
+      "es-MX": "Leño de roble pálido sin corteza"
+    },
+    "minecraft:stripped_spruce_log": {
+      "en": "Stripped Spruce Log",
+      "pt-BR": "Tora de Pinheiro Descascada",
+      "es-MX": "Tronco de abeto descortezado"
+    },
+    "minecraft:stripped_dark_oak_log": {
+      "en": "Stripped Dark Oak Log",
+      "pt-BR": "Tora de Carvalho Escuro Descascada",
+      "es-MX": "Tronco de roble oscuro descortezado"
+    },
+    "minecraft:stripped_birch_log": {
+      "en": "Stripped Birch Log",
+      "pt-BR": "Tronco de Bétula Descascado",
+      "es-MX": "Tronco de abedul descortezado"
+    },
+    "minecraft:stripped_jungle_log": {
+      "en": "Stripped Jungle Log",
+      "pt-BR": "Tora da Selva Descascada",
+      "es-MX": "Tronco de la jungla sin corteza"
+    },
+    "minecraft:stripped_oak_log": {
+      "en": "Stripped Oak Log",
+      "pt-BR": "Tora de Carvalho Descascada",
+      "es-MX": "Tronco de roble descortezado"
+    },
+    "minecraft:stripped_acacia_log": {
+      "en": "Stripped Acacia Log",
+      "pt-BR": "Tronco de Acácia Descascado",
+      "es-MX": "Tronco de acacia descortezado"
+    },
+    "minecraft:deepslate": {
+      "en": "Deepslate",
+      "pt-BR": "Ardosiabissal",
+      "es-MX": "Pizarra profunda"
+    },
+    "minecraft:cobbled_deepslate": {
+      "en": "Cobbled Deepslate",
+      "pt-BR": "Pedregulho de Ardosiabissal",
+      "es-MX": "Pizarra abismal empedrada"
+    },
+    "minecraft:dripstone_block": {
+      "en": "Dripstone Block",
+      "pt-BR": "Bloco de Espeleotema",
+      "es-MX": "Bloque de espeleotema"
+    },
+    "minecraft:pointed_dripstone": {
+      "en": "Pointed Dripstone",
+      "pt-BR": "Espeleotema Pontiagudo",
+      "es-MX": "Espeleotema puntiaguda"
+    },
+    "minecraft:polished_deepslate": {
+      "en": "Polished Deepslate",
+      "pt-BR": "Ardosiabissal Polida",
+      "es-MX": "Pizarra abismal pulida"
+    },
+    "minecraft:deepslate_tiles": {
+      "en": "Deepslate Tiles",
+      "pt-BR": "Ladrilhos de Ardosiabissal",
+      "es-MX": "Mosaicos de pizarra abismal"
+    },
+    "minecraft:deepslate_bricks": {
+      "en": "Deepslate Bricks",
+      "pt-BR": "Tijolos de Ardosiabissal",
+      "es-MX": "Ladrillos de pizarra abismal"
+    },
+    "minecraft:chiseled_deepslate": {
+      "en": "Chiseled Deepslate",
+      "pt-BR": "Ardosiabissal Cinzelada",
+      "es-MX": "Pizarra abismal cincelada"
+    },
+    "minecraft:cracked_deepslate_tiles": {
+      "en": "Cracked Deepslate Tiles",
+      "pt-BR": "Ladrilhos de Ardosiabissal Rachados",
+      "es-MX": "Mosaicos de pizarra abismal agrietadas"
+    },
+    "minecraft:cracked_deepslate_bricks": {
+      "en": "Cracked Deepslate Bricks",
+      "pt-BR": "Tijolos de Ardosiabissal Rachados",
+      "es-MX": "Ladrillos de pizarra abismal agrietados"
+    },
+    "minecraft:tuff": {
+      "en": "Tuff",
+      "pt-BR": "Tufo",
+      "es-MX": "Toba volcánica"
+    },
+    "minecraft:calcite": {
+      "en": "Calcite",
+      "pt-BR": "Calcita",
+      "es-MX": "Calcita"
+    },
+    "minecraft:smooth_basalt": {
+      "en": "Smooth Basalt",
+      "pt-BR": "Basalto Liso",
+      "es-MX": "Basalto liso"
+    }
+  },
+  "recipes": [
+    {
+      "source": "behavior_pack/recipes/acacia_wood_stripped.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:acacia_wood_stripped"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "group": "wood",
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:stripped_acacia_log"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:stripped_acacia_log"
+            }
+          ],
+          "result": {
+            "item": "minecraft:stripped_acacia_wood",
+            "count": 3
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/andesite.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:andesite"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "ingredients": [
+            {
+              "item": "minecraft:diorite"
+            },
+            {
+              "item": "minecraft:cobblestone"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:diorite"
+            }
+          ],
+          "result": {
+            "item": "minecraft:andesite",
+            "count": 2
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/birch_wood_stripped.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:birch_wood_stripped"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "group": "wood",
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:stripped_birch_log"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:stripped_birch_log"
+            }
+          ],
+          "result": {
+            "item": "minecraft:stripped_birch_wood",
+            "count": 3
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/cherry_stripped_wood_from_stripped_log.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:cherry_wood_from_stripped_log"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "group": "wood",
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:stripped_cherry_log"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:stripped_cherry_log"
+            }
+          ],
+          "result": {
+            "item": "minecraft:stripped_cherry_wood",
+            "count": 3
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/chiseled_nether_bricks.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:chiseled_nether_bricks"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "#",
+            "#"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:nether_brick_slab"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:nether_brick_slab"
+            }
+          ],
+          "result": {
+            "item": "minecraft:chiseled_nether_bricks"
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/chiseled_polished_blackstone.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:chiseled_polished_blackstone"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "#",
+            "#"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:polished_blackstone_slab"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:polished_blackstone_slab"
+            }
+          ],
+          "result": {
+            "item": "minecraft:chiseled_polished_blackstone"
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/cracked_deepslate_bricks_furnace.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_furnace": {
+          "description": {
+            "identifier": "minecraft:cracked_deepslate_bricks_furnace"
+          },
+          "input": "minecraft:deepslate_bricks",
+          "output": "minecraft:cracked_deepslate_bricks",
+          "unlock": [
+            {
+              "item": "minecraft:deepslate_bricks"
+            }
+          ],
+          "tags": [
+            "furnace"
+          ],
+          "priority": 310
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/cracked_deepslate_tiles_furnace.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_furnace": {
+          "description": {
+            "identifier": "minecraft:cracked_deepslate_tiles_furnace"
+          },
+          "input": "minecraft:deepslate_tiles",
+          "output": "minecraft:cracked_deepslate_tiles",
+          "unlock": [
+            {
+              "item": "minecraft:deepslate_tiles"
+            }
+          ],
+          "tags": [
+            "furnace"
+          ],
+          "priority": 320
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/crimson_hyphae_stripped.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:stripped_crimson_hyphae"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "group": "wood",
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:stripped_crimson_stem"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:stripped_crimson_stem"
+            }
+          ],
+          "result": {
+            "item": "minecraft:stripped_crimson_hyphae",
+            "count": 3
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/dark_oak_wood_stripped.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:dark_oak_wood_stripped"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "group": "wood",
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:stripped_dark_oak_log"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:stripped_dark_oak_log"
+            }
+          ],
+          "result": {
+            "item": "minecraft:stripped_dark_oak_wood",
+            "count": 3
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/dark_prismarine_from_ink_sac.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:dark_prismarine_from_ink_sac"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "priority": 1,
+          "pattern": [
+            "SSS",
+            "SIS",
+            "SSS"
+          ],
+          "key": {
+            "S": {
+              "item": "minecraft:prismarine_shard"
+            },
+            "I": {
+              "item": "minecraft:ink_sac"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:prismarine_shard"
+            }
+          ],
+          "result": {
+            "item": "minecraft:dark_prismarine"
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/dark_prismarine.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:dark_prismarine"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "SSS",
+            "SIS",
+            "SSS"
+          ],
+          "key": {
+            "S": {
+              "item": "minecraft:prismarine_shard"
+            },
+            "I": {
+              "item": "minecraft:black_dye"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:prismarine_shard"
+            }
+          ],
+          "result": {
+            "item": "minecraft:dark_prismarine"
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/deepslate_bricks_from_cobbled_deepslate_stonecutting.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:deepslate_bricks_from_cobbled_deepslate_stonecutting"
+          },
+          "ingredients": [
+            {
+              "data": 0,
+              "item": "minecraft:cobbled_deepslate"
+            }
+          ],
+          "priority": 0,
+          "result": {
+            "count": 1,
+            "data": 0,
+            "item": "minecraft:deepslate_bricks"
+          },
+          "unlock": [
+            {
+              "data": 0,
+              "item": "minecraft:cobbled_deepslate"
+            }
+          ],
+          "tags": [
+            "stonecutter"
+          ]
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/deepslate_bricks_from_polished_deepslate_stonecutting.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:deepslate_bricks_from_polished_deepslate_stonecutting"
+          },
+          "ingredients": [
+            {
+              "data": 0,
+              "item": "minecraft:polished_deepslate"
+            }
+          ],
+          "priority": 0,
+          "result": {
+            "count": 1,
+            "data": 0,
+            "item": "minecraft:deepslate_bricks"
+          },
+          "unlock": [
+            {
+              "data": 0,
+              "item": "minecraft:polished_deepslate"
+            }
+          ],
+          "tags": [
+            "stonecutter"
+          ]
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/deepslate_bricks.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:deepslate_bricks"
+          },
+          "key": {
+            "S": {
+              "item": "minecraft:polished_deepslate"
+            }
+          },
+          "pattern": [
+            "SS",
+            "SS"
+          ],
+          "priority": 1,
+          "result": {
+            "count": 4,
+            "item": "minecraft:deepslate_bricks"
+          },
+          "unlock": [
+            {
+              "item": "minecraft:polished_deepslate"
+            }
+          ],
+          "tags": [
+            "crafting_table"
+          ]
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/deepslate_furnace.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_furnace": {
+          "description": {
+            "identifier": "minecraft:deepslate_furnace"
+          },
+          "input": "minecraft:cobbled_deepslate",
+          "output": "minecraft:deepslate",
+          "unlock": [
+            {
+              "data": 0,
+              "item": "minecraft:cobbled_deepslate"
+            }
+          ],
+          "tags": [
+            "furnace"
+          ],
+          "priority": 430
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/deepslate_tiles_from_cobbled_deepslate_stonecutting.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:deepslate_tiles_from_cobbled_deepslate_stonecutting"
+          },
+          "ingredients": [
+            {
+              "data": 0,
+              "item": "minecraft:cobbled_deepslate"
+            }
+          ],
+          "priority": 0,
+          "result": {
+            "count": 1,
+            "data": 0,
+            "item": "minecraft:deepslate_tiles"
+          },
+          "unlock": [
+            {
+              "data": 0,
+              "item": "minecraft:cobbled_deepslate"
+            }
+          ],
+          "tags": [
+            "stonecutter"
+          ]
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/deepslate_tiles_from_deepslate_bricks_stonecutting.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:deepslate_tiles_from_deepslate_bricks_stonecutting"
+          },
+          "ingredients": [
+            {
+              "data": 0,
+              "item": "minecraft:deepslate_bricks"
+            }
+          ],
+          "priority": 0,
+          "result": {
+            "count": 1,
+            "data": 0,
+            "item": "minecraft:deepslate_tiles"
+          },
+          "unlock": [
+            {
+              "data": 0,
+              "item": "minecraft:deepslate_bricks"
+            }
+          ],
+          "tags": [
+            "stonecutter"
+          ]
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/deepslate_tiles_from_polished_deepslate_stonecutting.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:deepslate_tiles_from_polished_deepslate_stonecutting"
+          },
+          "ingredients": [
+            {
+              "data": 0,
+              "item": "minecraft:polished_deepslate"
+            }
+          ],
+          "priority": 0,
+          "result": {
+            "count": 1,
+            "data": 0,
+            "item": "minecraft:deepslate_tiles"
+          },
+          "unlock": [
+            {
+              "data": 0,
+              "item": "minecraft:polished_deepslate"
+            }
+          ],
+          "tags": [
+            "stonecutter"
+          ]
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/deepslate_tiles.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:deepslate_tiles"
+          },
+          "key": {
+            "S": {
+              "item": "minecraft:deepslate_bricks"
+            }
+          },
+          "pattern": [
+            "SS",
+            "SS"
+          ],
+          "priority": 1,
+          "result": {
+            "count": 4,
+            "item": "minecraft:deepslate_tiles"
+          },
+          "unlock": [
+            {
+              "item": "minecraft:deepslate_bricks"
+            }
+          ],
+          "tags": [
+            "crafting_table"
+          ]
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/diorite.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:diorite"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "CQ",
+            "QC"
+          ],
+          "key": {
+            "Q": {
+              "item": "minecraft:quartz"
+            },
+            "C": {
+              "item": "minecraft:cobblestone"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:quartz"
+            }
+          ],
+          "result": {
+            "item": "minecraft:diorite",
+            "count": 2
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/dripstone_block_from_pointed_dripstone.json",
+      "data": {
+        "format_version": "1.12",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:dripstone_block_from_pointed_dripstone"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "XX",
+            "XX"
+          ],
+          "key": {
+            "X": {
+              "item": "minecraft:pointed_dripstone"
+            }
+          },
+          "result": [
+            {
+              "item": "minecraft:dripstone_block"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/dripstone_block.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:dripstone_block"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:pointed_dripstone"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:pointed_dripstone"
+            }
+          ],
+          "result": {
+            "item": "minecraft:dripstone_block",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/furnace_cobblestone.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_furnace": {
+          "description": {
+            "identifier": "minecraft:furnace_cobblestone"
+          },
+          "unlock": [
+            {
+              "item": "minecraft:cobblestone"
+            }
+          ],
+          "tags": [
+            "furnace"
+          ],
+          "input": "minecraft:cobblestone",
+          "output": "minecraft:stone",
+          "priority": 360
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/furnace_cracked_nether_bricks.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_furnace": {
+          "description": {
+            "identifier": "minecraft:furnace_cracked_nether_bricks"
+          },
+          "unlock": [
+            {
+              "item": "minecraft:nether_brick"
+            }
+          ],
+          "tags": [
+            "furnace"
+          ],
+          "input": "minecraft:nether_brick",
+          "output": "minecraft:cracked_nether_bricks",
+          "priority": 330
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/furnace_cracked_polished_blackstone_bricks.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_furnace": {
+          "description": {
+            "identifier": "minecraft:furnace_cracked_polished_blackstone_bricks"
+          },
+          "unlock": [
+            {
+              "item": "minecraft:polished_blackstone_bricks"
+            }
+          ],
+          "tags": [
+            "furnace"
+          ],
+          "input": "minecraft:polished_blackstone_bricks",
+          "output": "minecraft:cracked_polished_blackstone_bricks",
+          "priority": 340
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/furnace_quartz_block.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_furnace": {
+          "description": {
+            "identifier": "minecraft:furnace_quartz_block"
+          },
+          "unlock": [
+            {
+              "item": "minecraft:quartz_block",
+              "data": 0
+            }
+          ],
+          "tags": [
+            "furnace"
+          ],
+          "input": "minecraft:quartz_block:0",
+          "output": "minecraft:smooth_quartz",
+          "priority": 390
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/furnace_red_sand.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_furnace": {
+          "description": {
+            "identifier": "minecraft:furnace_red_sand"
+          },
+          "unlock": [
+            {
+              "item": "minecraft:red_sand"
+            }
+          ],
+          "tags": [
+            "furnace"
+          ],
+          "input": "minecraft:red_sand",
+          "output": "minecraft:glass",
+          "priority": 300
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/furnace_sand.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_furnace": {
+          "description": {
+            "identifier": "minecraft:furnace_sand"
+          },
+          "unlock": [
+            {
+              "item": "minecraft:sand",
+              "data": 0
+            }
+          ],
+          "tags": [
+            "furnace"
+          ],
+          "input": {
+            "item": "minecraft:sand",
+            "data": 0
+          },
+          "output": "minecraft:glass",
+          "priority": 300
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/furnace_smooth_basalt.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_furnace": {
+          "description": {
+            "identifier": "minecraft:furnace_smooth_basalt"
+          },
+          "unlock": [
+            {
+              "item": "minecraft:basalt"
+            }
+          ],
+          "tags": [
+            "furnace"
+          ],
+          "input": "minecraft:basalt",
+          "output": "minecraft:smooth_basalt",
+          "priority": 380
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/furnace_stone_brick.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_furnace": {
+          "description": {
+            "identifier": "minecraft:furnace_stone_brick"
+          },
+          "unlock": [
+            {
+              "item": "minecraft:stone_bricks"
+            }
+          ],
+          "tags": [
+            "furnace"
+          ],
+          "input": "minecraft:stone_bricks",
+          "output": "minecraft:cracked_stone_bricks",
+          "priority": 350
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/furnace_stone.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_furnace": {
+          "description": {
+            "identifier": "minecraft:furnace_stone"
+          },
+          "unlock": [
+            {
+              "item": "minecraft:stone",
+              "data": 0
+            }
+          ],
+          "tags": [
+            "furnace"
+          ],
+          "input": "minecraft:stone:0",
+          "output": "minecraft:smooth_stone",
+          "priority": 370
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/granite.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:granite"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "ingredients": [
+            {
+              "item": "minecraft:diorite"
+            },
+            {
+              "item": "minecraft:quartz"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:quartz"
+            }
+          ],
+          "result": {
+            "item": "minecraft:granite"
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/jungle_wood_stripped.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:jungle_wood_stripped"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "group": "wood",
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:stripped_jungle_log"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:stripped_jungle_log"
+            }
+          ],
+          "result": {
+            "item": "minecraft:stripped_jungle_wood",
+            "count": 3
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/mangrove_wood_stripped.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:mangrove_wood_stripped"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "group": "wood",
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:stripped_mangrove_log"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:stripped_mangrove_log"
+            }
+          ],
+          "result": {
+            "item": "minecraft:stripped_mangrove_wood",
+            "count": 3
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/mossy_cobblestone_from_moss.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:mossy_cobblestone_from_moss"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "ingredients": [
+            {
+              "item": "minecraft:cobblestone"
+            },
+            {
+              "item": "minecraft:moss_block"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:moss_block"
+            }
+          ],
+          "result": {
+            "item": "minecraft:mossy_cobblestone"
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/mossy_cobblestone.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:mossy_cobblestone"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "ingredients": [
+            {
+              "item": "minecraft:cobblestone"
+            },
+            {
+              "item": "minecraft:vine"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:vine"
+            }
+          ],
+          "result": {
+            "item": "minecraft:mossy_cobblestone"
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/mossy_stonebrick_from_moss.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:mossy_stonebrick_from_moss"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "ingredients": [
+            {
+              "item": "minecraft:stone_bricks"
+            },
+            {
+              "item": "minecraft:moss_block"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:moss_block"
+            }
+          ],
+          "result": {
+            "item": "minecraft:mossy_stone_bricks"
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/mossy_stonebrick.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:mossy_stonebrick"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "ingredients": [
+            {
+              "item": "minecraft:stone_bricks"
+            },
+            {
+              "item": "minecraft:vine"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:vine"
+            }
+          ],
+          "result": {
+            "item": "minecraft:mossy_stone_bricks"
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/mud_bricks.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:mud_bricks"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:packed_mud"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:packed_mud"
+            }
+          ],
+          "result": {
+            "item": "minecraft:mud_bricks",
+            "count": 4
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/nether_brick.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:nether_brick"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "NN",
+            "NN"
+          ],
+          "key": {
+            "N": {
+              "item": "minecraft:netherbrick"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:netherbrick"
+            }
+          ],
+          "result": {
+            "item": "minecraft:nether_brick"
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/oak_wood_stripped.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:oak_wood_stripped"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "group": "wood",
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:stripped_oak_log"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:stripped_oak_log"
+            }
+          ],
+          "result": {
+            "item": "minecraft:stripped_oak_wood",
+            "count": 3
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/packed_mud.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:packed_mud"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "ingredients": [
+            {
+              "item": "minecraft:mud"
+            },
+            {
+              "item": "minecraft:wheat"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:mud"
+            }
+          ],
+          "result": {
+            "item": "minecraft:packed_mud"
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/pale_oak_stripped_wood_from_stripped_log.json",
+      "data": {
+        "format_version": "1.20.30",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:pale_oak_wood_from_stripped_log"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "group": "wood",
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:stripped_pale_oak_log"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:stripped_pale_oak_log"
+            }
+          ],
+          "result": {
+            "item": "minecraft:stripped_pale_oak_wood",
+            "count": 3
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/pillar_quartz_block.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:pillar_quartz_block"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "#",
+            "#"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:quartz_block",
+              "data": 0
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:quartz_block",
+              "data": 0
+            }
+          ],
+          "result": {
+            "item": "minecraft:quartz_block",
+            "data": 2,
+            "count": 2
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/polished_andesite.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:polished_andesite"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "SS",
+            "SS"
+          ],
+          "key": {
+            "S": {
+              "item": "minecraft:andesite"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:andesite"
+            }
+          ],
+          "result": {
+            "item": "minecraft:polished_andesite",
+            "count": 4
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/polished_blackstone_bricks.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:polished_blackstone_bricks"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:polished_blackstone"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:polished_blackstone"
+            }
+          ],
+          "result": {
+            "item": "minecraft:polished_blackstone_bricks",
+            "count": 4
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/polished_blackstone.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:polished_blackstone"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:blackstone"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:blackstone"
+            }
+          ],
+          "result": {
+            "item": "minecraft:polished_blackstone",
+            "count": 4
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/polished_deepslate_from_cobbled_deepslate_stonecutting.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:polished_deepslate_from_cobbled_deepslate_stonecutting"
+          },
+          "ingredients": [
+            {
+              "data": 0,
+              "item": "minecraft:cobbled_deepslate"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:cobbled_deepslate"
+            }
+          ],
+          "priority": 0,
+          "result": {
+            "count": 1,
+            "data": 0,
+            "item": "minecraft:polished_deepslate"
+          },
+          "tags": [
+            "stonecutter"
+          ]
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/polished_deepslate.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:polished_deepslate"
+          },
+          "key": {
+            "S": {
+              "item": "minecraft:cobbled_deepslate"
+            }
+          },
+          "pattern": [
+            "SS",
+            "SS"
+          ],
+          "priority": 1,
+          "result": {
+            "count": 4,
+            "item": "minecraft:polished_deepslate"
+          },
+          "unlock": [
+            {
+              "item": "minecraft:cobbled_deepslate"
+            }
+          ],
+          "tags": [
+            "crafting_table"
+          ]
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/polished_diorite.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:polished_diorite"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "SS",
+            "SS"
+          ],
+          "key": {
+            "S": {
+              "item": "minecraft:diorite"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:diorite"
+            }
+          ],
+          "result": {
+            "item": "minecraft:polished_diorite",
+            "count": 4
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/polished_granite.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:polished_granite"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "SS",
+            "SS"
+          ],
+          "key": {
+            "S": {
+              "item": "minecraft:granite"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:granite"
+            }
+          ],
+          "result": {
+            "item": "minecraft:polished_granite",
+            "count": 4
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/polished_tuff.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:polished_tuff"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:tuff"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:tuff"
+            }
+          ],
+          "result": {
+            "item": "minecraft:polished_tuff",
+            "count": 4
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/prismarine_bricks.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:prismarine_bricks"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "SSS",
+            "SSS",
+            "SSS"
+          ],
+          "key": {
+            "S": {
+              "item": "minecraft:prismarine_shard"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:prismarine_shard"
+            }
+          ],
+          "result": {
+            "item": "minecraft:prismarine_bricks"
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/prismarine.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:prismarine"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "SS",
+            "SS"
+          ],
+          "key": {
+            "S": {
+              "item": "minecraft:prismarine_shard"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:prismarine_shard"
+            }
+          ],
+          "result": {
+            "item": "minecraft:prismarine",
+            "data": 0
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/purpur_block.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:purpur_block"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "FF",
+            "FF"
+          ],
+          "key": {
+            "F": {
+              "item": "minecraft:chorus_fruit_popped"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:chorus_fruit_popped"
+            }
+          ],
+          "result": {
+            "item": "minecraft:purpur_block",
+            "count": 4
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/quartz_block.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:quartz_block"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:quartz"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:quartz"
+            }
+          ],
+          "result": {
+            "item": "minecraft:quartz_block"
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/quartz_bricks.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:quartz_bricks"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:quartz_block",
+              "data": 0
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:quartz_block",
+              "data": 0
+            }
+          ],
+          "result": {
+            "item": "minecraft:quartz_bricks",
+            "count": 4
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/spruce_wood_stripped.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:spruce_wood_stripped"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "group": "wood",
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:stripped_spruce_log"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:stripped_spruce_log"
+            }
+          ],
+          "result": {
+            "item": "minecraft:stripped_spruce_wood",
+            "count": 3
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonebrick.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:stonebrick"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:stone",
+              "data": 0
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:stone",
+              "data": 0
+            }
+          ],
+          "result": {
+            "item": "minecraft:stone_bricks",
+            "count": 4
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_bricks_from_polished_blackstone.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_bricks_from_polished_blackstone"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 2,
+          "ingredients": [
+            {
+              "item": "minecraft:polished_blackstone"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:polished_blackstone"
+            }
+          ],
+          "result": {
+            "item": "minecraft:polished_blackstone_bricks",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_chiseled_from_polished_blackstone.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_chiseled_from_polished_blackstone"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 2,
+          "ingredients": [
+            {
+              "item": "minecraft:polished_blackstone"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:polished_blackstone"
+            }
+          ],
+          "result": {
+            "item": "minecraft:chiseled_polished_blackstone",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_chiseled_nether_bricks_from_nether_brick.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_chiseled_nether_bricks_from_nether_brick"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 2,
+          "ingredients": [
+            {
+              "item": "minecraft:nether_brick"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:nether_brick"
+            }
+          ],
+          "result": {
+            "item": "minecraft:chiseled_nether_bricks",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_chiseled_polished_from_blackstone.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_chiseled_polished_from_blackstone"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 2,
+          "ingredients": [
+            {
+              "item": "minecraft:blackstone"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:blackstone"
+            }
+          ],
+          "result": {
+            "item": "minecraft:chiseled_polished_blackstone",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_chiseled_stone_bricks_from_cobblestone.json",
+      "data": {
+        "format_version": "1.21.80",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_chiseled_stone_bricks_from_cobblestone"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 0,
+          "ingredients": [
+            {
+              "item": "minecraft:cobblestone"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:cobblestone"
+            }
+          ],
+          "result": {
+            "item": "minecraft:chiseled_stone_bricks",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_cobblestone_from_stone.json",
+      "data": {
+        "format_version": "1.21.80",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_cobblestone_from_stone"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 0,
+          "ingredients": [
+            {
+              "item": "minecraft:stone",
+              "data": 0
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:stone",
+              "data": 0
+            }
+          ],
+          "result": {
+            "item": "minecraft:cobblestone",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_polished_andesite.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_polished_andesite"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 3,
+          "ingredients": [
+            {
+              "item": "minecraft:andesite"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:andesite"
+            }
+          ],
+          "result": {
+            "item": "minecraft:polished_andesite",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_polished_bricks_from_blackstone.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_polished_bricks_from_blackstone"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 2,
+          "ingredients": [
+            {
+              "item": "minecraft:blackstone"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:blackstone"
+            }
+          ],
+          "result": {
+            "item": "minecraft:polished_blackstone_bricks",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_polished_diorite.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_polished_diorite"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 3,
+          "ingredients": [
+            {
+              "item": "minecraft:diorite"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:diorite"
+            }
+          ],
+          "result": {
+            "item": "minecraft:polished_diorite",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_polished_from_blackstone.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_polished_from_blackstone"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 2,
+          "ingredients": [
+            {
+              "item": "minecraft:blackstone"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:blackstone"
+            }
+          ],
+          "result": {
+            "item": "minecraft:polished_blackstone",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_polished_granite.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_polished_granite"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 3,
+          "ingredients": [
+            {
+              "item": "minecraft:granite"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:granite"
+            }
+          ],
+          "result": {
+            "item": "minecraft:polished_granite",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_polished_tuff_to_tuff_bricks.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_polished_tuff_to_tuff_bricks"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 0,
+          "ingredients": [
+            {
+              "item": "minecraft:polished_tuff"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:polished_tuff"
+            }
+          ],
+          "result": {
+            "item": "minecraft:tuff_bricks",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_purpur_lines.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_purpur_lines"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 0,
+          "ingredients": [
+            {
+              "item": "minecraft:purpur_block",
+              "data": 0
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:purpur_block",
+              "data": 0
+            }
+          ],
+          "result": {
+            "item": "minecraft:purpur_block",
+            "data": 2,
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_quartz_bricks_from_quartz_block.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_quartz_bricks_from_quartz_block"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 2,
+          "ingredients": [
+            {
+              "item": "minecraft:quartz_block:0"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:quartz_block",
+              "data": 0
+            }
+          ],
+          "result": {
+            "item": "minecraft:quartz_bricks",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_quartz_lines.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_quartz_lines"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 1,
+          "ingredients": [
+            {
+              "item": "minecraft:quartz_block",
+              "data": 0
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:quartz_block",
+              "data": 0
+            }
+          ],
+          "result": {
+            "item": "minecraft:quartz_block",
+            "data": 2,
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_stone_bricks_from_cobblestone.json",
+      "data": {
+        "format_version": "1.21.80",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_stone_bricks_from_cobblestone"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 0,
+          "ingredients": [
+            {
+              "item": "minecraft:cobblestone"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:cobblestone"
+            }
+          ],
+          "result": {
+            "item": "minecraft:stone_bricks",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_stonebrick_chiseled.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_stonebrick_chiseled"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 0,
+          "ingredients": [
+            {
+              "item": "minecraft:stone",
+              "data": 0
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:stone",
+              "data": 0
+            }
+          ],
+          "result": {
+            "item": "minecraft:chiseled_stone_bricks",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_stonebrick_chiseled2.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_stonebrick_chiseled2"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 0,
+          "ingredients": [
+            {
+              "item": "minecraft:stone_bricks"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:stone_bricks"
+            }
+          ],
+          "result": {
+            "item": "minecraft:chiseled_stone_bricks",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_stonebrick.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_stonebrick"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 4,
+          "ingredients": [
+            {
+              "item": "minecraft:stone",
+              "data": 0
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:stone",
+              "data": 0
+            }
+          ],
+          "result": {
+            "item": "minecraft:stone_bricks",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_tuff_to_polished_tuff.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_tuff_to_polished_tuff"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 0,
+          "ingredients": [
+            {
+              "item": "minecraft:tuff"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:tuff"
+            }
+          ],
+          "result": {
+            "item": "minecraft:polished_tuff",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutter_tuff_to_tuff_bricks.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutter_tuff_to_tuff_bricks"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 0,
+          "ingredients": [
+            {
+              "item": "minecraft:tuff"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:tuff"
+            }
+          ],
+          "result": {
+            "item": "minecraft:tuff_bricks",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutting_cobbled_deepslateblock_from_deepslate.json",
+      "data": {
+        "format_version": "1.21.80",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutting_cobbled_deepslateblock_from_deepslate"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 0,
+          "ingredients": [
+            {
+              "item": "minecraft:deepslate"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:deepslate"
+            }
+          ],
+          "result": {
+            "item": "minecraft:cobbled_deepslate",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutting_deepslate_bricks_from_deepslate.json",
+      "data": {
+        "format_version": "1.21.80",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutting_deepslate_bricks_from_deepslate"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 0,
+          "ingredients": [
+            {
+              "item": "minecraft:deepslate"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:deepslate"
+            }
+          ],
+          "result": {
+            "item": "minecraft:deepslate_bricks",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutting_deepslate_tiles_from_deepslate.json",
+      "data": {
+        "format_version": "1.21.80",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutting_deepslate_tiles_from_deepslate"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 0,
+          "ingredients": [
+            {
+              "item": "minecraft:deepslate"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:deepslate"
+            }
+          ],
+          "result": {
+            "item": "minecraft:deepslate_tiles",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stonecutting_polished_deepslateblock_from_deepslate.json",
+      "data": {
+        "format_version": "1.21.80",
+        "minecraft:recipe_shapeless": {
+          "description": {
+            "identifier": "minecraft:stonecutting_polished_deepslateblock_from_deepslate"
+          },
+          "tags": [
+            "stonecutter"
+          ],
+          "priority": 0,
+          "ingredients": [
+            {
+              "item": "minecraft:deepslate"
+            }
+          ],
+          "unlock": [
+            {
+              "item": "minecraft:deepslate"
+            }
+          ],
+          "result": {
+            "item": "minecraft:polished_deepslate",
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/string_to_wool.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:string_to_wool"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:string"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:string"
+            }
+          ],
+          "result": {
+            "item": "minecraft:white_wool"
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/stripped_mangrove_wood.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:stripped_mangrove_wood"
+          },
+          "tags": [
+            "deprecated"
+          ],
+          "group": "wood",
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:stripped_mangrove_log"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:stripped_mangrove_log"
+            }
+          ],
+          "result": {
+            "item": "minecraft:stripped_mangrove_wood",
+            "count": 3
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/tuff_bricks.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:tuff_bricks"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:polished_tuff"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:polished_tuff"
+            }
+          ],
+          "result": {
+            "item": "minecraft:tuff_bricks",
+            "count": 4
+          }
+        }
+      }
+    },
+    {
+      "source": "behavior_pack/recipes/warped_hyphae_stripped.json",
+      "data": {
+        "format_version": "1.20.10",
+        "minecraft:recipe_shaped": {
+          "description": {
+            "identifier": "minecraft:stripped_warped_hyphae"
+          },
+          "tags": [
+            "crafting_table"
+          ],
+          "group": "wood",
+          "pattern": [
+            "##",
+            "##"
+          ],
+          "key": {
+            "#": {
+              "item": "minecraft:stripped_warped_stem"
+            }
+          },
+          "unlock": [
+            {
+              "item": "minecraft:stripped_warped_stem"
+            }
+          ],
+          "result": {
+            "item": "minecraft:stripped_warped_hyphae",
+            "count": 3
+          }
+        }
+      }
+    }
+  ]
+}

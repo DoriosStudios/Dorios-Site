@@ -179,6 +179,8 @@
       "tags": ["Equipment", "Adventure", "Progression"]
     },
     "Dorios' Atelier": {
+      "wikiPath": "/wiki/atelier",
+      "statisticsSources": [{"id":"custom-install", "provider":"internal-downloads", "enabled":true, "event":"custom-install-started", "countingKey":"atelier:custom-install-started"}],
       "slug": "atelier",
       "name": "Dorios' Atelier",
       "kind": "Add-On",
