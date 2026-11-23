@@ -91,22 +91,30 @@ function ThemeToggle() {
   );
 }
 
-function DoriosMark({ footer = false }) {
+function BrandLink({footer = false, children, ...props}) {
+  const [hovered, setHovered] = React.useState(false);
+  const [focused, setFocused] = React.useState(false);
+  const allowsMotion = () => !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  return <Link {...props} onPointerEnter={() => setHovered(allowsMotion())} onPointerLeave={() => setHovered(false)}
+    onFocus={() => setFocused(allowsMotion())} onBlur={() => setFocused(false)}>
+    <DoriosMark footer={footer} active={hovered || focused}/>{children}
+  </Link>;
+}
+
+function DoriosMark({ footer = false, active = false }) {
   const { colorMode } = useColorMode();
+  const [ready, setReady] = React.useState(false);
+  React.useEffect(() => { if (!active) setReady(false); }, [active]);
   const logoSource =
-    colorMode === "light" ? "/img/black_no_bg.png" : "/img/white_no_bg.png";
-  const blazingSource =
-    colorMode === "light"
-      ? "/img/blazing_animated_transparent.gif"
-      : "/img/blazing_animated_transparent.gif";
+    colorMode === "light" ? "/img/optimized/black_no_bg.webp" : "/img/optimized/white_no_bg.webp";
 
   return (
     <span
-      className={`${styles.brandMarkWrap}${footer ? ` ${styles.footerMarkWrap}` : ""}`}
+      className={`${styles.brandMarkWrap}${footer ? ` ${styles.footerMarkWrap}` : ""}${active && ready ? ` ${styles.animationReady}` : ""}`}
       aria-hidden="true"
     >
-      <img src={logoSource} alt="" className={styles.brandMark} />
-      <img src={blazingSource} alt="" className={styles.blazingMark} />
+      <img src={logoSource} alt="" width={30} height={30} decoding="async" className={styles.brandMark} />
+      {active && <img src="/img/optimized/blazing_animated_transparent.webp" alt="" width={30} height={30} decoding="async" onLoad={() => setReady(true)} onError={() => setReady(false)} className={styles.blazingMark} />}
     </span>
   );
 }
@@ -116,12 +124,11 @@ export function DoriosHeader({ activePage, project }) {
   const navigation = navigationFor(project, t);
   return (
     <header className={styles.siteHeader}>
-      <Link className={styles.brand} to="/" aria-label={t("homeLabel")}>
-        <DoriosMark />
+      <BrandLink className={styles.brand} to="/" aria-label={t("homeLabel")}>
         <span className={styles.brandLabel}>
           Dorios <em>Studios</em>
         </span>
-      </Link>
+      </BrandLink>
 
       <nav className={styles.primaryNav} aria-label={t("primaryNavigation")}>
         {navigation.map((item) => (
@@ -159,10 +166,9 @@ export function DoriosFooter() {
   const { t } = useSiteI18n();
   return (
     <footer className={styles.siteFooter}>
-      <Link className={styles.footerBrand} to="/">
-        <DoriosMark footer />
+      <BrandLink className={styles.footerBrand} to="/" footer>
         <span>Dorios Studios</span>
-      </Link>
+      </BrandLink>
       <p>{t("footerTagline")}</p>
       <div className={styles.footerLinks}>
         <Link to="/projects">{t("projects")}</Link>

@@ -1,0 +1,23 @@
+import fs from 'node:fs';
+import {createRequire} from 'node:module';
+import {performance} from 'node:perf_hooks';
+import {createCatalogIndex} from '../src/wiki/catalogIndex.mjs';
+const require=createRequire(import.meta.url);
+const loader=require('../plugins/navigation-performance/chunk-index-loader.cjs');
+const core=fs.readFileSync(require.resolve('@docusaurus/core/lib/client/docusaurus.js'),'utf8');
+const flat=new Function(fs.readFileSync(require.resolve('@docusaurus/core/lib/client/flat.js'),'utf8').replace('export default function flat','function flat')+';return flat;')();
+const manifest=Object.fromEntries(Array.from({length:21608},(_,i)=>[`/wiki/project/blocks/block-${i}-abc`,{component:`chunk-${i}`,data:`data-${i}`} ]));
+const queries=Array.from({length:60},(_,i)=>`/wiki/project/blocks/block-${i*359}`);
+function createLookup(source){const start=source.indexOf(source.includes('let chunkNamesByPath;')?'let chunkNamesByPath;':'const getChunkNamesToLoad =');return new Function('routesChunkNames','flat',source.slice(start,source.indexOf('const prefetch =',start))+';return getChunkNamesToLoad;')(manifest,flat);}
+const time=fn=>{const start=performance.now();fn();return +(performance.now()-start).toFixed(3);};
+const original=createLookup(core),indexed=createLookup(loader(core));
+const routeScansMs=time(()=>queries.forEach(original));
+const routeIndexAndFirstLookupMs=time(()=>indexed(queries[0]));
+const routeIndexedQueriesMs=time(()=>queries.forEach(indexed));
+const entries=['utilitycraft','ascendant-technology'].flatMap(project=>{const m=JSON.parse(fs.readFileSync(new URL(`../src/wiki/projects/${project}/manifest.json`,import.meta.url)));return [...m.catalog.items,...m.content.blocks];});
+const ids=[...entries.map(e=>e.identifier??e.id).filter(Boolean),'missing'];
+const linear=id=>entries.find(e=>e.id===id||e.identifier===id||e.shortId===id)??entries.find(e=>e.name?.toLowerCase()===id.toLowerCase());
+const catalogScansMs=time(()=>ids.forEach(linear));
+let find;const catalogIndexMs=time(()=>{find=createCatalogIndex(entries);});
+const catalogIndexedQueriesMs=time(()=>ids.forEach(find));
+console.log(JSON.stringify({node:process.version,syntheticRouteEntries:21608,routeQueries:queries.length,routeScansMs,routeIndexAndFirstLookupMs,routeIndexedQueriesMs,realCatalogEntries:entries.length,catalogQueries:ids.length,catalogScansMs,catalogIndexMs,catalogIndexedQueriesMs,note:'Node microbenchmark; not browser frame rate or navigation timing.'},null,2));

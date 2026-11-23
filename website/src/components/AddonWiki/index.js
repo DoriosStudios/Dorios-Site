@@ -30,6 +30,7 @@ import DoriosMarketingShell from '../DoriosMarketingShell';
 import SocialMetadata from '../SocialMetadata';
 import {StepAccordionList, StepCardList, StepCompactList, StepTimelineList} from './stepLists';
 import {findGlobalCatalogEntry, getWikiProject} from '../../wiki/projects';
+import {findLocalCatalogEntry} from '../../wiki/catalogIndex.mjs';
 import {RECIPE_ORIGINS, recipeOriginFor as resolveRecipeOrigin} from '../../wiki/recipeOrigins';
 import {fluidVisualFor, MACHINE_RESOURCE_ICONS} from '../../data/resourceVisuals';
 import {getProjectByWikiPath} from '../../data/projects';
@@ -775,14 +776,7 @@ function catalogEntryFor(project, value) {
     ? value.id ?? value.identifier ?? value.label ?? value.name ?? ''
     : value;
   const identifier = String(source).replace(/^\d+×\s*/, '').trim();
-  const normalized = identifier.replace(/\s+\([^)]*\).*$/, '').trim().toLowerCase();
-  const localEntries = [
-    ...(project.lookupItems ?? project.allItems ?? project.items),
-    ...(project.lookupBlocks ?? project.blocks),
-  ];
-  return localEntries.find((entry) => (
-    entry.id === identifier || entry.identifier === identifier || entry.shortId === identifier
-  )) ?? localEntries.find((entry) => entry.name?.toLowerCase() === normalized) ?? findGlobalCatalogEntry(identifier, project.locale);
+  return findLocalCatalogEntry(project, identifier) ?? findGlobalCatalogEntry(identifier, project.locale);
 }
 
 const VANILLA_ASSET_ALIASES = {

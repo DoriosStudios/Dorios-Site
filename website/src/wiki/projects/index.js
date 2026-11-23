@@ -5,6 +5,7 @@ import utilitycraft from './utilitycraft';
 import localizedWikiNames from '../../i18n/wikiNames.generated.json';
 import {translatePresentation, wikiText} from '../../i18n/wiki';
 import {resourceOrigin, transportDocumentation} from '../editorialContent';
+import {createCatalogIndex} from '../catalogIndex.mjs';
 
 const projects = {
   [ascendantTechnology.id]: ascendantTechnology,
@@ -53,6 +54,7 @@ const globalCatalogEntries = Object.values(projects).flatMap((project) => [
   ...globalEntriesFor(project, project.allItems ?? project.items, 'items'),
   ...globalBlockEntriesFor(project),
 ]);
+const findGlobalEntry = createCatalogIndex(globalCatalogEntries);
 
 const nameMaps = new Map();
 const localizedProjects = new WeakMap();
@@ -143,10 +145,7 @@ export function localizeWikiProject(project, locale) {
 export function findGlobalCatalogEntry(value, locale = 'en') {
   const identifier = catalogSource(value);
   if (!identifier) return null;
-  const normalizedName = identifier.replace(/\s+\([^)]*\).*$/, '').trim().toLowerCase();
-  const entry = globalCatalogEntries.find((entry) => (
-    entry.id === identifier || entry.identifier === identifier || entry.shortId === identifier
-  )) ?? globalCatalogEntries.find((entry) => entry.name?.toLowerCase() === normalizedName) ?? null;
+  const entry = findGlobalEntry(identifier);
   if (!entry) return null;
   const names = localeNameMap(locale);
   return {...entry, name: names[entry.identifier] ?? names[entry.id] ?? entry.name};

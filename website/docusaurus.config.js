@@ -107,6 +107,7 @@ const config = {
     ],
   ],
   plugins: [
+    require.resolve('./plugins/navigation-performance'),
     require.resolve('./plugins/addon-wiki-routes'),
     [
       // Keep the site search in the build so generated /wiki routes are
