@@ -1,0 +1,110 @@
+{
+  "description": "Original UtilityCraft Ultimate logo and local extension pack icons; preserved without resizing or recompression. Existing site icons are retained.",
+  "sources": [
+    {
+      "source": "Downloads/UtilityCraft Ultimate Logo.png",
+      "asset": "/img/projects/utilitycraft-ultimate/logo.png",
+      "sha256": "10228d7322810d22c2e5c87aad2722a4b12a89d6e80250d876b2d3071d68b052",
+      "bytes": 1239772,
+      "status": "copied"
+    },
+    {
+      "source": "UtilityCraft-Digital-Storage/RP/pack_icon.png",
+      "asset": "/img/projects/digital-storage/pack_icon.png",
+      "sha256": "14f122fe2892cafae53181a9fc392639decc4449d9da5d30109fa7f666f09766",
+      "bytes": 95413,
+      "status": "existing"
+    },
+    {
+      "source": "UtilityCraft-Digital-Storage/BP/pack_icon.png",
+      "asset": "/img/projects/digital-storage/bp-pack-icon.png",
+      "sha256": "b214239c804e636390b40d141577ca9e42bc61a34c90990a43992177d6d0b25a",
+      "bytes": 92487,
+      "status": "copied"
+    },
+    {
+      "source": "UtilityCraft-Heavy-Machinery/RP/pack_icon.png",
+      "asset": "/img/projects/heavy-machinery/pack_icon.png",
+      "sha256": "c738290d13780f79ec164f3a0f0c449a66edaefd66bb7eba4f885633e8ee675c",
+      "bytes": 104995,
+      "status": "existing"
+    },
+    {
+      "source": "UtilityCraft-Heavy-Machinery/BP/pack_icon.png",
+      "asset": "/img/projects/heavy-machinery/bp-pack-icon.png",
+      "sha256": "5eae48848c750da9581d5b0dd4e12ec9d1da414758d695e544d3185f112f0b31",
+      "bytes": 102075,
+      "status": "copied"
+    },
+    {
+      "source": "UtilityCraft-ProjectU/RP/pack_icon.png",
+      "asset": "/img/projects/project-u/pack_icon.png",
+      "sha256": "78e4e094a5bb41d7fc584559b462745617bd6ce18fd8cf701184a32cdb36b299",
+      "bytes": 7430,
+      "status": "existing"
+    },
+    {
+      "source": "UtilityCraft-ProjectU/BP/pack_icon.png",
+      "asset": "/img/projects/project-u/pack_icon.png",
+      "sha256": "78e4e094a5bb41d7fc584559b462745617bd6ce18fd8cf701184a32cdb36b299",
+      "bytes": 7430,
+      "status": "existing"
+    },
+    {
+      "source": "UtilityCraft-Quarry/RP/pack_icon.png",
+      "asset": "/img/projects/utilitycraft-quarry/pack_icon.png",
+      "sha256": "9944ecdf43f86ea078996ceff70d7d3b2aaf53edc1f32ca6eb182309e6576717",
+      "bytes": 101711,
+      "status": "existing"
+    },
+    {
+      "source": "UtilityCraft-Quarry/BP/pack_icon.png",
+      "asset": "/img/projects/utilitycraft-quarry/pack_icon.png",
+      "sha256": "9944ecdf43f86ea078996ceff70d7d3b2aaf53edc1f32ca6eb182309e6576717",
+      "bytes": 101711,
+      "status": "existing"
+    },
+    {
+      "source": "UtilityCraft-Tiered-Machinery/RP/pack_icon.png",
+      "asset": "/img/projects/tiered-machinery/pack_icon.png",
+      "sha256": "fae912120911b28b5c6f8a38fcad21567a969d74267bec34143bb10244ca04d1",
+      "bytes": 103860,
+      "status": "existing"
+    },
+    {
+      "source": "UtilityCraft-Tiered-Machinery/BP/pack_icon.png",
+      "asset": "/img/projects/tiered-machinery/bp-pack-icon.png",
+      "sha256": "e33a771074c1d903425d4b66aee6777d774fbf3a2db1ed66066023349b22b96f",
+      "bytes": 101605,
+      "status": "copied"
+    },
+    {
+      "source": "UtilityCraft-Energy-Amplified/RP/pack_icon.png",
+      "asset": "/img/projects/energy-amplified/pack_icon.png",
+      "sha256": "86d0c1d9f8a071746d6cc97abca0213aaa8833273bab04d1844bb1958ea2d9ab",
+      "bytes": 198304,
+      "status": "copied"
+    },
+    {
+      "source": "UtilityCraft-Energy-Amplified/BP/pack_icon.png",
+      "asset": "/img/projects/energy-amplified/bp-pack-icon.png",
+      "sha256": "d13e8a7b6179f15604cf9cab74a3ec51b2867fc77234fb8e120f58142e8732fc",
+      "bytes": 231251,
+      "status": "copied"
+    },
+    {
+      "source": "UtilityCraft Nuclear/RP/pack_icon.png",
+      "asset": "/img/projects/utilitycraft-nuclear/pack_icon.png",
+      "sha256": "dd35a02fe089354db5a739d98dbcc86e868059d722117f976d3b1e77ad18ef98",
+      "bytes": 48090,
+      "status": "copied"
+    },
+    {
+      "source": "UtilityCraft Nuclear/BP/pack_icon.png",
+      "asset": "/img/projects/utilitycraft-nuclear/pack_icon.png",
+      "sha256": "dd35a02fe089354db5a739d98dbcc86e868059d722117f976d3b1e77ad18ef98",
+      "bytes": 48090,
+      "status": "existing"
+    }
+  ]
+}
