@@ -22,7 +22,7 @@ SITE_ROOT = SCRIPT_DIR.parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
-from addon_wiki_mapper.__main__ import export_assets, render_missing_assets  # noqa: E402
+from addon_wiki_mapper.__main__ import export_assets, render_missing_assets, preserve_entity_visuals  # noqa: E402
 from addon_wiki_mapper.bedrock import build_manifest  # noqa: E402
 from addon_wiki_mapper.jsonc import load  # noqa: E402
 
@@ -50,6 +50,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--assets-dir", type=Path, help="Asset destination; defaults to static/img/wiki/<id>")
     parser.add_argument("--no-assets", action="store_true", help="Do not copy referenced textures and renders")
     parser.add_argument("--no-renders", action="store_true", help="Skip automatic CPU block renders")
+    parser.add_argument("--vanilla-rp", type=Path, help="Versioned vanilla RP fallback")
+    parser.add_argument("--entity-render-config", type=Path, help="Explicit entity render variants and head bones")
     parser.add_argument("--no-register", action="store_true", help="Generate data only; do not register generic wiki routes")
     parser.add_argument("--force-module", action="store_true", help="Replace an existing generic index.js (editorial modules are preserved by default)")
     parser.add_argument("--dry-run", action="store_true", help="Analyze and print counts without writing files")
@@ -177,6 +179,8 @@ def main() -> None:
             dependency_paths.append(inferred)
 
     manifest = build_manifest(project_root, project_id, name, config, dependency_paths)
+    if output.is_file():
+        preserve_entity_visuals(manifest, load(output))
     counts = manifest["counts"]
     summary = (
         f"{counts['items']} items, {counts['catalogItems']} catalog entries, "
@@ -190,7 +194,7 @@ def main() -> None:
     atomic_json(output, manifest)
     copied = 0 if args.no_assets else export_assets(manifest, project_root, assets_dir, dependency_paths)
     if not args.no_assets and not args.no_renders:
-        render_missing_assets(project_root, output, assets_dir, dependency_paths)
+        render_missing_assets(project_root, output, assets_dir, dependency_paths, args.vanilla_rp, args.entity_render_config)
 
     module_path = target_root / "index.js"
     if not module_path.exists() or args.force_module:

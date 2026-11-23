@@ -5,7 +5,7 @@
   "scripts": {
     "optimize:brand-images": "node scripts/optimize-brand-images.mjs",
     "test:performance": "node --test scripts/navigation-performance.test.mjs",
-    "test:wiki": "node --test scripts/wiki-editorial.test.cjs scripts/wiki-redesign.test.cjs scripts/wiki-ui-icons.test.mjs plugins/addon-wiki-routes/route-data.test.js",
+    "test:wiki": "node --test scripts/wiki-editorial.test.cjs scripts/wiki-redesign.test.cjs scripts/wiki-ui-icons.test.mjs plugins/addon-wiki-routes/route-data.test.js scripts/machine-catalog.test.cjs scripts/wiki-search.test.mjs",
     "benchmark:navigation": "node scripts/benchmark-navigation.mjs",
     "sync:wiki": "python scripts/sync-project-wikis.py",
     "generate:bedrock-renders": "node scripts/generate-bedrock-renders.mjs",
@@ -26,7 +26,7 @@
     "validate:machine-recipes": "node scripts/validate-machine-recipe-catalog.mjs",
     "generate:vanilla-assets": "node scripts/generate-vanilla-asset-index.mjs",
     "generate:social-previews": "node scripts/generate-social-previews.mjs",
-    "prebuild": "npm run prepare:atelier-builder && npm run refresh:github-stats && npm run refresh:curseforge-stats && npm run generate:utilitycraft-machine-recipes && npm run generate:ascendant-documentation && npm run generate:ascendant-machine-grid && npm run generate:shared-item-documentation && npm run generate:ascendant-glyph-icons && npm run generate:vanilla-assets && npm run generate:social-previews",
+    "prebuild": "npm run prepare:atelier-builder && npm run refresh:github-stats && npm run refresh:curseforge-stats && npm run generate:utilitycraft-machine-recipes && npm run generate:ascendant-documentation && npm run generate:ascendant-machine-grid && npm run generate:shared-item-documentation && npm run generate:ascendant-glyph-icons && npm run prepare:wiki-visuals && npm run generate:vanilla-assets && npm run generate:social-previews",
     "start": "node scripts/start-dev.mjs",
     "build": "npm run validate:catalog && npm run validate:machine-recipes && node scripts/build-site.mjs",
     "validate:catalog": "node scripts/validate-project-catalog.mjs",
@@ -37,7 +37,17 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "prepare:atelier-builder": "node scripts/prepare-atelier-builder.mjs",
-    "prepare:dev": "npm run prepare:atelier-builder && npm run refresh:github-stats && npm run refresh:curseforge-stats && npm run generate:utilitycraft-machine-recipes && npm run generate:ascendant-documentation && npm run generate:ascendant-machine-grid && npm run generate:shared-item-documentation && npm run generate:ascendant-glyph-icons && npm run generate:vanilla-assets && npm run generate:social-previews"
+    "prepare:dev": "npm run prepare:atelier-builder && npm run refresh:github-stats && npm run refresh:curseforge-stats && npm run generate:utilitycraft-machine-recipes && npm run generate:ascendant-documentation && npm run generate:ascendant-machine-grid && npm run generate:shared-item-documentation && npm run generate:ascendant-glyph-icons && npm run prepare:wiki-visuals && npm run generate:vanilla-assets && npm run generate:social-previews",
+    "collect:vanilla-assets": "node scripts/collect-vanilla-assets.mjs",
+    "generate:vanilla-faces": "node scripts/extract-vanilla-faces.mjs",
+    "generate:entity-renders": "node scripts/generate-bedrock-entity-renders.mjs",
+    "generate:entity-faces": "node scripts/generate-bedrock-entity-renders.mjs --format face",
+    "generate:entity-portraits": "node scripts/generate-bedrock-entity-renders.mjs --format portrait",
+    "prepare:wiki-visuals": "node scripts/prepare-wiki-visuals.mjs",
+    "validate:visual-coverage": "node scripts/prepare-wiki-visuals.mjs --coverage",
+    "test:entity-renders": "node --test scripts/bedrock-entity.test.mjs",
+    "test:vanilla-assets": "node --test scripts/vanilla-assets.test.mjs",
+    "test:visual-pipeline": "node --test scripts/wiki-visuals.test.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.1",
@@ -76,3 +86,4 @@
     "node": ">=20.0"
   }
 }
+

@@ -1,0 +1,23 @@
+{
+  "projects": [
+    {
+      "id": "utilitycraft",
+      "bridgeProject": "UtilityCraft",
+      "repository": "https://github.com/DoriosStudios/UtilityCraft.git",
+      "revision": "d02253eab3050842fed440e378ded455292626f8",
+      "dependencies": [],
+      "overrides": {
+        "entities": {
+          "utilitycraft:mechanical_spawner_zombie": {"headBones": ["spawner_type"]}
+        }
+      }
+    },
+    {
+      "id": "ascendant-technology",
+      "bridgeProject": "Ascendant-Technology",
+      "repository": "https://github.com/DoriosStudios/Ascendant-Technology.git",
+      "revision": "21294c82146eef1d080aa1261a4cada6ba81cba0",
+      "dependencies": ["utilitycraft"]
+    }
+  ]
+}

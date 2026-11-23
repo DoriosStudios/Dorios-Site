@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "entityRendererVersion": 1,
+  "entities": {
+    "utilitycraft:alchemical_potion_projectile": {
+      "fullBody": {
+        "identifier": "utilitycraft:alchemical_potion_projectile",
+        "kind": "generated",
+        "path": "auto-entities/utilitycraft_alchemical_potion_projectile-1e5d75a39083/fullBody-6be9652e3ef1965512d24763.png",
+        "hash": "6be9652e3ef1965512d24763fbf732b2ea921192e59e1e9c7f22aa0841c45cc4",
+        "settings": {
+          "size": 128,
+          "lighting": {
+            "ambient": 0.55,
+            "direction": [
+              0.2,
+              0.45,
+              0.15
+            ],
+            "contrast": 1.05,
+            "shadowStrength": 0.16
+          },
+          "format": "fullBody"
+        },
+        "stats": [
+          {
+            "bones": 1,
+            "cubes": 1,
+            "planes": 1,
+            "faces": 1
+          }
+        ],
+        "geometries": [
+          "geometry.alchemical_potion"
+        ],
+        "textures": [
+          "textures/items/potion_bottle_splash_moveSpeed"
+        ],
+        "warnings": [
+          "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured.",
+          "Client scripts.scale is not evaluated; neutral model units and automatic framing are used."
+        ]
+      },
+      "portrait": {
+        "identifier": "utilitycraft:alchemical_potion_projectile",
+        "kind": "generated",
+        "path": "auto-entities/utilitycraft_alchemical_potion_projectile-1e5d75a39083/portrait-26f8830d6dedb5e9a8bc1e2e.png",
+        "hash": "26f8830d6dedb5e9a8bc1e2e0b1e63bae889c7e8e9adfe5b3d6f2e8e66f497e4",
+        "settings": {
+          "size": 128,
+          "lighting": {
+            "ambient": 0.55,
+            "direction": [
+              0.2,
+              0.45,
+              0.15
+            ],
+            "contrast": 1.05,
+            "shadowStrength": 0.16
+          },
+          "format": "portrait"
+        },
+        "stats": [
+          {
+            "bones": 1,
+            "cubes": 1,
+            "planes": 1,
+            "faces": 1
+          }
+        ],
+        "geometries": [
+          "geometry.alchemical_potion"
+        ],
+        "textures": [
+          "textures/items/potion_bottle_splash_moveSpeed"
+        ],
+        "warnings": [
+          "Runtime animations/controllers are not evaluated; using deterministic bind pose unless pose/staticAnimation is configured.",
+          "Client scripts.scale is not evaluated; neutral model units and automatic framing are used."
+        ]
+      }
+    },
+    "utilitycraft:fluid_tank_cryofluid": {
+      "fullBody": {
+        "identifier": "utilitycraft:fluid_tank_cryofluid",
+        "kind": "generated",
+        "path": "auto-entities/utilitycraft_fluid_tank_cryofluid-14a1333fd46f/fullBody-072189640bfeb7ab08b7c502.png",
+        "hash": "072189640bfeb7ab08b7c502527513bc341d0ad1ac9e4ca797097f580789a787",
+        "settings": {
+          "size": 128,
+          "lighting": {
+            "ambient": 0.55,
+            "direction": [
+              0.2,
+              0.45,
+              0.15
+            ],
+            "contrast": 1.05,
+            "shadowStrength": 0.16
+          },
+          "format": "fullBody"
+        },
+        "stats": [
+          {
+            "bones": 1,
+            "cubes": 1,
+            "planes": 0,
+            "faces": 3
+          }
+        ],
+        "geometries": [
+          "geometry.utilitycraft_fluid_tank_entity"
+        ],
+        "textures": [
+          "textures/entity/cryofluid"
+        ],
+        "warnings": []
+      },
+      "portrait": {
+        "identifier": "utilitycraft:fluid_tank_cryofluid",
+        "kind": "generated",
+        "path": "auto-entities/utilitycraft_fluid_tank_cryofluid-14a1333fd46f/portrait-c381b1efca7c2b4708c29204.png",
+        "hash": "c381b1efca7c2b4708c2920426f4b55d16baa109fb625295c83202aa911e7a04",
+        "settings": {
+          "size": 128,
+          "lighting": {
+            "ambient": 0.55,
+            "direction": [
+              0.2,
+              0.45,
+              0.15
+            ],
+            "contrast": 1.05,
+            "shadowStrength": 0.16
+          },
+          "format": "portrait"
+        },
+        "stats": [
+          {
+            "bones": 1,
+            "cubes": 1,
+            "planes": 0,
+            "faces": 3
+          }
+        ],
+        "geometries": [
+          "geometry.utilitycraft_fluid_tank_entity"
+        ],
+        "textures": [
+          "textures/entity/cryofluid"
+        ],
+        "warnings": []
+      }
+    },
+    "utilitycraft:fluid_tank_dark_matter": {
+      "fullBody": {
+        "identifier": "utilitycraft:fluid_tank_dark_matter",
+        "kind": "generated",
+        "path": "auto-entities/utilitycraft_fluid_tank_dark_matter-ee5785049e4f/fullBody-c1d4859a8750ddca3158c395.png",
+        "hash": "c1d4859a8750ddca3158c395b46fa1c8c1a83db8f504311af6a2926a81c9da01",
+        "settings": {
+          "size": 128,
+          "lighting": {
+            "ambient": 0.55,
+            "direction": [
+              0.2,
+              0.45,
+              0.15
+            ],
+            "contrast": 1.05,
+            "shadowStrength": 0.16
+          },
+          "format": "fullBody"
+        },
+        "stats": [
+          {
+            "bones": 1,
+            "cubes": 1,
+            "planes": 0,
+            "faces": 3
+          }
+        ],
+        "geometries": [
+          "geometry.utilitycraft_fluid_tank_entity"
+        ],
+        "textures": [
+          "textures/entity/dark_matter_fluid"
+        ],
+        "warnings": []
+      },
+      "portrait": {
+        "identifier": "utilitycraft:fluid_tank_dark_matter",
+        "kind": "generated",
+        "path": "auto-entities/utilitycraft_fluid_tank_dark_matter-ee5785049e4f/portrait-ece8df92eb891135d3d7e3a8.png",
+        "hash": "ece8df92eb891135d3d7e3a8c4692a3e9b11f3ab428c85aa5bc9c1b4a4e6e1cb",
+        "settings": {
+          "size": 128,
+          "lighting": {
+            "ambient": 0.55,
+            "direction": [
+              0.2,
+              0.45,
+              0.15
+            ],
+            "contrast": 1.05,
+            "shadowStrength": 0.16
+          },
+          "format": "portrait"
+        },
+        "stats": [
+          {
+            "bones": 1,
+            "cubes": 1,
+            "planes": 0,
+            "faces": 3
+          }
+        ],
+        "geometries": [
+          "geometry.utilitycraft_fluid_tank_entity"
+        ],
+        "textures": [
+          "textures/entity/dark_matter_fluid"
+        ],
+        "warnings": []
+      }
+    },
+    "utilitycraft:fluid_tank_liquified_aetherium": {
+      "fullBody": {
+        "identifier": "utilitycraft:fluid_tank_liquified_aetherium",
+        "kind": "generated",
+        "path": "auto-entities/utilitycraft_fluid_tank_liquified_aetherium-414272c6c1d2/fullBody-570e603af00c38996587d84d.png",
+        "hash": "570e603af00c38996587d84d89302a9ef7af72f0eab9a0e560befc9a8a544f94",
+        "settings": {
+          "size": 128,
+          "lighting": {
+            "ambient": 0.55,
+            "direction": [
+              0.2,
+              0.45,
+              0.15
+            ],
+            "contrast": 1.05,
+            "shadowStrength": 0.16
+          },
+          "format": "fullBody"
+        },
+        "stats": [
+          {
+            "bones": 1,
+            "cubes": 1,
+            "planes": 0,
+            "faces": 3
+          }
+        ],
+        "geometries": [
+          "geometry.utilitycraft_fluid_tank_entity"
+        ],
+        "textures": [
+          "textures/entity/aetherium_fluid"
+        ],
+        "warnings": []
+      },
+      "portrait": {
+        "identifier": "utilitycraft:fluid_tank_liquified_aetherium",
+        "kind": "generated",
+        "path": "auto-entities/utilitycraft_fluid_tank_liquified_aetherium-414272c6c1d2/portrait-3c34bf119bc5d47d895a5132.png",
+        "hash": "3c34bf119bc5d47d895a51329e55e82d196f5e0b0cfe98c727b7941c857e0470",
+        "settings": {
+          "size": 128,
+          "lighting": {
+            "ambient": 0.55,
+            "direction": [
+              0.2,
+              0.45,
+              0.15
+            ],
+            "contrast": 1.05,
+            "shadowStrength": 0.16
+          },
+          "format": "portrait"
+        },
+        "stats": [
+          {
+            "bones": 1,
+            "cubes": 1,
+            "planes": 0,
+            "faces": 3
+          }
+        ],
+        "geometries": [
+          "geometry.utilitycraft_fluid_tank_entity"
+        ],
+        "textures": [
+          "textures/entity/aetherium_fluid"
+        ],
+        "warnings": []
+      }
+    }
+  }
+}

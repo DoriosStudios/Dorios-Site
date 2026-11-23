@@ -1,4 +1,5 @@
 import {vanillaStationFor} from './vanillaStationMeta.js';
+import {hasEntityVisuals} from '../entityVisual.mjs';
 
 const SECTION_DEFINITIONS = [
   {id: 'overview', label: 'Overview', icon: 'book'},
@@ -337,7 +338,7 @@ export function createGeneratedProject({
   blockProfiles = {},
   itemProfiles = {},
   includeBlockSection = true,
-  includeEntitySection = false,
+  includeEntitySection = hasEntityVisuals(manifest),
   itemCatalogColumns,
   howToPlay,
 }) {

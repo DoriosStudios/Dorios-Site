@@ -80,6 +80,9 @@ test('the actual project catalogs generate direct sector pages using short inter
     assert.equal(props.slug, 'autosieve');
   }
   assert.ok(byPath.has('/pt-BR/projects/utilitycraft'));
+  assert.ok(byPath.has('/pt-BR/wiki/utilitycraft/entities'));
+  assert.ok(byPath.has('/pt-BR/wiki/utilitycraft/entities/mechanical-spawner-zombie'));
+  assert.ok(byPath.has('/pt-BR/wiki/ascendant-technology/entities'));
   assert.ok(byPath.has('/pt-BR/wiki/utilitycraft/how-to-play/primitive-forge'));
   for (const route of [
     '/wiki/ascendant-technology/machines/alchemical_station/specs',

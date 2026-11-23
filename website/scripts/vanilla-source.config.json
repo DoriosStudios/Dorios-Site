@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "bedrockVersion": "1.26.50.4",
+  "repository": "https://github.com/Mojang/bedrock-samples.git",
+  "revision": "46ba6ea985fb5a92d79a9419198f10dda14c199d",
+  "resourcePack": "resource_pack",
+  "licenseUrl": "https://github.com/Mojang/bedrock-samples/blob/46ba6ea985fb5a92d79a9419198f10dda14c199d/LICENSE.md",
+  "usageGuidelinesUrl": "https://www.minecraft.net/en-us/usage-guidelines",
+  "publication": "private-source-only"
+}

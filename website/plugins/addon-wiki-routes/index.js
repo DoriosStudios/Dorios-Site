@@ -14,6 +14,7 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
         path: normalizeUrl([context.siteConfig.baseUrl, route.path]),
       });
       const projectRoot = path.join(__dirname, '..', '..', 'src', 'wiki', 'projects');
+      const {hasEntityVisuals} = await import(pathToFileURL(path.join(projectRoot, '../entityVisual.mjs')).href);
       const genericProjectIds = require(path.join(projectRoot, 'generatedProjects.json'));
       const projectCatalog = require(path.join(__dirname, '..', '..', 'src', 'data', 'projectCatalog.json'));
       const atelier = require('../../src/data/atelierWiki.json');
@@ -159,6 +160,7 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
         ]);
         const blocks = allBlocks.filter((block) => !specializedBlockIds.has(block.id));
         const sectionVisible = (section) => !project.hiddenSections?.includes(section);
+        const entitiesVisible = sectionVisible('entities') && hasEntityVisuals(project.manifest);
         const sections = [
           'overview',
           project.manifest.catalog.items.length && project.id !== 'trinkets' && 'items',
@@ -166,6 +168,7 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
           blocks.length && sectionVisible('blocks') && 'blocks',
           machines.length && 'machines',
           generators.length && 'generators',
+          entitiesVisible && 'entities',
           (project.manifest.content.recipes.length || project.processingRecipes?.length) && 'recipes',
           project.mechanics.length && 'mechanics',
           ...(project.extraSections ?? []),
@@ -185,7 +188,7 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
           blocks: sectionVisible('blocks') ? blocks.map((entry) => entry.slug) : [],
           machines: machines.map((entry) => entry.id),
           generators: generators.map((entry) => entry.id),
-          entities: [],
+          entities: entitiesVisible ? project.manifest.content.entities.map(entry => entry.slug ?? entry.id) : [],
           recipes: [
             ...project.manifest.content.recipes.map((entry) => `crafting-${entry.id}`),
             ...(project.processingRecipes ?? []).map((entry) => `processing-${entry.id}`),

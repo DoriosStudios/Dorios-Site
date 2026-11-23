@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import {IconCube,IconArrowRight,IconSettings,IconAlertTriangle} from '@tabler/icons-react';
+import {IconArrowRight,IconSettings} from '@tabler/icons-react';
 import WikiIcon from '../WikiIcon';
 import {WIKI_UPGRADE_ICONS,wikiStatValue,isWikiPropertyFlag,wikiHeartIcons} from '../../data/wikiUiIcons.mjs';
 import styles from './playerGuide.module.css';
-import {meaningfulValue} from '../../wiki/playerGuide.mjs';
+import {capitalizeGuideStep,meaningfulValue} from '../../wiki/playerGuide.mjs';
 
 export function WikiStatValue({label,value,w,size=24,compact=false}) {
   const sourceValue=Array.isArray(value)?value.join(' · '):value;
@@ -45,11 +45,8 @@ export function WikiTechnicalDetails({w,children}) {
 
 export function WikiProcessFlow({inputs,outputs,visual,w}) {
   if (!inputs.length || !outputs.length) return null;
-  const parts = values => values.flatMap(value=>{
-    const sourceParts = String(value).split(/\s+\+\s+/);
-    return String(w(value)).split(/\s+\+\s+/).map((text,index)=>({text,source:sourceParts[index]}));
-  });
-  const Part = ({value}) => <p><WikiIcon name={/fluid/i.test(value.source)?'generic_fluid':/catalyst/i.test(value.source)?'catalyst':null} fallback={IconCube}/>{value.text}</p>;
+  const parts = values => values.flatMap(value => String(w(value)).split(/\s+\+\s+/).map(capitalizeGuideStep));
+  const Part = ({value}) => <p>{value}</p>;
   return <section className={styles.playerProcess} aria-label={w('Process schematic')}>
     <header><h2>{w('How it works')}</h2><small>{w('Process schematic — not a specific recipe')}</small></header>
     <div className={styles.playerFlow}>
@@ -66,10 +63,10 @@ export function MachinePlayerGuide({guide,visual,w,technical}) {
   return <div className={styles.playerGuide}>
     <WikiStatGrid facts={guide.metrics} w={w}/>
     {guide.features.length>0&&<div className={styles.playerFeatures}>{guide.features.map(([label,value])=><section key={label}>
-      <WikiIcon label={label} fallback={IconAlertTriangle}/><div><h3>{w(label)}</h3><p>{w(value)}</p></div>
+      <div><h3>{w(label)}</h3><p>{w(value)}</p></div>
     </section>)}</div>}
     <WikiProcessFlow inputs={guide.inputs} outputs={guide.outputs} visual={visual} w={w}/>
-    {guide.steps.length>0&&<ol className={styles.playerSteps}>{guide.steps.map((step,index)=><li key={index}>{w(step)}</li>)}</ol>}
+    {guide.steps.length>0&&<ol className={styles.playerSteps}>{guide.steps.map((step,index)=><li key={index}>{capitalizeGuideStep(w(step))}</li>)}</ol>}
     {guide.upgrades.length>0&&<section className={styles.playerUpgrades}><h2>{w('Supported upgrades')}</h2><ul>{guide.upgrades.map(type=><li key={type}><WikiIcon name={WIKI_UPGRADE_ICONS[type]} size={24}/>{w(type.replace(/\b\w/g,c=>c.toUpperCase()))}</li>)}</ul></section>}
     <WikiTechnicalDetails w={w}>{technical}</WikiTechnicalDetails>
   </div>;
@@ -86,7 +83,6 @@ export function WikiCatalogRows({entries,renderVisual,entryHref,benefitsFor,w}) 
         {benefit.kind==='attribute'?<WikiStatValue label={benefit.label} value={benefit.value} w={w} size={18} compact/>:<><WikiIcon label={benefit.label} kind={benefit.kind} size={18}/><span>{benefit.kind==='immunity'?`${w('Immunity')}: `:''}{w(benefit.label)}</span></>}
       </li>)}</ul>
       {meaningfulValue(source)&&<div className={styles.playerCatalogSource}><small>{w('Best source')}</small><span>{w(source)}</span></div>}
-      <IconArrowRight className={styles.playerCatalogArrow} size={18} aria-hidden="true"/>
     </Link></li>;
   })}</ul>;
 }

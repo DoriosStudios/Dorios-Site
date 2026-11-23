@@ -8256,7 +8256,7 @@
         "blockData": {
           "breakTime": 5.5,
           "mineable": true,
-          "explosionResistance": 8.0,
+          "explosionResistance": 8,
           "lootTable": "loot_tables/blocks/aetherium_block.json",
           "tool": "Pickaxe",
           "directional": false
@@ -11651,9 +11651,9 @@
         "machineData": null,
         "source": "BP/blocks/ores/nether_tungsten_ore.json",
         "blockData": {
-          "breakTime": 3.0,
+          "breakTime": 3,
           "mineable": true,
-          "explosionResistance": 30.0,
+          "explosionResistance": 30,
           "lootTable": "loot_tables/blocks/nether_tungsten_ore.json",
           "tool": "Pickaxe",
           "directional": false
@@ -12232,7 +12232,7 @@
         "blockData": {
           "breakTime": 3.8,
           "mineable": true,
-          "explosionResistance": 6.0,
+          "explosionResistance": 6,
           "lootTable": "loot_tables/blocks/raw_titanium_block.json",
           "tool": "Pickaxe",
           "directional": false
@@ -12957,7 +12957,7 @@
         "blockData": {
           "breakTime": 4.5,
           "mineable": true,
-          "explosionResistance": 6.0,
+          "explosionResistance": 6,
           "lootTable": "loot_tables/blocks/titanium_block.json",
           "tool": "Pickaxe",
           "directional": false
@@ -13687,9 +13687,9 @@
         "machineData": null,
         "source": "BP/blocks/ores/tungsten_block.json",
         "blockData": {
-          "breakTime": 5.0,
+          "breakTime": 5,
           "mineable": true,
-          "explosionResistance": 7.0,
+          "explosionResistance": 7,
           "lootTable": "loot_tables/blocks/tungsten_block.json",
           "tool": "Pickaxe",
           "directional": false
@@ -14210,7 +14210,9 @@
         "name": "Alchemical Potion Projectile",
         "category": "Alchemy",
         "image": null,
-        "source": "BP/entities/alchemy/potion_projectile.json"
+        "source": "BP/entities/alchemy/potion_projectile.json",
+        "render": "auto-entities/utilitycraft_alchemical_potion_projectile-1e5d75a39083/fullBody-6be9652e3ef1965512d24763.png",
+        "portrait": "auto-entities/utilitycraft_alchemical_potion_projectile-1e5d75a39083/portrait-26f8830d6dedb5e9a8bc1e2e.png"
       },
       {
         "id": "fluid_tank_cryofluid",
@@ -14219,7 +14221,9 @@
         "name": "Fluid Tank Cryofluid",
         "category": "Fluids",
         "image": "textures/entity/cryofluid.png",
-        "source": "BP/entities/fluids/fluid_tank_cryofluid.json"
+        "source": "BP/entities/fluids/fluid_tank_cryofluid.json",
+        "render": "auto-entities/utilitycraft_fluid_tank_cryofluid-14a1333fd46f/fullBody-072189640bfeb7ab08b7c502.png",
+        "portrait": "auto-entities/utilitycraft_fluid_tank_cryofluid-14a1333fd46f/portrait-c381b1efca7c2b4708c29204.png"
       },
       {
         "id": "fluid_tank_dark_matter",
@@ -14228,7 +14232,9 @@
         "name": "Fluid Tank Dark Matter",
         "category": "Fluids",
         "image": "textures/entity/dark_matter_fluid.png",
-        "source": "BP/entities/fluids/fluid_tank_dark_matter.json"
+        "source": "BP/entities/fluids/fluid_tank_dark_matter.json",
+        "render": "auto-entities/utilitycraft_fluid_tank_dark_matter-ee5785049e4f/fullBody-c1d4859a8750ddca3158c395.png",
+        "portrait": "auto-entities/utilitycraft_fluid_tank_dark_matter-ee5785049e4f/portrait-ece8df92eb891135d3d7e3a8.png"
       },
       {
         "id": "fluid_tank_liquified_aetherium",
@@ -14237,7 +14243,9 @@
         "name": "Fluid Tank Liquified Aetherium",
         "category": "Fluids",
         "image": "textures/entity/aetherium_fluid.png",
-        "source": "BP/entities/fluids/fluid_tank_aetherium.json"
+        "source": "BP/entities/fluids/fluid_tank_aetherium.json",
+        "render": "auto-entities/utilitycraft_fluid_tank_liquified_aetherium-414272c6c1d2/fullBody-570e603af00c38996587d84d.png",
+        "portrait": "auto-entities/utilitycraft_fluid_tank_liquified_aetherium-414272c6c1d2/portrait-3c34bf119bc5d47d895a5132.png"
       },
       {
         "id": "mob_chamber_machine",

@@ -177,7 +177,10 @@ def _client_entity_images(resource_pack: Path) -> dict[str, str]:
         description = root.get("description", {})
         identifier = description.get("identifier")
         texture_record = description.get("textures", {})
-        texture = next(iter(texture_record.values()), None) if isinstance(texture_record, dict) else None
+        # Keep the legacy image field for a single unambiguous atlas only.
+        # Render controllers, not dictionary order, select multi-texture visuals.
+        textures = set(texture_record.values()) if isinstance(texture_record, dict) and all(isinstance(value, str) for value in texture_record.values()) else set()
+        texture = next(iter(textures)) if len(textures) == 1 else None
         resolved = _existing_texture(resource_pack, texture)
         if identifier and resolved:
             result[identifier] = resolved
@@ -494,9 +497,13 @@ def _parse_blocks(
     return sorted(deduplicated.values(), key=lambda entry: entry["name"].lower())
 
 
-def _parse_entities(project_root: Path, behavior_pack: Path, resource_pack: Path, lang: dict[str, str], config: dict[str, Any]) -> list[dict[str, Any]]:
+def _parse_entities(project_root: Path, behavior_pack: Path, resource_pack: Path, lang: dict[str, str], config: dict[str, Any], dependency_resource_packs: list[Path] | None = None) -> list[dict[str, Any]]:
     collection_root = behavior_pack / "entities"
-    client_images = _client_entity_images(resource_pack)
+    client_images: dict[str, str] = {}
+    for pack in [resource_pack, *(dependency_resource_packs or [])]:
+        for identifier, image in _client_entity_images(pack).items():
+            client_images.setdefault(identifier, image)
+    renders = _render_index(project_root)
     entries: list[dict[str, Any]] = []
     for path in _json_files(collection_root):
         try:
@@ -513,6 +520,8 @@ def _parse_entities(project_root: Path, behavior_pack: Path, resource_pack: Path
             "name": _localized_name(identifier, "entity", lang),
             "category": _category(path, collection_root),
             "image": client_images.get(identifier),
+            "imageKind": "texture" if client_images.get(identifier) else None,
+            "render": _block_render(identifier, renders),
             "source": _source(path, project_root),
         })
     deduplicated: dict[str, dict[str, Any]] = {}
@@ -613,7 +622,7 @@ def build_manifest(
     lang = _lang_index(resource_pack)
     items = _parse_items(project_root, behavior_pack, resource_pack, lang, config, dependency_resource_packs)
     blocks = _parse_blocks(project_root, behavior_pack, resource_pack, lang, config, dependency_resource_packs, items)
-    entities = _parse_entities(project_root, behavior_pack, resource_pack, lang, config)
+    entities = _parse_entities(project_root, behavior_pack, resource_pack, lang, config, dependency_resource_packs)
     recipes = _parse_recipes(project_root, behavior_pack, config)
     if config.get('identifierSlugs'):
         for entry in [*items, *blocks, *entities]:

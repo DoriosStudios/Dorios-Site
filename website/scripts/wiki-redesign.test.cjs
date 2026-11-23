@@ -2,9 +2,21 @@ const assert=require('node:assert/strict'),test=require('node:test'),fs=require(
 const root=path.resolve(__dirname,'../src')+path.sep,original=require.extensions['.js'];
 require.extensions['.js']=(module,filename)=>{if(!filename.startsWith(root))return original(module,filename);const {code}=babel.transformSync(fs.readFileSync(filename,'utf8'),{babelrc:false,configFile:false,plugins:[require('@babel/plugin-transform-modules-commonjs')]});module._compile(code,filename);};
 const {wikiProjects,getWikiProject}=require('../src/wiki/projects');
-const {equipmentBenefits,itemHighlights,isSimpleEquipment,machinePlayerGuide,meaningfulValue}=require('../src/wiki/playerGuide.mjs');
+const {capitalizeGuideStep,equipmentBenefits,itemHighlights,isSimpleEquipment,machinePlayerGuide,meaningfulValue}=require('../src/wiki/playerGuide.mjs');
 const {wikiText}=require('../src/i18n/wiki');
 const {wikiIconKey}=require('../src/data/wikiUiIcons.mjs');
+
+test('process fragments start with a capital while preserving quantities, units and translations',()=>{
+ for(const [input,expected] of [
+  ['up to 6 catalysts','Up to 6 catalysts'],
+  ['optional byproduct','Optional byproduct'],
+  ['  água registrada  ','Água registrada'],
+  ['líquido de receta','Líquido de receta'],
+  ['512,000 mB','512,000 mB'],
+  ['DE/action','DE/action'],
+  ['',''],
+ ]) assert.equal(capitalizeGuideStep(input),expected);
+});
 
 test('every documented trinket effect and immunity resolves from its canonical source label',()=>{
  let checked=0;

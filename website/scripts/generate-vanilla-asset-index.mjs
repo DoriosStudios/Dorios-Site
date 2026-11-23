@@ -1,19 +1,11 @@
-import {readdir, writeFile} from 'node:fs/promises';
-import {resolve, join, basename} from 'node:path';
-
-const websiteRoot = resolve(import.meta.dirname, '..');
-const assetRoot = join(websiteRoot, 'static', 'img', 'wiki', 'vanilla');
-const outputPath = join(websiteRoot, 'src', 'data', 'vanillaAssetIndex.json');
-const folders = ['Items', 'Renders'];
-const index = {};
-
-for (const folder of folders) {
-  const files = await readdir(join(assetRoot, folder), {withFileTypes: true});
-  for (const file of files.filter((entry) => entry.isFile() && entry.name.endsWith('.png'))) {
-    const id = basename(file.name, '.png');
-    index[id] ??= `/img/wiki/vanilla/${folder}/${file.name}`;
-  }
+import path from 'node:path';
+import {buildVanillaAssetIndex, websiteRoot} from './vanilla-assets.mjs';
+import {readJson, filesUnder} from './bedrock-pack.mjs';
+const manifests = [];
+for (const file of await filesUnder(path.join(websiteRoot, 'src/wiki/projects'))) {
+  if (path.basename(file) !== 'manifest.json') continue;
+  const manifest = await readJson(file), id = manifest.project?.id ?? manifest.id;
+  if (id) manifests.push({manifest, publicRoot: `/img/wiki/${id}`});
 }
-
-await writeFile(outputPath, `${JSON.stringify(index, null, 2)}\n`);
-console.log(`Indexed ${Object.keys(index).length} vanilla assets in ${outputPath}.`);
+const {legacy, universal} = await buildVanillaAssetIndex({manifests});
+console.log(`Indexed ${Object.keys(legacy).length} compatible vanilla URLs and ${universal.assets.length} resource records.`);

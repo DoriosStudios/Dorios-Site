@@ -1,4 +1,8 @@
 // Presentation rules operate on verified fields, never on an item's name.
+export function capitalizeGuideStep(value) {
+  return String(value).trim().replace(/^\p{L}/u, letter => letter.toLocaleUpperCase());
+}
+
 export function meaningfulValue(value) {
   if (value === undefined || value === null || value === '') return false;
   if (Array.isArray(value)) return value.some(meaningfulValue);

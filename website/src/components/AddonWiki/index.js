@@ -6,6 +6,8 @@ import Layout from '@theme/Layout';
 import '@fontsource-variable/space-grotesk';
 import {
   IconBattery,
+  IconLayoutGrid,
+  IconList,
   IconBolt,
   IconBook,
   IconBrandGithub,
@@ -14,7 +16,6 @@ import {
   IconChevronRight,
   IconCube,
   IconDroplet,
-  IconExternalLink,
   IconFileText,
   IconHelpCircle,
   IconAdjustmentsHorizontal,
@@ -27,6 +28,10 @@ import {
   IconX,
 } from '@tabler/icons-react';
 import DoriosMarketingShell from '../DoriosMarketingShell';
+import useOverlayPanel from '../useOverlayPanel';
+import {machineCatalogDescription,machineCategoryDescription,machineCatalogResources} from '../../wiki/machineCatalog.mjs';
+import {entityVisual} from '../../wiki/entityVisual.mjs';
+import {searchWikiProjects} from '../../wiki/search.mjs';
 import SocialMetadata from '../SocialMetadata';
 import {StepAccordionList, StepCardList, StepCompactList, StepTimelineList} from './stepLists';
 import {findGlobalCatalogEntry, getWikiProject, wikiProjects} from '../../wiki/projects';
@@ -206,7 +211,7 @@ function entrySocialImage(project, entryType, entry, controller, recipe) {
   if (entryType === 'items') return resolveAsset(project, entry.image ?? project.fallbackImage);
   if (entryType === 'blocks') return resolveAsset(project, entry.render ?? entry.faces?.north ?? entry.faces?.right ?? entry.itemImage ?? entry.image ?? Object.values(entry.faces ?? {}).find(Boolean) ?? project.fallbackImage);
   if (entryType === 'generators') return resolveAsset(project, entry.render ?? entry.faces?.north ?? entry.faces?.right ?? entry.itemImage ?? entry.image ?? Object.values(entry.faces ?? {}).find(Boolean) ?? project.fallbackImage);
-  if (entryType === 'entities') return resolveAsset(project, entry.image ?? project.overview.heroImage);
+  if (entryType === 'entities') return entityVisual(entry) ? resolveAsset(project, entityVisual(entry)) : undefined;
   if (entryType === 'recipes') return visualFor(project, recipe?.result?.id ?? recipe?.result?.label) ?? resolveAsset(project, project.recipeFallbackFace ?? project.fallbackImage);
   return resolveAsset(project, project.mechanicsGuide?.image ?? project.overview.heroImage ?? project.fallbackImage);
 }
@@ -234,24 +239,12 @@ function sectionSocialImage(project, section, itemCategory) {
   return resolveAsset(project, project.overview.heroImage ?? project.fallbackImage);
 }
 
-function WikiSearch({query, setQuery, placeholder, compact = false}) {
+function WikiSearch({query, setQuery, placeholder, inputRef}) {
   const w = useWikiText();
   const {t} = useSiteI18n();
-  const inputRef = useRef(null);
-
-  useEffect(() => {
-    const focusSearch = (event) => {
-      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
-        event.preventDefault();
-        inputRef.current?.focus();
-      }
-    };
-    window.addEventListener('keydown', focusSearch);
-    return () => window.removeEventListener('keydown', focusSearch);
-  }, []);
 
   return (
-    <label className={`${styles.search} ${compact ? styles.compactWikiSearch : ''}`}>
+    <label className={styles.search}>
       <IconSearch aria-hidden="true" size={18} stroke={1.8} />
       <span className={styles.srOnly}>{t('searchSection')}</span>
       <input
@@ -274,6 +267,28 @@ function WikiFrame({active, query, setQuery, children}) {
   const activeSectionRef = useRef(null);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [mobileNavigationOpen, setMobileNavigationOpen] = useState(false);
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const location = useLocation();
+  const navigationPanelRef = useRef(null), navigationButtonRef = useRef(null);
+  const searchPanelRef = useRef(null), searchButtonRef = useRef(null), searchInputRef = useRef(null);
+  const closeNavigation = useCallback(() => setMobileNavigationOpen(false), []);
+  const closeSearch = useCallback(() => setMobileSearchOpen(false), []);
+  const closeWikiPanels = useCallback(() => {closeNavigation(); closeSearch();}, [closeNavigation, closeSearch]);
+  useOverlayPanel(mobileNavigationOpen, closeNavigation, navigationPanelRef, navigationButtonRef);
+  useOverlayPanel(mobileSearchOpen, closeSearch, searchPanelRef, searchButtonRef);
+  const openSearch = useCallback(() => {
+    setMobileNavigationOpen(false);
+    if (window.matchMedia('(max-width: 900px)').matches) setMobileSearchOpen(true);
+    else searchInputRef.current?.focus();
+  }, []);
+  useEffect(() => { closeNavigation(); closeSearch(); }, [location.pathname, closeNavigation, closeSearch]);
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 901px)');
+    const closeOnDesktop = () => { if (media.matches) {closeNavigation(); closeSearch();} };
+    media.addEventListener('change', closeOnDesktop);
+    return () => media.removeEventListener('change', closeOnDesktop);
+  }, [closeNavigation, closeSearch]);
+  const searchResults = useMemo(() => searchWikiProjects([project],query,8), [project,query]);
   const [expandedSections, setExpandedSections] = useState(() => new Set(active.startsWith('how-to-play') ? ['how-to-play'] : []));
   const activeRootSection = project.wikiSections.find((section) => active === section.id || active.startsWith(`${section.id}/`));
   const activeChildSection = activeRootSection?.children?.find((child) => (
@@ -376,38 +391,36 @@ function WikiFrame({active, query, setQuery, children}) {
   };
 
   return (
-    <DoriosMarketingShell activePage="wiki" project={catalogProject}>
+    <DoriosMarketingShell activePage="wiki" project={catalogProject} onSearch={openSearch} searchOpen={mobileSearchOpen} onMenuOpen={closeWikiPanels}>
       <main className={styles.wikiPage} style={projectCardPalette(project.id)}>
-        <div className={styles.contextBar}>
+        <div className={`${styles.contextBar} ${mobileSearchOpen ? styles.wikiSearchOpen : ''}`} ref={searchPanelRef}
+          id="wiki-search-panel" role={mobileSearchOpen ? 'dialog' : undefined} aria-modal={mobileSearchOpen ? 'true' : undefined} aria-label={t('searchWiki')}>
           <div className={styles.breadcrumb}>
             <Link to="/projects">{t('projects')}</Link>
             {catalogProject && <><i aria-hidden="true" /><Link to={catalogProject.routes.project}>{catalogProject.name}</Link></>}
             <i aria-hidden="true" />
             <Link to={project.basePath}>{project.wikiName}</Link>
           </div>
-          <WikiSearch query={query} setQuery={setQuery} />
+          <WikiSearch query={query} setQuery={setQuery} inputRef={searchInputRef} />
+          <button className={styles.searchClose} type="button" onClick={closeSearch} aria-label={t('closeSearch')}><IconX size={21} aria-hidden="true"/></button>
+          {query.trim().length >= 2 && <div className={styles.wikiSearchResults} aria-label={t('searchResults')}>
+            {searchResults.map(result => <Link key={result.href} to={result.href} onClick={closeSearch}><WikiIcon name={project.wikiSections.find(section => section.id === result.type)?.icon ?? 'book'}/><span><strong>{result.name}</strong><small>{t(result.type)} · {project.name}</small></span></Link>)}
+            {!searchResults.length && <p>{t('noSearchResults')}</p>}
+          </div>}
         </div>
 
         <div className={`${styles.wikiLayout} ${sidebarCollapsed ? styles.sidebarCollapsed : ''}`}>
           <aside className={styles.sidebar} aria-label={w(`${project.name} wiki sections`)}>
             <div className={styles.mobileSidebarBar}>
-              <div className={styles.mobileSidebarCurrent}>
+              <button type="button" className={styles.mobileSectionSelect} data-wiki-menu ref={navigationButtonRef}
+                onClick={() => {closeSearch(); setMobileNavigationOpen(open => !open);}}
+                aria-label={t('wikiNavigation')} aria-expanded={mobileNavigationOpen} aria-controls="wiki-navigation">
                 <span className={styles.navIcon}><WikiIcon name={activeRootSection?.icon ?? 'book'} /></span>
-                <span><strong>{mobileNavigationLabel}</strong></span>
-              </div>
-              <WikiSearch query={query} setQuery={setQuery} placeholder={t('searchWiki')} compact />
-              <button
-                type="button"
-                className={styles.mobileSidebarToggle}
-                data-wiki-menu
-                onClick={() => setMobileNavigationOpen((current) => !current)}
-                aria-label={w(mobileNavigationOpen ? t('closeWikiNavigation') : t('openWikiNavigation'))}
-                aria-expanded={mobileNavigationOpen}
-                aria-controls="wiki-navigation"
-              >
-                <span>{w(mobileNavigationOpen ? t('close') : t('browse'))}</span>
+                <strong>{mobileNavigationLabel}</strong>
                 <IconChevronDown aria-hidden="true" size={18} stroke={2} />
               </button>
+              <button type="button" className={styles.wikiSearchToggle} ref={searchButtonRef} onClick={openSearch}
+                aria-label={t('searchWiki')} aria-expanded={mobileSearchOpen} aria-controls="wiki-search-panel"><IconSearch size={21} aria-hidden="true"/></button>
             </div>
             <div className={styles.sidebarHeader}>
               <p>{project.name}</p>
@@ -424,7 +437,8 @@ function WikiFrame({active, query, setQuery, children}) {
                   : <IconChevronLeft aria-hidden="true" size={18} stroke={1.9} />}
               </button>
             </div>
-            <div id="wiki-navigation" className={`${styles.mobileNavContent} ${mobileNavigationOpen ? styles.mobileNavOpen : ''}`}>
+            <div id="wiki-navigation" ref={navigationPanelRef} className={`${styles.mobileNavContent} ${mobileNavigationOpen ? styles.mobileNavOpen : ''}`}
+              onClick={event => {if (event.target.closest('a')) closeNavigation();}}>
               <nav>
                 {groupedWikiSections(project.wikiSections, t).map((group) => (
                   <section className={styles.navSection} key={group.id} aria-label={group.label}>
@@ -437,7 +451,6 @@ function WikiFrame({active, query, setQuery, children}) {
                 <a className={styles.repoSideLink} href={project.repository} target="_blank" rel="noreferrer">
                   <IconBrandGithub aria-hidden="true" size={18} stroke={1.8} />
                   <span>{t('githubRepository')}</span>
-                  <IconExternalLink className={styles.repoExternalIcon} aria-hidden="true" size={16} stroke={1.8} />
                 </a>
               )}
             </div>
@@ -694,17 +707,15 @@ function ItemCard({entry}) {
   const w = useWikiText();
   const project = useWikiProject();
   return (
-    <li className={styles.catalogListItem}>
+    <li>
       <Link className={styles.selectableCard} to={`${project.basePath}/items/${entry.slug}`}>
-        <article className={`${styles.catalogRow} ${entry.summaryFacts ? styles.richCatalogRow : ''}`}>
+        <article className={styles.itemGalleryCard}>
         <TierFlipbook entry={entry} className={styles.itemImage} />
         <div className={styles.itemCopy}>
-          <span>{w(entry.category)}</span>
+          <span title={w(entry.category)}>{w(entry.category)}</span>
           <h2>{entry.name}</h2>
-          <code>{entry.identifier ?? entry.id}</code>
         </div>
-          {entry.summaryFacts && <dl className={styles.itemSummary}>{entry.summaryFacts.map(([label, value]) => <div key={label}><dt>{w(label)}</dt><dd>{w(value)}</dd></div>)}</dl>}
-          <i className={styles.catalogArrow} aria-hidden="true">→</i>
+
         </article>
       </Link>
     </li>
@@ -746,7 +757,7 @@ function BlockCard({entry, tags = []}) {
           <h2>{entry.name}</h2>
           {tags.length > 0 && <div className={styles.blockTags}>{tags.slice(0, 4).map((tag) => <b key={tag}>{w(tag)}</b>)}</div>}
         </div>
-          <i className={styles.catalogArrow} aria-hidden="true">→</i>
+
         </article>
       </Link>
     </li>
@@ -1280,7 +1291,7 @@ function OverviewPage({query}) {
       image: categoryImages.machines ?? machineImage,
     },
     {id: 'generators', count: `${generators.length} systems`, image: categoryImages.generators ?? generators.map((entry) => entry.image ?? entry.faces?.right).find(Boolean)},
-    {id: 'entities', count: `${entities.length} entries`, image: entities.find((entry) => entry.image)?.image},
+    {id: 'entities', count: `${entities.length} entries`, image: entities.map(entry => entityVisual(entry, {compact:true})).find(Boolean)},
     {id: 'recipes', count: `${craftingRecipes.length + processingRecipes.length} indexed`, image: categoryImages.recipes ?? difficultRecipeItem ?? project.fallbackImage},
     {id: 'mechanics', count: `${mechanics.length} topics`, image: project.mechanicsGuide?.image ?? overview.heroImage},
   ]
@@ -1328,7 +1339,7 @@ function OverviewPage({query}) {
         <section className={styles.requirement}>
           <div><span>{w("Required dependency")}</span><strong>{overview.dependencyName}</strong></div>
           <p>{overview.dependencyCopy}</p>
-          {project.repository && <a href={project.repository} target="_blank" rel="noreferrer">{w("Official repo")} <span aria-hidden="true">↗</span></a>}
+          {project.repository && <a href={project.repository} target="_blank" rel="noreferrer">{w("Official repo")} </a>}
         </section>
       )}
 
@@ -1341,7 +1352,7 @@ function OverviewPage({query}) {
                 ? <img src={resolveAsset(project, card.image)} alt="" />
                 : <span className={styles.categoryFallback}><WikiIcon name={section.icon} size={30} stroke={1.6} /></span>}
               <div><strong>{w(section.label)}</strong><span>{card.count}</span></div>
-              <p>{card.copy}</p><b aria-hidden="true">→</b>
+              <p>{card.copy}</p>
             </Link>
           );
         })}
@@ -1364,7 +1375,7 @@ function OverviewPage({query}) {
                   : <span aria-hidden="true">{shortcut.icon ?? '◇'}</span>}
                 <strong>{shortcut.label}</strong>
                 <small>{shortcut.count} {w(shortcut.count === 1 ? 'entry' : 'entries')}</small>
-                <b aria-hidden="true">→</b>
+
               </Link>
             ))}
           </div>
@@ -1469,7 +1480,7 @@ function GuideSection({section, index}) {
       <GuideTable table={section.table} />
       {section.tables?.length > 0 && <div className={styles.guideTableGrid}>{section.tables.map((table) => <div key={table.label}><h3>{table.label}</h3><GuideTable table={table} /></div>)}</div>}
       <GuideCards cards={section.cards} />
-      {section.links?.length > 0 && <div className={styles.guideLinks}>{section.links.map((link) => <Link key={link.href} to={link.href}>{link.label}<span aria-hidden="true">→</span></Link>)}</div>}
+      {section.links?.length > 0 && <div className={styles.guideLinks}>{section.links.map((link) => <Link key={link.href} to={link.href}>{link.label}</Link>)}</div>}
     </section>
   );
 }
@@ -1518,8 +1529,8 @@ function HowToPlayPage({section, query}) {
       </div>
 
       <nav className={styles.guidePager} aria-label={w("Tutorial pages")}>
-        {previous ? <Link to={pageHref(previous, pageIndex - 1)}><span>{w("Previous")}</span><strong>← {previous.label}</strong></Link> : <span />}
-        {next ? <Link to={pageHref(next, pageIndex + 1)}><span>{w("Next step")}</span><strong>{next.label} →</strong></Link> : <Link to={`${project.basePath}/machines`}><span>{w("Continue exploring")}</span><strong>{w("Machine catalog →")}</strong></Link>}
+        {previous ? <Link to={pageHref(previous, pageIndex - 1)}><span>{w("Previous")}</span><strong>{previous.label}</strong></Link> : <span />}
+        {next ? <Link to={pageHref(next, pageIndex + 1)}><span>{w("Next step")}</span><strong>{next.label}</strong></Link> : <Link to={`${project.basePath}/machines`}><span>{w("Continue exploring")}</span><strong>{w("Machine catalog →").replace(/\s*→$/, '')}</strong></Link>}
       </nav>
     </article>
   );
@@ -1529,7 +1540,7 @@ function ItemsPage({query, categorySection}) {
   const w = useWikiText();
   const project = useWikiProject();
   const {items} = project;
-  const itemCatalogClass = project.itemCatalogColumns === 1 ? styles.simpleCatalogList : `${styles.simpleCatalogList} ${styles.itemCatalogList}`;
+  const itemCatalogClass = styles.itemGallery;
   const [category, setCategory] = useState('All');
   const [page, setPage] = useCatalogPage([query, category, categorySection?.id]);
   const fixedCategories = categoriesInSection(categorySection);
@@ -1832,15 +1843,20 @@ function machineRecipeSets(project, machine, controller) {
 
 function MachinesPage({query}) {
   const w = useWikiText();
+  const {t, locale} = useSiteI18n();
   const project = useWikiProject();
   const {machineControllerIds = {}, machines} = project;
   const blocks = project.allBlocks ?? project.blocks;
   const documentedMachines = machines.map(documentedMachine);
   const categoryOrder = project.machineCategoryOrder ?? [];
   const [category, setCategory] = useState('All');
-  const normalized = query.trim().toLowerCase();
-  const visible = documentedMachines.filter((entry) => (category === 'All' || entry.category === category)
-    && `${entry.name} ${entry.category} ${entry.tier} ${entry.recipe ?? ''} ${entry.description ?? ''} ${entry.input ?? ''} ${entry.output ?? ''} ${(entry.modules ?? []).join(' ')}`.toLowerCase().includes(normalized));
+  const [search, setSearch] = useState('');
+  const [sort, setSort] = useState('asc');
+  const [view, setView] = useState('grid');
+  const needles = [query, search].map(value => value.trim().toLocaleLowerCase()).filter(Boolean);
+  const visible = documentedMachines.filter(entry => (category === 'All' || entry.category === category)
+    && needles.every(needle => `${entry.name} ${entry.category} ${entry.description ?? ''} ${entry.input ?? ''} ${entry.output ?? ''}`.toLocaleLowerCase().includes(needle)))
+    .sort((a,b) => a.name.localeCompare(b.name, locale) * (sort === 'desc' ? -1 : 1));
   const grouped = visible.reduce((groups, machine) => {
     (groups[machine.category] ??= []).push(machine);
     return groups;
@@ -1848,60 +1864,45 @@ function MachinesPage({query}) {
   const categoryFilters = categoriesFor(documentedMachines).sort((left, right) => {
     if (left.name === 'All') return -1;
     if (right.name === 'All') return 1;
-    const leftIndex = categoryOrder.indexOf(left.name);
-    const rightIndex = categoryOrder.indexOf(right.name);
-    return (leftIndex < 0 ? Number.MAX_SAFE_INTEGER : leftIndex)
-      - (rightIndex < 0 ? Number.MAX_SAFE_INTEGER : rightIndex);
+    return (categoryOrder.includes(left.name) ? categoryOrder.indexOf(left.name) : 999)
+      - (categoryOrder.includes(right.name) ? categoryOrder.indexOf(right.name) : 999);
   });
-  const groupedEntries = Object.entries(grouped).sort(([left], [right]) => {
-    const leftIndex = categoryOrder.indexOf(left);
-    const rightIndex = categoryOrder.indexOf(right);
-    return (leftIndex < 0 ? Number.MAX_SAFE_INTEGER : leftIndex)
-      - (rightIndex < 0 ? Number.MAX_SAFE_INTEGER : rightIndex);
-  });
-  return (
-    <>
-      <PageIntro section="machines" count={machines.length} countLabel="documented machines" eyebrow={w("Technical machine catalog")} />
-      {project.machineNotice && <div className={styles.technologyNotice}><strong>{project.machineNotice.title}</strong><p>{project.machineNotice.copy}</p></div>}
-      <FilterChips categories={categoryFilters} active={category} setActive={setCategory} />
-      <p className={styles.resultCount}>{visible.length} {w("machines shown")}</p>
-      <div className={styles.machineGroups}>
-        {groupedEntries.map(([groupName, groupMachines]) => (
-          <section className={styles.machineGroup} data-category={groupName.toLowerCase()} key={groupName}>
-            <header><div><span>{w("Machine category")}</span><h2>{groupName}</h2></div><b>{groupMachines.length}</b></header>
-            <div className={styles.machineList}>
-              {groupMachines.map((machine) => {
-                const sequence = documentedMachines.findIndex((entry) => entry.id === machine.id) + 1;
-                const controller = blocks.find((entry) => entry.slug === (machine.blockSlug ?? machineControllerIds[machine.id]));
-                return (
-                  <Link className={styles.selectableCard} to={`${project.basePath}/machines/${machine.id}`} key={machine.id}>
-                    <article className={styles.machineCard}>
-                      <div className={styles.machineVisual}>
-                        {controller && <BlockPreview entry={controller} size="min(100%, 10rem)" />}
-                        <span>{w("Machine")} {String(sequence).padStart(2, '0')}</span>
-                      </div>
-                      <div className={styles.machineContent}>
-                        <div className={styles.machineHeading}><div><span>{machine.category} · {machine.tier} {w("tier")}</span><h3>{machine.name}</h3></div><b>{machine.primaryResource}</b></div>
-                        <p className={styles.machineDescription}>{machine.description}</p>
-                        <dl className={styles.machineSummary}>
-                          <div><dt>{w("Base consumption")}</dt><dd>{machine.baseConsumption}</dd></div>
-                          <div><dt>{w("Energy capacity")}</dt><dd>{machine.energyCapacity}</dd></div>
-                          <div><dt>{w("Production type")}</dt><dd>{w(machine.productionType)}</dd></div>
-                          <div><dt>{w("Upgrades")}</dt><dd>{w(machine.modules?.length ? machine.modules.join(', ') : 'None')}</dd></div>
-                        </dl>
-                      </div>
-                      <i className={styles.machineArrow} aria-hidden="true">→</i>
-                    </article>
-                  </Link>
-                );
-              })}
-            </div>
-          </section>
-        ))}
-      </div>
-      {!visible.length && <p className={styles.empty}>{w("No machines match “")}{query}”.</p>}
-    </>
-  );
+  const groupedEntries = Object.entries(grouped).sort(([left], [right]) =>
+    (categoryOrder.includes(left) ? categoryOrder.indexOf(left) : 999) - (categoryOrder.includes(right) ? categoryOrder.indexOf(right) : 999));
+  return <>
+    <PageIntro section="machines" count={machines.length} countLabel="documented machines" />
+    <FilterChips categories={categoryFilters} active={category} setActive={setCategory} />
+    <div className={styles.machineCatalogTools}>
+      <label className={styles.machineCatalogSearch}><IconSearch size={19} aria-hidden="true"/><span className={styles.srOnly}>{t('searchMachines')}</span><input type="search" value={search} onChange={event => setSearch(event.target.value)} placeholder={t('searchMachines')}/></label>
+      <label><span className={styles.srOnly}>{t('allCategories')}</span><select value={category} onChange={event => setCategory(event.target.value)}>{categoryFilters.map(filter => <option key={filter.name} value={filter.name}>{filter.name === 'All' ? t('allCategories') : w(filter.name)}</option>)}</select></label>
+      <label><span className={styles.srOnly}>{t('sortBy')}</span><select value={sort} onChange={event => setSort(event.target.value)}><option value="asc">{t('nameAscending')}</option><option value="desc">{t('nameDescending')}</option></select></label>
+      <div className={styles.machineViewControls}><button type="button" aria-label={t('gridView')} aria-pressed={view === 'grid'} onClick={() => setView('grid')}><IconLayoutGrid size={21} aria-hidden="true"/></button><button type="button" aria-label={t('listView')} aria-pressed={view === 'list'} onClick={() => setView('list')}><IconList size={21} aria-hidden="true"/></button></div>
+    </div>
+    <p className={styles.srOnly} aria-live="polite">{visible.length} {w('machines shown')}</p>
+    <div className={styles.machineCatalogGroups}>
+      {groupedEntries.map(([groupName, groupMachines]) => <details open className={styles.machineCatalogGroup} key={groupName}>
+        <summary><h2>{w(groupName)}</h2><b>{groupMachines.length}</b><p>{machineCategoryDescription(project.id, groupName, locale)}</p><IconChevronDown size={19} aria-hidden="true"/></summary>
+        <div className={`${styles.machineCatalogGrid} ${view === 'list' ? styles.machineCatalogListView : ''}`}>
+          {groupMachines.map(machine => {
+            const raw = wikiProjects[project.id]?.machines.find(entry => entry.id === machine.id) ?? machine;
+            const controller = blocks.find(entry => entry.slug === (machine.blockSlug ?? machineControllerIds[machine.id]));
+            const energy = machinePlayerGuide(raw).metrics.find(([label]) => label === 'Base energy consumption');
+            const resources = machineCatalogResources(raw);
+            return <Link className={styles.machineCatalogCard} to={`${project.basePath}/machines/${machine.id}`} key={machine.id}>
+              <div className={styles.machineCatalogImage}>{controller && <BlockPreview entry={controller} size="88px"/>}</div>
+              <h3>{machine.name}</h3>
+              <p>{machineCatalogDescription(project.id, raw, locale)}</p>
+              <div className={styles.machineCatalogMetrics}>
+                {energy && <WikiStatValue label={energy[0]} value={energy[1]} w={w} size={20}/>}
+                {resources.length > 0 && <span><WikiIcon name={resources[0] === 'fluids' ? 'droplet' : resources[0] === 'gases' ? 'wind' : 'cube'} size={20}/>{resources.map(resource => t(resource)).join(' + ')}</span>}
+              </div>
+            </Link>;
+          })}
+        </div>
+      </details>)}
+    </div>
+    {!visible.length && <p className={styles.empty}>{t('noSearchResults')}</p>}
+  </>;
 }
 
 function GeneratorsPage({query}) {
@@ -1959,7 +1960,7 @@ function GeneratorsPage({query}) {
                         <div><dt>{w(generator.systemType === 'Generation' ? 'Generation type' : 'System type')}</dt><dd>{generator.generationType ?? generator.systemType}</dd></div>
                       </dl>
                     </div>
-                    <i className={styles.machineArrow} aria-hidden="true">→</i>
+
                   </article>
                 </Link>
               ))}
@@ -1985,8 +1986,8 @@ function EntitiesPage({query}) {
         {visible.map((entry) => (
           <Link className={styles.selectableCard} to={`${project.basePath}/entities/${entry.slug ?? entry.id}`} key={entry.id}>
             <article className={styles.entityCard}>
-              <div>{entry.image
-                ? <img src={resolveAsset(project, entry.image)} alt="" loading="lazy" />
+              <div>{entityVisual(entry, {compact:true})
+                ? <img src={resolveAsset(project, entityVisual(entry, {compact:true}))} alt="" loading="lazy" />
                 : <span className={styles.visualFallback} aria-hidden="true">⊙</span>}</div>
               <span>{w(entry.category)}</span><h2>{entry.name}</h2>
             </article>
@@ -2736,7 +2737,7 @@ function ItemRecipeCard({recipe}) {
   return <article className={styles.itemRecipeCard}>
     <header>{station.face ? <img src={resolveAsset(project, station.face)} alt="" /> : <span className={styles.stationFallback} aria-hidden="true">▦</span>}
       <div><small>{w("Station")}</small><strong>{station.label}</strong></div>
-      <Link to={itemRecipeHref(project, recipe)} aria-label={w(`Open full ${station.label} recipe`)}>{w("Full recipe →")}</Link>
+      <Link to={itemRecipeHref(project, recipe)} aria-label={w(`Open full ${station.label} recipe`)}>{w("Full recipe →").replace(/\s*→$/, '')}</Link>
     </header>
     <div className={styles.itemRecipeFlow}>
       {hasCraftingGrid
@@ -2825,7 +2826,7 @@ function MainUse({use, recipe}) {
   const image = target ? visualFor(project, target) : null;
   const heading = <>{image && <img src={image} alt="" />}<span><small>{w("Main use")}</small><strong>{use.title ?? target?.name ?? formatIdentifier(recipe?.result?.id)}</strong></span></>;
   return <article className={styles.mainUse}>
-    {href ? <Link className={styles.mainUseHeading} to={href}>{heading}<b aria-hidden="true">→</b></Link> : <div className={styles.mainUseHeading}>{heading}</div>}
+    {href ? <Link className={styles.mainUseHeading} to={href}>{heading}</Link> : <div className={styles.mainUseHeading}>{heading}</div>}
     {use.description && <p>{w(use.description)}</p>}
     {recipe && <ItemRecipeCard recipe={recipe} />}
   </article>;
@@ -2913,7 +2914,7 @@ function ItemDocumentation({entry, project, documentation, properties, groups, r
       {selectedPrimary.length > 0 && <><h3 className={styles.itemSubheading}>{w("Primary Sources")}</h3><div className={styles.primarySources}>{selectedPrimary.map(({source, recipe}) => <SourceMethod key={source.id ?? source.title} source={source} recipe={recipe} />)}</div></>}
       {visibleRecipes.length > 0 && <div className={styles.primaryRecipes}>{visibleRecipes.map((recipe) => <ItemRecipeCard key={`${recipe.type ?? 'crafting'}-${recipe.id}`} recipe={recipe} />)}</div>}
       {!selectedPrimary.length && !visibleRecipes.length && <EmptyDetailSection />}
-      {(otherMethodCount > 0 || recipeCount > 0) && <div className={styles.itemMoreLink}><span><strong>{w("Other Methods")}</strong>{w(otherMethodCount > 0 ? `${otherMethodCount} additional documented recipe${otherMethodCount === 1 ? '' : 's'} and conversion${otherMethodCount === 1 ? '' : 's'}.` : 'See this method in the complete recipe catalog.')}</span><Link to={recipeHref}>{w("View all recipes →")}</Link></div>}
+      {(otherMethodCount > 0 || recipeCount > 0) && <div className={styles.itemMoreLink}><span><strong>{w("Other Methods")}</strong>{w(otherMethodCount > 0 ? `${otherMethodCount} additional documented recipe${otherMethodCount === 1 ? '' : 's'} and conversion${otherMethodCount === 1 ? '' : 's'}.` : 'See this method in the complete recipe catalog.')}</span><Link to={recipeHref}>{w("View all recipes →").replace(/\s*→$/, '')}</Link></div>}
     </ItemSection>}
 
     {section === 'drops' && <ItemSection id="item-drops" title={t('detailDrops')}>
@@ -2937,7 +2938,7 @@ function ItemDocumentation({entry, project, documentation, properties, groups, r
     {section === 'uses' && <ItemSection id="item-main-uses" eyebrow={w("Progression")} title={w("Main Uses")}>
       {!visibleUses.length && <EmptyDetailSection />}
       <div className={styles.mainUses}>{visibleUses.map(({use, recipe}) => <MainUse key={use.id ?? recipe?.id} use={use} recipe={recipe} />)}</div>
-      {(additionalUses > 0 || usedIn.length > 0) && <div className={styles.itemMoreLink}><span><strong>{w("Additional uses")}</strong>{w(additionalUses > 0 ? `${additionalUses} more documented use${additionalUses === 1 ? '' : 's'}.` : 'Explore every documented use in the recipe catalog.')}</span><Link to={recipeHref}>{w("View all uses →")}</Link></div>}
+      {(additionalUses > 0 || usedIn.length > 0) && <div className={styles.itemMoreLink}><span><strong>{w("Additional uses")}</strong>{w(additionalUses > 0 ? `${additionalUses} more documented use${additionalUses === 1 ? '' : 's'}.` : 'Explore every documented use in the recipe catalog.')}</span><Link to={recipeHref}>{w("View all uses →").replace(/\s*→$/, '')}</Link></div>}
     </ItemSection>}
 
     {section === 'related' && <ItemSection id="item-related" eyebrow={w("Continue reading")} title={w("Related Items")}>{relatedItems.length ? <div className={styles.relatedItemGrid}>{relatedItems.map((item) => <RelatedItemCard project={project} item={item} key={item.identifier ?? item.id} />)}</div> : <EmptyDetailSection />}</ItemSection>}
@@ -3613,17 +3614,17 @@ function MachineRecipes({machine, recipes, dropsOnly = false}) {
   return (
     <div className={styles.machineRecipes}>
       {!dropsOnly && <section className={styles.machineRecipeSubsection} aria-labelledby="machine-obtain">
-        <div><p className={styles.eyebrow}>01 / {t('acquisition')}</p><h3 id="machine-obtain">{t('howToObtain')}</h3></div>
+        <h3 id="machine-obtain">{t('howToObtain')}</h3>
         {recipes.obtain.length ? <div className={styles.machineObtainGrid}>{recipes.obtain.map((recipe) => <RecipeCard recipe={recipe} key={`obtain-${recipe.id}`} />)}</div>
           : <p className={styles.machineRecipeEmpty}>{t('noCraftingRecipe')}</p>}
       </section>}
-      {!dropsOnly && hasDropCatalog && <Link className={styles.itemMoreLink} to={detailSectionPath(detailPage.basePath, 'drops')}>{t('detailDrops')} →</Link>}
+      {!dropsOnly && hasDropCatalog && <Link className={styles.itemMoreLink} to={detailSectionPath(detailPage.basePath, 'drops')}>{t('detailDrops')}</Link>}
       {showCatalog && recipes.catalog.length > 0 && <RecipeOriginFilters recipes={recipes.catalog} active={originFilter} setActive={setOriginFilter} />}
       {showCatalog && <>
       {visibleCatalog.length > 0 && usesSiftingCatalog ? <SiftingRecipeCatalog machine={machine} recipes={visibleCatalog} />
         : visibleCatalog.length > 0 && usesAbyssalFisherCatalog ? <AbyssalFisherRecipeCatalog recipes={visibleCatalog} />
         : visibleCatalog.length > 0 && <section className={styles.machineRecipeSubsection} aria-labelledby="machine-recipes-catalog">
-        <div><p className={styles.eyebrow}>02 / {t('processing')}</p><h3 id="machine-recipes-catalog">{t('recipesCatalog')}</h3></div>
+        <h3 id="machine-recipes-catalog">{t('recipesCatalog')}</h3>
         <div className={styles.machineRecipeCatalog}>{visibleCatalog.map((recipe) => <ProcessingCatalogCard recipe={recipe} machine={machine} key={`process-${recipe.id}`} />)}</div>
       </section>}
       {!recipes.catalog.length && <DynamicMachineOperation machine={machine} />}
@@ -3654,7 +3655,7 @@ function MachineDocumentation({machine, controller, blockDetails, specifications
     : section==='drops'?<MachineRecipes machine={machine} recipes={recipes} dropsOnly/>
     : <EmptyDetailSection/>;
   return (
-    <section className={styles.machineReference}>
+    <section className={`${styles.machineReference} ${styles.machineDocumentation}`}>
       <div className={styles.machineTabPanel}>{content}</div>
       {section === 'details' && machine.transport && <DocumentationSection section={machine.transport} />}
     </section>
@@ -3680,10 +3681,9 @@ function MachineDetail({entry, controller, sequence}) {
           <p className={styles.eyebrow}>{w("Machine")} {String(sequence).padStart(2, '0')} / {w(machine.category)}</p>
           <h1>{machine.name}</h1>
           <p>{heroDescription}</p>
-          <div className={styles.machineHeroMeta}>
-            {meaningfulValue(machine.tier)&&machine.tier!=='Standard'&&<span><small>{w("Tier")}</small>{w(machine.tier)}</span>}
-            {meaningfulValue(machine.primaryResource)&&<span><small>{w("Primary resource")}</small>{w(machine.primaryResource)}</span>}
-          </div>
+          {meaningfulValue(machine.tier)&&machine.tier!=='Standard'&&<div className={styles.machineHeroMeta}>
+            <span><small>{w("Tier")}</small>{w(machine.tier)}</span>
+          </div>}
         </div>
       </article>
 
@@ -3722,7 +3722,7 @@ function RelatedRecipes({entry}) {
     <section className={styles.relatedSection}>
       <div><p className={styles.eyebrow}>{w("Connected production")}</p><h2>{w("Related recipes")}</h2></div>
       <div className={styles.relatedLinks}>
-        {related.map((recipe) => <Link key={recipe.href} to={recipe.href}><span>{recipe.type ?? project.stationMeta[recipe.station]?.label ?? 'Crafting'}</span><strong>{formatIdentifier(recipe.result?.id ?? recipe.output ?? recipe.identifier)}</strong><b aria-hidden="true">→</b></Link>)}
+        {related.map((recipe) => <Link key={recipe.href} to={recipe.href}><span>{recipe.type ?? project.stationMeta[recipe.station]?.label ?? 'Crafting'}</span><strong>{formatIdentifier(recipe.result?.id ?? recipe.output ?? recipe.identifier)}</strong></Link>)}
       </div>
     </section>
   );
@@ -3795,7 +3795,7 @@ function AddonWikiEntryContent({entryType, slug}) {
           imageHeight={hasGeneratedSocialImage ? 512 : undefined}
         />
         <WikiFrame active="machines" query={query} setQuery={setQuery}>
-          <div className={styles.detailBack}><Link to={backHref}>{w("← Back to")} {w(backLabel)}</Link></div>
+          <div className={styles.detailBack}><Link to={backHref}>{w("← Back to").replace(/^←\s*/, '')} {w(backLabel)}</Link></div>
           <MachineDetail entry={entry} controller={controller} sequence={sequence} />
         </WikiFrame>
       </Layout>
@@ -3821,7 +3821,7 @@ function AddonWikiEntryContent({entryType, slug}) {
           imageHeight={hasGeneratedSocialImage ? 512 : undefined}
         />
         <WikiFrame active={activeSection} query={query} setQuery={setQuery}>
-          <div className={styles.detailBack}><Link to={backHref}>{w("← Back to")} {w(backLabel)}</Link></div>
+          <div className={styles.detailBack}><Link to={backHref}>{w("← Back to").replace(/^←\s*/, '')} {w(backLabel)}</Link></div>
           <ItemDetail entry={entry} visual={itemVisual} />
         </WikiFrame>
       </Layout>
@@ -3854,8 +3854,8 @@ function AddonWikiEntryContent({entryType, slug}) {
     ].filter(Boolean);
     referenceGroups = entryReferenceGroups(entryType, entry);
   } else if (entryType === 'entities') {
-    visual = <div className={styles.detailGuideVisual}>{entry.image
-      ? <img src={resolveAsset(project, entry.image)} alt="" />
+    visual = <div className={styles.detailGuideVisual}>{entityVisual(entry)
+      ? <img src={resolveAsset(project, entityVisual(entry))} alt="" />
       : <span className={styles.visualFallback} aria-hidden="true">⊙</span>}</div>;
     facts = [['Category', entry.category], ['Identifier', entry.identifier], ['Entry type', 'Runtime entity']];
   } else if (entryType === 'mechanics') {
@@ -3882,7 +3882,7 @@ function AddonWikiEntryContent({entryType, slug}) {
         imageHeight={hasGeneratedSocialImage ? 512 : undefined}
       />
       <WikiFrame active={activeSection} query={query} setQuery={setQuery}>
-        <div className={styles.detailBack}><Link to={backHref}>{w("← Back to")} {w(backLabel)}</Link></div>
+        <div className={styles.detailBack}><Link to={backHref}>{w("← Back to").replace(/^←\s*/, '')} {w(backLabel)}</Link></div>
         {recipe ? (
           <section className={styles.recipeDetail}>
             <div className={styles.detailHeading}><p className={styles.eyebrow}>{w("Recipe entry")}</p><h1>{w(title)}</h1><code>{recipe.identifier}</code></div>

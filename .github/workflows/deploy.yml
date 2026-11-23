@@ -51,6 +51,30 @@ jobs:
         working-directory: website
         run: npm ci
 
+      - name: Cache pinned vanilla and addon render sources
+        uses: actions/cache@v4
+        with:
+          path: |
+            website/.cache-loader/vanilla
+            website/.cache-loader/wiki-render-sources
+          key: wiki-sources-${{ runner.os }}-${{ hashFiles('website/scripts/vanilla-source.config.json', 'website/scripts/wiki-visual-sources.config.json') }}
+
+      - name: Cache generated entity renders
+        uses: actions/cache@v4
+        with:
+          path: |
+            website/static/img/wiki/utilitycraft/auto-entities
+            website/static/img/wiki/ascendant-technology/auto-entities
+          key: entity-renders-${{ runner.os }}-${{ hashFiles('website/scripts/bedrock-*.mjs', 'website/scripts/generate-bedrock-entity-renders.mjs', 'website/scripts/wiki-visual-sources.config.json') }}
+
+      - name: Verify wiki and CPU visual pipelines
+        working-directory: website
+        run: npm run test:wiki && npm run test:bedrock-renders && npm run test:entity-renders && npm run test:vanilla-assets && npm run test:visual-pipeline
+
+      - name: Prepare pinned wiki entity visuals
+        working-directory: website
+        run: npm run prepare:wiki-visuals -- --download-sources
+
       - name: Checkout Atelier builder source
         uses: actions/checkout@v4
         with:

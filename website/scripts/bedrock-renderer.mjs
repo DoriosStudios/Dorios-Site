@@ -106,7 +106,11 @@ export function rasterize(faces, geometry, textures, cubes, options = {}) {
   if (!points.length) throw new Error('Preview geometry has no visible surfaces');
   const min = [0, 1].map(axis => Math.min(...points.map(point => point[axis])));
   const max = [0, 1].map(axis => Math.max(...points.map(point => point[axis])));
-  const scale = Math.min(3.5 * imageSize / 128, (imageSize * .875) / (max[0] - min[0]), (imageSize * .875) / (max[1] - min[1]));
+  // Entity portraits need to fill the canvas even when the head is only a few
+  // model units wide. Preserve the established block framing unless requested.
+  const scale = Math.min(options.maxScale ?? 3.5 * imageSize / 128,
+    (imageSize * (options.padding ?? .875)) / (max[0] - min[0]),
+    (imageSize * (options.padding ?? .875)) / (max[1] - min[1])) * (options.zoom ?? 1);
   const screen = point => {
     const [x, y, depth] = projectPoint(point);
     return [(x - (min[0] + max[0]) / 2) * scale + imageSize / 2,
