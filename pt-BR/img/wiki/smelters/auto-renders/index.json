@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "rendererVersion": 4,
+  "blocks": {
+    "better_smelters:oak_wood_furnace": {
+      "identifier": "better_smelters:oak_wood_furnace",
+      "kind": "generated",
+      "path": "auto-renders/better_smelters_oak_wood_furnace-fd0440c3149d-e28c3308995068fa67989bdf.png",
+      "hash": "e28c3308995068fa67989bdfb693c79cc9e53efc9fe0b8a63d3eba6043aac997",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "better_smelters:on": false,
+        "better_smelters:ui_open": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "better_smelters:oak_wood_furnace@10ddb4392361": {
+      "identifier": "better_smelters:oak_wood_furnace",
+      "kind": "generated",
+      "path": "auto-renders/better_smelters_oak_wood_furnace_10ddb4392361-93c7ee2081e1-fe4b442ffc518145405a257f.png",
+      "hash": "fe4b442ffc518145405a257fcff69b7d82a4bcb2b00a51dd0c54b2a55beddb51",
+      "configuration": "1f40836b413abad11f4b9bc08cf4c2d6093f1b365d66dd5c244ba1b9f511c41e",
+      "states": {
+        "better_smelters:on": true,
+        "better_smelters:ui_open": false,
+        "minecraft:cardinal_direction": "south"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    }
+  }
+}
