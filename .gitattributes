@@ -1,0 +1,2 @@
+# Preserve upstream fixture bytes: source.json records their exact SHA-256 hashes.
+website/scripts/fixtures/utilitycraft-workbench/** -text
