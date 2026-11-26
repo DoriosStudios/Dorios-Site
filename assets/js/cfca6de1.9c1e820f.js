@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[906043],{117647:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"entities","slug":"nether-star-bonsai","detailSection":"details"}')}}]);

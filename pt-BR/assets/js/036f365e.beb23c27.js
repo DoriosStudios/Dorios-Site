@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[192709],{189263:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"entities","slug":"gas-tank-depleted-uranium-hexafluoride-gas","detailSection":"details"}')}}]);

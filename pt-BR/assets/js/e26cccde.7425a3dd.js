@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[941052],{115293:e=>{e.exports=JSON.parse('{"projectId":"ascendant-technology","entryType":"entities","slug":"alchemical-potion-projectile","detailSection":"details"}')}}]);

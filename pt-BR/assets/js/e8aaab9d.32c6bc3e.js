@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[978616],{383826:e=>{e.exports=JSON.parse('{"projectId":"utilitycraft","entryType":"entities","slug":"mechanical-spawner-blaze","detailSection":"details"}')}}]);
