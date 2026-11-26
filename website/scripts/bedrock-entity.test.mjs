@@ -91,6 +91,30 @@ test('legacy vanilla geometry index and inherited material definitions resolve w
   assert.equal(visual.layers[0].materials.entity_head.decoded.doubleSided,true);alphaBounds((await renderEntity(visual)).pixels);
 });
 
+test('Enderman static pose aligns the legacy head with the neck and preserves the hat', async t => {
+  const f = await fixture(t);
+  const identifier = 'minecraft:enderman';
+  const geometryId = 'geometry.enderman.v1.8';
+  const definition = client(identifier);
+  definition['minecraft:client_entity'].description.geometry.default = geometryId;
+  await f.write('RP/entity/enderman.json', definition);
+  const cube = (y, height) => ({origin: [-4, y, -4], size: [8, height, 8], uv: [0, 0]});
+  const bones = [
+    {name: 'body', pivot: [0, 38, 0], cubes: [cube(26, 12)]},
+    {name: 'head', parent: 'body', pivot: [0, 24, 0], cubes: [cube(24, 8)]},
+    {name: 'hat', parent: 'head', pivot: [0, 38, 0], cubes: [cube(37.5, 8)]},
+  ];
+  await f.write('models/entity/enderman.geo.json', {[geometryId]: {bones, texturewidth: 32, textureheight: 32}}, f.vanilla);
+  const packs = await f.load({vanilla: f.vanilla});
+  const visual = await resolveEntityVisual({identifier, packs});
+  const [body, head, hat] = visual.layers[0].geometry.bones;
+  assert.equal(head.cubes[0].origin[1], body.cubes[0].origin[1] + body.cubes[0].size[1]);
+  assert.deepEqual(head.pivot, body.pivot);
+  assert.equal(hat.cubes[0].origin[1], 37.5);
+  assert.equal(packs.geometries.get(geometryId).value.bones[1].cubes[0].origin[1], 24);
+  alphaBounds((await renderEntity(visual)).pixels);
+});
+
 test('controller arrays, ternaries, BP variant and properties select exact texture deterministically',async t=>{
   const f=await fixture(t), definition=client('test:creature'); definition['minecraft:client_entity'].description.textures.blue='textures/entity/blue';
   await f.write('RP/entity/test.json',definition);await f.texture('RP/textures/entity/blue.png',{r:0,g:0,b:255,alpha:1});

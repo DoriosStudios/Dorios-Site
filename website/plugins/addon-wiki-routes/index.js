@@ -14,7 +14,7 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
         path: normalizeUrl([context.siteConfig.baseUrl, route.path]),
       });
       const projectRoot = path.join(__dirname, '..', '..', 'src', 'wiki', 'projects');
-      const {hasEntityVisuals} = await import(pathToFileURL(path.join(projectRoot, '../entityVisual.mjs')).href);
+      const {hasPublicEntitySection} = await import(pathToFileURL(path.join(projectRoot, '../entityVisual.mjs')).href);
       const genericProjectIds = require(path.join(projectRoot, 'generatedProjects.json'));
       const projectCatalog = require(path.join(__dirname, '..', '..', 'src', 'data', 'projectCatalog.json'));
       const atelier = require('../../src/data/atelierWiki.json');
@@ -145,6 +145,7 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
             mechanics: id === 'trinkets'
               ? ['dedicated-slots', 'attribute-bonuses', 'effects-and-immunities', 'loot-progression']
               : [],
+            extraSections: id === 'trinkets' ? ['drops'] : [],
             hiddenSections: id === 'trinkets' ? ['blocks', 'entities'] : [],
           })),
       ];
@@ -160,7 +161,7 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
         ]);
         const blocks = allBlocks.filter((block) => !specializedBlockIds.has(block.id));
         const sectionVisible = (section) => !project.hiddenSections?.includes(section);
-        const entitiesVisible = sectionVisible('entities') && hasEntityVisuals(project.manifest);
+        const entitiesVisible = sectionVisible('entities') && hasPublicEntitySection(project.id, project.manifest);
         const sections = [
           'overview',
           project.manifest.catalog.items.length && project.id !== 'trinkets' && 'items',

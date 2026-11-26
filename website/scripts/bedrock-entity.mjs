@@ -37,8 +37,9 @@ export async function loadEntityPacks({source, dependencies = [], vanilla}) {
             for (const geometry of data['minecraft:geometry'] ?? []) insert(geometries, geometry.description.identifier, geometry, file);
             // The official resource pack still contains legacy entity models.
             for (const [identifier, model] of Object.entries(data)) if (identifier.startsWith('geometry.') && model.bones) {
-              insert(geometries, identifier, {...model, description: {identifier,
-                texture_width: model.texturewidth ?? 64, texture_height: model.textureheight ?? 32}}, file);
+              const [name, parent] = identifier.split(':');
+              insert(geometries, name, {...model, legacyParent: parent, description: {identifier: name,
+                texture_width: model.texturewidth, texture_height: model.textureheight}}, file);
             }
           } else {
             const map = {controller: controllers, material: materials, animation: animations, animationController: animationControllers}[type];
@@ -162,7 +163,7 @@ function materialProfile(name, packs, explicit) {
   fail('unsupportedMaterial', `Unknown entity material ${name}; configure materialMethods.${name} explicitly`);
 }
 
-const patternMatches = (pattern, value) => new RegExp('^' + pattern.split('*').map(part => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('.*') + '$').test(value);
+const patternMatches = (pattern, value) => new RegExp('^' + pattern.split('*').map(part => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('.*') + '$', 'i').test(value);
 export function headBones(geometry, configured) {
   let roots = configured;
   if (!roots) {
@@ -175,6 +176,44 @@ export function headBones(geometry, configured) {
   const selected = new Set(roots);
   for (let n = 0; n < geometry.bones.length; n++) for (const bone of geometry.bones) if (selected.has(bone.parent)) selected.add(bone.name);
   return selected;
+}
+
+function alignEndermanHead(geometry) {
+  const head = geometry.bones.find(bone => bone.name === 'head');
+  const hat = geometry.bones.find(bone => bone.name === 'hat' && bone.parent === 'head');
+  const body = geometry.bones.find(bone => bone.name === head?.parent && bone.name === 'body');
+  if (head?.pivot?.[1] !== 24 || head.cubes?.length !== 1 || head.cubes[0].origin?.[1] !== 24
+    || hat?.pivot?.[1] !== 38 || body?.pivot?.[1] !== 38) return;
+
+  // Place the bind-pose head at the neck for static renders. Cube and bone
+  // coordinates are model-relative, so the hat is already at the right height.
+  head.pivot[1] = body.pivot[1];
+  head.cubes[0].origin[1] = body.pivot[1];
+}
+
+function resolveEntityGeometry(packs, id, ancestors = new Set()) {
+  const model = packs.geometries.get(id)?.value;
+  if (!model) fail('missingGeometry', `Missing entity geometry: ${id}`);
+  if (ancestors.has(id)) fail('missingGeometry', `Cyclic legacy entity geometry: ${id}`);
+  const {legacyParent, ...geometry} = structuredClone(model);
+  if (legacyParent) {
+    const parent = resolveEntityGeometry(packs, legacyParent, new Set([...ancestors, id]));
+    const bones = new Map(parent.bones.map(bone => [bone.name.toLowerCase(), bone]));
+    for (const bone of geometry.bones) {
+      const key = bone.name.toLowerCase();
+      bones.set(key, {...bones.get(key), ...bone});
+    }
+    geometry.bones = [...bones.values()];
+    geometry.description.texture_width ??= parent.description.texture_width;
+    geometry.description.texture_height ??= parent.description.texture_height;
+  }
+  geometry.description.texture_width ??= 64;
+  geometry.description.texture_height ??= 32;
+  const names = new Map(geometry.bones.map(bone => [bone.name.toLowerCase(), bone.name]));
+  for (const bone of geometry.bones) if (bone.parent) {
+    bone.parent = names.get(bone.parent.toLowerCase()) ?? bone.parent;
+  }
+  return geometry;
 }
 
 export async function resolveEntityVisual({identifier, behavior, packs, override = {}}) {
@@ -206,9 +245,8 @@ export async function resolveEntityVisual({identifier, behavior, packs, override
     }
     const symbolic = (value, kind) => resolveEntitySymbol(value, kind, client ?? {}, controller, context);
     const geometryId = symbolic(controller.geometry, 'geometry');
-    const sourceGeometry = packs.geometries.get(geometryId)?.value;
-    if (!sourceGeometry) fail('missingGeometry', `Missing entity geometry: ${geometryId}`);
-    const geometry = structuredClone(sourceGeometry);
+    const geometry = resolveEntityGeometry(packs, geometryId);
+    if (identifier === 'minecraft:enderman' && geometryId === 'geometry.enderman.v1.8') alignEndermanHead(geometry);
     for (const bone of geometry.bones) if (bone.neverRender && override.visibility?.[bone.name] !== true) bone.cubes = [];
     const pose = {...override.pose};
     if (override.staticAnimation) {
@@ -224,6 +262,13 @@ export async function resolveEntityVisual({identifier, behavior, packs, override
       const bone = geometry.bones.find(bone => bone.name === name);
       if (!bone || !Array.isArray(rotation) || rotation.length !== 3 || !rotation.every(Number.isFinite)) fail('unsupportedPose', `Invalid pose rotation for ${name}`);
       bone.rotation = (bone.rotation ?? [0,0,0]).map((value, i) => value + rotation[i]);
+    }
+    for (const [name, offset] of Object.entries(override.poseOffsets ?? {})) {
+      const bone = geometry.bones.find(bone => bone.name === name);
+      if (!bone || !Array.isArray(offset) || offset.length !== 3 || !offset.every(Number.isFinite)) {
+        fail('unsupportedPose', `Invalid pose offset for ${name}`);
+      }
+      bone.previewOffset = offset;
     }
     const textures = controller.textures ?? (controller.texture ? [controller.texture] : []);
     if (textures.length !== 1) fail('unsupportedVariant', `Controller ${controllerName ?? 'explicit'} has ${textures.length} texture stages; configure one explicit layer per texture/material instead of guessing shader composition`);

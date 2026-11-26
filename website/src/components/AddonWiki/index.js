@@ -49,6 +49,8 @@ import {wikiText} from '../../i18n/wiki';
 import {sectionsForEntry, navigationSectionsForEntry, navigationDetailSection, detailSectionPath, legacyDetailSection} from '../../wiki/detailSections';
 import vanillaAssetIndex from '../../data/vanillaAssetIndex.json';
 import styles from './styles.module.css';
+import dropStyles from './trinketDrops.module.css';
+import {dropDimensionLabel, groupTrinketEntityDrops, isAvailableEntityDrop, trinketDropCreature} from '../../wiki/projects/trinkets/entityDrops.mjs';
 
 const WikiProjectContext = createContext(null);
 const WikiDetailContext = createContext({section: 'details', basePath: '', entryType: ''});
@@ -92,7 +94,7 @@ function WikiIcon({name, size = 20, stroke = 1.8}) {
 
 const WIKI_SECTION_GROUPS = [
   {id: 'overview', labelKey: 'overview', sections: ['overview', 'how-to-play']},
-  {id: 'content', labelKey: 'content', sections: ['items', 'blocks', 'entities']},
+  {id: 'content', labelKey: 'content', sections: ['items', 'blocks', 'entities', 'drops']},
   {id: 'systems', labelKey: 'systems', sections: ['machines', 'generators']},
   {id: 'reference', labelKey: 'reference', sections: ['recipes', 'mechanics']},
 ];
@@ -2832,12 +2834,12 @@ function MainUse({use, recipe}) {
   </article>;
 }
 
-function AcquisitionCard({icon, eyebrow, title, chance, quantity, note}) {
+function AcquisitionCard({icon, eyebrow, title, chance, quantity, note, image, href}) {
   const w = useWikiText();
   return (
     <article className={styles.acquisitionCard}>
-      <span className={styles.acquisitionIcon}><DetailIcon name={icon} /></span>
-      <div><small>{w(eyebrow)}</small><h3>{w(title)}</h3>{note && <p>{w(note)}</p>}<footer>{chance && <strong>{w(chance)}</strong>}{quantity && <span>{w(quantity)}</span>}</footer></div>
+      <span className={styles.acquisitionIcon}>{image ? <img className={dropStyles.sourceImage} src={image} alt="" loading="lazy" /> : <DetailIcon name={icon} />}</span>
+      <div><small>{w(eyebrow)}</small><h3>{href ? <Link to={href}>{w(title)}</Link> : w(title)}</h3>{note && <p>{w(note)}</p>}<footer>{chance && <strong>{w(chance)}</strong>}{quantity && <span>{w(quantity)}</span>}</footer></div>
     </article>
   );
 }
@@ -2874,7 +2876,7 @@ function SourceGroup({icon, title, children}) {
 function ItemDocumentation({entry, project, documentation, properties, groups, recipes, usedIn, relatedItems}) {
   const w = useWikiText();
   const {section} = useContext(WikiDetailContext);
-  const {t} = useSiteI18n();
+  const {t, locale} = useSiteI18n();
   const recipeCount = recipes.crafting.length + recipes.machine.length;
   const hasSources = documentation.acquisition.entityDrops.length > 0
     || documentation.acquisition.structures.length > 0
@@ -2920,7 +2922,22 @@ function ItemDocumentation({entry, project, documentation, properties, groups, r
     {section === 'drops' && <ItemSection id="item-drops" title={t('detailDrops')}>
       {hasSources ? <div className={styles.sourceGroups}>
           {documentation.acquisition.entityDrops.length > 0 && <SourceGroup icon="entity" title={w("Entity Drops")}>
-            {documentation.acquisition.entityDrops.map((drop, index) => <AcquisitionCard key={`${drop.entity}-${index}`} icon="entity" eyebrow={w("Entity Drop")} title={formatIdentifier(drop.entity)} chance={formatChance(drop.chance)} quantity={quantityLabel(drop)} />)}
+            {documentation.acquisition.entityDrops.map((drop, index) => {
+              const key = `${drop.entity}-${index}`;
+              if (project.id !== 'trinkets') {
+                return <AcquisitionCard key={key} icon="entity" eyebrow={w('Entity Drop')} title={formatIdentifier(drop.entity)}
+                  chance={formatChance(drop.chance)} quantity={quantityLabel(drop)} />;
+              }
+              const creature = trinketDropCreature(drop.entity, locale);
+              if (!isAvailableEntityDrop(drop)) {
+                return <AcquisitionCard key={key} icon="entity" eyebrow={w('Unavailable drop')} title={creature.name}
+                  note={w('The registered creature ID prevents this drop from occurring.')} />;
+              }
+              return <AcquisitionCard key={key} icon="entity" eyebrow={w('Entity Drop')} title={creature.name}
+                image={resolveAsset(project, creature.image)} href={`${project.basePath}/drops?creature=${encodeURIComponent(creature.id)}`}
+                chance={formatChance(drop.chance ?? 0.1)} quantity={quantityLabel({count: drop.amount ?? 1})}
+                note={w(dropDimensionLabel(drop.conditions?.dimension))} />;
+            })}
           </SourceGroup>}
           {documentation.acquisition.structures.length > 0 && <SourceGroup icon="structure" title={w("Structure Loot")}>
             {documentation.acquisition.structures.map((loot, index) => {
@@ -3948,7 +3965,84 @@ export function AddonWikiEntryPage({projectId = 'heavy-machinery', detailSection
   );
 }
 
+function TrinketDropsPage({query}) {
+  const project = useWikiProject();
+  const {locale} = useSiteI18n();
+  const {search} = useLocation();
+  const w = useWikiText();
+  const [selected, setSelected] = useState(null);
+  const {creatures, unavailable} = useMemo(() => groupTrinketEntityDrops(project.allItems), [project.allItems]);
+  const normalize = (value) => value.toLocaleLowerCase(locale).normalize('NFD').replace(/\p{M}/gu, '');
+  const term = normalize(query.trim());
+  const groups = [...creatures].map(([entity, entries]) => {
+    const creature = trinketDropCreature(entity, locale);
+    const matchesCreature = normalize(`${creature.name} ${entity} ${trinketDropCreature(entity, 'en').name}`).includes(term);
+    const drops = matchesCreature ? entries : entries.filter(({item}) => normalize(item.name).includes(term));
+    return {...creature, entity, drops: drops.slice().sort((a, b) =>
+      (b.drop.chance ?? 0.1) - (a.drop.chance ?? 0.1) || a.item.name.localeCompare(b.item.name, locale))};
+  }).filter(({drops}) => drops.length).sort((a, b) => a.name.localeCompare(b.name, locale));
+  const activeId = selected ?? new URLSearchParams(search).get('creature');
+  const active = groups.find(({id}) => id === activeId) ?? groups[0];
+  const visibleUnavailable = unavailable.filter(({item, drop}) =>
+    normalize(`${item.name} ${trinketDropCreature(drop.entity, locale).name} ${drop.entity}`).includes(term));
+  const itemLink = (item) => detailSectionPath(detailLinkFor(project, item.identifier), 'drops');
+
+  return <>
+    <PageIntro section="drops" count={creatures.size} countLabel="Creatures" />
+    {active && (
+      <div className={dropStyles.layout}>
+        <nav className={dropStyles.creatures} aria-label={w('Creatures')}>
+          {groups.map(({id, name, image}) => (
+            <button key={id} type="button" aria-pressed={active.id === id}
+              aria-controls="creature-drops" onClick={() => setSelected(id)}>
+              {image && <img src={resolveAsset(project, image)} alt="" loading="lazy" />}
+              {name}
+            </button>
+          ))}
+        </nav>
+        <section className={dropStyles.card} id="creature-drops" aria-labelledby="creature-drops-title">
+          <header className={dropStyles.hero}>
+            {active.image && <img src={resolveAsset(project, active.image)} alt="" />}
+            <h2 id="creature-drops-title" aria-live="polite">{active.name}</h2>
+          </header>
+          <table className={dropStyles.table}>
+            <thead>
+              <tr><th scope="col">{w('Item')}</th><th scope="col">{w('Chance')}</th><th scope="col">{w('Amount')}</th></tr>
+            </thead>
+            <tbody>
+              {active.drops.map(({item, drop}, index) => {
+                const image = resolveAsset(project, item.image);
+                const chance = (drop.chance ?? 0.1).toLocaleString(locale, {style: 'percent', maximumFractionDigits: 2});
+                return (
+                  <tr key={`${item.identifier}-${index}`}>
+                    <td>
+                      <Link className={dropStyles.item} to={itemLink(item)}>
+                        {image && <img src={image} alt="" loading="lazy" />}
+                        {item.name}
+                      </Link>
+                      {drop.conditions?.dimension && <small>{w(dropDimensionLabel(drop.conditions?.dimension))}</small>}
+                    </td>
+                    <td>{chance}</td>
+                    <td>{w(drop.amount ?? 1)}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </section>
+      </div>
+    )}
+    {!active && !visibleUnavailable.length && <p className={styles.empty}>{w('No results found.')}</p>}
+    {visibleUnavailable.map(({item, drop}, index) => (
+      <p className={dropStyles.unavailable} key={`${item.identifier}-${index}`}>
+        <Link to={itemLink(item)}>{item.name}</Link> · {trinketDropCreature(drop.entity, locale).name}. {w('The registered creature ID prevents this drop from occurring.')}
+      </p>
+    ))}
+  </>;
+}
+
 const pageComponents = {
+  drops: TrinketDropsPage,
   overview: OverviewPage,
   items: ItemsPage,
   blocks: BlocksPage,

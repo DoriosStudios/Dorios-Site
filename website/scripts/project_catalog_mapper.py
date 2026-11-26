@@ -432,6 +432,11 @@ def build_catalog(
         if path.name in visibility_by_folder
     ]
     projects.extend(_legacy_project(record) for record in config.get("legacyProjects", []))
+    policy_path = Path(__file__).resolve().parent.parent / "src/data/technicalEntityProjects.json"
+    technical_entity_projects = set(load(policy_path))
+    for project in projects:
+        if project["id"] in technical_entity_projects:
+            project["metrics"].pop("entities", None)
     visibility_rank = {"public": 0, "community": 1, "unlisted": 2}
     projects.sort(key=lambda project: (
         project.get("featuredRank") is None,

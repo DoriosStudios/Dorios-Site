@@ -129,7 +129,8 @@ export async function compileGeometry({geometry, visibility = {}, transformation
     if (bone.poly_mesh || bone.texture_meshes || bone.binding || bone.locators && Object.values(bone.locators).some(v => v?.binding)) throw new Error(`Unsupported mesh or skeletal binding: ${name}`);
     active.add(name);
     const parent = bone.parent ? boneTransform(bone.parent) : {matrix: root, visible: true};
-    const value = {matrix: multiply(parent.matrix, pivotMatrix(bone.rotation, bone.pivot)),
+    const local = pivotMatrix(bone.rotation, bone.pivot);
+    const value = {matrix: multiply(parent.matrix, bone.previewOffset ? multiply(translation(vec3(bone.previewOffset)), local) : local),
       visible: parent.visible && (visibility[name] === undefined || Boolean(evaluate(visibility[name])))};
     active.delete(name);
     transforms.set(name, value);

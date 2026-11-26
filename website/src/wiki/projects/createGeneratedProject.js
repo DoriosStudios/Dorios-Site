@@ -1,5 +1,5 @@
 import {vanillaStationFor} from './vanillaStationMeta.js';
-import {hasEntityVisuals} from '../entityVisual.mjs';
+import {hasPublicEntitySection} from '../entityVisual.mjs';
 
 const SECTION_DEFINITIONS = [
   {id: 'overview', label: 'Overview', icon: 'book'},
@@ -338,7 +338,7 @@ export function createGeneratedProject({
   blockProfiles = {},
   itemProfiles = {},
   includeBlockSection = true,
-  includeEntitySection = hasEntityVisuals(manifest),
+  includeEntitySection = hasPublicEntitySection(id, manifest),
   itemCatalogColumns,
   howToPlay,
 }) {

@@ -2,6 +2,7 @@ import manifest from './manifest.json';
 import trinketProfiles from './trinketProfiles.json';
 import categorySections from './categorySections.json';
 import {createGeneratedProject} from '../createGeneratedProject';
+import {isAvailableEntityDrop, trinketDropCreature} from './entityDrops.mjs';
 
 const SLOT_LABELS = {
   head: 'Head',
@@ -94,8 +95,8 @@ function itemDescription(item, slotLabel, documentation) {
   if (capabilities.specialAbility) return `${item.name} is an equippable trinket for the ${slotLabel} slot. ${capabilities.specialAbility.description}`;
   if (capabilities.passiveEffects.length) return `${item.name} is an equippable trinket for the ${slotLabel} slot that grants ${capabilities.passiveEffects.map(({name}) => name).join(' and ')}.`;
   if (capabilities.attributeModifiers.length) return `${item.name} is an equippable trinket for the ${slotLabel} slot that modifies ${capabilities.attributeModifiers.map(({name}) => name).join(' and ')}.`;
-  const firstDrop = documentation.acquisition.entityDrops[0];
-  if (firstDrop) return `${item.name} is an equippable trinket for the ${slotLabel} slot, primarily obtained from ${titleize(firstDrop.entity)} encounters.`;
+  const firstDrop = documentation.acquisition.entityDrops.find(isAvailableEntityDrop);
+  if (firstDrop) return `${item.name} is an equippable trinket for the ${slotLabel} slot, primarily obtained from ${trinketDropCreature(firstDrop.entity, 'en').name} encounters.`;
   return `${item.name} is an equippable trinket for the ${slotLabel} slot, obtained through add-on exploration and progression.`;
 }
 
@@ -128,7 +129,7 @@ function ringCategory(identifier) {
 function primaryAcquisition(identifier, profile) {
   if (CRAFTABLE_ITEMS.has(identifier)) return 'Crafting';
   const candidates = [
-    ...(profile.drops ?? []).map(({entity, chance}) => ({chance, label: `${titleize(entity)} drop · ${chance * 100}%`})),
+    ...(profile.drops ?? []).filter(isAvailableEntityDrop).map(({entity, chance = 0.1}) => ({chance, label: `${trinketDropCreature(entity, 'en').name} drop · ${chance * 100}%`})),
     ...(profile.loot?.structures ?? []).map(({structure, chance}) => ({chance, label: `${titleize(structure === 'default' ? 'dimension loot' : structure)} · ${chance * 100}%`})),
     ...(profile.loot?.biomes ?? []).map(({biome, chance}) => ({chance, label: `${titleize(biome)} biome · ${chance * 100}%`})),
   ];
@@ -167,9 +168,9 @@ function categorySummary(identifier, profile, category) {
 
 function acquisitionSummary(profile) {
   const sources = [];
-  const drops = profile.drops ?? [];
+  const drops = (profile.drops ?? []).filter(isAvailableEntityDrop);
   if (drops.length) {
-    sources.push(`Mob drops: ${drops.map(({entity, chance}) => `${titleize(entity)} (${chance * 100}%)`).join(', ')}`);
+    sources.push(`Mob drops: ${drops.map(({entity, chance = 0.1}) => `${trinketDropCreature(entity, 'en').name} (${chance * 100}%)`).join(', ')}`);
   }
   const structures = profile.loot?.structures ?? [];
   if (structures.length) {
@@ -302,6 +303,7 @@ const project = createGeneratedProject({
     ],
   },
   sectionDescriptions: {
+    drops: 'Each drop chance is rolled independently when the game credits a player with the kill.',
     items: 'Trinkets grouped by their actual equipment slot, followed by armor sets, ring materials and utility items.',
     recipes: 'Crafting recipes for accessories, equipment and supporting materials.',
   },
@@ -320,6 +322,8 @@ project.items = decorateCollection(project.items);
 project.allItems = decorateCollection(project.allItems);
 project.lookupItems = decorateCollection(project.lookupItems);
 project.wikiSections = project.wikiSections.filter(({id}) => !['blocks', 'entities'].includes(id));
+project.wikiSections.push({id: 'drops', label: 'Entity Drops', icon: 'users', href: `${project.basePath}/drops`});
+project.pageMeta.drops = [`${project.name} Entity Drops`, project.sectionDescriptions.drops];
 project.blocks = [];
 project.entities = [];
 project.groupItemsByCategory = true;
