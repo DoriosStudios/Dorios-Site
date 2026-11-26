@@ -13,6 +13,7 @@ on:
       - 'website/scripts/project-statistics.test.mjs'
       - 'services/download-counter/**'
       - 'website/src/data/downloadSources.mjs'
+      - 'website/src/data/downloadEvents.mjs'
       - 'website/src/data/downloadProviders.json'
       - 'website/scripts/refresh-github-release-stats.mjs'
       - 'website/scripts/refresh-curseforge-stats.mjs'
@@ -54,6 +55,7 @@ jobs:
             website/scripts/project-statistics.test.mjs
             services/download-counter/
             website/src/data/downloadSources.mjs
+            website/src/data/downloadEvents.mjs
             website/src/data/downloadProviders.json
             website/scripts/refresh-github-release-stats.mjs
             website/scripts/refresh-curseforge-stats.mjs
