@@ -28,7 +28,7 @@
         "identifier": "utilitycraft:advanced_crusher",
         "name": "Advanced Crusher",
         "category": "Crusher",
-        "render": null,
+        "render": "auto-renders/utilitycraft_advanced_crusher-0649ca85ef1b-de74736ee869ac253510e405.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/crusher/advanced_crusher_off_up.png",
@@ -97,7 +97,7 @@
         "identifier": "utilitycraft:advanced_electro_press",
         "name": "Advanced Electro Press",
         "category": "Electro Press",
-        "render": null,
+        "render": "auto-renders/utilitycraft_advanced_electro_press-40de471a770e-5f9f79c7ae22f6fc3b2ea8f4.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/electro_press/advanced_electro_press_off_up.png",
@@ -166,7 +166,7 @@
         "identifier": "utilitycraft:advanced_incinerator",
         "name": "Advanced Incinerator",
         "category": "Incinerator",
-        "render": null,
+        "render": "auto-renders/utilitycraft_advanced_incinerator-7c0fa116fe1a-c343ee5c0b6a2d21e1bfe26d.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/incinerator/advanced_incinerator_off_up.png",
@@ -235,7 +235,7 @@
         "identifier": "utilitycraft:basic_crusher",
         "name": "Basic Crusher",
         "category": "Crusher",
-        "render": null,
+        "render": "auto-renders/utilitycraft_basic_crusher-b52443797753-eb67c27038866d2a004d54a2.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/crusher/basic_crusher_off_up.png",
@@ -304,7 +304,7 @@
         "identifier": "utilitycraft:basic_electro_press",
         "name": "Basic Electro Press",
         "category": "Electro Press",
-        "render": null,
+        "render": "auto-renders/utilitycraft_basic_electro_press-96f5f8aac888-635d9f8d546ac1744dc3c2e4.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/electro_press/basic_electro_press_off_up.png",
@@ -373,7 +373,7 @@
         "identifier": "utilitycraft:basic_incinerator",
         "name": "Basic Incinerator",
         "category": "Incinerator",
-        "render": null,
+        "render": "auto-renders/utilitycraft_basic_incinerator-beb73bc08530-c0ebcd552faa0192db387159.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/incinerator/basic_incinerator_off_up.png",
@@ -442,7 +442,7 @@
         "identifier": "utilitycraft:expert_crusher",
         "name": "Expert Crusher",
         "category": "Crusher",
-        "render": null,
+        "render": "auto-renders/utilitycraft_expert_crusher-8a22b837d99d-e51a412be5bbce05fcd4f8e8.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/crusher/expert_crusher_off_up.png",
@@ -511,7 +511,7 @@
         "identifier": "utilitycraft:expert_electro_press",
         "name": "Expert Electro Press",
         "category": "Electro Press",
-        "render": null,
+        "render": "auto-renders/utilitycraft_expert_electro_press-f2d7d36d9ad2-8ef5b54e14cab04df9a6d5a9.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/electro_press/expert_electro_press_off_up.png",
@@ -580,7 +580,7 @@
         "identifier": "utilitycraft:expert_incinerator",
         "name": "Expert Incinerator",
         "category": "Incinerator",
-        "render": null,
+        "render": "auto-renders/utilitycraft_expert_incinerator-ef8663e071be-5cd8010ec9f4c27c259cbb01.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/incinerator/expert_incinerator_off_up.png",
@@ -649,7 +649,7 @@
         "identifier": "utilitycraft:ultimate_crusher",
         "name": "Ultimate Crusher",
         "category": "Crusher",
-        "render": null,
+        "render": "auto-renders/utilitycraft_ultimate_crusher-d2d50ba3b188-83befc06bcf36cc1b9f91d95.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/crusher/ultimate_crusher_off_up.png",
@@ -718,7 +718,7 @@
         "identifier": "utilitycraft:ultimate_electro_press",
         "name": "Ultimate Electro Press",
         "category": "Electro Press",
-        "render": null,
+        "render": "auto-renders/utilitycraft_ultimate_electro_press-c014e8c4588f-57d54e74ac6834402a656db9.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/electro_press/ultimate_electro_press_off_up.png",
@@ -787,7 +787,7 @@
         "identifier": "utilitycraft:ultimate_incinerator",
         "name": "Ultimate Incinerator",
         "category": "Incinerator",
-        "render": null,
+        "render": "auto-renders/utilitycraft_ultimate_incinerator-1f1966156c75-fe4b78b8f2dfd3d4f4f6c919.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/incinerator/ultimate_incinerator_off_up.png",

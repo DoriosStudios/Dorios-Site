@@ -38,7 +38,7 @@
         "identifier": "utilitycraft:bonsai",
         "name": "Bonsai",
         "category": "General",
-        "render": null,
+        "render": "auto-renders/utilitycraft_bonsai-33406b4dce76-780e2b8c214525df5d25ea21.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/bonsais/bonsai.png",

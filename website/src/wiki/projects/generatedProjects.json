@@ -1,8 +1,17 @@
 [
+  "basics",
   "bonsais",
+  "cobblestone-generators",
+  "compressy",
+  "crops",
   "digital-storage",
+  "dummy",
   "excavate",
+  "lamps",
+  "paxels",
+  "pillars",
   "smelters",
   "tiered-machinery",
+  "trees",
   "trinkets"
 ]

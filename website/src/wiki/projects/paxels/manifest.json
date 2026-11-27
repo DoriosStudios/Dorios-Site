@@ -1,0 +1,951 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-27T16:16:58.722366+00:00",
+  "project": {
+    "id": "paxels",
+    "name": "Paxels & AIOTs",
+    "version": "1.0.5"
+  },
+  "source": {
+    "bridgeProject": "Paxels-and-AIOTs",
+    "revision": "bd78730d77f8",
+    "dirty": false
+  },
+  "counts": {
+    "items": 14,
+    "catalogItems": 14,
+    "blocks": 0,
+    "entities": 0,
+    "recipes": 14,
+    "variantGroups": 0
+  },
+  "content": {
+    "items": [
+      {
+        "id": "copper_aiot",
+        "slug": "copper-aiot",
+        "identifier": "utilitycraft:copper_aiot",
+        "name": "Copper AIOT",
+        "category": "Aiots",
+        "image": "textures/items/copper_aiot.png",
+        "source": "BP/items/AIOTs/copper_aiot.json"
+      },
+      {
+        "id": "copper_paxel",
+        "slug": "copper-paxel",
+        "identifier": "utilitycraft:copper_paxel",
+        "name": "Copper Paxel",
+        "category": "Paxels",
+        "image": "textures/items/copper_paxel.png",
+        "source": "BP/items/paxels/copper_paxel.json"
+      },
+      {
+        "id": "diamond_aiot",
+        "slug": "diamond-aiot",
+        "identifier": "utilitycraft:diamond_aiot",
+        "name": "Diamond AIOT",
+        "category": "Aiots",
+        "image": "textures/items/diamond_aiot.png",
+        "source": "BP/items/AIOTs/diamond_aiot.json"
+      },
+      {
+        "id": "diamond_paxel",
+        "slug": "diamond-paxel",
+        "identifier": "utilitycraft:diamond_paxel",
+        "name": "Diamond Paxel",
+        "category": "Paxels",
+        "image": "textures/items/diamond_paxel.png",
+        "source": "BP/items/paxels/diamond_paxel.json"
+      },
+      {
+        "id": "golden_aiot",
+        "slug": "golden-aiot",
+        "identifier": "utilitycraft:golden_aiot",
+        "name": "Golden AIOT",
+        "category": "Aiots",
+        "image": "textures/items/golden_aiot.png",
+        "source": "BP/items/AIOTs/gold_aiot.json"
+      },
+      {
+        "id": "golden_paxel",
+        "slug": "golden-paxel",
+        "identifier": "utilitycraft:golden_paxel",
+        "name": "Golden Paxel",
+        "category": "Paxels",
+        "image": "textures/items/golden_paxel.png",
+        "source": "BP/items/paxels/gold_paxel.json"
+      },
+      {
+        "id": "iron_aiot",
+        "slug": "iron-aiot",
+        "identifier": "utilitycraft:iron_aiot",
+        "name": "Iron AIOT",
+        "category": "Aiots",
+        "image": "textures/items/iron_aiot.png",
+        "source": "BP/items/AIOTs/iron_aiot.json"
+      },
+      {
+        "id": "iron_paxel",
+        "slug": "iron-paxel",
+        "identifier": "utilitycraft:iron_paxel",
+        "name": "Iron Paxel",
+        "category": "Paxels",
+        "image": "textures/items/iron_paxel.png",
+        "source": "BP/items/paxels/iron_paxel.json"
+      },
+      {
+        "id": "netherite_aiot",
+        "slug": "netherite-aiot",
+        "identifier": "utilitycraft:netherite_aiot",
+        "name": "Netherite AIOT",
+        "category": "Aiots",
+        "image": "textures/items/netherite_aiot.png",
+        "source": "BP/items/AIOTs/netherite_aiot.json"
+      },
+      {
+        "id": "netherite_paxel",
+        "slug": "netherite-paxel",
+        "identifier": "utilitycraft:netherite_paxel",
+        "name": "Netherite Paxel",
+        "category": "Paxels",
+        "image": "textures/items/netherite_paxel.png",
+        "source": "BP/items/paxels/netherite_paxel.json"
+      },
+      {
+        "id": "stone_aiot",
+        "slug": "stone-aiot",
+        "identifier": "utilitycraft:stone_aiot",
+        "name": "Stone AIOT",
+        "category": "Aiots",
+        "image": "textures/items/stone_aiot.png",
+        "source": "BP/items/AIOTs/stone_aiot.json"
+      },
+      {
+        "id": "stone_paxel",
+        "slug": "stone-paxel",
+        "identifier": "utilitycraft:stone_paxel",
+        "name": "Stone Paxel",
+        "category": "Paxels",
+        "image": "textures/items/stone_paxel.png",
+        "source": "BP/items/paxels/stone_paxel.json"
+      },
+      {
+        "id": "wooden_aiot",
+        "slug": "wooden-aiot",
+        "identifier": "utilitycraft:wooden_aiot",
+        "name": "Wooden AIOT",
+        "category": "Aiots",
+        "image": "textures/items/wooden_aiot.png",
+        "source": "BP/items/AIOTs/wood_aiot.json"
+      },
+      {
+        "id": "wooden_paxel",
+        "slug": "wooden-paxel",
+        "identifier": "utilitycraft:wooden_paxel",
+        "name": "Wooden Paxel",
+        "category": "Paxels",
+        "image": "textures/items/wooden_paxel.png",
+        "source": "BP/items/paxels/wood_paxel.json"
+      }
+    ],
+    "blocks": [],
+    "entities": [],
+    "recipes": [
+      {
+        "id": "WoodenPaxel",
+        "identifier": "utilitycraft:WoodenPaxel",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:wooden_shovel",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:wooden_axe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:wooden_pickaxe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:wooden_paxel",
+          "count": 1
+        },
+        "source": "BP/recipes/paxels/wooden_paxel.json"
+      },
+      {
+        "id": "copper_aiot",
+        "identifier": "utilitycraft:copper_aiot",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_sword",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:copper_paxel",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_hoe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:copper_aiot",
+          "count": 1
+        },
+        "source": "BP/recipes/AIOTs/copper_aiot.json"
+      },
+      {
+        "id": "copper_paxel",
+        "identifier": "utilitycraft:copper_paxel",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_shovel",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_axe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_pickaxe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:copper_paxel",
+          "count": 1
+        },
+        "source": "BP/recipes/paxels/copper_paxel.json"
+      },
+      {
+        "id": "diamond_aiot",
+        "identifier": "utilitycraft:diamond_aiot",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond_sword",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_paxel",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond_hoe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:diamond_aiot",
+          "count": 1
+        },
+        "source": "BP/recipes/AIOTs/diamond_aiot.json"
+      },
+      {
+        "id": "diamond_paxel",
+        "identifier": "utilitycraft:diamond_paxel",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond_shovel",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond_axe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond_pickaxe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:diamond_paxel",
+          "count": 1
+        },
+        "source": "BP/recipes/paxels/diamond_paxel.json"
+      },
+      {
+        "id": "golden_aiot",
+        "identifier": "utilitycraft:golden_aiot",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:golden_sword",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:golden_paxel",
+            "count": 1
+          },
+          {
+            "id": "minecraft:golden_hoe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:golden_aiot",
+          "count": 1
+        },
+        "source": "BP/recipes/AIOTs/golden_aiot.json"
+      },
+      {
+        "id": "golden_paxel",
+        "identifier": "utilitycraft:golden_paxel",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:golden_shovel",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:golden_axe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:golden_pickaxe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:golden_paxel",
+          "count": 1
+        },
+        "source": "BP/recipes/paxels/golden_paxel.json"
+      },
+      {
+        "id": "iron_aiot",
+        "identifier": "utilitycraft:iron_aiot",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_sword",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:iron_paxel",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_hoe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:iron_aiot",
+          "count": 1
+        },
+        "source": "BP/recipes/AIOTs/iron_aiot.json"
+      },
+      {
+        "id": "iron_paxel",
+        "identifier": "utilitycraft:iron_paxel",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_shovel",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_axe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_pickaxe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:iron_paxel",
+          "count": 1
+        },
+        "source": "BP/recipes/paxels/iron_paxel.json"
+      },
+      {
+        "id": "netherite_aiot",
+        "identifier": "utilitycraft:netherite_aiot",
+        "kind": "smithing_transform",
+        "station": "smithing_table",
+        "slots": [
+          {
+            "id": "minecraft:netherite_upgrade_smithing_template",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_aiot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 3,
+        "result": {
+          "id": "utilitycraft:netherite_aiot",
+          "count": 1
+        },
+        "source": "BP/recipes/AIOTs/netherite_aiot.json"
+      },
+      {
+        "id": "netherite_paxel",
+        "identifier": "utilitycraft:netherite_paxel",
+        "kind": "smithing_transform",
+        "station": "smithing_table",
+        "slots": [
+          {
+            "id": "minecraft:netherite_upgrade_smithing_template",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_paxel",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 3,
+        "result": {
+          "id": "utilitycraft:netherite_paxel",
+          "count": 1
+        },
+        "source": "BP/recipes/paxels/netherite_paxel.json"
+      },
+      {
+        "id": "stone_aiot",
+        "identifier": "utilitycraft:stone_aiot",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:cobblestone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stone_sword",
+            "count": 1
+          },
+          {
+            "id": "minecraft:cobblestone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:stone_paxel",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stone_hoe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:cobblestone",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:stone_aiot",
+          "count": 1
+        },
+        "source": "BP/recipes/AIOTs/stone_aiot.json"
+      },
+      {
+        "id": "stone_paxel",
+        "identifier": "utilitycraft:stone_paxel",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stone_shovel",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stone_axe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stone_pickaxe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:stone_paxel",
+          "count": 1
+        },
+        "source": "BP/recipes/paxels/stone_paxel.json"
+      },
+      {
+        "id": "wooden_aiot",
+        "identifier": "utilitycraft:wooden_aiot",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:planks",
+            "count": 1
+          },
+          {
+            "id": "minecraft:wooden_sword",
+            "count": 1
+          },
+          {
+            "id": "minecraft:planks",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:wooden_paxel",
+            "count": 1
+          },
+          {
+            "id": "minecraft:wooden_hoe",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          {
+            "id": "minecraft:planks",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:wooden_aiot",
+          "count": 1
+        },
+        "source": "BP/recipes/AIOTs/wooden_aiot.json"
+      }
+    ]
+  },
+  "catalog": {
+    "items": [
+      {
+        "id": "copper_aiot",
+        "slug": "copper-aiot",
+        "identifier": "utilitycraft:copper_aiot",
+        "name": "Copper AIOT",
+        "category": "Aiots",
+        "image": "textures/items/copper_aiot.png",
+        "source": "BP/items/AIOTs/copper_aiot.json"
+      },
+      {
+        "id": "copper_paxel",
+        "slug": "copper-paxel",
+        "identifier": "utilitycraft:copper_paxel",
+        "name": "Copper Paxel",
+        "category": "Paxels",
+        "image": "textures/items/copper_paxel.png",
+        "source": "BP/items/paxels/copper_paxel.json"
+      },
+      {
+        "id": "diamond_aiot",
+        "slug": "diamond-aiot",
+        "identifier": "utilitycraft:diamond_aiot",
+        "name": "Diamond AIOT",
+        "category": "Aiots",
+        "image": "textures/items/diamond_aiot.png",
+        "source": "BP/items/AIOTs/diamond_aiot.json"
+      },
+      {
+        "id": "diamond_paxel",
+        "slug": "diamond-paxel",
+        "identifier": "utilitycraft:diamond_paxel",
+        "name": "Diamond Paxel",
+        "category": "Paxels",
+        "image": "textures/items/diamond_paxel.png",
+        "source": "BP/items/paxels/diamond_paxel.json"
+      },
+      {
+        "id": "golden_aiot",
+        "slug": "golden-aiot",
+        "identifier": "utilitycraft:golden_aiot",
+        "name": "Golden AIOT",
+        "category": "Aiots",
+        "image": "textures/items/golden_aiot.png",
+        "source": "BP/items/AIOTs/gold_aiot.json"
+      },
+      {
+        "id": "golden_paxel",
+        "slug": "golden-paxel",
+        "identifier": "utilitycraft:golden_paxel",
+        "name": "Golden Paxel",
+        "category": "Paxels",
+        "image": "textures/items/golden_paxel.png",
+        "source": "BP/items/paxels/gold_paxel.json"
+      },
+      {
+        "id": "iron_aiot",
+        "slug": "iron-aiot",
+        "identifier": "utilitycraft:iron_aiot",
+        "name": "Iron AIOT",
+        "category": "Aiots",
+        "image": "textures/items/iron_aiot.png",
+        "source": "BP/items/AIOTs/iron_aiot.json"
+      },
+      {
+        "id": "iron_paxel",
+        "slug": "iron-paxel",
+        "identifier": "utilitycraft:iron_paxel",
+        "name": "Iron Paxel",
+        "category": "Paxels",
+        "image": "textures/items/iron_paxel.png",
+        "source": "BP/items/paxels/iron_paxel.json"
+      },
+      {
+        "id": "netherite_aiot",
+        "slug": "netherite-aiot",
+        "identifier": "utilitycraft:netherite_aiot",
+        "name": "Netherite AIOT",
+        "category": "Aiots",
+        "image": "textures/items/netherite_aiot.png",
+        "source": "BP/items/AIOTs/netherite_aiot.json"
+      },
+      {
+        "id": "netherite_paxel",
+        "slug": "netherite-paxel",
+        "identifier": "utilitycraft:netherite_paxel",
+        "name": "Netherite Paxel",
+        "category": "Paxels",
+        "image": "textures/items/netherite_paxel.png",
+        "source": "BP/items/paxels/netherite_paxel.json"
+      },
+      {
+        "id": "stone_aiot",
+        "slug": "stone-aiot",
+        "identifier": "utilitycraft:stone_aiot",
+        "name": "Stone AIOT",
+        "category": "Aiots",
+        "image": "textures/items/stone_aiot.png",
+        "source": "BP/items/AIOTs/stone_aiot.json"
+      },
+      {
+        "id": "stone_paxel",
+        "slug": "stone-paxel",
+        "identifier": "utilitycraft:stone_paxel",
+        "name": "Stone Paxel",
+        "category": "Paxels",
+        "image": "textures/items/stone_paxel.png",
+        "source": "BP/items/paxels/stone_paxel.json"
+      },
+      {
+        "id": "wooden_aiot",
+        "slug": "wooden-aiot",
+        "identifier": "utilitycraft:wooden_aiot",
+        "name": "Wooden AIOT",
+        "category": "Aiots",
+        "image": "textures/items/wooden_aiot.png",
+        "source": "BP/items/AIOTs/wood_aiot.json"
+      },
+      {
+        "id": "wooden_paxel",
+        "slug": "wooden-paxel",
+        "identifier": "utilitycraft:wooden_paxel",
+        "name": "Wooden Paxel",
+        "category": "Paxels",
+        "image": "textures/items/wooden_paxel.png",
+        "source": "BP/items/paxels/wood_paxel.json"
+      }
+    ]
+  },
+  "variantGroups": []
+}

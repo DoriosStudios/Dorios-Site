@@ -102,7 +102,7 @@ export default function AtelierBuilder() {
           completed = true;
           const url = URL.createObjectURL(new Blob([data.bytes], {type: 'application/octet-stream'}));
           const filename = `Dorios-Atelier-${catalog.source.version}-Custom.mcaddon`;
-          setDownload({url, filename, summary: data.summary});
+          setDownload({url, filename, summary: data.summary, eventId});
           setStage(null);
           const link = document.createElement('a');
           link.href = url; link.download = filename;
@@ -171,7 +171,7 @@ export default function AtelierBuilder() {
             {notice && <p>{t(notice)}</p>}
             {download && <div className={styles.success}>
               <p>{t('complete', Object.fromEntries(Object.entries(download.summary).map(([key, value]) => [key, typeof value === 'number' ? formatNumber(value) : value])))}</p>
-              <a href={download.url} download={download.filename} onClick={() => countDownload(downloadAttempt())}>{t('download')}</a>
+              <a href={download.url} download={download.filename} onClick={() => countDownload(download.eventId)}>{t('download')}</a>
               {download.summary.dependencies.length > 0 && <details><summary>{t('extras', {count: formatNumber(download.summary.dependencies.length)})}</summary>
                 <ul aria-label={t('details')}>{download.summary.dependencies.map(id => <li key={id}>{id.replace('dorios_atelier:', '').replaceAll('_', ' ')}</li>)}</ul>
               </details>}

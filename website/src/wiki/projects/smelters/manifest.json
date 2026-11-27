@@ -578,7 +578,7 @@
         "identifier": "better_smelters:amethyst_furnace",
         "name": "Amethyst Furnace",
         "category": "General",
-        "render": null,
+        "render": "renders/amethyst_furnace_off.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/furnaces/amethyst/up.png",
@@ -612,7 +612,7 @@
         "identifier": "better_smelters:blazing_furnace",
         "name": "Blazing Furnace",
         "category": "General",
-        "render": null,
+        "render": "renders/blazing_furnace_off.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/furnaces/blazing/up.png",
@@ -646,7 +646,7 @@
         "identifier": "better_smelters:copper_furnace",
         "name": "Copper Furnace",
         "category": "General",
-        "render": null,
+        "render": "renders/copper_furnace_off.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/furnaces/copper/up.png",
@@ -680,7 +680,7 @@
         "identifier": "better_smelters:diamond_furnace",
         "name": "Diamond Furnace",
         "category": "General",
-        "render": null,
+        "render": "renders/diamond_furnace_off.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/furnaces/diamond/up.png",
@@ -714,7 +714,7 @@
         "identifier": "better_smelters:emerald_furnace",
         "name": "Emerald Furnace",
         "category": "General",
-        "render": null,
+        "render": "renders/emerald_furnace_off.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/furnaces/emerald/up.png",
@@ -748,7 +748,7 @@
         "identifier": "better_smelters:gold_furnace",
         "name": "Gold Furnace",
         "category": "General",
-        "render": null,
+        "render": "renders/gold_furnace_off.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/furnaces/gold/up.png",
@@ -782,7 +782,7 @@
         "identifier": "better_smelters:iron_furnace",
         "name": "Iron Furnace",
         "category": "General",
-        "render": null,
+        "render": "renders/iron_furnace_off.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/furnaces/iron/up.png",
@@ -816,7 +816,7 @@
         "identifier": "better_smelters:nether_star_furnace",
         "name": "Nether Star Furnace",
         "category": "General",
-        "render": null,
+        "render": "renders/nether_star_furnace_off.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/furnaces/nether_star/up.png",
@@ -850,7 +850,7 @@
         "identifier": "better_smelters:netherite_furnace",
         "name": "Netherite Furnace",
         "category": "General",
-        "render": null,
+        "render": "renders/netherite_furnace_off.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/furnaces/netherite/up.png",
@@ -884,7 +884,7 @@
         "identifier": "better_smelters:netherrack_furnace",
         "name": "Netherrack Furnace",
         "category": "General",
-        "render": null,
+        "render": "renders/netherrack_furnace_off.png",
         "itemImage": null,
         "faces": {
           "top": "textures/blocks/furnaces/netherrack/up.png",

@@ -14,8 +14,9 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
         path: normalizeUrl([context.siteConfig.baseUrl, route.path]),
       });
       const projectRoot = path.join(__dirname, '..', '..', 'src', 'wiki', 'projects');
-      const {hasPublicEntitySection} = await import(pathToFileURL(path.join(projectRoot, '../entityVisual.mjs')).href);
+      const {publicEntityEntries} = await import(pathToFileURL(path.join(projectRoot, '../entityVisual.mjs')).href);
       const genericProjectIds = require(path.join(projectRoot, 'generatedProjects.json'));
+      const compactGuides = require('../../src/wiki/compactGuides.json');
       const projectCatalog = require(path.join(__dirname, '..', '..', 'src', 'data', 'projectCatalog.json'));
       const atelier = require('../../src/data/atelierWiki.json');
       const atelierComponent = path.join(__dirname, '../../src/components/AtelierWiki/index.js');
@@ -27,6 +28,17 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
         addLocalizedRoute({path:`/wiki/atelier/blocks/${blockId.replace(':','/')}`,
           component:atelierComponent,exact:true,props:{blockId}});
       });
+      const containers = require('../../src/data/betterContainersWiki.json').records;
+      const containerWiki = path.join(__dirname, '../../src/components/BetterContainersWiki/index.js');
+      const containerBasePath = '/wiki/better-containers';
+      const addContainerRoute = (path, props) => addLocalizedRoute({path, component: containerWiki, exact: true, props});
+      addContainerRoute(containerBasePath, {});
+      for (const family of new Set(containers.map(container => container.family))) {
+        addContainerRoute(containerBasePath + '/' + family, {family});
+      }
+      for (const {family, slug} of containers) {
+        addContainerRoute(containerBasePath + '/' + family + '/' + slug.replaceAll('_', '-'), {family, variant: slug});
+      }
       const projectComponent = path.join(__dirname, '..', '..', 'src', 'components', 'ProjectDetailPage', 'route.js');
       const staffComponent = path.join(__dirname, '..', '..', 'src', 'components', 'StaffProfilePage', 'route.js');
       const staffProfilesPath = path.join(__dirname, '..', '..', 'src', 'data', 'staffProfiles.js');
@@ -161,7 +173,7 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
         ]);
         const blocks = allBlocks.filter((block) => !specializedBlockIds.has(block.id));
         const sectionVisible = (section) => !project.hiddenSections?.includes(section);
-        const entitiesVisible = sectionVisible('entities') && hasPublicEntitySection(project.id, project.manifest);
+        const entities = sectionVisible('entities') ? publicEntityEntries(project.id, project.manifest) : [];
         const sections = [
           'overview',
           project.manifest.catalog.items.length && project.id !== 'trinkets' && 'items',
@@ -169,10 +181,12 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
           blocks.length && sectionVisible('blocks') && 'blocks',
           machines.length && 'machines',
           generators.length && 'generators',
-          entitiesVisible && 'entities',
+          entities.length && 'entities',
           (project.manifest.content.recipes.length || project.processingRecipes?.length) && 'recipes',
           project.mechanics.length && 'mechanics',
           ...(project.extraSections ?? []),
+          ...(compactGuides[project.id]?.en.pages.map((page, index) =>
+            index === 0 ? 'how-to-play' : 'how-to-play/' + page.id) ?? []),
         ].filter(Boolean);
         addSectionRoutes(project.id, sections);
         if (project.id === 'trinkets') {
@@ -189,7 +203,7 @@ module.exports = function doriosGeneratedRoutesPlugin(context) {
           blocks: sectionVisible('blocks') ? blocks.map((entry) => entry.slug) : [],
           machines: machines.map((entry) => entry.id),
           generators: generators.map((entry) => entry.id),
-          entities: entitiesVisible ? project.manifest.content.entities.map(entry => entry.slug ?? entry.id) : [],
+          entities: entities.map(entry => entry.slug ?? entry.id),
           recipes: [
             ...project.manifest.content.recipes.map((entry) => `crafting-${entry.id}`),
             ...(project.processingRecipes ?? []).map((entry) => `processing-${entry.id}`),

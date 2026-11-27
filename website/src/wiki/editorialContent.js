@@ -1,3 +1,5 @@
+const sourceInputs = require('./resourceSources.json');
+
 // Editorial overlays stay separate from generated manifests. Values describe
 // acquisition routes, not guaranteed yields or an exhaustive recipe list.
 const pick = (locale, en, pt, es) => ({en, 'pt-BR': pt, 'es-MX': es}[locale] ?? en);
@@ -36,7 +38,18 @@ function isResource(entry) {
 
 function resourceOrigin(entry, project, locale, nameFor) {
   if (!isResource(entry)) return null;
-  const id = (entry.identifier ?? entry.id).split(':').pop();
+  const identifier = entry.identifier ?? entry.id;
+  const id = identifier.split(':').pop();
+  const sourceId = sourceInputs[project.id]?.[identifier]?.[0];
+  const sourceName = sourceId && (nameFor(sourceId) ?? sourceId.split(':').pop().replaceAll('_', ' '));
+  if (sourceName && project.id === 'basics') return pick(locale,
+    `Can drop when you sift ${sourceName}. Use a compatible mesh in the Sieve.`,
+    `Pode cair ao peneirar ${sourceName}. Use uma malha compatível na peneira.`,
+    `Puede caer al tamizar ${sourceName}. Usa una malla compatible en la tamizadora.`);
+  if (sourceName && project.id === 'crops') return pick(locale,
+    `Harvest the crop grown from ${sourceName} to collect this resource.`,
+    `Colha a plantação cultivada com ${sourceName} para obter este recurso.`,
+    `Cosecha la planta cultivada con ${sourceName} para obtener este recurso.`);
   const explicit = {
     refined_aetherium_shard: [
       'A legacy Refined Aetherium Crystal kept for existing worlds. Convert it into the current Refined Aetherium Crystal through the Workbench or Crafter recipe.',
@@ -101,6 +114,11 @@ function resourceOrigin(entry, project, locale, nameFor) {
       `Obtido em ${station}${ingredient ? ` a partir de ${ingredient}` : ' por meio de suas receitas'}. Serve como material nas cadeias de fabricação e processamento do addon.`,
       `Se obtiene en ${station}${ingredient ? ` a partir de ${ingredient}` : ' mediante sus recetas'}. Se utiliza como material en las cadenas de fabricación y procesamiento del addon.`);
   }
+  const use = project.craftingRecipeDetails?.find(candidate => recipeInputs(candidate).some(input => input.id === identifier));
+  if (use) return pick(locale,
+    'This material is an ingredient for the recipes listed in the Uses tab.',
+    'Este material é um ingrediente nas receitas listadas na aba Usos.',
+    'Este material es un ingrediente de las recetas que aparecen en la pestaña Usos.');
   return null;
 }
 

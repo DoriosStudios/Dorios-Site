@@ -6,7 +6,7 @@ import {compileGeometry, rasterize, rendererVersion} from './bedrock-renderer.mj
 import {transformPoint, boxFaces} from './bedrock-geometry.mjs';
 import {readJson, filesUnder, decodeTexture, evaluateExpression, digest} from './bedrock-pack.mjs';
 
-export const entityRendererVersion = 1;
+export const entityRendererVersion = 2;
 export const entityLighting = {ambient: .55, direction: [.2, .45, .15], contrast: 1.05, shadowStrength: .16};
 const inside = (root, relative) => {
   const file = path.resolve(root, relative);
@@ -82,6 +82,11 @@ export function entityQueries(behavior, overrides = {}) {
 export function entityExpression(expression, {queries = {}, properties = {}, expressions = {}} = {}) {
   if (typeof expression === 'boolean' || typeof expression === 'number') return expression;
   if (Object.hasOwn(expressions, expression)) return expressions[expression];
+  const ternary = typeof expression === 'string' && ternaryParts(expression);
+  if (ternary) {
+    const context = {queries, properties, expressions};
+    return entityExpression(ternary[entityExpression(ternary[0], context) ? 1 : 2], context);
+  }
   let rewritten = String(expression).replace(/(?:query|q)\.property\(\s*(['"])([^'"]+)\1\s*\)/g, (_, quote, name) => {
     if (!Object.hasOwn(properties, name)) fail('unsupportedVariant', `Entity property needs an explicit value: ${name}`);
     return JSON.stringify(properties[name]);
@@ -216,6 +221,13 @@ function resolveEntityGeometry(packs, id, ancestors = new Set()) {
   return geometry;
 }
 
+function resolveOpacity(expression, context) {
+  const value = entityExpression(expression, context);
+  if (typeof value === 'boolean') return Number(value);
+  if (!Number.isFinite(value)) fail('unsupportedMaterial', `Expected numeric opacity: ${expression}`);
+  return Math.max(0, Math.min(1, value));
+}
+
 export async function resolveEntityVisual({identifier, behavior, packs, override = {}}) {
   const client = packs.clients.get(identifier)?.value;
   if (!client && !override.layers) fail('missingClient', `No client entity matching full identifier ${identifier}`);
@@ -243,11 +255,20 @@ export async function resolveEntityVisual({identifier, behavior, packs, override
       controller = packs.controllers.get(name)?.value;
       if (!controller) fail('unresolvedController', `Missing render controller: ${name}`);
     }
+    let layerOpacity = 1;
+    if (controller.color?.a !== undefined) {
+      try {
+        layerOpacity = resolveOpacity(controller.color.a, context);
+      } catch (error) {
+        if (!(error instanceof EntityVisualError)) throw error;
+        warnings.push(`Opacity for ${controllerName ?? 'explicit layer'} could not be resolved; using 1. ${error.message}`);
+      }
+    }
+    if (layerOpacity === 0) continue;
     const symbolic = (value, kind) => resolveEntitySymbol(value, kind, client ?? {}, controller, context);
     const geometryId = symbolic(controller.geometry, 'geometry');
     const geometry = resolveEntityGeometry(packs, geometryId);
     if (identifier === 'minecraft:enderman' && geometryId === 'geometry.enderman.v1.8') alignEndermanHead(geometry);
-    for (const bone of geometry.bones) if (bone.neverRender && override.visibility?.[bone.name] !== true) bone.cubes = [];
     const pose = {...override.pose};
     if (override.staticAnimation) {
       const animationName = client?.animations?.[override.staticAnimation] ?? override.staticAnimation;
@@ -273,7 +294,10 @@ export async function resolveEntityVisual({identifier, behavior, packs, override
     const textures = controller.textures ?? (controller.texture ? [controller.texture] : []);
     if (textures.length !== 1) fail('unsupportedVariant', `Controller ${controllerName ?? 'explicit'} has ${textures.length} texture stages; configure one explicit layer per texture/material instead of guessing shader composition`);
     const texturePath = symbolic(textures[0], 'texture'), decoded = await packs.texture(texturePath);
-    for (const key of ['color','overlay_color','is_hurt_color','on_fire_color','uv_anim','filter_lighting','ignore_lighting']) {
+    if (['r', 'g', 'b'].some(channel => controller.color?.[channel] !== undefined && controller.color[channel] !== 1)) {
+      warnings.push('Controller color tint is not applied in the neutral static shader profile.');
+    }
+    for (const key of ['overlay_color','is_hurt_color','on_fire_color','uv_anim','filter_lighting','ignore_lighting']) {
       if (controller[key] !== undefined) warnings.push(`Controller ${controllerName ?? 'explicit'} ${key} is not applied in the neutral static shader profile.`);
     }
     const materialRules = controller.materials ?? [{'*': controller.material ?? 'Material.default'}];
@@ -283,9 +307,22 @@ export async function resolveEntityVisual({identifier, behavior, packs, override
       const value = Boolean(entityExpression(expression, context));
       for (const bone of geometry.bones) if (patternMatches(pattern, bone.name)) visibility[bone.name] = value;
     }
-    Object.assign(visibility, override.visibility, controller.visibility);
+    const visibilityOverrides = {...override.visibility, ...controller.visibility};
+    for (const [pattern, expression] of Object.entries(visibilityOverrides)) {
+      for (const bone of geometry.bones) {
+        if (patternMatches(pattern, bone.name)) visibility[bone.name] = Boolean(entityExpression(expression, context));
+      }
+    }
     const materials = {};
     for (const bone of geometry.bones) {
+      // Preview opacity applies to the bone's mesh, while part_visibility
+      // continues to control visibility of the entire branch of the model.
+      const opacity = layerOpacity * resolveOpacity(lookup(override.boneOpacity, bone.name) ?? bone.opacity ?? 1, context);
+      const shown = lookup(visibilityOverrides, bone.name);
+      if (opacity === 0 || bone.neverRender && (shown === undefined || !entityExpression(shown, context))) {
+        bone.cubes = [];
+        continue;
+      }
       let name;
       for (const rule of materialRules) for (const [pattern, reference] of Object.entries(rule)) if (patternMatches(pattern, bone.name)) name = symbolic(reference, 'material');
       if (!name) fail('unsupportedMaterial', `No material selected for bone ${bone.name}`);
@@ -300,7 +337,7 @@ export async function resolveEntityVisual({identifier, behavior, packs, override
           cube.uv = Object.fromEntries(boxFaces(cube).map(face => [face.name, {...face.uv, material_instance: key}]));
         } else for (const uv of Object.values(cube.uv ?? {})) uv.material_instance = key;
       }
-      materials[key].decoded = {...decoded, ...profile, faceDimming: true, ambientOcclusion: true};
+      materials[key].decoded = {...decoded, ...profile, opacity, faceDimming: true, ambientOcclusion: true};
     }
     layers.push({geometry, geometryId, texturePath, textureDigest: decoded.digest, controller: controllerName, materials, visibility});
   }
@@ -350,5 +387,5 @@ export function entityVisualHash(visual, settings) {
   return digest(JSON.stringify({rendererVersion, entityRendererVersion, settings, identifier:visual.identifier,
     layers: visual.layers.map(({geometry, texturePath, textureDigest, controller, visibility, materials}) => ({geometry, texturePath,
       textureDigest, controller, visibility, materials:Object.fromEntries(Object.entries(materials).map(([key, material]) => [key,
-        {texture:material.texture, method:material.decoded.method, doubleSided:material.decoded.doubleSided}]))}))}));
+        {texture:material.texture, method:material.decoded.method, doubleSided:material.decoded.doubleSided, opacity:material.decoded.opacity}]))}))}));
 }

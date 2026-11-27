@@ -125,7 +125,7 @@ const ascendantTechnology = createGeneratedProject({
     {name: 'Superior Machines', icon: 'tool', description: 'Advanced processors with specialized item, liquid, gas, catalyst, and upgrade slots for late-game production.'},
     {name: 'Absolute Generators', icon: 'battery', description: 'The fifth generator tier, built to supply high-output Dorios Energy for Ascendant industrial networks.'},
     {name: 'Cryogenic Branches', icon: 'droplet', description: 'Cryogenic work is split between the Cryo Freezer, Cryofluid Synthesizer, and Cryo Stabilizer so each production lane can scale independently.'},
-    {name: 'Overclock Network', icon: 'bolt', description: 'An Overclock Tower consumes fuel, Reinforced Cable carries the network, and Overclock Relays distribute the selected boost to supported machines.'},
+    {name: 'Overclock Network', icon: 'network', description: 'An Overclock Tower consumes fuel, Reinforced Cable carries the network, and Overclock Relays distribute the selected boost to supported machines.'},
     {name: 'Progression Status', icon: 'settings', description: 'Aetherium, Titanium, and Tungsten are documented current materials. Niobium, Singularities, and Kyarium remain planned progression; the Singularity Fabricator is pending rework.'},
   ],
   machineNotice: {

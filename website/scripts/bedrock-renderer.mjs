@@ -120,8 +120,13 @@ export function rasterize(faces, geometry, textures, cubes, options = {}) {
   const depths = new Float64Array(imageSize * imageSize).fill(-Infinity);
   const ordered = [...faces].sort((a, b) => projectPoint(pointAt(a, (a.u0 + a.u1) / 2, (a.v0 + a.v1) / 2))[2]
     - projectPoint(pointAt(b, (b.u0 + b.u1) / 2, (b.v0 + b.v1) / 2))[2]);
+  const sampled = new Map();
   for (const face of ordered) {
     const texture = face.texture ?? textures[face.name];
+    if (texture.animation && options.tick && !sampled.has(texture.animation)) {
+      sampled.set(texture.animation, texture.animation.pixelsAt(options.tick));
+    }
+    const texels = sampled.get(texture.animation) ?? texture.pixels;
     const shades = Array.from({length: keyDirections.length + 1}, (_, blocked) =>
       Uint8Array.from({length: 256}, (_, value) => studioChannel(value, face.shade, blocked / keyDirections.length, lighting)));
     const receivesShadow = options.shadows !== false && texture.ambientOcclusion !== false && texture.ambientOcclusion !== 0
@@ -152,9 +157,10 @@ export function rasterize(faces, geometry, textures, cubes, options = {}) {
       const ty = Math.floor((face.uv.uv[1] + tv * uvSize[1]) / geometry.description.texture_height * texture.height);
       const source = (Math.max(0, Math.min(texture.height - 1, ty)) * texture.width
         + Math.max(0, Math.min(texture.width - 1, tx))) * 4;
-      let alpha = texture.pixels[source + 3] / 255;
+      let alpha = texels[source + 3] / 255;
       if (texture.method === 'opaque') alpha = 1;
       else if (texture.method?.startsWith('alpha_test')) alpha = alpha >= .5 ? 1 : 0;
+      alpha *= texture.opacity ?? 1;
       if (!alpha) continue;
       if (!legacy && face.volume && cubes.some(other => other !== face.volume && other.contains
         && other.contains(add(pointAt(face, u, v), face.normal, .001))
@@ -163,13 +169,13 @@ export function rasterize(faces, geometry, textures, cubes, options = {}) {
       const shadow = receivesShadow ? (legacy ? keyDirections.filter(direction => blockedLight(originInLight, direction, cubes)).length
         : keyDirections.filter(direction => cubes.some(cube => cube !== face.volume && cube.blocks?.(originInLight, direction))).length) : 0;
       if (!legacy) {
-        fragments[index].push({depth, alpha, rgb: [0, 1, 2].map(channel => shades[shadow][texture.pixels[source + channel]])});
+        fragments[index].push({depth, alpha, rgb: [0, 1, 2].map(channel => shades[shadow][texels[source + channel]])});
         continue;
       }
       const target = index * 4, oldAlpha = pixels[target + 3] / 255;
       const outAlpha = alpha + oldAlpha * (1 - alpha);
       for (let channel = 0; channel < 3; channel++) pixels[target + channel] = Math.round(
-        (shades[shadow][texture.pixels[source + channel]] * alpha + pixels[target + channel] * oldAlpha * (1 - alpha)) / outAlpha);
+        (shades[shadow][texels[source + channel]] * alpha + pixels[target + channel] * oldAlpha * (1 - alpha)) / outAlpha);
       pixels[target + 3] = Math.round(outAlpha * 255);
       depths[index] = depth;
     }

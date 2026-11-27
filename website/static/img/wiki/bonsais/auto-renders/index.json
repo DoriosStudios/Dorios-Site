@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "rendererVersion": 4,
+  "blocks": {
+    "utilitycraft:bonsai": {
+      "identifier": "utilitycraft:bonsai",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_bonsai-33406b4dce76-780e2b8c214525df5d25ea21.png",
+      "hash": "780e2b8c214525df5d25ea21947f1df187d747ed27c31196c0727ca60745e0a0",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:soil": "empty",
+        "utilitycraft:hasBonsai": false,
+        "utilitycraft:isFarm": false,
+        "utilitycraft:isSlimed": false
+      },
+      "geometry": "geometry.utilitycraft_bonsai",
+      "stats": {
+        "bones": 2,
+        "cubes": 11,
+        "planes": 0,
+        "faces": 61
+      }
+    }
+  }
+}

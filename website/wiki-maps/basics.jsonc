@@ -1,0 +1,4 @@
+{
+  // This pack uses entity actors only to implement its block or HUD behavior.
+  "exclude": {"entityIdentifierPatterns": ["*"]}
+}

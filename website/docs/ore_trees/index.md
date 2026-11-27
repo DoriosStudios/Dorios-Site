@@ -1,12 +1,10 @@
 ---
 title: Bountiful Trees
 slug: /addons/bountiful-trees
-image: /img/addons/bountiful_trees/pack_icon.png
+image: /img/addons/trees/MCPEDL.png
 authors: dorios-studios
 tags: [addon, farming, ores, renewable, progression, vanilla-compatible, utilitycraft]
-description: >
-  Bountiful Trees — Grow ores, not just wood. This Minecraft Bedrock addon introduces ore-based trees that combine mining and farming into one balanced system. 
-  Each tree grows naturally, drops its own saplings, and produces ores when harvested. It’s designed to expand resource gathering without breaking vanilla progression or performance balance.
+description: Craft ore saplings, grow them in Minecraft Bedrock and harvest the trunks for renewable resources.
 keywords:
   - Minecraft Bedrock Addon
   - Dorios Studios
@@ -18,103 +16,46 @@ keywords:
   - Survival Addon
 ---
 
-# Bountiful Trees – Grow Ores, Not Just Wood
+Craft an ore sapling from materials you already have, then grow it to harvest more of that resource. Breaking the leaves can return saplings for replanting.
 
-<p align="center">
-  <img 
-    src="https://media.forgecdn.net/attachments/1350/628/mcpedl-png.png" 
-    alt="Bountiful Trees Addon Banner"
-    width="80%"
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-  />
-</p>
-
-**Bountiful Trees** introduces a new way to gather resources in Minecraft Bedrock — by growing them.  
-This addon lets you cultivate trees made of ores, minerals, and gems, turning your farms into renewable sources of valuable materials while keeping a natural and immersive look.  
-It blends farming and mining into a single, balanced progression system.
-
-## How It Works
-
-Each ore tree begins from a **special sapling** crafted with the mineral it represents.  
-Once planted, it grows into a tree with a **mineral-infused trunk** and **custom ore leaves**.  
-When fully grown, breaking the trunk yields both **logs** and **ores**, offering a decorative and practical alternative to mining.
-
-Ore trees grow just like vanilla saplings:
-- They can grow naturally over time  
-- Or be instantly grown using **Bone Meal**
-
-No special tools or machines are required — simply plant, wait, and harvest.
+![Grown Bountiful Trees with canopies and trunks for several materials](/img/addons/trees/MCPEDL.png)
 
 ## Crafting Ore Saplings
 
-Each ore sapling is crafted using:
+Place an **oak sapling** in the center of the crafting table. Use the layout in your sapling’s recipe group.
 
-- 1x Oak Sapling  
-- 8x of the corresponding mineral
+| Saplings | Pattern around the oak sapling |
+| --- | --- |
+| Copper, Iron, Gold, Diamond, Emerald, Netherite | Put one storage block directly below the sapling. Fill the other seven spaces with the loose material. |
+| Coal, Redstone, Lapis, Quartz | Put storage blocks on the four sides. Fill the four corners with the loose material. |
 
-
-<p align="center">
-  <img 
-    src="https://media.forgecdn.net/attachments/description/1310972/description_ab47f0ea-49d6-438e-98f8-b139fc1febae.png" 
-    alt="Bountiful Trees Variants Showcase" 
-    width="70%" 
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-  />
-</p>
-
-For example:
-
-| Sapling | Recipe | Output |
-|----------|---------|---------|
-| **Iron Sapling** | 1 Oak Sapling + 8 Iron Ingots | Iron Ore Tree |
-| **Diamond Sapling** | 1 Oak Sapling + 8 Diamonds | Diamond Ore Tree |
-| **Gold Sapling** | 1 Oak Sapling + 8 Gold Ingots | Gold Ore Tree |
-
-These recipes make ore trees a mid-to-late game feature, rewarding exploration and offering renewable ore production later on.
+For example, a **Redstone Sapling** takes four blocks of redstone and four redstone dust. A **Copper Sapling** takes one block of copper and seven copper ingots.
 
 ## Growth and Harvest
 
-Ore trees feature trunks made of **ore logs** and **unique leaves** matching their mineral type.  
-These leaves behave like vanilla ones, meaning they drop **ore saplings**, allowing continuous replanting and expansion.  
+Plant the sapling with room for its canopy to spread up to two blocks each way. It can grow naturally on a random tick. Each application of bone meal gives it a **20% chance** to grow immediately.
 
-Breaking an ore tree’s trunk provides:
-- Regular oak logs (as from normal trees)  
-- Ores or minerals depending on the sapling type  
+Harvest the ore logs with an **axe or pickaxe**. Each eligible log gives its corresponding resource, and Fortune can add more. The oak sapling is the starting ingredient for the recipe. The ore logs are the source of the materials below.
 
-Any standard tool can be used — harvesting is simple, familiar, and rewarding.
+| Tree | Resource from the trunk |
+| --- | --- |
+| Coal | Coal |
+| Copper | Raw Copper |
+| Iron | Raw Iron |
+| Gold | Raw Gold |
+| Redstone | Redstone Dust |
+| Lapis | Lapis Lazuli |
+| Quartz | Nether Quartz |
+| Diamond | Diamond |
+| Emerald | Emerald |
+| Netherite | Netherite Scrap |
+
+Break the leaves to try for sticks or a matching ore sapling.
 
 ## UtilityCraft Compatibility
 
-Bountiful Trees will soon feature full integration with **UtilityCraft**, allowing:
-- Compact ore farming through **Bonsai Pots**  
-- Automation of harvesting and processing with **UtilityCraft Machines**  
-- Full energy-based systems powered by **Dorios Energy (DE)**  
-
-This compatibility will make the addon ideal for both survival and technical players, offering natural progression and automation opportunities.
+Bountiful Trees registers saplings with UtilityCraft’s plant system for compatible Bonsai Pots. The Bonsai harvest tables can use different forms of a resource, such as Diamond Shards and Netherite Nuggets.
 
 ## Downloads
 
-<div style={{ 
-  display: "flex", 
-  justifyContent: "center", 
-  gap: "1.5rem", 
-  marginTop: "2rem", 
-  flexWrap: "wrap"
-}}>
-
-<a 
-  href="https://mcpedl.com/bountiful-trees/#downloads" 
-  target="_blank"
-  className="download-button"
->
-  <span>MCPEDL</span>
-</a>
-
-<a 
-  href="https://www.curseforge.com/minecraft-bedrock/addons/bountiful-trees/files/all"
-  target="_blank"
-  className="download-button"
->
-  <span>CurseForge</span>
-</a>
-</div>
+[CurseForge](https://www.curseforge.com/minecraft-bedrock/addons/bountiful-trees/files/all) · [MCPEDL](https://mcpedl.com/bountiful-trees/#downloads)

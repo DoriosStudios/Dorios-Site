@@ -333,7 +333,7 @@
 	padding: 0.23rem 0.42rem;
 	border-radius: 7px;
 	background: color-mix(in srgb, var(--card-primary) 16%, var(--ds-surface-raised));
-	color: color-mix(in srgb, var(--card-primary) 52%, var(--ds-text));
+	color: var(--card-accent, var(--ds-text));
 	font-size: 0.68rem;
 	font-weight: 750;
 	letter-spacing: 0.07em;
@@ -357,7 +357,7 @@
 	place-items: center;
 	border-radius: 11px;
 	background: var(--ds-surface-raised);
-	color: color-mix(in srgb, var(--card-primary) 55%, var(--ds-text));
+	color: var(--card-accent, var(--ds-text));
 	transition: background-color 200ms ease, color 200ms ease, transform 200ms ease;
 }
 .featuredArrow svg {

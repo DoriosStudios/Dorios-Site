@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "rendererVersion": 4,
+  "blocks": {
+    "effect_pillars:effect_absorption": {
+      "identifier": "effect_pillars:effect_absorption",
+      "kind": "manual",
+      "path": "renders/effect_absorption.png"
+    },
+    "effect_pillars:amethyst_level": {
+      "identifier": "effect_pillars:amethyst_level",
+      "kind": "manual",
+      "path": "renders/amethyst_level.png"
+    },
+    "effect_pillars:base": {
+      "identifier": "effect_pillars:base",
+      "kind": "manual",
+      "path": "renders/base.png"
+    },
+    "effect_pillars:effect_conduit_power": {
+      "identifier": "effect_pillars:effect_conduit_power",
+      "kind": "manual",
+      "path": "renders/effect_conduit_power.png"
+    },
+    "effect_pillars:effect_damage_area": {
+      "identifier": "effect_pillars:effect_damage_area",
+      "kind": "manual",
+      "path": "renders/effect_damage_area.png"
+    },
+    "effect_pillars:diamond_range": {
+      "identifier": "effect_pillars:diamond_range",
+      "kind": "manual",
+      "path": "renders/diamond_range.png"
+    },
+    "effect_pillars:effect_fire_resistance": {
+      "identifier": "effect_pillars:effect_fire_resistance",
+      "kind": "manual",
+      "path": "renders/effect_fire_resistance.png"
+    },
+    "effect_pillars:glowstone_level": {
+      "identifier": "effect_pillars:glowstone_level",
+      "kind": "manual",
+      "path": "renders/glowstone_level.png"
+    },
+    "effect_pillars:gold_range": {
+      "identifier": "effect_pillars:gold_range",
+      "kind": "manual",
+      "path": "renders/gold_range.png"
+    },
+    "effect_pillars:effect_haste": {
+      "identifier": "effect_pillars:effect_haste",
+      "kind": "manual",
+      "path": "renders/effect_haste.png"
+    },
+    "effect_pillars:effect_health_boost": {
+      "identifier": "effect_pillars:effect_health_boost",
+      "kind": "manual",
+      "path": "renders/effect_health_boost.png"
+    },
+    "effect_pillars:effect_invisibility": {
+      "identifier": "effect_pillars:effect_invisibility",
+      "kind": "manual",
+      "path": "renders/effect_invisibility.png"
+    },
+    "effect_pillars:iron_range": {
+      "identifier": "effect_pillars:iron_range",
+      "kind": "manual",
+      "path": "renders/iron_range.png"
+    },
+    "effect_pillars:effect_jump_boost": {
+      "identifier": "effect_pillars:effect_jump_boost",
+      "kind": "manual",
+      "path": "renders/effect_jump_boost.png"
+    },
+    "effect_pillars:effect_levitation": {
+      "identifier": "effect_pillars:effect_levitation",
+      "kind": "manual",
+      "path": "renders/effect_levitation.png"
+    },
+    "effect_pillars:nether_star_range": {
+      "identifier": "effect_pillars:nether_star_range",
+      "kind": "manual",
+      "path": "renders/nether_star_range.png"
+    },
+    "effect_pillars:netherite_range": {
+      "identifier": "effect_pillars:netherite_range",
+      "kind": "manual",
+      "path": "renders/netherite_range.png"
+    },
+    "effect_pillars:effect_night_vision": {
+      "identifier": "effect_pillars:effect_night_vision",
+      "kind": "manual",
+      "path": "renders/effect_night_vision.png"
+    },
+    "effect_pillars:effect_poison": {
+      "identifier": "effect_pillars:effect_poison",
+      "kind": "manual",
+      "path": "renders/effect_poison.png"
+    },
+    "effect_pillars:redstone_level": {
+      "identifier": "effect_pillars:redstone_level",
+      "kind": "manual",
+      "path": "renders/redstone_level.png"
+    },
+    "effect_pillars:effect_regeneration": {
+      "identifier": "effect_pillars:effect_regeneration",
+      "kind": "manual",
+      "path": "renders/effect_regeneration.png"
+    },
+    "effect_pillars:effect_resistance": {
+      "identifier": "effect_pillars:effect_resistance",
+      "kind": "manual",
+      "path": "renders/effect_resistance.png"
+    },
+    "effect_pillars:effect_saturation": {
+      "identifier": "effect_pillars:effect_saturation",
+      "kind": "manual",
+      "path": "renders/effect_saturation.png"
+    },
+    "effect_pillars:effect_slow_falling": {
+      "identifier": "effect_pillars:effect_slow_falling",
+      "kind": "manual",
+      "path": "renders/effect_slow_falling.png"
+    },
+    "effect_pillars:effect_slowness": {
+      "identifier": "effect_pillars:effect_slowness",
+      "kind": "manual",
+      "path": "renders/effect_slowness.png"
+    },
+    "effect_pillars:effect_speed": {
+      "identifier": "effect_pillars:effect_speed",
+      "kind": "manual",
+      "path": "renders/effect_speed.png"
+    },
+    "effect_pillars:effect_strength": {
+      "identifier": "effect_pillars:effect_strength",
+      "kind": "manual",
+      "path": "renders/effect_strength.png"
+    },
+    "effect_pillars:effect_village_hero": {
+      "identifier": "effect_pillars:effect_village_hero",
+      "kind": "manual",
+      "path": "renders/effect_village_hero.png"
+    },
+    "effect_pillars:effect_water_breathing": {
+      "identifier": "effect_pillars:effect_water_breathing",
+      "kind": "manual",
+      "path": "renders/effect_water_breathing.png"
+    },
+    "effect_pillars:effect_weakness": {
+      "identifier": "effect_pillars:effect_weakness",
+      "kind": "manual",
+      "path": "renders/effect_weakness.png"
+    },
+    "effect_pillars:effect_wither": {
+      "identifier": "effect_pillars:effect_wither",
+      "kind": "manual",
+      "path": "renders/effect_wither.png"
+    }
+  }
+}

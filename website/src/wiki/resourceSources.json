@@ -1,0 +1,120 @@
+{
+  "basics": {
+    "utilitycraft:dripstone_pebble": [
+      "minecraft:gravel",
+      "utilitycraft:compressed_gravel"
+    ],
+    "utilitycraft:iron_chunk": [
+      "minecraft:gravel",
+      "utilitycraft:compressed_gravel"
+    ],
+    "utilitycraft:coal_chunk": [
+      "minecraft:gravel",
+      "utilitycraft:compressed_gravel"
+    ],
+    "utilitycraft:gold_chunk": [
+      "minecraft:gravel",
+      "utilitycraft:compressed_gravel"
+    ],
+    "utilitycraft:emerald_shard": [
+      "minecraft:gravel",
+      "utilitycraft:crushed_cobbled_deepslate",
+      "utilitycraft:compressed_gravel",
+      "utilitycraft:compressed_crushed_cobbled_deepslate"
+    ],
+    "utilitycraft:diamond_shard": [
+      "minecraft:gravel",
+      "utilitycraft:crushed_cobbled_deepslate",
+      "utilitycraft:compressed_gravel",
+      "utilitycraft:compressed_crushed_cobbled_deepslate"
+    ],
+    "utilitycraft:nether_quartz_chunk": [
+      "utilitycraft:crushed_netherrack",
+      "minecraft:soul_sand",
+      "minecraft:soul_sand",
+      "utilitycraft:compressed_crushed_netherrack"
+    ],
+    "utilitycraft:nether_gold_chunk": [
+      "utilitycraft:crushed_netherrack",
+      "utilitycraft:compressed_crushed_netherrack"
+    ],
+    "utilitycraft:ancient_debris_chunk": [
+      "utilitycraft:crushed_netherrack",
+      "utilitycraft:crushed_blackstone",
+      "utilitycraft:compressed_crushed_netherrack",
+      "utilitycraft:compressed_crushed_blackstone"
+    ],
+    "utilitycraft:blackstone_pebble": [
+      "utilitycraft:crushed_blackstone",
+      "utilitycraft:compressed_crushed_blackstone"
+    ],
+    "utilitycraft:basalt_pebble": [
+      "utilitycraft:crushed_blackstone",
+      "utilitycraft:compressed_crushed_blackstone"
+    ],
+    "utilitycraft:gilded_blackstone_pebble": [
+      "utilitycraft:crushed_blackstone",
+      "utilitycraft:compressed_crushed_blackstone"
+    ],
+    "utilitycraft:copper_chunk": [
+      "minecraft:sand",
+      "utilitycraft:compressed_sand"
+    ],
+    "utilitycraft:shulker_shell_shard": [
+      "utilitycraft:crushed_endstone",
+      "utilitycraft:compressed_crushed_endstone"
+    ],
+    "utilitycraft:calcite_pebble": [
+      "utilitycraft:crushed_cobbled_deepslate",
+      "utilitycraft:compressed_crushed_cobbled_deepslate"
+    ],
+    "utilitycraft:tuff_pebble": [
+      "utilitycraft:crushed_cobbled_deepslate",
+      "utilitycraft:compressed_crushed_cobbled_deepslate"
+    ],
+    "utilitycraft:deepslate_gold_chunk": [
+      "utilitycraft:crushed_cobbled_deepslate",
+      "utilitycraft:compressed_crushed_cobbled_deepslate"
+    ],
+    "utilitycraft:deepslate_iron_chunk": [
+      "utilitycraft:crushed_cobbled_deepslate",
+      "utilitycraft:compressed_crushed_cobbled_deepslate"
+    ],
+    "utilitycraft:deepslate_coal_chunk": [
+      "utilitycraft:crushed_cobbled_deepslate",
+      "utilitycraft:compressed_crushed_cobbled_deepslate"
+    ]
+  },
+  "crops": {
+    "utilitycraft:water_ball": [
+      "utilitycraft:water_seeds"
+    ],
+    "utilitycraft:honey_ball": [
+      "utilitycraft:honey_seeds"
+    ],
+    "utilitycraft:lava_ball": [
+      "utilitycraft:lava_seeds"
+    ],
+    "utilitycraft:diamond_shard": [
+      "utilitycraft:diamond_seeds"
+    ],
+    "utilitycraft:emerald_shard": [
+      "utilitycraft:emerald_seeds"
+    ],
+    "utilitycraft:netherite_nugget": [
+      "utilitycraft:netherite_seeds"
+    ],
+    "utilitycraft:nether_star_fragment": [
+      "utilitycraft:nether_star_seeds"
+    ],
+    "utilitycraft:shulker_shell_shard": [
+      "utilitycraft:shulker_seeds"
+    ],
+    "utilitycraft:totem_shard": [
+      "utilitycraft:totem_seeds"
+    ],
+    "utilitycraft:wither_skull_shard": [
+      "utilitycraft:wither_seeds"
+    ]
+  }
+}

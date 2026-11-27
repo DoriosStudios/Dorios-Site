@@ -72,7 +72,18 @@ const block = (id, name, category, tier, texture, description, faces) => ({
   faces: faces ?? uniformFaces(texture),
 });
 
-const casingDescription = (tier, role) => `${tier} multiblock ${role.toLowerCase()} for modular industrial structures.`;
+const casingRoles = {
+  'Energy port': 'Connects a formed multiblock to the Dorios Energy network.',
+  'Liquid port': 'Connects a formed multiblock to external liquid handling.',
+  'Gas port': 'Connects a formed multiblock to external gas handling.',
+  'Item port': 'Connects a formed multiblock to external item transport.',
+  Vent: 'Place this vent in the top layer of a multiblock that requires ventilation.',
+  Glass: 'Fits in the outer shell of a compatible multiblock and lets you see inside.',
+  Structure: 'Can fill the outer shell of a compatible multiblock.',
+  Casing: 'Forms the outer shell of a compatible multiblock.',
+  'controller casing': 'Fits around the controller of a compatible multiblock.',
+};
+const casingDescription = (role) => casingRoles[role] ?? casingRoles.Casing;
 
 export const blocks = [
   block('brute_bronze_block', 'Block of Brute Bronze', 'Materials', 'Material', 'blocks/brute_bronze_block.png', 'Compact storage for unfinished bronze alloy.'),
@@ -101,8 +112,8 @@ export const blocks = [
     ['bronze_vent_panel', 'Bronze Vent Panel', 'Vent'],
     ['reinforced_bronze_glass', 'Reinforced Bronze Glass', 'Glass'],
     ['tempered_bronze_glass', 'Tempered Bronze Glass', 'Glass'],
-  ].map(([id, name, role]) => block(id, name, 'Bronze casings', 'Bronze', `blocks/multiblock/bronze/${id}.png`, casingDescription('Bronze', role))),
-  block('bronze_controller_case', 'Bronze Controller Case', 'Bronze casings', 'Bronze', 'blocks/multiblock/bronze/bronze_steel_case.png', casingDescription('Bronze', 'controller casing'), directionalFaces('blocks/multiblock/bronze', 'bronze_steel_case', 'west')),
+  ].map(([id, name, role]) => block(id, name, 'Bronze casings', 'Bronze', `blocks/multiblock/bronze/${id}.png`, casingDescription(role))),
+  block('bronze_controller_case', 'Bronze Controller Case', 'Bronze casings', 'Bronze', 'blocks/multiblock/bronze/bronze_steel_case.png', casingDescription('controller casing'), directionalFaces('blocks/multiblock/bronze', 'bronze_steel_case', 'west')),
 
   ...[
     ['reinforced_steel_glass', 'Reinforced Steel Glass', 'Glass'],
@@ -116,7 +127,7 @@ export const blocks = [
     ['steel_plated_block', 'Steel Plated Block', 'Structure'],
     ['steel_vent_panel', 'Steel Vent Panel', 'Vent'],
     ['tempered_steel_glass', 'Tempered Steel Glass', 'Glass'],
-  ].map(([id, name, role]) => block(id, name, 'Steel casings', 'Steel', `blocks/multiblock/steel/${id}.png`, casingDescription('Steel', role))),
+  ].map(([id, name, role]) => block(id, name, 'Steel casings', 'Steel', `blocks/multiblock/steel/${id}.png`, casingDescription(role))),
 
   ...[
     ['netherite_bricks', 'Netherite Bricks', 'Structure'],
@@ -131,7 +142,7 @@ export const blocks = [
     ['reinforced_netherite_glass', 'Reinforced Netherite Glass', 'Glass'],
     ['stamped_netherite_plate', 'Stamped Netherite Plate', 'Structure'],
     ['tempered_netherite_glass', 'Tempered Netherite Glass', 'Glass'],
-  ].map(([id, name, role]) => block(id, name, 'Netherite casings', 'Netherite', `blocks/multiblock/netherite/${id}.png`, casingDescription('Netherite', role))),
+  ].map(([id, name, role]) => block(id, name, 'Netherite casings', 'Netherite', `blocks/multiblock/netherite/${id}.png`, casingDescription(role))),
 
   ...[
     ['efficiency_module', 'Efficiency Module', 'Reduces machine energy consumption.'],
@@ -301,5 +312,5 @@ export const mechanics = [
   {name: 'Multiblock Generators', icon: 'battery', description: 'Large structures that generate, buffer, and distribute Dorios Energy through configurable internal components.'},
   {name: 'Uranium Fuel Cycle', icon: 'settings', description: 'Raw uranium is processed into uranium products, converted into uranium hexafluoride, enriched in the Isotope Centrifuge, formed into Enriched Uranium Fuel Rods, and consumed by the Nuclear Reactor while producing waste gas.'},
   {name: 'Hazard Equipment', icon: 'shield', description: 'Hazmat pieces carry the shared hazard-equipment tag and offer repairable armor protection. Utility Exo pieces provide extremely durable wearable equipment; special abilities are documented only when implemented.'},
-  {name: 'Modular Storage', icon: 'droplet', description: 'Liquid and Gas Tank Controllers form steel-cased storage structures with five independent channels. Cells add capacity and compatible ports provide per-face automation.'},
+  {name: 'Modular Storage', icon: 'stack', description: 'Liquid and Gas Tank Controllers form steel-cased storage structures with five independent channels. Cells add capacity and compatible ports provide per-face automation.'},
 ];

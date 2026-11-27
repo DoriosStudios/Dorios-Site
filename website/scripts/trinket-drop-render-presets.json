@@ -18,7 +18,7 @@
   "minecraft:strider": {"queries":{"is_baby":false,"is_shaking":0,"is_saddled":0},"materialMethods":{"strider":"alpha_test_double_sided"}},
   "minecraft:vex": {"queries":{"is_charging":0},"materialMethods":{"vex":"alpha_test_double_sided"}},
   "minecraft:vindicator": {"queries":{"is_angry":false,"is_celebrating":false},"materialMethods":{"vindicator":"alpha_test"}},
-  "minecraft:warden": {"materialMethods":{"warden":"alpha_test","warden_bioluminescent_layer":"blend"}},
+  "minecraft:warden": {"queries":{"hurt_time":0},"expressions":{"variable.spots_1_alpha":0.25,"variable.spots_2_alpha":0,"variable.tendrils_alpha":0,"variable.heart_alpha":0.8},"materialMethods":{"warden":"alpha_test","warden_bioluminescent_layer":"blend"}},
   "minecraft:witch": {"materialMethods":{"witch":"alpha_test"}},
   "minecraft:wither": {"queries":{"is_shield_powered":false},"expressions":{"variable.display_normal_skin":1},"materialMethods":{"wither_boss":"opaque","wither_boss_armor":"blend"}},
   "minecraft:wither_skeleton": {"materialMethods":{"skeleton":"alpha_test"}},

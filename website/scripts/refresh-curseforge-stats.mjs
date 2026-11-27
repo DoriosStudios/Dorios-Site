@@ -108,9 +108,10 @@ function publicCurseForgeUrl(project) {
   return url.href;
 }
 
-export async function fetchProject(project, cached, request = fetch) {
+export async function fetchProject(project, cached, request = fetch, env = process.env) {
   const modId = project.curseforgeProjectId ?? cached?.modId;
-  const apiKeys = [...new Set([process.env.CURSEFORGE_API_KEY, process.env.CURSEFORGE_API_TOKEN].filter(Boolean))];
+  const apiKeys = [...new Set([env.CURSEFORGE_API_KEY, env.CURSEFORGE_API_TOKEN].filter(Boolean))];
+  let apiFailure;
   if (apiKeys.length && Number.isSafeInteger(modId)) {
     let status;
     for (const apiKey of apiKeys) {
@@ -129,16 +130,17 @@ export async function fetchProject(project, cached, request = fetch) {
       return {modId, downloads: data.downloadCount, display: abbreviatedDownloadCount(data.downloadCount),
         source: 'curseforge-api', updatedAt: new Date().toISOString()};
     }
-    throw new Error(`CurseForge API authentication failed (HTTP ${status})`);
+    apiFailure = `CurseForge API authentication failed (HTTP ${status})`;
   }
   const pageUrl = publicCurseForgeUrl(project);
-  const response = await request(pageUrl, {
-    headers: requestHeaders,
-    signal: AbortSignal.timeout(15_000),
-  });
-  if (!response.ok) throw new Error(`CurseForge page returned HTTP ${response.status}`);
-
-  const downloads = extractDetailsDownloadCount(await response.text());
+  let downloads;
+  try {
+    const response = await request(pageUrl, {headers: requestHeaders, signal: AbortSignal.timeout(15_000)});
+    if (!response.ok) throw new Error(`public page returned HTTP ${response.status}`);
+    downloads = extractDetailsDownloadCount(await response.text());
+  } catch (error) {
+    throw new Error(apiFailure ? `${apiFailure}; ${error.message}` : `CurseForge: ${error.message}`);
+  }
   return {
     ...(Number.isSafeInteger(modId) ? {modId} : {}),
     downloads,

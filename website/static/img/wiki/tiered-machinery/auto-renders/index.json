@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "rendererVersion": 4,
+  "blocks": {
+    "utilitycraft:advanced_crusher": {
+      "identifier": "utilitycraft:advanced_crusher",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_advanced_crusher-0649ca85ef1b-de74736ee869ac253510e405.png",
+      "hash": "de74736ee869ac253510e405923f01f9c2db7f6c469e64d1eda43c166cfae807",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:advanced_electro_press": {
+      "identifier": "utilitycraft:advanced_electro_press",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_advanced_electro_press-40de471a770e-5f9f79c7ae22f6fc3b2ea8f4.png",
+      "hash": "5f9f79c7ae22f6fc3b2ea8f48c73de62909e22adef5c3df7ce5116ce3d7f2ede",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:advanced_incinerator": {
+      "identifier": "utilitycraft:advanced_incinerator",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_advanced_incinerator-7c0fa116fe1a-c343ee5c0b6a2d21e1bfe26d.png",
+      "hash": "c343ee5c0b6a2d21e1bfe26d89b60c1449a470669b7324978a8a964e80b3ca2e",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:basic_crusher": {
+      "identifier": "utilitycraft:basic_crusher",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_basic_crusher-b52443797753-eb67c27038866d2a004d54a2.png",
+      "hash": "eb67c27038866d2a004d54a2beb9d67d47990a16a0ef83cec548c2fef2fef9a4",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:basic_electro_press": {
+      "identifier": "utilitycraft:basic_electro_press",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_basic_electro_press-96f5f8aac888-635d9f8d546ac1744dc3c2e4.png",
+      "hash": "635d9f8d546ac1744dc3c2e4245b75772ace4f0ccb734a3d5d886fc81d909ea2",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:basic_incinerator": {
+      "identifier": "utilitycraft:basic_incinerator",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_basic_incinerator-beb73bc08530-c0ebcd552faa0192db387159.png",
+      "hash": "c0ebcd552faa0192db38715976262481d9ad81ee5e6808fb2ec830eaac2b2b49",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:expert_crusher": {
+      "identifier": "utilitycraft:expert_crusher",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_expert_crusher-8a22b837d99d-e51a412be5bbce05fcd4f8e8.png",
+      "hash": "e51a412be5bbce05fcd4f8e8d27d64a63c84f2e543d92a6f8085e953990d4575",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:expert_electro_press": {
+      "identifier": "utilitycraft:expert_electro_press",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_expert_electro_press-f2d7d36d9ad2-8ef5b54e14cab04df9a6d5a9.png",
+      "hash": "8ef5b54e14cab04df9a6d5a95a7410f5108fc245aef59aef55e936ea0bf2c852",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:expert_incinerator": {
+      "identifier": "utilitycraft:expert_incinerator",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_expert_incinerator-ef8663e071be-5cd8010ec9f4c27c259cbb01.png",
+      "hash": "5cd8010ec9f4c27c259cbb01cd0fbeb62d3f6698224e68b8a696e4a6faf6f405",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:ultimate_crusher": {
+      "identifier": "utilitycraft:ultimate_crusher",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_ultimate_crusher-d2d50ba3b188-83befc06bcf36cc1b9f91d95.png",
+      "hash": "83befc06bcf36cc1b9f91d95d86aa9d949f3a3fd15b72d1444c80a3d9d96f4d5",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:ultimate_electro_press": {
+      "identifier": "utilitycraft:ultimate_electro_press",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_ultimate_electro_press-c014e8c4588f-57d54e74ac6834402a656db9.png",
+      "hash": "57d54e74ac6834402a656db98d3272acbc9ce3c87250ca322b5377aef6109538",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:ultimate_incinerator": {
+      "identifier": "utilitycraft:ultimate_incinerator",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_ultimate_incinerator-1f1966156c75-fe4b78b8f2dfd3d4f4f6c919.png",
+      "hash": "fe4b78b8f2dfd3d4f4f6c9192369d1772c8bbf438c3d53babfcfc45e627318be",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    }
+  }
+}

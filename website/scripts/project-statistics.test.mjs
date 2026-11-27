@@ -10,7 +10,7 @@ import {collectStatistics} from './statistics/collect.mjs';
 import {recordDownloadStarted} from '../src/data/downloadEvents.mjs';
 import {collect as internal} from './statistics/providers/internal-downloads.mjs';
 import {fetchReleaseStats} from './refresh-github-release-stats.mjs';
-import {extractDetailsDownloadCount} from './refresh-curseforge-stats.mjs';
+import {extractDetailsDownloadCount, fetchProject} from './refresh-curseforge-stats.mjs';
 const date='2026-11-22T00:00:00.000Z';
 const project={id:'demo',links:{repository:'https://github.com/studio/demo',curseforge:'https://www.curseforge.com/minecraft-bedrock/addons/demo'}};
 const source=projectSources(project)[0];
@@ -42,9 +42,12 @@ test('failures, regressing counts, older feeds and invalid responses preserve th
 test('source instances, exclusions, clicks and shared counting keys aggregate independently',()=>{
   const second=normalizeSource({...source,id:'another-repo',countingKey:'github:another'},good(20));
   const click=normalizeSource({...source,id:'click',metric:'clicks',countingKey:'click'},good(7));
+  const start=normalizeSource({...source,id:'custom-install',metric:'download-starts',countingKey:'custom-install'},good(12));
   const disabled={...row(400),id:'disabled',enabled:false};
-  const aggregate=aggregateSources([row(),{...row(),id:'mirror'},second,click,disabled]);
-  assert.equal(aggregate.total,120);assert.equal(aggregate.clicks,7);assert.ok(aggregate.sources[1].duplicate);
+  const aggregate=aggregateSources([row(),{...row(),id:'mirror'},second,click,start,disabled]);
+  assert.equal(aggregate.total,120);assert.equal(aggregate.clicks,7);assert.equal(aggregate.downloadStarts,12);
+  assert.ok(aggregate.sources[1].duplicate);
+  assert.equal(aggregateSources([start]).available,false);
 });
 test('collector isolates provider failures and supports adding, disabling and multiple instances',async()=>{
   const configured={...project,statisticsSources:[{...source,id:'second',countingKey:'github:second',url:'https://github.com/studio/second'},{id:'disabled',provider:'github-releases',enabled:false}]};
@@ -72,6 +75,33 @@ test('GitHub validates asset counters and paginates; CurseForge only accepts exa
   assert.equal(extractDetailsDownloadCount('<h2>Details</h2><p>Downloads</p><b>123,456</b>'),123456);
   assert.throws(()=>extractDetailsDownloadCount('<h2>Details</h2><p>Downloads</p><b>123K</b>'));
 });
+test('CurseForge tries the independent public count when API credentials fail', async () => {
+  const source = {...project, curseforgeProjectId: 123};
+  const env = {CURSEFORGE_API_KEY: 'fixture'};
+  const requests = [];
+  const count = await fetchProject(source, null, async (url, options) => {
+    requests.push({host: new URL(url).hostname, apiKey: options.headers['x-api-key']});
+    return requests.length === 1 ? {ok: false, status: 403}
+      : {ok: true, text: async () => '<h2>Details</h2><p>Downloads</p><b>12,345</b>'};
+  }, env);
+  assert.equal(count.downloads, 12345);
+  assert.equal(count.modId, 123);
+  assert.deepEqual(requests, [{host: 'api.curseforge.com', apiKey: 'fixture'}, {host: 'www.curseforge.com', apiKey: undefined}]);
+  await assert.rejects(fetchProject(source, null, async () => ({ok: false, status: 403}), env),
+    /API authentication failed.*public page returned HTTP 403/);
+});
+
+test('Bedrock Buddy accepts native counts from an authorized report only', async () => {
+  const statisticsSources = [{id: 'bedrock-buddy', provider: 'bedrock-buddy',
+    report: {nativeDownloads: 14, updatedAt: date}}];
+  const run = configured => collectStatistics({projects: [{id: 'demo', statisticsSources: configured}],
+    request: () => assert.fail('report import must not make network requests')});
+  const valid = await run(statisticsSources);
+  assert.equal(aggregateSources(valid.projects.demo.sources).total, 14);
+  const unknown = await run([{...statisticsSources[0], report: {downloads: 100, updatedAt: date}}]);
+  assert.equal(unknown.projects.demo.sources[0].status, 'unavailable');
+});
+
 test('internal counts stay unavailable before configuration, and validate remote records',async()=>{
   await assert.rejects(internal({event:'custom-install-started'},{project,env:{}}),/not-configured/);
   const result=await internal({event:'custom-install-started'},{project,env:{DOWNLOAD_COUNTER_URL:'https://counter.example',DOWNLOAD_COUNTER_READ_TOKEN:'test'},request:async()=>({ok:true,json:async()=>({schemaVersion:1,counters:[{project:'demo',event:'custom-install-started',value:3,updatedAt:date}]})})});
@@ -84,7 +114,10 @@ test('download telemetry retries use one id, suppress duplicates and tolerate ou
   assert.equal(await recordDownloadStarted(options,{request}),true);
   assert.equal(calls.length,2);assert.equal(calls[0].eventId,calls[1].eventId);
   await recordDownloadStarted(options,{request});assert.equal(calls.length,2);
-  assert.equal(await recordDownloadStarted({...options,eventId:crypto.randomUUID()},{request:async()=>{throw Error('offline');}}),false);
+  const repeat = {...options, eventId: crypto.randomUUID()};
+  assert.equal(await recordDownloadStarted(repeat,{request:async()=>{throw Error('offline');}}),false);
+  assert.equal(await recordDownloadStarted(repeat,{request}),true);
+  assert.equal(calls.at(-1).eventId, repeat.eventId);
 });
 test('CLI publishes schema 1 compatibility and schema 2, preserving internal counters on the next run',async()=>{
   const website=fileURLToPath(new URL('..',import.meta.url));

@@ -65,9 +65,12 @@ def main():
         UTILITYCRAFT_PROJECT_PATH=str(UTILITYCRAFT))
     for script in ['extract-utilitycraft-processing-recipes.mjs',
         'generate-ascendant-documentation-profiles.mjs', 'generate-ascendant-machine-grid.mjs',
-        'generate-shared-item-documentation-profiles.mjs', 'generate-better-smelters-wiki.mjs',
+        'generate-shared-item-documentation-profiles.mjs', 'generate-enchantment-data.mjs', 'generate-better-smelters-wiki.mjs',
         'generate-wiki-localized-names.mjs', 'sync-ascendant-glyph-icons.mjs']:
         subprocess.run(['node', f'scripts/{script}'], cwd=SITE_ROOT, env=environment, check=True)
+    containers = Path(environment.get('BETTER_CONTAINERS_PROJECT_PATH', WORKSPACE / 'Better-Containers'))
+    if (containers / 'packs/BP').is_dir():
+        subprocess.run(['node', 'scripts/generate-better-containers-wiki.mjs'], cwd=SITE_ROOT, env=environment, check=True)
     trinkets = WORKSPACE / 'Dorios-Trinkets/BP/scripts/register.js'
     if 'trinkets' in mapped and trinkets.is_file():
         run('node', 'scripts/extract_trinket_profiles.mjs', trinkets,

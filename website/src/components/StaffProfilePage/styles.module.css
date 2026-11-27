@@ -160,9 +160,9 @@
   .projectVisual[data-has-cover='false'] img { width: 78%; height: 78%; object-fit: contain; image-rendering: pixelated; filter: drop-shadow(0 10px 11px rgba(0, 0, 0, .28)); }
   .projectCopy { align-self: stretch; display: flex; flex-direction: column; justify-content: center; padding: 0; }
   .projectCopy strong { font-size: 1.12rem; font-weight: 500; letter-spacing: -.02em; line-height: 1; }
-  .projectCopy small { overflow: hidden; color: color-mix(in srgb, var(--card-primary) 58%, var(--ds-text)); font-size: .62rem; font-weight: 800; letter-spacing: .055em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+  .projectCopy small { overflow: hidden; color: var(--card-accent, var(--ds-text)); font-size: .62rem; font-weight: 800; letter-spacing: .055em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
   .projectCopy > span { display: -webkit-box; margin-top: .42rem; overflow: hidden; font-size: .72rem; line-height: 1.38; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-  .projectArrow { width: 18px; margin: 0; color: var(--card-primary); }
+  .projectArrow { width: 18px; margin: 0; color: var(--card-accent, var(--ds-text)); }
 }
 
 @media (max-width: 520px) {

@@ -1,4 +1,5 @@
 import ascendantTechnology from './ascendant-technology';
+import compactGuides from '../compactGuides.json';
 import generatedProjects from './generatedProjects';
 import heavyMachinery from './heavy-machinery';
 import utilitycraft from './utilitycraft';
@@ -92,6 +93,7 @@ function localizeEntry(entry, names, project, locale) {
     mining: translatePresentation(entry.mining, locale),
     variants: entry.variants?.map((variant) => ({
       ...variant,
+      aliases: [...(variant.aliases ?? []), variant.name],
       name: names[variant.identifier] ?? names[variant.id] ?? variant.name,
     })),
   };
@@ -116,13 +118,14 @@ export function localizeWikiProject(project, locale) {
       name: controller?.name ?? names[entry.identifier] ?? entry.name, controller: controller?.name ?? entry.controller};
   };
   const localizeArray = (entries) => entries?.map((entry) => localizeEntry(entry, names, project, locale));
+  const guide = compactGuides[project.id]?.[locale];
   const result = {
     ...project,
     locale,
     pageMeta: translatePresentation(project.pageMeta, locale),
     sectionDescriptions: translatePresentation(project.sectionDescriptions, locale),
     overview: translatePresentation(project.overview, locale),
-    howToPlay: translatePresentation(project.howToPlay, locale),
+    howToPlay: translatePresentation(guide ?? project.howToPlay, locale),
     stationMeta: Object.fromEntries(Object.entries(project.stationMeta ?? {}).map(([id, station]) => [id, {...station,
       label: names[`utilitycraft:${id}`] ?? wikiText(locale, station.label),
     }])),

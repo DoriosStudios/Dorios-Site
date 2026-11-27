@@ -143,7 +143,7 @@
 
 .cardCopy > span {
   overflow: hidden;
-  color: color-mix(in srgb, var(--card-primary) 58%, var(--ds-text));
+  color: var(--card-accent, var(--ds-text));
   font-size: .62rem;
   font-weight: 800;
   letter-spacing: .065em;
@@ -177,7 +177,7 @@
 .cardCopy small {
   margin-top: .42rem;
   overflow: hidden;
-  color: color-mix(in srgb, var(--card-primary) 52%, var(--ds-text));
+  color: var(--card-accent, var(--ds-text));
   font-size: .62rem;
   font-weight: 720;
   text-overflow: ellipsis;
@@ -191,7 +191,7 @@
   place-items: center;
   border-radius: 9px;
   background: color-mix(in srgb, var(--card-primary) 14%, var(--ds-surface-raised));
-  color: color-mix(in srgb, var(--card-primary) 62%, var(--ds-text));
+  color: var(--card-accent, var(--ds-text));
   transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 

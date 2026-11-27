@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "@docusaurus/Link";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import {useLocation} from '@docusaurus/router';
 import { useColorMode } from "@docusaurus/theme-common";
 import { IconBrandDiscord, IconMenu2, IconSearch, IconX } from "@tabler/icons-react";
@@ -108,8 +109,8 @@ function DoriosMark({ footer = false, active = false }) {
   const { colorMode } = useColorMode();
   const [ready, setReady] = React.useState(false);
   React.useEffect(() => { if (!active) setReady(false); }, [active]);
-  const logoSource =
-    colorMode === "light" ? "/img/optimized/black_no_bg.webp" : "/img/optimized/white_no_bg.webp";
+  const logoSource = useBaseUrl(colorMode === "light" ? "/img/optimized/black_no_bg.webp" : "/img/optimized/white_no_bg.webp");
+  const animationSource = useBaseUrl("/img/optimized/blazing_animated_transparent.webp");
 
   return (
     <span
@@ -117,7 +118,7 @@ function DoriosMark({ footer = false, active = false }) {
       aria-hidden="true"
     >
       <img src={logoSource} alt="" width={30} height={30} decoding="async" className={styles.brandMark} />
-      {active && <img src="/img/optimized/blazing_animated_transparent.webp" alt="" width={30} height={30} decoding="async" onLoad={() => setReady(true)} onError={() => setReady(false)} className={styles.blazingMark} />}
+      {active && <img src={animationSource} alt="" width={30} height={30} decoding="async" onLoad={() => setReady(true)} onError={() => setReady(false)} className={styles.blazingMark} />}
     </span>
   );
 }
@@ -186,7 +187,7 @@ export function DoriosHeader({ activePage, project, onSearch, onMenuOpen, search
             <IconBrandDiscord role="presentation" />
           </span>
         </a>
-        <button type="button" className={styles.mobileAction} ref={searchButtonRef} onClick={activateSearch} aria-label={t('searchWiki')} aria-expanded={onSearch ? searchOpen : globalSearchOpen} aria-controls={onSearch ? 'wiki-search-panel' : 'dorios-global-search'}><IconSearch aria-hidden="true" size={21}/></button>
+        <button type="button" className={onSearch ? styles.mobileAction : styles.searchAction} ref={searchButtonRef} onClick={activateSearch} aria-label={t('searchWiki')} aria-expanded={onSearch ? searchOpen : globalSearchOpen} aria-controls={onSearch ? 'wiki-search-panel' : 'dorios-global-search'}><IconSearch aria-hidden="true" size={21}/></button>
         <button type="button" className={styles.mobileAction} ref={menuButtonRef} onClick={() => {closeSearch(); if (!menuOpen) onMenuOpen?.(); setMenuOpen(open => !open);}}
           aria-expanded={menuOpen} aria-controls="dorios-main-menu" aria-label={t(menuOpen ? 'closeMenu' : 'openMenu')}>
           {menuOpen ? <IconX aria-hidden="true" size={23}/> : <IconMenu2 aria-hidden="true" size={23}/>}

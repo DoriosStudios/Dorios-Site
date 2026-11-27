@@ -1,0 +1,4407 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-27T16:17:03.470409+00:00",
+  "project": {
+    "id": "crops",
+    "name": "Bountiful Crops",
+    "version": "1.1.2"
+  },
+  "source": {
+    "bridgeProject": "Bountiful-Crops",
+    "revision": "47e9bba6afb4",
+    "dirty": false
+  },
+  "counts": {
+    "items": 46,
+    "catalogItems": 46,
+    "blocks": 37,
+    "entities": 0,
+    "recipes": 54,
+    "variantGroups": 0
+  },
+  "content": {
+    "items": [
+      {
+        "id": "amethyst_seeds",
+        "slug": "amethyst-seeds",
+        "identifier": "utilitycraft:amethyst_seeds",
+        "name": "Amethyst Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/amethyst_seeds.png",
+        "source": "BP/items/seeds/tier_3/amethyst_seeds.json"
+      },
+      {
+        "id": "base_seeds",
+        "slug": "base-seeds",
+        "identifier": "utilitycraft:base_seeds",
+        "name": "Base Seed",
+        "category": "Seeds",
+        "image": "textures/items/seeds/base_seeds.png",
+        "source": "BP/items/seeds/base_seeds.json"
+      },
+      {
+        "id": "blaze_seeds",
+        "slug": "blaze-seeds",
+        "identifier": "utilitycraft:blaze_seeds",
+        "name": "Blaze Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/blaze_seeds.png",
+        "source": "BP/items/seeds/tier_3/blaze_seeds.json"
+      },
+      {
+        "id": "coal_seeds",
+        "slug": "coal-seeds",
+        "identifier": "utilitycraft:coal_seeds",
+        "name": "Coal Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/coal_seeds.png",
+        "source": "BP/items/seeds/tier_1/coal_seeds.json"
+      },
+      {
+        "id": "copper_seeds",
+        "slug": "copper-seeds",
+        "identifier": "utilitycraft:copper_seeds",
+        "name": "Copper Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/copper_seeds.png",
+        "source": "BP/items/seeds/tier_1/copper_seeds.json"
+      },
+      {
+        "id": "diamond_accelerator_clock",
+        "slug": "diamond-accelerator-clock",
+        "identifier": "utilitycraft:diamond_accelerator_clock",
+        "name": "Diamond Accelerator Clock",
+        "category": "Utility Items",
+        "image": "textures/items/misc/accelerator_clock_1.png",
+        "source": "BP/items/utility_items/diamond_accelerator_clock.json"
+      },
+      {
+        "id": "diamond_seeds",
+        "slug": "diamond-seeds",
+        "identifier": "utilitycraft:diamond_seeds",
+        "name": "Diamond Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/diamond_seeds.png",
+        "source": "BP/items/seeds/tier_3/diamond_seeds.json"
+      },
+      {
+        "id": "diamond_shard",
+        "slug": "diamond-shard",
+        "identifier": "utilitycraft:diamond_shard",
+        "name": "Diamond Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/diamond_shard.png",
+        "source": "BP/items/materials/pebbles/diamond_shard.json"
+      },
+      {
+        "id": "dyes_seeds",
+        "slug": "dyes-seeds",
+        "identifier": "utilitycraft:dyes_seeds",
+        "name": "Dyes Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/dye_seeds.png",
+        "source": "BP/items/seeds/tier_1/dyes_seeds.json"
+      },
+      {
+        "id": "emerald_seeds",
+        "slug": "emerald-seeds",
+        "identifier": "utilitycraft:emerald_seeds",
+        "name": "Emerald Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/emerald_seeds.png",
+        "source": "BP/items/seeds/tier_3/emerald_seeds.json"
+      },
+      {
+        "id": "emerald_shard",
+        "slug": "emerald-shard",
+        "identifier": "utilitycraft:emerald_shard",
+        "name": "Emerald Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/emerald_shard.png",
+        "source": "BP/items/materials/pebbles/emerald_shard.json"
+      },
+      {
+        "id": "enderpearl_seeds",
+        "slug": "enderpearl-seeds",
+        "identifier": "utilitycraft:enderpearl_seeds",
+        "name": "Enderpearl Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/ender_pearl_seeds.png",
+        "source": "BP/items/seeds/tier_3/enderpearl_seeds.json"
+      },
+      {
+        "id": "ghast_seeds",
+        "slug": "ghast-seeds",
+        "identifier": "utilitycraft:ghast_seeds",
+        "name": "Ghast Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/ghast_seeds.png",
+        "source": "BP/items/seeds/tier_2/ghast_seeds.json"
+      },
+      {
+        "id": "glass_seeds",
+        "slug": "glass-seeds",
+        "identifier": "utilitycraft:glass_seeds",
+        "name": "Glass Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/glass_seeds.png",
+        "source": "BP/items/seeds/tier_1/glass_seeds.json"
+      },
+      {
+        "id": "glowstone_seeds",
+        "slug": "glowstone-seeds",
+        "identifier": "utilitycraft:glowstone_seeds",
+        "name": "Glowstone Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/glowstone_seeds.png",
+        "source": "BP/items/seeds/tier_2/glowstone_seeds.json"
+      },
+      {
+        "id": "accelerator_clock",
+        "slug": "accelerator-clock",
+        "identifier": "utilitycraft:accelerator_clock",
+        "name": "Gold Accelerator Clock",
+        "category": "Utility Items",
+        "image": "textures/items/misc/accelerator_clock.png",
+        "source": "BP/items/utility_items/accelerator_clock.json"
+      },
+      {
+        "id": "gold_seeds",
+        "slug": "gold-seeds",
+        "identifier": "utilitycraft:gold_seeds",
+        "name": "Gold Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/gold_seeds.png",
+        "source": "BP/items/seeds/tier_2/gold_seeds.json"
+      },
+      {
+        "id": "gunpowder_seeds",
+        "slug": "gunpowder-seeds",
+        "identifier": "utilitycraft:gunpowder_seeds",
+        "name": "Gunpowder Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/gunpowder_seeds.png",
+        "source": "BP/items/seeds/tier_1/gunpowder_seeds.json"
+      },
+      {
+        "id": "honey_ball",
+        "slug": "honey-ball",
+        "identifier": "utilitycraft:honey_ball",
+        "name": "Honey Ball",
+        "category": "Utility Items",
+        "image": "textures/items/misc/honey_ball.png",
+        "source": "BP/items/utility_items/honey_ball.json"
+      },
+      {
+        "id": "honey_seeds",
+        "slug": "honey-seeds",
+        "identifier": "utilitycraft:honey_seeds",
+        "name": "Honey Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/honey_seeds.png",
+        "source": "BP/items/seeds/tier_2/honey_seeds.json"
+      },
+      {
+        "id": "iron_seeds",
+        "slug": "iron-seeds",
+        "identifier": "utilitycraft:iron_seeds",
+        "name": "Iron Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/iron_seeds.png",
+        "source": "BP/items/seeds/tier_1/iron_seeds.json"
+      },
+      {
+        "id": "lapis_seeds",
+        "slug": "lapis-seeds",
+        "identifier": "utilitycraft:lapis_seeds",
+        "name": "Lapis Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/lapis_seeds.png",
+        "source": "BP/items/seeds/tier_2/lapis_seeds.json"
+      },
+      {
+        "id": "lava_ball",
+        "slug": "lava-ball",
+        "identifier": "utilitycraft:lava_ball",
+        "name": "Lava Ball",
+        "category": "Utility Items",
+        "image": "textures/items/misc/lavaball.png",
+        "source": "BP/items/utility_items/lava_ball.json"
+      },
+      {
+        "id": "lava_seeds",
+        "slug": "lava-seeds",
+        "identifier": "utilitycraft:lava_seeds",
+        "name": "Lava Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/lava_seeds.png",
+        "source": "BP/items/seeds/tier_2/lava_seeds.json"
+      },
+      {
+        "id": "leather_seeds",
+        "slug": "leather-seeds",
+        "identifier": "utilitycraft:leather_seeds",
+        "name": "Leather Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/leather_seeds.png",
+        "source": "BP/items/seeds/tier_1/leather_seeds.json"
+      },
+      {
+        "id": "nether_star_accelerator_clock",
+        "slug": "nether-star-accelerator-clock",
+        "identifier": "utilitycraft:nether_star_accelerator_clock",
+        "name": "Nether Star Accelerator Clock",
+        "category": "Utility Items",
+        "image": "textures/items/misc/accelerator_clock_2.png",
+        "source": "BP/items/utility_items/nether_star_accelerator_clock.json"
+      },
+      {
+        "id": "nether_star_fragment",
+        "slug": "nether-star-fragment",
+        "identifier": "utilitycraft:nether_star_fragment",
+        "name": "Nether Star Fragment",
+        "category": "Materials",
+        "image": "textures/items/pebbles/nether_star_fragment.png",
+        "source": "BP/items/materials/pebbles/nether_star_fragment.json"
+      },
+      {
+        "id": "nether_star_seeds",
+        "slug": "nether-star-seeds",
+        "identifier": "utilitycraft:nether_star_seeds",
+        "name": "Nether Star Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/nether_star_seeds.png",
+        "source": "BP/items/seeds/tier_4/nether_star_seeds.json"
+      },
+      {
+        "id": "netherite_nugget",
+        "slug": "netherite-nugget",
+        "identifier": "utilitycraft:netherite_nugget",
+        "name": "Netherite Nugget",
+        "category": "Materials",
+        "image": "textures/items/ores/netherite_nugget.png",
+        "source": "BP/items/materials/ores/netherite_nugget.json"
+      },
+      {
+        "id": "netherite_seeds",
+        "slug": "netherite-seeds",
+        "identifier": "utilitycraft:netherite_seeds",
+        "name": "Netherite Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/netherite_seeds.png",
+        "source": "BP/items/seeds/tier_4/netherite_seeds.json"
+      },
+      {
+        "id": "obsidian_seeds",
+        "slug": "obsidian-seeds",
+        "identifier": "utilitycraft:obsidian_seeds",
+        "name": "Obsidian Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/obsidian_seeds.png",
+        "source": "BP/items/seeds/tier_3/obsidian_seeds.json"
+      },
+      {
+        "id": "prismarine_crystals_seeds",
+        "slug": "prismarine-crystals-seeds",
+        "identifier": "utilitycraft:prismarine_crystals_seeds",
+        "name": "Prismarine Crystals Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/prismarine_crystals_seeds.png",
+        "source": "BP/items/seeds/tier_1/prismarine_crystals_seeds.json"
+      },
+      {
+        "id": "prismarine_shards_seeds",
+        "slug": "prismarine-shards-seeds",
+        "identifier": "utilitycraft:prismarine_shards_seeds",
+        "name": "Prismarine Shards Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/prismarine_shards_seeds.png",
+        "source": "BP/items/seeds/tier_1/prismarine_shards_seeds.json"
+      },
+      {
+        "id": "quartz_seeds",
+        "slug": "quartz-seeds",
+        "identifier": "utilitycraft:quartz_seeds",
+        "name": "Quartz Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/quartz_seeds.png",
+        "source": "BP/items/seeds/tier_2/quartz_seeds.json"
+      },
+      {
+        "id": "redstone_seeds",
+        "slug": "redstone-seeds",
+        "identifier": "utilitycraft:redstone_seeds",
+        "name": "Redstone Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/redstone_seeds.png",
+        "source": "BP/items/seeds/tier_2/redstone_seeds.json"
+      },
+      {
+        "id": "resin_seeds",
+        "slug": "resin-seeds",
+        "identifier": "utilitycraft:resin_seeds",
+        "name": "Resin Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/base_seeds.png",
+        "source": "BP/items/seeds/tier_2/resin_seeds.json"
+      },
+      {
+        "id": "shulker_seeds",
+        "slug": "shulker-seeds",
+        "identifier": "utilitycraft:shulker_seeds",
+        "name": "Shulker Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/shulker_seeds.png",
+        "source": "BP/items/seeds/tier_4/shulker_seeds.json"
+      },
+      {
+        "id": "shulker_shell_shard",
+        "slug": "shulker-shell-shard",
+        "identifier": "utilitycraft:shulker_shell_shard",
+        "name": "Shulker Shell Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/shulker_shell_shard.png",
+        "source": "BP/items/materials/pebbles/shulker_shell_shard.json"
+      },
+      {
+        "id": "slime_seeds",
+        "slug": "slime-seeds",
+        "identifier": "utilitycraft:slime_seeds",
+        "name": "Slime Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/slime_seeds.png",
+        "source": "BP/items/seeds/tier_2/slime_seeds.json"
+      },
+      {
+        "id": "totem_seeds",
+        "slug": "totem-seeds",
+        "identifier": "utilitycraft:totem_seeds",
+        "name": "Totem Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/totem_seeds.png",
+        "source": "BP/items/seeds/tier_4/totem_seeds.json"
+      },
+      {
+        "id": "totem_shard",
+        "slug": "totem-shard",
+        "identifier": "utilitycraft:totem_shard",
+        "name": "Totem Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/totem_shard.png",
+        "source": "BP/items/materials/pebbles/totem_shard.json"
+      },
+      {
+        "id": "water_ball",
+        "slug": "water-ball",
+        "identifier": "utilitycraft:water_ball",
+        "name": "Water Ball",
+        "category": "Utility Items",
+        "image": "textures/items/misc/waterball.png",
+        "source": "BP/items/utility_items/water_ball.json"
+      },
+      {
+        "id": "water_seeds",
+        "slug": "water-seeds",
+        "identifier": "utilitycraft:water_seeds",
+        "name": "Water Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/water_seeds.png",
+        "source": "BP/items/seeds/tier_1/water_seeds.json"
+      },
+      {
+        "id": "wither_seeds",
+        "slug": "wither-seeds",
+        "identifier": "utilitycraft:wither_seeds",
+        "name": "Wither Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/wither_seeds.png",
+        "source": "BP/items/seeds/tier_4/wither_seeds.json"
+      },
+      {
+        "id": "wither_skull_shard",
+        "slug": "wither-skull-shard",
+        "identifier": "utilitycraft:wither_skull_shard",
+        "name": "Wither Skull Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/wither_skull_shard.png",
+        "source": "BP/items/materials/pebbles/wither_skull_shard.json"
+      },
+      {
+        "id": "wool_seeds",
+        "slug": "wool-seeds",
+        "identifier": "utilitycraft:wool_seeds",
+        "name": "Wool Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/wool_seeds.png",
+        "source": "BP/items/seeds/tier_1/wool_seeds.json"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "amethyst_seeds",
+        "slug": "amethyst-seeds",
+        "identifier": "utilitycraft:amethyst_seeds",
+        "name": "Amethyst Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_amethyst_seeds-3bb2044ca6b5-6a3cd365a349822213308386.png",
+        "itemImage": "textures/items/seeds/amethyst_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_3/amethyst_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/amethyst.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "black_soil",
+        "slug": "black-soil",
+        "identifier": "utilitycraft:black_soil",
+        "name": "Black Soil",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_black_soil-0bcb965db251-9327cdb66c174007d25cc199.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/crops/soil_4.png",
+          "left": "textures/blocks/crops/soil_side_4.png",
+          "right": "textures/blocks/crops/soil_side_4.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/soils/black_soil.json",
+        "blockData": {
+          "breakTime": 0.5,
+          "mineable": true,
+          "directional": false
+        }
+      },
+      {
+        "id": "blaze_seeds",
+        "slug": "blaze-seeds",
+        "identifier": "utilitycraft:blaze_seeds",
+        "name": "Blaze Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_blaze_seeds-a2d17412b793-6a3cd365a349822213308386.png",
+        "itemImage": "textures/items/seeds/blaze_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_3/blaze_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/blaze.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "blue_soil",
+        "slug": "blue-soil",
+        "identifier": "utilitycraft:blue_soil",
+        "name": "Blue Soil",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_blue_soil-adcb84946ccc-923bd5afd6416259ec9ce2e3.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/crops/soil_3.png",
+          "left": "textures/blocks/crops/soil_side_3.png",
+          "right": "textures/blocks/crops/soil_side_3.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/soils/blue_soil.json",
+        "blockData": {
+          "breakTime": 0.5,
+          "mineable": true,
+          "directional": false
+        }
+      },
+      {
+        "id": "coal_seeds",
+        "slug": "coal-seeds",
+        "identifier": "utilitycraft:coal_seeds",
+        "name": "Coal Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_coal_seeds-76f2a6620948-3877397d8f2a6b8965603520.png",
+        "itemImage": "textures/items/seeds/coal_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_1/coal_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/coal.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "copper_seeds",
+        "slug": "copper-seeds",
+        "identifier": "utilitycraft:copper_seeds",
+        "name": "Copper Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_copper_seeds-d72bac1e1170-3877397d8f2a6b8965603520.png",
+        "itemImage": "textures/items/seeds/copper_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_1/copper_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/copper.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "diamond_seeds",
+        "slug": "diamond-seeds",
+        "identifier": "utilitycraft:diamond_seeds",
+        "name": "Diamond Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_diamond_seeds-d722d5e125c7-6a3cd365a349822213308386.png",
+        "itemImage": "textures/items/seeds/diamond_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_3/diamond_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/diamond.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "dyes_seeds",
+        "slug": "dyes-seeds",
+        "identifier": "utilitycraft:dyes_seeds",
+        "name": "Dyes Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_dyes_seeds-6b6e767290dd-3877397d8f2a6b8965603520.png",
+        "itemImage": "textures/items/seeds/dye_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_1/dyes_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/dyes.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "emerald_seeds",
+        "slug": "emerald-seeds",
+        "identifier": "utilitycraft:emerald_seeds",
+        "name": "Emerald Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_emerald_seeds-87573340bf0e-6a3cd365a349822213308386.png",
+        "itemImage": "textures/items/seeds/emerald_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_3/emerald_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/emerald.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "enderpearl_seeds",
+        "slug": "enderpearl-seeds",
+        "identifier": "utilitycraft:enderpearl_seeds",
+        "name": "Enderpearl Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_enderpearl_seeds-bf37ad60c317-6a3cd365a349822213308386.png",
+        "itemImage": "textures/items/seeds/ender_pearl_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_3/enderpearl_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/ender_pearl.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "ghast_seeds",
+        "slug": "ghast-seeds",
+        "identifier": "utilitycraft:ghast_seeds",
+        "name": "Ghast Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_ghast_seeds-70fd6dd68d99-fddba10bd1a45d3c6de278a6.png",
+        "itemImage": "textures/items/seeds/ghast_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_2/ghast_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/ghast_tear.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "glass_seeds",
+        "slug": "glass-seeds",
+        "identifier": "utilitycraft:glass_seeds",
+        "name": "Glass Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_glass_seeds-cd0c2d3ebee5-29fe3221bdf4799ad72b9e3e.png",
+        "itemImage": "textures/items/seeds/glass_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_1/glass_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/glass.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "glowstone_seeds",
+        "slug": "glowstone-seeds",
+        "identifier": "utilitycraft:glowstone_seeds",
+        "name": "Glowstone Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_glowstone_seeds-619828cfcfca-fddba10bd1a45d3c6de278a6.png",
+        "itemImage": "textures/items/seeds/glowstone_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_2/glowstone_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/glowstone.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "gold_seeds",
+        "slug": "gold-seeds",
+        "identifier": "utilitycraft:gold_seeds",
+        "name": "Gold Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_gold_seeds-e3b14db02058-fddba10bd1a45d3c6de278a6.png",
+        "itemImage": "textures/items/seeds/gold_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_2/gold_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/gold.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "gunpowder_seeds",
+        "slug": "gunpowder-seeds",
+        "identifier": "utilitycraft:gunpowder_seeds",
+        "name": "Gunpowder Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_gunpowder_seeds-a84548343f08-3877397d8f2a6b8965603520.png",
+        "itemImage": "textures/items/seeds/gunpowder_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_1/gunpowder_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/gunpowder.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "honey_seeds",
+        "slug": "honey-seeds",
+        "identifier": "utilitycraft:honey_seeds",
+        "name": "Honey Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_honey_seeds-9b272c34c214-fddba10bd1a45d3c6de278a6.png",
+        "itemImage": "textures/items/seeds/honey_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_2/honey_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/honey.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "iron_seeds",
+        "slug": "iron-seeds",
+        "identifier": "utilitycraft:iron_seeds",
+        "name": "Iron Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_iron_seeds-9faabfd1c435-3877397d8f2a6b8965603520.png",
+        "itemImage": "textures/items/seeds/iron_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_1/iron_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/iron.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "lapis_seeds",
+        "slug": "lapis-seeds",
+        "identifier": "utilitycraft:lapis_seeds",
+        "name": "Lapis Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_lapis_seeds-6f38e912816f-fddba10bd1a45d3c6de278a6.png",
+        "itemImage": "textures/items/seeds/lapis_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_2/lapis_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/lapis.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "lava_seeds",
+        "slug": "lava-seeds",
+        "identifier": "utilitycraft:lava_seeds",
+        "name": "Lava Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_lava_seeds-f0e59c42b54f-fddba10bd1a45d3c6de278a6.png",
+        "itemImage": "textures/items/seeds/lava_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_2/lava_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/lava.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "leather_seeds",
+        "slug": "leather-seeds",
+        "identifier": "utilitycraft:leather_seeds",
+        "name": "Leather Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_leather_seeds-c4f2661c94b1-3877397d8f2a6b8965603520.png",
+        "itemImage": "textures/items/seeds/leather_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_1/leather_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/leather.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "nether_star_seeds",
+        "slug": "nether-star-seeds",
+        "identifier": "utilitycraft:nether_star_seeds",
+        "name": "Nether Star Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_nether_star_seeds-b1e1857d8050-49f9ed1a7e2c9709fb677710.png",
+        "itemImage": "textures/items/seeds/nether_star_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_4/nether_star_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/nether_star.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "netherite_seeds",
+        "slug": "netherite-seeds",
+        "identifier": "utilitycraft:netherite_seeds",
+        "name": "Netherite Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_netherite_seeds-6276c2208880-49f9ed1a7e2c9709fb677710.png",
+        "itemImage": "textures/items/seeds/netherite_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_4/netherite_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/netherite.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "obsidian_seeds",
+        "slug": "obsidian-seeds",
+        "identifier": "utilitycraft:obsidian_seeds",
+        "name": "Obsidian Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_obsidian_seeds-32b618504ca9-6a3cd365a349822213308386.png",
+        "itemImage": "textures/items/seeds/obsidian_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_3/obsidian_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/obsidian.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "pedestal",
+        "slug": "pedestal",
+        "identifier": "utilitycraft:pedestal",
+        "name": "Pedestal",
+        "category": "General",
+        "render": "auto-renders/utilitycraft_pedestal-5b5e35a92b4c-23c2a9f487759d9b282fa177.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/utility/pedestal.png",
+          "left": "textures/blocks/utility/pedestal.png",
+          "right": "textures/blocks/utility/pedestal.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "utilitycraft:interact",
+          "utilitycraft:pedestal"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/pedestal.json",
+        "blockData": {
+          "breakTime": 1.5,
+          "mineable": true,
+          "directional": false
+        }
+      },
+      {
+        "id": "prismarine_crystals_seeds",
+        "slug": "prismarine-crystals-seeds",
+        "identifier": "utilitycraft:prismarine_crystals_seeds",
+        "name": "Prismarine Crystals Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_prismarine_crystals_seeds-9031b64a1eee-3877397d8f2a6b8965603520.png",
+        "itemImage": "textures/items/seeds/prismarine_crystals_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_1/prismarine_crystals_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/prismarine_crystals.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "prismarine_shards_seeds",
+        "slug": "prismarine-shards-seeds",
+        "identifier": "utilitycraft:prismarine_shards_seeds",
+        "name": "Prismarine Shards Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_prismarine_shards_seeds-d7d65c87e611-3877397d8f2a6b8965603520.png",
+        "itemImage": "textures/items/seeds/prismarine_shards_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_1/prismarine_shards_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/prismarine_shards.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "quartz_seeds",
+        "slug": "quartz-seeds",
+        "identifier": "utilitycraft:quartz_seeds",
+        "name": "Quartz Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_quartz_seeds-fb56dc425ed5-fddba10bd1a45d3c6de278a6.png",
+        "itemImage": "textures/items/seeds/quartz_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_2/quartz_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/quartz.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "red_soil",
+        "slug": "red-soil",
+        "identifier": "utilitycraft:red_soil",
+        "name": "Red Soil",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_red_soil-a2bc34934c08-2cf7bcaa79e863eaea73603f.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/crops/soil_2.png",
+          "left": "textures/blocks/crops/soil_side_2.png",
+          "right": "textures/blocks/crops/soil_side_2.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/soils/red_soil.json",
+        "blockData": {
+          "breakTime": 0.5,
+          "mineable": true,
+          "directional": false
+        }
+      },
+      {
+        "id": "redstone_seeds",
+        "slug": "redstone-seeds",
+        "identifier": "utilitycraft:redstone_seeds",
+        "name": "Redstone Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_redstone_seeds-377833057ef4-fddba10bd1a45d3c6de278a6.png",
+        "itemImage": "textures/items/seeds/redstone_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_2/redstone_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/redstone.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "resin_seeds",
+        "slug": "resin-seeds",
+        "identifier": "utilitycraft:resin_seeds",
+        "name": "Resin Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_resin_seeds-90568c8f06a5-fddba10bd1a45d3c6de278a6.png",
+        "itemImage": "textures/items/seeds/base_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_2/resin_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/resin.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "shulker_seeds",
+        "slug": "shulker-seeds",
+        "identifier": "utilitycraft:shulker_seeds",
+        "name": "Shulker Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_shulker_seeds-b85cebec21e1-49f9ed1a7e2c9709fb677710.png",
+        "itemImage": "textures/items/seeds/shulker_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_4/shulker_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/shulker.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "slime_seeds",
+        "slug": "slime-seeds",
+        "identifier": "utilitycraft:slime_seeds",
+        "name": "Slime Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_slime_seeds-81c05bc12267-fddba10bd1a45d3c6de278a6.png",
+        "itemImage": "textures/items/seeds/slime_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_2/slime_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/slime.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "totem_seeds",
+        "slug": "totem-seeds",
+        "identifier": "utilitycraft:totem_seeds",
+        "name": "Totem Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_totem_seeds-00c8b588280c-49f9ed1a7e2c9709fb677710.png",
+        "itemImage": "textures/items/seeds/totem_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_4/totem_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/totem.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "water_seeds",
+        "slug": "water-seeds",
+        "identifier": "utilitycraft:water_seeds",
+        "name": "Water Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_water_seeds-749289f737ed-3877397d8f2a6b8965603520.png",
+        "itemImage": "textures/items/seeds/water_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_1/water_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/water.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "wither_seeds",
+        "slug": "wither-seeds",
+        "identifier": "utilitycraft:wither_seeds",
+        "name": "Wither Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_wither_seeds-4c543375d569-0e3b653d62bfc13df9a1c43b.png",
+        "itemImage": "textures/items/seeds/wither_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/wither_0.png",
+          "left": "textures/blocks/crops/wither_0.png",
+          "right": "textures/blocks/crops/wither_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_4/wither_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/wither.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "wool_seeds",
+        "slug": "wool-seeds",
+        "identifier": "utilitycraft:wool_seeds",
+        "name": "Wool Seeds",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_wool_seeds-19999dd26345-3877397d8f2a6b8965603520.png",
+        "itemImage": "textures/items/seeds/wool_seeds.png",
+        "faces": {
+          "top": "textures/blocks/crops/crop_0.png",
+          "left": "textures/blocks/crops/crop_0.png",
+          "right": "textures/blocks/crops/crop_0.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:placement_filter",
+          "minecraft:tick",
+          "utilitycraft:crop"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/crops/tier_1/wool_seeds.json",
+        "blockData": {
+          "lootTable": "loot_tables/bc/seeds/wool.json",
+          "directional": false
+        }
+      },
+      {
+        "id": "yellow_soil",
+        "slug": "yellow-soil",
+        "identifier": "utilitycraft:yellow_soil",
+        "name": "Yellow Soil",
+        "category": "Bc",
+        "render": "auto-renders/utilitycraft_yellow_soil-806ba83f9578-1c1e326eec2908cbe50e24a1.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/crops/soil_1.png",
+          "left": "textures/blocks/crops/soil_side_1.png",
+          "right": "textures/blocks/crops/soil_side_1.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/bc/soils/yellow_soil.json",
+        "blockData": {
+          "breakTime": 0.5,
+          "mineable": true,
+          "directional": false
+        }
+      }
+    ],
+    "entities": [],
+    "recipes": [
+      {
+        "id": "accelerator_clock",
+        "identifier": "utilitycraft:accelerator_clock",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:sugar",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:sugar",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:clock",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:sugar",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:sugar",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:accelerator_clock",
+          "count": 1
+        },
+        "source": "BP/recipes/items/utility_items/accelerator_clock.json"
+      },
+      {
+        "id": "amethyst_seeds",
+        "identifier": "utilitycraft:amethyst_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:amethyst_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_3/amethyst_seed.json"
+      },
+      {
+        "id": "base_seeds",
+        "identifier": "utilitycraft:base_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "glass",
+            "count": 1
+          },
+          {
+            "id": "bone_meal",
+            "count": 1
+          },
+          {
+            "id": "glass",
+            "count": 1
+          },
+          {
+            "id": "bone_meal",
+            "count": 1
+          },
+          {
+            "id": "wheat_seeds",
+            "count": 1
+          },
+          {
+            "id": "bone_meal",
+            "count": 1
+          },
+          {
+            "id": "glass",
+            "count": 1
+          },
+          {
+            "id": "bone_meal",
+            "count": 1
+          },
+          {
+            "id": "glass",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:base_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/base_seed.json"
+      },
+      {
+        "id": "black_soil",
+        "identifier": "utilitycraft:black_soil",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:blue_soil",
+            "count": 1
+          },
+          {
+            "id": "crying_obsidian",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:blue_soil",
+            "count": 1
+          },
+          {
+            "id": "skull",
+            "count": 1
+          },
+          {
+            "id": "nether_star",
+            "count": 1
+          },
+          {
+            "id": "skull",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:blue_soil",
+            "count": 1
+          },
+          {
+            "id": "crying_obsidian",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:blue_soil",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:black_soil",
+          "count": 4
+        },
+        "source": "BP/recipes/bc/soils/black_soil.json"
+      },
+      {
+        "id": "blaze_seeds",
+        "identifier": "utilitycraft:blaze_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "blaze_rod",
+            "count": 1
+          },
+          {
+            "id": "blaze_rod",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:blaze_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_3/blaze_seed.json"
+      },
+      {
+        "id": "blue_soil",
+        "identifier": "utilitycraft:blue_soil",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:red_soil",
+            "count": 1
+          },
+          {
+            "id": "soul_soil",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:red_soil",
+            "count": 1
+          },
+          {
+            "id": "warped_wart_block",
+            "count": 1
+          },
+          {
+            "id": "diamond_block",
+            "count": 1
+          },
+          {
+            "id": "warped_wart_block",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:red_soil",
+            "count": 1
+          },
+          {
+            "id": "soul_soil",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:red_soil",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:blue_soil",
+          "count": 4
+        },
+        "source": "BP/recipes/bc/soils/blue_soil.json"
+      },
+      {
+        "id": "coal_seeds",
+        "identifier": "utilitycraft:coal_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "coal",
+            "count": 1
+          },
+          {
+            "id": "coal",
+            "count": 1
+          },
+          {
+            "id": "coal",
+            "count": 1
+          },
+          {
+            "id": "coal",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "coal",
+            "count": 1
+          },
+          {
+            "id": "coal",
+            "count": 1
+          },
+          {
+            "id": "coal",
+            "count": 1
+          },
+          {
+            "id": "coal",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:coal_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_1/coal_seed.json"
+      },
+      {
+        "id": "copper_seeds",
+        "identifier": "utilitycraft:copper_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:copper_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_1/copper_seed.json"
+      },
+      {
+        "id": "diamond_accelerator_clock",
+        "identifier": "utilitycraft:diamond_accelerator_clock",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond_block",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:accelerator_clock",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:diamond_accelerator_clock",
+          "count": 1
+        },
+        "source": "BP/recipes/items/utility_items/diamond_accelerator_clock.json"
+      },
+      {
+        "id": "diamond_seeds",
+        "identifier": "utilitycraft:diamond_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:diamond_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_3/diamond_seed.json"
+      },
+      {
+        "id": "dyes_seeds",
+        "identifier": "utilitycraft:dyes_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:dye",
+            "count": 1
+          },
+          {
+            "id": "minecraft:dye",
+            "count": 1
+          },
+          {
+            "id": "minecraft:dye",
+            "count": 1
+          },
+          {
+            "id": "minecraft:dye",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:dye",
+            "count": 1
+          },
+          {
+            "id": "minecraft:dye",
+            "count": 1
+          },
+          {
+            "id": "minecraft:dye",
+            "count": 1
+          },
+          {
+            "id": "minecraft:dye",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:dyes_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_1/dyes_seed.json"
+      },
+      {
+        "id": "emerald_seeds",
+        "identifier": "utilitycraft:emerald_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:emerald_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_3/emerald_seed.json"
+      },
+      {
+        "id": "enderpearl_seeds",
+        "identifier": "utilitycraft:enderpearl_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:enderpearl_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_3/enderpearl_seed.json"
+      },
+      {
+        "id": "fragment_to_netherstar",
+        "identifier": "utilitycraft:fragment_to_netherstar",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:nether_star_fragment",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:nether_star_fragment",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:nether_star_fragment",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:nether_star_fragment",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:nether_star_fragment",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:nether_star_fragment",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:nether_star_fragment",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:nether_star_fragment",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:nether_star_fragment",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "minecraft:nether_star",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/fragment_to_netherstar.json"
+      },
+      {
+        "id": "ghast_seeds",
+        "identifier": "utilitycraft:ghast_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:ghast_tear",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ghast_tear",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ghast_tear",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ghast_tear",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ghast_tear",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ghast_tear",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ghast_tear",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ghast_tear",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:ghast_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_2/ghast_tear_seed.json"
+      },
+      {
+        "id": "glass_seeds",
+        "identifier": "utilitycraft:glass_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glass",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:glass_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_1/glass_seed.json"
+      },
+      {
+        "id": "glowstone_seeds",
+        "identifier": "utilitycraft:glowstone_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:glowstone_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_2/glowstone_seed.json"
+      },
+      {
+        "id": "gold_seeds",
+        "identifier": "utilitycraft:gold_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:gold_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_2/gold_seed.json"
+      },
+      {
+        "id": "gunpowder_seeds",
+        "identifier": "utilitycraft:gunpowder_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "gunpowder",
+            "count": 1
+          },
+          {
+            "id": "gunpowder",
+            "count": 1
+          },
+          {
+            "id": "gunpowder",
+            "count": 1
+          },
+          {
+            "id": "gunpowder",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "gunpowder",
+            "count": 1
+          },
+          {
+            "id": "gunpowder",
+            "count": 1
+          },
+          {
+            "id": "gunpowder",
+            "count": 1
+          },
+          {
+            "id": "gunpowder",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:gunpowder_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_1/gunpowder_seed.json"
+      },
+      {
+        "id": "honey_block",
+        "identifier": "utilitycraft:honey_block",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:honey_ball",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:honey_ball",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:honey_ball",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:honey_ball",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:honey_block",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/honey_block.json"
+      },
+      {
+        "id": "honey_bottle",
+        "identifier": "utilitycraft:honey_bottle",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:honey_ball",
+            "count": 1
+          },
+          {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "minecraft:honey_bottle",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/honey_bottle.json"
+      },
+      {
+        "id": "honey_seeds",
+        "identifier": "utilitycraft:honey_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:honey_bottle",
+            "count": 1
+          },
+          {
+            "id": "minecraft:honey_bottle",
+            "count": 1
+          },
+          {
+            "id": "minecraft:honey_bottle",
+            "count": 1
+          },
+          {
+            "id": "minecraft:honey_bottle",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:honey_bottle",
+            "count": 1
+          },
+          {
+            "id": "minecraft:honey_bottle",
+            "count": 1
+          },
+          {
+            "id": "minecraft:honey_bottle",
+            "count": 1
+          },
+          {
+            "id": "minecraft:honey_bottle",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:honey_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_2/honey_seed.json"
+      },
+      {
+        "id": "iron_seeds",
+        "identifier": "utilitycraft:iron_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:iron_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_1/iron_seed.json"
+      },
+      {
+        "id": "lapis_seeds",
+        "identifier": "utilitycraft:lapis_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "lapis_block",
+            "count": 1
+          },
+          {
+            "id": "lapis_block",
+            "count": 1
+          },
+          {
+            "id": "lapis_block",
+            "count": 1
+          },
+          {
+            "id": "lapis_block",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "lapis_block",
+            "count": 1
+          },
+          {
+            "id": "lapis_block",
+            "count": 1
+          },
+          {
+            "id": "lapis_block",
+            "count": 1
+          },
+          {
+            "id": "lapis_block",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:lapis_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_2/lapis_seed.json"
+      },
+      {
+        "id": "lava_seeds",
+        "identifier": "utilitycraft:lava_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          null,
+          {
+            "id": "minecraft:lava_bucket",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:lava_bucket",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:lava_bucket",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:lava_bucket",
+            "count": 1
+          },
+          null
+        ],
+        "slotCount": 5,
+        "result": {
+          "id": "utilitycraft:lava_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_2/lava_seed.json"
+      },
+      {
+        "id": "lava_seedsv2",
+        "identifier": "utilitycraft:lava_seedsv2",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          null,
+          {
+            "id": "utilitycraft:lava_ball",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:lava_ball",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:lava_ball",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:lava_ball",
+            "count": 1
+          },
+          null
+        ],
+        "slotCount": 5,
+        "result": {
+          "id": "utilitycraft:lava_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_2/lava_seedv2.json"
+      },
+      {
+        "id": "leather_seeds",
+        "identifier": "utilitycraft:leather_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "leather",
+            "count": 1
+          },
+          {
+            "id": "leather",
+            "count": 1
+          },
+          {
+            "id": "leather",
+            "count": 1
+          },
+          {
+            "id": "leather",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "leather",
+            "count": 1
+          },
+          {
+            "id": "leather",
+            "count": 1
+          },
+          {
+            "id": "leather",
+            "count": 1
+          },
+          {
+            "id": "leather",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:leather_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_1/leather_seed.json"
+      },
+      {
+        "id": "nether_star_accelerator_clock",
+        "identifier": "utilitycraft:nether_star_accelerator_clock",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:nether_star",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:nether_star",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_accelerator_clock",
+            "count": 1
+          },
+          {
+            "id": "minecraft:nether_star",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:nether_star",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:nether_star_accelerator_clock",
+          "count": 1
+        },
+        "source": "BP/recipes/items/utility_items/nether_star_accelerator_clock.json"
+      },
+      {
+        "id": "netherite_from_nugget",
+        "identifier": "utilitycraft:netherite_from_nugget",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:netherite_nugget",
+            "count": 9
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "minecraft:netherite_ingot",
+          "count": 1
+        },
+        "source": "BP/recipes/ores/netherite_from_nugget.json"
+      },
+      {
+        "id": "netherite_seeds",
+        "identifier": "utilitycraft:netherite_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "netherite_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:netherite_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_4/netherite_seed.json"
+      },
+      {
+        "id": "netherite_to_nugget",
+        "identifier": "utilitycraft:netherite_to_nugget",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "utilitycraft:netherite_nugget",
+          "count": 9
+        },
+        "source": "BP/recipes/ores/netherite_to_nugget.json"
+      },
+      {
+        "id": "netherstar_seeds",
+        "identifier": "utilitycraft:netherstar_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          null,
+          {
+            "id": "minecraft:nether_star",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:nether_star",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:wither_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:nether_star",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:nether_star",
+            "count": 1
+          },
+          null
+        ],
+        "slotCount": 5,
+        "result": {
+          "id": "utilitycraft:nether_star_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_4/netherstar_seed.json"
+      },
+      {
+        "id": "obsidian",
+        "identifier": "utilitycraft:obsidian",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:water_ball",
+            "count": 2
+          },
+          {
+            "id": "utilitycraft:lava_ball",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "minecraft:obsidian",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/obsidian.json"
+      },
+      {
+        "id": "obsidian_seeds",
+        "identifier": "utilitycraft:obsidian_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:obsidian_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_3/obsidian_seed.json"
+      },
+      {
+        "id": "pedestal",
+        "identifier": "utilitycraft:pedestal",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          null,
+          {
+            "id": "minecraft:end_bricks",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:end_bricks",
+            "count": 1
+          },
+          {
+            "id": "minecraft:end_bricks",
+            "count": 1
+          },
+          {
+            "id": "minecraft:end_bricks",
+            "count": 1
+          },
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "utilitycraft:pedestal",
+          "count": 1
+        },
+        "source": "BP/recipes/blocks/utility_blocks/pedestal.json"
+      },
+      {
+        "id": "prismarine_crystal_seeds",
+        "identifier": "utilitycraft:prismarine_crystal_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:prismarine_crystals",
+            "count": 1
+          },
+          {
+            "id": "minecraft:prismarine_crystals",
+            "count": 1
+          },
+          {
+            "id": "minecraft:prismarine_crystals",
+            "count": 1
+          },
+          {
+            "id": "minecraft:prismarine_crystals",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:prismarine_crystals",
+            "count": 1
+          },
+          {
+            "id": "minecraft:prismarine_crystals",
+            "count": 1
+          },
+          {
+            "id": "minecraft:prismarine_crystals",
+            "count": 1
+          },
+          {
+            "id": "minecraft:prismarine_crystals",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:prismarine_crystals_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_1/prismarine_crystal_seed.json"
+      },
+      {
+        "id": "prismarine_shard_seeds",
+        "identifier": "utilitycraft:prismarine_shard_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:prismarine_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:prismarine_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:prismarine_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:prismarine_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:prismarine_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:prismarine_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:prismarine_shard",
+            "count": 1
+          },
+          {
+            "id": "minecraft:prismarine_shard",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:prismarine_shards_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_1/prismarine_shards_seed.json"
+      },
+      {
+        "id": "quartz_seeds",
+        "identifier": "utilitycraft:quartz_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          {
+            "id": "minecraft:quartz",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:quartz_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_2/quartz_seed.json"
+      },
+      {
+        "id": "red_soil",
+        "identifier": "utilitycraft:red_soil",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:yellow_soil",
+            "count": 1
+          },
+          {
+            "id": "nether_wart",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:yellow_soil",
+            "count": 1
+          },
+          {
+            "id": "nether_wart_block",
+            "count": 1
+          },
+          {
+            "id": "redstone_block",
+            "count": 1
+          },
+          {
+            "id": "nether_wart_block",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:yellow_soil",
+            "count": 1
+          },
+          {
+            "id": "nether_wart",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:yellow_soil",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:red_soil",
+          "count": 4
+        },
+        "source": "BP/recipes/bc/soils/red_soil.json"
+      },
+      {
+        "id": "redstone_seeds",
+        "identifier": "utilitycraft:redstone_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "redstone_block",
+            "count": 1
+          },
+          {
+            "id": "redstone_block",
+            "count": 1
+          },
+          {
+            "id": "redstone_block",
+            "count": 1
+          },
+          {
+            "id": "redstone_block",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "redstone_block",
+            "count": 1
+          },
+          {
+            "id": "redstone_block",
+            "count": 1
+          },
+          {
+            "id": "redstone_block",
+            "count": 1
+          },
+          {
+            "id": "redstone_block",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:redstone_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_2/redstone_seed.json"
+      },
+      {
+        "id": "resin_seeds",
+        "identifier": "utilitycraft:resin_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:resin_clump",
+            "count": 1
+          },
+          {
+            "id": "minecraft:resin_clump",
+            "count": 1
+          },
+          {
+            "id": "minecraft:resin_clump",
+            "count": 1
+          },
+          {
+            "id": "minecraft:resin_clump",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:resin_clump",
+            "count": 1
+          },
+          {
+            "id": "minecraft:resin_clump",
+            "count": 1
+          },
+          {
+            "id": "minecraft:resin_clump",
+            "count": 1
+          },
+          {
+            "id": "minecraft:resin_clump",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:resin_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_2/resin_seed.json"
+      },
+      {
+        "id": "shard_to_diamond",
+        "identifier": "utilitycraft:shard_to_diamond",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:diamond_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_shard",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:diamond_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_shard",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:diamond",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/shard_to_diamond.json"
+      },
+      {
+        "id": "shard_to_emerald",
+        "identifier": "utilitycraft:shard_to_emerald",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:emerald_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:emerald_shard",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:emerald_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:emerald_shard",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:emerald",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/shard_to_emerald.json"
+      },
+      {
+        "id": "shard_to_shulker_shell",
+        "identifier": "utilitycraft:shard_to_shulker_shell",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "minecraft:shulker_shell",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/shard_to_shulker_shell.json"
+      },
+      {
+        "id": "shard_to_totem",
+        "identifier": "utilitycraft:shard_to_totem",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:totem_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:totem_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:totem_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:totem_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:totem_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:totem_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:totem_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:totem_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:totem_shard",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "minecraft:totem_of_undying",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/shard_to_totem.json"
+      },
+      {
+        "id": "shard_to_wither_skull",
+        "identifier": "utilitycraft:shard_to_wither_skull",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:wither_skull_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:wither_skull_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:wither_skull_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:wither_skull_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:wither_skull_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:wither_skull_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:wither_skull_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:wither_skull_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:wither_skull_shard",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "minecraft:wither_skeleton_skull",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/shard_to_wither_skull.json"
+      },
+      {
+        "id": "shulker_seeds",
+        "identifier": "utilitycraft:shulker_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:shulker_shell",
+            "count": 1
+          },
+          {
+            "id": "minecraft:shulker_shell",
+            "count": 1
+          },
+          {
+            "id": "minecraft:shulker_shell",
+            "count": 1
+          },
+          {
+            "id": "minecraft:shulker_shell",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:shulker_shell",
+            "count": 1
+          },
+          {
+            "id": "minecraft:shulker_shell",
+            "count": 1
+          },
+          {
+            "id": "minecraft:shulker_shell",
+            "count": 1
+          },
+          {
+            "id": "minecraft:shulker_shell",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:shulker_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_4/shulker_seed.json"
+      },
+      {
+        "id": "slime_seeds",
+        "identifier": "utilitycraft:slime_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:slime_ball",
+            "count": 1
+          },
+          {
+            "id": "minecraft:slime_ball",
+            "count": 1
+          },
+          {
+            "id": "minecraft:slime_ball",
+            "count": 1
+          },
+          {
+            "id": "minecraft:slime_ball",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:slime_ball",
+            "count": 1
+          },
+          {
+            "id": "minecraft:slime_ball",
+            "count": 1
+          },
+          {
+            "id": "minecraft:slime_ball",
+            "count": 1
+          },
+          {
+            "id": "minecraft:slime_ball",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:slime_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_2/slime_seed.json"
+      },
+      {
+        "id": "totem_seed",
+        "identifier": "utilitycraft:totem_seed",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:emerald_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald_block",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:totem_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_4/totem_seed.json"
+      },
+      {
+        "id": "water_seeds",
+        "identifier": "utilitycraft:water_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          null,
+          {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          null
+        ],
+        "slotCount": 5,
+        "result": {
+          "id": "utilitycraft:water_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_1/water_seed.json"
+      },
+      {
+        "id": "water_seedsv2",
+        "identifier": "utilitycraft:water_seedsv2",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          null,
+          {
+            "id": "utilitycraft:water_ball",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:water_ball",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:water_ball",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:water_ball",
+            "count": 1
+          },
+          null
+        ],
+        "slotCount": 5,
+        "result": {
+          "id": "utilitycraft:water_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_1/water_seedv2.json"
+      },
+      {
+        "id": "wither_seeds",
+        "identifier": "utilitycraft:wither_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "skull",
+            "count": 1
+          },
+          {
+            "id": "skull",
+            "count": 1
+          },
+          {
+            "id": "skull",
+            "count": 1
+          },
+          {
+            "id": "skull",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "skull",
+            "count": 1
+          },
+          {
+            "id": "skull",
+            "count": 1
+          },
+          {
+            "id": "skull",
+            "count": 1
+          },
+          {
+            "id": "skull",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:wither_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_4/wither_seed.json"
+      },
+      {
+        "id": "wool_seeds",
+        "identifier": "utilitycraft:wool_seeds",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "wool",
+            "count": 1
+          },
+          {
+            "id": "wool",
+            "count": 1
+          },
+          {
+            "id": "wool",
+            "count": 1
+          },
+          {
+            "id": "wool",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:base_seeds",
+            "count": 1
+          },
+          {
+            "id": "wool",
+            "count": 1
+          },
+          {
+            "id": "wool",
+            "count": 1
+          },
+          {
+            "id": "wool",
+            "count": 1
+          },
+          {
+            "id": "wool",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:wool_seeds",
+          "count": 1
+        },
+        "source": "BP/recipes/bc/seeds/tier_1/wool_seed.json"
+      },
+      {
+        "id": "yellow_soil",
+        "identifier": "utilitycraft:yellow_soil",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "dirt",
+            "count": 1
+          },
+          {
+            "id": "bone_meal",
+            "count": 1
+          },
+          {
+            "id": "dirt",
+            "count": 1
+          },
+          {
+            "id": "bone_meal",
+            "count": 1
+          },
+          {
+            "id": "hay_block",
+            "count": 1
+          },
+          {
+            "id": "bone_meal",
+            "count": 1
+          },
+          {
+            "id": "dirt",
+            "count": 1
+          },
+          {
+            "id": "bone_meal",
+            "count": 1
+          },
+          {
+            "id": "dirt",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:yellow_soil",
+          "count": 4
+        },
+        "source": "BP/recipes/bc/soils/yellow_soil.json"
+      }
+    ]
+  },
+  "catalog": {
+    "items": [
+      {
+        "id": "amethyst_seeds",
+        "slug": "amethyst-seeds",
+        "identifier": "utilitycraft:amethyst_seeds",
+        "name": "Amethyst Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/amethyst_seeds.png",
+        "source": "BP/items/seeds/tier_3/amethyst_seeds.json"
+      },
+      {
+        "id": "base_seeds",
+        "slug": "base-seeds",
+        "identifier": "utilitycraft:base_seeds",
+        "name": "Base Seed",
+        "category": "Seeds",
+        "image": "textures/items/seeds/base_seeds.png",
+        "source": "BP/items/seeds/base_seeds.json"
+      },
+      {
+        "id": "blaze_seeds",
+        "slug": "blaze-seeds",
+        "identifier": "utilitycraft:blaze_seeds",
+        "name": "Blaze Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/blaze_seeds.png",
+        "source": "BP/items/seeds/tier_3/blaze_seeds.json"
+      },
+      {
+        "id": "coal_seeds",
+        "slug": "coal-seeds",
+        "identifier": "utilitycraft:coal_seeds",
+        "name": "Coal Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/coal_seeds.png",
+        "source": "BP/items/seeds/tier_1/coal_seeds.json"
+      },
+      {
+        "id": "copper_seeds",
+        "slug": "copper-seeds",
+        "identifier": "utilitycraft:copper_seeds",
+        "name": "Copper Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/copper_seeds.png",
+        "source": "BP/items/seeds/tier_1/copper_seeds.json"
+      },
+      {
+        "id": "diamond_accelerator_clock",
+        "slug": "diamond-accelerator-clock",
+        "identifier": "utilitycraft:diamond_accelerator_clock",
+        "name": "Diamond Accelerator Clock",
+        "category": "Utility Items",
+        "image": "textures/items/misc/accelerator_clock_1.png",
+        "source": "BP/items/utility_items/diamond_accelerator_clock.json"
+      },
+      {
+        "id": "diamond_seeds",
+        "slug": "diamond-seeds",
+        "identifier": "utilitycraft:diamond_seeds",
+        "name": "Diamond Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/diamond_seeds.png",
+        "source": "BP/items/seeds/tier_3/diamond_seeds.json"
+      },
+      {
+        "id": "diamond_shard",
+        "slug": "diamond-shard",
+        "identifier": "utilitycraft:diamond_shard",
+        "name": "Diamond Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/diamond_shard.png",
+        "source": "BP/items/materials/pebbles/diamond_shard.json"
+      },
+      {
+        "id": "dyes_seeds",
+        "slug": "dyes-seeds",
+        "identifier": "utilitycraft:dyes_seeds",
+        "name": "Dyes Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/dye_seeds.png",
+        "source": "BP/items/seeds/tier_1/dyes_seeds.json"
+      },
+      {
+        "id": "emerald_seeds",
+        "slug": "emerald-seeds",
+        "identifier": "utilitycraft:emerald_seeds",
+        "name": "Emerald Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/emerald_seeds.png",
+        "source": "BP/items/seeds/tier_3/emerald_seeds.json"
+      },
+      {
+        "id": "emerald_shard",
+        "slug": "emerald-shard",
+        "identifier": "utilitycraft:emerald_shard",
+        "name": "Emerald Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/emerald_shard.png",
+        "source": "BP/items/materials/pebbles/emerald_shard.json"
+      },
+      {
+        "id": "enderpearl_seeds",
+        "slug": "enderpearl-seeds",
+        "identifier": "utilitycraft:enderpearl_seeds",
+        "name": "Enderpearl Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/ender_pearl_seeds.png",
+        "source": "BP/items/seeds/tier_3/enderpearl_seeds.json"
+      },
+      {
+        "id": "ghast_seeds",
+        "slug": "ghast-seeds",
+        "identifier": "utilitycraft:ghast_seeds",
+        "name": "Ghast Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/ghast_seeds.png",
+        "source": "BP/items/seeds/tier_2/ghast_seeds.json"
+      },
+      {
+        "id": "glass_seeds",
+        "slug": "glass-seeds",
+        "identifier": "utilitycraft:glass_seeds",
+        "name": "Glass Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/glass_seeds.png",
+        "source": "BP/items/seeds/tier_1/glass_seeds.json"
+      },
+      {
+        "id": "glowstone_seeds",
+        "slug": "glowstone-seeds",
+        "identifier": "utilitycraft:glowstone_seeds",
+        "name": "Glowstone Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/glowstone_seeds.png",
+        "source": "BP/items/seeds/tier_2/glowstone_seeds.json"
+      },
+      {
+        "id": "accelerator_clock",
+        "slug": "accelerator-clock",
+        "identifier": "utilitycraft:accelerator_clock",
+        "name": "Gold Accelerator Clock",
+        "category": "Utility Items",
+        "image": "textures/items/misc/accelerator_clock.png",
+        "source": "BP/items/utility_items/accelerator_clock.json"
+      },
+      {
+        "id": "gold_seeds",
+        "slug": "gold-seeds",
+        "identifier": "utilitycraft:gold_seeds",
+        "name": "Gold Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/gold_seeds.png",
+        "source": "BP/items/seeds/tier_2/gold_seeds.json"
+      },
+      {
+        "id": "gunpowder_seeds",
+        "slug": "gunpowder-seeds",
+        "identifier": "utilitycraft:gunpowder_seeds",
+        "name": "Gunpowder Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/gunpowder_seeds.png",
+        "source": "BP/items/seeds/tier_1/gunpowder_seeds.json"
+      },
+      {
+        "id": "honey_ball",
+        "slug": "honey-ball",
+        "identifier": "utilitycraft:honey_ball",
+        "name": "Honey Ball",
+        "category": "Utility Items",
+        "image": "textures/items/misc/honey_ball.png",
+        "source": "BP/items/utility_items/honey_ball.json"
+      },
+      {
+        "id": "honey_seeds",
+        "slug": "honey-seeds",
+        "identifier": "utilitycraft:honey_seeds",
+        "name": "Honey Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/honey_seeds.png",
+        "source": "BP/items/seeds/tier_2/honey_seeds.json"
+      },
+      {
+        "id": "iron_seeds",
+        "slug": "iron-seeds",
+        "identifier": "utilitycraft:iron_seeds",
+        "name": "Iron Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/iron_seeds.png",
+        "source": "BP/items/seeds/tier_1/iron_seeds.json"
+      },
+      {
+        "id": "lapis_seeds",
+        "slug": "lapis-seeds",
+        "identifier": "utilitycraft:lapis_seeds",
+        "name": "Lapis Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/lapis_seeds.png",
+        "source": "BP/items/seeds/tier_2/lapis_seeds.json"
+      },
+      {
+        "id": "lava_ball",
+        "slug": "lava-ball",
+        "identifier": "utilitycraft:lava_ball",
+        "name": "Lava Ball",
+        "category": "Utility Items",
+        "image": "textures/items/misc/lavaball.png",
+        "source": "BP/items/utility_items/lava_ball.json"
+      },
+      {
+        "id": "lava_seeds",
+        "slug": "lava-seeds",
+        "identifier": "utilitycraft:lava_seeds",
+        "name": "Lava Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/lava_seeds.png",
+        "source": "BP/items/seeds/tier_2/lava_seeds.json"
+      },
+      {
+        "id": "leather_seeds",
+        "slug": "leather-seeds",
+        "identifier": "utilitycraft:leather_seeds",
+        "name": "Leather Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/leather_seeds.png",
+        "source": "BP/items/seeds/tier_1/leather_seeds.json"
+      },
+      {
+        "id": "nether_star_accelerator_clock",
+        "slug": "nether-star-accelerator-clock",
+        "identifier": "utilitycraft:nether_star_accelerator_clock",
+        "name": "Nether Star Accelerator Clock",
+        "category": "Utility Items",
+        "image": "textures/items/misc/accelerator_clock_2.png",
+        "source": "BP/items/utility_items/nether_star_accelerator_clock.json"
+      },
+      {
+        "id": "nether_star_fragment",
+        "slug": "nether-star-fragment",
+        "identifier": "utilitycraft:nether_star_fragment",
+        "name": "Nether Star Fragment",
+        "category": "Materials",
+        "image": "textures/items/pebbles/nether_star_fragment.png",
+        "source": "BP/items/materials/pebbles/nether_star_fragment.json"
+      },
+      {
+        "id": "nether_star_seeds",
+        "slug": "nether-star-seeds",
+        "identifier": "utilitycraft:nether_star_seeds",
+        "name": "Nether Star Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/nether_star_seeds.png",
+        "source": "BP/items/seeds/tier_4/nether_star_seeds.json"
+      },
+      {
+        "id": "netherite_nugget",
+        "slug": "netherite-nugget",
+        "identifier": "utilitycraft:netherite_nugget",
+        "name": "Netherite Nugget",
+        "category": "Materials",
+        "image": "textures/items/ores/netherite_nugget.png",
+        "source": "BP/items/materials/ores/netherite_nugget.json"
+      },
+      {
+        "id": "netherite_seeds",
+        "slug": "netherite-seeds",
+        "identifier": "utilitycraft:netherite_seeds",
+        "name": "Netherite Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/netherite_seeds.png",
+        "source": "BP/items/seeds/tier_4/netherite_seeds.json"
+      },
+      {
+        "id": "obsidian_seeds",
+        "slug": "obsidian-seeds",
+        "identifier": "utilitycraft:obsidian_seeds",
+        "name": "Obsidian Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/obsidian_seeds.png",
+        "source": "BP/items/seeds/tier_3/obsidian_seeds.json"
+      },
+      {
+        "id": "prismarine_crystals_seeds",
+        "slug": "prismarine-crystals-seeds",
+        "identifier": "utilitycraft:prismarine_crystals_seeds",
+        "name": "Prismarine Crystals Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/prismarine_crystals_seeds.png",
+        "source": "BP/items/seeds/tier_1/prismarine_crystals_seeds.json"
+      },
+      {
+        "id": "prismarine_shards_seeds",
+        "slug": "prismarine-shards-seeds",
+        "identifier": "utilitycraft:prismarine_shards_seeds",
+        "name": "Prismarine Shards Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/prismarine_shards_seeds.png",
+        "source": "BP/items/seeds/tier_1/prismarine_shards_seeds.json"
+      },
+      {
+        "id": "quartz_seeds",
+        "slug": "quartz-seeds",
+        "identifier": "utilitycraft:quartz_seeds",
+        "name": "Quartz Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/quartz_seeds.png",
+        "source": "BP/items/seeds/tier_2/quartz_seeds.json"
+      },
+      {
+        "id": "redstone_seeds",
+        "slug": "redstone-seeds",
+        "identifier": "utilitycraft:redstone_seeds",
+        "name": "Redstone Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/redstone_seeds.png",
+        "source": "BP/items/seeds/tier_2/redstone_seeds.json"
+      },
+      {
+        "id": "resin_seeds",
+        "slug": "resin-seeds",
+        "identifier": "utilitycraft:resin_seeds",
+        "name": "Resin Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/base_seeds.png",
+        "source": "BP/items/seeds/tier_2/resin_seeds.json"
+      },
+      {
+        "id": "shulker_seeds",
+        "slug": "shulker-seeds",
+        "identifier": "utilitycraft:shulker_seeds",
+        "name": "Shulker Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/shulker_seeds.png",
+        "source": "BP/items/seeds/tier_4/shulker_seeds.json"
+      },
+      {
+        "id": "shulker_shell_shard",
+        "slug": "shulker-shell-shard",
+        "identifier": "utilitycraft:shulker_shell_shard",
+        "name": "Shulker Shell Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/shulker_shell_shard.png",
+        "source": "BP/items/materials/pebbles/shulker_shell_shard.json"
+      },
+      {
+        "id": "slime_seeds",
+        "slug": "slime-seeds",
+        "identifier": "utilitycraft:slime_seeds",
+        "name": "Slime Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/slime_seeds.png",
+        "source": "BP/items/seeds/tier_2/slime_seeds.json"
+      },
+      {
+        "id": "totem_seeds",
+        "slug": "totem-seeds",
+        "identifier": "utilitycraft:totem_seeds",
+        "name": "Totem Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/totem_seeds.png",
+        "source": "BP/items/seeds/tier_4/totem_seeds.json"
+      },
+      {
+        "id": "totem_shard",
+        "slug": "totem-shard",
+        "identifier": "utilitycraft:totem_shard",
+        "name": "Totem Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/totem_shard.png",
+        "source": "BP/items/materials/pebbles/totem_shard.json"
+      },
+      {
+        "id": "water_ball",
+        "slug": "water-ball",
+        "identifier": "utilitycraft:water_ball",
+        "name": "Water Ball",
+        "category": "Utility Items",
+        "image": "textures/items/misc/waterball.png",
+        "source": "BP/items/utility_items/water_ball.json"
+      },
+      {
+        "id": "water_seeds",
+        "slug": "water-seeds",
+        "identifier": "utilitycraft:water_seeds",
+        "name": "Water Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/water_seeds.png",
+        "source": "BP/items/seeds/tier_1/water_seeds.json"
+      },
+      {
+        "id": "wither_seeds",
+        "slug": "wither-seeds",
+        "identifier": "utilitycraft:wither_seeds",
+        "name": "Wither Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/wither_seeds.png",
+        "source": "BP/items/seeds/tier_4/wither_seeds.json"
+      },
+      {
+        "id": "wither_skull_shard",
+        "slug": "wither-skull-shard",
+        "identifier": "utilitycraft:wither_skull_shard",
+        "name": "Wither Skull Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/wither_skull_shard.png",
+        "source": "BP/items/materials/pebbles/wither_skull_shard.json"
+      },
+      {
+        "id": "wool_seeds",
+        "slug": "wool-seeds",
+        "identifier": "utilitycraft:wool_seeds",
+        "name": "Wool Seeds",
+        "category": "Seeds",
+        "image": "textures/items/seeds/wool_seeds.png",
+        "source": "BP/items/seeds/tier_1/wool_seeds.json"
+      }
+    ]
+  },
+  "variantGroups": []
+}

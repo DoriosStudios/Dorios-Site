@@ -1,5 +1,6 @@
+import compactGuides from '../compactGuides.json';
 import {vanillaStationFor} from './vanillaStationMeta.js';
-import {hasPublicEntitySection} from '../entityVisual.mjs';
+import {hasPublicEntitySection, publicEntityEntries} from '../entityVisual.mjs';
 
 const SECTION_DEFINITIONS = [
   {id: 'overview', label: 'Overview', icon: 'book'},
@@ -340,7 +341,7 @@ export function createGeneratedProject({
   includeBlockSection = true,
   includeEntitySection = hasPublicEntitySection(id, manifest),
   itemCatalogColumns,
-  howToPlay,
+  howToPlay = compactGuides[id]?.en,
 }) {
   const basePath = `/wiki/${id}`;
   const assetRoot = `/img/wiki/${id}`;
@@ -354,7 +355,7 @@ export function createGeneratedProject({
     }))
     : [];
   const entities = includeEntitySection
-    ? manifest.content.entities.map(normalizeEntity).filter(entityFilter)
+    ? publicEntityEntries(id, manifest).map(normalizeEntity).filter(entityFilter)
     : [];
   const craftingRecipeDetails = manifest.content.recipes.map(normalizeRecipe).filter(Boolean);
   const machineBlocks = allBlocks

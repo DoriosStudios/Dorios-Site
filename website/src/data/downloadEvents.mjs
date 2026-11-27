@@ -5,6 +5,7 @@ export async function recordDownloadStarted({endpoint, project, event, eventId},
   if (!endpoint || !eventId || attempts.has(eventId)) return false;
   attempts.add(eventId);
   if (attempts.size > 256) attempts.delete(attempts.values().next().value);
+  let recorded = false;
   try {
     const url = new URL('/events', endpoint);
     if (url.protocol !== 'https:' && url.hostname !== 'localhost' && url.hostname !== '127.0.0.1') return false;
@@ -12,10 +13,14 @@ export async function recordDownloadStarted({endpoint, project, event, eventId},
       try {
         const response = await request(url, {method: 'POST', credentials: 'omit', keepalive: true,
           headers: {'Content-Type': 'application/json'}, body: JSON.stringify({project, event, eventId}), signal: AbortSignal.timeout(4000)});
-        if (response.ok) return true;
+        if (response.ok) {
+          recorded = true;
+          return true;
+        }
         if (response.status < 500) return false;
       } catch { /* Telemetry never interrupts the local download. */ }
     }
   } catch { /* Invalid configuration is optional telemetry. */ }
+  finally { if (!recorded) attempts.delete(eventId); }
   return false;
 }

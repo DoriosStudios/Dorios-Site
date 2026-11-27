@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-27T16:16:59.603013+00:00",
+  "project": {
+    "id": "cobblestone-generators",
+    "name": "Cobblestone Generators",
+    "version": "2.3.1"
+  },
+  "source": {
+    "bridgeProject": "Cobble-Gens",
+    "revision": "ddecbb7e9d4d",
+    "dirty": false
+  },
+  "counts": {
+    "items": 0,
+    "catalogItems": 0,
+    "blocks": 6,
+    "entities": 0,
+    "recipes": 6,
+    "variantGroups": 0
+  },
+  "content": {
+    "items": [],
+    "blocks": [
+      {
+        "id": "cobble_gen_0",
+        "slug": "cobble-gen-0",
+        "identifier": "utilitycraft:cobble_gen_0",
+        "name": "Cobblestone Generator (Tier 1)",
+        "category": "Cobble Generators",
+        "render": "renders/cobble_gen_0.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/generators/cobblestone/copper.png",
+          "left": "textures/blocks/generators/cobblestone/copper.png",
+          "right": "textures/blocks/generators/cobblestone/copper.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "minecraft:transformation",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:block_generator"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/cobble_generators/copper.json",
+        "blockData": {
+          "breakTime": 2,
+          "mineable": true,
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "cobble_gen_1",
+        "slug": "cobble-gen-1",
+        "identifier": "utilitycraft:cobble_gen_1",
+        "name": "Cobblestone Generator (Tier 2)",
+        "category": "Cobble Generators",
+        "render": "renders/cobble_gen_1.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/generators/cobblestone/basic.png",
+          "left": "textures/blocks/generators/cobblestone/basic.png",
+          "right": "textures/blocks/generators/cobblestone/basic.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "minecraft:transformation",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:block_generator"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/cobble_generators/iron.json",
+        "blockData": {
+          "breakTime": 2,
+          "mineable": true,
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "cobble_gen_2",
+        "slug": "cobble-gen-2",
+        "identifier": "utilitycraft:cobble_gen_2",
+        "name": "Cobblestone Generator (Tier 3)",
+        "category": "Cobble Generators",
+        "render": "renders/cobble_gen_2.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/generators/cobblestone/gold.png",
+          "left": "textures/blocks/generators/cobblestone/gold.png",
+          "right": "textures/blocks/generators/cobblestone/gold.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "minecraft:transformation",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:block_generator"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/cobble_generators/gold.json",
+        "blockData": {
+          "breakTime": 2,
+          "mineable": true,
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "cobble_gen_3",
+        "slug": "cobble-gen-3",
+        "identifier": "utilitycraft:cobble_gen_3",
+        "name": "Cobblestone Generator (Tier 4)",
+        "category": "Cobble Generators",
+        "render": "renders/cobble_gen_3.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/generators/cobblestone/emerald.png",
+          "left": "textures/blocks/generators/cobblestone/emerald.png",
+          "right": "textures/blocks/generators/cobblestone/emerald.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "minecraft:transformation",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:block_generator"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/cobble_generators/emerald.json",
+        "blockData": {
+          "breakTime": 2.5,
+          "mineable": true,
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "cobble_gen_4",
+        "slug": "cobble-gen-4",
+        "identifier": "utilitycraft:cobble_gen_4",
+        "name": "Cobblestone Generator (Tier 5)",
+        "category": "Cobble Generators",
+        "render": "renders/cobble_gen_4.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/generators/cobblestone/diamond.png",
+          "left": "textures/blocks/generators/cobblestone/diamond.png",
+          "right": "textures/blocks/generators/cobblestone/diamond.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "minecraft:transformation",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:block_generator"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/cobble_generators/diamond.json",
+        "blockData": {
+          "breakTime": 2.5,
+          "mineable": true,
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      },
+      {
+        "id": "cobble_gen_5",
+        "slug": "cobble-gen-5",
+        "identifier": "utilitycraft:cobble_gen_5",
+        "name": "Cobblestone Generator (Tier 6)",
+        "category": "Cobble Generators",
+        "render": "renders/cobble_gen_5.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/generators/cobblestone/netherite.png",
+          "left": "textures/blocks/generators/cobblestone/netherite.png",
+          "right": "textures/blocks/generators/cobblestone/netherite.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "minecraft:transformation",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:block_generator"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/cobble_generators/netherite.json",
+        "blockData": {
+          "breakTime": 3,
+          "mineable": true,
+          "tool": "Pickaxe",
+          "directional": true
+        }
+      }
+    ],
+    "entities": [],
+    "recipes": [
+      {
+        "id": "cobble_gen_0",
+        "identifier": "utilitycraft:cobble_gen_0",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "obsidian",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "water_bucket",
+            "count": 1
+          },
+          {
+            "id": "glass",
+            "count": 1
+          },
+          {
+            "id": "lava_bucket",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "obsidian",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:cobble_gen_0",
+          "count": 1
+        },
+        "source": "BP/recipes/copper.json"
+      },
+      {
+        "id": "cobble_gen_1",
+        "identifier": "utilitycraft:cobble_gen_1",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:cobble_gen_0",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:cobble_gen_1",
+          "count": 1
+        },
+        "source": "BP/recipes/iron.json"
+      },
+      {
+        "id": "cobble_gen_2",
+        "identifier": "utilitycraft:cobble_gen_2",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:cobble_gen_1",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:cobble_gen_2",
+          "count": 1
+        },
+        "source": "BP/recipes/gold.json"
+      },
+      {
+        "id": "cobble_gen_3",
+        "identifier": "utilitycraft:cobble_gen_3",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:cobble_gen_2",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:cobble_gen_3",
+          "count": 1
+        },
+        "source": "BP/recipes/emerald.json"
+      },
+      {
+        "id": "cobble_gen_4",
+        "identifier": "utilitycraft:cobble_gen_4",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:cobble_gen_3",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:cobble_gen_4",
+          "count": 1
+        },
+        "source": "BP/recipes/diamond.json"
+      },
+      {
+        "id": "cobble_gen_5",
+        "identifier": "utilitycraft:cobble_gen_5",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:cobble_gen_4",
+            "count": 1
+          },
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          },
+          {
+            "id": "netherite_scrap",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:cobble_gen_5",
+          "count": 1
+        },
+        "source": "BP/recipes/netherite.json"
+      }
+    ]
+  },
+  "catalog": {
+    "items": []
+  },
+  "variantGroups": []
+}

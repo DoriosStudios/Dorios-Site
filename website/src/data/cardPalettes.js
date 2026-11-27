@@ -1,3 +1,5 @@
+import {projectAccentVariables} from './projectContrast.mjs';
+
 const fallbackPalette = ['#ff6d18', '#ff9b49'];
 
 export const projectCardPalettes = {
@@ -58,9 +60,14 @@ function paletteVariables(palette) {
   };
 }
 
+const projectStyles = new Map();
 export function projectCardPalette(projectOrId) {
   const id = typeof projectOrId === 'string' ? projectOrId : projectOrId?.id;
-  return paletteVariables(projectCardPalettes[id]);
+  const palette = projectCardPalettes[id] ?? fallbackPalette;
+  if (!projectStyles.has(palette)) {
+    projectStyles.set(palette, {...paletteVariables(palette), ...projectAccentVariables(...palette)});
+  }
+  return projectStyles.get(palette);
 }
 
 export function memberCardPalette(memberOrId) {

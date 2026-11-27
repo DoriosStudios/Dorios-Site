@@ -2,10 +2,28 @@ import React, {createContext, useCallback, useContext, useEffect, useMemo, useRe
 import Link from '@docusaurus/Link';
 import {useHistory, useLocation} from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 import Layout from '@theme/Layout';
 import '@fontsource-variable/space-grotesk';
 import {
   IconBattery,
+  IconAffiliate,
+  IconBookmark,
+  IconChessKnight,
+  IconFlare,
+  IconHandStop,
+  IconHeart,
+  IconHelmet,
+  IconHexagons,
+  IconNetwork,
+  IconPackage,
+  IconRings,
+  IconRosette,
+  IconShield,
+  IconShirt,
+  IconShoe,
+  IconSparkles,
+  IconStack2,
   IconLayoutGrid,
   IconList,
   IconBolt,
@@ -40,6 +58,10 @@ import {equipmentBenefits,itemHighlights,isSimpleEquipment,machinePlayerGuide,me
 import {WikiStatGrid,WikiStatValue,WikiTechnicalDetails,WikiCatalogRows,MachinePlayerGuide} from './playerGuide';
 import WikiSpriteIcon from '../WikiIcon';
 import {WIKI_SECTION_ICONS} from '../../data/wikiUiIcons.mjs';
+import enchantmentData from '../../wiki/enchantmentData.generated.json';
+import {enchantmentLibrary} from '../../wiki/enchantmentLibrary.mjs';
+import {formatMiningRange} from '../../wiki/enchantmentEstimates.mjs';
+import EnchantmentWorkshop from '../EnchantmentWorkshop';
 import {RECIPE_ORIGINS, recipeOriginFor as resolveRecipeOrigin} from '../../wiki/recipeOrigins';
 import {fluidVisualFor, MACHINE_RESOURCE_ICONS} from '../../data/resourceVisuals';
 import {getProjectByWikiPath} from '../../data/projects';
@@ -74,6 +96,24 @@ function useIngredientLabel() {
 
 const WIKI_ICONS = {
   battery: IconBattery,
+  adjustments: IconAdjustmentsHorizontal,
+  bookmark: IconBookmark,
+  doll: IconChessKnight,
+  flare: IconFlare,
+  hand: IconHandStop,
+  heart: IconHeart,
+  helmet: IconHelmet,
+  hexagons: IconHexagons,
+  necklace: IconAffiliate,
+  network: IconNetwork,
+  package: IconPackage,
+  rings: IconRings,
+  rosette: IconRosette,
+  shield: IconShield,
+  shirt: IconShirt,
+  shoe: IconShoe,
+  sparkles: IconSparkles,
+  stack: IconStack2,
   bolt: IconBolt,
   book: IconBook,
   cube: IconCube,
@@ -189,14 +229,18 @@ const DETAIL_LABEL_KEYS = {
   locations: 'detailLocations', modifiers: 'detailModifiers', sieving: 'detailSieving',
 };
 
-function EntrySectionNavigation({sections}) {
+function EntrySectionNavigation({sections, workshopHref, workshopOpen}) {
   const {section, basePath, entryType} = useContext(WikiDetailContext);
   const {t} = useSiteI18n();
   const {search} = useLocation();
   const entries = sections ?? navigationSectionsForEntry(entryType);
-  if (entries.length < 2) return null;
-  return <nav className={styles.detailSectionNav} aria-label={t('detailSections')}>
-    {entries.map((id) => <Link key={id} to={`${detailSectionPath(basePath, id)}${search}`} aria-current={navigationDetailSection(entryType,section) === id ? 'page' : undefined}><WikiSpriteIcon name={WIKI_SECTION_ICONS[id]} size={20}/>{t(DETAIL_LABEL_KEYS[id])}</Link>)}
+  const params = new URLSearchParams(search);
+  if (workshopHref) params.delete('view');
+  const sectionQuery = params.size ? '?' + params.toString() : '';
+  if (entries.length < 2 && !workshopHref) return null;
+  return <nav className={styles.detailSectionNav} data-workshop={Boolean(workshopHref) || undefined} aria-label={t('detailSections')}>
+    {entries.map((id) => <Link key={id} to={`${detailSectionPath(basePath, id)}${workshopHref ? sectionQuery : search}`} aria-current={!workshopOpen && navigationDetailSection(entryType,section) === id ? 'page' : undefined}><WikiSpriteIcon name={WIKI_SECTION_ICONS[id]} size={20}/>{t(DETAIL_LABEL_KEYS[id])}</Link>)}
+    {workshopHref && <Link to={workshopHref} aria-current={workshopOpen ? 'page' : undefined}><WikiSpriteIcon name="special_book" size={20}/>{t('detailEnchantments')}</Link>}
   </nav>;
 }
 
@@ -384,7 +428,7 @@ function WikiFrame({active, query, setQuery, children}) {
             {section.children.map((child) => {
               const childSection = child.id === 'introduction' ? section.id : `${section.id}/${child.id}`;
               const childActive = active === childSection;
-              return <Link key={child.id} to={child.href} className={childActive ? styles.activeSubNav : undefined}>{child.label}</Link>;
+              return <Link key={child.id} to={child.href} className={childActive ? styles.activeSubNav : undefined} aria-current={childActive ? 'page' : undefined}>{child.label}</Link>;
             })}
           </div>
         )}
@@ -406,7 +450,7 @@ function WikiFrame({active, query, setQuery, children}) {
           <WikiSearch query={query} setQuery={setQuery} inputRef={searchInputRef} />
           <button className={styles.searchClose} type="button" onClick={closeSearch} aria-label={t('closeSearch')}><IconX size={21} aria-hidden="true"/></button>
           {query.trim().length >= 2 && <div className={styles.wikiSearchResults} aria-label={t('searchResults')}>
-            {searchResults.map(result => <Link key={result.href} to={result.href} onClick={closeSearch}><WikiIcon name={project.wikiSections.find(section => section.id === result.type)?.icon ?? 'book'}/><span><strong>{result.name}</strong><small>{t(result.type)} · {project.name}</small></span></Link>)}
+            {searchResults.map(result => <Link key={result.href} to={result.href} onClick={closeSearch} prefetch={false}><WikiIcon name={project.wikiSections.find(section => section.id === result.type)?.icon ?? 'book'}/><span><strong>{result.name}</strong><small>{t(result.type)} · {project.name}</small></span></Link>)}
             {!searchResults.length && <p>{t('noSearchResults')}</p>}
           </div>}
         </div>
@@ -1374,7 +1418,7 @@ function OverviewPage({query}) {
               <Link key={shortcut.href} to={shortcut.href} className={styles.overviewShortcut}>
                 {shortcut.image
                   ? <img src={resolveAsset(project, shortcut.image)} alt="" />
-                  : <span aria-hidden="true">{shortcut.icon ?? '◇'}</span>}
+                  : <span aria-hidden="true"><WikiIcon name={shortcut.icon ?? 'cube'} size={24} /></span>}
                 <strong>{shortcut.label}</strong>
                 <small>{shortcut.count} {w(shortcut.count === 1 ? 'entry' : 'entries')}</small>
 
@@ -1466,17 +1510,19 @@ function StepListForSection({section, sectionNumber, embedded = false}) {
 function GuideSection({section, index}) {
   const w = useWikiText();
   const images = section.images ?? (section.image ? [section.image] : []);
-  const hasSupportingContent = Boolean(section.paragraphs?.length || images.length || section.table || section.tables?.length || section.cards?.length || section.links?.length);
+  const hasSupportingContent = Boolean(section.paragraphs?.length || images.length || section.table || section.tables?.length || section.cards?.length || section.links?.length || section.bullets?.length || section.code?.length || section.id);
   if (section.steps?.length && !hasSupportingContent) {
     return <StepListForSection section={section} sectionNumber={index + 1} />;
   }
   return (
-    <section className={styles.guideSection} aria-labelledby={`guide-section-${index}`}>
+    <section className={styles.guideSection} aria-labelledby={section.id ?? `guide-section-${index}`}>
       <header>
         <span>{String(index + 1).padStart(2, '0')}</span>
-        <h2 id={`guide-section-${index}`}>{w(section.title)}</h2>
+        <h2 id={section.id ?? `guide-section-${index}`}>{w(section.title)}</h2>
       </header>
       {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+      {section.bullets?.length > 0 && <ul>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}
+      {section.code?.map((code) => <pre key={code}><code>{code}</code></pre>)}
       <StepListForSection section={section} sectionNumber={index + 1} embedded />
       <GuideImages images={images} title={section.title} />
       <GuideTable table={section.table} />
@@ -1494,6 +1540,7 @@ function HowToPlayPage({section, query}) {
   const requestedId = section.split('/')[1] ?? 'introduction';
   const pageIndex = Math.max(0, guide.pages.findIndex(({id}) => id === requestedId));
   const page = guide.pages[pageIndex] ?? guide.pages[0];
+  const catalogLink = project.wikiSections.find(({id}) => !['overview', 'how-to-play'].includes(id));
   const previous = guide.pages[pageIndex - 1];
   const next = guide.pages[pageIndex + 1];
   const normalizedQuery = query.trim().toLowerCase();
@@ -1509,21 +1556,21 @@ function HowToPlayPage({section, query}) {
       <header className={styles.guideHero}>
         <div>
           <p className={styles.eyebrow}>{page.eyebrow}</p>
-          <span>{w("Step")} {String(pageIndex + 1).padStart(2, '0')} {w("of")} {String(guide.pages.length).padStart(2, '0')}</span>
+          {guide.pages.length > 1 && <span>{w("Step")} {String(pageIndex + 1).padStart(2, '0')} {w("of")} {String(guide.pages.length).padStart(2, '0')}</span>}
           <h1>{page.title}</h1>
           <p>{page.intro}</p>
         </div>
         {page.hero && <img src={resolveAsset(project, page.hero)} alt={`${page.label} guide`} />}
       </header>
 
-      <nav className={styles.guideProgress} aria-label={w("How To Play progression")}>
+      {guide.pages.length > 1 && <nav className={styles.guideProgress} aria-label={w("How To Play progression")}>
         {guide.pages.map((entry, index) => <Link
           key={entry.id}
           to={pageHref(entry, index)}
           aria-current={index === pageIndex ? 'step' : undefined}
           className={index === pageIndex ? styles.guideProgressActive : undefined}
         ><span>{String(index + 1).padStart(2, '0')}</span>{entry.label}</Link>)}
-      </nav>
+      </nav>}
 
       <div className={styles.guideSections}>
         {visibleSections.map((entry, index) => <GuideSection key={entry.title} section={entry} index={index} />)}
@@ -1532,7 +1579,7 @@ function HowToPlayPage({section, query}) {
 
       <nav className={styles.guidePager} aria-label={w("Tutorial pages")}>
         {previous ? <Link to={pageHref(previous, pageIndex - 1)}><span>{w("Previous")}</span><strong>{previous.label}</strong></Link> : <span />}
-        {next ? <Link to={pageHref(next, pageIndex + 1)}><span>{w("Next step")}</span><strong>{next.label}</strong></Link> : <Link to={`${project.basePath}/machines`}><span>{w("Continue exploring")}</span><strong>{w("Machine catalog →").replace(/\s*→$/, '')}</strong></Link>}
+        {next ? <Link to={pageHref(next, pageIndex + 1)}><span>{w("Next step")}</span><strong>{next.label}</strong></Link> : catalogLink && <Link to={catalogLink.href}><span>{w("Continue exploring")}</span><strong>{w(catalogLink.label)}</strong></Link>}
       </nav>
     </article>
   );
@@ -2455,7 +2502,7 @@ function compactItemDescription(entry, documentation) {
   const description = String(documentation.description ?? '').trim();
   const slot = documentation.basic.equipSlot;
   const behavior = description.match(/\b(grants?|provides?|applies?|prevents?|increases?|reduces?)\b.+$/i)?.[0];
-  if (slot && slot !== 'Not a trinket slot' && behavior) {
+  if (description.startsWith(entry.name + ' is ') && slot && slot !== 'Not a trinket slot' && behavior) {
     return `${slot}-slot trinket that ${behavior.charAt(0).toLowerCase()}${behavior.slice(1)}`;
   }
   const escapedName = entry.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -2838,7 +2885,7 @@ function AcquisitionCard({icon, eyebrow, title, chance, quantity, note, image, h
   const w = useWikiText();
   return (
     <article className={styles.acquisitionCard}>
-      <span className={styles.acquisitionIcon}>{image ? <img className={dropStyles.sourceImage} src={image} alt="" loading="lazy" /> : <DetailIcon name={icon} />}</span>
+      <span className={styles.acquisitionIcon}>{image ? <img src={image} width={64} height={64} alt="" loading="lazy" /> : <DetailIcon name={icon} />}</span>
       <div><small>{w(eyebrow)}</small><h3>{href ? <Link to={href}>{w(title)}</Link> : w(title)}</h3>{note && <p>{w(note)}</p>}<footer>{chance && <strong>{w(chance)}</strong>}{quantity && <span>{w(quantity)}</span>}</footer></div>
     </article>
   );
@@ -2873,12 +2920,21 @@ function SourceGroup({icon, title, children}) {
   );
 }
 
-function ItemDocumentation({entry, project, documentation, properties, groups, recipes, usedIn, relatedItems}) {
+function equipmentHighlights(documentation, profile, formatNumber) {
+  return itemHighlights(documentation).map(([label, value]) => {
+    if (profile?.range && /^(base )?mining speed$/i.test(label)) return [label, formatMiningRange(profile.range, formatNumber)];
+    if (profile?.slot && label === 'Enchantability') return [label, profile.value];
+    return [label, value];
+  });
+}
+
+function ItemDocumentation({entry, project, documentation, properties, groups, recipes, usedIn, relatedItems, enchantment, workshopHref}) {
   const w = useWikiText();
   const {section} = useContext(WikiDetailContext);
-  const {t, locale} = useSiteI18n();
+  const {t, locale, formatNumber} = useSiteI18n();
   const recipeCount = recipes.crafting.length + recipes.machine.length;
-  const hasSources = documentation.acquisition.entityDrops.length > 0
+  const entityDrops = documentation.acquisition.entityDrops.filter(drop => project.id !== 'trinkets' || isAvailableEntityDrop(drop));
+  const hasSources = entityDrops.length > 0
     || documentation.acquisition.structures.length > 0
     || documentation.acquisition.biomes.length > 0;
   const selectedPrimary = documentation.primarySources.map((source) => ({source, recipe: resolveEditorialRecipe(project, source.recipe)}));
@@ -2895,15 +2951,16 @@ function ItemDocumentation({entry, project, documentation, properties, groups, r
   const recipeHref = `${project.basePath}/recipes?q=${encodeURIComponent(entry.identifier ?? entry.id)}`;
   const rawEntry = wikiProjects[project.id]?.items.find(item => item.id === entry.id) ?? entry;
   const sourceGroups = capabilityGroups(normalizedItemDocumentation(rawEntry).capabilities);
-  const highlights = itemHighlights(normalizedItemDocumentation(rawEntry));
+  const highlights = equipmentHighlights(normalizedItemDocumentation(rawEntry), enchantment, formatNumber);
   const highlightLabels = new Set(highlights.map(([label])=>w(label)));
   const overview = section === 'details' || section === 'specs';
   return <div className={styles.itemArticleBody}>
     {overview && <ItemSection id="item-overview" title={isSimpleEquipment(documentation)?null:t('overview')}>
-      <WikiStatGrid facts={highlights} w={w}/>
+      <WikiStatGrid facts={highlights} w={w} links={workshopHref ? {Enchantability: workshopHref} : undefined}
+        hints={enchantment?.slot ? {Enchantability: formatIdentifier(enchantment.slot)} : undefined}/>
       {groups.filter(group=>group.id!=='attributes').length>0&&<div className={styles.capabilityGrid}>{groups.filter(group=>group.id!=='attributes').map(group=><CapabilityGroup key={group.id} group={group} sourceGroup={sourceGroups.find(source=>source.id===group.id)}/>)}</div>}
       {documentation.usage && <p className={styles.itemUsageCopy}>{documentation.usage}</p>}
-      {documentation.sections.map(item=><DocumentationSection section={{...item,facts:item.facts?.filter(([label])=>!highlightLabels.has(label))}} key={item.id}/>)}
+      {documentation.sections.filter(item=>!workshopHref || item.id !== 'enchantments').map(item=><DocumentationSection section={{...item,facts:item.facts?.filter(([label])=>!highlightLabels.has(label))}} key={item.id}/>)}
       {relatedItems.length>0&&isSimpleEquipment(documentation)&&<section className={styles.playerRelated}><h2>{w('Related Items')}</h2><div className={styles.relatedItemGrid}>{relatedItems.slice(0,4).map(item=><RelatedItemCard project={project} item={item} key={item.identifier??item.id}/>)}</div></section>}
       <WikiTechnicalDetails key={entry.id} w={w}>
         {documentation.basic.identifier&&<div className={styles.itemIdentifier}><span>{w('Identifier')}</span><code>{documentation.basic.identifier}</code><CopyIdentifierButton identifier={documentation.basic.identifier}/></div>}
@@ -2921,20 +2978,16 @@ function ItemDocumentation({entry, project, documentation, properties, groups, r
 
     {section === 'drops' && <ItemSection id="item-drops" title={t('detailDrops')}>
       {hasSources ? <div className={styles.sourceGroups}>
-          {documentation.acquisition.entityDrops.length > 0 && <SourceGroup icon="entity" title={w("Entity Drops")}>
-            {documentation.acquisition.entityDrops.map((drop, index) => {
+          {entityDrops.length > 0 && <SourceGroup icon="entity" title={w("Entity Drops")}>
+            {entityDrops.map((drop, index) => {
               const key = `${drop.entity}-${index}`;
               if (project.id !== 'trinkets') {
                 return <AcquisitionCard key={key} icon="entity" eyebrow={w('Entity Drop')} title={formatIdentifier(drop.entity)}
                   chance={formatChance(drop.chance)} quantity={quantityLabel(drop)} />;
               }
               const creature = trinketDropCreature(drop.entity, locale);
-              if (!isAvailableEntityDrop(drop)) {
-                return <AcquisitionCard key={key} icon="entity" eyebrow={w('Unavailable drop')} title={creature.name}
-                  note={w('The registered creature ID prevents this drop from occurring.')} />;
-              }
               return <AcquisitionCard key={key} icon="entity" eyebrow={w('Entity Drop')} title={creature.name}
-                image={resolveAsset(project, creature.image)} href={`${project.basePath}/drops?creature=${encodeURIComponent(creature.id)}`}
+                image={resolveAsset(project, creature.faceImage)} href={`${project.basePath}/drops?creature=${encodeURIComponent(creature.id)}`}
                 chance={formatChance(drop.chance ?? 0.1)} quantity={quantityLabel({count: drop.amount ?? 1})}
                 note={w(dropDimensionLabel(drop.conditions?.dimension))} />;
             })}
@@ -2963,10 +3016,19 @@ function ItemDocumentation({entry, project, documentation, properties, groups, r
   </div>;
 }
 
-function ItemDetail({entry, visual}) {
+function ItemDetail({entry, visual, familyLink}) {
   const w = useWikiText();
   const project = useWikiProject();
   const documentation = normalizedItemDocumentation(entry);
+  const {basePath, section} = useContext(WikiDetailContext);
+  const {search} = useLocation();
+  const enchantment = enchantmentData[project.id]?.[entry.identifier ?? entry.id];
+  const books = enchantmentLibrary(enchantment);
+  const params = new URLSearchParams(search);
+  const browser = useIsBrowser();
+  const workshopOpen = browser && books.length > 0 && section === 'details' && params.get('view') === 'enchantments';
+  params.set('view', 'enchantments');
+  const workshopHref = books.length ? basePath + '?' + params.toString() : null;
   const groups = capabilityGroups(documentation.capabilities);
   const statistics = documentation.statistics;
   const recipes = obtainingRecipes(project, entry);
@@ -2986,7 +3048,7 @@ function ItemDetail({entry, visual}) {
   const sections = [
     'details',
     (recipes.crafting.length || recipes.machine.length || documentation.primarySources.length) && 'recipes',
-    (documentation.acquisition.entityDrops.length || documentation.acquisition.structures.length || documentation.acquisition.biomes.length) && 'drops',
+    (documentation.acquisition.entityDrops.some(drop => project.id !== 'trinkets' || isAvailableEntityDrop(drop)) || documentation.acquisition.structures.length || documentation.acquisition.biomes.length) && 'drops',
     (usedIn.length || documentation.mainUses.length) && 'uses',
     relatedItems.length && 'related',
     documentation.trivia.length && 'notes',
@@ -3001,10 +3063,11 @@ function ItemDetail({entry, visual}) {
         </div>
         <div className={styles.itemDetailCopy}>
           <p>{compactItemDescription(entry, documentation)}</p>
+          {familyLink && <Link to={familyLink.href}>{familyLink.name}</Link>}
         </div>
       </header>
-      <EntrySectionNavigation sections={sections}/>
-      <ItemDocumentation
+      <EntrySectionNavigation sections={sections} workshopHref={workshopHref} workshopOpen={workshopOpen}/>
+      {workshopOpen ? <EnchantmentWorkshop key={entry.id} name={entry.name} profile={enchantment} books={books} image={resolveAsset(project, entry.image)} w={w}/> : <ItemDocumentation
         entry={entry}
         project={project}
         documentation={documentation}
@@ -3013,7 +3076,9 @@ function ItemDetail({entry, visual}) {
         recipes={recipes}
         usedIn={usedIn}
         relatedItems={relatedItems}
-      />
+        enchantment={enchantment}
+        workshopHref={workshopHref}
+      />}
     </article>
   );
 }
@@ -3751,6 +3816,7 @@ function AddonWikiEntryContent({entryType, slug}) {
   const {section: detailSection, basePath: entryBasePath} = useContext(WikiDetailContext);
   const {t} = useSiteI18n();
   const canonicalPath = detailSectionPath(entryBasePath, detailSection);
+  const {search} = useLocation();
   const {
     assetRoot, blocks, allBlocks, craftingRecipeDetails, entities = [], generators, machineControllerIds,
     machines, mechanics, items, processingRecipes, stationMeta, wikiSections,
@@ -3779,6 +3845,16 @@ function AddonWikiEntryContent({entryType, slug}) {
   const itemCategorySection = entryType === 'items'
     ? sectionForItemCategory(project, entry.category)
     : undefined;
+  let familyLink;
+  if (entryType === 'items' && entry.variants?.length) {
+    const requested = new URLSearchParams(search).get('variant');
+    const variant = requested && entry.variants.find(candidate => (candidate.identifier ?? candidate.id) === requested);
+    if (variant && requested !== (entry.identifier ?? entry.id)) {
+      const item = project.allItems?.find(candidate => (candidate.identifier ?? candidate.id) === requested);
+      familyLink = {name: entry.name, href: canonicalPath};
+      entry = {...entry, ...item, ...variant, variants: undefined, documentation: item?.documentation};
+    }
+  }
   const activeSection = itemCategorySection?.id ?? (entryType === 'mechanics' ? 'mechanics' : entryType);
   const title = recipe ? (recipe.result.label ?? formatIdentifier(recipe.result.id)) : entry.name;
   const pageTitle = detailSection === 'details' ? title : `${title} · ${t(DETAIL_LABEL_KEYS[detailSection])}`;
@@ -3839,7 +3915,7 @@ function AddonWikiEntryContent({entryType, slug}) {
         />
         <WikiFrame active={activeSection} query={query} setQuery={setQuery}>
           <div className={styles.detailBack}><Link to={backHref}>{w("← Back to").replace(/^←\s*/, '')} {w(backLabel)}</Link></div>
-          <ItemDetail entry={entry} visual={itemVisual} />
+          <ItemDetail entry={entry} visual={itemVisual} familyLink={familyLink} />
         </WikiFrame>
       </Layout>
     );
@@ -3971,7 +4047,7 @@ function TrinketDropsPage({query}) {
   const {search} = useLocation();
   const w = useWikiText();
   const [selected, setSelected] = useState(null);
-  const {creatures, unavailable} = useMemo(() => groupTrinketEntityDrops(project.allItems), [project.allItems]);
+  const {creatures} = useMemo(() => groupTrinketEntityDrops(project.allItems), [project.allItems]);
   const normalize = (value) => value.toLocaleLowerCase(locale).normalize('NFD').replace(/\p{M}/gu, '');
   const term = normalize(query.trim());
   const groups = [...creatures].map(([entity, entries]) => {
@@ -3983,8 +4059,6 @@ function TrinketDropsPage({query}) {
   }).filter(({drops}) => drops.length).sort((a, b) => a.name.localeCompare(b.name, locale));
   const activeId = selected ?? new URLSearchParams(search).get('creature');
   const active = groups.find(({id}) => id === activeId) ?? groups[0];
-  const visibleUnavailable = unavailable.filter(({item, drop}) =>
-    normalize(`${item.name} ${trinketDropCreature(drop.entity, locale).name} ${drop.entity}`).includes(term));
   const itemLink = (item) => detailSectionPath(detailLinkFor(project, item.identifier), 'drops');
 
   return <>
@@ -4032,12 +4106,7 @@ function TrinketDropsPage({query}) {
         </section>
       </div>
     )}
-    {!active && !visibleUnavailable.length && <p className={styles.empty}>{w('No results found.')}</p>}
-    {visibleUnavailable.map(({item, drop}, index) => (
-      <p className={dropStyles.unavailable} key={`${item.identifier}-${index}`}>
-        <Link to={itemLink(item)}>{item.name}</Link> · {trinketDropCreature(drop.entity, locale).name}. {w('The registered creature ID prevents this drop from occurring.')}
-      </p>
-    ))}
+    {!active && <p className={styles.empty}>{w('No results found.')}</p>}
   </>;
 }
 

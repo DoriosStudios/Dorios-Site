@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import sharp from 'sharp';
-import {entityVisual,hasEntityVisuals} from '../src/wiki/entityVisual.mjs';
+import {entityVisual,hasEntityVisuals,publicEntityEntries} from '../src/wiki/entityVisual.mjs';
 import {readJson} from './bedrock-pack.mjs';
 
 test('entity lists prefer actual faces and details prefer full bodies without showing source atlases', () => {
@@ -19,6 +19,15 @@ test('entity lists prefer actual faces and details prefer full bodies without sh
   assert.equal(entityVisual({portrait:'portrait.png'},{compact:true}),'portrait.png');
   assert.equal(hasEntityVisuals({content:{entities:[{image:'textures/entity/test.png'}]}}),false);
   assert.equal(hasEntityVisuals({content:{entities:[record]}}),true);
+  const verified = {...record, identifier:'test:mob', publicEntity:true};
+  const manifest = {content:{entities:[
+    verified,
+    {...record, identifier:'test:machine_proxy'},
+    {...record, identifier:'minecraft:player', publicEntity:true},
+    {identifier:'test:atlas', image:'textures/entity/atlas.png', publicEntity:true},
+  ]}};
+  assert.deepEqual(publicEntityEntries('test', manifest), [verified]);
+  assert.deepEqual(publicEntityEntries('utilitycraft', manifest), []);
 });
 
 test('mapper rescan preserves manual entity images, fills missing formats and tolerates a broken refresh', async t => {

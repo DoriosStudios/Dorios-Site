@@ -4,131 +4,46 @@ title: Effect Pillars
 sidebar_label: Effect Pillars
 ---
 
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+Build an Effect Pillar to apply a status effect around a base, mine or mob farm. You choose the effect, its level and its range independently.
 
-<div style={{ textAlign: "center", marginBottom: "2rem" }}>
-  <img 
-    src="https://media.forgecdn.net/attachments/description/null/description_782123d5-3fd2-45a0-b186-850d98b88db6.png" 
-    alt="Effect Pillars Render"
-    width="70%"
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-  />
-</div>
-
-<p>
-  <b>Effect Pillars</b> is a modular beacon-style system included in the <b>UtilityCraft</b> collection.  
-  It introduces customizable <b>Pillars</b> that grant unique effects — both supportive and offensive — far beyond what vanilla beacons can do.
-</p>
-
-<p>
-  By combining <b>Upgrades</b>, <b>Amplifiers</b>, and <b>Effect Beacons</b>, players can build pillars with adjustable <b>range</b> and <b>power levels</b>.  
-  These structures can protect your base, enhance your abilities, or even repel hostile mobs automatically.
-</p>
-
----
-
-## Overview
-
-Effect Pillars are built using a simple vertical structure made of **three parts**:
-
-1. **Upgrade Block** – Defines the effect level.  
-2. **Amplifier Block** – Determines the radius of the effect.  
-3. **Effect Beacon** – Determines which effect the pillar will emit.
-
-<p align="center">
-  <img 
-    src="https://media.forgecdn.net/attachments/description/null/description_c5f02ffd-a1b8-4a27-8c8b-d10009d5a7f0.png"
-    alt="Pillar Structure Example"
-    width="70%"
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-  />
-</p>
-
-> All components must be placed in the correct order for the pillar to activate.
-
----
+![Effect Pillars with several combinations of effect, range and level blocks](/img/addons/pillars/MCPEDL.png)
 
 ## Pillar Components
 
-### 🔸 Upgrades (Effect Level)
-These determine how powerful the effect will be — similar to beacon levels.
+Build the stack from the bottom up. Place the **Base Stone** as the foundation, then the **Level** block, then the **Range** block, and finally the **Effect** block. The effect block checks the two blocks immediately beneath it. Interact with the effect block to turn it on or off.
 
-| Upgrade Type | Effect Level | Example |
-|---------------|---------------|----------|
-| **Redstone Upgrade** | Level 1 | Basic strength or speed |
-| **Glowstone Upgrade** | Level 2 | Medium power boost |
-| **Amethyst Upgrade** | Level 3 | Maximum strength |
+### Upgrades (Effect Level)
 
----
+| Level block | Status effect level | Area Damage per pulse |
+| --- | ---: | ---: |
+| Redstone | I | 1 |
+| Glowstone | II | 2 |
+| Amethyst | III | 3 |
 
-### 🔹 Amplifiers (Effect Range)
-The Amplifier determines how far the pillar’s effect reaches.
+### Amplifiers (Effect Range)
 
-| Amplifier Type | Range (Blocks) |
-|----------------|----------------|
-| **Iron Amplifier** | 25 |
-| **Gold Amplifier** | 50 |
-| **Diamond Amplifier** | 75 |
-| **Netherite Amplifier** | 100 |
-| **Nether Star Amplifier** | 250 |
+| Range block | Radius from the effect block |
+| --- | ---: |
+| Iron | 25 blocks |
+| Gold | 50 blocks |
+| Diamond | 75 blocks |
+| Netherite | 100 blocks |
+| Nether Star | 250 blocks |
 
-> Amplifiers must be placed **on top of the Upgrade block**.
+### Effect Beacons
 
-<p align="center">
-  <img 
-    src="https://api.mcpedl.com/storage/submissions/180484/images/effect-pillars-v01_3.png"
-    alt="Amplifier Example"
-    width="60%"
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-  />
-</p>
+| Target | Effects |
+| --- | --- |
+| Players within range | Absorption, Conduit Power, Fire Resistance, Haste, Health Boost, Hero of the Village, Invisibility, Jump Boost, Night Vision, Regeneration, Resistance, Saturation, Slow Falling, Speed, Strength and Water Breathing |
+| Sneaking players within range | Levitation |
+| Monsters within range | Area Damage, Poison, Slowness, Weakness and Wither |
 
----
-
-### 🔸 Effect Beacons
-Placed at the top of the pillar, these define which **effect** is granted or applied.
-
-There are two main categories:
-- **Supportive Effects (Blue Beacons):** Affect players and allies.
-- **Offensive Effects (Red Beacons):** Target only hostile mobs, ideal for base defense.
-
-| Example Effect | Type | Description |
-|----------------|------|-------------|
-| **Speed** | Support | Increases player movement speed. |
-| **Strength** | Support | Boosts attack power. |
-| **Regeneration** | Support | Gradually restores health. |
-| **Poison Aura** | Offensive | Damages nearby mobs. |
-| **Weakness Field** | Offensive | Reduces enemy attack damage. |
-
----
+Use **Haste** above a mine or **Water Breathing** over an underwater build. For Levitation, hold sneak while within range to rise.
 
 ## Base Stone
 
-All components are crafted using the **Base Stone**, a key ingredient used across recipes.
-
-<p align="center">
-  <img 
-    src="https://api.mcpedl.com/storage/submissions/180484/images/effect-pillars-v01_18.png"
-    alt="Base Stone Recipe"
-    width="60%"
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-  />
-</p>
-
----
+Put one block of coal in the center of a crafting grid, four blackstone on the sides, and four cobbled deepslate in the corners.
 
 ## Guide Book
 
-When entering a world for the first time, you’ll receive a <b>Guide Book</b> explaining all recipes and effects.  
-If lost, it can be crafted again easily.
-
-<p align="center">
-  <img 
-    src="https://media.forgecdn.net/attachments/description/1089788/description_68babfd8-5aeb-4e3c-bba5-6bf906093f7d.png"
-    alt="Guide Book Recipe"
-    width="60%"
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-  />
-</p>
-
+Combine **1 paper** with **1 Base Stone** at a crafting table to make the Effect Pillars guide book. Open it in-game to look up the individual effect recipes.

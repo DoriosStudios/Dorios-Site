@@ -1,0 +1,1270 @@
+{
+  "schemaVersion": 1,
+  "rendererVersion": 4,
+  "blocks": {
+    "utilitycraft:advanced_power_condenser_unit": {
+      "identifier": "utilitycraft:advanced_power_condenser_unit",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_advanced_power_condenser_unit-8466dc71dca3-6a34d8e5937899ce4b203b4a.png",
+      "hash": "6a34d8e5937899ce4b203b4acceab14f87e5a2a1c92daa314942084deb8d5acc",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:autosieve_controller": {
+      "identifier": "utilitycraft:autosieve_controller",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_autosieve_controller-21e2fd4be3f9-e0fb3236aa1797558be19fa3.png",
+      "hash": "e0fb3236aa1797558be19fa3b265ff0664d4eba8e365db5b09dac968e66052c1",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:basic_power_condenser_unit": {
+      "identifier": "utilitycraft:basic_power_condenser_unit",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_basic_power_condenser_unit-5f367aa1b1a1-ae3857607814ed1a78b92815.png",
+      "hash": "ae3857607814ed1a78b928151727a8d41cbd6bb77fcb3f98842c612439674663",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:bronze_block": {
+      "identifier": "utilitycraft:bronze_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_bronze_block-c85627f3d1cc-38d9e104d3c2a93f900e9465.png",
+      "hash": "38d9e104d3c2a93f900e94652b0b4b6e6cc5740fb188287a3cc6ac384d00e06a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:brute_bronze_block": {
+      "identifier": "utilitycraft:brute_bronze_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_brute_bronze_block-54127c1d7200-10fcb58e08f94198a350cd44.png",
+      "hash": "10fcb58e08f94198a350cd445b75de3cf9a1a646b2fe481431a4e7e102764263",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:raw_tin_block": {
+      "identifier": "utilitycraft:raw_tin_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_raw_tin_block-c12636c0ba6a-fcd44d228092a94548e222c2.png",
+      "hash": "fcd44d228092a94548e222c294234a085f699b35b0534899145e8b2155790f47",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:tin_block": {
+      "identifier": "utilitycraft:tin_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_tin_block-5b89c7defdac-8985ec1d331ae4230e081e32.png",
+      "hash": "8985ec1d331ae4230e081e32c3a6183597c27a06c360f71db2a57424cf0fc71c",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:bronze_bricks": {
+      "identifier": "utilitycraft:bronze_bricks",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_bronze_bricks-aabeded20fad-8616cd14c5a1756317357b6e.png",
+      "hash": "8616cd14c5a1756317357b6ebeb04a1581e7286f3ac2168797b3c44bc0667dd2",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:bronze_case": {
+      "identifier": "utilitycraft:bronze_case",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_bronze_case-413eb5ef77ca-85d0e0d6b89c8fc0cc1b5e59.png",
+      "hash": "85d0e0d6b89c8fc0cc1b5e595b734ac54c8e6db37b1793d2fd76eb54d9294224",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:bronze_controller_case": {
+      "identifier": "utilitycraft:bronze_controller_case",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_bronze_controller_case-7a47d62f29b3-98f11997c51e163410939e00.png",
+      "hash": "98f11997c51e163410939e00f8f16d83cec5cbfff312e1a88b896c4f190b9b31",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:bronze_energy_port": {
+      "identifier": "utilitycraft:bronze_energy_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_bronze_energy_port-c4c5a6f00200-e04fba170f6c323211358694.png",
+      "hash": "e04fba170f6c3232113586943f1d32f60a9d5139f96497428910e0a7738d0775",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:bronze_gas_port": {
+      "identifier": "utilitycraft:bronze_gas_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_bronze_gas_port-7c02a9928647-0f05a46534ba2560608c817c.png",
+      "hash": "0f05a46534ba2560608c817c2ff7d684fca803b4d1e8031867d438adb69d4117",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:bronze_hazard_block": {
+      "identifier": "utilitycraft:bronze_hazard_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_bronze_hazard_block-784d9fd59476-7c6d13c97efd1414e57e6cc6.png",
+      "hash": "7c6d13c97efd1414e57e6cc6482e3d4ee39a02a3ca1be1b4eeab54d850d0dcf5",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:bronze_item_port": {
+      "identifier": "utilitycraft:bronze_item_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_bronze_item_port-63b440cfabb1-9b29e05547cdd3b2640ee557.png",
+      "hash": "9b29e05547cdd3b2640ee55728acddcce42c2f16f73ce2b1e8d1d4e9d7ac68fd",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:bronze_fluid_port": {
+      "identifier": "utilitycraft:bronze_fluid_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_bronze_fluid_port-f94dc274b857-a1e1413d5d2070d16e47f334.png",
+      "hash": "a1e1413d5d2070d16e47f334e6173163f0ba26849bd23af7a1c6cb36f7118ade",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:bronze_plated_block": {
+      "identifier": "utilitycraft:bronze_plated_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_bronze_plated_block-6eeb64008512-76e6ed051c38be7baeb2e676.png",
+      "hash": "76e6ed051c38be7baeb2e676d08c32158154ab3de3647d51c1a1fa183b4c2897",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:bronze_vent_panel": {
+      "identifier": "utilitycraft:bronze_vent_panel",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_bronze_vent_panel-07939f177d7f-219740761d8440eff792b804.png",
+      "hash": "219740761d8440eff792b804df54399783a0b2a1741f13aaf99cf3a62d49be38",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:chemical_processor": {
+      "identifier": "utilitycraft:chemical_processor",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_chemical_processor-0ecbc254df14-5438b76a7e9a0e4312af081e.png",
+      "hash": "5438b76a7e9a0e4312af081eab960c0f1ea0807e1f6925d534455b2b4cd0defc",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:combustion_chamber_controller": {
+      "identifier": "utilitycraft:combustion_chamber_controller",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_combustion_chamber_controller-9561da22208b-73fcf8fb9947b4699bebbbaa.png",
+      "hash": "73fcf8fb9947b4699bebbbaa4b90ba2f16d28c1101870355a172a5ec2c381835",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:controller_case": {
+      "identifier": "utilitycraft:controller_case",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_controller_case-2fe3802ddd37-9470186390a42f4b113e72dd.png",
+      "hash": "9470186390a42f4b113e72dd7f55bc36fcc4621b8b4c9bc8b41f1973aea520a2",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:crusher_controller": {
+      "identifier": "utilitycraft:crusher_controller",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_crusher_controller-0f87e43c09e3-4f00e661f9c2c2952ed51ed5.png",
+      "hash": "4f00e661f9c2c2952ed51ed5d638d0aea85d55d9d8cd35d5f6abb61ec92db37b",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:deepslate_tin_ore": {
+      "identifier": "utilitycraft:deepslate_tin_ore",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_deepslate_tin_ore-e6fe979ba314-417e01e997eb5389812226b6.png",
+      "hash": "417e01e997eb5389812226b668ae1e1c3eb04c0f5a06a54e6c81c5829893f9c4",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:electro_press_controller": {
+      "identifier": "utilitycraft:electro_press_controller",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_electro_press_controller-f73d12a5135c-ed054b072f5ff5c4adbc3c28.png",
+      "hash": "ed054b072f5ff5c4adbc3c28409614100e12efb10755e0e6da32aff731505a0d",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:expert_power_condenser_unit": {
+      "identifier": "utilitycraft:expert_power_condenser_unit",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_expert_power_condenser_unit-d0d1533f6a4f-70afcc45b556ad7b998dbc63.png",
+      "hash": "70afcc45b556ad7b998dbc633817e5848326d619dd4f1cbfad265538e0544b62",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:fuel_assemblies": {
+      "identifier": "utilitycraft:fuel_assemblies",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_fuel_assemblies-f8e78ccb5c23-0cab8509383319b6f5381466.png",
+      "hash": "0cab8509383319b6f5381466f0e8e655cdc6c1745b7bc89083eafbe04bd1bb90",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.utilitycraft_fuel_assemblies",
+      "stats": {
+        "bones": 3,
+        "cubes": 11,
+        "planes": 0,
+        "faces": 66
+      }
+    },
+    "utilitycraft:gas_tank_controller": {
+      "identifier": "utilitycraft:gas_tank_controller",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_gas_tank_controller-ddb0b112aec0-e406b2cd3761ef65d519b5e1.png",
+      "hash": "e406b2cd3761ef65d519b5e14fc78636bc010128e055f4fac198adad965f293b",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:gas_turbine_controller": {
+      "identifier": "utilitycraft:gas_turbine_controller",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_gas_turbine_controller-d4db15358d99-db7d718798b22d78bbd2e150.png",
+      "hash": "db7d718798b22d78bbd2e150d2f1ae2e113f0ff15956a6526386c90a4b35da82",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:heat_conductor": {
+      "identifier": "utilitycraft:heat_conductor",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_heat_conductor-d56d98dce02d-dc28fb82db23003beb3f1fc1.png",
+      "hash": "dc28fb82db23003beb3f1fc10e0a47d607519792c6cc012ba353e49e195c7b97",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:incinerator_controller": {
+      "identifier": "utilitycraft:incinerator_controller",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_incinerator_controller-55c20bf4a902-a725cc807a0f75fefcb8ea4a.png",
+      "hash": "a725cc807a0f75fefcb8ea4a192c8698d90f66d4aaca0ebdc841ae2150f08d0c",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:infuser_controller": {
+      "identifier": "utilitycraft:infuser_controller",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_infuser_controller-a683baa6c600-a40998cec970f9e671cfc8b4.png",
+      "hash": "a40998cec970f9e671cfc8b4b9b0abf59b16afd656de6be94728ddac03bdca9d",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:isotope_centrifuge": {
+      "identifier": "utilitycraft:isotope_centrifuge",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_isotope_centrifuge-d3f9243c8afc-2218e0099001af8e970ec6b6.png",
+      "hash": "2218e0099001af8e970ec6b6fd0a9b77fc1d530b163e74b75f37fb9b83c95e04",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:liquid_tank_controller": {
+      "identifier": "utilitycraft:liquid_tank_controller",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_liquid_tank_controller-448a13ff4a69-ecf10230d0345dd129473c7f.png",
+      "hash": "ecf10230d0345dd129473c7ff0c4e02dec6f5c02b0da0dc81a1a84543c7b99b6",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:magmatic_chamber_controller": {
+      "identifier": "utilitycraft:magmatic_chamber_controller",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_magmatic_chamber_controller-d5818e8623d9-70e0eb08ca82e5d8779401ae.png",
+      "hash": "70e0eb08ca82e5d8779401ae1ff98d76dd87359f6fd2ec01d1e8132c7af1a2ba",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:netherite_case": {
+      "identifier": "utilitycraft:netherite_case",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_netherite_case-66322b5fbf0d-6f0f02e5e34b25f9ac13f778.png",
+      "hash": "6f0f02e5e34b25f9ac13f7780dcfa02be10ba3c9d3e4b76c5ed68bf41a741711",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:netherite_energy_port": {
+      "identifier": "utilitycraft:netherite_energy_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_netherite_energy_port-00d7cdd8edac-d0ca79252898d3f9343f0f77.png",
+      "hash": "d0ca79252898d3f9343f0f77586a7c2d978c8728f198d055b2f99284e050c950",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:netherite_gas_port": {
+      "identifier": "utilitycraft:netherite_gas_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_netherite_gas_port-010ea488280e-4fb299d3ca03149aacdd9150.png",
+      "hash": "4fb299d3ca03149aacdd9150ee06db707cba6ae807e9ba45c2004bc985b8ad00",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:netherite_item_port": {
+      "identifier": "utilitycraft:netherite_item_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_netherite_item_port-906e428160c6-1cc3f266d124a09958f131bf.png",
+      "hash": "1cc3f266d124a09958f131bf880ad32d19991ecf5e339f9636670123e1bd774f",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:netherite_fluid_port": {
+      "identifier": "utilitycraft:netherite_fluid_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_netherite_fluid_port-0ac1fc672329-b1d535c5cf934cba73387891.png",
+      "hash": "b1d535c5cf934cba733878915641c9cfa3ce4ce0a01f211a5e65db1c54fd4561",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:netherite_plated_block": {
+      "identifier": "utilitycraft:netherite_plated_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_netherite_plated_block-0560404b141d-edf36f034913d2773098ea99.png",
+      "hash": "edf36f034913d2773098ea9957e78716445c1227d586da1cd197f93d932234e1",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:netherite_vent_panel": {
+      "identifier": "utilitycraft:netherite_vent_panel",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_netherite_vent_panel-637e461f340b-4b26decbee3a9fb6b95057d3.png",
+      "hash": "4b26decbee3a9fb6b95057d3c761c8e8672b9dabdaa5cb9169e725265ff5bd8d",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:nuclear_reactor_controller": {
+      "identifier": "utilitycraft:nuclear_reactor_controller",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_nuclear_reactor_controller-cb19eb57e93b-dbdba21b562bcb74ec40b41c.png",
+      "hash": "dbdba21b562bcb74ec40b41c9b5b3d6c1ff61cccfa35174c3e0e7498378b9bd1",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:power_condenser_controller": {
+      "identifier": "utilitycraft:power_condenser_controller",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_power_condenser_controller-a5b10ffc7575-dec3a9fdf528420e5e0928f9.png",
+      "hash": "dec3a9fdf528420e5e0928f9a871f4cd57121012d38b48e5d2c6acac9b7c7de9",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:reaction_chamber": {
+      "identifier": "utilitycraft:reaction_chamber",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_reaction_chamber-9e0161281641-ead66bb6fee0b1fe8068e97c.png",
+      "hash": "ead66bb6fee0b1fe8068e97c158b5234b81b689bf8b6582f7e98903b572d4794",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:reaction_chamber_controller": {
+      "identifier": "utilitycraft:reaction_chamber_controller",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_reaction_chamber_controller-671c7f8b74de-89375337285312e7c21b3210.png",
+      "hash": "89375337285312e7c21b3210702ff269b59f2a6412bbf6b706ade4dacfd60041",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:reinforced_bronze_glass": {
+      "identifier": "utilitycraft:reinforced_bronze_glass",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_reinforced_bronze_glass-16957c792a9e-0209252c84c32958f1b462b1.png",
+      "hash": "0209252c84c32958f1b462b172dfcbf3ff019ef76d2983015cbff469ac0a45d6",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.utilitycraft_glass",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:reinforced_induction_anvil": {
+      "identifier": "utilitycraft:reinforced_induction_anvil",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_reinforced_induction_anvil-88f75d7e2c22-b3522164ec00f4c113e670e2.png",
+      "hash": "b3522164ec00f4c113e670e2d879b8ab43df6de919706ee0d50377a73ad0584c",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "utilitycraft:on": false,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "geometry.induction_anvil",
+      "stats": {
+        "bones": 4,
+        "cubes": 13,
+        "planes": 0,
+        "faces": 78
+      }
+    },
+    "utilitycraft:reinforced_netherite_glass": {
+      "identifier": "utilitycraft:reinforced_netherite_glass",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_reinforced_netherite_glass-66a8fb1cf09f-06052ab79e63dcb09230f577.png",
+      "hash": "06052ab79e63dcb09230f577dfde58301b3b23cf911dbbbe45f7fcdb07750510",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.utilitycraft_glass",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:reinforced_steel_glass": {
+      "identifier": "utilitycraft:reinforced_steel_glass",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_reinforced_steel_glass-538460cdd521-aa39ac630ff7a866434c5705.png",
+      "hash": "aa39ac630ff7a866434c57052364ce215115b808309e663c893c6269702acfea",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.utilitycraft_glass",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:rod_control": {
+      "identifier": "utilitycraft:rod_control",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_rod_control-b9fdf8d396fc-3f45f6439e998f45b72aced8.png",
+      "hash": "3f45f6439e998f45b72aced8b278f509ccecceea1f1da61c029362eb79461cd2",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:stamped_netherite_plate": {
+      "identifier": "utilitycraft:stamped_netherite_plate",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_stamped_netherite_plate-e518377aa597-73885e06a2e1980d941a484f.png",
+      "hash": "73885e06a2e1980d941a484f49c0fab2a9e1be752c0453d7042845ba84999993",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:steel_bricks": {
+      "identifier": "utilitycraft:steel_bricks",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_steel_bricks-af0d982b55e7-a364edcf26dbf956e2dc9856.png",
+      "hash": "a364edcf26dbf956e2dc985665621445fa37e6ce442d0980207b64be418d6384",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:steel_case": {
+      "identifier": "utilitycraft:steel_case",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_steel_case-fedfea270970-b25d934678cb0eda71d7229e.png",
+      "hash": "b25d934678cb0eda71d7229eea084712bb4d7ed5af1c99b5d577fe69f923f960",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:steel_energy_port": {
+      "identifier": "utilitycraft:steel_energy_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_steel_energy_port-01234282c7ae-eb9a806d007800e87a291127.png",
+      "hash": "eb9a806d007800e87a2911277c102006e7c1bdccd5574c86664eec15857a4e1a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:steel_gas_port": {
+      "identifier": "utilitycraft:steel_gas_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_steel_gas_port-d679f3eb7126-9d1c0a616ddc0103f4d2c2d9.png",
+      "hash": "9d1c0a616ddc0103f4d2c2d9442f552ed873aa3efcf55caf2562e06465347682",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:steel_item_port": {
+      "identifier": "utilitycraft:steel_item_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_steel_item_port-84542bdd40cd-36c43e2b5ea1056a67155c28.png",
+      "hash": "36c43e2b5ea1056a67155c2835442780ce07bd52dd63955eec111ac4c89db783",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:steel_fluid_port": {
+      "identifier": "utilitycraft:steel_fluid_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_steel_fluid_port-a268863cd57f-d8ab3cabadab5ec78e87769c.png",
+      "hash": "d8ab3cabadab5ec78e87769c81093ca70e840dd49c5688b537be74344feacb70",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:steel_plated_block": {
+      "identifier": "utilitycraft:steel_plated_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_steel_plated_block-c10a7966ee06-ceac5f1588ea8ee21ff3f031.png",
+      "hash": "ceac5f1588ea8ee21ff3f031c1a66da467d6fda24b0980e2a7463fae181f19f8",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:steel_vent_panel": {
+      "identifier": "utilitycraft:steel_vent_panel",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_steel_vent_panel-3031f2a00b23-45b6474ca8482dcb6049595c.png",
+      "hash": "45b6474ca8482dcb6049595cda52b3ad58ffbf008588016ac3b1b1748e237340",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:tempered_bronze_glass": {
+      "identifier": "utilitycraft:tempered_bronze_glass",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_tempered_bronze_glass-62a931fa2008-19627792eb15f5b4c8478cb4.png",
+      "hash": "19627792eb15f5b4c8478cb42d23b293af6922408942fffedde0675ddee8334e",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.utilitycraft_glass",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:tempered_netherite_glass": {
+      "identifier": "utilitycraft:tempered_netherite_glass",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_tempered_netherite_glass-c409d976d138-7ba30a96a165488834b991ba.png",
+      "hash": "7ba30a96a165488834b991bade2c1fd45e835dbf1f651e7aea95f650705c2a28",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.utilitycraft_glass",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:tempered_steel_glass": {
+      "identifier": "utilitycraft:tempered_steel_glass",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_tempered_steel_glass-c6000c202192-5aa55fdb376606e29a514b28.png",
+      "hash": "5aa55fdb376606e29a514b28e2da79138aa9a7064e1923f6d8d1ea1a9884f1f8",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.utilitycraft_glass",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:tempered_tin_glass": {
+      "identifier": "utilitycraft:tempered_tin_glass",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_tempered_tin_glass-ed0e34e7e0eb-7b8d570d75ae6e8e47ab40d2.png",
+      "hash": "7b8d570d75ae6e8e47ab40d23e6d1b88a9e8d82ddfb85149a4e26a6818e51532",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.utilitycraft_glass",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:thermo_reactor_controller": {
+      "identifier": "utilitycraft:thermo_reactor_controller",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_thermo_reactor_controller-273eba34fa3d-93e6ae4e8757de481b921a7a.png",
+      "hash": "93e6ae4e8757de481b921a7a01cee83dafd4ba5c8243744aace6894b0c84869d",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:has_selection": true,
+        "minecraft:cardinal_direction": "north"
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:thermo_core": {
+      "identifier": "utilitycraft:thermo_core",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_thermo_core-48b455fc8f2d-d14e027dc2aef6a0178b8796.png",
+      "hash": "d14e027dc2aef6a0178b8796b3e2126fb6f15df1dd91242eca331c783f3272cb",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:state": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:tin_case": {
+      "identifier": "utilitycraft:tin_case",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_tin_case-6e941852cf1f-76ee6f56858e4708cabd45d2.png",
+      "hash": "76ee6f56858e4708cabd45d2bef9db8b1a724bbdd41611e3869880bbf79cec67",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:tin_energy_port": {
+      "identifier": "utilitycraft:tin_energy_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_tin_energy_port-99ab5e1c766b-c24981f6b946df43291f8891.png",
+      "hash": "c24981f6b946df43291f8891973698c9919215f33010799ae6d789b4b8e3d5e0",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:tin_gas_port": {
+      "identifier": "utilitycraft:tin_gas_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_tin_gas_port-d948aec6a0b4-00d05f3c682016a4734f1539.png",
+      "hash": "00d05f3c682016a4734f15398168ff320df40ef4a3cfefb488f1072016848b85",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:tin_item_port": {
+      "identifier": "utilitycraft:tin_item_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_tin_item_port-bfe970d1e4cb-94ed29eb499db9ad2a715ae1.png",
+      "hash": "94ed29eb499db9ad2a715ae18e679da1d007d72143673169a3ff019362cd49b6",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:tin_fluid_port": {
+      "identifier": "utilitycraft:tin_fluid_port",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_tin_fluid_port-51ce50e1ba9c-0643fd16dab953a9c12d3c88.png",
+      "hash": "0643fd16dab953a9c12d3c885f5b9a0f273d7e2638a8d7e7e2e68945a2d2aae3",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:active": 0
+      },
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:tin_ore": {
+      "identifier": "utilitycraft:tin_ore",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_tin_ore-489645510be8-b4ccf6d1cd23da2d92f7f5e2.png",
+      "hash": "b4ccf6d1cd23da2d92f7f5e2471146d28e49de5a7efd963729b445de50d1e3b5",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:tin_plated_block": {
+      "identifier": "utilitycraft:tin_plated_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_tin_plated_block-84583096ee62-04b8dde4b3fc0d7321f861c6.png",
+      "hash": "04b8dde4b3fc0d7321f861c68d39db296ba9713e80460b04957f323360763f62",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:tin_vent_panel": {
+      "identifier": "utilitycraft:tin_vent_panel",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_tin_vent_panel-72a8133ed2c7-ac79c2eb8988eacce3c0de7c.png",
+      "hash": "ac79c2eb8988eacce3c0de7c6cde38e6a614f7d6a941c22d9ea47c61b680407e",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:ultimate_power_condenser_unit": {
+      "identifier": "utilitycraft:ultimate_power_condenser_unit",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_ultimate_power_condenser_unit-5fad50c0bd79-02336c505767ad19f7e36602.png",
+      "hash": "02336c505767ad19f7e36602754d8586942a00549f01d0d82b9795749c7ebf14",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:netherite_bricks": {
+      "identifier": "utilitycraft:netherite_bricks",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_netherite_bricks-a30eef88e62d-5347ad9d22d0fe0886dd7d9b.png",
+      "hash": "5347ad9d22d0fe0886dd7d9b89afbb301ef1e1c1917419c222c07574e2544c63",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:netherite_controller_case": {
+      "identifier": "utilitycraft:netherite_controller_case",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_netherite_controller_case-424d0ba83812-286aca6e5db34a23747ada23.png",
+      "hash": "286aca6e5db34a23747ada23f8ab05b6136644349a8ae2bb63e3e8491b4300b6",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:netherite_hazard_block": {
+      "identifier": "utilitycraft:netherite_hazard_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_netherite_hazard_block-d23924487191-f8b5513524d928e442a1b486.png",
+      "hash": "f8b5513524d928e442a1b4865467cd879709c2e34c3cf4ce8d4579b4abfc70f6",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:steel_hazard_block": {
+      "identifier": "utilitycraft:steel_hazard_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_steel_hazard_block-eb67d05d0d7d-4f3cd9f00b45a5958865e2f4.png",
+      "hash": "4f3cd9f00b45a5958865e2f4f7061794ad91e21002ef2abd67acfb55b633837c",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:tin_hazard_block": {
+      "identifier": "utilitycraft:tin_hazard_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_tin_hazard_block-ab701cf13826-36bac8020911278791604a8e.png",
+      "hash": "36bac8020911278791604a8e176c6451fb063809d3c4861ccf22e5d21628684f",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    }
+  }
+}

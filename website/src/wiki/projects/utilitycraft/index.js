@@ -117,10 +117,16 @@ for (const [id, profile] of Object.entries(generatorProfiles)) {
   }
 }
 
+const itemSpriteOverrides = {
+  'utilitycraft:lucky_fishing_rod_item': '/img/wiki/vanilla/Items/fishing_rod_uncast.png',
+  'utilitycraft:settings': 'textures/items/dev_glyph_color.png',
+};
+
 const itemProfileIds = new Set([
   ...Object.keys(documentationProfiles.items),
   ...Object.keys(meshProfiles),
   ...Object.keys(itemEditorialProfiles),
+  ...Object.keys(itemSpriteOverrides),
 ]);
 const itemProfiles = Object.fromEntries([...itemProfileIds].map((identifier) => {
   const generated = documentationProfiles.items[identifier] ?? {};
@@ -130,6 +136,7 @@ const itemProfiles = Object.fromEntries([...itemProfileIds].map((identifier) => 
     ...generated,
     ...mesh,
     ...editorial,
+    ...(itemSpriteOverrides[identifier] && {image: itemSpriteOverrides[identifier]}),
     documentation: {
       ...(generated.documentation ?? {}),
       ...(mesh.documentation ?? {}),

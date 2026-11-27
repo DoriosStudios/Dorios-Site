@@ -1,10 +1,10 @@
 .wikiPage {
 	--wiki-ui-font: "Space Grotesk Variable", "Space Grotesk", sans-serif;
 	--wiki-display-font: "League Spartan Variable", "League Spartan", sans-serif;
-	--wiki-project-accent: color-mix(in srgb, var(--card-primary, #ff6d18) 48%, var(--card-secondary, #ff9b49));
-	--ds-accent: color-mix(in srgb, var(--wiki-project-accent) 58%, #151515);
-	--ds-accent-light: color-mix(in srgb, var(--wiki-project-accent) 56%, white);
-	--ds-accent-ink: white;
+	--wiki-project-accent: var(--card-accent);
+	--ds-accent: var(--wiki-project-accent);
+	--ds-accent-light: var(--wiki-project-accent);
+	--ds-accent-ink: var(--card-accent-ink);
 	width: min(calc(100% - var(--ds-page-inline)), var(--ds-content-max));
 	margin: 0 auto;
 	padding-bottom: var(--ds-section-space);
@@ -596,7 +596,7 @@
 	place-items: center;
 	border-radius: 12px;
 	background: color-mix(in srgb, var(--category-accent) 12%, var(--ds-surface-raised));
-	color: var(--category-accent);
+	color: var(--wiki-project-accent);
 	font-size: 1.85rem;
 }
 .categoryCard div {
@@ -614,7 +614,7 @@
 }
 .categoryCard > b {
 	align-self: center;
-	color: var(--category-accent);
+	color: var(--wiki-project-accent);
 	transition: transform 220ms ease;
 }
 .categoryCard:hover > b,
@@ -850,7 +850,6 @@
 }
 .filterChips .activeChip span {
 	color: currentColor;
-	opacity: 0.72;
 }
 .recipeFilterToolbar {
 	display: flex;
@@ -884,7 +883,7 @@
 	place-items: center;
 	border-radius: 999px;
 	background: var(--wiki-project-accent);
-	color: var(--ds-bg);
+	color: var(--ds-accent-ink);
 	font-size: 0.66rem;
 }
 .recipeFilterOverlay {
@@ -1016,7 +1015,7 @@
 }
 .resetRecipeFilters { background: var(--ds-bg); color: var(--ds-text); }
 .resetRecipeFilters:disabled { cursor: default; opacity: 0.42; }
-.applyRecipeFilters { background: var(--wiki-project-accent); color: var(--ds-bg); }
+.applyRecipeFilters { background: var(--wiki-project-accent); color: var(--ds-accent-ink); }
 .filterSelect {
 	min-width: min(100%, 242px);
 	display: grid;
@@ -2289,7 +2288,6 @@
 }
 .structureGuide .eyebrow {
 	color: currentColor;
-	opacity: 0.7;
 }
 .structureGuide h2 {
 	color: currentColor;
@@ -3265,7 +3263,7 @@
 	transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
 }
 .autosieveToggle:hover,
-.autosieveToggle:focus-visible { background: var(--wiki-project-accent); border-color: var(--wiki-project-accent); color: #fff; transform: translateX(3px); }
+.autosieveToggle:focus-visible { background: var(--wiki-project-accent); border-color: var(--wiki-project-accent); color: var(--ds-accent-ink); transform: translateX(3px); }
 .autosieveToggle b { font-size: 1.2rem; line-height: 0.6; }
 .autosieveMinTier {
 	display: inline-flex;
@@ -3783,7 +3781,28 @@
 	border-radius: 14px;
 	background: color-mix(in srgb, var(--ds-surface-raised) 44%, transparent);
 }
-.acquisitionIcon { width: 2.4rem; height: 2.4rem; display: grid; place-items: center; border-radius: 11px; background: color-mix(in srgb, var(--ds-accent) 10%, transparent); color: var(--ds-accent); }
+.acquisitionIcon {
+	width: 2.4rem;
+	height: 2.4rem;
+	display: grid;
+	grid: minmax(0, 1fr) / minmax(0, 1fr);
+	place-items: center;
+	border-radius: 6px;
+	overflow: hidden;
+	background: color-mix(in srgb, var(--ds-accent) 10%, transparent);
+	color: var(--ds-accent);
+}
+.acquisitionIcon > img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-width: 0;
+	min-height: 0;
+	padding: 0.2rem;
+	box-sizing: border-box;
+	object-fit: contain;
+	image-rendering: pixelated;
+}
 .acquisitionCard small,
 .recipeAcquisition small { display: block; margin-bottom: 0.25rem; color: var(--ds-muted); font-family: var(--wiki-ui-font); font-size: 0.76rem; font-weight: 800; letter-spacing: 0.075em; text-transform: uppercase; }
 .acquisitionCard p { margin: 0.35rem 0 0; color: var(--ds-muted); font-size: 0.87rem; }
@@ -4763,7 +4782,7 @@
 .siftableBlockFacts .sieveMeshBadge { width: fit-content; margin-top: .24rem; }
 .siftableBlockFacts .sieveMeshBadge img { width: 22px; height: 22px; }
 .siftableBlockFacts > button { min-height: 38px; display: inline-flex; align-items: center; justify-content: space-between; gap: .65rem; padding: .45rem .65rem; border: 1px solid color-mix(in srgb, var(--wiki-project-accent) 42%, var(--ds-border)); border-radius: 9px; background: transparent; color: var(--ds-text); font: 800 .68rem var(--wiki-ui-font); cursor: pointer; }
-.siftableBlockFacts > button:hover { background: var(--wiki-project-accent); color: #fff; }
+.siftableBlockFacts > button:hover { background: var(--wiki-project-accent); color: var(--ds-accent-ink); }
 .siftableBlockFacts > button b { font-size: 1rem; }
 
 @media (max-width: 760px) {
@@ -4974,4 +4993,8 @@
   .machineCatalogCard { grid-template-columns: 76px minmax(0,1fr); padding: .85rem; }
   .machineCatalogImage { width: 76px; height: 76px; }
   .machineCatalogImage .blockPreview { --block-preview-size: 76px !important; }
+}
+
+@media (max-width: 640px) {
+  .detailSectionNav[data-workshop] { flex-wrap: wrap; }
 }

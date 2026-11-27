@@ -195,7 +195,7 @@
 
 .tags span:first-child {
 	border-color: color-mix(in srgb, var(--card-primary) 68%, var(--ds-border));
-	color: color-mix(in srgb, var(--card-primary) 54%, var(--ds-text));
+	color: var(--card-accent, var(--ds-text));
 }
 
 .downloadBadge {
@@ -208,7 +208,7 @@
 	border: 1px solid color-mix(in srgb, var(--card-primary) 32%, var(--ds-border));
 	border-radius: 999px;
 	background: color-mix(in srgb, var(--ds-surface-raised) 82%, transparent);
-	color: color-mix(in srgb, var(--card-primary) 64%, var(--ds-text));
+	color: var(--card-accent, var(--ds-text));
 	font-size: 0.65rem;
 	line-height: 1;
 	backdrop-filter: blur(8px);
@@ -233,7 +233,7 @@
 	border: 1px solid color-mix(in srgb, var(--card-primary) 26%, var(--ds-border));
 	border-radius: 13px;
 	background: color-mix(in srgb, var(--ds-surface-raised) 78%, transparent);
-	color: color-mix(in srgb, var(--card-primary) 58%, var(--ds-text));
+	color: var(--card-accent, var(--ds-text));
 	transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 

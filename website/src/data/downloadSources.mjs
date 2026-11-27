@@ -35,20 +35,22 @@ export function normalizeSource(source, result, previous, now = new Date().toISO
 
 export function aggregateSources(sources) {
   const seen = new Set();
-  let total = 0, clicks = 0, counted = 0;
+  let total = 0, clicks = 0, downloadStarts = 0, counted = 0;
   const rows = sources.map(source => {
     const eligible = source.enabled && source.countable && validCounter(source.value);
-    const duplicate = eligible && seen.has(source.countingKey);
+    const key = `${source.metric}:${source.countingKey}`;
+    const duplicate = eligible && seen.has(key);
     if (eligible && !duplicate) {
-      seen.add(source.countingKey);
+      seen.add(key);
       if (source.metric === 'clicks') clicks += source.value;
+      else if (source.metric === 'download-starts') downloadStarts += source.value;
       else { total += source.value; counted++; }
     }
     return {...source, included: Boolean(eligible && !duplicate), duplicate: Boolean(duplicate)};
   });
-  if (!Number.isSafeInteger(total) || !Number.isSafeInteger(clicks)) throw new Error('Counter total exceeds safe integer range');
-  return {sources: rows, total, clicks, available: counted > 0,
-    updatedAt: rows.filter(row => row.included).map(row => row.updatedAt).filter(Boolean).sort().at(-1) ?? null};
+  if (![total, clicks, downloadStarts].every(Number.isSafeInteger)) throw new Error('Counter total exceeds safe integer range');
+  return {sources: rows, total, clicks, downloadStarts, available: counted > 0,
+    updatedAt: rows.filter(row => row.included && row.metric === 'downloads').map(row => row.updatedAt).filter(Boolean).sort().at(-1) ?? null};
 }
 
 export function legacySources(project, statistics) {

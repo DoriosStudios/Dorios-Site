@@ -1,0 +1,5441 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-27T16:17:02.534840+00:00",
+  "project": {
+    "id": "basics",
+    "name": "Dorios' Basics",
+    "version": "1.0.1"
+  },
+  "source": {
+    "bridgeProject": "Dorios-Basics",
+    "revision": "6f534de6b9dc",
+    "dirty": false
+  },
+  "counts": {
+    "items": 47,
+    "catalogItems": 47,
+    "blocks": 9,
+    "entities": 0,
+    "recipes": 132,
+    "variantGroups": 0
+  },
+  "content": {
+    "items": [
+      {
+        "id": "ancient_debris_chunk",
+        "slug": "ancient-debris-chunk",
+        "identifier": "utilitycraft:ancient_debris_chunk",
+        "name": "Ancient Debris Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/ancient_debris_chunk.png",
+        "source": "BP/items/materials/pebbles/ancient_debris_chunk.json"
+      },
+      {
+        "id": "andesite_pebble",
+        "slug": "andesite-pebble",
+        "identifier": "utilitycraft:andesite_pebble",
+        "name": "Andesite Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/andresite_pebble.png",
+        "source": "BP/items/materials/pebbles/andesite_pebble.json"
+      },
+      {
+        "id": "basalt_pebble",
+        "slug": "basalt-pebble",
+        "identifier": "utilitycraft:basalt_pebble",
+        "name": "Basalt Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/basalt_pebble.png",
+        "source": "BP/items/materials/pebbles/basalt_pebble.json"
+      },
+      {
+        "id": "blackstone_pebble",
+        "slug": "blackstone-pebble",
+        "identifier": "utilitycraft:blackstone_pebble",
+        "name": "Blackstone Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/blackstone_pebble.png",
+        "source": "BP/items/materials/pebbles/blackstone_pebble.json"
+      },
+      {
+        "id": "calcite_pebble",
+        "slug": "calcite-pebble",
+        "identifier": "utilitycraft:calcite_pebble",
+        "name": "Calcite Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/calcite_pebble.png",
+        "source": "BP/items/materials/pebbles/calcite_pebble.json"
+      },
+      {
+        "id": "coal_chunk",
+        "slug": "coal-chunk",
+        "identifier": "utilitycraft:coal_chunk",
+        "name": "Coal Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/coal_chunk.png",
+        "source": "BP/items/materials/pebbles/coal_chunk.json"
+      },
+      {
+        "id": "copper_chunk",
+        "slug": "copper-chunk",
+        "identifier": "utilitycraft:copper_chunk",
+        "name": "Copper Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/copper_chunk.png",
+        "source": "BP/items/materials/pebbles/copper_chunk.json"
+      },
+      {
+        "id": "copper_hammer",
+        "slug": "copper-hammer",
+        "identifier": "utilitycraft:copper_hammer",
+        "name": "Copper Hammer",
+        "category": "Tools",
+        "image": "textures/items/tools/copper_hammer.png",
+        "source": "BP/items/tools/hammers/copper_hammer.json"
+      },
+      {
+        "id": "copper_mesh",
+        "slug": "copper-mesh",
+        "identifier": "utilitycraft:copper_mesh",
+        "name": "Copper Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/copper_mesh.png",
+        "source": "BP/items/meshes/copper_mesh.json"
+      },
+      {
+        "id": "deepslate_coal_chunk",
+        "slug": "deepslate-coal-chunk",
+        "identifier": "utilitycraft:deepslate_coal_chunk",
+        "name": "Deepslate Coal Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/deepslate_coal_chunk.png",
+        "source": "BP/items/materials/pebbles/deepslate_coal_chunk.json"
+      },
+      {
+        "id": "deepslate_gold_chunk",
+        "slug": "deepslate-gold-chunk",
+        "identifier": "utilitycraft:deepslate_gold_chunk",
+        "name": "Deepslate Gold Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/deepslate_gold_chunk.png",
+        "source": "BP/items/materials/pebbles/deepslate_gold_chunk.json"
+      },
+      {
+        "id": "deepslate_iron_chunk",
+        "slug": "deepslate-iron-chunk",
+        "identifier": "utilitycraft:deepslate_iron_chunk",
+        "name": "Deepslate Iron Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/deepslate_iron_chunk.png",
+        "source": "BP/items/materials/pebbles/deepslate_iron_chunk.json"
+      },
+      {
+        "id": "diamond_hammer",
+        "slug": "diamond-hammer",
+        "identifier": "utilitycraft:diamond_hammer",
+        "name": "Diamond Hammer",
+        "category": "Tools",
+        "image": "textures/items/tools/diamond_hammer.png",
+        "source": "BP/items/tools/hammers/diamond_hammer.json"
+      },
+      {
+        "id": "diamond_mesh",
+        "slug": "diamond-mesh",
+        "identifier": "utilitycraft:diamond_mesh",
+        "name": "Diamond Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/diamond_mesh.png",
+        "source": "BP/items/meshes/diamond_mesh.json"
+      },
+      {
+        "id": "diamond_shard",
+        "slug": "diamond-shard",
+        "identifier": "utilitycraft:diamond_shard",
+        "name": "Diamond Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/diamond_shard.png",
+        "source": "BP/items/materials/pebbles/diamond_shard.json"
+      },
+      {
+        "id": "diorite_pebble",
+        "slug": "diorite-pebble",
+        "identifier": "utilitycraft:diorite_pebble",
+        "name": "Diorite Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/diorite_pebble.png",
+        "source": "BP/items/materials/pebbles/diorite_pebble.json"
+      },
+      {
+        "id": "dirt_handful",
+        "slug": "dirt-handful",
+        "identifier": "utilitycraft:dirt_handful",
+        "name": "Dirt Handful",
+        "category": "Materials",
+        "image": "textures/items/pebbles/dirt_handful.png",
+        "source": "BP/items/materials/pebbles/dirt_handful.json"
+      },
+      {
+        "id": "dripstone_pebble",
+        "slug": "dripstone-pebble",
+        "identifier": "utilitycraft:dripstone_pebble",
+        "name": "Dripstone Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/dripstone_pebble.png",
+        "source": "BP/items/materials/pebbles/dripstone_pebble.json"
+      },
+      {
+        "id": "emerald_mesh",
+        "slug": "emerald-mesh",
+        "identifier": "utilitycraft:emerald_mesh",
+        "name": "Emerald Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/emerald_mesh.png",
+        "source": "BP/items/meshes/emerald_mesh.json"
+      },
+      {
+        "id": "emerald_shard",
+        "slug": "emerald-shard",
+        "identifier": "utilitycraft:emerald_shard",
+        "name": "Emerald Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/emerald_shard.png",
+        "source": "BP/items/materials/pebbles/emerald_shard.json"
+      },
+      {
+        "id": "fiber",
+        "slug": "fiber",
+        "identifier": "utilitycraft:fiber",
+        "name": "Fiber",
+        "category": "Utility Items",
+        "image": "textures/items/misc/fiber.png",
+        "source": "BP/items/utility_items/fiber.json"
+      },
+      {
+        "id": "flint_knife",
+        "slug": "flint-knife",
+        "identifier": "utilitycraft:flint_knife",
+        "name": "Flint Knife",
+        "category": "Tools",
+        "image": "textures/items/tools/flint_knife.png",
+        "source": "BP/items/tools/special/flint_knife.json"
+      },
+      {
+        "id": "flint_mesh",
+        "slug": "flint-mesh",
+        "identifier": "utilitycraft:flint_mesh",
+        "name": "Flint Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/flint_mesh.png",
+        "source": "BP/items/meshes/flint_mesh.json"
+      },
+      {
+        "id": "gilded_blackstone_pebble",
+        "slug": "gilded-blackstone-pebble",
+        "identifier": "utilitycraft:gilded_blackstone_pebble",
+        "name": "Gilded Blackstone Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/gilded_blackstone_pebble.png",
+        "source": "BP/items/materials/pebbles/gilded_blackstone_pebble.json"
+      },
+      {
+        "id": "gold_chunk",
+        "slug": "gold-chunk",
+        "identifier": "utilitycraft:gold_chunk",
+        "name": "Gold Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/gold_chunk.png",
+        "source": "BP/items/materials/pebbles/gold_chunk.json"
+      },
+      {
+        "id": "golden_hammer",
+        "slug": "golden-hammer",
+        "identifier": "utilitycraft:golden_hammer",
+        "name": "Golden Hammer",
+        "category": "Tools",
+        "image": "textures/items/tools/golden_hammer.png",
+        "source": "BP/items/tools/hammers/golden_hammer.json"
+      },
+      {
+        "id": "golden_mesh",
+        "slug": "golden-mesh",
+        "identifier": "utilitycraft:golden_mesh",
+        "name": "Golden Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/golden_mesh.png",
+        "source": "BP/items/meshes/golden_mesh.json"
+      },
+      {
+        "id": "granite_pebble",
+        "slug": "granite-pebble",
+        "identifier": "utilitycraft:granite_pebble",
+        "name": "Granite Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/granite_pebble.png",
+        "source": "BP/items/materials/pebbles/granite_pebble.json"
+      },
+      {
+        "id": "gravel_fragments",
+        "slug": "gravel-fragments",
+        "identifier": "utilitycraft:gravel_fragments",
+        "name": "Gravel Fragments",
+        "category": "Materials",
+        "image": "textures/items/pebbles/gravel_fragments.png",
+        "source": "BP/items/materials/pebbles/gravel_fragments.json"
+      },
+      {
+        "id": "iron_chunk",
+        "slug": "iron-chunk",
+        "identifier": "utilitycraft:iron_chunk",
+        "name": "Iron Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/iron_chunk.png",
+        "source": "BP/items/materials/pebbles/iron_chunk.json"
+      },
+      {
+        "id": "iron_hammer",
+        "slug": "iron-hammer",
+        "identifier": "utilitycraft:iron_hammer",
+        "name": "Iron Hammer",
+        "category": "Tools",
+        "image": "textures/items/tools/iron_hammer.png",
+        "source": "BP/items/tools/hammers/iron_hammer.json"
+      },
+      {
+        "id": "iron_mesh",
+        "slug": "iron-mesh",
+        "identifier": "utilitycraft:iron_mesh",
+        "name": "Iron Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/iron_mesh.png",
+        "source": "BP/items/meshes/iron_mesh.json"
+      },
+      {
+        "id": "mortar",
+        "slug": "mortar",
+        "identifier": "utilitycraft:mortar",
+        "name": "Mortar",
+        "category": "Utility Items",
+        "image": "textures/items/tools/mortar.png",
+        "source": "BP/items/utility_items/mortar.json"
+      },
+      {
+        "id": "mud_ball",
+        "slug": "mud-ball",
+        "identifier": "utilitycraft:mud_ball",
+        "name": "Mud Ball",
+        "category": "Materials",
+        "image": "textures/items/pebbles/mud_ball.png",
+        "source": "BP/items/materials/pebbles/mud_ball.json"
+      },
+      {
+        "id": "nether_gold_chunk",
+        "slug": "nether-gold-chunk",
+        "identifier": "utilitycraft:nether_gold_chunk",
+        "name": "Nether Gold Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/nether_gold_chunk.png",
+        "source": "BP/items/materials/pebbles/nether_gold_chunk.json"
+      },
+      {
+        "id": "nether_quartz_chunk",
+        "slug": "nether-quartz-chunk",
+        "identifier": "utilitycraft:nether_quartz_chunk",
+        "name": "Nether Quartz Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/nether_quartz_chunk.png",
+        "source": "BP/items/materials/pebbles/nether_quartz_chunk.json"
+      },
+      {
+        "id": "netherite_hammer",
+        "slug": "netherite-hammer",
+        "identifier": "utilitycraft:netherite_hammer",
+        "name": "Netherite Hammer",
+        "category": "Tools",
+        "image": "textures/items/tools/netherite_hammer.png",
+        "source": "BP/items/tools/hammers/netherite_hammer.json"
+      },
+      {
+        "id": "netherite_mesh",
+        "slug": "netherite-mesh",
+        "identifier": "utilitycraft:netherite_mesh",
+        "name": "Netherite Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/netherite_mesh.png",
+        "source": "BP/items/meshes/netherite_mesh.json"
+      },
+      {
+        "id": "raw_leather",
+        "slug": "raw-leather",
+        "identifier": "utilitycraft:raw_leather",
+        "name": "Raw Leather",
+        "category": "Utility Items",
+        "image": "textures/items/misc/raw_leather.png",
+        "source": "BP/items/utility_items/raw_leather.json"
+      },
+      {
+        "id": "red_sand_handful",
+        "slug": "red-sand-handful",
+        "identifier": "utilitycraft:red_sand_handful",
+        "name": "Red Sand Handful",
+        "category": "Materials",
+        "image": "textures/items/pebbles/red_sand_handful.png",
+        "source": "BP/items/materials/pebbles/red_sand_handful.json"
+      },
+      {
+        "id": "sand_handful",
+        "slug": "sand-handful",
+        "identifier": "utilitycraft:sand_handful",
+        "name": "Sand Handful",
+        "category": "Materials",
+        "image": "textures/items/pebbles/sand_handful.png",
+        "source": "BP/items/materials/pebbles/sand_handful.json"
+      },
+      {
+        "id": "shulker_shell_shard",
+        "slug": "shulker-shell-shard",
+        "identifier": "utilitycraft:shulker_shell_shard",
+        "name": "Shulker Shell Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/shulker_shell_shard.png",
+        "source": "BP/items/materials/pebbles/shulker_shell_shard.json"
+      },
+      {
+        "id": "stone_hammer",
+        "slug": "stone-hammer",
+        "identifier": "utilitycraft:stone_hammer",
+        "name": "Stone Hammer",
+        "category": "Tools",
+        "image": "textures/items/tools/stone_hammer.png",
+        "source": "BP/items/tools/hammers/stone_hammer.json"
+      },
+      {
+        "id": "stone_pebble",
+        "slug": "stone-pebble",
+        "identifier": "utilitycraft:stone_pebble",
+        "name": "Stone Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/stone_pebble.png",
+        "source": "BP/items/materials/pebbles/stone_pebble.json"
+      },
+      {
+        "id": "string_mesh",
+        "slug": "string-mesh",
+        "identifier": "utilitycraft:string_mesh",
+        "name": "String Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/string_mesh.png",
+        "source": "BP/items/meshes/string_mesh.json"
+      },
+      {
+        "id": "tuff_pebble",
+        "slug": "tuff-pebble",
+        "identifier": "utilitycraft:tuff_pebble",
+        "name": "Tuff Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/tuff_pebble.png",
+        "source": "BP/items/materials/pebbles/tuff_pebble.json"
+      },
+      {
+        "id": "wooden_hammer",
+        "slug": "wooden-hammer",
+        "identifier": "utilitycraft:wooden_hammer",
+        "name": "Wooden Hammer",
+        "category": "Tools",
+        "image": "textures/items/tools/wooden_hammer.png",
+        "source": "BP/items/tools/hammers/wooden_hammer.json"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "big_torch",
+        "slug": "big-torch",
+        "identifier": "utilitycraft:big_torch",
+        "name": "Big Torch",
+        "category": "Utility Blocks",
+        "render": "auto-renders/utilitycraft_big_torch-f02caab57906-b94141f761dac660410773a1.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/utility/big_torch.png",
+          "left": "textures/blocks/utility/big_torch.png",
+          "right": "textures/blocks/utility/big_torch.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_emission",
+          "minecraft:material_instances",
+          "minecraft:selection_box",
+          "tag:minecraft:is_axe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/utility_blocks/big_torch.json",
+        "blockData": {
+          "breakTime": 0.2,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "lightEmission": 15,
+          "tool": "Axe",
+          "directional": false
+        }
+      },
+      {
+        "id": "crucible",
+        "slug": "crucible",
+        "identifier": "utilitycraft:crucible",
+        "name": "Crucible",
+        "category": "Addons",
+        "render": "auto-renders/utilitycraft_crucible-e0c129897002-7fd993848353c13fe285098d.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/crucible/utilitycraft_crucible.png",
+          "left": "textures/blocks/crucible/utilitycraft_crucible.png",
+          "right": "textures/blocks/crucible/utilitycraft_crucible.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:tick",
+          "tag:dorios:fluid",
+          "tag:minecraft:is_pickaxe_item_destructible",
+          "utilitycraft:crucible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/addons/basics/crucible.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "explosionResistance": "Immune",
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "crushed_blackstone",
+        "slug": "crushed-blackstone",
+        "identifier": "utilitycraft:crushed_blackstone",
+        "name": "Crushed Blackstone",
+        "category": "Materials",
+        "render": "auto-renders/utilitycraft_crushed_blackstone-93e8b8171c51-4c2ca7ac4f348a4016b8fefc.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/materials/crushed_blackstone.png",
+          "left": "textures/blocks/materials/crushed_blackstone.png",
+          "right": "textures/blocks/materials/crushed_blackstone.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining",
+          "tag:minecraft:is_shovel_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/materials/crushed_blackstone.json",
+        "blockData": {
+          "breakTime": 0.5,
+          "mineable": true,
+          "tool": "Shovel",
+          "directional": false
+        }
+      },
+      {
+        "id": "crushed_cobbled_deepslate",
+        "slug": "crushed-cobbled-deepslate",
+        "identifier": "utilitycraft:crushed_cobbled_deepslate",
+        "name": "Crushed Cobbled Deepslate",
+        "category": "Materials",
+        "render": "auto-renders/utilitycraft_crushed_cobbled_deepslate-9828c0c9e243-e65ddcb0fb613137b368646a.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/materials/crushed_cobbled_deepslate.png",
+          "left": "textures/blocks/materials/crushed_cobbled_deepslate.png",
+          "right": "textures/blocks/materials/crushed_cobbled_deepslate.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/materials/crushed_cobbled_deepslate.json",
+        "blockData": {
+          "breakTime": 0.5,
+          "mineable": true,
+          "directional": false
+        }
+      },
+      {
+        "id": "crushed_endstone",
+        "slug": "crushed-endstone",
+        "identifier": "utilitycraft:crushed_endstone",
+        "name": "Crushed Endstone",
+        "category": "Materials",
+        "render": "auto-renders/utilitycraft_crushed_endstone-df4ea28c579c-46fbdc63752492d51a3aee8f.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/materials/crushed_endstone.png",
+          "left": "textures/blocks/materials/crushed_endstone.png",
+          "right": "textures/blocks/materials/crushed_endstone.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/materials/crushed_endstone.json",
+        "blockData": {
+          "breakTime": 0.5,
+          "mineable": true,
+          "directional": false
+        }
+      },
+      {
+        "id": "crushed_netherrack",
+        "slug": "crushed-netherrack",
+        "identifier": "utilitycraft:crushed_netherrack",
+        "name": "Crushed Netherrack",
+        "category": "Utility Blocks",
+        "render": "auto-renders/utilitycraft_crushed_netherrack-f1c483006282-5765a68686967cea2be8be30.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/materials/crushed_netherrack.png",
+          "left": "textures/blocks/materials/crushed_netherrack.png",
+          "right": "textures/blocks/materials/crushed_netherrack.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining",
+          "tag:minecraft:is_shovel_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/utility_blocks/crushed_netherrack.json",
+        "blockData": {
+          "breakTime": 0.5,
+          "mineable": true,
+          "tool": "Shovel",
+          "directional": false
+        }
+      },
+      {
+        "id": "flint_block",
+        "slug": "flint-block",
+        "identifier": "utilitycraft:flint_block",
+        "name": "Flint Block",
+        "category": "Utility Blocks",
+        "render": "auto-renders/utilitycraft_flint_block-dfdf49c5e128-cb31e1f59a21373343697be5.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/materials/flint_block.png",
+          "left": "textures/blocks/materials/flint_block.png",
+          "right": "textures/blocks/materials/flint_block.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_mining",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/utility_blocks/flint_block.json",
+        "blockData": {
+          "breakTime": 1.5,
+          "mineable": true,
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "sieve",
+        "slug": "sieve",
+        "identifier": "utilitycraft:sieve",
+        "name": "Sieve",
+        "category": "Addons",
+        "render": "auto-renders/utilitycraft_sieve-698c49f6c50f-4879767e42c4ac83b4ff338a.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/sieve/wood_sieve.png",
+          "left": "textures/blocks/sieve/wood_sieve.png",
+          "right": "textures/blocks/sieve/wood_sieve.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:selection_box",
+          "tag:minecraft:is_axe_item_destructible",
+          "utilitycraft:sieve"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/addons/basics/sieve.json",
+        "blockData": {
+          "breakTime": 1,
+          "mineable": true,
+          "tool": "Axe",
+          "directional": false
+        }
+      },
+      {
+        "id": "sink",
+        "slug": "sink",
+        "identifier": "utilitycraft:sink",
+        "name": "Sink",
+        "category": "Utility Blocks",
+        "render": "auto-renders/utilitycraft_sink-2f27d53f3b62-9adee31ba8181e4b31a73570.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/utility/infinite_water_block.png",
+          "left": "textures/blocks/utility/infinite_water_block.png",
+          "right": "textures/blocks/utility/infinite_water_block.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:material_instances",
+          "minecraft:selection_box",
+          "tag:dorios:fluid",
+          "tag:minecraft:is_axe_item_destructible",
+          "utilitycraft:infinite_tank"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/utility_blocks/sink.json",
+        "blockData": {
+          "breakTime": 1.2,
+          "mineable": true,
+          "tool": "Axe",
+          "directional": true
+        }
+      }
+    ],
+    "entities": [],
+    "recipes": [
+      {
+        "id": "acacia_wood_slab",
+        "identifier": "utilitycraft:acacia_wood_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "wooden_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "planks",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/acacia_wooden_slab.json"
+      },
+      {
+        "id": "andesite_slab",
+        "identifier": "utilitycraft:andesite_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab3",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "stone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/andesite_slab.json"
+      },
+      {
+        "id": "ball_to_mud",
+        "identifier": "utilitycraft:ball_to_mud",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:mud_ball",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:mud_ball",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:mud_ball",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:mud_ball",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:mud",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/ball_to_mud.json"
+      },
+      {
+        "id": "bamboo_mosaic_slab",
+        "identifier": "utilitycraft:bamboo_mosaic_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "bamboo_mosaic_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "bamboo_mosaic",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/bamboo_mosaic_slab.json"
+      },
+      {
+        "id": "big_torch",
+        "identifier": "utilitycraft:big_torch",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          null,
+          {
+            "id": "utilitycraft:flint_block",
+            "count": 1
+          },
+          null,
+          null,
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          null,
+          null,
+          {
+            "id": "log",
+            "count": 1
+          },
+          null
+        ],
+        "slotCount": 3,
+        "result": {
+          "id": "utilitycraft:big_torch",
+          "count": 1
+        },
+        "source": "BP/recipes/blocks/utility_blocks/big_torch.json"
+      },
+      {
+        "id": "birch_wood_slab",
+        "identifier": "utilitycraft:birch_wood_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "wooden_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "planks",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/birch_wooden_slab.json"
+      },
+      {
+        "id": "blackstone_slab",
+        "identifier": "utilitycraft:blackstone_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "blackstone_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "blackstone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/blackstone_slab.json"
+      },
+      {
+        "id": "block_to_amethyst",
+        "identifier": "utilitycraft:block_to_amethyst",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:amethyst_block",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "minecraft:amethyst_shard",
+          "count": 4
+        },
+        "source": "BP/recipes/useful/uncrafting/block_to_amethyst.json"
+      },
+      {
+        "id": "bricks_slab",
+        "identifier": "utilitycraft:bricks_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "brick_block",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/bricks_slab.json"
+      },
+      {
+        "id": "cherry_slab",
+        "identifier": "utilitycraft:cherry_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "cherry_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "cherry_planks",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/cherry_slab.json"
+      },
+      {
+        "id": "chunk_to_ancientdebris",
+        "identifier": "utilitycraft:chunk_to_ancientdebris",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:ancient_debris_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:ancient_debris_chunk",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:ancient_debris_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:ancient_debris_chunk",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:ancient_debris",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/chunk_to_ancientdebris.json"
+      },
+      {
+        "id": "chunk_to_coal",
+        "identifier": "utilitycraft:chunk_to_coal",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:coal_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:coal_chunk",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:coal_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:coal_chunk",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:coal_ore",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/chunk_to_coal.json"
+      },
+      {
+        "id": "chunk_to_copper",
+        "identifier": "utilitycraft:chunk_to_copper",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:copper_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:copper_chunk",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:copper_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:copper_chunk",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:copper_ore",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/chunk_to_copper.json"
+      },
+      {
+        "id": "chunk_to_gold",
+        "identifier": "utilitycraft:chunk_to_gold",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:gold_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:gold_chunk",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:gold_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:gold_chunk",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:gold_ore",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/chunk_to_gold.json"
+      },
+      {
+        "id": "chunk_to_iron",
+        "identifier": "utilitycraft:chunk_to_iron",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:iron_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:iron_chunk",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:iron_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:iron_chunk",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:iron_ore",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/chunk_to_iron.json"
+      },
+      {
+        "id": "chunk_to_nether_gold",
+        "identifier": "utilitycraft:chunk_to_nether_gold",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:nether_gold_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:nether_gold_chunk",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:nether_gold_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:nether_gold_chunk",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:nether_gold_ore",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/chunk_to_nether_gold.json"
+      },
+      {
+        "id": "chunk_to_quartz",
+        "identifier": "utilitycraft:chunk_to_quartz",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:nether_quartz_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:nether_quartz_chunk",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:nether_quartz_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:nether_quartz_chunk",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:quartz_ore",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/chunk_to_quartz.json"
+      },
+      {
+        "id": "cobbled_deepslate_slab",
+        "identifier": "utilitycraft:cobbled_deepslate_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "cobbled_deepslate_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "cobbled_deepslate",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/cobbled_deepslate_slab.json"
+      },
+      {
+        "id": "cobblestone_slab",
+        "identifier": "utilitycraft:cobblestone_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "cobblestone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/cobblestone_slab.json"
+      },
+      {
+        "id": "copper_hammer",
+        "identifier": "utilitycraft:copper_hammer",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          null
+        ],
+        "slotCount": 7,
+        "result": {
+          "id": "utilitycraft:copper_hammer",
+          "count": 1
+        },
+        "source": "BP/recipes/tools/hammers/copper_hammer.json"
+      },
+      {
+        "id": "copper_mesh",
+        "identifier": "utilitycraft:copper_mesh",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:flint_mesh",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "copper_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:copper_mesh",
+          "count": 1
+        },
+        "source": "BP/recipes/items/mesh/copper_mesh.json"
+      },
+      {
+        "id": "crimson_slab",
+        "identifier": "utilitycraft:crimson_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "crimson_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "crimson_planks",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/crimson_slab.json"
+      },
+      {
+        "id": "crucible",
+        "identifier": "utilitycraft:crucible",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "brick",
+            "count": 1
+          },
+          null,
+          {
+            "id": "brick",
+            "count": 1
+          },
+          {
+            "id": "brick",
+            "count": 1
+          },
+          {
+            "id": "mud_bricks",
+            "count": 1
+          },
+          {
+            "id": "brick",
+            "count": 1
+          },
+          {
+            "id": "mud_bricks",
+            "count": 1
+          },
+          null,
+          {
+            "id": "mud_bricks",
+            "count": 1
+          }
+        ],
+        "slotCount": 7,
+        "result": {
+          "id": "utilitycraft:crucible",
+          "count": 1
+        },
+        "source": "BP/recipes/addons/basics/crucible.json"
+      },
+      {
+        "id": "crying_obsidian",
+        "identifier": "utilitycraft:crying_obsidian",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          {
+            "id": "minecraft:ghast_tear",
+            "count": 1
+          },
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          {
+            "id": "minecraft:obsidian",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "minecraft:crying_obsidian",
+          "count": 8
+        },
+        "source": "BP/recipes/useful/crying_obsidian.json"
+      },
+      {
+        "id": "cut_copper_slab",
+        "identifier": "utilitycraft:cut_copper_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "cut_copper_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "cut_copper",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/cut_copper_slab.json"
+      },
+      {
+        "id": "cut_red_sandstone_slab",
+        "identifier": "utilitycraft:cut_red_sandstone_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab4",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "red_sandstone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/cut_red_sandstone_slab.json"
+      },
+      {
+        "id": "cut_sandstone_slab",
+        "identifier": "utilitycraft:cut_sandstone_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab4",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "sandstone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/cut_sandstone_slab.json"
+      },
+      {
+        "id": "darkoak_wood_slab",
+        "identifier": "utilitycraft:darkoak_wood_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "wooden_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "planks",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/darkoak_wooden_slab.json"
+      },
+      {
+        "id": "darkprismarine_slab",
+        "identifier": "utilitycraft:darkprismarine_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab2",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "prismarine",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/darkprismarine_slab.json"
+      },
+      {
+        "id": "dchunk_to_coal",
+        "identifier": "utilitycraft:dchunk_to_coal",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:deepslate_coal_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:deepslate_coal_chunk",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:deepslate_coal_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:deepslate_coal_chunk",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:deepslate_coal_ore",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/dchunk_to_coal.json"
+      },
+      {
+        "id": "dchunk_to_gold",
+        "identifier": "utilitycraft:dchunk_to_gold",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:deepslate_gold_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:deepslate_gold_chunk",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:deepslate_gold_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:deepslate_gold_chunk",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:deepslate_gold_ore",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/dchunk_to_gold.json"
+      },
+      {
+        "id": "dchunk_to_iron",
+        "identifier": "utilitycraft:dchunk_to_iron",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:deepslate_iron_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:deepslate_iron_chunk",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:deepslate_iron_chunk",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:deepslate_iron_chunk",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:deepslate_iron_ore",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/dchunk_to_iron.json"
+      },
+      {
+        "id": "deepslate_brick_slab",
+        "identifier": "utilitycraft:deepslate_brick_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "deepslate_brick_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "deepslate_bricks",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/deepslate_brick_slab.json"
+      },
+      {
+        "id": "deepslate_tile_slab",
+        "identifier": "utilitycraft:deepslate_tile_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "deepslate_tile_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "deepslate_tiles",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/deepslate_tile_slab.json"
+      },
+      {
+        "id": "diamond_hammer",
+        "identifier": "utilitycraft:diamond_hammer",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          null
+        ],
+        "slotCount": 7,
+        "result": {
+          "id": "utilitycraft:diamond_hammer",
+          "count": 1
+        },
+        "source": "BP/recipes/tools/hammers/diamond_hammer.json"
+      },
+      {
+        "id": "diamond_mesh",
+        "identifier": "utilitycraft:diamond_mesh",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:emerald_mesh",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          },
+          {
+            "id": "diamond",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:diamond_mesh",
+          "count": 1
+        },
+        "source": "BP/recipes/items/mesh/diamond_mesh.json"
+      },
+      {
+        "id": "diorite_slab",
+        "identifier": "utilitycraft:diorite_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab3",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "stone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/diorite_slab.json"
+      },
+      {
+        "id": "emerald_mesh",
+        "identifier": "utilitycraft:emerald_mesh",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:golden_mesh",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          },
+          {
+            "id": "emerald",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:emerald_mesh",
+          "count": 1
+        },
+        "source": "BP/recipes/items/mesh/emerald_mesh.json"
+      },
+      {
+        "id": "end_stone_brick_slab",
+        "identifier": "utilitycraft:end_stone_brick_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab3",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "end_bricks",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/end_stone_brick_slab.json"
+      },
+      {
+        "id": "exposed_cut_copper_slab",
+        "identifier": "utilitycraft:exposed_cut_copper_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "exposed_cut_copper_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "exposed_cut_copper",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/exposed_cut_copper_slab.json"
+      },
+      {
+        "id": "fiber_to_string",
+        "identifier": "utilitycraft:fiber_to_string",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:fiber",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fiber",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:fiber",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:fiber",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:string",
+          "count": 1
+        },
+        "source": "BP/recipes/items/useful_crafts/fiber_to_string.json"
+      },
+      {
+        "id": "flint_block",
+        "identifier": "utilitycraft:flint_block",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "flint",
+            "count": 1
+          },
+          {
+            "id": "flint",
+            "count": 1
+          },
+          {
+            "id": "flint",
+            "count": 1
+          },
+          {
+            "id": "flint",
+            "count": 1
+          },
+          {
+            "id": "flint",
+            "count": 1
+          },
+          {
+            "id": "flint",
+            "count": 1
+          },
+          {
+            "id": "flint",
+            "count": 1
+          },
+          {
+            "id": "flint",
+            "count": 1
+          },
+          {
+            "id": "flint",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:flint_block",
+          "count": 1
+        },
+        "source": "BP/recipes/blocks/utility_blocks/flint_block.json"
+      },
+      {
+        "id": "flint_from_block",
+        "identifier": "utilitycraft:flint_from_block",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:flint_block",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "flint",
+          "count": 9
+        },
+        "source": "BP/recipes/useful/flint_from_block.json"
+      },
+      {
+        "id": "flint_knife",
+        "identifier": "utilitycraft:flint_knife",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          null,
+          {
+            "id": "flint",
+            "count": 1
+          },
+          null,
+          {
+            "id": "stick",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "utilitycraft:flint_knife",
+          "count": 1
+        },
+        "source": "BP/recipes/items/useful_crafts/flint_knife.json"
+      },
+      {
+        "id": "flint_mesh",
+        "identifier": "utilitycraft:flint_mesh",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "flint",
+            "count": 1
+          },
+          {
+            "id": "flint",
+            "count": 1
+          },
+          {
+            "id": "flint",
+            "count": 1
+          },
+          {
+            "id": "flint",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:string_mesh",
+            "count": 1
+          },
+          {
+            "id": "flint",
+            "count": 1
+          },
+          {
+            "id": "flint",
+            "count": 1
+          },
+          {
+            "id": "flint",
+            "count": 1
+          },
+          {
+            "id": "flint",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:flint_mesh",
+          "count": 1
+        },
+        "source": "BP/recipes/items/mesh/flint_mesh.json"
+      },
+      {
+        "id": "fragment_to_gravel",
+        "identifier": "utilitycraft:fragment_to_gravel",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:gravel_fragments",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:gravel_fragments",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:gravel_fragments",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:gravel_fragments",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:gravel",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/fragment_to_gravel.json"
+      },
+      {
+        "id": "golden_hammer",
+        "identifier": "utilitycraft:golden_hammer",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          null
+        ],
+        "slotCount": 7,
+        "result": {
+          "id": "utilitycraft:golden_hammer",
+          "count": 1
+        },
+        "source": "BP/recipes/tools/hammers/golden_hammer.json"
+      },
+      {
+        "id": "golden_mesh",
+        "identifier": "utilitycraft:golden_mesh",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:iron_mesh",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "gold_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:golden_mesh",
+          "count": 1
+        },
+        "source": "BP/recipes/items/mesh/golden_mesh.json"
+      },
+      {
+        "id": "granite_slab",
+        "identifier": "utilitycraft:granite_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab3",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "stone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/granite_slab.json"
+      },
+      {
+        "id": "gravel_to_flint",
+        "identifier": "utilitycraft:gravel_to_flint",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "gravel",
+            "count": 1
+          },
+          {
+            "id": "gravel",
+            "count": 1
+          },
+          null,
+          {
+            "id": "gravel",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 3,
+        "result": {
+          "id": "flint",
+          "count": 1
+        },
+        "source": "BP/recipes/items/useful_crafts/gravel_to_flint.json"
+      },
+      {
+        "id": "handful_to_dirt",
+        "identifier": "utilitycraft:handful_to_dirt",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:dirt_handful",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:dirt_handful",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:dirt_handful",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:dirt_handful",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:dirt",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/handful_to_dirt.json"
+      },
+      {
+        "id": "handful_to_redsand",
+        "identifier": "utilitycraft:handful_to_redsand",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:red_sand_handful",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:red_sand_handful",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:red_sand_handful",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:red_sand_handful",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:red_sand",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/handful_to_redsand.json"
+      },
+      {
+        "id": "handful_to_sand",
+        "identifier": "utilitycraft:handful_to_sand",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:sand_handful",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:sand_handful",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:sand_handful",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:sand_handful",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:sand",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/handful_to_sand.json"
+      },
+      {
+        "id": "iron_hammer",
+        "identifier": "utilitycraft:iron_hammer",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          null
+        ],
+        "slotCount": 7,
+        "result": {
+          "id": "utilitycraft:iron_hammer",
+          "count": 1
+        },
+        "source": "BP/recipes/tools/hammers/iron_hammer.json"
+      },
+      {
+        "id": "iron_mesh",
+        "identifier": "utilitycraft:iron_mesh",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:copper_mesh",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:iron_mesh",
+          "count": 1
+        },
+        "source": "BP/recipes/items/mesh/iron_mesh.json"
+      },
+      {
+        "id": "jungle_wood_slab",
+        "identifier": "utilitycraft:jungle_wood_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "wooden_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "planks",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/jungle_wooden_slab.json"
+      },
+      {
+        "id": "leather",
+        "identifier": "utilitycraft:leather",
+        "kind": "furnace",
+        "station": "furnace",
+        "slots": [
+          {
+            "id": "utilitycraft:raw_leather",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "minecraft:leather",
+          "count": 1
+        },
+        "source": "BP/recipes/items/useful_crafts/raw_leather/leather.json"
+      },
+      {
+        "id": "logs_to_chests_1",
+        "identifier": "utilitycraft:logs_to_chests_1",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "log",
+            "count": 1
+          },
+          {
+            "id": "log",
+            "count": 1
+          },
+          {
+            "id": "log",
+            "count": 1
+          },
+          {
+            "id": "log",
+            "count": 1
+          },
+          null,
+          {
+            "id": "log",
+            "count": 1
+          },
+          {
+            "id": "log",
+            "count": 1
+          },
+          {
+            "id": "log",
+            "count": 1
+          },
+          {
+            "id": "log",
+            "count": 1
+          }
+        ],
+        "slotCount": 8,
+        "result": {
+          "id": "chest",
+          "count": 4
+        },
+        "source": "BP/recipes/useful/logs_to_chests/logs_to_chests_1.json"
+      },
+      {
+        "id": "logs_to_chests_2",
+        "identifier": "utilitycraft:logs_to_chests_2",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "log2",
+            "count": 1
+          },
+          {
+            "id": "log2",
+            "count": 1
+          },
+          {
+            "id": "log2",
+            "count": 1
+          },
+          {
+            "id": "log2",
+            "count": 1
+          },
+          null,
+          {
+            "id": "log2",
+            "count": 1
+          },
+          {
+            "id": "log2",
+            "count": 1
+          },
+          {
+            "id": "log2",
+            "count": 1
+          },
+          {
+            "id": "log2",
+            "count": 1
+          }
+        ],
+        "slotCount": 8,
+        "result": {
+          "id": "chest",
+          "count": 4
+        },
+        "source": "BP/recipes/useful/logs_to_chests/logs_to_chests_2.json"
+      },
+      {
+        "id": "logs_to_chests_cherry",
+        "identifier": "utilitycraft:logs_to_chests_cherry",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "cherry_log",
+            "count": 1
+          },
+          {
+            "id": "cherry_log",
+            "count": 1
+          },
+          {
+            "id": "cherry_log",
+            "count": 1
+          },
+          {
+            "id": "cherry_log",
+            "count": 1
+          },
+          null,
+          {
+            "id": "cherry_log",
+            "count": 1
+          },
+          {
+            "id": "cherry_log",
+            "count": 1
+          },
+          {
+            "id": "cherry_log",
+            "count": 1
+          },
+          {
+            "id": "cherry_log",
+            "count": 1
+          }
+        ],
+        "slotCount": 8,
+        "result": {
+          "id": "chest",
+          "count": 4
+        },
+        "source": "BP/recipes/useful/logs_to_chests/logs_to_chests_cherry.json"
+      },
+      {
+        "id": "logs_to_chests_crimson",
+        "identifier": "utilitycraft:logs_to_chests_crimson",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "crimson_stem",
+            "count": 1
+          },
+          {
+            "id": "crimson_stem",
+            "count": 1
+          },
+          {
+            "id": "crimson_stem",
+            "count": 1
+          },
+          {
+            "id": "crimson_stem",
+            "count": 1
+          },
+          null,
+          {
+            "id": "crimson_stem",
+            "count": 1
+          },
+          {
+            "id": "crimson_stem",
+            "count": 1
+          },
+          {
+            "id": "crimson_stem",
+            "count": 1
+          },
+          {
+            "id": "crimson_stem",
+            "count": 1
+          }
+        ],
+        "slotCount": 8,
+        "result": {
+          "id": "chest",
+          "count": 4
+        },
+        "source": "BP/recipes/useful/logs_to_chests/logs_to_chests_crimson.json"
+      },
+      {
+        "id": "logs_to_chests_mangrove",
+        "identifier": "utilitycraft:logs_to_chests_mangrove",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "mangrove_log",
+            "count": 1
+          },
+          {
+            "id": "mangrove_log",
+            "count": 1
+          },
+          {
+            "id": "mangrove_log",
+            "count": 1
+          },
+          {
+            "id": "mangrove_log",
+            "count": 1
+          },
+          null,
+          {
+            "id": "mangrove_log",
+            "count": 1
+          },
+          {
+            "id": "mangrove_log",
+            "count": 1
+          },
+          {
+            "id": "mangrove_log",
+            "count": 1
+          },
+          {
+            "id": "mangrove_log",
+            "count": 1
+          }
+        ],
+        "slotCount": 8,
+        "result": {
+          "id": "chest",
+          "count": 4
+        },
+        "source": "BP/recipes/useful/logs_to_chests/logs_to_chests_mangrove.json"
+      },
+      {
+        "id": "logs_to_chests_warped",
+        "identifier": "utilitycraft:logs_to_chests_warped",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "warped_stem",
+            "count": 1
+          },
+          {
+            "id": "warped_stem",
+            "count": 1
+          },
+          {
+            "id": "warped_stem",
+            "count": 1
+          },
+          {
+            "id": "warped_stem",
+            "count": 1
+          },
+          null,
+          {
+            "id": "warped_stem",
+            "count": 1
+          },
+          {
+            "id": "warped_stem",
+            "count": 1
+          },
+          {
+            "id": "warped_stem",
+            "count": 1
+          },
+          {
+            "id": "warped_stem",
+            "count": 1
+          }
+        ],
+        "slotCount": 8,
+        "result": {
+          "id": "chest",
+          "count": 4
+        },
+        "source": "BP/recipes/useful/logs_to_chests/logs_to_chests_warped.json"
+      },
+      {
+        "id": "logs_to_sticks_1",
+        "identifier": "utilitycraft:logs_to_sticks_1",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "log",
+            "count": 1
+          },
+          null,
+          null,
+          {
+            "id": "log",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "stick",
+          "count": 16
+        },
+        "source": "BP/recipes/useful/logs_to_sticks/logs_to_sticks_1.json"
+      },
+      {
+        "id": "logs_to_sticks_2",
+        "identifier": "utilitycraft:logs_to_sticks_2",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "log2",
+            "count": 1
+          },
+          null,
+          null,
+          {
+            "id": "log2",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "stick",
+          "count": 16
+        },
+        "source": "BP/recipes/useful/logs_to_sticks/logs_to_sticks_2.json"
+      },
+      {
+        "id": "logs_to_sticks_cherry",
+        "identifier": "utilitycraft:logs_to_sticks_cherry",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "cherry_log",
+            "count": 1
+          },
+          null,
+          null,
+          {
+            "id": "cherry_log",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "stick",
+          "count": 16
+        },
+        "source": "BP/recipes/useful/logs_to_sticks/logs_to_sticks_cherry.json"
+      },
+      {
+        "id": "logs_to_sticks_crimson",
+        "identifier": "utilitycraft:logs_to_sticks_crimson",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "crimson_stem",
+            "count": 1
+          },
+          null,
+          null,
+          {
+            "id": "crimson_stem",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "stick",
+          "count": 16
+        },
+        "source": "BP/recipes/useful/logs_to_sticks/logs_to_sticks_crimson.json"
+      },
+      {
+        "id": "logs_to_sticks_mangrove",
+        "identifier": "utilitycraft:logs_to_sticks_mangrove",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "mangrove_log",
+            "count": 1
+          },
+          null,
+          null,
+          {
+            "id": "mangrove_log",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "stick",
+          "count": 16
+        },
+        "source": "BP/recipes/useful/logs_to_sticks/logs_to_sticks_mangrove.json"
+      },
+      {
+        "id": "logs_to_sticks_warped",
+        "identifier": "utilitycraft:logs_to_sticks_warped",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "warped_stem",
+            "count": 1
+          },
+          null,
+          null,
+          {
+            "id": "warped_stem",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 2,
+        "result": {
+          "id": "stick",
+          "count": 16
+        },
+        "source": "BP/recipes/useful/logs_to_sticks/logs_to_sticks_warped.json"
+      },
+      {
+        "id": "mangrove_slab",
+        "identifier": "utilitycraft:mangrove_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "mangrove_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "mangrove_planks",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/mangrove_slab.json"
+      },
+      {
+        "id": "mortar",
+        "identifier": "utilitycraft:mortar",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "cobblestone",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:stone_pebble",
+            "count": 1
+          },
+          {
+            "id": "cobblestone",
+            "count": 1
+          },
+          null,
+          {
+            "id": "cobblestone",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "utilitycraft:mortar",
+          "count": 1
+        },
+        "source": "BP/recipes/items/mortar.json"
+      },
+      {
+        "id": "mossy_cobblestone_slab",
+        "identifier": "utilitycraft:mossy_cobblestone_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab2",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "mossy_cobblestone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/mossy_cobblestone_slab.json"
+      },
+      {
+        "id": "mossy_stone_brick_slab",
+        "identifier": "utilitycraft:mossy_stone_brick_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab4",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "stonebrick",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/mossy_stone_brick_slab.json"
+      },
+      {
+        "id": "mud_brick_slab",
+        "identifier": "utilitycraft:mud_brick_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "mud_brick_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "mud_bricks",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/mud_brick_slab.json"
+      },
+      {
+        "id": "nether_brick_slab",
+        "identifier": "utilitycraft:nether_brick_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "nether_brick",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/nether_brick_slab.json"
+      },
+      {
+        "id": "nether_wart",
+        "identifier": "utilitycraft:nether_wart",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:nether_wart_block",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "nether_wart",
+          "count": 9
+        },
+        "source": "BP/recipes/useful/uncrafting/netherwart.json"
+      },
+      {
+        "id": "netherite_hammer",
+        "identifier": "utilitycraft:netherite_hammer",
+        "kind": "smithing_transform",
+        "station": "smithing_table",
+        "slots": [
+          {
+            "id": "minecraft:netherite_upgrade_smithing_template",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_hammer",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 3,
+        "result": {
+          "id": "utilitycraft:netherite_hammer",
+          "count": 1
+        },
+        "source": "BP/recipes/tools/hammers/netherite_hammer.json"
+      },
+      {
+        "id": "netherite_mesh",
+        "identifier": "utilitycraft:netherite_mesh",
+        "kind": "smithing_transform",
+        "station": "smithing_table",
+        "slots": [
+          {
+            "id": "minecraft:netherite_upgrade_smithing_template",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_mesh",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 3,
+        "result": {
+          "id": "utilitycraft:netherite_mesh",
+          "count": 1
+        },
+        "source": "BP/recipes/items/mesh/netherite_mesh.json"
+      },
+      {
+        "id": "oak_wood_slab",
+        "identifier": "utilitycraft:oak_wood_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "wooden_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "planks",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/oak_wooden_slab.json"
+      },
+      {
+        "id": "oxidized_cut_copper_slab",
+        "identifier": "utilitycraft:oxidized_cut_copper_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "oxidized_cut_copper_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "oxidized_cut_copper",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/oxidized_cut_copper_slab.json"
+      },
+      {
+        "id": "pebble_to_andesite",
+        "identifier": "utilitycraft:pebble_to_andesite",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:andesite_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:andesite_pebble",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:andesite_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:andesite_pebble",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:andesite",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/pebble_to_andesite.json"
+      },
+      {
+        "id": "pebble_to_basalt",
+        "identifier": "utilitycraft:pebble_to_basalt",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:basalt_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basalt_pebble",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:basalt_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:basalt_pebble",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:basalt",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/pebble_to_basalt.json"
+      },
+      {
+        "id": "pebble_to_blackstone",
+        "identifier": "utilitycraft:pebble_to_blackstone",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:blackstone_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:blackstone_pebble",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:blackstone_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:blackstone_pebble",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:blackstone",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/pebble_to_blackstone.json"
+      },
+      {
+        "id": "pebble_to_calcite",
+        "identifier": "utilitycraft:pebble_to_calcite",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:calcite_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:calcite_pebble",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:calcite_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:calcite_pebble",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:calcite",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/pebble_to_calcite.json"
+      },
+      {
+        "id": "pebble_to_cobblestone",
+        "identifier": "utilitycraft:pebble_to_cobblestone",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:stone_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:stone_pebble",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:stone_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:stone_pebble",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:cobblestone",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/pebble_to_cobblestone.json"
+      },
+      {
+        "id": "pebble_to_diorite",
+        "identifier": "utilitycraft:pebble_to_diorite",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:diorite_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diorite_pebble",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:diorite_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diorite_pebble",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:diorite",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/pebble_to_diorite.json"
+      },
+      {
+        "id": "pebble_to_dripstone",
+        "identifier": "utilitycraft:pebble_to_dripstone",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:dripstone_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:dripstone_pebble",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:dripstone_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:dripstone_pebble",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:dripstone_block",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/pebble_to_dripstone.json"
+      },
+      {
+        "id": "pebble_to_gilded_blackstone",
+        "identifier": "utilitycraft:pebble_to_gilded_blackstone",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:gilded_blackstone_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:gilded_blackstone_pebble",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:gilded_blackstone_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:gilded_blackstone_pebble",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:gilded_blackstone",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/pebble_to_gilded_blackstone.json"
+      },
+      {
+        "id": "pebble_to_granite",
+        "identifier": "utilitycraft:pebble_to_granite",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:granite_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:granite_pebble",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:granite_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:granite_pebble",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:granite",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/pebble_to_granite.json"
+      },
+      {
+        "id": "pebble_to_tuff",
+        "identifier": "utilitycraft:pebble_to_tuff",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:tuff_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:tuff_pebble",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:tuff_pebble",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:tuff_pebble",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:tuff",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/pebble_to_tuff.json"
+      },
+      {
+        "id": "polished_andesite_slab",
+        "identifier": "utilitycraft:polished_andesite_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab3",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "stone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/polished_andesite_slab.json"
+      },
+      {
+        "id": "polished_blackstone_brick_slab",
+        "identifier": "utilitycraft:polished_blackstone_brick_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "polished_blackstone_brick_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "polished_blackstone_bricks",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/polished_blackstone_brick_slab.json"
+      },
+      {
+        "id": "polished_blackstone_slab",
+        "identifier": "utilitycraft:polished_blackstone_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "polished_blackstone_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "polished_blackstone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/polished_blackstone_slab.json"
+      },
+      {
+        "id": "polished_deepslate_slab",
+        "identifier": "utilitycraft:polished_deepslate_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "polished_deepslate_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "polished_deepslate",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/polished_deepslate_slab.json"
+      },
+      {
+        "id": "polished_diorite_slab",
+        "identifier": "utilitycraft:polished_diorite_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab3",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "stone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/polished_diorite_slab.json"
+      },
+      {
+        "id": "polished_granite_slab",
+        "identifier": "utilitycraft:polished_granite_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab3",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "stone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/polished_granite_slab.json"
+      },
+      {
+        "id": "prismarine_bricks_slab",
+        "identifier": "utilitycraft:prismarine_bricks_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab2",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "prismarine",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/prismarine_bricks_slab.json"
+      },
+      {
+        "id": "prismarine_slab",
+        "identifier": "utilitycraft:prismarine_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab2",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "prismarine",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/prismarine_slab.json"
+      },
+      {
+        "id": "purpur_slab",
+        "identifier": "utilitycraft:purpur_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab2",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "purpur_block",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/purpur_slab.json"
+      },
+      {
+        "id": "quartz",
+        "identifier": "utilitycraft:quartz",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:quartz_block",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "minecraft:quartz",
+          "count": 4
+        },
+        "source": "BP/recipes/useful/quartz.json"
+      },
+      {
+        "id": "quartz_slab",
+        "identifier": "utilitycraft:quartz_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "quartz_block",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/quartz_slab.json"
+      },
+      {
+        "id": "raw_copper_block",
+        "identifier": "utilitycraft:raw_copper_block",
+        "kind": "furnace",
+        "station": "blast_furnace",
+        "slots": [
+          {
+            "id": "raw_copper_block",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "copper_block",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/furnace/raw_copper_block.json"
+      },
+      {
+        "id": "raw_gold_block",
+        "identifier": "utilitycraft:raw_gold_block",
+        "kind": "furnace",
+        "station": "blast_furnace",
+        "slots": [
+          {
+            "id": "raw_gold_block",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "gold_block",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/furnace/raw_gold_block.json"
+      },
+      {
+        "id": "raw_iron_block",
+        "identifier": "utilitycraft:raw_iron_block",
+        "kind": "furnace",
+        "station": "blast_furnace",
+        "slots": [
+          {
+            "id": "raw_iron_block",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "iron_block",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/furnace/raw_iron_block.json"
+      },
+      {
+        "id": "raw_leather",
+        "identifier": "utilitycraft:raw_leather",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:rotten_flesh",
+            "count": 1
+          },
+          {
+            "id": "minecraft:rotten_flesh",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:rotten_flesh",
+            "count": 1
+          },
+          {
+            "id": "minecraft:rotten_flesh",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "utilitycraft:raw_leather",
+          "count": 1
+        },
+        "source": "BP/recipes/items/useful_crafts/raw_leather/raw_leather.json"
+      },
+      {
+        "id": "red_nether_brick_slab",
+        "identifier": "utilitycraft:red_nether_brick_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab2",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "red_nether_brick",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/red_nether_brick_slab.json"
+      },
+      {
+        "id": "red_sandstone_slab",
+        "identifier": "utilitycraft:red_sandstone_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab2",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "red_sandstone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/red_sandstone_slab.json"
+      },
+      {
+        "id": "sandstone_slab",
+        "identifier": "utilitycraft:sandstone_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "sandstone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/sandstone_slab.json"
+      },
+      {
+        "id": "shard_to_diamond",
+        "identifier": "utilitycraft:shard_to_diamond",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:diamond_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_shard",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:diamond_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:diamond_shard",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:diamond",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/shard_to_diamond.json"
+      },
+      {
+        "id": "shard_to_emerald",
+        "identifier": "utilitycraft:shard_to_emerald",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:emerald_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:emerald_shard",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:emerald_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:emerald_shard",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "minecraft:emerald",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/shard_to_emerald.json"
+      },
+      {
+        "id": "shard_to_shulker_shell",
+        "identifier": "utilitycraft:shard_to_shulker_shell",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          },
+          {
+            "id": "utilitycraft:shulker_shell_shard",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "minecraft:shulker_shell",
+          "count": 1
+        },
+        "source": "BP/recipes/items/pebbles/shard_to_shulker_shell.json"
+      },
+      {
+        "id": "sieve",
+        "identifier": "utilitycraft:sieve",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "planks",
+            "count": 1
+          },
+          null,
+          {
+            "id": "planks",
+            "count": 1
+          },
+          {
+            "id": "planks",
+            "count": 1
+          },
+          {
+            "id": "wooden_slab",
+            "count": 1
+          },
+          {
+            "id": "planks",
+            "count": 1
+          },
+          {
+            "id": "stick",
+            "count": 1
+          },
+          null,
+          {
+            "id": "stick",
+            "count": 1
+          }
+        ],
+        "slotCount": 7,
+        "result": {
+          "id": "utilitycraft:sieve",
+          "count": 1
+        },
+        "source": "BP/recipes/addons/basics/sieve.json"
+      },
+      {
+        "id": "sink",
+        "identifier": "utilitycraft:sink",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "heart_of_the_sea",
+            "count": 1
+          },
+          {
+            "id": "iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "water_bucket",
+            "count": 1
+          },
+          {
+            "id": "ender_eye",
+            "count": 1
+          },
+          {
+            "id": "water_bucket",
+            "count": 1
+          },
+          {
+            "id": "planks",
+            "count": 1
+          },
+          {
+            "id": "barrel",
+            "count": 1
+          },
+          {
+            "id": "planks",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:sink",
+          "count": 1
+        },
+        "source": "BP/recipes/blocks/utility_blocks/sink.json"
+      },
+      {
+        "id": "smooth_quartz_slab",
+        "identifier": "utilitycraft:smooth_quartz_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab4",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "quartz_block",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/smooth_quartz_slab.json"
+      },
+      {
+        "id": "smooth_red_sandstone_slab",
+        "identifier": "utilitycraft:smooth_red_sandstone_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab3",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "red_sandstone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/smooth_red_sandstone_slab.json"
+      },
+      {
+        "id": "smooth_sandstone_slab",
+        "identifier": "utilitycraft:smooth_sandstone_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab2",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "sandstone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/smooth_sandstone_slab.json"
+      },
+      {
+        "id": "smooth_stone_slab",
+        "identifier": "utilitycraft:smooth_stone_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "smooth_stone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/smooth_stone_slab.json"
+      },
+      {
+        "id": "spruce_wood_slab",
+        "identifier": "utilitycraft:spruce_wood_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "wooden_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "planks",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/spruce_wooden_slab.json"
+      },
+      {
+        "id": "stone_hammer",
+        "identifier": "utilitycraft:stone_hammer",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:cobblestone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:cobblestone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:cobblestone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "minecraft:cobblestone",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          null
+        ],
+        "slotCount": 7,
+        "result": {
+          "id": "utilitycraft:stone_hammer",
+          "count": 1
+        },
+        "source": "BP/recipes/tools/hammers/stone_hammer.json"
+      },
+      {
+        "id": "stone_slab",
+        "identifier": "utilitycraft:stone_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "stone_block_slab4",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "stone",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/stone_slab.json"
+      },
+      {
+        "id": "string_mesh",
+        "identifier": "utilitycraft:string_mesh",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "string",
+            "count": 1
+          },
+          {
+            "id": "stick",
+            "count": 1
+          },
+          {
+            "id": "string",
+            "count": 1
+          },
+          {
+            "id": "stick",
+            "count": 1
+          },
+          {
+            "id": "string",
+            "count": 1
+          },
+          {
+            "id": "stick",
+            "count": 1
+          },
+          {
+            "id": "string",
+            "count": 1
+          },
+          {
+            "id": "stick",
+            "count": 1
+          },
+          {
+            "id": "string",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "utilitycraft:string_mesh",
+          "count": 1
+        },
+        "source": "BP/recipes/items/mesh/string_mesh.json"
+      },
+      {
+        "id": "string_to_web",
+        "identifier": "utilitycraft:string_to_web",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:string",
+            "count": 1
+          }
+        ],
+        "slotCount": 5,
+        "result": {
+          "id": "minecraft:web",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/string_to_web.json"
+      },
+      {
+        "id": "warped_slab",
+        "identifier": "utilitycraft:warped_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "warped_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "warped_planks",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/warped_slab.json"
+      },
+      {
+        "id": "water_bottle_v1",
+        "identifier": "utilitycraft:water_bottle_v1",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "sapling",
+            "count": 1
+          },
+          {
+            "id": "sapling",
+            "count": 1
+          },
+          null,
+          {
+            "id": "utilitycraft:mortar",
+            "count": 1
+          },
+          {
+            "id": "glass_bottle",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 4,
+        "result": {
+          "id": "potion",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/water_bottle_v1.json"
+      },
+      {
+        "id": "waxed_cut_copper_slab",
+        "identifier": "utilitycraft:waxed_cut_copper_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "waxed_cut_copper_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "waxed_cut_copper",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/waxed_cut_copper_slab.json"
+      },
+      {
+        "id": "waxed_exposed_cut_copper_slab",
+        "identifier": "utilitycraft:waxed_exposed_cut_copper_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "waxed_exposed_cut_copper_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "waxed_exposed_cut_copper",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/waxed_exposed_cut_copper_slab.json"
+      },
+      {
+        "id": "waxed_oxidized_cut_copper_slab",
+        "identifier": "utilitycraft:waxed_oxidized_cut_copper_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "waxed_oxidized_cut_copper_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "waxed_oxidized_cut_copper",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/waxed_oxidized_cut_copper_slab.json"
+      },
+      {
+        "id": "waxed_weathered_cut_copper_slab",
+        "identifier": "utilitycraft:waxed_weathered_cut_copper_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "waxed_weathered_cut_copper_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "waxed_weathered_cut_copper",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/waxed_weathered_cut_copper_slab.json"
+      },
+      {
+        "id": "weathered_cut_copper_slab",
+        "identifier": "utilitycraft:weathered_cut_copper_slab",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "weathered_cut_copper_slab",
+            "count": 2
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "weathered_cut_copper",
+          "count": 1
+        },
+        "source": "BP/recipes/useful/slabs/weathered_cut_copper_slab.json"
+      },
+      {
+        "id": "web_to_string",
+        "identifier": "utilitycraft:web_to_string",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:web",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "minecraft:string",
+          "count": 5
+        },
+        "source": "BP/recipes/useful/uncrafting/web_to_string.json"
+      },
+      {
+        "id": "wooden_hammer",
+        "identifier": "utilitycraft:wooden_hammer",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "planks",
+            "count": 1
+          },
+          {
+            "id": "log",
+            "count": 1
+          },
+          {
+            "id": "planks",
+            "count": 1
+          },
+          {
+            "id": "planks",
+            "count": 1
+          },
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          {
+            "id": "planks",
+            "count": 1
+          },
+          null,
+          {
+            "id": "minecraft:stick",
+            "count": 1
+          },
+          null
+        ],
+        "slotCount": 7,
+        "result": {
+          "id": "utilitycraft:wooden_hammer",
+          "count": 1
+        },
+        "source": "BP/recipes/tools/hammers/wooden_hammer.json"
+      },
+      {
+        "id": "wool_to_string",
+        "identifier": "utilitycraft:wool_to_string",
+        "kind": "shapeless",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:wool",
+            "count": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "slotCount": 1,
+        "result": {
+          "id": "minecraft:string",
+          "count": 4
+        },
+        "source": "BP/recipes/useful/uncrafting/wool_to_string.json"
+      }
+    ]
+  },
+  "catalog": {
+    "items": [
+      {
+        "id": "ancient_debris_chunk",
+        "slug": "ancient-debris-chunk",
+        "identifier": "utilitycraft:ancient_debris_chunk",
+        "name": "Ancient Debris Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/ancient_debris_chunk.png",
+        "source": "BP/items/materials/pebbles/ancient_debris_chunk.json"
+      },
+      {
+        "id": "andesite_pebble",
+        "slug": "andesite-pebble",
+        "identifier": "utilitycraft:andesite_pebble",
+        "name": "Andesite Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/andresite_pebble.png",
+        "source": "BP/items/materials/pebbles/andesite_pebble.json"
+      },
+      {
+        "id": "basalt_pebble",
+        "slug": "basalt-pebble",
+        "identifier": "utilitycraft:basalt_pebble",
+        "name": "Basalt Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/basalt_pebble.png",
+        "source": "BP/items/materials/pebbles/basalt_pebble.json"
+      },
+      {
+        "id": "blackstone_pebble",
+        "slug": "blackstone-pebble",
+        "identifier": "utilitycraft:blackstone_pebble",
+        "name": "Blackstone Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/blackstone_pebble.png",
+        "source": "BP/items/materials/pebbles/blackstone_pebble.json"
+      },
+      {
+        "id": "calcite_pebble",
+        "slug": "calcite-pebble",
+        "identifier": "utilitycraft:calcite_pebble",
+        "name": "Calcite Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/calcite_pebble.png",
+        "source": "BP/items/materials/pebbles/calcite_pebble.json"
+      },
+      {
+        "id": "coal_chunk",
+        "slug": "coal-chunk",
+        "identifier": "utilitycraft:coal_chunk",
+        "name": "Coal Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/coal_chunk.png",
+        "source": "BP/items/materials/pebbles/coal_chunk.json"
+      },
+      {
+        "id": "copper_chunk",
+        "slug": "copper-chunk",
+        "identifier": "utilitycraft:copper_chunk",
+        "name": "Copper Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/copper_chunk.png",
+        "source": "BP/items/materials/pebbles/copper_chunk.json"
+      },
+      {
+        "id": "copper_hammer",
+        "slug": "copper-hammer",
+        "identifier": "utilitycraft:copper_hammer",
+        "name": "Copper Hammer",
+        "category": "Tools",
+        "image": "textures/items/tools/copper_hammer.png",
+        "source": "BP/items/tools/hammers/copper_hammer.json"
+      },
+      {
+        "id": "copper_mesh",
+        "slug": "copper-mesh",
+        "identifier": "utilitycraft:copper_mesh",
+        "name": "Copper Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/copper_mesh.png",
+        "source": "BP/items/meshes/copper_mesh.json"
+      },
+      {
+        "id": "deepslate_coal_chunk",
+        "slug": "deepslate-coal-chunk",
+        "identifier": "utilitycraft:deepslate_coal_chunk",
+        "name": "Deepslate Coal Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/deepslate_coal_chunk.png",
+        "source": "BP/items/materials/pebbles/deepslate_coal_chunk.json"
+      },
+      {
+        "id": "deepslate_gold_chunk",
+        "slug": "deepslate-gold-chunk",
+        "identifier": "utilitycraft:deepslate_gold_chunk",
+        "name": "Deepslate Gold Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/deepslate_gold_chunk.png",
+        "source": "BP/items/materials/pebbles/deepslate_gold_chunk.json"
+      },
+      {
+        "id": "deepslate_iron_chunk",
+        "slug": "deepslate-iron-chunk",
+        "identifier": "utilitycraft:deepslate_iron_chunk",
+        "name": "Deepslate Iron Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/deepslate_iron_chunk.png",
+        "source": "BP/items/materials/pebbles/deepslate_iron_chunk.json"
+      },
+      {
+        "id": "diamond_hammer",
+        "slug": "diamond-hammer",
+        "identifier": "utilitycraft:diamond_hammer",
+        "name": "Diamond Hammer",
+        "category": "Tools",
+        "image": "textures/items/tools/diamond_hammer.png",
+        "source": "BP/items/tools/hammers/diamond_hammer.json"
+      },
+      {
+        "id": "diamond_mesh",
+        "slug": "diamond-mesh",
+        "identifier": "utilitycraft:diamond_mesh",
+        "name": "Diamond Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/diamond_mesh.png",
+        "source": "BP/items/meshes/diamond_mesh.json"
+      },
+      {
+        "id": "diamond_shard",
+        "slug": "diamond-shard",
+        "identifier": "utilitycraft:diamond_shard",
+        "name": "Diamond Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/diamond_shard.png",
+        "source": "BP/items/materials/pebbles/diamond_shard.json"
+      },
+      {
+        "id": "diorite_pebble",
+        "slug": "diorite-pebble",
+        "identifier": "utilitycraft:diorite_pebble",
+        "name": "Diorite Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/diorite_pebble.png",
+        "source": "BP/items/materials/pebbles/diorite_pebble.json"
+      },
+      {
+        "id": "dirt_handful",
+        "slug": "dirt-handful",
+        "identifier": "utilitycraft:dirt_handful",
+        "name": "Dirt Handful",
+        "category": "Materials",
+        "image": "textures/items/pebbles/dirt_handful.png",
+        "source": "BP/items/materials/pebbles/dirt_handful.json"
+      },
+      {
+        "id": "dripstone_pebble",
+        "slug": "dripstone-pebble",
+        "identifier": "utilitycraft:dripstone_pebble",
+        "name": "Dripstone Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/dripstone_pebble.png",
+        "source": "BP/items/materials/pebbles/dripstone_pebble.json"
+      },
+      {
+        "id": "emerald_mesh",
+        "slug": "emerald-mesh",
+        "identifier": "utilitycraft:emerald_mesh",
+        "name": "Emerald Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/emerald_mesh.png",
+        "source": "BP/items/meshes/emerald_mesh.json"
+      },
+      {
+        "id": "emerald_shard",
+        "slug": "emerald-shard",
+        "identifier": "utilitycraft:emerald_shard",
+        "name": "Emerald Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/emerald_shard.png",
+        "source": "BP/items/materials/pebbles/emerald_shard.json"
+      },
+      {
+        "id": "fiber",
+        "slug": "fiber",
+        "identifier": "utilitycraft:fiber",
+        "name": "Fiber",
+        "category": "Utility Items",
+        "image": "textures/items/misc/fiber.png",
+        "source": "BP/items/utility_items/fiber.json"
+      },
+      {
+        "id": "flint_knife",
+        "slug": "flint-knife",
+        "identifier": "utilitycraft:flint_knife",
+        "name": "Flint Knife",
+        "category": "Tools",
+        "image": "textures/items/tools/flint_knife.png",
+        "source": "BP/items/tools/special/flint_knife.json"
+      },
+      {
+        "id": "flint_mesh",
+        "slug": "flint-mesh",
+        "identifier": "utilitycraft:flint_mesh",
+        "name": "Flint Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/flint_mesh.png",
+        "source": "BP/items/meshes/flint_mesh.json"
+      },
+      {
+        "id": "gilded_blackstone_pebble",
+        "slug": "gilded-blackstone-pebble",
+        "identifier": "utilitycraft:gilded_blackstone_pebble",
+        "name": "Gilded Blackstone Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/gilded_blackstone_pebble.png",
+        "source": "BP/items/materials/pebbles/gilded_blackstone_pebble.json"
+      },
+      {
+        "id": "gold_chunk",
+        "slug": "gold-chunk",
+        "identifier": "utilitycraft:gold_chunk",
+        "name": "Gold Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/gold_chunk.png",
+        "source": "BP/items/materials/pebbles/gold_chunk.json"
+      },
+      {
+        "id": "golden_hammer",
+        "slug": "golden-hammer",
+        "identifier": "utilitycraft:golden_hammer",
+        "name": "Golden Hammer",
+        "category": "Tools",
+        "image": "textures/items/tools/golden_hammer.png",
+        "source": "BP/items/tools/hammers/golden_hammer.json"
+      },
+      {
+        "id": "golden_mesh",
+        "slug": "golden-mesh",
+        "identifier": "utilitycraft:golden_mesh",
+        "name": "Golden Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/golden_mesh.png",
+        "source": "BP/items/meshes/golden_mesh.json"
+      },
+      {
+        "id": "granite_pebble",
+        "slug": "granite-pebble",
+        "identifier": "utilitycraft:granite_pebble",
+        "name": "Granite Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/granite_pebble.png",
+        "source": "BP/items/materials/pebbles/granite_pebble.json"
+      },
+      {
+        "id": "gravel_fragments",
+        "slug": "gravel-fragments",
+        "identifier": "utilitycraft:gravel_fragments",
+        "name": "Gravel Fragments",
+        "category": "Materials",
+        "image": "textures/items/pebbles/gravel_fragments.png",
+        "source": "BP/items/materials/pebbles/gravel_fragments.json"
+      },
+      {
+        "id": "iron_chunk",
+        "slug": "iron-chunk",
+        "identifier": "utilitycraft:iron_chunk",
+        "name": "Iron Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/iron_chunk.png",
+        "source": "BP/items/materials/pebbles/iron_chunk.json"
+      },
+      {
+        "id": "iron_hammer",
+        "slug": "iron-hammer",
+        "identifier": "utilitycraft:iron_hammer",
+        "name": "Iron Hammer",
+        "category": "Tools",
+        "image": "textures/items/tools/iron_hammer.png",
+        "source": "BP/items/tools/hammers/iron_hammer.json"
+      },
+      {
+        "id": "iron_mesh",
+        "slug": "iron-mesh",
+        "identifier": "utilitycraft:iron_mesh",
+        "name": "Iron Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/iron_mesh.png",
+        "source": "BP/items/meshes/iron_mesh.json"
+      },
+      {
+        "id": "mortar",
+        "slug": "mortar",
+        "identifier": "utilitycraft:mortar",
+        "name": "Mortar",
+        "category": "Utility Items",
+        "image": "textures/items/tools/mortar.png",
+        "source": "BP/items/utility_items/mortar.json"
+      },
+      {
+        "id": "mud_ball",
+        "slug": "mud-ball",
+        "identifier": "utilitycraft:mud_ball",
+        "name": "Mud Ball",
+        "category": "Materials",
+        "image": "textures/items/pebbles/mud_ball.png",
+        "source": "BP/items/materials/pebbles/mud_ball.json"
+      },
+      {
+        "id": "nether_gold_chunk",
+        "slug": "nether-gold-chunk",
+        "identifier": "utilitycraft:nether_gold_chunk",
+        "name": "Nether Gold Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/nether_gold_chunk.png",
+        "source": "BP/items/materials/pebbles/nether_gold_chunk.json"
+      },
+      {
+        "id": "nether_quartz_chunk",
+        "slug": "nether-quartz-chunk",
+        "identifier": "utilitycraft:nether_quartz_chunk",
+        "name": "Nether Quartz Chunk",
+        "category": "Materials",
+        "image": "textures/items/pebbles/nether_quartz_chunk.png",
+        "source": "BP/items/materials/pebbles/nether_quartz_chunk.json"
+      },
+      {
+        "id": "netherite_hammer",
+        "slug": "netherite-hammer",
+        "identifier": "utilitycraft:netherite_hammer",
+        "name": "Netherite Hammer",
+        "category": "Tools",
+        "image": "textures/items/tools/netherite_hammer.png",
+        "source": "BP/items/tools/hammers/netherite_hammer.json"
+      },
+      {
+        "id": "netherite_mesh",
+        "slug": "netherite-mesh",
+        "identifier": "utilitycraft:netherite_mesh",
+        "name": "Netherite Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/netherite_mesh.png",
+        "source": "BP/items/meshes/netherite_mesh.json"
+      },
+      {
+        "id": "raw_leather",
+        "slug": "raw-leather",
+        "identifier": "utilitycraft:raw_leather",
+        "name": "Raw Leather",
+        "category": "Utility Items",
+        "image": "textures/items/misc/raw_leather.png",
+        "source": "BP/items/utility_items/raw_leather.json"
+      },
+      {
+        "id": "red_sand_handful",
+        "slug": "red-sand-handful",
+        "identifier": "utilitycraft:red_sand_handful",
+        "name": "Red Sand Handful",
+        "category": "Materials",
+        "image": "textures/items/pebbles/red_sand_handful.png",
+        "source": "BP/items/materials/pebbles/red_sand_handful.json"
+      },
+      {
+        "id": "sand_handful",
+        "slug": "sand-handful",
+        "identifier": "utilitycraft:sand_handful",
+        "name": "Sand Handful",
+        "category": "Materials",
+        "image": "textures/items/pebbles/sand_handful.png",
+        "source": "BP/items/materials/pebbles/sand_handful.json"
+      },
+      {
+        "id": "shulker_shell_shard",
+        "slug": "shulker-shell-shard",
+        "identifier": "utilitycraft:shulker_shell_shard",
+        "name": "Shulker Shell Shard",
+        "category": "Materials",
+        "image": "textures/items/pebbles/shulker_shell_shard.png",
+        "source": "BP/items/materials/pebbles/shulker_shell_shard.json"
+      },
+      {
+        "id": "stone_hammer",
+        "slug": "stone-hammer",
+        "identifier": "utilitycraft:stone_hammer",
+        "name": "Stone Hammer",
+        "category": "Tools",
+        "image": "textures/items/tools/stone_hammer.png",
+        "source": "BP/items/tools/hammers/stone_hammer.json"
+      },
+      {
+        "id": "stone_pebble",
+        "slug": "stone-pebble",
+        "identifier": "utilitycraft:stone_pebble",
+        "name": "Stone Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/stone_pebble.png",
+        "source": "BP/items/materials/pebbles/stone_pebble.json"
+      },
+      {
+        "id": "string_mesh",
+        "slug": "string-mesh",
+        "identifier": "utilitycraft:string_mesh",
+        "name": "String Mesh",
+        "category": "Meshes",
+        "image": "textures/items/meshes/string_mesh.png",
+        "source": "BP/items/meshes/string_mesh.json"
+      },
+      {
+        "id": "tuff_pebble",
+        "slug": "tuff-pebble",
+        "identifier": "utilitycraft:tuff_pebble",
+        "name": "Tuff Pebble",
+        "category": "Materials",
+        "image": "textures/items/pebbles/tuff_pebble.png",
+        "source": "BP/items/materials/pebbles/tuff_pebble.json"
+      },
+      {
+        "id": "wooden_hammer",
+        "slug": "wooden-hammer",
+        "identifier": "utilitycraft:wooden_hammer",
+        "name": "Wooden Hammer",
+        "category": "Tools",
+        "image": "textures/items/tools/wooden_hammer.png",
+        "source": "BP/items/tools/hammers/wooden_hammer.json"
+      }
+    ]
+  },
+  "variantGroups": []
+}

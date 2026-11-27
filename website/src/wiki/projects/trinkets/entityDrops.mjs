@@ -7,7 +7,6 @@ const creatureNames = {
   elder_guardian: ['Elder Guardian', 'Guardião-mestre', 'Guardián anciano'],
   ender_dragon: ['Ender Dragon', 'Dragão Ender', 'Dragona de Ender'],
   enderman: ['Enderman', 'Enderman', 'Enderman'],
-  evocation_illager: ['Evoker', 'Invocador', 'Invocador'],
   guardian: ['Guardian', 'Guardião', 'Guardián'],
   phantom: ['Phantom', 'Fantasma', 'Fantasma'],
   piglin_brute: ['Piglin Brute', 'Piglin Bárbaro', 'Piglin bruto'],
@@ -27,17 +26,20 @@ const creatureNames = {
 };
 
 export function isAvailableEntityDrop({entity}) {
-  return entity.includes(':');
+  return typeof entity === 'string' && entity.startsWith('minecraft:')
+    && Object.hasOwn(creatureNames, entity.slice('minecraft:'.length));
 }
 
 export function trinketDropCreature(entity, locale) {
   const id = entity.replace(/^minecraft:/, '');
   const names = creatureNames[id];
   const language = locale === 'pt-BR' ? 1 : locale === 'es-MX' ? 2 : 0;
+  const hasRender = isAvailableEntityDrop({entity});
   return {
     id,
     name: names?.[language] ?? id.replaceAll('_', ' '),
-    image: names && entity.startsWith('minecraft:') ? `drop-mobs/${id}.png` : null,
+    image: hasRender ? `drop-mobs/${id}.png` : null,
+    faceImage: hasRender ? `drop-faces/${id}.png` : null,
   };
 }
 

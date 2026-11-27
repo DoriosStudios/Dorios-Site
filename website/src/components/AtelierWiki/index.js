@@ -8,10 +8,11 @@ import SocialMetadata from '../SocialMetadata';
 import {getProject} from '../../data/projects';
 import {useSiteI18n} from '../../i18n/site';
 import {atelierCopy,localizedLabel} from './copy';
-import {data,records,byId,incoming,outgoing,lineage,blockPath,materialPath} from './model.mjs';
+import {data,records,recipes,byId,incoming,outgoing,lineage,blockPath,materialPath} from './model.mjs';
 import styles from './styles.module.css';
 
 const root='/wiki/atelier';
+const itemGroups=['chisel','gloves','glass_cutter','furniture_hammer','paint_bucket','paintbrush','paint_roller','dyes','settings.json'];
 const order=['block','stairs','slab','vertical_slab','wall','carpet'];
 const stationTextures={'Bancada':['crafting_table_top'],'Cortador de pedras':['stonecutter2_top'],Forno:['furnace_top'],'Forno / Alto-forno':['furnace_top','blast_furnace_top']};
 function Image({src,size=48,label=''}) {
@@ -57,8 +58,17 @@ export default function AtelierWiki({routeData={}}) {
   const colorPicker=material?.colors.length>1?<label className="ag-color-select">{t('color')}<select aria-label={t('color')} value={color} onChange={event=>setColor(event.target.value)}>{material.colors.map(c=><option key={c.id} value={c.id}>{label(c.label)}</option>)}</select></label>:null;
   let content,title=t('materials');
   if (!material) content=<>
-    <div className="ag-intro"><span className="ag-overline">{t('library')}</span><h1>{title}</h1><p>{t('lead')}</p><div className="ag-overview">{formatNumber(data.materials.length)} {t('materials').toLowerCase()} · {formatNumber(data.sourceCount)} {t('blocks')} · {t('minecraft')}</div></div>
+    <div className="ag-intro"><span className="ag-overline">{t('library')}</span><h1>{title}</h1><p>{t('lead')}</p><div className="ag-overview">{formatNumber(data.materials.length)} {t('materials').toLowerCase()} · {formatNumber(data.sourceCount)} {t('blocks')} · {t('minecraft')}</div><a href="#tools">{t('toolRecipes')}</a></div>
     {['Pedras e minerais','Madeiras','Cores e transparências','Natureza'].map(category=><section className="ag-section" key={category}><div className="ag-section-title"><h2>{t(category)}</h2></div><div className="ag-material-grid">{data.materials.filter(m=>m.category===category).map(m=><Link className="ag-material" key={m.id} to={materialPath(m)}><div className="ag-material-media"><Image src={records[m.base].image} size={75}/><span className="ag-texture-stack"><Image src={m.texture} size={34} label={`${t('original')}: ${label(m.label)}`}/></span></div><span className="ag-material-name"><strong>{label(m.label)}</strong><small>{m.addonCount} {t('blocks')}</small></span></Link>)}</div></section>)}
+    <section className="ag-section" id="tools">
+      <div className="ag-section-title"><h2>{t('toolRecipes')}</h2></div>
+      <p>{t('toolLead')}</p>
+      {itemGroups.filter(group => data.itemRecipes?.[group]?.length).map(group =>
+        <details key={group} className="ag-section">
+          <summary>{t(group)} · {data.itemRecipes[group].length}</summary>
+          <RecipeList list={data.itemRecipes[group].map(index => recipes[index])}/>
+        </details>)}
+    </section>
   </>;
   else if (!current) {
     title=label(material.label);
@@ -69,19 +79,28 @@ export default function AtelierWiki({routeData={}}) {
     title=name(current);
     const ins=incoming.get(current.idIndex)??[],outs=(outgoing.get(current.idIndex)??[]).filter(recipe=>recipe.out!==current.idIndex);
     const paint=data.paint[current.index]??[],cycle=data.cycles.find(c=>c.includes(current.idIndex));
+    const [fromGlass,toGlass]=data.glassCuts?.[current.idIndex]??[];
+    const cutsGlass=fromGlass!==undefined;
+    const cutterOperation=(input,out)=><><p className="ag-instructions">{t('cutterGuide')} <Link to={root+'#tools'}>{t('toolRecipes')}</Link></p>
+      <div className="ag-recipes"><article className="ag-recipe">
+        <div className="ag-recipe-items"><Endpoint id={input} count={1}/></div>
+        <div className="ag-method"><span>{t('glassCutter')}</span><strong aria-hidden="true">→</strong></div>
+        <div className="ag-recipe-items"><Endpoint id={out} count={1}/></div>
+      </article></div></>;
     const route=lineage(current),all=[...ins,...outs],g=groupOf(current),p=current.props;
     const returns=outs.some(recipe=>{const target=byId.get(data.ids[recipe.out]);return target&&current.shape!=='block'&&target.shape==='block'&&target.material===current.material&&target.group===current.group&&target.color===current.color;});
-    const capabilities=[['cut',all.some(r=>r.method==='Cortador de pedras'),outs.some(r=>r.method==='Cortador de pedras')?'transform':'obtain'],['return',returns,'transform'],['burn',all.some(r=>r.method.startsWith('Forno')),outs.some(r=>r.method.startsWith('Forno'))?'transform':'obtain'],['paint',paint.length>0,'paint'],['chisel',!!cycle,'tools']];
+    const capabilities=[['cut',all.some(r=>r.method==='Cortador de pedras'),outs.some(r=>r.method==='Cortador de pedras')?'transform':'obtain'],['return',returns,'transform'],['burn',all.some(r=>r.method.startsWith('Forno')),outs.some(r=>r.method.startsWith('Forno'))?'transform':'obtain'],['paint',paint.length>0,'paint'],['chisel',!!cycle,'tools'],...(cutsGlass?[['glassCutter',true,'tools']]:[])];
     const fields=[['material',label(material.label)],['finish',label(g.label)],['shape',t(current.shape)],['origin',current.origin],p.tool&&['tool',t(p.tool)],p.time!==undefined&&['time',`${p.time} ${t('seconds')}`],p.surface&&['surface',t(p.surface)],p.light&&['light',p.light]].filter(Boolean);
     content=<><div className="ag-intro"><span className="ag-overline">{label(material.label)} / {label(g.label)} / {t(current.shape)}</span><h1>{title}</h1></div>
       <section className="ag-lineage"><span className="ag-overline">{t(route.reference?'reference':'route')}</span><div className="ag-lineage-row">{route.nodes.map((id,i)=>{const node=byId.get(data.ids[id]),edge=route.edges[i];return <React.Fragment key={id}><Link className="ag-ancestor" data-current={node.id===current.id||undefined} to={blockPath(node)}><Image src={node.image} size={39}/><span className="ag-ancestor-copy">{name(node)}<small>{node.origin}</small></span></Link>{edge&&<span className="ag-edge"><Station method={edge.method} t={t}/><b aria-hidden="true">→</b><span>{edge.inputs[0][1]} → {edge.count}</span></span>}</React.Fragment>;})}</div></section>
       <section className="ag-block-grid"><div className="ag-block-preview"><Image src={current.image} size={180} label={title}/><small>{t(current.shape)} · {current.origin}</small></div><div className="ag-block-info"><h2>{t('facts')}</h2><code className="ag-code">{current.id}</code><div className="ag-properties">{fields.map(([key,value])=><div className="ag-property" key={key}><small>{t(key)}</small><span>{value}</span></div>)}</div><div className="ag-capabilities">{capabilities.map(([key,enabled,destination])=><button className="ag-capability" key={key} type="button" disabled={!enabled} onClick={()=>setTab(destination)}>{enabled?'✓':'—'} {t(key)}</button>)}</div></div></section>
       <section className="ag-related"><h3>{t('forms')} · {label(g.label)}</h3><div className="ag-forms">{forms(material,g,current.color).map(record=><Form key={record.id} record={record} size={55}/>)}</div></section>
-      <nav className="ag-tabs" role="tablist" aria-label={t('transform')}>{[['obtain',ins.length],['transform',outs.length],['paint',paint.length],['tools',cycle?1:0]].map(([key,count])=><button type="button" key={key} role="tab" id={`atelier-tab-${key}`} aria-selected={tab===key} aria-controls="atelier-tab-panel" onClick={()=>setTab(key)}>{t(key)}{count?` · ${count}`:''}</button>)}</nav>
+      <nav className="ag-tabs" role="tablist" aria-label={t('transform')}>{[['obtain',ins.length+Number(cutsGlass)],['transform',outs.length+Number(cutsGlass)],['paint',paint.length],['tools',Number(Boolean(cycle))+Number(cutsGlass)]].map(([key,count])=><button type="button" key={key} role="tab" id={`atelier-tab-${key}`} aria-selected={tab===key} aria-controls="atelier-tab-panel" onClick={()=>setTab(key)}>{t(key)}{count?` · ${count}`:''}</button>)}</nav>
       <div className="ag-tab-content" id="atelier-tab-panel" role="tabpanel" aria-labelledby={`atelier-tab-${tab}`}>
-        {tab==='obtain'&&<RecipeList list={ins}/>} {tab==='transform'&&<RecipeList list={outs}/>}
+        {tab==='obtain'&&<>{cutsGlass&&cutterOperation(fromGlass,current.idIndex)}{(ins.length>0||!cutsGlass)&&<RecipeList list={ins}/>}</>}
+        {tab==='transform'&&<>{cutsGlass&&cutterOperation(current.idIndex,toGlass)}{(outs.length>0||!cutsGlass)&&<RecipeList list={outs}/>}</>}
         {tab==='paint'&&(paint.length?<><p className="ag-instructions">{t('paintGuide')}</p><div className="ag-paint-grid">{paint.map(([c,index])=>{const record=records[index];return <Link key={c} className="ag-paint-target" to={blockPath(record)}><Image src={record.image} size={58}/><span>{label(data.materials[record.material].colors.find(item=>item.id===c)?.label)||c}</span></Link>;})}</div></>:<p className="ag-empty">{t('none')}</p>)}
-        {tab==='tools'&&(cycle?<><p className="ag-instructions">{t('chiselGuide')}</p><div className="ag-paint-grid">{cycle.filter(id=>byId.has(data.ids[id])).map(id=>{const record=byId.get(data.ids[id]);return <Link className="ag-paint-target" key={id} to={blockPath(record)}><Image src={record.image} size={58}/><span>{label(groupOf(record).label)}</span></Link>;})}</div></>:<p className="ag-empty">{t('none')}</p>)}
+        {tab==='tools'&&(cutsGlass?cutterOperation(current.idIndex,toGlass):cycle?<><p className="ag-instructions">{t('chiselGuide')}</p><div className="ag-paint-grid">{cycle.filter(id=>byId.has(data.ids[id])).map(id=>{const record=byId.get(data.ids[id]);return <Link className="ag-paint-target" key={id} to={blockPath(record)}><Image src={record.image} size={58}/><span>{label(groupOf(record).label)}</span></Link>;})}</div></>:<p className="ag-empty">{t('none')}</p>)}
       </div></>;
   }
   const project=getProject('atelier'),path=current?blockPath(current):material?materialPath(material):root;

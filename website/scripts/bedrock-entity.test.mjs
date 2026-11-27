@@ -152,6 +152,43 @@ test('unknown Molang, ambiguous multiple texture stages and missing assets are d
   await assert.rejects(f.resolve(),/Missing entity texture/);
 });
 
+test('zero-opacity bones and layers cannot affect their visible neighbours', async t => {
+  const f = await fixture(t);
+  const original = await f.resolve();
+  const expected = structuredClone(original);
+  expected.layers[0].geometry.bones.find(bone => bone.name === 'head').cubes = [];
+  const hiddenHead = await f.resolve({boneOpacity: {HEAD: 0}});
+  assert.deepEqual((await renderEntity(hiddenHead)).pixels, (await renderEntity(expected)).pixels);
+  assert.equal((await renderEntity(hiddenHead)).stats[0].cubes, 3, 'the head still transforms its visible nose');
+
+  const geometry = model();
+  geometry.bones.find(bone => bone.name === 'head').opacity = 0;
+  await f.write('RP/models/entity/test.geo.json', {'minecraft:geometry': [geometry]});
+  assert.deepEqual((await renderEntity(await f.resolve())).pixels, (await renderEntity(expected)).pixels);
+  await f.write('RP/models/entity/test.geo.json', {'minecraft:geometry': [model()]});
+
+  const hiddenBranch = await f.resolve({visibility: {HEAD: 0}});
+  assert.equal((await renderEntity(hiddenBranch)).stats[0].cubes, 2, 'visibility hides the branch');
+
+  const transparentLayer = {...controller, geometry: 'geometry.intentionally_absent',
+    color: {a: 'query.variant == 0 ? 0 : variable.runtime_alpha'}};
+  const withTransparentLayer = await f.resolve({layers: [controller, transparentLayer]});
+  assert.deepEqual((await renderEntity(withTransparentLayer)).pixels, (await renderEntity(original)).pixels);
+});
+
+test('controller alpha modulates the opacity of an opaque material', async t => {
+  const f = await fixture(t);
+  const layer = {...controller, renderMethod: 'opaque', color: {a: 'variable.layer_alpha'}};
+  const resolve = opacity => f.resolve({layers: [layer], expressions: {'variable.layer_alpha': opacity}});
+  const solid = await resolve(1);
+  const faded = await resolve(0.25);
+  const {pixels} = await renderEntity(faded);
+  const alphas = new Set(pixels.filter((_, index) => index % 4 === 3));
+  assert.ok(alphas.has(64), 'the opaque surface retains the controller alpha');
+  assert.ok(!alphas.has(255));
+  assert.notEqual(entityVisualHash(solid, {}), entityVisualHash(faded, {}));
+});
+
 test('static constant rotation animations and explicit pose are deterministic; advanced poses report limits',async t=>{
   const f=await fixture(t);
   await f.write('RP/animations/pose.json',{animations:{'animation.test.pose':{bones:{head:{rotation:[0,30,0]}}}}});

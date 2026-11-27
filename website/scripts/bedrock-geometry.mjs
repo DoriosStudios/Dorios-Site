@@ -156,10 +156,10 @@ export async function compileGeometry({geometry, visibility = {}, transformation
       volume.contains = p => !cube.size.includes(0) && transformPoint(inverse, p).every((v, i) =>
         v > cube.origin[i] + 1e-6 && v < cube.origin[i] + cube.size[i] - 1e-6);
       // Only closed, uniformly opaque volumes can occlude arbitrary surfaces.
-      volume.hides = texture => volume.closed && volume.textures.every(t => t.method === 'opaque'
-        || (t.digest === texture.digest && t.method === texture.method && t.method === 'blend'));
+      volume.hides = texture => volume.closed && volume.textures.every(t => (t.opacity ?? 1) === 1
+        && (t.method === 'opaque' || (t.digest === texture.digest && t.method === texture.method && t.method === 'blend' && (texture.opacity ?? 1) === 1)));
       volume.blocks = (p, direction) => {
-        if (!volume.closed || !volume.textures.every(t => t.method === 'opaque')) return false;
+        if (!volume.closed || !volume.textures.every(t => t.method === 'opaque' && (t.opacity ?? 1) === 1)) return false;
         const o = transformPoint(inverse, p), d = transformPoint(inverse, direction, 0);
         let near = 0, far = Infinity;
         for (let i = 0; i < 3; i++) {

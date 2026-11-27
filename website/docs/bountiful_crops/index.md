@@ -4,130 +4,50 @@ title: Bountiful Crops
 sidebar_label: Bountiful Crops
 ---
 
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+Turn resources you already have into crops you can harvest repeatedly. Start with a Base Seed, craft the seed for your chosen resource and plant it on the soil that matches its tier.
 
-<div style={{ textAlign: "center", marginBottom: "2rem" }}>
-  <img 
-    src="https://media.forgecdn.net/attachments/description/null/description_a6a21599-3337-45bf-8551-71199c03a1ad.png" 
-    alt="Bountiful Crops Render"
-    width="70%"
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-  />
-</div>
-
-<p>
-  <b>Bountiful Crops</b> is part of the <b>UtilityCraft</b> collection and introduces a new way to obtain resources — through <b>31 different crops</b> 
-  that grow materials like iron, gold, slime, diamond, and even Nether Stars.  
-  Each crop belongs to a specific <b>tier</b> and must be planted on its corresponding <b>Soil block</b>.
-</p>
-
----
-
-## Overview
-
-Crops behave similarly to vanilla ones but with tier-based mechanics.  
-Higher-tier crops yield rarer materials and require upgraded soils to grow.
-
-<p align="center">
-  <img 
-    src="https://api.mcpedl.com/storage/submissions/182896/images/utilitycraft-v19-tractor-and-more-crops_5.png"
-    alt="Soil Tier Blocks"
-    width="70%"
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-  />
-</p>
-
----
+![Bountiful Crops planted on several colors of soil](/img/addons/crops/MCPEDL.png)
 
 ## Crop and Soil Tiers
 
-| Tier | Soil Color | Description |
-|------|-------------|-------------|
-| **Tier 1** | Yellow Soil | Basic crops like coal, copper, and water. |
-| **Tier 2** | Red Soil | Mid-tier crops like iron, lapis, and slime. |
-| **Tier 3** | Blue Soil | Advanced crops like diamond, emerald, and quartz. |
-| **Tier 4** | Black Soil | Endgame crops like Nether Star and Wither Skull. |
-
-> Crops require the correct soil tier to grow.  
-> Using a hoe reduces growth time by 10 seconds, except for special soils.
-
----
+| Tier | Soil | Seeds |
+| --- | --- | --- |
+| 1 | Yellow Soil | Coal, Copper, Dyes, Glass, Gunpowder, Iron, Leather, Prismarine Crystals, Prismarine Shards, Water, Wool |
+| 2 | Red Soil | Ghast Tear, Glowstone, Gold, Honey, Lapis, Lava, Quartz, Redstone, Resin, Slime |
+| 3 | Blue Soil | Amethyst, Blaze, Diamond, Emerald, Ender Pearl, Obsidian |
+| 4 | Black Soil | Netherite, Nether Star, Shulker, Totem, Wither |
 
 ## Crafting the Base Seed
 
-All crops start from a **Base Seed**, which can then be upgraded into specific crop seeds using their respective materials.
-
-<p align="center">
-  <img 
-    src="https://media.forgecdn.net/attachments/description/1097197/description_84168185-97ac-4a2b-8162-524ecdbd402c.png"
-    alt="Base Seed Recipe"
-    width="40%"
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-  />
-</p>
-
----
+At a crafting table, put **1 wheat seed** in the center, **4 bone meal** on the sides and **4 glass** in the corners. Use the Base Seed with the ingredients for the crop you want. To make **Iron Seeds**, for example, put a Base Seed in the center and surround it with **8 iron ingots**.
 
 ## Resource Drops
 
-Each crop produces its respective resource and can benefit from **Fortune** enchantments.  
-Fortune III significantly increases drop quantity.
+Interact with a mature plant to collect its resources and reset it to the first growth stage. Breaking a mature plant also returns the seed you need to replant it.
 
-| Crop | Drop | Fortune Affected |
-|-------|-------|-----------------|
-| Iron Crop | Iron Ingot | ✅ |
-| Diamond Crop | Diamond | ✅ |
-| Gold Crop | Gold Ingot | ✅ |
-| Redstone Crop | Redstone Dust | ✅ |
-| Lapis Crop | Lapis Lazuli | ✅ |
-| Nether Star Crop | Nether Star | ✅ |
-| Wither Skull Crop | Wither Skeleton Skull | ✅ |
+| Crop | Drops per mature harvest before Fortune |
+| --- | --- |
+| Copper | 4–8 Raw Copper |
+| Iron | 2–4 Raw Iron |
+| Lapis | 6–12 Lapis Lazuli |
+| Quartz | 6–12 Nether Quartz |
+| Resin | 3–6 Resin Clumps |
+| Diamond | 2–3 Diamond Shards |
+| Emerald | 2–3 Emerald Shards |
+| Netherite | 2–4 Netherite Nuggets |
+| Nether Star | 2–4 Nether Star Fragments |
+| Shulker | 2–4 Shulker Shell Shards |
 
----
+When you interact with the crop using a Fortune tool, the harvest amount is multiplied by **1.2×, 1.4× or 1.6×** for Fortune I, II or III, with fractional amounts rounded by chance. You can craft shards, fragments and nuggets into their full resources.
 
 ## Special Crops
 
-Some unique crops provide special items instead of basic minerals:
+Water, Lava and Honey produce balls of their respective liquids. Combine Water and Lava Balls to craft Obsidian, or use Honey Balls in the recipes for Honey Bottles and Honey Blocks.
 
-| Crop | Drop | Use |
-|------|------|-----|
-| **Water Crop** | Water Ball | Places water and substitutes water buckets in recipes. |
-| **Lava Crop** | Lava Ball | Places lava and can substitute lava buckets. |
-| **Obsidian Recipe** | 2 Lava Balls + 2 Water Balls | Creates Obsidian. |
+## Accelerating Growth
 
-<p align="center">
-  <img 
-    src="https://api.mcpedl.com/storage/submissions/186349/images/utilitycraft-v21-harvester-5-new-crops-and-compatibility-version_4.png"
-    alt="Lava Ball Item"
-    width="60%"
-    style={{ borderRadius: "12px", boxShadow: "0 4px 15px rgba(0,0,0,0.25)" }}
-  />
-</p>
-
----
-
-## Guide Book
-
-Players receive a <b>Guide Book</b> upon entering a world with Bountiful Crops installed.  
-It contains detailed information about all soils, seeds, and crafting recipes.  
-
-If lost, you can craft a new one:
-
-<Carousel showArrows={true} infiniteLoop={true} showThumbs={false} showStatus={false}>
-  <div>
-    <img src="https://media.forgecdn.net/attachments/description/1097197/description_ad5d234e-f08a-4a19-97e7-24d1d3bbe60e.png" alt="Guide Book Recipe" />
-  </div>
-</Carousel>
-
----
+Put an **Accelerator Clock** on a **Pedestal** at the same height as your crops. It attempts to advance crops in a **9×9** area centered on the Pedestal. The Diamond and Nether Star clocks have a higher chance of advancing each crop than the standard clock. Interact with the Pedestal again to take the clock back.
 
 ## Integration with UtilityCraft
 
-Bountiful Crops connects directly with other <b>UtilityCraft</b> systems:
-
-- Crops can be harvested automatically using the **Harvester**.  
-- Soils are compatible with **Bountiful Bonsais** for passive crop farming.  
-- Items like Lava and Water Balls can fuel or interact with **UtilityCraft machines**.
-
-> This addon extends the automation potential of UtilityCraft, turning farming into a renewable source of valuable materials.
+The addon registers its crop seeds with UtilityCraft’s plant system, so a compatible Bonsai Pot can grow them in a compact setup.

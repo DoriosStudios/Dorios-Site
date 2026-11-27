@@ -1,0 +1,582 @@
+{
+  "schemaVersion": 1,
+  "rendererVersion": 4,
+  "blocks": {
+    "bountiful_trees:coal_leaves": {
+      "identifier": "bountiful_trees:coal_leaves",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_coal_leaves-cef56c0e0673-32ad0d5cdfb9fe08739d2c79.png",
+      "hash": "32ad0d5cdfb9fe08739d2c79a73bc240653e8c10cdc3411e4e5c63b2f787b377",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "bountiful_trees:persistent_bit": false,
+        "bountiful_trees:placed": false
+      },
+      "geometry": "geometry.ore_tree_leaves",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "bountiful_trees:coal_log": {
+      "identifier": "bountiful_trees:coal_log",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_coal_log-b959e9e17070-0950389593be1a3cd0e60eac.png",
+      "hash": "0950389593be1a3cd0e60eac3968d2a10bd31084929a21c63f760ec180413d73",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "bountiful_trees:coal_sapling": {
+      "identifier": "bountiful_trees:coal_sapling",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_coal_sapling-e8552333835a-75a3824cde5f3ba260d3c959.png",
+      "hash": "75a3824cde5f3ba260d3c959c0f180496a310b3121bdd30cd521d4b51c5bf73a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.custom_sapling",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "bountiful_trees:copper_leaves": {
+      "identifier": "bountiful_trees:copper_leaves",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_copper_leaves-b8efeed3b215-8ccc4d7fafd442f92575be02.png",
+      "hash": "8ccc4d7fafd442f92575be024867882f93818dd1d4f102014e21e030ccc44b41",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "bountiful_trees:persistent_bit": false,
+        "bountiful_trees:placed": false
+      },
+      "geometry": "geometry.ore_tree_leaves",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "bountiful_trees:copper_log": {
+      "identifier": "bountiful_trees:copper_log",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_copper_log-e84f9b76d999-25a2ae0157d13fa2fcab9e94.png",
+      "hash": "25a2ae0157d13fa2fcab9e9486ccd6921ab4d8ce6415cfd19f349b998daf5414",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "bountiful_trees:copper_sapling": {
+      "identifier": "bountiful_trees:copper_sapling",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_copper_sapling-9f928a8e03d4-e43baa6f4846b9d8a877272f.png",
+      "hash": "e43baa6f4846b9d8a877272f7ce57af6004a0fff1484ab71a451cb91f370d266",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.custom_sapling",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "bountiful_trees:diamond_leaves": {
+      "identifier": "bountiful_trees:diamond_leaves",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_diamond_leaves-7b4878cf47b2-10736e7ad3ac9d89a790e4ce.png",
+      "hash": "10736e7ad3ac9d89a790e4cee151e7875c95128e7e75a953d4cc2d6990875585",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "bountiful_trees:persistent_bit": false,
+        "bountiful_trees:placed": false
+      },
+      "geometry": "geometry.ore_tree_leaves",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "bountiful_trees:diamond_log": {
+      "identifier": "bountiful_trees:diamond_log",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_diamond_log-004a2e2a7ba6-20d766fe95e054d47147956e.png",
+      "hash": "20d766fe95e054d47147956e4ed3c438aaf10a3691f82e7e2eec7eed15f118f3",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "bountiful_trees:diamond_sapling": {
+      "identifier": "bountiful_trees:diamond_sapling",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_diamond_sapling-3e7af151f173-ab45f3d8c350e2ecf7574708.png",
+      "hash": "ab45f3d8c350e2ecf7574708e071abec56104c0f23b53b6142c1c99d3a670b74",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.custom_sapling",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "bountiful_trees:emerald_leaves": {
+      "identifier": "bountiful_trees:emerald_leaves",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_emerald_leaves-9fb5fedb53be-1f6c935a16f0312926f864ba.png",
+      "hash": "1f6c935a16f0312926f864bafb2f795f31977d3c1ac405dab68cef0bf054cb98",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "bountiful_trees:persistent_bit": false,
+        "bountiful_trees:placed": false
+      },
+      "geometry": "geometry.ore_tree_leaves",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "bountiful_trees:emerald_log": {
+      "identifier": "bountiful_trees:emerald_log",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_emerald_log-43a265a46a92-5363a48c5099f762ab7f8e22.png",
+      "hash": "5363a48c5099f762ab7f8e220e823cf581c88cfa8afbead158c2059353fded1c",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "bountiful_trees:emerald_sapling": {
+      "identifier": "bountiful_trees:emerald_sapling",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_emerald_sapling-2c887f2f94a0-3634460cc836037f864b70eb.png",
+      "hash": "3634460cc836037f864b70eb7d66495fba1789c4f7904aed62555b1de9a88509",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.custom_sapling",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "bountiful_trees:energized_iron_leaves": {
+      "identifier": "bountiful_trees:energized_iron_leaves",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_energized_iron_leaves-1a262b33800d-920a346d66935d7c51b6a778.png",
+      "hash": "920a346d66935d7c51b6a77899ab4541789fc839733f4f3a2956f8cbba51ddaf",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "bountiful_trees:persistent_bit": false,
+        "bountiful_trees:placed": false
+      },
+      "geometry": "geometry.ore_tree_leaves",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "bountiful_trees:energized_iron_log": {
+      "identifier": "bountiful_trees:energized_iron_log",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_energized_iron_log-4bf8f7cd673a-8215f5429bd98a8765e4b2ac.png",
+      "hash": "8215f5429bd98a8765e4b2acca917415896f5a900c6eb613aece5d031d508636",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "bountiful_trees:energized_iron_sapling": {
+      "identifier": "bountiful_trees:energized_iron_sapling",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_energized_iron_sapling-5d8f1f3b867d-2e440fa9d4a37ec2199cead2.png",
+      "hash": "2e440fa9d4a37ec2199cead2345a26ad85114dc78501e208789c2b7ca401b92d",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.custom_sapling",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "bountiful_trees:gold_leaves": {
+      "identifier": "bountiful_trees:gold_leaves",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_gold_leaves-871fef1fcf90-1ccda0d4fa4b483fee1b1b92.png",
+      "hash": "1ccda0d4fa4b483fee1b1b921db804d8a438a1bea1846969d9bfc6d070f86f2c",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "bountiful_trees:persistent_bit": false,
+        "bountiful_trees:placed": false
+      },
+      "geometry": "geometry.ore_tree_leaves",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "bountiful_trees:gold_log": {
+      "identifier": "bountiful_trees:gold_log",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_gold_log-f71d6ee17172-3ab851ee2f32989df4673ed6.png",
+      "hash": "3ab851ee2f32989df4673ed64c6768c4ff76977dbebf6581efea715559594b67",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "bountiful_trees:gold_sapling": {
+      "identifier": "bountiful_trees:gold_sapling",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_gold_sapling-79a6e1e963c1-2d9503e8a43c52473a94a5a5.png",
+      "hash": "2d9503e8a43c52473a94a5a51f39ccbff3a1b47d3817906eb9cd1b1908355be8",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.custom_sapling",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "bountiful_trees:iron_leaves": {
+      "identifier": "bountiful_trees:iron_leaves",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_iron_leaves-7b671cda2392-fccafb990db13a52a54f0cb7.png",
+      "hash": "fccafb990db13a52a54f0cb781c7155b461daa9de530b2457c2f359cabe6b0f5",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "bountiful_trees:persistent_bit": false,
+        "bountiful_trees:placed": false
+      },
+      "geometry": "geometry.ore_tree_leaves",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "bountiful_trees:iron_log": {
+      "identifier": "bountiful_trees:iron_log",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_iron_log-d04516856240-8675883b1c797dc1e221a548.png",
+      "hash": "8675883b1c797dc1e221a548e5b7e44046df7899d7786fe71a4151574c999461",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "bountiful_trees:iron_sapling": {
+      "identifier": "bountiful_trees:iron_sapling",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_iron_sapling-8fbdc25b0db8-dcbe2184d266df090ded5162.png",
+      "hash": "dcbe2184d266df090ded5162ecf7587f16b845175026fb95b694f596a0f70fb3",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.custom_sapling",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "bountiful_trees:lapis_leaves": {
+      "identifier": "bountiful_trees:lapis_leaves",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_lapis_leaves-0619a7f1ce87-e620350b833adf1bc7c91705.png",
+      "hash": "e620350b833adf1bc7c9170539fb9b6ebca458d48c2d2fd3e5b0f705a416ca6f",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "bountiful_trees:persistent_bit": false,
+        "bountiful_trees:placed": false
+      },
+      "geometry": "geometry.ore_tree_leaves",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "bountiful_trees:lapis_log": {
+      "identifier": "bountiful_trees:lapis_log",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_lapis_log-7bc1a2338952-bed9c34751466736b8de6dff.png",
+      "hash": "bed9c34751466736b8de6dfffa84a7b6ea5c17bd8e832d4e2a523aac021559ec",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "bountiful_trees:lapis_sapling": {
+      "identifier": "bountiful_trees:lapis_sapling",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_lapis_sapling-ee76b614a858-10369c00f0e7726e52b159e8.png",
+      "hash": "10369c00f0e7726e52b159e85e0a1a5f674d2cc1629d0ef5639fbdaf49911400",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.custom_sapling",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "bountiful_trees:netherite_leaves": {
+      "identifier": "bountiful_trees:netherite_leaves",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_netherite_leaves-36d2823616fc-c50399180c820fa18065dff1.png",
+      "hash": "c50399180c820fa18065dff1c6a98447faad51007ffef764005f082b177fc30d",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "bountiful_trees:persistent_bit": false,
+        "bountiful_trees:placed": false
+      },
+      "geometry": "geometry.ore_tree_leaves",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "bountiful_trees:netherite_log": {
+      "identifier": "bountiful_trees:netherite_log",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_netherite_log-d0d378cae77e-7caae212aa2bd43dd221f468.png",
+      "hash": "7caae212aa2bd43dd221f46820773fa865e3d9749cd7c74ecfa824fc8abe6459",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "bountiful_trees:netherite_sapling": {
+      "identifier": "bountiful_trees:netherite_sapling",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_netherite_sapling-1fd3ef7e6973-31feced749c123c90b131af9.png",
+      "hash": "31feced749c123c90b131af9bf89e16abe3994841de0c968dd7e5a173d2d1034",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.custom_sapling",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "bountiful_trees:quartz_leaves": {
+      "identifier": "bountiful_trees:quartz_leaves",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_quartz_leaves-9a88e476ec77-863de6b03ec9fbfbe6cc0967.png",
+      "hash": "863de6b03ec9fbfbe6cc0967bac979fda7a868fefb85d925b6a3a6824037a9f3",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "bountiful_trees:persistent_bit": false,
+        "bountiful_trees:placed": false
+      },
+      "geometry": "geometry.ore_tree_leaves",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "bountiful_trees:quartz_log": {
+      "identifier": "bountiful_trees:quartz_log",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_quartz_log-8708b87d423e-287f24e759a5a222214f8ff3.png",
+      "hash": "287f24e759a5a222214f8ff3b98f97ef10e3d87c2cc5c82f470c90f3ab4e7318",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "bountiful_trees:quartz_sapling": {
+      "identifier": "bountiful_trees:quartz_sapling",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_quartz_sapling-15fcfb69252d-bf578932518df4f4266e1f71.png",
+      "hash": "bf578932518df4f4266e1f7160fb2827795702ee0036d0035d2aebd847516195",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.custom_sapling",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "bountiful_trees:redstone_leaves": {
+      "identifier": "bountiful_trees:redstone_leaves",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_redstone_leaves-d748e90df7d6-3a7f504e1e451da09b3acf7d.png",
+      "hash": "3a7f504e1e451da09b3acf7d7407acfa51dcac79e511686696c5770250215f0b",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "bountiful_trees:persistent_bit": false,
+        "bountiful_trees:placed": false
+      },
+      "geometry": "geometry.ore_tree_leaves",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "bountiful_trees:redstone_log": {
+      "identifier": "bountiful_trees:redstone_log",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_redstone_log-c9fcec62c3a8-8e4cde01fb3a396f22f785fd.png",
+      "hash": "8e4cde01fb3a396f22f785fdb7ac5fc81771646fad808bd71b8b09b7298936f5",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "bountiful_trees:redstone_sapling": {
+      "identifier": "bountiful_trees:redstone_sapling",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_redstone_sapling-89d09787377c-069921bdf07786ad7a2ded22.png",
+      "hash": "069921bdf07786ad7a2ded223e534b21fcfd02094df6ea773c577b8c2e9e32dd",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.custom_sapling",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "bountiful_trees:steel_leaves": {
+      "identifier": "bountiful_trees:steel_leaves",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_steel_leaves-12c642b4ea19-dd50975c535bc7620febb589.png",
+      "hash": "dd50975c535bc7620febb589bb577c690cee3c09c8ef8d29a24c7dfcde527975",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "bountiful_trees:persistent_bit": false,
+        "bountiful_trees:placed": false
+      },
+      "geometry": "geometry.ore_tree_leaves",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "bountiful_trees:steel_log": {
+      "identifier": "bountiful_trees:steel_log",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_steel_log-949e50a3bd48-f0bf74aed36280699a11065b.png",
+      "hash": "f0bf74aed36280699a11065b5b73a3e0bcae907a15666b8f03120bced064674b",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "bountiful_trees:steel_sapling": {
+      "identifier": "bountiful_trees:steel_sapling",
+      "kind": "generated",
+      "path": "auto-renders/bountiful_trees_steel_sapling-0a54b6c2456d-77386b2bc220c508da9e386c.png",
+      "hash": "77386b2bc220c508da9e386c4c28cc137a3440fd0c9913f74779d5732855bccc",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.custom_sapling",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    }
+  }
+}

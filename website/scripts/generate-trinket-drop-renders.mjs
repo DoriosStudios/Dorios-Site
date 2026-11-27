@@ -5,8 +5,11 @@ import {loadEntityPacks, resolveEntityVisual, renderEntity} from './bedrock-enti
 
 const website = path.resolve(import.meta.dirname, '..');
 const readJson = async file => JSON.parse(await fs.readFile(file, 'utf8'));
-const source = process.argv[2] ?? (await readJson(path.join(website, '.cache-loader/vanilla/active.json'))).resourcePack;
-const output = path.resolve(process.argv[3] ?? path.join(website, 'static/img/wiki/trinkets/drop-mobs'));
+const args = process.argv.slice(2);
+const faces = args.includes('--faces');
+const [resourcePack, destination] = args.filter(argument => argument !== '--faces');
+const source = resourcePack ?? (await readJson(path.join(website, '.cache-loader/vanilla/active.json'))).resourcePack;
+const output = path.resolve(destination ?? path.join(website, 'static/img/wiki/trinkets', faces ? 'drop-faces' : 'drop-mobs'));
 const profiles = await readJson(path.join(website, 'src/wiki/projects/trinkets/trinketProfiles.json'));
 const presets = await readJson(path.join(import.meta.dirname, 'trinket-drop-render-presets.json'));
 const ids = new Set(Object.values(profiles).flatMap(profile => (profile.drops ?? []).map(drop => drop.entity)));
@@ -48,6 +51,15 @@ const poses = {
   'minecraft:drowned': {pose: {rightArm: [-70, 0, 0], leftArm: [-70, 0, 0]}},
 };
 
+const faceSettings = {
+  'minecraft:ender_dragon': {camera: {direction: [-1, .55, -1]}},
+  'minecraft:phantom': {camera: {direction: [-.25, .65, -1]}},
+  'minecraft:shulker': {head: ['base']},
+  'minecraft:strider': {head: ['body']},
+  'minecraft:warden': {camera: {direction: [-.28, .3, -1]}},
+  'minecraft:wither': {head: ['head1', 'head2', 'head3']},
+};
+
 await fs.mkdir(output, {recursive: true});
 for (const identifier of [...ids].sort()) {
   // A raw unqualified registry key cannot match the entity's namespaced typeId.
@@ -60,8 +72,10 @@ for (const identifier of [...ids].sort()) {
   const settings = identifier === 'minecraft:ender_dragon'
     ? {format: 'portrait', portraitBones: ['head'], camera: {direction: [-1, .55, -1]}}
     : {};
-  const {pixels, width, height} = await renderEntity(visual, {size: 160, ...settings});
-  await sharp(pixels, {raw: {width, height, channels: 4}}).trim().png()
-    .toFile(path.join(output, identifier.slice('minecraft:'.length) + '.png'));
+  const options = faces ? {size: 64, format: 'face', ...faceSettings[identifier]} : {size: 160, ...settings};
+  const {pixels, width, height} = await renderEntity(visual, options);
+  const image = sharp(pixels, {raw: {width, height, channels: 4}});
+  if (!faces) image.trim();
+  await image.png().toFile(path.join(output, identifier.slice('minecraft:'.length) + '.png'));
   console.log(identifier);
 }

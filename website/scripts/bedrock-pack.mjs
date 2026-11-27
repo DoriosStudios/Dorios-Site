@@ -3,6 +3,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import sharp from 'sharp';
 import {fullBlock} from './bedrock-renderer.mjs';
+import {flipbookFor, indexFlipbooks, prepareFlipbook} from './bedrock-flipbook.mjs';
 
 export const digest = value => createHash('sha256').update(value).digest('hex');
 export function parseJsonc(text) {
@@ -143,8 +144,24 @@ export function resolveVisual(block, requestedStates = {}, {itemVisual = true, l
   let legacyMaterials;
   if (legacy?.textures) {
     descriptor ??= 'minecraft:geometry.full_block';
-    legacyMaterials = typeof legacy.textures === 'string' ? {'*': {texture: legacy.textures}}
-      : Object.fromEntries(Object.entries(legacy.textures).map(([face, texture]) => [face, {texture}]));
+    if (typeof legacy.textures === 'string') {
+      legacyMaterials = {'*': {texture: legacy.textures}};
+    } else {
+      const textures = legacy.textures;
+      const directionalTextures = {
+        '*': textures.all,
+        up: textures.top,
+        down: textures.bottom,
+        north: textures.side,
+        south: textures.side,
+        east: textures.side,
+        west: textures.side,
+        ...textures,
+      };
+      legacyMaterials = Object.fromEntries(Object.entries(directionalTextures)
+        .filter(([, texture]) => texture)
+        .map(([face, texture]) => [face, {texture}]));
+    }
   }
   if (typeof descriptor === 'string') descriptor = {identifier: descriptor};
   if (!descriptor?.identifier) throw new Error('No declared geometry; generic cube substitution is disabled');
@@ -156,7 +173,7 @@ export function resolveVisual(block, requestedStates = {}, {itemVisual = true, l
 const firstTexture = value => Array.isArray(value) ? firstTexture(value[0]) : value;
 export async function loadResourcePacks({source, dependencies = [], vanilla}) {
   const roots = [path.join(source, 'RP'), ...dependencies.map(folder => path.join(folder, 'RP')), ...(vanilla ? [vanilla] : [])];
-  const atlas = new Map(), geometries = new Map(), legacyBlocks = new Map(), issues = [];
+  const atlas = new Map(), geometries = new Map(), legacyBlocks = new Map(), flipbooks = new Map(), issues = [];
   const builtin = structuredClone(fullBlock);
   for (const name of ['west', 'north', 'down']) builtin.bones[0].cubes[0].uv[name] = {uv: [0, 0], uv_size: [16, 16]};
   geometries.set('minecraft:geometry.full_block', builtin);
@@ -170,6 +187,8 @@ export async function loadResourcePacks({source, dependencies = [], vanilla}) {
     try { terrain = (await readJson(path.join(root, 'textures/terrain_texture.json'))).texture_data ?? {}; }
     catch (error) { if (error.code !== 'ENOENT') issues.push(`${root}: ${error.message}`); }
     for (const [name, entry] of Object.entries(terrain)) if (!atlas.has(name)) atlas.set(name, {entry, root});
+    try { flipbooks.set(root, indexFlipbooks(await readJson(path.join(root, 'textures/flipbook_textures.json')))); }
+    catch (error) { if (error.code !== 'ENOENT') issues.push(`${root}: ${error.message}`); }
     for (const file of await filesUnder(path.join(root, 'models'))) {
       try {
         for (const geometry of (await readJson(file))['minecraft:geometry'] ?? []) {
@@ -194,17 +213,28 @@ export async function loadResourcePacks({source, dependencies = [], vanilla}) {
     const tint = typeof texture === 'object' ? texture.tint_color : undefined;
     const key = JSON.stringify([name, tint]);
     if (!decodedImages.has(key)) decodedImages.set(key, (async () => {
-      const candidates = path.extname(relative) ? [relative] : [relative + '.png', relative + '.tga'];
-      let bytes;
+      let definition, definitionRoot;
+      for (const root of roots) {
+        definition = flipbookFor(flipbooks.get(root), name, relative);
+        if (definition) { definitionRoot = root; break; }
+        if (root === entry.root) break;
+      }
+      const filePath = definition?.flipbook_texture ?? relative;
+      const candidates = path.extname(filePath) ? [filePath] : [filePath + '.png', filePath + '.tga'];
+      let bytes, textureRoot;
       for (const root of roots) {
         for (const file of candidates) {
-          try { bytes = await fs.readFile(path.join(root, file)); break; }
+          try { bytes = await fs.readFile(path.join(root, file)); textureRoot = root; break; }
           catch (error) { if (error.code !== 'ENOENT') throw error; }
         }
         if (bytes) break;
       }
-      if (!bytes) throw new Error(`Missing texture asset: ${relative}`);
-      return decodeTexture(bytes, tint);
+      if (!bytes) throw new Error(`Missing texture asset: ${filePath}`);
+      const decoded = await decodeTexture(bytes, tint);
+      if (definitionRoot && roots.indexOf(textureRoot) < roots.indexOf(definitionRoot) && decoded.width === decoded.height) {
+        return decoded;
+      }
+      return prepareFlipbook(decoded, definition ?? flipbookFor(flipbooks.get(textureRoot), name, filePath));
     })());
     return {...await decodedImages.get(key), method, doubleSided: declaredMethod === 'double_sided'
       || ['blend', 'alpha_test', 'alpha_test_double_sided'].includes(method),

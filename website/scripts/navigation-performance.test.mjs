@@ -63,3 +63,14 @@ test('brand derivatives retain transparency, animation frames and timing',async(
   assert.ok(fs.statSync(output).size<fs.statSync(source).size);
  }
 });
+
+test('the installed Docusaurus link can opt out of speculative loading', () => {
+  const load = require('../plugins/navigation-performance/link-prefetch-loader.cjs');
+  const source = fs.readFileSync(require.resolve('@docusaurus/core/lib/client/exports/Link.js'), 'utf8');
+  const link = load(source);
+  assert.match(link, /prefetch = true/);
+  assert.match(link, /if \(prefetch && IOSupported && el && isInternal\)/);
+  assert.match(link, /if \(prefetch && !preloaded\.current && targetLink != null\)/);
+  assert.match(link, /if \(prefetch && !IOSupported && isInternal && ExecutionEnvironment\.canUseDOM\)/);
+  assert.throws(() => load(source.replace('if (IOSupported && el && isInternal)', 'if (IOSupported && el)')), /implementation changed/);
+});

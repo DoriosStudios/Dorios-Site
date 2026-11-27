@@ -29,10 +29,27 @@ await fs.writeFile(path.join(output, 'project-stats-v2.json'), JSON.stringify(pa
 await fs.writeFile(path.join(output, 'project-stats.json'), JSON.stringify({schemaVersion:1,
   generatedAt:payload.generatedAt,githubReleaseStats:payload.githubReleaseStats,curseForgeStats:payload.curseForgeStats}) + '\n');
 const summary = ['## Project download statistics', '', '| Project | Refreshed | Cached | Unavailable / excluded |', '| --- | ---: | ---: | ---: |'];
+const failures = new Map();
 for (const [id, {sources}] of Object.entries(payload.projects)) {
   const counts = ['available', 'stale'].map(status => sources.filter(row => row.status === status).length);
   summary.push(`| ${id} | ${counts[0]} | ${counts[1]} | ${sources.length - counts[0] - counts[1]} |`);
   console.log(`[project-stats] ${id}: ${sources.map(row => `${row.id}=${row.value ?? 'unavailable'} (${row.status})`).join('; ')}`);
+  if (process.argv.includes('--offline')) continue;
+  for (const {name, status, error} of sources) {
+    if (!error || (status !== 'stale' && status !== 'unavailable')) continue;
+    const reason = error.replace(/ for [\w.-]+\/[\w.-]+$/, '').replace(/[\r\n]+/g, ' ');
+    const key = `${name}: ${reason}`;
+    if (!failures.has(key)) failures.set(key, []);
+    failures.get(key).push(id);
+  }
+}
+if (failures.size) {
+  summary.push('', '### Sources that could not be refreshed', '');
+  for (const [reason, projects] of failures) {
+    const detail = `${reason} (${projects.length}: ${projects.join(', ')})`;
+    console.warn(`[project-stats] ${detail}`);
+    summary.push(`- ${detail}`);
+  }
 }
 summary.push('', 'Feed prepared without a Docusaurus build.');
 if (process.env.GITHUB_STEP_SUMMARY) await fs.appendFile(process.env.GITHUB_STEP_SUMMARY, summary.join('\n') + '\n');

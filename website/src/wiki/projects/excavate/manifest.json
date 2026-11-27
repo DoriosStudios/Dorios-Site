@@ -27,7 +27,7 @@
         "identifier": "dorios:settings_item",
         "name": "Settings Item",
         "category": "General",
-        "image": null,
+        "image": "/img/wiki/vanilla/Items/book_portfolio.png",
         "source": "BP/items/settings_item.json"
       }
     ],
@@ -83,7 +83,7 @@
         "identifier": "dorios:settings_item",
         "name": "Settings Item",
         "category": "General",
-        "image": null,
+        "image": "/img/wiki/vanilla/Items/book_portfolio.png",
         "source": "BP/items/settings_item.json"
       }
     ]

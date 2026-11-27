@@ -1,0 +1,2098 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-27T16:17:01.117986+00:00",
+  "project": {
+    "id": "trees",
+    "name": "Bountiful Trees",
+    "version": "1.2.3"
+  },
+  "source": {
+    "bridgeProject": "Bountiful-Trees",
+    "revision": "ef718337df61",
+    "dirty": false
+  },
+  "counts": {
+    "items": 12,
+    "catalogItems": 12,
+    "blocks": 36,
+    "entities": 0,
+    "recipes": 10,
+    "variantGroups": 0
+  },
+  "content": {
+    "items": [
+      {
+        "id": "coal_sapling",
+        "slug": "coal-sapling",
+        "identifier": "bountiful_trees:coal_sapling",
+        "name": "Coal Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_coal_sapling.png",
+        "source": "BP/items/ore_tree_coal_sapling_placer.json"
+      },
+      {
+        "id": "copper_sapling",
+        "slug": "copper-sapling",
+        "identifier": "bountiful_trees:copper_sapling",
+        "name": "Copper Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_copper_sapling.png",
+        "source": "BP/items/ore_tree_copper_sapling_placer.json"
+      },
+      {
+        "id": "diamond_sapling",
+        "slug": "diamond-sapling",
+        "identifier": "bountiful_trees:diamond_sapling",
+        "name": "Diamond Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_diamond_sapling.png",
+        "source": "BP/items/ore_tree_diamond_sapling_placer.json"
+      },
+      {
+        "id": "emerald_sapling",
+        "slug": "emerald-sapling",
+        "identifier": "bountiful_trees:emerald_sapling",
+        "name": "Emerald Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_emerald_sapling.png",
+        "source": "BP/items/ore_tree_emerald_sapling_placer.json"
+      },
+      {
+        "id": "energized_iron_sapling",
+        "slug": "energized-iron-sapling",
+        "identifier": "bountiful_trees:energized_iron_sapling",
+        "name": "Energized iron Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_energized_iron_sapling.png",
+        "source": "BP/items/ore_tree_energized_iron_sapling_placer.json"
+      },
+      {
+        "id": "gold_sapling",
+        "slug": "gold-sapling",
+        "identifier": "bountiful_trees:gold_sapling",
+        "name": "Gold Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_gold_sapling.png",
+        "source": "BP/items/ore_tree_gold_sapling_placer.json"
+      },
+      {
+        "id": "iron_sapling",
+        "slug": "iron-sapling",
+        "identifier": "bountiful_trees:iron_sapling",
+        "name": "Iron Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_iron_sapling.png",
+        "source": "BP/items/ore_tree_iron_sapling_placer.json"
+      },
+      {
+        "id": "lapis_sapling",
+        "slug": "lapis-sapling",
+        "identifier": "bountiful_trees:lapis_sapling",
+        "name": "Lapis Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_lapis_sapling.png",
+        "source": "BP/items/ore_tree_lapis_sapling_placer.json"
+      },
+      {
+        "id": "netherite_sapling",
+        "slug": "netherite-sapling",
+        "identifier": "bountiful_trees:netherite_sapling",
+        "name": "Netherite Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_netherite_sapling.png",
+        "source": "BP/items/ore_tree_netherite_sapling_placer.json"
+      },
+      {
+        "id": "quartz_sapling",
+        "slug": "quartz-sapling",
+        "identifier": "bountiful_trees:quartz_sapling",
+        "name": "Quartz Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_quartz_sapling.png",
+        "source": "BP/items/ore_tree_quartz_sapling_placer.json"
+      },
+      {
+        "id": "redstone_sapling",
+        "slug": "redstone-sapling",
+        "identifier": "bountiful_trees:redstone_sapling",
+        "name": "Redstone Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_redstone_sapling.png",
+        "source": "BP/items/ore_tree_redstone_sapling_placer.json"
+      },
+      {
+        "id": "steel_sapling",
+        "slug": "steel-sapling",
+        "identifier": "bountiful_trees:steel_sapling",
+        "name": "Steel Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_steel_sapling.png",
+        "source": "BP/items/ore_tree_steel_sapling_placer.json"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "coal_leaves",
+        "slug": "coal-leaves",
+        "identifier": "bountiful_trees:coal_leaves",
+        "name": "Coal Leaves",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_coal_leaves-cef56c0e0673-32ad0d5cdfb9fe08739d2c79.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/coal_leaves.png",
+          "left": "textures/blocks/coal_leaves.png",
+          "right": "textures/blocks/coal_leaves.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:leaves",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:material_instances",
+          "tag:minecraft:is_hoe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/coal_leaves.json",
+        "blockData": {
+          "breakTime": 0.2,
+          "mineable": true,
+          "explosionResistance": 0.2,
+          "lootTable": "loot_tables/leaves/coal_leaves.json",
+          "tool": "Hoe",
+          "directional": false
+        }
+      },
+      {
+        "id": "coal_log",
+        "slug": "coal-log",
+        "identifier": "bountiful_trees:coal_log",
+        "name": "Coal log",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_coal_log-b959e9e17070-0950389593be1a3cd0e60eac.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_coal_oak_log_up.png",
+          "left": "textures/blocks/ore_tree_coal_oak_log_up.png",
+          "right": "textures/blocks/ore_tree_coal_oak_log_up.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:flammable",
+          "minecraft:friction",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:loot",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/coal_oak_log.json",
+        "blockData": {
+          "breakTime": 3,
+          "mineable": true,
+          "explosionResistance": 3,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "lootTable": "loot_tables/blocks/ore_tree_coal_log.json",
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "coal_sapling",
+        "slug": "coal-sapling",
+        "identifier": "bountiful_trees:coal_sapling",
+        "name": "Coal Sapling",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_coal_sapling-e8552333835a-75a3824cde5f3ba260d3c959.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_coal_sapling.png",
+          "left": "textures/blocks/ore_tree_coal_sapling.png",
+          "right": "textures/blocks/ore_tree_coal_sapling.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:custom_tree",
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:friction",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "minecraft:placement_filter",
+          "minecraft:selection_box"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/coal_sapling.json",
+        "blockData": {
+          "breakTime": 0,
+          "mineable": true,
+          "explosionResistance": 0,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "directional": false
+        }
+      },
+      {
+        "id": "copper_leaves",
+        "slug": "copper-leaves",
+        "identifier": "bountiful_trees:copper_leaves",
+        "name": "Copper Leaves",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_copper_leaves-b8efeed3b215-8ccc4d7fafd442f92575be02.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/copper_leaves.png",
+          "left": "textures/blocks/copper_leaves.png",
+          "right": "textures/blocks/copper_leaves.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:leaves",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:material_instances",
+          "tag:minecraft:is_hoe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/copper_leaves.json",
+        "blockData": {
+          "breakTime": 0.2,
+          "mineable": true,
+          "explosionResistance": 0.2,
+          "lootTable": "loot_tables/leaves/copper_leaves.json",
+          "tool": "Hoe",
+          "directional": false
+        }
+      },
+      {
+        "id": "copper_log",
+        "slug": "copper-log",
+        "identifier": "bountiful_trees:copper_log",
+        "name": "Copper log",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_copper_log-e84f9b76d999-25a2ae0157d13fa2fcab9e94.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_copper_oak_log_up.png",
+          "left": "textures/blocks/ore_tree_copper_oak_log_up.png",
+          "right": "textures/blocks/ore_tree_copper_oak_log_up.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:flammable",
+          "minecraft:friction",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:loot",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/copper_oak_log.json",
+        "blockData": {
+          "breakTime": 3,
+          "mineable": true,
+          "explosionResistance": 3,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "lootTable": "loot_tables/blocks/ore_tree_copper_log.json",
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "copper_sapling",
+        "slug": "copper-sapling",
+        "identifier": "bountiful_trees:copper_sapling",
+        "name": "Copper Sapling",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_copper_sapling-9f928a8e03d4-e43baa6f4846b9d8a877272f.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_copper_sapling.png",
+          "left": "textures/blocks/ore_tree_copper_sapling.png",
+          "right": "textures/blocks/ore_tree_copper_sapling.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:custom_tree",
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:friction",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "minecraft:placement_filter",
+          "minecraft:selection_box"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/copper_sapling.json",
+        "blockData": {
+          "breakTime": 0,
+          "mineable": true,
+          "explosionResistance": 0,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "directional": false
+        }
+      },
+      {
+        "id": "diamond_leaves",
+        "slug": "diamond-leaves",
+        "identifier": "bountiful_trees:diamond_leaves",
+        "name": "Diamond Leaves",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_diamond_leaves-7b4878cf47b2-10736e7ad3ac9d89a790e4ce.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/diamond_leaves.png",
+          "left": "textures/blocks/diamond_leaves.png",
+          "right": "textures/blocks/diamond_leaves.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:leaves",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:material_instances",
+          "tag:minecraft:is_hoe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/diamond_leaves.json",
+        "blockData": {
+          "breakTime": 0.2,
+          "mineable": true,
+          "explosionResistance": 0.2,
+          "lootTable": "loot_tables/leaves/diamond_leaves.json",
+          "tool": "Hoe",
+          "directional": false
+        }
+      },
+      {
+        "id": "diamond_log",
+        "slug": "diamond-log",
+        "identifier": "bountiful_trees:diamond_log",
+        "name": "Diamond log",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_diamond_log-004a2e2a7ba6-20d766fe95e054d47147956e.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_diamond_oak_log_up.png",
+          "left": "textures/blocks/ore_tree_diamond_oak_log_up.png",
+          "right": "textures/blocks/ore_tree_diamond_oak_log_up.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:flammable",
+          "minecraft:friction",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:loot",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/diamond_oak_log.json",
+        "blockData": {
+          "breakTime": 3,
+          "mineable": true,
+          "explosionResistance": 3,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "lootTable": "loot_tables/blocks/ore_tree_diamond_log.json",
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "diamond_sapling",
+        "slug": "diamond-sapling",
+        "identifier": "bountiful_trees:diamond_sapling",
+        "name": "Diamond Sapling",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_diamond_sapling-3e7af151f173-ab45f3d8c350e2ecf7574708.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_diamond_sapling.png",
+          "left": "textures/blocks/ore_tree_diamond_sapling.png",
+          "right": "textures/blocks/ore_tree_diamond_sapling.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:custom_tree",
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:friction",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "minecraft:placement_filter",
+          "minecraft:selection_box"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/diamond_sapling.json",
+        "blockData": {
+          "breakTime": 0,
+          "mineable": true,
+          "explosionResistance": 0,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "directional": false
+        }
+      },
+      {
+        "id": "emerald_leaves",
+        "slug": "emerald-leaves",
+        "identifier": "bountiful_trees:emerald_leaves",
+        "name": "Emerald Leaves",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_emerald_leaves-9fb5fedb53be-1f6c935a16f0312926f864ba.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/emerald_leaves.png",
+          "left": "textures/blocks/emerald_leaves.png",
+          "right": "textures/blocks/emerald_leaves.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:leaves",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:material_instances",
+          "tag:minecraft:is_hoe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/emerald_leaves.json",
+        "blockData": {
+          "breakTime": 0.2,
+          "mineable": true,
+          "explosionResistance": 0.2,
+          "lootTable": "loot_tables/leaves/emerald_leaves.json",
+          "tool": "Hoe",
+          "directional": false
+        }
+      },
+      {
+        "id": "emerald_log",
+        "slug": "emerald-log",
+        "identifier": "bountiful_trees:emerald_log",
+        "name": "Emerald log",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_emerald_log-43a265a46a92-5363a48c5099f762ab7f8e22.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_emerald_oak_log_up.png",
+          "left": "textures/blocks/ore_tree_emerald_oak_log_up.png",
+          "right": "textures/blocks/ore_tree_emerald_oak_log_up.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:flammable",
+          "minecraft:friction",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:loot",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/emerald_oak_log.json",
+        "blockData": {
+          "breakTime": 3,
+          "mineable": true,
+          "explosionResistance": 3,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "lootTable": "loot_tables/blocks/ore_tree_emerald_log.json",
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "emerald_sapling",
+        "slug": "emerald-sapling",
+        "identifier": "bountiful_trees:emerald_sapling",
+        "name": "Emerald Sapling",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_emerald_sapling-2c887f2f94a0-3634460cc836037f864b70eb.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_emerald_sapling.png",
+          "left": "textures/blocks/ore_tree_emerald_sapling.png",
+          "right": "textures/blocks/ore_tree_emerald_sapling.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:custom_tree",
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:friction",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "minecraft:placement_filter",
+          "minecraft:selection_box"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/emerald_sapling.json",
+        "blockData": {
+          "breakTime": 0,
+          "mineable": true,
+          "explosionResistance": 0,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "directional": false
+        }
+      },
+      {
+        "id": "energized_iron_leaves",
+        "slug": "energized-iron-leaves",
+        "identifier": "bountiful_trees:energized_iron_leaves",
+        "name": "Energized Iron Leaves",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_energized_iron_leaves-1a262b33800d-920a346d66935d7c51b6a778.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/energized_iron_oak_leaves.png",
+          "left": "textures/blocks/energized_iron_oak_leaves.png",
+          "right": "textures/blocks/energized_iron_oak_leaves.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:leaves",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:material_instances",
+          "tag:minecraft:is_hoe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/energized_iron_leaves.json",
+        "blockData": {
+          "breakTime": 0.2,
+          "mineable": true,
+          "explosionResistance": 0.2,
+          "lootTable": "loot_tables/leaves/energized_iron_leaves.json",
+          "tool": "Hoe",
+          "directional": false
+        }
+      },
+      {
+        "id": "energized_iron_log",
+        "slug": "energized-iron-log",
+        "identifier": "bountiful_trees:energized_iron_log",
+        "name": "Energized iron log",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_energized_iron_log-4bf8f7cd673a-8215f5429bd98a8765e4b2ac.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_energized_iron_oak_log_up.png",
+          "left": "textures/blocks/ore_tree_energized_iron_oak_log_up.png",
+          "right": "textures/blocks/ore_tree_energized_iron_oak_log_up.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:flammable",
+          "minecraft:friction",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:loot",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/energized_iron_oak_log.json",
+        "blockData": {
+          "breakTime": 3,
+          "mineable": true,
+          "explosionResistance": 3,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "lootTable": "loot_tables/blocks/ore_tree_energized_iron_log.json",
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "energized_iron_sapling",
+        "slug": "energized-iron-sapling",
+        "identifier": "bountiful_trees:energized_iron_sapling",
+        "name": "Energized iron Sapling",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_energized_iron_sapling-5d8f1f3b867d-2e440fa9d4a37ec2199cead2.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_energized_iron_sapling.png",
+          "left": "textures/blocks/ore_tree_energized_iron_sapling.png",
+          "right": "textures/blocks/ore_tree_energized_iron_sapling.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:custom_tree",
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:friction",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "minecraft:placement_filter",
+          "minecraft:selection_box"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/energized_iron_sapling.json",
+        "blockData": {
+          "breakTime": 0,
+          "mineable": true,
+          "explosionResistance": 0,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "directional": false
+        }
+      },
+      {
+        "id": "gold_leaves",
+        "slug": "gold-leaves",
+        "identifier": "bountiful_trees:gold_leaves",
+        "name": "Gold Leaves",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_gold_leaves-871fef1fcf90-1ccda0d4fa4b483fee1b1b92.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/gold_leaves.png",
+          "left": "textures/blocks/gold_leaves.png",
+          "right": "textures/blocks/gold_leaves.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:leaves",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:material_instances",
+          "tag:minecraft:is_hoe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/gold_leaves.json",
+        "blockData": {
+          "breakTime": 0.2,
+          "mineable": true,
+          "explosionResistance": 0.2,
+          "lootTable": "loot_tables/leaves/gold_leaves.json",
+          "tool": "Hoe",
+          "directional": false
+        }
+      },
+      {
+        "id": "gold_log",
+        "slug": "gold-log",
+        "identifier": "bountiful_trees:gold_log",
+        "name": "Gold log",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_gold_log-f71d6ee17172-3ab851ee2f32989df4673ed6.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_gold_oak_log_up.png",
+          "left": "textures/blocks/ore_tree_gold_oak_log_up.png",
+          "right": "textures/blocks/ore_tree_gold_oak_log_up.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:flammable",
+          "minecraft:friction",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:loot",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/gold_oak_log.json",
+        "blockData": {
+          "breakTime": 3,
+          "mineable": true,
+          "explosionResistance": 3,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "lootTable": "loot_tables/blocks/ore_tree_gold_log.json",
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "gold_sapling",
+        "slug": "gold-sapling",
+        "identifier": "bountiful_trees:gold_sapling",
+        "name": "Gold Sapling",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_gold_sapling-79a6e1e963c1-2d9503e8a43c52473a94a5a5.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_gold_sapling.png",
+          "left": "textures/blocks/ore_tree_gold_sapling.png",
+          "right": "textures/blocks/ore_tree_gold_sapling.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:custom_tree",
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:friction",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "minecraft:placement_filter",
+          "minecraft:selection_box"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/gold_sapling.json",
+        "blockData": {
+          "breakTime": 0,
+          "mineable": true,
+          "explosionResistance": 0,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "directional": false
+        }
+      },
+      {
+        "id": "iron_leaves",
+        "slug": "iron-leaves",
+        "identifier": "bountiful_trees:iron_leaves",
+        "name": "Iron Leaves",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_iron_leaves-7b671cda2392-fccafb990db13a52a54f0cb7.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/iron_leaves.png",
+          "left": "textures/blocks/iron_leaves.png",
+          "right": "textures/blocks/iron_leaves.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:leaves",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:material_instances",
+          "tag:minecraft:is_hoe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/iron_leaves.json",
+        "blockData": {
+          "breakTime": 0.2,
+          "mineable": true,
+          "explosionResistance": 0.2,
+          "lootTable": "loot_tables/leaves/iron_leaves.json",
+          "tool": "Hoe",
+          "directional": false
+        }
+      },
+      {
+        "id": "iron_log",
+        "slug": "iron-log",
+        "identifier": "bountiful_trees:iron_log",
+        "name": "Iron log",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_iron_log-d04516856240-8675883b1c797dc1e221a548.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_iron_oak_log_up.png",
+          "left": "textures/blocks/ore_tree_iron_oak_log_up.png",
+          "right": "textures/blocks/ore_tree_iron_oak_log_up.png"
+        },
+        "componentKeys": [
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:flammable",
+          "minecraft:friction",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:loot",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "minecraft:selection_box",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/iron_oak_log.json",
+        "blockData": {
+          "breakTime": 3,
+          "mineable": true,
+          "explosionResistance": 3,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "lootTable": "loot_tables/blocks/ore_tree_iron_log.json",
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "iron_sapling",
+        "slug": "iron-sapling",
+        "identifier": "bountiful_trees:iron_sapling",
+        "name": "Iron Sapling",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_iron_sapling-8fbdc25b0db8-dcbe2184d266df090ded5162.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_iron_sapling.png",
+          "left": "textures/blocks/ore_tree_iron_sapling.png",
+          "right": "textures/blocks/ore_tree_iron_sapling.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:custom_tree",
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:friction",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "minecraft:placement_filter",
+          "minecraft:selection_box"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/iron_sapling.json",
+        "blockData": {
+          "breakTime": 0,
+          "mineable": true,
+          "explosionResistance": 0,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "directional": false
+        }
+      },
+      {
+        "id": "lapis_leaves",
+        "slug": "lapis-leaves",
+        "identifier": "bountiful_trees:lapis_leaves",
+        "name": "Lapis Leaves",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_lapis_leaves-0619a7f1ce87-e620350b833adf1bc7c91705.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/lapis_leaves.png",
+          "left": "textures/blocks/lapis_leaves.png",
+          "right": "textures/blocks/lapis_leaves.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:leaves",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:material_instances",
+          "tag:minecraft:is_hoe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/lapis_leaves.json",
+        "blockData": {
+          "breakTime": 0.2,
+          "mineable": true,
+          "explosionResistance": 0.2,
+          "lootTable": "loot_tables/leaves/lapis_leaves.json",
+          "tool": "Hoe",
+          "directional": false
+        }
+      },
+      {
+        "id": "lapis_log",
+        "slug": "lapis-log",
+        "identifier": "bountiful_trees:lapis_log",
+        "name": "Lapis log",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_lapis_log-7bc1a2338952-bed9c34751466736b8de6dff.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_lapis_oak_log_up.png",
+          "left": "textures/blocks/ore_tree_lapis_oak_log_up.png",
+          "right": "textures/blocks/ore_tree_lapis_oak_log_up.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:flammable",
+          "minecraft:friction",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:loot",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/lapis_oak_log.json",
+        "blockData": {
+          "breakTime": 3,
+          "mineable": true,
+          "explosionResistance": 3,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "lootTable": "loot_tables/blocks/ore_tree_lapis_log.json",
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "lapis_sapling",
+        "slug": "lapis-sapling",
+        "identifier": "bountiful_trees:lapis_sapling",
+        "name": "Lapis Sapling",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_lapis_sapling-ee76b614a858-10369c00f0e7726e52b159e8.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_lapis_sapling.png",
+          "left": "textures/blocks/ore_tree_lapis_sapling.png",
+          "right": "textures/blocks/ore_tree_lapis_sapling.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:custom_tree",
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:friction",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "minecraft:placement_filter",
+          "minecraft:selection_box"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/lapis_sapling.json",
+        "blockData": {
+          "breakTime": 0,
+          "mineable": true,
+          "explosionResistance": 0,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "directional": false
+        }
+      },
+      {
+        "id": "netherite_leaves",
+        "slug": "netherite-leaves",
+        "identifier": "bountiful_trees:netherite_leaves",
+        "name": "Netherite Leaves",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_netherite_leaves-36d2823616fc-c50399180c820fa18065dff1.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/netherite_leaves.png",
+          "left": "textures/blocks/netherite_leaves.png",
+          "right": "textures/blocks/netherite_leaves.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:leaves",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:material_instances",
+          "tag:minecraft:is_hoe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/netherite_leaves.json",
+        "blockData": {
+          "breakTime": 0.2,
+          "mineable": true,
+          "explosionResistance": 0.2,
+          "lootTable": "loot_tables/leaves/netherite_leaves.json",
+          "tool": "Hoe",
+          "directional": false
+        }
+      },
+      {
+        "id": "netherite_log",
+        "slug": "netherite-log",
+        "identifier": "bountiful_trees:netherite_log",
+        "name": "Netherite log",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_netherite_log-d0d378cae77e-7caae212aa2bd43dd221f468.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_netherite_oak_log_up.png",
+          "left": "textures/blocks/ore_tree_netherite_oak_log_up.png",
+          "right": "textures/blocks/ore_tree_netherite_oak_log_up.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:flammable",
+          "minecraft:friction",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:loot",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/netherite_oak_log.json",
+        "blockData": {
+          "breakTime": 3,
+          "mineable": true,
+          "explosionResistance": 3,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "lootTable": "loot_tables/blocks/ore_tree_netherite_log.json",
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "netherite_sapling",
+        "slug": "netherite-sapling",
+        "identifier": "bountiful_trees:netherite_sapling",
+        "name": "Netherite Sapling",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_netherite_sapling-1fd3ef7e6973-31feced749c123c90b131af9.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_netherite_sapling.png",
+          "left": "textures/blocks/ore_tree_netherite_sapling.png",
+          "right": "textures/blocks/ore_tree_netherite_sapling.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:custom_tree",
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:friction",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "minecraft:placement_filter",
+          "minecraft:selection_box"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/netherite_sapling.json",
+        "blockData": {
+          "breakTime": 0,
+          "mineable": true,
+          "explosionResistance": 0,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "directional": false
+        }
+      },
+      {
+        "id": "quartz_leaves",
+        "slug": "quartz-leaves",
+        "identifier": "bountiful_trees:quartz_leaves",
+        "name": "Quartz Leaves",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_quartz_leaves-9a88e476ec77-863de6b03ec9fbfbe6cc0967.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/quartz_leaves.png",
+          "left": "textures/blocks/quartz_leaves.png",
+          "right": "textures/blocks/quartz_leaves.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:leaves",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:material_instances",
+          "tag:minecraft:is_hoe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/quartz_leaves.json",
+        "blockData": {
+          "breakTime": 0.2,
+          "mineable": true,
+          "explosionResistance": 0.2,
+          "lootTable": "loot_tables/leaves/quartz_leaves.json",
+          "tool": "Hoe",
+          "directional": false
+        }
+      },
+      {
+        "id": "quartz_log",
+        "slug": "quartz-log",
+        "identifier": "bountiful_trees:quartz_log",
+        "name": "Quartz log",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_quartz_log-8708b87d423e-287f24e759a5a222214f8ff3.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_quartz_oak_log_up.png",
+          "left": "textures/blocks/ore_tree_quartz_oak_log_up.png",
+          "right": "textures/blocks/ore_tree_quartz_oak_log_up.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:flammable",
+          "minecraft:friction",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:loot",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/quartz_oak_log.json",
+        "blockData": {
+          "breakTime": 3,
+          "mineable": true,
+          "explosionResistance": 3,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "lootTable": "loot_tables/blocks/ore_tree_quartz_log.json",
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "quartz_sapling",
+        "slug": "quartz-sapling",
+        "identifier": "bountiful_trees:quartz_sapling",
+        "name": "Quartz Sapling",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_quartz_sapling-15fcfb69252d-bf578932518df4f4266e1f71.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_quartz_sapling.png",
+          "left": "textures/blocks/ore_tree_quartz_sapling.png",
+          "right": "textures/blocks/ore_tree_quartz_sapling.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:custom_tree",
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:friction",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "minecraft:placement_filter",
+          "minecraft:selection_box"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/quartz_sapling.json",
+        "blockData": {
+          "breakTime": 0,
+          "mineable": true,
+          "explosionResistance": 0,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "directional": false
+        }
+      },
+      {
+        "id": "redstone_leaves",
+        "slug": "redstone-leaves",
+        "identifier": "bountiful_trees:redstone_leaves",
+        "name": "Redstone Leaves",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_redstone_leaves-d748e90df7d6-3a7f504e1e451da09b3acf7d.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/redstone_leaves.png",
+          "left": "textures/blocks/redstone_leaves.png",
+          "right": "textures/blocks/redstone_leaves.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:leaves",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:material_instances",
+          "tag:minecraft:is_hoe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/redstone_leaves.json",
+        "blockData": {
+          "breakTime": 0.2,
+          "mineable": true,
+          "explosionResistance": 0.2,
+          "lootTable": "loot_tables/leaves/redstone_leaves.json",
+          "tool": "Hoe",
+          "directional": false
+        }
+      },
+      {
+        "id": "redstone_log",
+        "slug": "redstone-log",
+        "identifier": "bountiful_trees:redstone_log",
+        "name": "Redstone log",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_redstone_log-c9fcec62c3a8-8e4cde01fb3a396f22f785fd.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_redstone_oak_log_up.png",
+          "left": "textures/blocks/ore_tree_redstone_oak_log_up.png",
+          "right": "textures/blocks/ore_tree_redstone_oak_log_up.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:flammable",
+          "minecraft:friction",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:loot",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/redstone_oak_log.json",
+        "blockData": {
+          "breakTime": 3,
+          "mineable": true,
+          "explosionResistance": 3,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "lootTable": "loot_tables/blocks/ore_tree_redstone_log.json",
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "redstone_sapling",
+        "slug": "redstone-sapling",
+        "identifier": "bountiful_trees:redstone_sapling",
+        "name": "Redstone Sapling",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_redstone_sapling-89d09787377c-069921bdf07786ad7a2ded22.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_redstone_sapling.png",
+          "left": "textures/blocks/ore_tree_redstone_sapling.png",
+          "right": "textures/blocks/ore_tree_redstone_sapling.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:custom_tree",
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:friction",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "minecraft:placement_filter",
+          "minecraft:selection_box"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/redstone_sapling.json",
+        "blockData": {
+          "breakTime": 0,
+          "mineable": true,
+          "explosionResistance": 0,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "directional": false
+        }
+      },
+      {
+        "id": "steel_leaves",
+        "slug": "steel-leaves",
+        "identifier": "bountiful_trees:steel_leaves",
+        "name": "Steel Leaves",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_steel_leaves-12c642b4ea19-dd50975c535bc7620febb589.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/steel_oak_leaves.png",
+          "left": "textures/blocks/steel_oak_leaves.png",
+          "right": "textures/blocks/steel_oak_leaves.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:leaves",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:loot",
+          "minecraft:material_instances",
+          "tag:minecraft:is_hoe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/steel_leaves.json",
+        "blockData": {
+          "breakTime": 0.2,
+          "mineable": true,
+          "explosionResistance": 0.2,
+          "lootTable": "loot_tables/leaves/steel_leaves.json",
+          "tool": "Hoe",
+          "directional": false
+        }
+      },
+      {
+        "id": "steel_log",
+        "slug": "steel-log",
+        "identifier": "bountiful_trees:steel_log",
+        "name": "Steel log",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_steel_log-949e50a3bd48-f0bf74aed36280699a11065b.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_steel_oak_log_up.png",
+          "left": "textures/blocks/ore_tree_steel_oak_log_up.png",
+          "right": "textures/blocks/ore_tree_steel_oak_log_up.png"
+        },
+        "componentKeys": [
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:flammable",
+          "minecraft:friction",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:loot",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "tag:minecraft:is_pickaxe_item_destructible"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/steel_oak_log.json",
+        "blockData": {
+          "breakTime": 3,
+          "mineable": true,
+          "explosionResistance": 3,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "lootTable": "loot_tables/blocks/ore_tree_steel_log.json",
+          "tool": "Pickaxe",
+          "directional": false
+        }
+      },
+      {
+        "id": "steel_sapling",
+        "slug": "steel-sapling",
+        "identifier": "bountiful_trees:steel_sapling",
+        "name": "Steel Sapling",
+        "category": "General",
+        "render": "auto-renders/bountiful_trees_steel_sapling-0a54b6c2456d-77386b2bc220c508da9e386c.png",
+        "itemImage": null,
+        "faces": {
+          "top": "textures/blocks/ore_tree_steel_sapling.png",
+          "left": "textures/blocks/ore_tree_steel_sapling.png",
+          "right": "textures/blocks/ore_tree_steel_sapling.png"
+        },
+        "componentKeys": [
+          "bountiful_trees:custom_tree",
+          "minecraft:collision_box",
+          "minecraft:destructible_by_explosion",
+          "minecraft:destructible_by_mining",
+          "minecraft:friction",
+          "minecraft:geometry",
+          "minecraft:light_dampening",
+          "minecraft:light_emission",
+          "minecraft:map_color",
+          "minecraft:material_instances",
+          "minecraft:placement_filter",
+          "minecraft:selection_box"
+        ],
+        "machineData": null,
+        "source": "BP/blocks/steel_sapling.json",
+        "blockData": {
+          "breakTime": 0,
+          "mineable": true,
+          "explosionResistance": 0,
+          "lightEmission": 0,
+          "friction": 0.4,
+          "mapColor": "#FFFFFF",
+          "directional": false
+        }
+      }
+    ],
+    "entities": [],
+    "recipes": [
+      {
+        "id": "ore_tree_coal_sapling",
+        "identifier": "bountiful_trees:ore_tree_coal_sapling",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          {
+            "id": "minecraft:coal_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          {
+            "id": "minecraft:coal_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:oak_sapling",
+            "count": 1
+          },
+          {
+            "id": "minecraft:coal_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          {
+            "id": "minecraft:coal_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:coal",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "bountiful_trees:coal_sapling",
+          "count": 1
+        },
+        "source": "BP/recipes/ore_tree_coal_sapling.json"
+      },
+      {
+        "id": "ore_tree_copper_sapling",
+        "identifier": "bountiful_trees:ore_tree_copper_sapling",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:oak_sapling",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "bountiful_trees:copper_sapling",
+          "count": 1
+        },
+        "source": "BP/recipes/ore_tree_copper_sapling.json"
+      },
+      {
+        "id": "ore_tree_diamond_sapling",
+        "identifier": "bountiful_trees:ore_tree_diamond_sapling",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:oak_sapling",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:diamond",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "bountiful_trees:diamond_sapling",
+          "count": 1
+        },
+        "source": "BP/recipes/ore_tree_diamond_sapling.json"
+      },
+      {
+        "id": "ore_tree_emerald_sapling",
+        "identifier": "bountiful_trees:ore_tree_emerald_sapling",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          },
+          {
+            "id": "minecraft:oak_sapling",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:emerald",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "bountiful_trees:emerald_sapling",
+          "count": 1
+        },
+        "source": "BP/recipes/ore_tree_emerald_sapling.json"
+      },
+      {
+        "id": "ore_tree_gold_sapling",
+        "identifier": "bountiful_trees:ore_tree_gold_sapling",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:oak_sapling",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "bountiful_trees:gold_sapling",
+          "count": 1
+        },
+        "source": "BP/recipes/ore_tree_gold_sapling.json"
+      },
+      {
+        "id": "ore_tree_iron_sapling",
+        "identifier": "bountiful_trees:ore_tree_iron_sapling",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:oak_sapling",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "bountiful_trees:iron_sapling",
+          "count": 1
+        },
+        "source": "BP/recipes/ore_tree_iron_sapling.json"
+      },
+      {
+        "id": "ore_tree_lapis_sapling",
+        "identifier": "bountiful_trees:ore_tree_lapis_sapling",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          {
+            "id": "minecraft:lapis_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          {
+            "id": "minecraft:lapis_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:oak_sapling",
+            "count": 1
+          },
+          {
+            "id": "minecraft:lapis_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          {
+            "id": "minecraft:lapis_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "bountiful_trees:lapis_sapling",
+          "count": 1
+        },
+        "source": "BP/recipes/ore_tree_lapis_sapling.json"
+      },
+      {
+        "id": "ore_tree_netherite_sapling",
+        "identifier": "bountiful_trees:ore_tree_netherite_sapling",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:oak_sapling",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:netherite_ingot",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "bountiful_trees:netherite_sapling",
+          "count": 1
+        },
+        "source": "BP/recipes/ore_tree_netherite_sapling.json"
+      },
+      {
+        "id": "ore_tree_quartz_sapling",
+        "identifier": "bountiful_trees:ore_tree_quartz_sapling",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          {
+            "id": "minecraft:quartz_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          {
+            "id": "minecraft:quartz_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:oak_sapling",
+            "count": 1
+          },
+          {
+            "id": "minecraft:quartz_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          {
+            "id": "minecraft:quartz_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:quartz",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "bountiful_trees:quartz_sapling",
+          "count": 1
+        },
+        "source": "BP/recipes/ore_tree_quartz_sapling.json"
+      },
+      {
+        "id": "ore_tree_redstone_sapling",
+        "identifier": "bountiful_trees:ore_tree_redstone_sapling",
+        "kind": "shaped",
+        "station": "crafting_table",
+        "slots": [
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:oak_sapling",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone_block",
+            "count": 1
+          },
+          {
+            "id": "minecraft:redstone",
+            "count": 1
+          }
+        ],
+        "slotCount": 9,
+        "result": {
+          "id": "bountiful_trees:redstone_sapling",
+          "count": 1
+        },
+        "source": "BP/recipes/ore_tree_redstone_sapling.json"
+      }
+    ]
+  },
+  "catalog": {
+    "items": [
+      {
+        "id": "coal_sapling",
+        "slug": "coal-sapling",
+        "identifier": "bountiful_trees:coal_sapling",
+        "name": "Coal Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_coal_sapling.png",
+        "source": "BP/items/ore_tree_coal_sapling_placer.json"
+      },
+      {
+        "id": "copper_sapling",
+        "slug": "copper-sapling",
+        "identifier": "bountiful_trees:copper_sapling",
+        "name": "Copper Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_copper_sapling.png",
+        "source": "BP/items/ore_tree_copper_sapling_placer.json"
+      },
+      {
+        "id": "diamond_sapling",
+        "slug": "diamond-sapling",
+        "identifier": "bountiful_trees:diamond_sapling",
+        "name": "Diamond Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_diamond_sapling.png",
+        "source": "BP/items/ore_tree_diamond_sapling_placer.json"
+      },
+      {
+        "id": "emerald_sapling",
+        "slug": "emerald-sapling",
+        "identifier": "bountiful_trees:emerald_sapling",
+        "name": "Emerald Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_emerald_sapling.png",
+        "source": "BP/items/ore_tree_emerald_sapling_placer.json"
+      },
+      {
+        "id": "energized_iron_sapling",
+        "slug": "energized-iron-sapling",
+        "identifier": "bountiful_trees:energized_iron_sapling",
+        "name": "Energized iron Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_energized_iron_sapling.png",
+        "source": "BP/items/ore_tree_energized_iron_sapling_placer.json"
+      },
+      {
+        "id": "gold_sapling",
+        "slug": "gold-sapling",
+        "identifier": "bountiful_trees:gold_sapling",
+        "name": "Gold Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_gold_sapling.png",
+        "source": "BP/items/ore_tree_gold_sapling_placer.json"
+      },
+      {
+        "id": "iron_sapling",
+        "slug": "iron-sapling",
+        "identifier": "bountiful_trees:iron_sapling",
+        "name": "Iron Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_iron_sapling.png",
+        "source": "BP/items/ore_tree_iron_sapling_placer.json"
+      },
+      {
+        "id": "lapis_sapling",
+        "slug": "lapis-sapling",
+        "identifier": "bountiful_trees:lapis_sapling",
+        "name": "Lapis Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_lapis_sapling.png",
+        "source": "BP/items/ore_tree_lapis_sapling_placer.json"
+      },
+      {
+        "id": "netherite_sapling",
+        "slug": "netherite-sapling",
+        "identifier": "bountiful_trees:netherite_sapling",
+        "name": "Netherite Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_netherite_sapling.png",
+        "source": "BP/items/ore_tree_netherite_sapling_placer.json"
+      },
+      {
+        "id": "quartz_sapling",
+        "slug": "quartz-sapling",
+        "identifier": "bountiful_trees:quartz_sapling",
+        "name": "Quartz Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_quartz_sapling.png",
+        "source": "BP/items/ore_tree_quartz_sapling_placer.json"
+      },
+      {
+        "id": "redstone_sapling",
+        "slug": "redstone-sapling",
+        "identifier": "bountiful_trees:redstone_sapling",
+        "name": "Redstone Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_redstone_sapling.png",
+        "source": "BP/items/ore_tree_redstone_sapling_placer.json"
+      },
+      {
+        "id": "steel_sapling",
+        "slug": "steel-sapling",
+        "identifier": "bountiful_trees:steel_sapling",
+        "name": "Steel Sapling",
+        "category": "General",
+        "image": "textures/blocks/ore_tree_steel_sapling.png",
+        "source": "BP/items/ore_tree_steel_sapling_placer.json"
+      }
+    ]
+  },
+  "variantGroups": []
+}

@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
-import sharp from 'sharp';
+import {flipbookTimeline, flipbookVersion, writeFlipbookRender} from './bedrock-flipbook.mjs';
 import {compileGeometry, rasterize, rendererVersion, studioLighting, keyDirections} from './bedrock-renderer.mjs';
 import {readJson, filesUnder, resolveVisual, loadResourcePacks, evaluateExpression, digest, validImage} from './bedrock-pack.mjs';
 
@@ -23,13 +23,14 @@ export function stableRenderKey(identifier) {
 
 export async function generateMissingRenders({source, output, manifest: manifestPath, dependencies = [], vanilla,
   block: selectedBlock, states = {}, size = 128, refresh = false, force = false, camera, lighting = studioLighting,
-  shadows = true, itemVisual = true, preview = false, log = console.log} = {}) {
+  shadows = true, itemVisual = true, preview = false, animate = false, tick = 0, log = console.log} = {}) {
   if (!source || !output) throw new Error('source and output are required');
   if (!Number.isInteger(size) || size < 16 || size > 2048) throw new Error('Size must be an integer from 16 to 2048');
   if (preview && !selectedBlock) throw new Error('Preview requires --block');
+  if (!Number.isFinite(tick) || tick < 0 || (animate && tick !== 0)) throw new Error('Use a non-negative --tick or --animate');
   source = path.resolve(source); output = path.resolve(output);
   const settings = {size, camera, lighting, shadows, itemVisual};
-  const configuration = digest(JSON.stringify({rendererVersion, ...settings, keyDirections}));
+  const configuration = digest(JSON.stringify({rendererVersion, flipbookVersion, animate, tick, ...settings, keyDirections}));
   const indexPath = path.join(output, 'auto-renders/index.json');
   let index;
   try { index = await readJson(indexPath); }
@@ -108,15 +109,20 @@ export async function generateMissingRenders({source, output, manifest: manifest
       const compiled = await compileGeometry({geometry, visibility: visual.descriptor.bone_visibility, transformation: visual.transformation,
         materials: visual.materials, textureFor, evaluate: value => evaluateExpression(value, visual.states), camera, lighting});
       const hash = digest(JSON.stringify({rendererVersion, configuration, geometry, visual, textures: [...textures].sort()}));
-      const relative = `auto-renders/${stableRenderKey(key)}-${hash.slice(0, 24)}.png`;
+      const animatedTextures = compiled.faces.map(face => face.texture).filter(texture => texture.animation);
+      const timeline = animate ? flipbookTimeline(animatedTextures, size) : null;
+      if (animate && animatedTextures.length && !timeline) {
+        throw new Error('Flipbook timeline exceeds the preview limit; use --tick for a still or a smaller --size');
+      }
+      const extension = timeline ? 'webp' : 'png';
+      const relative = `auto-renders/${stableRenderKey(key)}-${hash.slice(0, 24)}.${extension}`;
       const target = path.join(output, relative);
       let status = 'reused';
       if (force || !await validImage(target, size)) {
-        const pixels = rasterize(compiled.faces, geometry, {}, compiled.volumes, settings);
-        if (!pixels.some((v, i) => i % 4 === 3 && v)) throw new Error('Model has no visible textured pixels');
         await fs.mkdir(path.dirname(target), {recursive: true});
         const temporary = `${target}.${process.pid}.tmp`;
-        await sharp(pixels, {raw: {width: size, height: size, channels: 4}}).png().toFile(temporary);
+        const render = tick => rasterize(compiled.faces, geometry, {}, compiled.volumes, {...settings, tick});
+        await writeFlipbookRender(render, size, temporary, timeline, tick);
         await fs.rename(temporary, target);
         status = 'generated';
       }
@@ -150,6 +156,8 @@ export function parseArguments(args) {
     if (flags.has(argument)) options[flags.get(argument)] = next();
     else if (argument === '--dependency') options.dependencies.push(next());
     else if (argument === '--size') options.size = Number(next());
+    else if (argument === '--tick') options.tick = Number(next());
+    else if (argument === '--animate') options.animate = true;
     else if (argument === '--state') {
       const value = next(), separator = value.indexOf('=');
       if (separator < 1) throw new Error('State must use name=value');
@@ -171,7 +179,7 @@ export function parseArguments(args) {
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   try {
     const options = parseArguments(process.argv.slice(2));
-    if (options.help) console.log('node scripts/generate-bedrock-renders.mjs --source PROJECT --output ASSETS [--manifest FILE] [--block namespace:id] [--dependency PROJECT] [--vanilla-rp RP] [--state name=value] [--size 128] [--placed] [--refresh] [--force] [--preview] [--no-shadows] [--allow-errors]');
+    if (options.help) console.log('node scripts/generate-bedrock-renders.mjs --source PROJECT --output ASSETS [--manifest FILE] [--block namespace:id] [--dependency PROJECT] [--vanilla-rp RP] [--state name=value] [--size 128] [--tick N | --animate] [--placed] [--refresh] [--force] [--preview] [--no-shadows] [--allow-errors]');
     else { const report = await generateMissingRenders(options); if (report.counts.error && !options.allowErrors) process.exitCode = 1; }
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }

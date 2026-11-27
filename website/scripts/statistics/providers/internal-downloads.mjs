@@ -7,5 +7,8 @@ export async function collect(source, {project, request = fetch, env = process.e
   const data = await response.json();
   const record = data.schemaVersion === 1 && data.counters?.find(row => row.project === project.id && row.event === source.event);
   if (!record) throw new Error('Internal counter missing project/event');
+  if (!Number.isSafeInteger(record.value) || record.value < 0 || !Number.isFinite(Date.parse(record.updatedAt))) {
+    throw new Error('Internal counter returned an invalid count or date');
+  }
   return {value: record.value, metric: 'download-starts', updatedAt: record.updatedAt, metadata: {event: source.event}};
 }

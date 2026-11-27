@@ -37,6 +37,8 @@ def preserve_entity_visuals(manifest: dict, previous: dict) -> None:
             value = before.get(field)
             if value and (not entry.get(field) or isinstance(value, str) and not value.startswith("auto-entities/")):
                 entry[field] = value
+        if before.get("publicEntity") is True:
+            entry["publicEntity"] = True
         image = before.get("image")
         if image and before.get("imageKind") != "texture" and not image.startswith("textures/"):
             entry["image"], entry["imageKind"] = image, "manual"
@@ -93,7 +95,7 @@ def export_assets(manifest: dict, project_root: Path, destination: Path, depende
 
     copied = 0
     for reference in sorted(references):
-        if reference.startswith("auto-entities/"):
+        if reference.startswith(("/img/", "auto-entities/")):
             continue
         if reference.startswith("renders/"):
             source = project_root / "Assets" / "Renders" / Path(reference).relative_to("renders")

@@ -7,14 +7,9 @@ const project = createGeneratedProject({
   name: "Bountiful Bonsais",
   repository: undefined,
   overview: {
-    eyebrow: 'Generated add-on reference',
-    description: "Generated reference for Bountiful Bonsais, mapped directly from its behavior pack, resource pack, recipes, entities, blocks, items, and project assets.",
-    stepsTitle: 'Explore the mapped project content.',
-    steps: [
-      {title: 'Browse content', copy: 'Inspect registered items, blocks, entities, and their source categories.'},
-      {title: 'Review systems', copy: 'Open detected machines, generators, interfaces, and technical properties.'},
-      {title: 'Check recipes', copy: 'Follow normalized crafting inputs, stations, and outputs from the behavior pack.'},
-    ],
+    description: 'Plant a sapling or seed in a Bonsai Pot. Soil and plant type determine the growth time and resources it produces.',
+    heroImage: '/img/addons/bonsais/bonsai_on_barrel_and_chest.jpg',
+    heroImageAlt: 'Bonsai Pots on a barrel and a chest',
   },
 });
 

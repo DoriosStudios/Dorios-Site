@@ -23,13 +23,14 @@ export function WikiStatValue({label,value,w,size=24,compact=false}) {
   </span>;
 }
 
-export function WikiStatGrid({facts,w}) {
+export function WikiStatGrid({facts,w,links={},hints={}}) {
   if (!facts.length) return null;
   const values=facts.filter(([label,value])=>!isWikiPropertyFlag(label,value));
   const flags=facts.filter(([label,value])=>isWikiPropertyFlag(label,value));
   return <>
     {values.length>0&&<dl className={styles.playerStats}>{values.map(([label,value])=><div key={label}>
-      <dt>{w(label)}</dt><dd><WikiStatValue label={label} value={value} w={w}/></dd>
+      <dt>{w(label)}</dt><dd>{links[label] ? <Link to={links[label]} prefetch={false}><WikiStatValue label={label} value={value} w={w}/><span aria-hidden="true"> ↗</span></Link> : <WikiStatValue label={label} value={value} w={w}/>}</dd>
+      {hints[label] && <dd><small>{w(hints[label])}</small></dd>}
     </div>)}</dl>}
     {flags.length>0&&<ul className={styles.propertyFlags}>{flags.map(([label])=><li key={label}>
       <WikiIcon label={label}/><span>{w(label)}</span>

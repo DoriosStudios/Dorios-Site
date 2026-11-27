@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {decodeTexture, parseJsonc, validImage, resolveVisual, evaluateExpression} from './bedrock-pack.mjs';
-import sharp from 'sharp';
+import {flipbookFor, flipbookTimeline, indexFlipbooks, prepareFlipbook, writeFlipbookRender} from './bedrock-flipbook.mjs';
 
 // Use the same vanilla revision as Atelier's generated wool/concrete textures.
 const vanillaRevision = '46ba6ea985fb5a92d79a9419198f10dda14c199d';
@@ -15,6 +15,9 @@ const firstTexture = value => Array.isArray(value) ? firstTexture(value[0]) : va
 export async function generateAtelierPreviews({source, output, force = false}) {
   const catalog = await readJson(path.join(output, 'catalog.json'));
   const atlas = (await readJson(path.join(source, 'RP/textures/terrain_texture.json'))).texture_data;
+  let localFlipbooks;
+  try { localFlipbooks = indexFlipbooks(parseJsonc(await fs.readFile(path.join(source, 'RP/textures/flipbook_textures.json'), 'utf8'))); }
+  catch (error) { if (error.code !== 'ENOENT') throw error; }
   const cache = path.resolve(output, '../../.cache-loader/atelier-previews', vanillaRevision);
   await fs.mkdir(cache, {recursive: true});
   const remote = async file => {
@@ -27,7 +30,11 @@ export async function generateAtelierPreviews({source, output, force = false}) {
     await fs.writeFile(cached, bytes);
     return bytes;
   };
-  let vanillaAtlas;
+  let vanillaAtlas, vanillaFlipbooks;
+  const vanillaFlipbookFor = async (key, file) => {
+    vanillaFlipbooks ??= indexFlipbooks(parseJsonc((await remote('textures/flipbook_textures.json')).toString()));
+    return flipbookFor(vanillaFlipbooks, key, file);
+  };
   const images = new Map(), geometries = new Map([['minecraft:geometry.full_block', fullBlock]]);
   const models = async folder => {
     for (const file of await fs.readdir(folder, {withFileTypes: true})) {
@@ -50,12 +57,21 @@ export async function generateAtelierPreviews({source, output, force = false}) {
       if (!entry) throw new Error(`Unknown preview texture: ${key}`);
       const texture = firstTexture(entry.textures);
       const file = typeof texture === 'string' ? texture : texture.path;
-      const relative = /\.(?:png|tga)$/.test(file) ? file : file + '.png';
-      let bytes;
-      try { bytes = await fs.readFile(path.join(source, 'RP', relative)); }
-      catch (error) { if (error.code !== 'ENOENT') throw error; bytes = await remote(relative); }
+      const localDefinition = flipbookFor(localFlipbooks, key, file);
+      let definition = localDefinition ?? (!atlas[key] ? await vanillaFlipbookFor(key, file) : undefined);
+      const withExtension = asset => /\.(?:png|tga)$/i.test(asset) ? asset : asset + '.png';
+      let bytes, localTexture = true;
+      try { bytes = await fs.readFile(path.join(source, 'RP', withExtension(definition?.flipbook_texture ?? file))); }
+      catch (error) {
+        if (error.code !== 'ENOENT') throw error;
+        localTexture = false;
+        definition ??= await vanillaFlipbookFor(key, file);
+        bytes = await remote(withExtension(definition?.flipbook_texture ?? file));
+      }
       const tint = typeof texture === 'object' ? texture.tint_color : undefined;
-      return decodeTexture(bytes, tint);
+      const decoded = await decodeTexture(bytes, tint);
+      if (!localDefinition && localTexture && decoded.width === decoded.height) return decoded;
+      return prepareFlipbook(decoded, definition);
     })());
     return {...await images.get(key), method: material.render_method};
   };
@@ -93,12 +109,14 @@ export async function generateAtelierPreviews({source, output, force = false}) {
           transformation: components['minecraft:transformation'],
           faces: compiled.faces.map(face => [face.bone, face.name, face.texture.digest, face.texture.method, face.uv])};
       const hash = createHash('sha256').update(JSON.stringify(inputs)).digest('hex').slice(0, 24);
-      const relative = `previews/${hash}.png`, target = path.join(output, relative);
+      const timeline = flipbookTimeline(legacy ? Object.values(textures) : compiled.faces.map(face => face.texture), imageSize);
+      const relative = `previews/${hash}.${timeline ? 'webp' : 'png'}`, target = path.join(output, relative);
       if (force || !await validImage(target, imageSize)) {
-        const pixels = legacy ? rasterize(surfaceFragments(cubes), geometry, textures, cubes, {profile: 'atelier-v2'})
-          : rasterize(compiled.faces, geometry, {}, compiled.volumes);
-        await sharp(pixels, {raw: {width: imageSize, height: imageSize, channels: 4}})
-          .png().toFile(target);
+        const fragments = legacy ? surfaceFragments(cubes) : null;
+        const render = legacy
+          ? tick => rasterize(fragments, geometry, textures, cubes, {profile: 'atelier-v2', tick})
+          : tick => rasterize(compiled.faces, geometry, {}, compiled.volumes, {tick});
+        await writeFlipbookRender(render, imageSize, target, timeline);
         generated++;
       }
       record.preview = relative;
@@ -110,7 +128,7 @@ export async function generateAtelierPreviews({source, output, force = false}) {
   await fs.writeFile(path.join(output, 'catalog.json'), JSON.stringify(catalog));
   const used = new Set(catalog.records.map(record => record.preview && path.basename(record.preview)));
   for (const file of await fs.readdir(path.join(output, 'previews'))) {
-    if (/^[a-f0-9]{24}\.png$/.test(file) && !used.has(file)) await fs.unlink(path.join(output, 'previews', file));
+    if (/^[a-f0-9]{24}\.(?:png|webp)$/.test(file) && !used.has(file)) await fs.unlink(path.join(output, 'previews', file));
   }
   console.log(`[atelier-previews] ${catalog.records.filter(record => record.preview).length} block previews (${generated} generated, remaining cached).`);
   if (errors.length) throw new Error(`${errors.length} Atelier previews failed; other previews were preserved/generated.`);

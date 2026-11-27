@@ -85,6 +85,33 @@ export async function generateAtelierWiki({source, website=path.resolve(import.m
 
   }
 
+  const itemsById = new Map(catalog.records.filter(record => record.kind !== 'block').map(record => [record.id, record]));
+  const itemAtlas = (await readJson(path.join(source, 'RP/textures/item_texture.json'))).texture_data;
+  const itemGroup = record => {
+    if (record.tool !== 'painting') return record.tool;
+    if (record.id.endsWith('_paint_bucket')) return 'paint_bucket';
+    if (record.id.endsWith('_paintbrush')) return 'paintbrush';
+    return 'paint_roller';
+  };
+  const itemSprites = new Map();
+  async function itemSprite(id) {
+    const record = itemsById.get(id);
+    if (!record) return;
+    if (itemSprites.has(id)) return itemSprites.get(id);
+    const item = (await readJson(path.join(source, record.file)))['minecraft:item'];
+    const icon = item?.components?.['minecraft:icon'];
+    const texture = itemAtlas[typeof icon === 'string' ? icon : icon?.textures?.default]?.textures;
+    if (typeof texture !== 'string') return;
+    const from = path.join(source, 'RP', texture + '.png');
+    if (!await exists(from)) return;
+    const to = path.join(website, 'static/img/wiki/atelier/items', id.split(':').at(-1) + '.png');
+    await fs.mkdir(path.dirname(to), {recursive:true});
+    await fs.copyFile(from, to);
+    const url = await sprite(to);
+    itemSprites.set(id, url);
+    return url;
+  }
+
   const recipes=[];
   function ingredientId(input){return typeof input==='string'?input:input?.item??(input?.tag?'#'+input.tag:undefined);}
   const recipeDocuments=[...await Promise.all((await filesUnder(path.join(source,'BP/recipes'))).map(async file=>({source:path.relative(source,file).replaceAll(path.sep,'/'),data:await readJson(file)}))),...vanilla.recipes];
@@ -98,7 +125,7 @@ export async function generateAtelierWiki({source, website=path.resolve(import.m
       if(value.pattern){for(const row of value.pattern)for(const character of row)if(value.key?.[character])add(value.key[character]);}
       else if(value.ingredients)for(const ingredient of value.ingredients)add(ingredient);
       else if(value.input)add(value.input);
-      for(const out of results){const id=ingredientId(out);if(!byId.has(id))continue;
+      for(const out of results){const id=ingredientId(out);if(!byId.has(id)&&!itemsById.has(id))continue;
         const tags=value.tags??[];const method=tags.includes('stonecutter')?'Cortador de pedras':key==='minecraft:recipe_furnace'?(tags.includes('blast_furnace')?'Forno / Alto-forno':'Forno'):tags.includes('crafting_table')?'Bancada':'Inventário';
         recipes.push([[...inputs].map(([id,count])=>[idFor(id),count]),idFor(id),typeof out==='object'?(out.count??1):1,method,value.cookingtime??null,document.source,value.description?.identifier??null]);
       }
@@ -113,7 +140,7 @@ export async function generateAtelierWiki({source, website=path.resolve(import.m
   }
   const uniqueRecipes=[...uniqueByVisual.values()];
   const refSprites={},refNames={};
-  for(const id of ids){const index=idFor(id);refNames[index]=labelFor(id,id.split(':').pop().replaceAll('_',' '));if(byId.has(id))continue;const file=manualAsset(id);if(file&&await exists(file))refSprites[index]=await sprite(file);}
+  for(const id of ids){const index=idFor(id);refNames[index]=labelFor(id,id.split(':').pop().replaceAll('_',' '));if(byId.has(id))continue;const file=manualAsset(id);if(file&&await exists(file))refSprites[index]=await sprite(file);else { const image=await itemSprite(id); if(image) refSprites[index]=image; }}
 
   const variants=await import(pathToFileURL(path.join(source,'BP/scripts/variants.js')).href);
   const cycles=variants.MATERIAL_CYCLES.map(c=>c.map(id=>idFor(id)));
@@ -131,7 +158,35 @@ export async function generateAtelierWiki({source, website=path.resolve(import.m
     }
     if(destinations.length)paint[recordIndex]=destinations;
   }
-  const payload={schemaVersion:1,materials,records,ids,recipes:uniqueRecipes,refSprites,refNames,cycles,paint,nativeHex,
+  const glassSource = await fs.readFile(path.join(source, 'BP/scripts/glassCutter.js'), 'utf8');
+  const glassDefinitions = glassSource.slice(glassSource.indexOf('const NAMESPACE ='), glassSource.indexOf('const playGlassSound ='));
+  const glassTypes = new Set([...byId.keys(), ...Object.keys(assets).map(id => 'minecraft:' + id)]);
+  const glassCycles = vm.runInNewContext(glassDefinitions + '\n[...new Set([...CYCLE_BY_ID.values()].map(entry => entry.cycle))];');
+  const glassCuts = {};
+  for (const cycle of glassCycles) {
+    const known = cycle.filter(id => glassTypes.has(id));
+    if (known.length < 2) continue;
+    for (let index = 0; index < known.length; index++) {
+      const id = known[index];
+      const previous = known.at(index - 1);
+      const next = known[(index + 1) % known.length];
+      const record = byId.get(id);
+      if (record === undefined) continue;
+      glassCuts[records[record][0]] = [idFor(previous), idFor(next)];
+      for (const neighbor of [previous, next]) {
+        const ref = idFor(neighbor);
+        refNames[ref] ??= labelFor(neighbor, neighbor.split(':').pop().replaceAll('_', ' '));
+        const file = manualAsset(neighbor);
+        if (!refSprites[ref] && file && await exists(file)) refSprites[ref] = await sprite(file);
+      }
+    }
+  }
+  const itemRecipes = {};
+  for (const [index, recipe] of uniqueRecipes.entries()) {
+    const item = itemsById.get(ids[recipe[1]]);
+    if (item) (itemRecipes[itemGroup(item)] ??= []).push(index);
+  }
+  const payload={schemaVersion:1,materials,records,ids,recipes:uniqueRecipes,refSprites,refNames,cycles,paint,nativeHex,glassCuts,itemRecipes,
     sourceCount:catalog.records.filter(r=>r.kind==='block').length};
   await fs.writeFile(path.join(website,'src/data/atelierWiki.json'),JSON.stringify(payload)+'\n');
   console.log(`[atelier-wiki] ${materials.length} materials; ${payload.sourceCount} Atelier blocks; ${uniqueRecipes.length} recipes; original image URLs.`);

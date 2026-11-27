@@ -1,0 +1,578 @@
+{
+  "records": [
+    {
+      "id": "better_containers:drawer",
+      "slug": "drawer",
+      "family": "drawers",
+      "tier": "drawer",
+      "image": "/img/wiki/better-containers/drawer.png",
+      "capacity": {
+        "types": 1,
+        "stacks": 16
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:planks",
+          "minecraft:planks",
+          "minecraft:planks",
+          "minecraft:stick",
+          "minecraft:chest",
+          "minecraft:stick",
+          "minecraft:planks",
+          "minecraft:planks",
+          "minecraft:planks"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:copper_drawer",
+      "slug": "copper_drawer",
+      "family": "drawers",
+      "tier": "copper",
+      "image": "/img/wiki/better-containers/copper_drawer.png",
+      "capacity": {
+        "types": 1,
+        "stacks": 32
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:copper_ingot",
+          "minecraft:copper_ingot",
+          "minecraft:copper_ingot",
+          "minecraft:copper_ingot",
+          "better_containers:drawer",
+          "minecraft:copper_ingot",
+          "minecraft:copper_ingot",
+          "minecraft:copper_ingot",
+          "minecraft:copper_ingot"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:iron_drawer",
+      "slug": "iron_drawer",
+      "family": "drawers",
+      "tier": "iron",
+      "image": "/img/wiki/better-containers/iron_drawer.png",
+      "capacity": {
+        "types": 1,
+        "stacks": 64
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "better_containers:copper_drawer",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:gold_drawer",
+      "slug": "gold_drawer",
+      "family": "drawers",
+      "tier": "gold",
+      "image": "/img/wiki/better-containers/gold_drawer.png",
+      "capacity": {
+        "types": 1,
+        "stacks": 256
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "better_containers:iron_drawer",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:emerald_drawer",
+      "slug": "emerald_drawer",
+      "family": "drawers",
+      "tier": "emerald",
+      "image": "/img/wiki/better-containers/emerald_drawer.png",
+      "capacity": {
+        "types": 1,
+        "stacks": 1024
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "better_containers:gold_drawer",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:diamond_drawer",
+      "slug": "diamond_drawer",
+      "family": "drawers",
+      "tier": "diamond",
+      "image": "/img/wiki/better-containers/diamond_drawer.png",
+      "capacity": {
+        "types": 1,
+        "stacks": 4096
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "better_containers:emerald_drawer",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:netherite_drawer",
+      "slug": "netherite_drawer",
+      "family": "drawers",
+      "tier": "netherite",
+      "image": "/img/wiki/better-containers/netherite_drawer.png",
+      "capacity": {
+        "types": 1,
+        "stacks": 16384
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:netherite_ingot",
+          "minecraft:netherite_scrap",
+          "minecraft:netherite_ingot",
+          "minecraft:netherite_scrap",
+          "better_containers:diamond_drawer",
+          "minecraft:netherite_scrap",
+          "minecraft:netherite_ingot",
+          "minecraft:netherite_scrap",
+          "minecraft:netherite_ingot"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:iron_chest",
+      "slug": "iron_chest",
+      "family": "chests",
+      "tier": "iron",
+      "image": "/img/wiki/better-containers/iron_chest.png",
+      "capacity": {
+        "slots": 36,
+        "doubleSlots": 72
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:chest",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:gold_chest",
+      "slug": "gold_chest",
+      "family": "chests",
+      "tier": "gold",
+      "image": "/img/wiki/better-containers/gold_chest.png",
+      "capacity": {
+        "slots": 45,
+        "doubleSlots": 90
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "better_containers:iron_chest",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:emerald_chest",
+      "slug": "emerald_chest",
+      "family": "chests",
+      "tier": "emerald",
+      "image": "/img/wiki/better-containers/emerald_chest.png",
+      "capacity": {
+        "slots": 54,
+        "doubleSlots": 108
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "better_containers:gold_chest",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:diamond_chest",
+      "slug": "diamond_chest",
+      "family": "chests",
+      "tier": "diamond",
+      "image": "/img/wiki/better-containers/diamond_chest.png",
+      "capacity": {
+        "slots": 63,
+        "doubleSlots": 126
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "better_containers:emerald_chest",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:netherite_chest",
+      "slug": "netherite_chest",
+      "family": "chests",
+      "tier": "netherite",
+      "image": "/img/wiki/better-containers/netherite_chest.png",
+      "capacity": {
+        "slots": 81,
+        "doubleSlots": 162
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:netherite_ingot",
+          "minecraft:netherite_scrap",
+          "minecraft:netherite_ingot",
+          "minecraft:netherite_scrap",
+          "better_containers:diamond_chest",
+          "minecraft:netherite_scrap",
+          "minecraft:netherite_ingot",
+          "minecraft:netherite_scrap",
+          "minecraft:netherite_ingot"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:iron_barrel",
+      "slug": "iron_barrel",
+      "family": "barrels",
+      "tier": "iron",
+      "image": "/img/wiki/better-containers/iron_barrel.png",
+      "capacity": {
+        "slots": 36
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:barrel",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:gold_barrel",
+      "slug": "gold_barrel",
+      "family": "barrels",
+      "tier": "gold",
+      "image": "/img/wiki/better-containers/gold_barrel.png",
+      "capacity": {
+        "slots": 45
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "better_containers:iron_barrel",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:emerald_barrel",
+      "slug": "emerald_barrel",
+      "family": "barrels",
+      "tier": "emerald",
+      "image": "/img/wiki/better-containers/emerald_barrel.png",
+      "capacity": {
+        "slots": 54
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "better_containers:gold_barrel",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:diamond_barrel",
+      "slug": "diamond_barrel",
+      "family": "barrels",
+      "tier": "diamond",
+      "image": "/img/wiki/better-containers/diamond_barrel.png",
+      "capacity": {
+        "slots": 63
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "better_containers:emerald_barrel",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:netherite_barrel",
+      "slug": "netherite_barrel",
+      "family": "barrels",
+      "tier": "netherite",
+      "image": "/img/wiki/better-containers/netherite_barrel.png",
+      "capacity": {
+        "slots": 81
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:netherite_ingot",
+          "minecraft:netherite_scrap",
+          "minecraft:netherite_ingot",
+          "minecraft:netherite_scrap",
+          "better_containers:diamond_barrel",
+          "minecraft:netherite_scrap",
+          "minecraft:netherite_ingot",
+          "minecraft:netherite_scrap",
+          "minecraft:netherite_ingot"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:iron_shulker",
+      "slug": "iron_shulker",
+      "family": "shulkers",
+      "tier": "iron",
+      "image": "/img/wiki/better-containers/iron_shulker.png",
+      "capacity": {
+        "slots": 36
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:shulker_box",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:gold_shulker",
+      "slug": "gold_shulker",
+      "family": "shulkers",
+      "tier": "gold",
+      "image": "/img/wiki/better-containers/gold_shulker.png",
+      "capacity": {
+        "slots": 45
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "better_containers:iron_shulker",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:emerald_shulker",
+      "slug": "emerald_shulker",
+      "family": "shulkers",
+      "tier": "emerald",
+      "image": "/img/wiki/better-containers/emerald_shulker.png",
+      "capacity": {
+        "slots": 54
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "better_containers:gold_shulker",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald",
+          "minecraft:emerald"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:diamond_shulker",
+      "slug": "diamond_shulker",
+      "family": "shulkers",
+      "tier": "diamond",
+      "image": "/img/wiki/better-containers/diamond_shulker.png",
+      "capacity": {
+        "slots": 63
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "better_containers:emerald_shulker",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond",
+          "minecraft:diamond"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    },
+    {
+      "id": "better_containers:netherite_shulker",
+      "slug": "netherite_shulker",
+      "family": "shulkers",
+      "tier": "netherite",
+      "image": "/img/wiki/better-containers/netherite_shulker.png",
+      "capacity": {
+        "slots": 81
+      },
+      "recipe": {
+        "slots": [
+          "minecraft:netherite_ingot",
+          "minecraft:netherite_scrap",
+          "minecraft:netherite_ingot",
+          "minecraft:netherite_scrap",
+          "better_containers:diamond_shulker",
+          "minecraft:netherite_scrap",
+          "minecraft:netherite_ingot",
+          "minecraft:netherite_scrap",
+          "minecraft:netherite_ingot"
+        ],
+        "columns": 3,
+        "count": 1
+      }
+    }
+  ],
+  "vanilla": {
+    "minecraft:copper_ingot": "/img/wiki/vanilla/Items/copper_ingot.png",
+    "minecraft:diamond": "/img/wiki/vanilla/Items/diamond.png",
+    "minecraft:planks": "/img/wiki/vanilla/Renders/oak_planks.png",
+    "minecraft:stick": "/img/wiki/vanilla/Items/stick.png",
+    "minecraft:emerald": "/img/wiki/vanilla/Items/emerald.png",
+    "minecraft:gold_ingot": "/img/wiki/vanilla/Items/gold_ingot.png",
+    "minecraft:iron_ingot": "/img/wiki/vanilla/Items/iron_ingot.png",
+    "minecraft:netherite_ingot": "/img/wiki/vanilla/Items/netherite_ingot.png",
+    "minecraft:netherite_scrap": "/img/wiki/vanilla/Items/netherite_scrap.png",
+    "minecraft:barrel": "/img/wiki/vanilla/Renders/barrel.png"
+  }
+}

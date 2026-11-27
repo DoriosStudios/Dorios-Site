@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "rendererVersion": 4,
+  "blocks": {
+    "utilitycraft:cobble_gen_0": {
+      "identifier": "utilitycraft:cobble_gen_0",
+      "kind": "manual",
+      "path": "renders/cobble_gen_0.png"
+    },
+    "utilitycraft:cobble_gen_1": {
+      "identifier": "utilitycraft:cobble_gen_1",
+      "kind": "manual",
+      "path": "renders/cobble_gen_1.png"
+    },
+    "utilitycraft:cobble_gen_2": {
+      "identifier": "utilitycraft:cobble_gen_2",
+      "kind": "manual",
+      "path": "renders/cobble_gen_2.png"
+    },
+    "utilitycraft:cobble_gen_3": {
+      "identifier": "utilitycraft:cobble_gen_3",
+      "kind": "manual",
+      "path": "renders/cobble_gen_3.png"
+    },
+    "utilitycraft:cobble_gen_4": {
+      "identifier": "utilitycraft:cobble_gen_4",
+      "kind": "manual",
+      "path": "renders/cobble_gen_4.png"
+    },
+    "utilitycraft:cobble_gen_5": {
+      "identifier": "utilitycraft:cobble_gen_5",
+      "kind": "manual",
+      "path": "renders/cobble_gen_5.png"
+    }
+  }
+}

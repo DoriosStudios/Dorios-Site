@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "rendererVersion": 4,
+  "blocks": {
+    "utilitycraft:big_torch": {
+      "identifier": "utilitycraft:big_torch",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_big_torch-f02caab57906-b94141f761dac660410773a1.png",
+      "hash": "b94141f761dac660410773a1275c8ac59f0dde4e2f817de3669eaa1d19a9746b",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "geometry.utilitycraft_big_torch",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 6
+      }
+    },
+    "utilitycraft:crucible": {
+      "identifier": "utilitycraft:crucible",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_crucible-e0c129897002-7fd993848353c13fe285098d.png",
+      "hash": "7fd993848353c13fe285098dc7faa8ae1537988b59e573facfd8e8475411c75f",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:lava": 0,
+        "utilitycraft:cobble": 0,
+        "utilitycraft:smelting": 0
+      },
+      "geometry": "geometry.utilitycraft_crucible",
+      "stats": {
+        "bones": 7,
+        "cubes": 17,
+        "planes": 4,
+        "faces": 82
+      }
+    },
+    "utilitycraft:crushed_blackstone": {
+      "identifier": "utilitycraft:crushed_blackstone",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_crushed_blackstone-93e8b8171c51-4c2ca7ac4f348a4016b8fefc.png",
+      "hash": "4c2ca7ac4f348a4016b8fefc3ed15f87626ccf6de468f7bd91d7ae19f666198d",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:crushed_cobbled_deepslate": {
+      "identifier": "utilitycraft:crushed_cobbled_deepslate",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_crushed_cobbled_deepslate-9828c0c9e243-e65ddcb0fb613137b368646a.png",
+      "hash": "e65ddcb0fb613137b368646abd7cf67564260580fc0bf68de637860929cb2577",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:crushed_endstone": {
+      "identifier": "utilitycraft:crushed_endstone",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_crushed_endstone-df4ea28c579c-46fbdc63752492d51a3aee8f.png",
+      "hash": "46fbdc63752492d51a3aee8f952e06d8b43b6a0295d2585b72559b397809dc1b",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:crushed_netherrack": {
+      "identifier": "utilitycraft:crushed_netherrack",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_crushed_netherrack-f1c483006282-5765a68686967cea2be8be30.png",
+      "hash": "5765a68686967cea2be8be305dacd3d8afc19a956e707d2a23f4d055bb787296",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:flint_block": {
+      "identifier": "utilitycraft:flint_block",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_flint_block-dfdf49c5e128-cb31e1f59a21373343697be5.png",
+      "hash": "cb31e1f59a21373343697be5e3f5124d8f9f9ea4f2b1d9d2a79eeec45e33ae10",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:sieve": {
+      "identifier": "utilitycraft:sieve",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_sieve-698c49f6c50f-4879767e42c4ac83b4ff338a.png",
+      "hash": "4879767e42c4ac83b4ff338a485b8a701ee6652631e8b4c6ad8a3fda382d2288",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:mesh": "empty",
+        "utilitycraft:state": 0,
+        "utilitycraft:block_e0": 0,
+        "utilitycraft:block_e1": 0
+      },
+      "geometry": "geometry.utilitycraft_wood_sieve",
+      "stats": {
+        "bones": 13,
+        "cubes": 6,
+        "planes": 0,
+        "faces": 34
+      }
+    },
+    "utilitycraft:sink": {
+      "identifier": "utilitycraft:sink",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_sink-2f27d53f3b62-9adee31ba8181e4b31a73570.png",
+      "hash": "9adee31ba8181e4b31a735701be22eb1ace49f7bfa9b5d012eeecd0f33e697f5",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "minecraft:facing_direction": "north"
+      },
+      "geometry": "geometry.utilitycraft_infinite_water_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 10,
+        "planes": 1,
+        "faces": 55
+      }
+    }
+  }
+}

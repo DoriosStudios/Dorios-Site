@@ -90,6 +90,14 @@ function effectDetails(effects = {}, mode) {
   }));
 }
 
+const itemDescriptions = {
+  'dorios:sacred_heart': 'Adds 10 hearts and grants Regeneration I when equipped. Can be found as loot in desert pyramids.',
+  'dorios:wither_heart': 'Adds 8 hearts, grants Regeneration I, and prevents the Wither effect when equipped. The Wither can drop it.',
+  'dorios:tideforged_ring': 'Increases underwater movement speed by 30% when equipped. Guardians and Elder Guardians can drop it.',
+  'dorios:heavy_warrior_ring': 'Grants Strength I when equipped. Piglin Brutes can drop it.',
+  'dorios:strong_brute_ring': 'Adds 4 damage and grants Strength I when equipped. Piglin Brutes can drop it.',
+};
+
 function itemDescription(item, slotLabel, documentation) {
   const capabilities = documentation.capabilities;
   if (capabilities.specialAbility) return `${item.name} is an equippable trinket for the ${slotLabel} slot. ${capabilities.specialAbility.description}`;
@@ -254,7 +262,7 @@ function decorateItem(item) {
     },
     usage: specialAbility?.usage,
   };
-  documentation.description = itemDescription(item, documentation.basic.equipSlot, documentation);
+  documentation.description = itemDescriptions[item.identifier] ?? itemDescription(item, documentation.basic.equipSlot, documentation);
 
   return {
     ...item,
@@ -308,10 +316,10 @@ const project = createGeneratedProject({
     recipes: 'Crafting recipes for accessories, equipment and supporting materials.',
   },
   mechanics: [
-    {name: 'Dedicated slots', icon: '◇', description: 'Thirteen accessory slots keep different trinket types separate.'},
-    {name: 'Attribute bonuses', icon: '+', description: 'Equipped items can modify health, damage, speed, regeneration, critical stats and more.'},
-    {name: 'Effects and immunities', icon: '✦', description: 'Trinkets can grant passive effects, apply active effects or protect against status conditions.'},
-    {name: 'Loot progression', icon: '⌁', description: 'Accessories are distributed through mob drops, biome loot, structures and crafting.'},
+    {name: 'Dedicated slots', icon: 'stack', description: 'Thirteen accessory slots keep different trinket types separate.'},
+    {name: 'Attribute bonuses', icon: 'adjustments', description: 'Equipped items can modify health, damage, speed, regeneration, critical stats and more.'},
+    {name: 'Effects and immunities', icon: 'sparkles', description: 'Trinkets can grant passive effects, apply active effects or protect against status conditions.'},
+    {name: 'Loot progression', icon: 'package', description: 'Accessories are distributed through mob drops, biome loot, structures and crafting.'},
   ],
 });
 

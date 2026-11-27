@@ -183,7 +183,7 @@ function PrimaryMetrics({project}) {
   if (!metrics.length) return null;
 
   return (
-    <dl className={styles.heroStats} aria-label={t('primaryProjectMetrics')} style={projectCardPalette(project)}>
+    <dl className={styles.heroStats} aria-label={t('primaryProjectMetrics')}>
       {metrics.map((metric) => <div key={metric.key}>
         <dt>{metric.label}</dt>
         <dd>{metric.key === 'downloads' ? <DownloadStatistics statistics={project.downloadStats}>{metric.value}</DownloadStatistics> : metric.value}</dd>
@@ -301,12 +301,12 @@ export default function ProjectDetailPage({project: sourceProject}) {
         largeImage={Boolean(project.media.cover)}
       />
       <DoriosMarketingShell activePage="projects" project={project}>
-        <main className={styles.projectPage}>
+        <main className={styles.projectPage} style={projectCardPalette(project)}>
           <nav className={styles.breadcrumb} aria-label={t('projectHierarchy')}>
             <Link to="/projects">{t('projects')}</Link><span aria-hidden="true">/</span><strong>{project.name}</strong>{project.routes.wiki && <><span aria-hidden="true">/</span><Link to={project.routes.wiki}>{t('wiki')}</Link></>}
           </nav>
 
-          <section className={styles.hero} aria-labelledby="project-title" style={projectCardPalette(project)}>
+          <section className={styles.hero} aria-labelledby="project-title">
             <div className={styles.heroCopy}>
               <Link className={styles.backLink} to="/projects"><span aria-hidden="true">←</span> {t('backProjects')}</Link>
               <Tags project={project} />

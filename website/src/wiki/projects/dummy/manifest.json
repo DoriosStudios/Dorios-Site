@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-27T16:16:58.703487+00:00",
+  "project": {
+    "id": "dummy",
+    "name": "Training Dummy",
+    "version": "1.1.1"
+  },
+  "source": {
+    "bridgeProject": "Training-Dummy",
+    "revision": "18d49e80fec5",
+    "dirty": false
+  },
+  "counts": {
+    "items": 0,
+    "catalogItems": 0,
+    "blocks": 0,
+    "entities": 0,
+    "recipes": 0,
+    "variantGroups": 0
+  },
+  "content": {
+    "items": [],
+    "blocks": [],
+    "entities": [],
+    "recipes": []
+  },
+  "catalog": {
+    "items": []
+  },
+  "variantGroups": []
+}

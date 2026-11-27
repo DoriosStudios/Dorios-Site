@@ -97,6 +97,15 @@ def _existing_texture(
     return None
 
 
+def _public_vanilla_item_image(texture: str | None, assets: dict[str, str]) -> str | None:
+    if not texture:
+        return None
+    texture = texture.replace("\\", "/").removeprefix("textures/items/")
+    if "/" in texture:
+        return None
+    return assets.get(Path(texture).stem)
+
+
 def _icon_key(components: dict[str, Any]) -> str | None:
     icon = components.get("minecraft:icon")
     if isinstance(icon, str):
@@ -202,7 +211,7 @@ def _render_index(project_root: Path) -> dict[str, str]:
 
 def _block_render(identifier: str, renders: dict[str, str]) -> str | None:
     local_id = identifier.split(":", 1)[-1].lower()
-    for candidate in (local_id, f"{local_id}_render"):
+    for candidate in (local_id, f"{local_id}_render", f"{local_id}_off"):
         if candidate in renders:
             return renders[candidate]
     return None
@@ -258,6 +267,8 @@ def _excluded(kind: str, path: Path, identifier: str, collection_root: Path, con
         return True
     if _identifier_excluded(identifier, config):
         return True
+    if kind == "entities" and any(fnmatch.fnmatchcase(identifier, pattern) for pattern in _patterns(config, "entityIdentifierPatterns")):
+        return True
     source_value = relative.as_posix()
     return any(fnmatch.fnmatch(source_value.lower(), pattern.lower()) for pattern in _patterns(config, "pathPatterns"))
 
@@ -279,6 +290,11 @@ def _parse_items(
     for dependency_resource_pack in dependency_resource_packs:
         textures.update(_texture_index(dependency_resource_pack / "textures" / "item_texture.json"))
     textures.update(_texture_index(resource_pack / "textures" / "item_texture.json"))
+    asset_index = Path(__file__).resolve().parents[2] / "src/data/vanillaAssetIndex.json"
+    vanilla_items = {
+        key: url for key, url in load(asset_index).items()
+        if url.startswith("/img/wiki/vanilla/Items/")
+    } if asset_index.is_file() else {}
     entries: list[dict[str, Any]] = []
     for path in _json_files(collection_root):
         try:
@@ -289,14 +305,15 @@ def _parse_items(
         if not identifier or _excluded("items", path, identifier, collection_root, config):
             continue
         components = root.get("components", {})
-        icon = _icon_key(components)
+        texture = textures.get(icon, icon) if (icon := _icon_key(components)) else None
         entries.append({
             "id": identifier.split(":", 1)[-1],
             "slug": _slug(identifier.split(":", 1)[-1]),
             "identifier": identifier,
             "name": _localized_name(identifier, "item", lang),
             "category": _category(path, collection_root),
-            "image": _existing_texture(resource_pack, textures.get(icon, icon), dependency_resource_packs),
+            "image": _existing_texture(resource_pack, texture, dependency_resource_packs)
+            or _public_vanilla_item_image(texture, vanilla_items),
             "source": _source(path, project_root),
         })
     deduplicated: dict[str, dict[str, Any]] = {}

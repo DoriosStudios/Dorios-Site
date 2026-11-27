@@ -17,7 +17,7 @@
     "generate:utilitycraft-machine-recipes": "node scripts/extract-utilitycraft-processing-recipes.mjs",
     "generate:ascendant-documentation": "node scripts/generate-ascendant-documentation-profiles.mjs",
     "generate:ascendant-machine-grid": "node scripts/generate-ascendant-machine-grid.mjs",
-    "generate:shared-item-documentation": "node scripts/generate-shared-item-documentation-profiles.mjs",
+    "generate:shared-item-documentation": "node scripts/generate-shared-item-documentation-profiles.mjs && node scripts/generate-enchantment-data.mjs",
     "generate:better-smelters-wiki": "node scripts/generate-better-smelters-wiki.mjs",
     "generate:wiki-locales": "node scripts/generate-wiki-localized-names.mjs",
     "apply:site-translations": "node scripts/apply-site-translations.mjs",

@@ -273,6 +273,12 @@ test('legacy RP blocks.json declares cubes explicitly; missing custom geometries
   const visual=resolveVisual(block,{}, {legacy:{textures:'test'}});
   assert.equal(visual.descriptor.identifier,'minecraft:geometry.full_block');
   assert.equal(visual.materials['*'].texture,'test');
+  const legacy = {textures: {up: 'top', down: 'base', side: 'wall', east: 'east_wall'}};
+  const {materials} = resolveVisual(block, {}, {legacy});
+  assert.equal(materials.up.texture, 'top');
+  assert.equal(materials.down.texture, 'base');
+  assert.equal(materials.north.texture, 'wall');
+  assert.equal(materials.east.texture, 'east_wall');
   assert.throws(()=>resolveVisual(block),/No declared geometry/);
   block.components['minecraft:geometry']='geometry.missing';
   assert.equal(resolveVisual(block,{}, {legacy:{textures:'test'}}).descriptor.identifier,'geometry.missing');
@@ -295,6 +301,44 @@ test('dependency and configured vanilla resource packs resolve real atlas textur
   let seen;
   await compileGeometry({geometry:model,materials:{'*':{texture:'base'},accent:{texture:'accent'}},textureFor:async m=>{seen=m.texture;return solidTexture();}});
   assert.equal(seen,'accent');
+});
+
+test('flipbook strips render the same sequence horizontally and vertically, with optional fades', async t => {
+  const f = await fixture(t);
+  const colors = [[40, 70, 100, 255], [100, 130, 160, 255], [160, 190, 220, 255]];
+  const tiles = [{atlas_tile: 'test', flipbook_texture: 'textures/animated', frames: [2, 0, 1, 0], ticks_per_frame: 2}];
+  const textureFile = path.join(f.source, 'RP/textures/animated.png');
+  const writeStrip = async horizontal => {
+    const width = horizontal ? 12 : 4, height = horizontal ? 4 : 12;
+    const pixels = Buffer.alloc(width * height * 4);
+    for (let y = 0; y < height; y++) for (let x = 0; x < width; x++) {
+      pixels.set(colors[Math.floor((horizontal ? x : y) / 4)], (y * width + x) * 4);
+    }
+    await fs.writeFile(textureFile, await sharp(pixels, {raw: {width, height, channels: 4}}).png().toBuffer());
+  };
+  await f.write('RP/textures/flipbook_textures.json', tiles);
+  for (const horizontal of [false, true]) {
+    await writeStrip(horizontal);
+    const packs = await loadResourcePacks({source: f.source});
+    const texture = await packs.textureFor({texture: 'test'});
+    assert.deepEqual([texture.width, texture.height], [4, 4]);
+    assert.deepEqual([...texture.pixels.subarray(0, 4)], colors[2]);
+    assert.deepEqual([...texture.animation.pixelsAt(1).subarray(0, 4)], colors[1]);
+    assert.deepEqual([...texture.animation.pixelsAt(2).subarray(0, 4)], colors[0]);
+    assert.deepEqual([...texture.animation.pixelsAt(8).subarray(0, 4)], colors[2]);
+    const report = await generateMissingRenders({...f, animate: true, refresh: true, log: quiet, size: 32});
+    assert.equal(report.counts.generated, 1);
+    assert.match(report.results[0].path, /\.webp$/);
+    const bytes = await fs.readFile(path.join(f.output, report.results[0].path));
+    const image = await sharp(bytes, {animated: true}).metadata();
+    assert.equal(image.pageHeight, 32);
+    assert.equal(image.delay.reduce((total, duration) => total + duration, 0), 400);
+  }
+  await f.write('RP/textures/flipbook_textures.json', [{...tiles[0], blend_frames: false}]);
+  const packs = await loadResourcePacks({source: f.source});
+  const texture = await packs.textureFor({texture: 'test'});
+  assert.deepEqual([...texture.animation.pixelsAt(1).subarray(0, 4)], colors[2]);
+  assert.deepEqual([...texture.animation.pixelsAt(2).subarray(0, 4)], colors[0]);
 });
 
 test('item_visual, permutation orientation and explicit variant states resolve deterministically', () => {

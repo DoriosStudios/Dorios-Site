@@ -191,7 +191,7 @@
       "requires": [],
       "routes": {
         "project": "/projects/better-containers",
-        "wiki": null
+        "wiki": "/wiki/better-containers"
       },
       "links": {
         "repository": "https://github.com/DoriosStudios/Better-Containers",
@@ -291,7 +291,7 @@
       "requires": [],
       "routes": {
         "project": "/projects/bonsais",
-        "wiki": "/docs/bountiful_bonsais/"
+        "wiki": "/wiki/bonsais"
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/bountiful-bonsais",
@@ -340,7 +340,7 @@
       "requires": [],
       "routes": {
         "project": "/projects/crops",
-        "wiki": "/docs/bountiful_crops/"
+        "wiki": "/wiki/crops"
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/bountiful-crops",
@@ -383,7 +383,7 @@
       "requires": [],
       "routes": {
         "project": "/projects/trees",
-        "wiki": "/docs/addons/bountiful-trees"
+        "wiki": "/wiki/trees"
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/bountiful-trees",
@@ -428,7 +428,7 @@
       "requires": [],
       "routes": {
         "project": "/projects/cobblestone-generators",
-        "wiki": "/docs/cobblestone_generators/"
+        "wiki": "/wiki/cobblestone-generators"
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/cobblestone-generators",
@@ -452,8 +452,8 @@
       "slug": "compressy",
       "aliases": [],
       "name": "Compressy",
-      "summary": "Multi-tier material compression for denser inventories, storage systems, and automated crafting chains.",
-      "description": "Multi-tier material compression for denser inventories, storage systems, and automated crafting chains.",
+      "summary": "Compress blocks and loose ingredients at a crafting table, unpack them to recover the inputs, and store Cobblestone at up to nine compression tiers.",
+      "description": "Compress blocks and loose ingredients at a crafting table, unpack them to recover the inputs, and store Cobblestone at up to nine compression tiers.",
       "kind": "Add-On",
       "category": "Utility",
       "tags": [
@@ -471,7 +471,7 @@
       "requires": [],
       "routes": {
         "project": "/projects/compressy",
-        "wiki": null
+        "wiki": "/wiki/compressy"
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/compressy",
@@ -569,7 +569,15 @@
         "project": "/projects/atelier",
         "wiki": "/wiki/atelier"
       },
-      "statisticsSources": [{"id":"custom-install", "provider":"internal-downloads", "enabled":true, "event":"custom-install-started", "countingKey":"atelier:custom-install-started"}],
+      "statisticsSources": [
+        {
+          "id": "custom-install",
+          "provider": "internal-downloads",
+          "enabled": true,
+          "event": "custom-install-started",
+          "countingKey": "atelier:custom-install-started"
+        }
+      ],
       "links": {
         "repository": "https://github.com/DoriosStudios/Dorios-Atelier",
         "releases": "https://github.com/DoriosStudios/Dorios-Atelier/releases",
@@ -618,7 +626,7 @@
       "requires": [],
       "routes": {
         "project": "/projects/basics",
-        "wiki": "/docs/dorios_basics/"
+        "wiki": "/wiki/basics"
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/dorios-basics",
@@ -661,7 +669,7 @@
       "requires": [],
       "routes": {
         "project": "/projects/excavate",
-        "wiki": "/docs/addons/excavate"
+        "wiki": "/wiki/excavate"
       },
       "links": {
         "repository": "https://github.com/DoriosStudios/Dorios-Excavate",
@@ -693,8 +701,8 @@
       "slug": "insight",
       "aliases": [],
       "name": "Dorios' Insight",
-      "summary": "A configurable in-world information overlay that explains the blocks, entities, and systems currently in view.",
-      "description": "A configurable in-world information overlay that explains the blocks, entities, and systems currently in view.",
+      "summary": "Inspect the block or entity in view, display equipment durability, and tune the HUD from the personal settings book.",
+      "description": "Inspect the block or entity in view, display equipment durability, and tune the HUD from the personal settings book.",
       "kind": "Add-On",
       "category": "Utility",
       "tags": [
@@ -712,7 +720,7 @@
       "requires": [],
       "routes": {
         "project": "/projects/insight",
-        "wiki": null
+        "wiki": "/docs/addons/insight"
       },
       "links": {
         "repository": "https://github.com/DoriosStudios/Dorios-Insight",
@@ -810,7 +818,7 @@
       "requires": [],
       "routes": {
         "project": "/projects/pillars",
-        "wiki": "/docs/effect_pillars/"
+        "wiki": "/wiki/pillars"
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/effect-pillars",
@@ -834,8 +842,8 @@
       "slug": "paxels",
       "aliases": [],
       "name": "Paxels & AIOTs",
-      "summary": "Balanced multi-tools that combine mining, chopping, digging, farming, and utility actions in one item.",
-      "description": "Balanced multi-tools that combine mining, chopping, digging, farming, and utility actions in one item.",
+      "summary": "Combine a pickaxe, axe and shovel in a Paxel, then add a sword and hoe to make an AIOT that works soil and crops in a 3×3 area.",
+      "description": "Combine a pickaxe, axe and shovel in a Paxel, then add a sword and hoe to make an AIOT that works soil and crops in a 3×3 area.",
       "kind": "Add-On",
       "category": "Utility",
       "tags": [
@@ -853,7 +861,7 @@
       "requires": [],
       "routes": {
         "project": "/projects/paxels",
-        "wiki": null
+        "wiki": "/wiki/paxels"
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/paxels-aiots",
@@ -896,7 +904,7 @@
       "requires": [],
       "routes": {
         "project": "/projects/lamps",
-        "wiki": "/docs/redstone_lamps/"
+        "wiki": "/wiki/lamps"
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/redstone-lamps-plus",
@@ -989,7 +997,7 @@
       "requires": [],
       "routes": {
         "project": "/projects/dummy",
-        "wiki": "/docs/training_dummy/"
+        "wiki": "/wiki/dummy"
       },
       "links": {
         "curseforge": "https://www.curseforge.com/minecraft-bedrock/addons/training-dummy",

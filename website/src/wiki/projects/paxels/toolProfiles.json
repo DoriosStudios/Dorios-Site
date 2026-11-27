@@ -1,0 +1,387 @@
+{
+  "utilitycraft:copper_aiot": {
+    "documentation": {
+      "description": "Combines the pickaxe, axe, shovel, sword and hoe. Use it on farmland or crops for a 3×3 action.",
+      "basic": {
+        "itemType": "AIOT",
+        "maximumStack": 1
+      },
+      "statistics": [
+        [
+          "Durability",
+          955
+        ],
+        [
+          "Attack damage",
+          6
+        ],
+        [
+          "Enchantability",
+          16
+        ],
+        [
+          "Mining speed",
+          "13–26×"
+        ]
+      ],
+      "usage": "Use on eligible dirt or grass to till it, or on a mature crop to harvest. Sneak and use it to create paths where supported."
+    }
+  },
+  "utilitycraft:copper_paxel": {
+    "documentation": {
+      "description": "Combines the pickaxe, axe and shovel in a single tool.",
+      "basic": {
+        "itemType": "Paxel",
+        "maximumStack": 1
+      },
+      "statistics": [
+        [
+          "Durability",
+          573
+        ],
+        [
+          "Attack damage",
+          4
+        ],
+        [
+          "Enchantability",
+          14
+        ],
+        [
+          "Mining speed",
+          "13×"
+        ]
+      ]
+    }
+  },
+  "utilitycraft:diamond_aiot": {
+    "documentation": {
+      "description": "Combines the pickaxe, axe, shovel, sword and hoe. Use it on farmland or crops for a 3×3 action.",
+      "basic": {
+        "itemType": "AIOT",
+        "maximumStack": 1
+      },
+      "statistics": [
+        [
+          "Durability",
+          7805
+        ],
+        [
+          "Attack damage",
+          8
+        ],
+        [
+          "Enchantability",
+          13
+        ],
+        [
+          "Mining speed",
+          "20–30×"
+        ]
+      ],
+      "usage": "Use on eligible dirt or grass to till it, or on a mature crop to harvest. Sneak and use it to create paths where supported."
+    }
+  },
+  "utilitycraft:diamond_paxel": {
+    "documentation": {
+      "description": "Combines the pickaxe, axe and shovel in a single tool.",
+      "basic": {
+        "itemType": "Paxel",
+        "maximumStack": 1
+      },
+      "statistics": [
+        [
+          "Durability",
+          4683
+        ],
+        [
+          "Attack damage",
+          6
+        ],
+        [
+          "Enchantability",
+          11
+        ],
+        [
+          "Mining speed",
+          "16×"
+        ]
+      ]
+    }
+  },
+  "utilitycraft:golden_aiot": {
+    "documentation": {
+      "description": "Combines the pickaxe, axe, shovel, sword and hoe. Use it on farmland or crops for a 3×3 action.",
+      "basic": {
+        "itemType": "AIOT",
+        "maximumStack": 1
+      },
+      "statistics": [
+        [
+          "Durability",
+          480
+        ],
+        [
+          "Attack damage",
+          5
+        ],
+        [
+          "Enchantability",
+          40
+        ],
+        [
+          "Mining speed",
+          "30×"
+        ]
+      ],
+      "usage": "Use on eligible dirt or grass to till it, or on a mature crop to harvest. Sneak and use it to create paths where supported."
+    }
+  },
+  "utilitycraft:golden_paxel": {
+    "documentation": {
+      "description": "Combines the pickaxe, axe and shovel in a single tool.",
+      "basic": {
+        "itemType": "Paxel",
+        "maximumStack": 1
+      },
+      "statistics": [
+        [
+          "Durability",
+          288
+        ],
+        [
+          "Attack damage",
+          3
+        ],
+        [
+          "Enchantability",
+          30
+        ],
+        [
+          "Mining speed",
+          "30×"
+        ]
+      ]
+    }
+  },
+  "utilitycraft:iron_aiot": {
+    "documentation": {
+      "description": "Combines the pickaxe, axe, shovel, sword and hoe. Use it on farmland or crops for a 3×3 action.",
+      "basic": {
+        "itemType": "AIOT",
+        "maximumStack": 1
+      },
+      "statistics": [
+        [
+          "Durability",
+          1255
+        ],
+        [
+          "Attack damage",
+          7
+        ],
+        [
+          "Enchantability",
+          17
+        ],
+        [
+          "Mining speed",
+          "18–30×"
+        ]
+      ],
+      "usage": "Use on eligible dirt or grass to till it, or on a mature crop to harvest. Sneak and use it to create paths where supported."
+    }
+  },
+  "utilitycraft:iron_paxel": {
+    "documentation": {
+      "description": "Combines the pickaxe, axe and shovel in a single tool.",
+      "basic": {
+        "itemType": "Paxel",
+        "maximumStack": 1
+      },
+      "statistics": [
+        [
+          "Durability",
+          753
+        ],
+        [
+          "Attack damage",
+          5
+        ],
+        [
+          "Enchantability",
+          15
+        ],
+        [
+          "Mining speed",
+          "14×"
+        ]
+      ]
+    }
+  },
+  "utilitycraft:netherite_aiot": {
+    "documentation": {
+      "description": "Combines the pickaxe, axe, shovel, sword and hoe. Use it on farmland or crops for a 3×3 action.",
+      "basic": {
+        "itemType": "AIOT",
+        "maximumStack": 1
+      },
+      "statistics": [
+        [
+          "Durability",
+          12155
+        ],
+        [
+          "Attack damage",
+          9
+        ],
+        [
+          "Enchantability",
+          18
+        ],
+        [
+          "Mining speed",
+          "24–30×"
+        ]
+      ],
+      "usage": "Use on eligible dirt or grass to till it, or on a mature crop to harvest. Sneak and use it to create paths where supported."
+    }
+  },
+  "utilitycraft:netherite_paxel": {
+    "documentation": {
+      "description": "Combines the pickaxe, axe and shovel in a single tool.",
+      "basic": {
+        "itemType": "Paxel",
+        "maximumStack": 1
+      },
+      "statistics": [
+        [
+          "Durability",
+          6093
+        ],
+        [
+          "Attack damage",
+          7
+        ],
+        [
+          "Enchantability",
+          16
+        ],
+        [
+          "Mining speed",
+          "24×"
+        ]
+      ]
+    }
+  },
+  "utilitycraft:stone_aiot": {
+    "documentation": {
+      "description": "Combines the pickaxe, axe, shovel, sword and hoe. Use it on farmland or crops for a 3×3 action.",
+      "basic": {
+        "itemType": "AIOT",
+        "maximumStack": 1
+      },
+      "statistics": [
+        [
+          "Durability",
+          655
+        ],
+        [
+          "Attack damage",
+          6
+        ],
+        [
+          "Enchantability",
+          8
+        ],
+        [
+          "Mining speed",
+          "12–24×"
+        ]
+      ],
+      "usage": "Use on eligible dirt or grass to till it, or on a mature crop to harvest. Sneak and use it to create paths where supported."
+    }
+  },
+  "utilitycraft:stone_paxel": {
+    "documentation": {
+      "description": "Combines the pickaxe, axe and shovel in a single tool.",
+      "basic": {
+        "itemType": "Paxel",
+        "maximumStack": 1
+      },
+      "statistics": [
+        [
+          "Durability",
+          249
+        ],
+        [
+          "Attack damage",
+          4
+        ],
+        [
+          "Enchantability",
+          6
+        ],
+        [
+          "Mining speed",
+          "12×"
+        ]
+      ]
+    }
+  },
+  "utilitycraft:wooden_aiot": {
+    "documentation": {
+      "description": "Combines the pickaxe, axe, shovel, sword and hoe. Use it on farmland or crops for a 3×3 action.",
+      "basic": {
+        "itemType": "AIOT",
+        "maximumStack": 1
+      },
+      "statistics": [
+        [
+          "Durability",
+          300
+        ],
+        [
+          "Attack damage",
+          5
+        ],
+        [
+          "Enchantability",
+          18
+        ],
+        [
+          "Mining speed",
+          "10–20×"
+        ]
+      ],
+      "usage": "Use on eligible dirt or grass to till it, or on a mature crop to harvest. Sneak and use it to create paths where supported."
+    }
+  },
+  "utilitycraft:wooden_paxel": {
+    "documentation": {
+      "description": "Combines the pickaxe, axe and shovel in a single tool.",
+      "basic": {
+        "itemType": "Paxel",
+        "maximumStack": 1
+      },
+      "statistics": [
+        [
+          "Durability",
+          180
+        ],
+        [
+          "Attack damage",
+          3
+        ],
+        [
+          "Enchantability",
+          16
+        ],
+        [
+          "Mining speed",
+          "10×"
+        ]
+      ]
+    }
+  }
+}

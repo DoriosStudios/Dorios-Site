@@ -44,8 +44,7 @@
 
 .creatures img,
 .hero img,
-.item img,
-.sourceImage {
+.item img {
   object-fit: contain;
   image-rendering: pixelated;
 }
@@ -124,12 +123,6 @@
 
 .unavailable {
   margin: 1rem 0;
-}
-
-.sourceImage {
-  width: 100%;
-  height: 100%;
-  padding: 0.2rem;
 }
 
 @media (max-width: 850px) {

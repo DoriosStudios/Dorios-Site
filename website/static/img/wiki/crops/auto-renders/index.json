@@ -1,0 +1,658 @@
+{
+  "schemaVersion": 1,
+  "rendererVersion": 4,
+  "blocks": {
+    "utilitycraft:amethyst_seeds": {
+      "identifier": "utilitycraft:amethyst_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_amethyst_seeds-3bb2044ca6b5-6a3cd365a349822213308386.png",
+      "hash": "6a3cd365a3498222133083864ab0ec0a064e3f6b8d45a6d11f6748d2a40aad18",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 2
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:black_soil": {
+      "identifier": "utilitycraft:black_soil",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_black_soil-0bcb965db251-9327cdb66c174007d25cc199.png",
+      "hash": "9327cdb66c174007d25cc19999d63290ce699d5d2489c96083098fc02c938349",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:blaze_seeds": {
+      "identifier": "utilitycraft:blaze_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_blaze_seeds-a2d17412b793-6a3cd365a349822213308386.png",
+      "hash": "6a3cd365a3498222133083864ab0ec0a064e3f6b8d45a6d11f6748d2a40aad18",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 2
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:blue_soil": {
+      "identifier": "utilitycraft:blue_soil",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_blue_soil-adcb84946ccc-923bd5afd6416259ec9ce2e3.png",
+      "hash": "923bd5afd6416259ec9ce2e3b87e01331a35b63a62170f7b76510c64809b981e",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:coal_seeds": {
+      "identifier": "utilitycraft:coal_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_coal_seeds-76f2a6620948-3877397d8f2a6b8965603520.png",
+      "hash": "3877397d8f2a6b8965603520f89b3ece7842cf3e7563a718653ce9a94008f1bf",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:copper_seeds": {
+      "identifier": "utilitycraft:copper_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_copper_seeds-d72bac1e1170-3877397d8f2a6b8965603520.png",
+      "hash": "3877397d8f2a6b8965603520f89b3ece7842cf3e7563a718653ce9a94008f1bf",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:diamond_seeds": {
+      "identifier": "utilitycraft:diamond_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_diamond_seeds-d722d5e125c7-6a3cd365a349822213308386.png",
+      "hash": "6a3cd365a3498222133083864ab0ec0a064e3f6b8d45a6d11f6748d2a40aad18",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 2
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:dyes_seeds": {
+      "identifier": "utilitycraft:dyes_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_dyes_seeds-6b6e767290dd-3877397d8f2a6b8965603520.png",
+      "hash": "3877397d8f2a6b8965603520f89b3ece7842cf3e7563a718653ce9a94008f1bf",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:emerald_seeds": {
+      "identifier": "utilitycraft:emerald_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_emerald_seeds-87573340bf0e-6a3cd365a349822213308386.png",
+      "hash": "6a3cd365a3498222133083864ab0ec0a064e3f6b8d45a6d11f6748d2a40aad18",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 2
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:enderpearl_seeds": {
+      "identifier": "utilitycraft:enderpearl_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_enderpearl_seeds-bf37ad60c317-6a3cd365a349822213308386.png",
+      "hash": "6a3cd365a3498222133083864ab0ec0a064e3f6b8d45a6d11f6748d2a40aad18",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 2
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:ghast_seeds": {
+      "identifier": "utilitycraft:ghast_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_ghast_seeds-70fd6dd68d99-fddba10bd1a45d3c6de278a6.png",
+      "hash": "fddba10bd1a45d3c6de278a655908ab3ae9fb2612a0fa84dc342fd38900c0b6a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:glass_seeds": {
+      "identifier": "utilitycraft:glass_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_glass_seeds-cd0c2d3ebee5-29fe3221bdf4799ad72b9e3e.png",
+      "hash": "29fe3221bdf4799ad72b9e3eede7e86599215e4fa825432676623c70f5bad723",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:glowstone_seeds": {
+      "identifier": "utilitycraft:glowstone_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_glowstone_seeds-619828cfcfca-fddba10bd1a45d3c6de278a6.png",
+      "hash": "fddba10bd1a45d3c6de278a655908ab3ae9fb2612a0fa84dc342fd38900c0b6a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:gold_seeds": {
+      "identifier": "utilitycraft:gold_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_gold_seeds-e3b14db02058-fddba10bd1a45d3c6de278a6.png",
+      "hash": "fddba10bd1a45d3c6de278a655908ab3ae9fb2612a0fa84dc342fd38900c0b6a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:gunpowder_seeds": {
+      "identifier": "utilitycraft:gunpowder_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_gunpowder_seeds-a84548343f08-3877397d8f2a6b8965603520.png",
+      "hash": "3877397d8f2a6b8965603520f89b3ece7842cf3e7563a718653ce9a94008f1bf",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:honey_seeds": {
+      "identifier": "utilitycraft:honey_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_honey_seeds-9b272c34c214-fddba10bd1a45d3c6de278a6.png",
+      "hash": "fddba10bd1a45d3c6de278a655908ab3ae9fb2612a0fa84dc342fd38900c0b6a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:iron_seeds": {
+      "identifier": "utilitycraft:iron_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_iron_seeds-9faabfd1c435-3877397d8f2a6b8965603520.png",
+      "hash": "3877397d8f2a6b8965603520f89b3ece7842cf3e7563a718653ce9a94008f1bf",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:lapis_seeds": {
+      "identifier": "utilitycraft:lapis_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_lapis_seeds-6f38e912816f-fddba10bd1a45d3c6de278a6.png",
+      "hash": "fddba10bd1a45d3c6de278a655908ab3ae9fb2612a0fa84dc342fd38900c0b6a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:lava_seeds": {
+      "identifier": "utilitycraft:lava_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_lava_seeds-f0e59c42b54f-fddba10bd1a45d3c6de278a6.png",
+      "hash": "fddba10bd1a45d3c6de278a655908ab3ae9fb2612a0fa84dc342fd38900c0b6a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:leather_seeds": {
+      "identifier": "utilitycraft:leather_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_leather_seeds-c4f2661c94b1-3877397d8f2a6b8965603520.png",
+      "hash": "3877397d8f2a6b8965603520f89b3ece7842cf3e7563a718653ce9a94008f1bf",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:nether_star_seeds": {
+      "identifier": "utilitycraft:nether_star_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_nether_star_seeds-b1e1857d8050-49f9ed1a7e2c9709fb677710.png",
+      "hash": "49f9ed1a7e2c9709fb67771093fa24c58f8f2ddc64a6950848cb5eacb92e832a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 3
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:netherite_seeds": {
+      "identifier": "utilitycraft:netherite_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_netherite_seeds-6276c2208880-49f9ed1a7e2c9709fb677710.png",
+      "hash": "49f9ed1a7e2c9709fb67771093fa24c58f8f2ddc64a6950848cb5eacb92e832a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 3
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:obsidian_seeds": {
+      "identifier": "utilitycraft:obsidian_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_obsidian_seeds-32b618504ca9-6a3cd365a349822213308386.png",
+      "hash": "6a3cd365a3498222133083864ab0ec0a064e3f6b8d45a6d11f6748d2a40aad18",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 2
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:pedestal": {
+      "identifier": "utilitycraft:pedestal",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_pedestal-5b5e35a92b4c-23c2a9f487759d9b282fa177.png",
+      "hash": "23c2a9f487759d9b282fa177c8f2afdb94d122c30f71e29f136a49445593cf6b",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:hasItem": 0
+      },
+      "geometry": "geometry.utilitycraft_pedestal",
+      "stats": {
+        "bones": 1,
+        "cubes": 7,
+        "planes": 0,
+        "faces": 42
+      }
+    },
+    "utilitycraft:prismarine_crystals_seeds": {
+      "identifier": "utilitycraft:prismarine_crystals_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_prismarine_crystals_seeds-9031b64a1eee-3877397d8f2a6b8965603520.png",
+      "hash": "3877397d8f2a6b8965603520f89b3ece7842cf3e7563a718653ce9a94008f1bf",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:prismarine_shards_seeds": {
+      "identifier": "utilitycraft:prismarine_shards_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_prismarine_shards_seeds-d7d65c87e611-3877397d8f2a6b8965603520.png",
+      "hash": "3877397d8f2a6b8965603520f89b3ece7842cf3e7563a718653ce9a94008f1bf",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:quartz_seeds": {
+      "identifier": "utilitycraft:quartz_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_quartz_seeds-fb56dc425ed5-fddba10bd1a45d3c6de278a6.png",
+      "hash": "fddba10bd1a45d3c6de278a655908ab3ae9fb2612a0fa84dc342fd38900c0b6a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:red_soil": {
+      "identifier": "utilitycraft:red_soil",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_red_soil-a2bc34934c08-2cf7bcaa79e863eaea73603f.png",
+      "hash": "2cf7bcaa79e863eaea73603f5bd672c1c2913749a3644284a66b3a65bb3e44a3",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    },
+    "utilitycraft:redstone_seeds": {
+      "identifier": "utilitycraft:redstone_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_redstone_seeds-377833057ef4-fddba10bd1a45d3c6de278a6.png",
+      "hash": "fddba10bd1a45d3c6de278a655908ab3ae9fb2612a0fa84dc342fd38900c0b6a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:resin_seeds": {
+      "identifier": "utilitycraft:resin_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_resin_seeds-90568c8f06a5-fddba10bd1a45d3c6de278a6.png",
+      "hash": "fddba10bd1a45d3c6de278a655908ab3ae9fb2612a0fa84dc342fd38900c0b6a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:shulker_seeds": {
+      "identifier": "utilitycraft:shulker_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_shulker_seeds-b85cebec21e1-49f9ed1a7e2c9709fb677710.png",
+      "hash": "49f9ed1a7e2c9709fb67771093fa24c58f8f2ddc64a6950848cb5eacb92e832a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 3
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:slime_seeds": {
+      "identifier": "utilitycraft:slime_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_slime_seeds-81c05bc12267-fddba10bd1a45d3c6de278a6.png",
+      "hash": "fddba10bd1a45d3c6de278a655908ab3ae9fb2612a0fa84dc342fd38900c0b6a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 1
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:totem_seeds": {
+      "identifier": "utilitycraft:totem_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_totem_seeds-00c8b588280c-49f9ed1a7e2c9709fb677710.png",
+      "hash": "49f9ed1a7e2c9709fb67771093fa24c58f8f2ddc64a6950848cb5eacb92e832a",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 3
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:water_seeds": {
+      "identifier": "utilitycraft:water_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_water_seeds-749289f737ed-3877397d8f2a6b8965603520.png",
+      "hash": "3877397d8f2a6b8965603520f89b3ece7842cf3e7563a718653ce9a94008f1bf",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:wither_seeds": {
+      "identifier": "utilitycraft:wither_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_wither_seeds-4c543375d569-0e3b653d62bfc13df9a1c43b.png",
+      "hash": "0e3b653d62bfc13df9a1c43bf633ce9c70c6a713756ad25d17cf557e175a52b2",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 3
+      },
+      "geometry": "geometry.utilitycraft_special_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 4,
+        "planes": 4,
+        "faces": 2
+      }
+    },
+    "utilitycraft:wool_seeds": {
+      "identifier": "utilitycraft:wool_seeds",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_wool_seeds-19999dd26345-3877397d8f2a6b8965603520.png",
+      "hash": "3877397d8f2a6b8965603520f89b3ece7842cf3e7563a718653ce9a94008f1bf",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {
+        "utilitycraft:age": 0,
+        "utilitycraft:tier": 0
+      },
+      "geometry": "geometry.utilitycraft_crop",
+      "stats": {
+        "bones": 1,
+        "cubes": 2,
+        "planes": 2,
+        "faces": 1
+      }
+    },
+    "utilitycraft:yellow_soil": {
+      "identifier": "utilitycraft:yellow_soil",
+      "kind": "generated",
+      "path": "auto-renders/utilitycraft_yellow_soil-806ba83f9578-1c1e326eec2908cbe50e24a1.png",
+      "hash": "1c1e326eec2908cbe50e24a15f2fa2301339aa1a669be92ac6c84000ecb51b33",
+      "configuration": "22df03604cc37201d76d2360255f282b10bc2719efcda054240563ca7c777a05",
+      "states": {},
+      "geometry": "minecraft:geometry.full_block",
+      "stats": {
+        "bones": 1,
+        "cubes": 1,
+        "planes": 0,
+        "faces": 3
+      }
+    }
+  }
+}
